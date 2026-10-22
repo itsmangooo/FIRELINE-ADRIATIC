@@ -1,0 +1,7 @@
+{
+  "name": "Fireline.Authoring",
+  "rootNamespace": "Fireline.Authoring",
+  "references": [],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

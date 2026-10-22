@@ -1,0 +1,18 @@
+{
+  "capturedUtc": "2026-10-22T16:57:17.3763886Z",
+  "cpu": [
+    {
+      "Name": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+      "NumberOfCores": 6,
+      "NumberOfLogicalProcessors": 6
+    }
+  ],
+  "gpu": [
+    {
+      "Name": "NVIDIA GeForce GTX 1660 SUPER",
+      "DriverVersion": "32.0.16.1742",
+      "DriverDate": "2026-09-30T02:00:00+02:00"
+    }
+  ],
+  "scope": "Read-only Windows hardware inventory; performance metrics use main-camera callback intervals, not CPU/GPU execution timings"
+}

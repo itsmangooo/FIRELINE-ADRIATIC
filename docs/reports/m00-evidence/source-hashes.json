@@ -1,0 +1,85 @@
+{
+  "files": [
+    {
+      "sha256": "B8E004674A4331791C3966C755180B45E4E079E71224525BF96A0AB0526554D1",
+      "path": "Assets/Fireline/Authoring/Fireline.Authoring.asmdef"
+    },
+    {
+      "sha256": "259EF4ACF92AE1ABB645CC596CD16F8F1D798A9214586F6C9BBE975C4F36292D",
+      "path": "Assets/Fireline/Authoring/FoundationBuild.cs"
+    },
+    {
+      "sha256": "DB79F906D7CB42565EE55D54CA0C0708F02B5DC19C37F470BE821ED1C5DE8A4A",
+      "path": "Assets/Fireline/Client/ClientProbe.cs"
+    },
+    {
+      "sha256": "C3D2CAEAE4A7E17D0BB692A7DF0427F213D3F910DBA77D27D4AA2AA8964E719D",
+      "path": "Assets/Fireline/Client/Fireline.Client.asmdef"
+    },
+    {
+      "sha256": "60A2E22209FB88584DC3338509628CDABE30B774E98BBAC9638EAC6BF0990BE2",
+      "path": "Assets/Fireline/Client/FoundationMetrics.cs"
+    },
+    {
+      "sha256": "564F32A217909786A0679FAA7D13577AF072E7735C3BFA2848E7A43C320FF33A",
+      "path": "Assets/Fireline/Content/Foundation/Calibration.mat"
+    },
+    {
+      "sha256": "A47FFF4768B6395166E6EB37C9CFDAD305AC2D1613C4E0E368633C9C017457CE",
+      "path": "Assets/Fireline/Scenes/M00_Client.unity"
+    },
+    {
+      "sha256": "1E4D3517D23750D2470A70D35343E19F34E3CF209416BC0D169AB73601FC5044",
+      "path": "Assets/Fireline/Scenes/M00_Server.unity"
+    },
+    {
+      "sha256": "81BE494262EB7DF57C647F059428E1A1F0FA606DE2C8BCF197D8843F4106E7A9",
+      "path": "Assets/Fireline/Server/Fireline.Server.asmdef"
+    },
+    {
+      "sha256": "F1345A45BCD71D8C19E5771C271173EEF9672103676CE539F47EC7BAA28B61E5",
+      "path": "Assets/Fireline/Server/ServerProbe.cs"
+    },
+    {
+      "sha256": "C496249CC89BBA7ADE3BFD1475507DAAF77EE23BA141087CEB00EB23218E20FE",
+      "path": "Assets/Fireline/Shared/Fireline.Shared.asmdef"
+    },
+    {
+      "sha256": "AC2D01E46D8D11D0A65A0116DBC255B6FAA9C8206258E927EEF1FBE6522A5158",
+      "path": "Assets/Fireline/Shared/FoundationBootstrap.cs"
+    },
+    {
+      "sha256": "CE67F0E91B96B11634EDAADE74EFA65FF62CBF1042108C335FF60E01F2DE1F07",
+      "path": "Assets/Fireline/Shared/LaunchOptions.cs"
+    },
+    {
+      "sha256": "D4567B0798519CAA56FF68FD6CDDBE3780603F4D978324702D9E693E01CB3C32",
+      "path": "Assets/Fireline/Simulation/Fireline.Simulation.asmdef"
+    },
+    {
+      "sha256": "CB0E61D63708F2EF1BBBA92798EA20CBE0AC6733539D3166543CC1F39F3DA00F",
+      "path": "Assets/Fireline/Simulation/TickClock.cs"
+    },
+    {
+      "sha256": "4F95373498E7689278D1757BE55D77961A26E3CE7FEA001670FFB34AD6D25828",
+      "path": "Assets/Fireline/Tests/Editor/Fireline.Tests.asmdef"
+    },
+    {
+      "sha256": "DAA0734C2FE3458AB7E7ACA9F8946D456A38A08FE4C98154D70DB0E941B9AD82",
+      "path": "Assets/Fireline/Tests/Editor/FoundationTests.cs"
+    },
+    {
+      "sha256": "6389C6400B209E3421ABAB0CCE505241F3A268AC953B2626FC9DD07852425785",
+      "path": "Packages/manifest.json"
+    },
+    {
+      "sha256": "FC94A186A2772EC408EE34F5FF085BFBB08943EC84DEE579519C816B93ACCFEA",
+      "path": "Packages/packages-lock.json"
+    },
+    {
+      "sha256": "2A88E6864B6F54588287BED3BC6E9260E65BD49498910CCA4478770CA8A5D674",
+      "path": "ProjectSettings/ProjectVersion.txt"
+    }
+  ],
+  "scope": "Source files and package pins for verified M00 foundation; runtime hashes are in smoke-summary.json"
+}

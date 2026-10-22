@@ -1,0 +1,7 @@
+{
+  "name": "Fireline.Simulation",
+  "rootNamespace": "Fireline.Simulation",
+  "references": [],
+  "noEngineReferences": true,
+  "autoReferenced": false
+}

@@ -2,27 +2,32 @@
 
 ## Project Overview
 
-**Status:** existing Unity HDRP starter project + design documentation + development prompts. The original development pack contained **no imported commercial assets, downloaded models, Unity project, working server or implemented gameplay**. It is now stored alongside the user's existing Unity project. Gameplay, flight/fire simulation and server functionality remain unimplemented in the inspected source; proposed mechanics and numeric budgets are design targets pending testing.
+**Status:** M00 Unity foundation in progress. The existing HDRP project now has modular C# assemblies, direct-IP client/server startup, foundation tests and build entry points. Flight, fire, wind, water, dispatch and persistence remain planned. The original documentation pack and project guidance are preserved; proposed mechanics and numeric budgets remain design targets pending testing.
 
 A persistent, self-hosted, cooperative Croatian/Herzegovinian aerial and ground firefighting simulator. Unity 6 HDRP, C#, up to 100 players per server (target, **not demonstrated**), up to 9 aircraft (design cap), server-authoritative fire/wind/water/combustion, modding, 60 FPS client target.
 
 ## Current Development Status
 
-The 2026-10-22 filesystem inspection found Unity **6000.6.7f1**, declared HDRP **17.6.0**, `SampleScene`, HDRP settings and tutorial scripts. This is source/configuration evidence only: Editor compilation, client/server builds and gameplay have not been verified. M00–M09 remain pending. See [development status](docs/DEVELOPMENT_STATUS.md) for evidence and limitations.
+Unity **6000.6.7f1** / HDRP **17.6.0** are retained. Netcode for Entities, Entities and Transport **6.6.0** are resolved. **15 EditMode tests pass.** Windows release client and dedicated-server builds succeeded with zero errors; one headless server and two distinct rendered clients passed local connection smoke, each exiting with code 0. The server includes no serialized HDRP assets or project materials. See the [M00 evidence report](docs/reports/2026-10-22-m00-foundation.md). M00 remains in progress for assets and representative profiling; M01–M09 remain pending.
 
 ## Latest Development Updates
 
+- **2026-10-22 — M00 foundation verified increment:** six assembly boundaries, direct-IP bootstrap, 15 passing tests, two successful Windows release builds and an accepted headless-server/two-rendered-client smoke. Added actual captures and limited calibration diagnostics. [Implementation, commands and verification](docs/reports/2026-10-22-m00-foundation.md).
 - **2026-10-22 — Permanent documentation workflow:** added project-wide evidence rules, README showcase sections, visual/physics/gameplay/performance templates, a changelog and performance history. Existing Unity content and configuration were checkpointed before documentation edits. No game feature was added. See the [workflow report](docs/reports/2026-10-22-documentation-workflow.md) and [changelog](docs/CHANGELOG.md).
 
 ## Visual Progress — Before & After
 
-**No baseline was captured.** No implementation screenshots are available yet; this update changes documentation only. Future significant visual changes must embed representative real Game View/build captures here, using side-by-side comparisons when possible. Concept art and the starter project's HDRP icon are not evidence of implemented FIRELINE content.
+M00 adds a separate calibration scene containing generated boxes and a neutral HDRP material. The starter scene remains intact. These are actual Unity captures; camera/workload differences mean they are not a matched performance comparison. [Capture conditions and provenance](docs/previews/m00-foundation/COMPARISON.md).
+
+| BEFORE — starter Game View | AFTER — Windows release client |
+|---|---|
+| ![Starter Game View](docs/previews/m00-foundation/starter_before.png) | ![M00 release client](docs/previews/m00-foundation/foundation_after.png) |
 
 Capture reports and compressed images belong in [docs/previews/](docs/previews/README.md). The [visual report template](docs/templates/VISUAL_CHANGE.md) records revisions, capture conditions, assets and measured or unmeasured performance impact.
 
 ## Physics & Simulation Improvements
 
-No implemented physics change or numerical comparison is claimed. [Simulation specification](docs/SIMULATION_SPEC.md) and [aircraft specifications](docs/AIRCRAFT_SPECIFICATIONS.md) describe proposed models. Future implementation comparisons belong in [docs/physics/](docs/physics/README.md), with actual equations, SI variables, BEFORE/AFTER diagrams, equivalent test inputs, results and source references.
+The [M00 fixed tick clock comparison](docs/physics/foundation-clock/COMPARISON.md) documents the pure scheduling utility, its equations and unit assertions. Flight/fire/wind/water physics remain unimplemented. [Simulation specification](docs/SIMULATION_SPEC.md) and [aircraft specifications](docs/AIRCRAFT_SPECIFICATIONS.md) describe proposed models. Implementation comparisons belong in [docs/physics/](docs/physics/README.md).
 
 ## Gameplay Systems
 
@@ -30,7 +35,7 @@ Dispatch, aerial sorties, ground operations, persistent incidents and cooperativ
 
 ## Architecture & Technical Diagrams
 
-[Technical architecture](docs/TECHNICAL_ARCHITECTURE.md), [network architecture](docs/NETWORK_ARCHITECTURE.md) and [system diagrams](docs/DIAGRAMS.md) are design references, not proof of implemented server/client separation. The documentation workflow now follows this process:
+[M00's implemented architecture](docs/reports/2026-10-22-m00-foundation.md) separates Client, Server, Shared, Simulation, Authoring and Tests. Role-specific builds use separate scenes and assembly constraints; the broader [technical architecture](docs/TECHNICAL_ARCHITECTURE.md), [network protocol](docs/NETWORK_ARCHITECTURE.md) and [gameplay diagrams](docs/DIAGRAMS.md) remain proposed beyond that foundation. The documentation workflow follows this process:
 
 ```mermaid
 flowchart LR
@@ -46,13 +51,13 @@ flowchart LR
 
 ## Performance Benchmarks
 
-**No benchmark measurements exist.** The target is 60 FPS at 1080p on named reference hardware in representative populated/coastal/smoky builds. No 100-player capacity is demonstrated. See [performance plan](docs/PERFORMANCE_60FPS.md) and [performance history](docs/PERFORMANCE_HISTORY.md); planning budgets must never be reported as results.
+The initial **720p High Fidelity calibration diagnostic** on an i5-9400F / GTX 1660 SUPER averaged **59.73 FPS**, with **38.23 FPS 1% low** and **17.36 ms p95 frame interval** over 15 seconds while two clients ran. [Raw data, method and limits](docs/performance/2026-10-22-m00-calibration.md). This is not representative 1080p/60 FPS acceptance or an optimization comparison. No 100-player capacity is demonstrated. See [performance plan](docs/PERFORMANCE_60FPS.md) and [history](docs/PERFORMANCE_HISTORY.md).
 
 ## Development Roadmap
 
 | Milestone | Planned outcome | Status |
 |---|---|---|
-| M00 | Unity/tooling audit, assemblies, build and benchmark foundation | Pending |
+| M00 | Unity/tooling audit, assemblies, build and benchmark foundation | In Progress |
 | M01 | Authoritative fire and wind | Pending |
 | M02 | Multi-process replication and persistence proof | Pending |
 | M03 | CL-415 flight and water physics | Pending |

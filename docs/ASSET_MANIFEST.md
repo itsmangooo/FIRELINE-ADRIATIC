@@ -1,5 +1,16 @@
 # Asset Manifest — Source links and pipeline (NO actual assets bundled)
 
+## M00 foundation assets — 2026-10-22
+
+`AssetSources/` was absent at inspection. No external model, texture or audio source has been downloaded or approved by this foundation increment. Aircraft/cockpit and coastal asset integration remain outstanding M00 tasks.
+
+| ID | Content | Provenance / paths | Status and limits |
+|---|---|---|---|
+| FL-M00-CALIBRATION | One ground box, 25 calibration boxes and neutral HDRP material | Project-generated Unity primitives; `Assets/Fireline/Scenes/M00_Client.unity`, `Assets/Fireline/Content/Foundation/Calibration.mat`; generator in `FoundationBuild.cs` | Generated locally for render smoke; no external textures, rig or aircraft; performance acceptance pending |
+| UNITY-HDRP-STARTER | Original starter lighting, sky, scene and quality settings | Preserved existing Unity HDRP template content under `Assets/Scenes/` and `Assets/Settings/`; copied starter lighting into the M00 client scene | Existing template content; not Adriatic terrain or an integrated third-party art kit |
+
+Actual visual evidence is indexed in [M00 foundation report](reports/2026-10-22-m00-foundation.md). The original source-link inventory below remains candidate research rather than import evidence.
+
 > **Status key:** `Verified listing` means publicly indexed source/title/license verified, **NOT downloaded, rigged, imported or approved in Unity**. `Candidate` means asset identity/licensing/quality still must be confirmed by Codex or user. Check original product pages immediately before downloading, including whether availability or terms changed.
 
 ## What to download first (Milestone 0–1)

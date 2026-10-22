@@ -8,6 +8,8 @@
 /[Bb]uilds/
 /[Mm]emoryCaptures/
 /[Rr]ecordings/
+/Assets/netcode-build-assets-temp/
+/Assets/netcode-build-assets-temp.meta
 
 # Generated IDE state.
 /.vs/

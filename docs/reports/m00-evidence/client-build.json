@@ -1,0 +1,12 @@
+{
+    "role": "client",
+    "unity": "6000.6.7f1",
+    "result": "Succeeded",
+    "errors": 0,
+    "warnings": 0,
+    "seconds": 24.411131599999997,
+    "bytes": 195864357,
+    "development": false,
+    "subtarget": 2,
+    "containsVisualAssets": false
+}

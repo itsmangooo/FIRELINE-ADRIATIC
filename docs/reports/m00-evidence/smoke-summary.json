@@ -1,0 +1,77 @@
+{
+  "scope": "One local dedicated server and two rendered client processes; connection handshake only",
+  "clientSha256": "9806ABDE4A406ED68647E9505852C49F6AA72A372F4F084E2AA2821AFFEA57A2",
+  "port": 7979,
+  "rawLogs": "Builds\\Smoke\\20261022-185723",
+  "serverRuntimeHashes": [
+    {
+      "sha256": "3A9085345A40612469B15C4DA668A905E43A4E270C838BC4AE070C6BF4448353",
+      "name": "Fireline.Server.dll"
+    },
+    {
+      "sha256": "BCE7ED4CBD923994BE85D9D078EAA6F28A2AF8F5B56A4CB01E45C764E0CAA19B",
+      "name": "Fireline.Shared.dll"
+    },
+    {
+      "sha256": "E2DBF9F2AE69A9CAB3BC173C06CFDB5C3F6C67F0D9215694A1CAC130A920F9EA",
+      "name": "Fireline.Simulation.dll"
+    }
+  ],
+  "serverSha256": "3CACBB9917B8980B3B9E91E6120DE4D7456F108EE9B88622F5B85F7F3AEFF26F",
+  "clientRuntimeHashes": [
+    {
+      "sha256": "BFCD0CFB59E743A88BDFDA9FF9FC5FB4D77E4B918E922D6EA0D042C0B06A7060",
+      "name": "Fireline.Client.dll"
+    },
+    {
+      "sha256": "B69EBFB292D017083F38763389CC59176F3F3C666A4C4FB906E2C9B755C9A637",
+      "name": "Fireline.Shared.dll"
+    },
+    {
+      "sha256": "C2B0D272B7490DD6465CA0FC88889FDCED872B52023AD3D69F9FF6DE917725C7",
+      "name": "Fireline.Simulation.dll"
+    }
+  ],
+  "passed": true,
+  "utc": "2026-10-22T16:58:46.6688505Z",
+  "processes": [
+    {
+      "pid": 6708,
+      "role": "client-1",
+      "exitCode": 0,
+      "markers": [
+        "FIRELINE_CLIENT_START",
+        "FIRELINE_CLIENT_RENDERER graphics=Direct3D12 pipeline=HDRenderPipelineAsset quality=High Fidelity",
+        "FIRELINE_CLIENT_CONNECTED networkId=1",
+        "FIRELINE_CAPTURE_SAVED foundation_after.png",
+        "FIRELINE_CLIENT_SMOKE passed=True frames=1191 renderedFrames=1190",
+        "FIRELINE_METRICS_SAVED client-diagnostic-metrics.json"
+      ]
+    },
+    {
+      "pid": 11820,
+      "role": "client-2",
+      "exitCode": 0,
+      "markers": [
+        "FIRELINE_CLIENT_START",
+        "FIRELINE_CLIENT_RENDERER graphics=Direct3D12 pipeline=HDRenderPipelineAsset quality=High Fidelity",
+        "FIRELINE_CLIENT_CONNECTED networkId=2",
+        "FIRELINE_CLIENT_SMOKE passed=True frames=1195 renderedFrames=1194"
+      ]
+    },
+    {
+      "pid": 11808,
+      "role": "server",
+      "exitCode": 0,
+      "markers": [
+        "FIRELINE_SERVER_START endpoint=127.0.0.1:7979",
+        "FIRELINE_SERVER_HEADLESS valid=True graphics=Null cameras=0",
+        "FIRELINE_SERVER_CONNECTIONS count=0",
+        "FIRELINE_SERVER_CONNECTIONS count=2",
+        "FIRELINE_SERVER_CONNECTIONS count=1",
+        "FIRELINE_SERVER_CONNECTIONS count=0",
+        "FIRELINE_SERVER_SMOKE passed=True peakClients=2 ticks=4799"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Fireline.Tests",
+  "rootNamespace": "Fireline.Tests",
+  "references": ["Fireline.Shared", "Fireline.Simulation"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "autoReferenced": false
+}

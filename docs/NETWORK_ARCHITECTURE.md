@@ -1,5 +1,9 @@
 # Multiplayer/network architecture — 100 players as a target
 
+## M00 foundation boundary
+
+The foundation uses Netcode for Entities 6.6.0 and Transport 6.6.0 with one client or server world per process. Explicit numeric IPv4 listen/connect requests support local and direct-IP startup without a managed lobby. Connection `NetworkId` values can be observed for smoke verification. No `NetworkStreamInGame`, ghost snapshots, fire chunks or gameplay messages are added at this stage. Authentication, public admission, reconnect and packet-loss recovery remain unimplemented. See the [M00 report](reports/2026-10-22-m00-foundation.md) for the exact verification scope; the protocol below remains proposed.
+
 ## Dedicated server is not optional
 
 Main mode is **headless dedicated authoritative server**; never make client listen-host or P2P the authoritative persistent production mode. One logical world runs per server instance. Hosting is community-owned; direct IP works without mandatory matchmaker. Evaluate supported Netcode for Entities/Unity Transport package versions. Server controls fire, weather, physical water footprint, vehicle state, incidents, inventory/permissions, statistics and writes.

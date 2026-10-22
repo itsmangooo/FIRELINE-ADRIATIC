@@ -1,0 +1,7 @@
+{
+  "name": "Fireline.Server",
+  "rootNamespace": "Fireline.Server",
+  "references": ["Fireline.Shared", "Fireline.Simulation", "Unity.Entities", "Unity.Collections", "Unity.NetCode"],
+  "defineConstraints": ["UNITY_SERVER || UNITY_EDITOR"],
+  "autoReferenced": true
+}

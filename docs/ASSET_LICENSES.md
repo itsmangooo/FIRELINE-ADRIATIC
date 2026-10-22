@@ -1,5 +1,9 @@
 # Asset licenses and provenance
 
+## M00 foundation provenance — 2026-10-22
+
+No third-party aircraft, vegetation, texture or audio source was acquired during the foundation increment. `FL-M00-CALIBRATION` in the [manifest](ASSET_MANIFEST.md) uses Unity-generated primitive geometry and a project-authored material without texture maps. It has no external model artist or separate attribution requirement. Original Unity HDRP starter content remains subject to its existing Unity/template terms; this report does not relabel that content CC0. Netcode and its dependencies retain their package notices under the installed Unity packages.
+
 ## Default decisions
 
 1. Prefer **CC0** (Poly Haven/ambientCG when asset individually confirms), then **CC BY** with precise credits; avoid NonCommercial, NoDerivatives, restricted redistribution, editorial-only and unclear licenses in commercial game content.

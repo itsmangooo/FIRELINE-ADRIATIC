@@ -1,0 +1,6 @@
+{
+  "name": "Fireline.Shared",
+  "rootNamespace": "Fireline.Shared",
+  "references": ["Unity.Entities", "Unity.Collections", "Unity.NetCode", "Unity.Networking.Transport"],
+  "autoReferenced": true
+}

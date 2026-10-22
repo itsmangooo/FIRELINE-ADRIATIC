@@ -1,5 +1,11 @@
 # Technical architecture — Unity 6 HDRP, C#, headless server
 
+## M00 implementation checkpoint — 2026-10-22
+
+The initial boundaries now exist as `Fireline.Server`, `Fireline.Simulation`, `Fireline.Shared`, `Fireline.Client`, `Fireline.Authoring` and `Fireline.Tests`. Unity 6000.6.7f1 / HDRP 17.6.0 are retained; Netcode for Entities, Entities and Transport 6.6.0 were resolved through Package Manager. Shared currently contains startup/connection configuration and the custom Netcode bootstrap; Simulation contains only a pure fixed tick clock. This does not implement the proposed world contracts below.
+
+Role-specific Windows x64 build entry points use separate scenes, client/server assembly constraints and temporary render-pipeline isolation for the dedicated server. See [actual architecture/evidence](reports/2026-10-22-m00-foundation.md) and [build instructions](M00_BUILD_AND_TEST.md). The following ADR remains a broader proposed design; PostgreSQL, flight/fire/wind/drop simulation and production replication are not implemented.
+
 ## Architectural decision record (ADR-001, proposed)
 
 - **Client:** Unity 6 HDRP, Windows desktop initially. HDRP lighting, terrain, VFX Graph, audio, native UI Toolkit/uGUI and player/vehicle presentation.

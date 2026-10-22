@@ -25,11 +25,23 @@ Apply this checklist to each milestone using [the workflow](docs/DOCUMENTATION_W
 
 ## M00 — Preproduction & Unity audit (start here)
 
-- [ ] Inspect existing Unity 6 HDRP project, Package versions, CLI/editor tooling, Git branch. Do not recreate project.
-- [ ] Confirm Netcode for Entities + Unity Transport feasibility with HDRP client and headless server. Identify incompatibilities.
+**Status: In Progress.** [Implementation and evidence](docs/reports/2026-10-22-m00-foundation.md). M01 remains locked while M00 acceptance gaps remain.
+
+- [x] Inspect existing Unity 6 HDRP project, package versions, CLI/editor tooling and Git branch; preserve original project.
+- [x] Research and resolve Unity 6.6 / HDRP 17.6 / Netcode for Entities + Transport 6.6 versions; record build integration issues.
+- [x] Verify the rendered HDRP release client and dedicated server with two separate client processes on direct-IP loopback; all three accepted smoke exits were 0.
 - [ ] Inspect `AssetSources/`, download only approved licenses, convert minimum terrain/aircraft source assets; document provenance and missing cockpit parts.
-- [ ] Set up assemblies and Unity tests, minimal CI/build instructions, server/client separation and project plan.
+- [x] Set up six modular assemblies, 15 passing EditMode cases and minimal CI/build instructions; document actual dependency boundaries.
+- [x] Build Windows dedicated server and verify null-graphics/no-camera startup plus expected failure when clients are absent.
+- [x] Finish release client build/runtime evidence and verify opposite-role assembly exclusion in both outputs; inspect actual release screenshot after rendered warm-up.
+- [x] Add an initial calibration render scene and record named local hardware; preserve existing quality presets.
 - [ ] Establish initial 60 FPS benchmark scene and named hardware/quality preset.
+
+The calibration scene is not the representative populated/coastal/smoky benchmark required for performance acceptance. Aircraft/terrain asset integration, full profiling counters and Linux execution remain outstanding.
+
+- [x] Record the initial 720p diagnostic sample with raw render intervals and named hardware; no 1080p/60 FPS pass claimed.
+- [ ] Collect representative 1080p baseline and five-minute runs, CPU/GPU execution counters, draw calls, VRAM, server tick duration and network bandwidth.
+- [ ] Validate Linux dedicated-server build/run and the supplied closed-Editor batch/CI path on a configured worker.
 
 **Accept:** Project opens, tests run, one client release build and headless server build smoke launches; docs complete; no gameplay falsely marked complete.
 

@@ -1,0 +1,6 @@
+FIRELINE_CLIENT_START
+FIRELINE_CLIENT_RENDERER graphics=Direct3D12 pipeline=HDRenderPipelineAsset quality=High Fidelity
+FIRELINE_CLIENT_CONNECTED networkId=1
+FIRELINE_CAPTURE_SAVED foundation_after.png
+FIRELINE_CLIENT_SMOKE passed=True frames=1191 renderedFrames=1190
+FIRELINE_METRICS_SAVED client-diagnostic-metrics.json
