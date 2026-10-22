@@ -1,0 +1,34 @@
+[
+  {
+    "name": "balanced-clear",
+    "exitCode": 0,
+    "processId": 31252,
+    "metrics": "docs\\reports\\m00-coastal-evidence\\benchmarks\\20261022-214410\\balanced-clear.json",
+    "capture": "docs\\previews\\m00-coastal\\balanced-clear.png",
+    "markers": [
+      "FIRELINE_CLIENT_START",
+      "FIRELINE_CLIENT_RENDERER graphics=Direct3D12 pipeline=HDRenderPipelineAsset quality=Balanced",
+      "FIRELINE_BENCHMARK_START scenario=clear seconds=300 warmup=30",
+      "FIRELINE_CAPTURE_SAVED balanced-clear.png",
+      "FIRELINE_BENCHMARK_COMPLETE samples=18000 renderedSeconds=330.003"
+    ],
+    "averageFps": 59.99848635818647,
+    "p95FrameMs": 16.99410000003354
+  },
+  {
+    "name": "balanced-smoky",
+    "exitCode": 0,
+    "processId": 30028,
+    "metrics": "docs\\reports\\m00-coastal-evidence\\benchmarks\\20261022-214410\\balanced-smoky.json",
+    "capture": "docs\\previews\\m00-coastal\\balanced-smoky.png",
+    "markers": [
+      "FIRELINE_CLIENT_START",
+      "FIRELINE_CLIENT_RENDERER graphics=Direct3D12 pipeline=HDRenderPipelineAsset quality=Balanced",
+      "FIRELINE_BENCHMARK_START scenario=smoky seconds=300 warmup=30",
+      "FIRELINE_CAPTURE_SAVED balanced-smoky.png",
+      "FIRELINE_BENCHMARK_COMPLETE samples=18001 renderedSeconds=330.016"
+    ],
+    "averageFps": 59.99850761336695,
+    "p95FrameMs": 16.988400000002457
+  }
+]

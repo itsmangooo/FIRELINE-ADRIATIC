@@ -24,6 +24,12 @@
 __pycache__/
 *.pyc
 
+# Audited original environment downloads; retain metadata, licenses and derived Unity content.
+/AssetSources/**/*.jpg
+/AssetSources/**/*.tif
+/AssetSources/**/eula_F.pdf
+/AssetSources/**/*.zip
+
 # Machine-local credentials, never project evidence.
 .env
 .env.local

@@ -1,0 +1,12 @@
+{
+  "case": "balanced-clear",
+  "status": "Valid clear diagnostic; smoky attempt rejected visually and terminated before completion. No smoky comparison in this run.",
+  "binarySha256": "9806abde4a406ed68647e9505852c49f6aa72a372f4f084e2aa2821affea57a2",
+  "assemblies": {
+    "Fireline.Client.dll": "502a853e23a82b38c029e857ad37fc5fabf7016b1d52f37bea1798c98ceb8d7a",
+    "Fireline.Shared.dll": "7a9e732a0c74dd34f958ea9ca20278c5c1bcb4b719611a7aea431d1264234a87",
+    "Fireline.Simulation.dll": "cf62f29f3ed6f699d9db6c64df8d19005b3240467b3465bddc1add3f5e647cad"
+  },
+  "acceptedCapture": "docs/previews/m00-coastal/balanced-clear_initial.png",
+  "rejectedCapture": "docs/previews/m00-coastal/balanced-smoky_rejected_no_visible_fog.png"
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "com.unity.sdk.linux-arm64",
+    "version": "1.1.0",
+    "unity": "6000.3",
+    "unityRelease": "0b8",
+    "description": "This package contains the sysroot used to build and run Unity players on Arm64 Linux systems. It includes the system libraries and headers required by Unity\u2019s runtime environment to ensure compatibility with common Linux distributions during both compilation and execution.",
+    "documentationUrl": "https://docs.unity3d.com/Packages/com.unity.sdk.linux-arm64@1.1/manual/index.html",
+    "dependencies": {
+      "com.unity.sysroot.base": "1.1.0"
+    }
+  },
+  {
+    "name": "com.unity.sdk.linux-x86_64",
+    "version": "1.1.0",
+    "unity": "6000.3",
+    "unityRelease": "0b8",
+    "description": "This package contains the sysroot used to build and run Unity players on 64-bit Linux systems. It includes the system libraries and headers required by Unity\u2019s runtime environment to ensure compatibility with common Linux distributions during both compilation and execution.",
+    "documentationUrl": "https://docs.unity3d.com/Packages/com.unity.sdk.linux-x86_64@1.1/manual/index.html",
+    "dependencies": {
+      "com.unity.sysroot.base": "1.1.0"
+    }
+  },
+  {
+    "name": "com.unity.toolchain.win-x86_64-linux",
+    "version": "1.1.0",
+    "unity": "6000.3",
+    "unityRelease": "0b8",
+    "description": "This package provides a cross-compilation toolchain for building Unity players targeting Linux and Embedded Linux platforms. It is designed to run on 64-bit(x86_64) Windows hosts and supports both x86_64 and Arm64 player targets",
+    "documentationUrl": "https://docs.unity3d.com/Packages/com.unity.toolchain.win-x86_64-linux@1.1/manual/index.html",
+    "dependencies": {
+      "com.unity.sysroot.base": "1.1.0"
+    }
+  },
+  {
+    "name": "com.unity.sysroot.base",
+    "version": "1.1.0",
+    "unity": "6000.3",
+    "unityRelease": "0b8",
+    "description": "This is the base sysroot package required by all sysroot and toolchain packages",
+    "documentationUrl": "https://docs.unity3d.com/Packages/com.unity.sysroot.base@1.1/manual/index.html",
+    "dependencies": {}
+  }
+]

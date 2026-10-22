@@ -25,25 +25,28 @@ Apply this checklist to each milestone using [the workflow](docs/DOCUMENTATION_W
 
 ## M00 — Preproduction & Unity audit (start here)
 
-**Status: In Progress.** [Implementation and evidence](docs/reports/2026-10-22-m00-foundation.md). M01 remains locked while M00 acceptance gaps remain.
+**Status: In Progress.** [Original foundation](docs/reports/2026-10-22-m00-foundation.md) and [coastal/build acceptance follow-up](docs/reports/2026-10-22-m00-coastal-foundation.md). M01 remains locked while required M00 acceptance gaps remain. The official CL-415 archive was downloaded after user sign-in; conflicting listing/archive licences now block import. [Audit](AssetSources/Aircraft/CL415/AUDIT.md).
 
 - [x] Inspect existing Unity 6 HDRP project, package versions, CLI/editor tooling and Git branch; preserve original project.
 - [x] Research and resolve Unity 6.6 / HDRP 17.6 / Netcode for Entities + Transport 6.6 versions; record build integration issues.
 - [x] Verify the rendered HDRP release client and dedicated server with two separate client processes on direct-IP loopback; all three accepted smoke exits were 0.
-- [ ] Inspect `AssetSources/`, download only approved licenses, convert minimum terrain/aircraft source assets; document provenance and missing cockpit parts.
+- [x] Inspect `AssetSources/`; acquire five licensed 2K PBR surfaces and an actual Copernicus GLO-90 crop, convert/import terrain and retain provenance, pixel/hash/import checks and notices.
+- [ ] Acquire and audit the minimum CL-415 source archive, import its exterior and document moving parts, textures, scale and missing cockpit parts. **Licensing blocker:** official original OBJ archive acquired, but its included GPL notice/texture contributor conflicts with the listing’s CC BY 4.0 record. Reconcile contributor rights and notices, or audit an authorized replacement, before Unity import. No rig/pivot/cockpit validation is claimed.
 - [x] Set up six modular assemblies, 15 passing EditMode cases and minimal CI/build instructions; document actual dependency boundaries.
 - [x] Build Windows dedicated server and verify null-graphics/no-camera startup plus expected failure when clients are absent.
 - [x] Finish release client build/runtime evidence and verify opposite-role assembly exclusion in both outputs; inspect actual release screenshot after rendered warm-up.
 - [x] Add an initial calibration render scene and record named local hardware; preserve existing quality presets.
-- [ ] Establish initial 60 FPS benchmark scene and named hardware/quality preset.
+- [x] Establish a separate initial coastal render benchmark scene with named hardware/existing quality presets and a five-minute release-run harness. Generated vegetation/building/static-fog proxies do not establish production S1–S6 acceptance or a 60 FPS pass.
 
-The calibration scene is not the representative populated/coastal/smoky benchmark required for performance acceptance. Aircraft/terrain asset integration, full profiling counters and Linux execution remain outstanding.
+The original box calibration scene is not a representative performance benchmark. The new coastal proxy scene advances render-test infrastructure; game-ready aircraft/actors, full profiling counters and production scenario acceptance remain outstanding. Actual terrain/material import is now verified.
 
 - [x] Record the initial 720p diagnostic sample with raw render intervals and named hardware; no 1080p/60 FPS pass claimed.
 - [x] Map recorded slow intervals and source suspects in the [frame-loss register](docs/performance/FRAME_LOSS_REGISTER.md), verify the metrics and add rendered SVG timeline/flowchart.
 - [ ] **Deferred at user request:** resume FL-01–FL-05 attribution and only then optimize with equivalent BEFORE/AFTER measurements. Continue M00 work independently; this deferral does not waive its benchmark acceptance gate.
 - [ ] Collect representative 1080p baseline and five-minute runs, CPU/GPU execution counters, draw calls, VRAM, server tick duration and network bandwidth.
-- [ ] Validate Linux dedicated-server build/run and the supplied closed-Editor batch/CI path on a configured worker.
+- [x] Complete the initial proxy scene's matched 1080p Balanced five-minute clear/static-fog pair, inspect actual release captures, verify raw CSV summaries and render/inspect SVG interval plots with reader guides. CPU/main/GPU timing, draw calls and Unity allocated bytes were available. [Measured results](docs/performance/2026-10-22-m00-coastal.md); p95 exceeds 16.67 ms, no production pass.
+- [ ] Add missing VRAM/residency, GC, render-thread/triangle counters and actual dedicated-server tick-duration/transport-byte measurements; populate representative scenarios as their licensed assets/gameplay dependencies become available. Current proxies and clock tick counts cannot substitute for those gates.
+- [x] Validate Windows and Linux dedicated-server builds and the supplied closed-Editor batch/test path on this licensed local worker. Linux executed a five-second headless/clock negative test under WSL2 with a workspace-local Ubuntu Base root; it is not native Linux, Linux multiplayer, hosted CI or capacity qualification.
 
 Future evidence diagrams/flowcharts must be actual embedded SVG drawings with editable sources; mathematical formulas must use correctly formatted Markdown math or an SVG fallback. Explain graph axes, ticks, intervals, recording origin and annotations in plain language before each milestone's final commit. See [permanent rendering rules](docs/DOCUMENTATION_WORKFLOW.md#rendered-diagrams-and-mathematics).
 

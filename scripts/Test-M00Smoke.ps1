@@ -1,6 +1,8 @@
 param(
     [ValidateRange(1024, 65535)][int]$Port = 7979,
-    [ValidateRange(10, 120)][int]$ClientSeconds = 20
+    [ValidateRange(10, 120)][int]$ClientSeconds = 20,
+    [string]$EvidenceRoot = 'docs/reports/m00-evidence',
+    [string]$CapturePath = 'docs/previews/m00-foundation/foundation_after.png'
 )
 $ErrorActionPreference = 'Stop'
 if (-not ('FirelineM00WindowPlacement' -as [type])) {
@@ -18,8 +20,8 @@ $projectRoot = Split-Path $PSScriptRoot -Parent
 $serverExe = Join-Path $projectRoot 'Builds/WindowsServer/FirelineServer.exe'
 $clientExe = Join-Path $projectRoot 'Builds/WindowsClient/FirelineClient.exe'
 $runDirectory = Join-Path $projectRoot ('Builds/Smoke/' + (Get-Date -Format 'yyyyMMdd-HHmmss'))
-$evidenceDirectory = Join-Path $projectRoot 'docs/reports/m00-evidence'
-$capture = Join-Path $projectRoot 'docs/previews/m00-foundation/foundation_after.png'
+$evidenceDirectory = Join-Path $projectRoot $EvidenceRoot
+$capture = Join-Path $projectRoot $CapturePath
 $metrics = Join-Path $evidenceDirectory 'client-diagnostic-metrics.json'
 New-Item -ItemType Directory -Force $runDirectory, $evidenceDirectory | Out-Null
 foreach ($binary in @($serverExe, $clientExe)) {

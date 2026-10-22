@@ -15,6 +15,10 @@ namespace Fireline.Shared
         public int MinimumClients { get; private set; } = 2;
         public string CapturePath { get; private set; }
         public string MetricsPath { get; private set; }
+        public int BenchmarkSeconds { get; private set; }
+        public string BenchmarkOutput { get; private set; }
+        public string BenchmarkScenario { get; private set; } = "clear";
+        public string QualityPreset { get; private set; }
 
         public static LaunchOptions Parse(string[] args)
         {
@@ -31,6 +35,22 @@ namespace Fireline.Shared
                 string value = args[i];
                 switch (key)
                 {
+                    case "--fireline-benchmark-seconds":
+                        options.BenchmarkSeconds = ReadInteger(value, 300, 900);
+                        break;
+                    case "--fireline-benchmark-output":
+                        if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Benchmark output is empty.");
+                        options.BenchmarkOutput = value;
+                        break;
+                    case "--fireline-benchmark-scenario":
+                        if (value != "clear" && value != "smoky") throw new ArgumentException("Expected clear or smoky.");
+                        options.BenchmarkScenario = value;
+                        break;
+                    case "--fireline-quality":
+                        if (value != "Balanced" && value != "Performant" && value != "High Fidelity")
+                            throw new ArgumentException("Unknown existing quality preset.");
+                        options.QualityPreset = value;
+                        break;
                     case "--fireline-port":
                         options.Port = (ushort)ReadInteger(value, 1, 65535);
                         break;
@@ -60,6 +80,8 @@ namespace Fireline.Shared
                         throw new ArgumentException("Unknown FIRELINE option: " + key);
                 }
             }
+            if (options.BenchmarkSeconds > 0 && (options.SmokeSeconds > 0 || options.BenchmarkOutput == null))
+                throw new ArgumentException("Benchmark requires output and cannot share the smoke exit timer.");
             return options;
         }
 

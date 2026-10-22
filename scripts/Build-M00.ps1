@@ -1,7 +1,9 @@
-param([switch]$Smoke)
+param([switch]$Smoke, [switch]$LinuxServer, [string]$EvidenceRoot = 'docs/reports/m00-evidence')
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
 Push-Location $projectRoot
+$previousEvidence = $env:FIRELINE_BUILD_EVIDENCE
+$env:FIRELINE_BUILD_EVIDENCE = $EvidenceRoot
 try {
     # Batch Unity cannot share an open project's asset database. Live-editor commands
     # are documented separately so this script never closes someone's Editor.
@@ -13,23 +15,35 @@ try {
     unity test $projectRoot --editor-version 6000.6.7f1 --mode EditMode --filter Fireline.Tests --output Builds/CI/editmode.xml --timeout 600
     if ($LASTEXITCODE -ne 0) { throw 'EditMode tests failed or did not complete.' }
     [xml]$testReport = Get-Content Builds/CI/editmode.xml -Raw
-    if ([int]$testReport.'test-run'.total -lt 15 -or [int]$testReport.'test-run'.failed -ne 0) {
+    if ([int]$testReport.'test-run'.total -lt 20 -or [int]$testReport.'test-run'.failed -ne 0) {
         throw 'Test report is empty, incomplete or failing.'
     }
+    New-Item -ItemType Directory -Force $EvidenceRoot | Out-Null
+    Copy-Item -LiteralPath Builds/CI/editmode.xml -Destination (Join-Path $EvidenceRoot 'editmode.xml') -Force
     foreach ($role in @('Server', 'Client')) {
         $started = [DateTime]::UtcNow
         unity run $projectRoot --editor-version 6000.6.7f1 --timeout 1800 --log-file "Builds/CI/$role-build.log" --no-tail -- -executeMethod "Fireline.Authoring.FoundationBuild.Build$role"
         if ($LASTEXITCODE -ne 0) { throw "$role build failed." }
-        $reportPath = "docs/reports/m00-evidence/$($role.ToLowerInvariant())-build.json"
+        $reportPath = "$EvidenceRoot/$($role.ToLowerInvariant())-build.json"
         $report = Get-Content $reportPath -Raw | ConvertFrom-Json
         if ((Get-Item $reportPath).LastWriteTimeUtc -lt $started -or $report.result -ne 'Succeeded' -or $report.errors -ne 0) {
             throw "$role build report is stale or failing."
         }
         if ($role -eq 'Server' -and $report.containsVisualAssets) { throw 'Server includes visual assets.' }
-        if ($role -eq 'Server' -and (Get-Item 'docs/reports/m00-evidence/server-packed-assets.txt').Length -eq 0) {
+        if ($role -eq 'Server' -and (Get-Item "$EvidenceRoot/server-packed-assets.txt").Length -eq 0) {
             throw 'The incremental server report omitted its asset inventory; obtain a clean build report before certifying asset isolation.'
         }
     }
-    if ($Smoke) { & "$PSScriptRoot/Test-M00Smoke.ps1" }
+    if ($LinuxServer) {
+        $started = [DateTime]::UtcNow
+        unity run $projectRoot --editor-version 6000.6.7f1 --timeout 1800 --log-file Builds/CI/LinuxServer-build.log --no-tail -- -buildTarget Linux64 -executeMethod Fireline.Authoring.FoundationBuild.BuildLinuxServer
+        if ($LASTEXITCODE -ne 0) { throw 'Linux dedicated-server build failed.' }
+        $linuxPath = "$EvidenceRoot/linux-server-build.json"
+        $linux = Get-Content $linuxPath -Raw | ConvertFrom-Json
+        if ((Get-Item $linuxPath).LastWriteTimeUtc -lt $started -or $linux.result -ne 'Succeeded' -or $linux.errors -ne 0 -or $linux.containsVisualAssets) {
+            throw 'Linux server evidence is stale, failing or contains visual assets.'
+        }
+    }
+    if ($Smoke) { & "$PSScriptRoot/Test-M00Smoke.ps1" -EvidenceRoot $EvidenceRoot -CapturePath 'docs/previews/m00-coastal/foundation_regression.png' }
 }
-finally { Pop-Location }
+finally { $env:FIRELINE_BUILD_EVIDENCE = $previousEvidence; Pop-Location }

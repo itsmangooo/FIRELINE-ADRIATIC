@@ -2,16 +2,17 @@
 
 ## Project Overview
 
-**Status:** M00 Unity foundation in progress. The existing HDRP project now has modular C# assemblies, direct-IP client/server startup, foundation tests and build entry points. Flight, fire, wind, water, dispatch and persistence remain planned. The original documentation pack and project guidance are preserved; proposed mechanics and numeric budgets remain design targets pending testing.
+**Status:** M00 Unity foundation in progress. The existing HDRP project has modular C# assemblies, direct-IP client/server startup, tests, Windows/Linux build entry points and an imported coastal render benchmark. Flight, fire, wind, water, dispatch and persistence remain planned. The original documentation pack and project guidance are preserved; proposed mechanics and numeric budgets remain design targets pending testing.
 
 A persistent, self-hosted, cooperative Croatian/Herzegovinian aerial and ground firefighting simulator. Unity 6 HDRP, C#, up to 100 players per server (target, **not demonstrated**), up to 9 aircraft (design cap), server-authoritative fire/wind/water/combustion, modding, 60 FPS client target.
 
 ## Current Development Status
 
-Unity **6000.6.7f1** / HDRP **17.6.0** are retained. Netcode for Entities, Entities and Transport **6.6.0** are resolved. **15 EditMode tests pass.** Windows release client and dedicated-server builds succeeded with zero errors; one headless server and two distinct rendered clients passed local connection smoke, each exiting with code 0. The server includes no serialized HDRP assets or project materials. See the [M00 evidence report](docs/reports/2026-10-22-m00-foundation.md). M00 remains in progress for assets and representative profiling; M01–M09 remain pending.
+Unity **6000.6.7f1** / HDRP **17.6.0** are retained; Netcode for Entities, Entities and Transport **6.6.0** remain resolved. **20 EditMode tests pass**, including the closed-Editor path. Windows client/server and Linux x64 server builds succeeded with zero errors; the Windows server/two-client smoke passed. Linux also passed its headless/clock negative startup test under WSL2. Five licensed PBR surfaces and a real Petrčane DSM crop are imported into a separate benchmark scene. See the [latest M00 evidence](docs/reports/2026-10-22-m00-coastal-foundation.md). M00 remains open for the CL-415 licence conflict/import and remaining representative evidence; M01–M09 remain pending.
 
 ## Latest Development Updates
 
+- **2026-10-22 — Coastal import and build acceptance follow-up:** five audited CC0 surface sets, a 6 km Copernicus DSM crop, an initial coastal proxy workload, longer benchmark instrumentation and a verified local batch/Windows/Linux startup path. The aircraft archive was downloaded after sign-in, but conflicting CC BY/GPL notices block its import; see the [source audit](AssetSources/Aircraft/CL415/AUDIT.md). [Actual implementation, diagrams, numerical checks and limits](docs/reports/2026-10-22-m00-coastal-foundation.md).
 - **2026-10-22 — Frame-loss locations recorded; optimization deferred:** marked all 896 diagnostic intervals, including the 83.47 ms hitch at sample #2, and separated source suspects from proven findings. Added rendered SVG timeline/flowchart and permanent SVG/math formatting rules. [Investigation register](docs/performance/FRAME_LOSS_REGISTER.md).
 - **2026-10-22 — M00 foundation verified increment:** six assembly boundaries, direct-IP bootstrap, 15 passing tests, two successful Windows release builds and an accepted headless-server/two-rendered-client smoke. Added actual captures and limited calibration diagnostics. [Implementation, commands and verification](docs/reports/2026-10-22-m00-foundation.md).
 - **2026-10-22 — Permanent documentation workflow:** added project-wide evidence rules, README showcase sections, visual/physics/gameplay/performance templates, a changelog and performance history. Existing Unity content and configuration were checkpointed before documentation edits. No game feature was added. See the [workflow report](docs/reports/2026-10-22-documentation-workflow.md) and [changelog](docs/CHANGELOG.md).
@@ -26,9 +27,19 @@ M00 adds a separate calibration scene containing generated boxes and a neutral H
 
 Capture reports and compressed images belong in [docs/previews/](docs/previews/README.md). The [visual report template](docs/templates/VISUAL_CHANGE.md) records revisions, capture conditions, assets and measured or unmeasured performance impact.
 
+The separate M00 coastal workload now imports an actual 6 km Petrčane DSM crop and five PBR surface sets. Generated vegetation/buildings and a flat sea provide an initial render workload. This is an actual 1080p Balanced release capture; [provenance, earlier content and limitations](docs/previews/m00-coastal/COMPARISON.md).
+
+![M00 coastal benchmark release capture](docs/previews/m00-coastal/balanced-clear.png)
+
+![M00 release capture with corrected static fog workload](docs/previews/m00-coastal/balanced-smoky.png)
+
+The fog boxes are a static render fixture, not production smoke or authoritative fire. The first invisible-fog attempt was rejected before this corrected capture.
+
 ## Physics & Simulation Improvements
 
 The [M00 fixed tick clock comparison](docs/physics/foundation-clock/COMPARISON.md) documents the pure scheduling utility, its equations and unit assertions. Flight/fire/wind/water physics remain unimplemented. [Simulation specification](docs/SIMULATION_SPEC.md) and [aircraft specifications](docs/AIRCRAFT_SPECIFICATIONS.md) describe proposed models. Implementation comparisons belong in [docs/physics/](docs/physics/README.md).
+
+The [coastal conversion report](docs/reports/2026-10-22-m00-coastal-foundation.md#height-and-material-conversion) typesets the actual geographic/height conversion and verifies native Unity height checkpoints within 0.002 m of the imported data. This is a client geometry check, not a new authoritative physics model or a survey-accuracy claim.
 
 ## Gameplay Systems
 
@@ -36,25 +47,17 @@ Dispatch, aerial sorties, ground operations, persistent incidents and cooperativ
 
 ## Architecture & Technical Diagrams
 
-[M00's implemented architecture](docs/reports/2026-10-22-m00-foundation.md) separates Client, Server, Shared, Simulation, Authoring and Tests. Role-specific builds use separate scenes and assembly constraints; the broader [technical architecture](docs/TECHNICAL_ARCHITECTURE.md), [network protocol](docs/NETWORK_ARCHITECTURE.md) and [gameplay diagrams](docs/DIAGRAMS.md) remain proposed beyond that foundation. The documentation workflow follows this process:
+[M00's implemented architecture](docs/reports/2026-10-22-m00-foundation.md) separates Client, Server, Shared, Simulation, Authoring and Tests. Role-specific builds use separate scenes and assembly constraints. The coastal authoring/benchmark path is drawn below; [editable generator](scripts/render_m00_coastal_diagrams.py). The broader [technical architecture](docs/TECHNICAL_ARCHITECTURE.md), [network protocol](docs/NETWORK_ARCHITECTURE.md) and [gameplay diagrams](docs/DIAGRAMS.md) remain proposed beyond this foundation. The [documentation workflow](docs/DOCUMENTATION_WORKFLOW.md) retains the inspection, evidence and publishing gates.
 
-```mermaid
-flowchart LR
-    A[Inspect and checkpoint] --> B[Capture applicable baseline]
-    B --> C[Implement and verify]
-    C --> D[Collect applicable evidence]
-    D --> E[Update showcase and status]
-    E --> F{Required evidence complete?}
-    F -->|Yes| G[Commit and push verified milestone]
-    F -->|No| H[Track gaps and keep milestone open]
-    H --> D
-```
+![Implemented M00 coastal import and release-measurement flow](docs/reports/m00-coastal-evidence/diagrams/after.svg)
 
 ## Performance Benchmarks
 
 The initial **720p High Fidelity calibration diagnostic** on an i5-9400F / GTX 1660 SUPER averaged **59.73 FPS**, with **38.23 FPS 1% low** and **17.36 ms p95 frame interval** over 15 seconds while two clients ran. [Raw data, method and limits](docs/performance/2026-10-22-m00-calibration.md). This is not representative 1080p/60 FPS acceptance or an optimization comparison. No 100-player capacity is demonstrated. See [performance plan](docs/PERFORMANCE_60FPS.md) and [history](docs/PERFORMANCE_HISTORY.md).
 
 The [frame-loss register](docs/performance/FRAME_LOSS_REGISTER.md) marks the three intervals above 20 ms, source locations to investigate and deferred attribution tasks. Causes remain unproven; optimization is deferred. Its [rendered vector timeline](docs/performance/m00-frame-loss/frame-interval-timeline.svg) uses the existing data, with no new benchmark claim.
+
+The new **1080p Balanced five-minute clear/static-fog pair** averaged 60.00/60.00 FPS, with 1% lows 57.93/58.11 and p95 intervals 16.994/16.988 ms. Both exceed the 16.67 ms gate. CPU/GPU/draw-call and allocated-memory counters are recorded; generated proxy content and missing VRAM/server/bandwidth counters prevent broader acceptance. [Actual results, SVG chart, graph reader guide and limits](docs/performance/2026-10-22-m00-coastal.md). Different conditions do not prove the earlier hitch was fixed.
 
 ## Development Roadmap
 
@@ -81,7 +84,7 @@ The instructions below are retained for the original development pack. This repo
 2. Open `docs/GAME_VISION.md` and `docs/GAME_DESIGN.md` first. Read the architectural constraints in `docs/TECHNICAL_ARCHITECTURE.md`, `docs/NETWORK_ARCHITECTURE.md` and `docs/PERFORMANCE_60FPS.md`.
 3. Use `prompts/00_KICKOFF.md` as the **first Codex message**. It tells Codex to inspect and document the current project, not recreate it.
 4. Use one subsequent prompt per implementation stage. Check actual build/test evidence, commit, push, update `TASKS.md` and `docs/DEVELOPMENT_STATUS.md`.
-5. Download licensed assets from the verified/flagged links in `docs/ASSET_MANIFEST.md`; asset files are deliberately not included in this archive.
+5. Review `docs/ASSET_MANIFEST.md` before acquiring further content. Audited M00 terrain/PBR derivatives are included; original downloads remain local. Candidate listings and the licence-blocked CL-415 archive are not approved imports.
 
 ## Core docs
 

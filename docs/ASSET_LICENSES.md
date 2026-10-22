@@ -1,5 +1,13 @@
 # Asset licenses and provenance
 
+## M00 coastal source audit — 2026-10-22
+
+The five imported surfaces are Poly Haven CC0 assets: Rocky Terrain by Amal Kumar; Dry Ground Rocks, Forest Ground 01, Coast Sand 01 and Burned Ground 01 by Rob Tuytel. Checked the official asset pages and [licence](https://polyhaven.com/license), then obtained real 2K map files through the [official public API](https://github.com/Poly-Haven/Public-API/blob/master/ToS.md), using the required project-specific user-agent. Size and upstream MD5 checks passed; input/derived SHA-256, URLs and creator metadata are retained in the [acquisition manifest](../AssetSources/Environment/acquisition-manifest.json). No preview renders were used as textures.
+
+Petrčane uses an adapted Copernicus **GLO-90** DSM crop, not restricted EEA-10 or GLO-30-R data. The [official licence bundle](../AssetSources/Environment/Copernicus/cop_dem_licenses_2025.pdf), pages **19–21**, grants reproduction, distribution, communication and adaptation under its free/open terms. Required modified-source and liability notices plus subsequent-distribution obligations are in [THIRD_PARTY_ASSETS.md](../THIRD_PARTY_ASSETS.md); the benchmark build copies that notice and the bundle into `Legal/`. The upstream tile's older `eula_F.pdf` concerns restricted instances and is not used as this crop's licence. No official endorsement is implied. The [AWS registry](https://registry.opendata.aws/copernicus-dem/) and [Copernicus collection](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM) identify the dataset and source obligations.
+
+The user resolved Sketchfab authentication and the original OBJ archive was downloaded through its official button. The listing says CC BY 4.0, but the included README says GPL (no version/full text) and separately credits textures to Gary BROWN. This conflict blocks redistribution/import pending authoritative clarification covering all contributors and required notices, or an authorized replacement. [Actual archive audit, hashes, source inventory and next action](../AssetSources/Aircraft/CL415/AUDIT.md). No aircraft content is imported or shipped.
+
 ## M00 foundation provenance — 2026-10-22
 
 No third-party aircraft, vegetation, texture or audio source was acquired during the foundation increment. `FL-M00-CALIBRATION` in the [manifest](ASSET_MANIFEST.md) uses Unity-generated primitive geometry and a project-authored material without texture maps. It has no external model artist or separate attribution requirement. Original Unity HDRP starter content remains subject to its existing Unity/template terms; this report does not relabel that content CC0. Netcode and its dependencies retain their package notices under the installed Unity packages.
@@ -18,7 +26,7 @@ No third-party aircraft, vegetation, texture or audio source was acquired during
 | ID | Asset | Author | Original URL | License and URL | Changed? | Attribution text | Source hash | Used in build? | Approval |
 |---|---|---|---|---|---|---|---|---|
 | PH-ROCK-01 | Rocky Terrain | Poly Haven / page author | https://polyhaven.com/a/rocky_terrain | CC0 https://polyhaven.com/license | TBD | optional | TBD | No | Candidate |
-| SF-CL415 | CL-415 | helijah | https://sketchfab.com/3d-models/cl415-bf3eaa6a1f4f4fc18df9b05cf40de927 | CC BY, verify exact license page | TBD | Required if used | TBD | No | Candidate |
+| SF-CL415 | CL-415 | helijah / textures credited to Gary BROWN | https://sketchfab.com/3d-models/cl415-bf3eaa6a1f4f4fc18df9b05cf40de927 | Listing CC BY 4.0; embedded GPL notice unresolved | No import | Unresolved contributor/licence notices | See source-audit.json | No | Downloaded; import blocked |
 
 ## Attribution policy
 

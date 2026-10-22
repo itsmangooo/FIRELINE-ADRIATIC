@@ -73,11 +73,13 @@ As a sensitivity check only, removing the first two intervals leaves 894 interva
 
 ## Source locations to revisit later
 
+Source links and line numbers below are pinned to the original measured implementation; subsequent benchmark instrumentation does not rewrite this historical attribution record.
+
 | ID / priority | Observed issue and source location | Confidence / missing evidence | Deferred investigation |
 |---|---|---|---|
-| FL-01 · first | #1/#2 at recording start. [`ClientProbe.Capture`](../../Assets/Fireline/Client/ClientProbe.cs), lines 80–94, waits for end of frame, reads back a screenshot texture, encodes PNG and writes synchronously. Capture scheduling and metrics both use the five-rendered-second threshold (lines 50–54 and 75–76). | Source path and timing threshold are confirmed. **Capture causing #2 is a hypothesis**: no timestamp aligns readback/encoding/I/O with a particular sample. | Add timestamped capture markers; compare equivalent runs with capture disabled and enabled; inspect main/render-thread and GPU timelines before changing code. |
+| FL-01 · first | #1/#2 at recording start. [`ClientProbe.Capture`](https://github.com/itsmangooo/FIRELINE-ADRIATIC/blob/3d006ae1aecb8ba15a850d66c7a5aae96fc0c943/Assets/Fireline/Client/ClientProbe.cs), lines 80–94, waits for end of frame, reads back a screenshot texture, encodes PNG and writes synchronously. Capture scheduling and metrics both use the five-rendered-second threshold (lines 50–54 and 75–76). | Source path and timing threshold are confirmed. **Capture causing #2 is a hypothesis**: no timestamp aligns readback/encoding/I/O with a particular sample. | Add timestamped capture markers; compare equivalent runs with capture disabled and enabled; inspect main/render-thread and GPU timelines before changing code. |
 | FL-02 · next | #216 at 3.650318–3.670500 s and the smaller overruns listed above. | Location confirmed; no CPU, GPU, GC, disk or scheduling attribution recorded. | Correlate repeated intervals with CPU/GPU counters, GC events and presentation waits. Do not assign a rendering pass or model to these samples yet. |
-| FL-03 · measurement overhead | [`OnCameraRendered`](../../Assets/Fireline/Client/ClientProbe.cs), lines 69–77, checks `Camera.main` and samples every callback. [`FoundationMetrics.Sample`](../../Assets/Fireline/Client/FoundationMetrics.cs), lines 17–21, grows a list and queries Unity allocated memory per interval. | These operations execute in the measured path. Their cost and any list-growth/GC contribution were **not measured**. | Compare sampling configurations and record allocation/GC markers; preserve render validation while isolating instrumentation overhead. |
+| FL-03 · measurement overhead | [`OnCameraRendered`](https://github.com/itsmangooo/FIRELINE-ADRIATIC/blob/3d006ae1aecb8ba15a850d66c7a5aae96fc0c943/Assets/Fireline/Client/ClientProbe.cs), lines 69–77, checks `Camera.main` and samples every callback. [`FoundationMetrics.Sample`](https://github.com/itsmangooo/FIRELINE-ADRIATIC/blob/3d006ae1aecb8ba15a850d66c7a5aae96fc0c943/Assets/Fireline/Client/FoundationMetrics.cs), lines 17–21, grows a list and queries Unity allocated memory per interval. | These operations execute in the measured path. Their cost and any list-growth/GC contribution were **not measured**. | Compare sampling configurations and record allocation/GC markers; preserve render validation while isolating instrumentation overhead. |
 | FL-04 · run isolation | Two visible clients, a server, the Editor and desktop processes compete for the same machine; VSync=1. | Run conditions confirmed; CPU/GPU contention or VSync waits causing a specific hitch remain unproven. | Repeat with one rendered client, then the original two-client conditions, on the same hardware/preset; record background load and presentation timing. |
 | FL-05 · cold startup | A prior rejected run produced an unready white capture during initialization; it is outside this accepted warm sample. | Startup readiness issue observed previously; no duration or pass attribution was recorded. | Profile startup separately, with first-render/capture-ready timestamps; do not mix cold initialization with steady-run FPS. |
 
@@ -110,3 +112,14 @@ This report was generated with Python 3.14 and Matplotlib 3.11.2. The summary in
 - [ ] Collect the representative five-minute 1080p preset matrix and missing CPU/GPU/server/bandwidth counters under [M00](../../TASKS.md).
 
 M00 remains **In Progress**. This register does not unlock future gameplay milestones or waive performance acceptance.
+
+## Later coastal measurements — original diagnostic preserved
+
+The [new five-minute 1080p clear/static-fog runs](2026-10-22-m00-coastal.md) have their own raw CSVs, marked vector timeline, graph reader guide and source/binary evidence. Their longest callback gaps are:
+
+| Case | Sample | Recording start → end (s) | Gap (ms) |
+|---|---:|---:|---:|
+| Clear | #10905 | 181.732928 → 181.751686 | 18.75800 |
+| Static fog | #6887 | 114.761683 → 114.781009 | 19.32590 |
+
+Neither new run has an interval above 20 ms. Their recording origin is 30 seconds after the first rendered callback, unlike the reconstructed first-interval origin of the original graph above. They used a different scene, preset, process count and warm-up. They **do not prove the original 83.47 ms hitch was fixed**. The capture/readback occurs before their 30 s recording window, and final sorting/file writes occur after sampling; neither can explain the two later interval locations. No CPU/GPU timeline attribution was performed. FL-01–FL-05 investigation/optimization remains deferred; the current CPU/GPU timing samples may lag callbacks and do not identify a cause.

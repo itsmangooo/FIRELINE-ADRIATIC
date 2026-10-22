@@ -2,6 +2,12 @@
 
 Target: **60 FPS at 1080p on documented reference hardware**, with the build scenarios, presets and percentile gates in the [performance plan](PERFORMANCE_60FPS.md). Client rendering and 100-player dedicated-server capacity have separate acceptance gates.
 
+## 2026-10-22 — Five-minute 1080p coastal clear/static-fog release pair
+
+On i5-9400F / GTX 1660 SUPER / driver 32.0.16.1742, one visible Balanced release client at a time, Editor closed, 30 s warm-up + 300 s recording: clear averaged 59.99849 FPS, 1% low 57.93009, p95 16.99410 ms; static fog averaged 59.99851 FPS, 1% low 58.11117, p95 16.98840 ms. Both exited 0; CSV summaries matched recomputation. CPU/main/GPU timing, draw-call and Unity allocated-memory counters were available; VRAM, GC attribution, server tick duration and bandwidth remain uninstrumented.
+
+Both p95 intervals exceed the 16.67 ms gate. The imported coastal DSM/PBR scene uses generated vegetation/building/sea/fog proxies and lacks production gameplay; **no 60 FPS acceptance, optimization or server-capacity pass** is claimed. The first invisible-fog attempt was rejected and fixed before this pair. [Full conditions, raw data, actual screenshots, rendered SVG timeline, graph reader guide and pending counters](performance/2026-10-22-m00-coastal.md).
+
 ## 2026-10-22 — Existing M00 frame intervals mapped; optimization deferred
 
 Offline analysis of the diagnostic below found three intervals above 20 ms: #1 (22.02620 ms), #2 (83.47170 ms) and #216 (20.18150 ms). The largest interval spans reconstructed sample-window time 0.022026–0.105498 s. All six recorded summary fields were recomputed and matched; the original samples and full-run results remain unchanged. These are callback overruns, not confirmed dropped presentations or CPU/GPU execution measurements.

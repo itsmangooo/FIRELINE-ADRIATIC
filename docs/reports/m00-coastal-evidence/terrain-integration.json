@@ -1,0 +1,33 @@
+{
+  "method": "Live Editor TerrainData.GetHeight(x,z), compared with derived float32 source at matching row/column; 0.002m absolute tolerance. Not a survey-accuracy claim.",
+  "sizeMeters": [
+    6000,
+    128,
+    6000
+  ],
+  "resolution": 257,
+  "points": [
+    {
+      "z": 128,
+      "x": 128,
+      "sourceMeters": 21.497352600097656,
+      "unityMeters": 21.497406,
+      "absoluteErrorMeters": 5.3399902345319106e-05
+    },
+    {
+      "z": 100,
+      "x": 160,
+      "sourceMeters": 29.8624267578125,
+      "unityMeters": 29.8611984,
+      "absoluteErrorMeters": 0.0012283578125007466
+    },
+    {
+      "z": 180,
+      "x": 180,
+      "sourceMeters": 48.34121322631836,
+      "unityMeters": 48.3427925,
+      "absoluteErrorMeters": 0.0015792736816422348
+    }
+  ],
+  "passed": true
+}

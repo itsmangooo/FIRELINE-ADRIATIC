@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="792pt" height="187.2pt" viewBox="0 0 792 187.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 187.2
+L 792 187.2
+L 792 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 10.14569 134.603295
+L 178.063769 134.603295
+Q 181.636495 134.603295 181.636495 131.296864
+L 181.636495 65.168243
+Q 181.636495 61.861812 178.063769 61.861812
+L 10.14569 61.861812
+Q 6.572965 61.861812 6.572965 65.168243
+L 6.572965 131.296864
+Q 6.572965 134.603295 10.14569 134.603295
+z
+" clip-path="url(#pa80a78b9c0)" style="fill: #edf6fb; stroke: #2676a3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 183.637779 98.232553
+Q 193.070201 98.232553 201.384589 98.232553
+" clip-path="url(#pa80a78b9c0)" style="fill: none; stroke: #2676a3; stroke-linecap: round"/>
+    <path d="M 195.784589 95.432553
+L 201.384589 98.232553
+L 195.784589 101.032553
+z
+" clip-path="url(#pa80a78b9c0)" style="fill: #2676a3; stroke: #2676a3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 210.218295 134.603295
+L 378.136375 134.603295
+Q 381.7091 134.603295 381.7091 131.296864
+L 381.7091 65.168243
+Q 381.7091 61.861812 378.136375 61.861812
+L 210.218295 61.861812
+Q 206.64557 61.861812 206.64557 65.168243
+L 206.64557 131.296864
+Q 206.64557 134.603295 210.218295 134.603295
+z
+" clip-path="url(#pa80a78b9c0)" style="fill: #edf6fb; stroke: #2676a3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 383.710384 98.232553
+Q 393.142806 98.232553 401.457194 98.232553
+" clip-path="url(#pa80a78b9c0)" style="fill: none; stroke: #2676a3; stroke-linecap: round"/>
+    <path d="M 395.857194 95.432553
+L 401.457194 98.232553
+L 395.857194 101.032553
+z
+" clip-path="url(#pa80a78b9c0)" style="fill: #2676a3; stroke: #2676a3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 410.2909 134.603295
+L 578.20898 134.603295
+Q 581.781705 134.603295 581.781705 131.296864
+L 581.781705 65.168243
+Q 581.781705 61.861812 578.20898 61.861812
+L 410.2909 61.861812
+Q 406.718175 61.861812 406.718175 65.168243
+L 406.718175 131.296864
+Q 406.718175 134.603295 410.2909 134.603295
+z
+" clip-path="url(#pa80a78b9c0)" style="fill: #edf6fb; stroke: #2676a3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 583.782989 98.232553
+Q 593.215411 98.232553 601.529799 98.232553
+" clip-path="url(#pa80a78b9c0)" style="fill: none; stroke: #2676a3; stroke-linecap: round"/>
+    <path d="M 595.929799 95.432553
+L 601.529799 98.232553
+L 595.929799 101.032553
+z
+" clip-path="url(#pa80a78b9c0)" style="fill: #2676a3; stroke: #2676a3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 610.363505 134.603295
+L 778.281585 134.603295
+Q 781.85431 134.603295 781.85431 131.296864
+L 781.85431 65.168243
+Q 781.85431 61.861812 778.281585 61.861812
+L 610.363505 61.861812
+Q 606.79078 61.861812 606.79078 65.168243
+L 606.79078 131.296864
+Q 606.79078 134.603295 610.363505 134.603295
+z
+" clip-path="url(#pa80a78b9c0)" style="fill: #edf6fb; stroke: #2676a3; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="94.10473" y="100.8306" transform="rotate(-0 94.10473 100.8306)">Starter sky / lighting</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="294.177335" y="100.8306" transform="rotate(-0 294.177335 100.8306)">Generated box scene</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(443.621815 94.829233)">No imported coastal</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(442.026502 106.831967)">DSM or PBR surfaces</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(639.27567 94.829233)">Short 720p diagnostic</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(643.436608 106.831967)">896 render intervals</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="396" y="168.328891" transform="rotate(-0 396 168.328891)">No coastal heightfield baseline existed; no comparative speedup can be calculated.</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 13px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="396" y="12.878209" transform="rotate(-0 396 12.878209)">BEFORE: M00 calibration foundation at db4ab83</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pa80a78b9c0">
+   <rect x="3.00024" y="18.878209" width="785.99952" height="165.321551"/>
+  </clipPath>
+ </defs>
+</svg>

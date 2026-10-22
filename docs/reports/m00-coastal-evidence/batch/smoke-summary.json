@@ -1,0 +1,78 @@
+{
+  "clientRuntimeHashes": [
+    {
+      "name": "Fireline.Client.dll",
+      "sha256": "078702698B78E54148A5DF6EDB143EA17A6ED50B32DE6A5ABA8AA86553F8B64C"
+    },
+    {
+      "name": "Fireline.Shared.dll",
+      "sha256": "7A9E732A0C74DD34F958EA9CA20278C5C1BCB4B719611A7AEA431D1264234A87"
+    },
+    {
+      "name": "Fireline.Simulation.dll",
+      "sha256": "CF62F29F3ED6F699D9DB6C64DF8D19005B3240467B3465BDDC1ADD3F5E647CAD"
+    }
+  ],
+  "serverRuntimeHashes": [
+    {
+      "name": "Fireline.Server.dll",
+      "sha256": "8E1FD5AAC6AF13F1DFDB1060F9301E8D614983D4161696F256AB5FAFDB04B3E4"
+    },
+    {
+      "name": "Fireline.Shared.dll",
+      "sha256": "13CD365B0C5AC25E4FE73755CDF8858C06367739E507F8E766F6AF17CC982AF4"
+    },
+    {
+      "name": "Fireline.Simulation.dll",
+      "sha256": "E2DBF9F2AE69A9CAB3BC173C06CFDB5C3F6C67F0D9215694A1CAC130A920F9EA"
+    }
+  ],
+  "processes": [
+    {
+      "role": "client-1",
+      "exitCode": 0,
+      "markers": [
+        "FIRELINE_CLIENT_START",
+        "FIRELINE_CLIENT_RENDERER graphics=Direct3D12 pipeline=HDRenderPipelineAsset quality=High Fidelity",
+        "FIRELINE_CLIENT_CONNECTED networkId=2",
+        "FIRELINE_CAPTURE_SAVED foundation_regression.png",
+        "FIRELINE_CLIENT_SMOKE passed=True frames=1190 renderedFrames=1189",
+        "FIRELINE_METRICS_SAVED client-diagnostic-metrics.json"
+      ],
+      "pid": 21824
+    },
+    {
+      "role": "client-2",
+      "exitCode": 0,
+      "markers": [
+        "FIRELINE_CLIENT_START",
+        "FIRELINE_CLIENT_RENDERER graphics=Direct3D12 pipeline=HDRenderPipelineAsset quality=High Fidelity",
+        "FIRELINE_CLIENT_CONNECTED networkId=1",
+        "FIRELINE_CLIENT_SMOKE passed=True frames=1196 renderedFrames=1195"
+      ],
+      "pid": 30436
+    },
+    {
+      "role": "server",
+      "exitCode": 0,
+      "markers": [
+        "FIRELINE_SERVER_START endpoint=127.0.0.1:7979",
+        "FIRELINE_SERVER_HEADLESS valid=True graphics=Null cameras=0",
+        "FIRELINE_SERVER_CONNECTIONS count=0",
+        "FIRELINE_SERVER_CONNECTIONS count=1",
+        "FIRELINE_SERVER_CONNECTIONS count=2",
+        "FIRELINE_SERVER_CONNECTIONS count=1",
+        "FIRELINE_SERVER_CONNECTIONS count=0",
+        "FIRELINE_SERVER_SMOKE passed=True peakClients=2 ticks=4799"
+      ],
+      "pid": 23440
+    }
+  ],
+  "clientSha256": "9806ABDE4A406ED68647E9505852C49F6AA72A372F4F084E2AA2821AFFEA57A2",
+  "rawLogs": "Builds\\Smoke\\20261022-211050",
+  "port": 7979,
+  "scope": "One local dedicated server and two rendered client processes; connection handshake only",
+  "serverSha256": "3CACBB9917B8980B3B9E91E6120DE4D7456F108EE9B88622F5B85F7F3AEFF26F",
+  "passed": true,
+  "utc": "2026-10-22T19:12:29.0794350Z"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "balanced-clear",
+  "exitCode": 0,
+  "processId": 24716,
+  "metrics": "docs\\reports\\m00-coastal-evidence\\benchmarks\\20261022-212345\\balanced-clear.json",
+  "capture": "docs/previews/m00-coastal/balanced-clear_initial.png",
+  "markers": [
+    "FIRELINE_CLIENT_START",
+    "FIRELINE_CLIENT_RENDERER graphics=Direct3D12 pipeline=HDRenderPipelineAsset quality=Balanced",
+    "FIRELINE_BENCHMARK_START scenario=clear seconds=300 warmup=30",
+    "FIRELINE_CAPTURE_SAVED balanced-clear.png",
+    "FIRELINE_BENCHMARK_COMPLETE samples=18000 renderedSeconds=330.005"
+  ],
+  "averageFps": 59.998447640165075,
+  "p95FrameMs": 16.902799999996887
+}

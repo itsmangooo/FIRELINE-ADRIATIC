@@ -1,0 +1,12 @@
+{
+    "role": "benchmark-client",
+    "unity": "6000.6.7f1",
+    "result": "Succeeded",
+    "errors": 0,
+    "warnings": 639,
+    "seconds": 21.6322777,
+    "bytes": 267439895,
+    "development": false,
+    "subtarget": 2,
+    "containsVisualAssets": true
+}

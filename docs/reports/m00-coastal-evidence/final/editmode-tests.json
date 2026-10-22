@@ -1,0 +1,153 @@
+{
+  "status": "completed",
+  "duration": 0.02,
+  "summary": {
+    "total": 20,
+    "passed": 20,
+    "failed": 0,
+    "skipped": 0,
+    "inconclusive": 0
+  },
+  "results": [
+    {
+      "FullName": "Fireline.Tests.FoundationTests.BenchmarkUsesSeparateFiveMinuteTimerAndExistingPresets",
+      "Status": "Passed",
+      "Duration": 0.0001212,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.ClockUsesFixedStepSecondsAndMonotonicTicks",
+      "Status": "Passed",
+      "Duration": 7.97E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.DefaultsKeepServerLocalAndClientDisconnected",
+      "Status": "Passed",
+      "Duration": 5.2E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.ExplicitEndpointAndSmokeOptionsIgnoreUnityArguments",
+      "Status": "Passed",
+      "Duration": 5.99E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-port\",\"0\")",
+      "Status": "Passed",
+      "Duration": 9.26E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-port\",\"65536\")",
+      "Status": "Passed",
+      "Duration": 7.8E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-port\",\"-1\")",
+      "Status": "Passed",
+      "Duration": 7.41E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-connect\",\"0.0.0.0\")",
+      "Status": "Passed",
+      "Duration": 7.14E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-connect\",\"not-an-ip\")",
+      "Status": "Passed",
+      "Duration": 7.67E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-smoke-seconds\",\"0\")",
+      "Status": "Passed",
+      "Duration": 7.65E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-smoke-seconds\",\"301\")",
+      "Status": "Passed",
+      "Duration": 7.47E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-min-clients\",\"0\")",
+      "Status": "Passed",
+      "Duration": 0.0001368,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-typo\",\"1\")",
+      "Status": "Passed",
+      "Duration": 8.48E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected(\"--fireline-benchmark-seconds\",\"299\")",
+      "Status": "Passed",
+      "Duration": 0.0001012,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected(\"--fireline-benchmark-seconds\",\"901\")",
+      "Status": "Passed",
+      "Duration": 7.52E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected(\"--fireline-benchmark-scenario\",\"unknown\")",
+      "Status": "Passed",
+      "Duration": 6.89E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected(\"--fireline-quality\",\"invented-preset\")",
+      "Status": "Passed",
+      "Duration": 6.44E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.MissingAndDuplicateValuesAreRejected",
+      "Status": "Passed",
+      "Duration": 8.11E-05,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.ServerSceneHasNoVisualAssetDependencies",
+      "Status": "Passed",
+      "Duration": 0.0004105,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Fireline.Tests.FoundationTests.SimulationAssemblyHasNoUnityOrPresentationDependencies",
+      "Status": "Passed",
+      "Duration": 6.17E-05,
+      "Message": null,
+      "StackTrace": null
+    }
+  ]
+}

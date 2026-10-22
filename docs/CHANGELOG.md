@@ -2,6 +2,15 @@
 
 Record meaningful development changes in dated entries, newest first. Link implementation evidence and disclose limitations. Plans and templates are not completed game features.
 
+## 2026-10-22 — M00 coastal import, Linux startup and batch verification
+
+- Acquired five audited Poly Haven CC0 surface sets and a real Copernicus GLO-90 crop, with exact source/derivative hashes, full mask/import verification and required distribution notices. Added a separate coastal render scene with explicitly generated vegetation/building/sea/fog proxies and actual [visual evidence](previews/m00-coastal/COMPARISON.md).
+- Added a longer release benchmark path, 30 rendered seconds of warm-up, existing-preset selection, optional CPU/GPU/draw-call sampling and a bounded recording lifetime. [Implemented diagrams, mathematical conversion, numerical checks and limits](reports/2026-10-22-m00-coastal-foundation.md).
+- Rejected an invisible-fog capture, corrected volumetric depth/camera overrides, then completed a matched 1080p Balanced clear/static-fog pair with actual release captures. Both averaged 60.00 FPS, with p95 16.994/16.988 ms: the strict 16.67 ms gate is not passed. [Raw counters, SVG timeline and graph explanation](performance/2026-10-22-m00-coastal.md). Optimization remains deferred.
+- Verified 20 EditMode tests, the closed-Editor batch path, Windows client/server builds, Linux x64 server cross-build and Linux negative startup under workspace-local Ubuntu/WSL2. The Windows server/two-client smoke also passed on the final rebuilt client. Full builds retain nonzero warning counts; the reports record them.
+- Unity auto-installed the required Linux 1.1.0 SDK/toolchain dependencies; existing render/network package versions and original scenes/presets remain unchanged. No hosted CI, native Linux qualification, production 60 FPS pass, game-ready aircraft or gameplay fire/wind model is claimed.
+- M00 remains open: the official CL-415 archive was acquired after sign-in, but conflicting listing/archive licence notices block import. [Audit](../AssetSources/Aircraft/CL415/AUDIT.md). Remaining representative evidence is tracked separately. Optimization remains deferred and M01 has not started.
+
 ## 2026-10-22 — Frame-loss register and rendered documentation rules
 
 - Analyzed the existing 896 M00 callback intervals: three exceed 20 ms; the largest is 83.47170 ms at sample #2. Added a [location register](performance/FRAME_LOSS_REGISTER.md), every-sample flags, recomputed metrics, a reproducible analyzer, and actual SVG/PNG timeline and flowchart.

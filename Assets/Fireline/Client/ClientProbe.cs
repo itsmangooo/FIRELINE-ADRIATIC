@@ -28,6 +28,8 @@ namespace Fireline.Client
 
         private void Start()
         {
+            if (FoundationBootstrap.Options.QualityPreset != null)
+                QualitySettings.SetQualityLevel(System.Array.IndexOf(QualitySettings.names, FoundationBootstrap.Options.QualityPreset), true);
             DontDestroyOnLoad(gameObject);
             started = Time.realtimeSinceStartupAsDouble;
             connections = FoundationBootstrap.RuntimeWorld.EntityManager.CreateEntityQuery(typeof(NetworkId));

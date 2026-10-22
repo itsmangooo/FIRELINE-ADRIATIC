@@ -54,6 +54,30 @@ namespace Fireline.Tests
         }
 
         [Test]
+        public void BenchmarkUsesSeparateFiveMinuteTimerAndExistingPresets()
+        {
+            var options = LaunchOptions.Parse(new[] { "--fireline-benchmark-seconds", "300",
+                "--fireline-benchmark-output", "run.json", "--fireline-benchmark-scenario", "smoky",
+                "--fireline-quality", "Balanced" });
+            Assert.That(options.BenchmarkSeconds, Is.EqualTo(300));
+            Assert.That(options.BenchmarkScenario, Is.EqualTo("smoky"));
+            Assert.That(options.QualityPreset, Is.EqualTo("Balanced"));
+            Assert.That(options.SmokeSeconds, Is.Zero);
+            Assert.Throws<ArgumentException>(() => LaunchOptions.Parse(new[] { "--fireline-benchmark-seconds", "300" }));
+            Assert.Throws<ArgumentException>(() => LaunchOptions.Parse(new[] { "--fireline-benchmark-seconds", "300",
+                "--fireline-benchmark-output", "run.json", "--fireline-smoke-seconds", "20" }));
+        }
+
+        [TestCase("--fireline-benchmark-seconds", "299")]
+        [TestCase("--fireline-benchmark-seconds", "901")]
+        [TestCase("--fireline-benchmark-scenario", "unknown")]
+        [TestCase("--fireline-quality", "invented-preset")]
+        public void InvalidBenchmarkConfigurationIsRejected(string key, string value)
+        {
+            Assert.Throws<ArgumentException>(() => LaunchOptions.Parse(new[] { key, value }));
+        }
+
+        [Test]
         public void ClockUsesFixedStepSecondsAndMonotonicTicks()
         {
             var clock = new TickClock(60);

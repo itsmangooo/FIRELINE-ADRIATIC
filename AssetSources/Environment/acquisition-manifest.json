@@ -1,0 +1,249 @@
+{
+  "materials": [
+    {
+      "id": "rocky_terrain",
+      "author": {
+        "Amal Kumar": "All"
+      },
+      "source": "https://polyhaven.com/a/rocky_terrain",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://polyhaven.com/license",
+      "inputs": {
+        "Diffuse": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/rocky_terrain/rocky_terrain_diff_2k.jpg",
+          "bytes": 3287952,
+          "sha256": "b6f927896afeaf7f39fc54dbe08de6a4198ccc68e7e996eaece00e2d06f21261"
+        },
+        "nor_dx": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/rocky_terrain/rocky_terrain_nor_dx_2k.jpg",
+          "bytes": 4169068,
+          "sha256": "c70e78677e3f1d510c848bccb85789e5a09de08fbc5e024b4b21203b55ddcd05"
+        },
+        "AO": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/rocky_terrain/rocky_terrain_ao_2k.jpg",
+          "bytes": 2192442,
+          "sha256": "dd8182d2461c13f62d18cad76d7769cc82bd4562f5de9354df0409cee73f1533"
+        },
+        "Rough": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/rocky_terrain/rocky_terrain_rough_2k.jpg",
+          "bytes": 1660907,
+          "sha256": "8bfc602c2933a69e84eda2e0ec0c42fa2414956e8d54e47ab1922e264dd4fcfd"
+        }
+      },
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "sourceScaleMeters": null,
+      "mask": "R=0 metallic, G=AO, B=128/255 neutral height, A=255-roughness; JPEG source precision",
+      "outputHashes": {
+        "albedo.jpg": "b6f927896afeaf7f39fc54dbe08de6a4198ccc68e7e996eaece00e2d06f21261",
+        "normal_dx.jpg": "c70e78677e3f1d510c848bccb85789e5a09de08fbc5e024b4b21203b55ddcd05",
+        "terrain_mask.png": "6d2bcf37a91c4b9e3c7ac97751f8815be4009fc5c83df85a04ad03d99bf112fb"
+      }
+    },
+    {
+      "id": "dry_ground_rocks",
+      "author": {
+        "Rob Tuytel": "All"
+      },
+      "source": "https://polyhaven.com/a/dry_ground_rocks",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://polyhaven.com/license",
+      "inputs": {
+        "Diffuse": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/dry_ground_rocks/dry_ground_rocks_diff_2k.jpg",
+          "bytes": 3428360,
+          "sha256": "ebfb8b98b48a4fcafac354d1e206944824c549e93ea6d977f69664f0dc3dbb6a"
+        },
+        "nor_dx": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/dry_ground_rocks/dry_ground_rocks_nor_dx_2k.jpg",
+          "bytes": 5426178,
+          "sha256": "af1c800442a5541597ceab75c8133b9561ce64a66755cb5f9a6a5fe4417ec4cd"
+        },
+        "AO": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/dry_ground_rocks/dry_ground_rocks_ao_2k.jpg",
+          "bytes": 2361466,
+          "sha256": "d1ea8fe7260e21dce9734e18d3fdbe5d159a4f0e47772279370a9e57b7c53b8b"
+        },
+        "Rough": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/dry_ground_rocks/dry_ground_rocks_rough_2k.jpg",
+          "bytes": 1890402,
+          "sha256": "261aa42d1626d7b71675d918239f4b2be10d40c00bd9f954273a5aba4a19baaf"
+        }
+      },
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "sourceScaleMeters": "4M x 4M",
+      "mask": "R=0 metallic, G=AO, B=128/255 neutral height, A=255-roughness; JPEG source precision",
+      "outputHashes": {
+        "albedo.jpg": "ebfb8b98b48a4fcafac354d1e206944824c549e93ea6d977f69664f0dc3dbb6a",
+        "normal_dx.jpg": "af1c800442a5541597ceab75c8133b9561ce64a66755cb5f9a6a5fe4417ec4cd",
+        "terrain_mask.png": "d905920aae1039fb0275b3b3c8907de97e73f3286354f88a9e75e8f9a16fb04b"
+      }
+    },
+    {
+      "id": "forrest_ground_01",
+      "author": {
+        "Rob Tuytel": "All"
+      },
+      "source": "https://polyhaven.com/a/forrest_ground_01",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://polyhaven.com/license",
+      "inputs": {
+        "Diffuse": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/forrest_ground_01/forrest_ground_01_diff_2k.jpg",
+          "bytes": 3077552,
+          "sha256": "e4d557ff61a0b42712a58e8a2e91c6010738977d4e172b7af47abd7d406ae735"
+        },
+        "nor_dx": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/forrest_ground_01/forrest_ground_01_nor_dx_2k.jpg",
+          "bytes": 5664401,
+          "sha256": "fcc8900b8f1d67d3ff242ad3111b91d2a72d8183c850f1d8ae21eaf9c67a5ba4"
+        },
+        "AO": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/forrest_ground_01/forrest_ground_01_ao_2k.jpg",
+          "bytes": 2493578,
+          "sha256": "3da52f2f2182f2cf0a7b417e10764ee1ff446df0bc9fb12d49c4e3570ea3effe"
+        },
+        "Rough": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/forrest_ground_01/forrest_ground_01_rough_2k.jpg",
+          "bytes": 920422,
+          "sha256": "e09258c7f055156a7607f1b21dccf38c7efd847e7d030271d5ffcc4a722df37d"
+        }
+      },
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "sourceScaleMeters": null,
+      "mask": "R=0 metallic, G=AO, B=128/255 neutral height, A=255-roughness; JPEG source precision",
+      "outputHashes": {
+        "albedo.jpg": "e4d557ff61a0b42712a58e8a2e91c6010738977d4e172b7af47abd7d406ae735",
+        "normal_dx.jpg": "fcc8900b8f1d67d3ff242ad3111b91d2a72d8183c850f1d8ae21eaf9c67a5ba4",
+        "terrain_mask.png": "fa09985d053b32d5adcc7f4634e2f74931fc579f17462db44f3d79e9c2d985c9"
+      }
+    },
+    {
+      "id": "coast_sand_01",
+      "author": {
+        "Rob Tuytel": "All"
+      },
+      "source": "https://polyhaven.com/a/coast_sand_01",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://polyhaven.com/license",
+      "inputs": {
+        "Diffuse": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/coast_sand_01/coast_sand_01_diff_2k.jpg",
+          "bytes": 3552676,
+          "sha256": "e1c37ea8b4282fda612b0584d864ca4eef2da28c2fa9f3930cad9209414eb979"
+        },
+        "nor_dx": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/coast_sand_01/coast_sand_01_nor_dx_2k.jpg",
+          "bytes": 4628392,
+          "sha256": "c0cdddb10542448d04f520691e32754c3a6f3c8c98ae374bb4b3dbbaf20cfaac"
+        },
+        "AO": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/coast_sand_01/coast_sand_01_ao_2k.jpg",
+          "bytes": 2814916,
+          "sha256": "23b8d335931871b04ebe5c2a77b62ecb14a169058d784ff86426d57c5e6bb9cc"
+        },
+        "Rough": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/coast_sand_01/coast_sand_01_rough_2k.jpg",
+          "bytes": 1389332,
+          "sha256": "93caeb7332d1593702d97a59040ce178a27c9d705b30c55413e0d2507e09a762"
+        }
+      },
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "sourceScaleMeters": null,
+      "mask": "R=0 metallic, G=AO, B=128/255 neutral height, A=255-roughness; JPEG source precision",
+      "outputHashes": {
+        "albedo.jpg": "e1c37ea8b4282fda612b0584d864ca4eef2da28c2fa9f3930cad9209414eb979",
+        "normal_dx.jpg": "c0cdddb10542448d04f520691e32754c3a6f3c8c98ae374bb4b3dbbaf20cfaac",
+        "terrain_mask.png": "01b201b19575b915d32dbc4905fe988af6bd321be7af5b7fd2b9ac0e1d096ba2"
+      }
+    },
+    {
+      "id": "burned_ground_01",
+      "author": {
+        "Rob Tuytel": "All"
+      },
+      "source": "https://polyhaven.com/a/burned_ground_01",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://polyhaven.com/license",
+      "inputs": {
+        "Diffuse": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/burned_ground_01/burned_ground_01_diff_2k.jpg",
+          "bytes": 4127752,
+          "sha256": "3d7f67558e6ec57a50b56e196c37665ea4a1b3d7f8dc4049618f9002e08c109d"
+        },
+        "nor_dx": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/burned_ground_01/burned_ground_01_nor_dx_2k.jpg",
+          "bytes": 1453672,
+          "sha256": "227ccf4aefcaa546d23b8bf0147749329a279fdc9907e8cdcd5b90487095ea69"
+        },
+        "AO": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/burned_ground_01/burned_ground_01_ao_2k.jpg",
+          "bytes": 2184988,
+          "sha256": "660f2a3c8f38d21a06c279309e57ac7f5a00677374391f06d5009cdf909b6970"
+        },
+        "Rough": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/burned_ground_01/burned_ground_01_rough_2k.jpg",
+          "bytes": 1358903,
+          "sha256": "7ab3d961e8d6bf8ae56e993dc32df3b5466d257f4c7547e8739b91615f45d1a9"
+        }
+      },
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "sourceScaleMeters": null,
+      "mask": "R=0 metallic, G=AO, B=128/255 neutral height, A=255-roughness; JPEG source precision",
+      "outputHashes": {
+        "albedo.jpg": "3d7f67558e6ec57a50b56e196c37665ea4a1b3d7f8dc4049618f9002e08c109d",
+        "normal_dx.jpg": "227ccf4aefcaa546d23b8bf0147749329a279fdc9907e8cdcd5b90487095ea69",
+        "terrain_mask.png": "ab613596e6034900bb3d75bc05a418eb8958f31dc059dc022a3a04e6f3ccc33d"
+      }
+    }
+  ],
+  "heightfield": {
+    "source": {
+      "url": "https://copernicus-dem-90m.s3.amazonaws.com/Copernicus_DSM_COG_30_N44_00_E015_00_DEM/Copernicus_DSM_COG_30_N44_00_E015_00_DEM.tif",
+      "bytes": 4859003,
+      "sha256": "9cb2975e0c48f8f00f7b7673d0d0fe60bc0f277255feb2f9d249758be91c7a26"
+    },
+    "dataset": "Copernicus GLO-90 DSM, AWS 2021 release",
+    "licenseBundle": "AssetSources/Environment/Copernicus/cop_dem_licenses_2025.pdf, pages 19-21",
+    "centerLatitude": 44.19,
+    "centerLongitude": 15.16,
+    "sizeMeters": 6000.0,
+    "resolution": 257,
+    "heightRangeMeters": [
+      0.0,
+      71.54148864746094
+    ],
+    "heightDatum": "EGM2008",
+    "landFractionAbove1m": 0.4783418371209254,
+    "format": "little-endian float32 meters, x=east fastest, rows south to north",
+    "georeference": "spherical local equirectangular, radius 6371000m, bilinear resampling; DSM not bare-earth survey",
+    "inputPixelScale": [
+      0.0008333333333333334,
+      0.0008333333333333334,
+      0.0
+    ],
+    "inputTiePoint": [
+      0.0,
+      0.0,
+      0.0,
+      15.0,
+      45.0,
+      0.0
+    ],
+    "outputSha256": "a15f0c1d5970437af68af4590b0321c744a7ee3df1273c5d9bfb2e6dd166cc03"
+  }
+}

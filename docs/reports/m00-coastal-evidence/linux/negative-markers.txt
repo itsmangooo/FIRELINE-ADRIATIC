@@ -1,0 +1,4 @@
+FIRELINE_SERVER_START endpoint=127.0.0.1:7991
+FIRELINE_SERVER_HEADLESS valid=True graphics=Null cameras=0
+FIRELINE_SERVER_CONNECTIONS count=0
+FIRELINE_SERVER_SMOKE passed=False peakClients=0 ticks=300

@@ -15,7 +15,7 @@ namespace Fireline.Authoring
     {
         public const string ClientScene = "Assets/Fireline/Scenes/M00_Client.unity";
         public const string ServerScene = "Assets/Fireline/Scenes/M00_Server.unity";
-        private const string Evidence = "docs/reports/m00-evidence";
+        private static string Evidence => Environment.GetEnvironmentVariable("FIRELINE_BUILD_EVIDENCE") ?? "docs/reports/m00-evidence";
 
         [MenuItem("FIRELINE/M00/Create missing foundation scenes")]
         public static void CreateScenes()
@@ -76,16 +76,18 @@ namespace Fireline.Authoring
 
         public static void BuildClient() => Build(false);
         public static void BuildServer() => Build(true);
+        public static void BuildBenchmarkClient() => Build(false, benchmark: true);
+        public static void BuildLinuxServer() => Build(true, linux: true);
 
-        private static void Build(bool server)
+        private static void Build(bool server, bool benchmark = false, bool linux = false)
         {
             if (BuildPipeline.isBuildingPlayer || EditorApplication.isCompiling || EditorApplication.isPlayingOrWillChangePlaymode)
                 throw new InvalidOperationException("Wait until the Editor is idle before building.");
 
-            string role = server ? "server" : "client";
+            string role = linux ? "linux-server" : benchmark ? "benchmark-client" : server ? "server" : "client";
             Directory.CreateDirectory(Evidence);
             string resultPath = $"{Evidence}/{role}-build.json";
-            string scene = server ? ServerScene : ClientScene;
+            string scene = benchmark ? CoastalBenchmarkAuthoring.ScenePath : server ? ServerScene : ClientScene;
             if (!File.Exists(scene))
                 throw new BuildFailedException("Run FoundationBuild.CreateScenes first.");
 
@@ -104,6 +106,7 @@ namespace Fireline.Authoring
             int quality = QualitySettings.GetQualityLevel();
             var oldSubtarget = EditorUserBuildSettings.standaloneBuildSubtarget;
             var oldBackend = PlayerSettings.GetScriptingBackend(server ? NamedBuildTarget.Server : NamedBuildTarget.Standalone);
+            bool oldFrameTiming = PlayerSettings.enableFrameTimingStats;
             try
             {
                 if (server)
@@ -118,13 +121,14 @@ namespace Fireline.Authoring
                     QualitySettings.SetQualityLevel(Array.IndexOf(QualitySettings.names, "Balanced"), false);
                 }
                 PlayerSettings.SetScriptingBackend(server ? NamedBuildTarget.Server : NamedBuildTarget.Standalone, ScriptingImplementation.Mono2x);
+                if (benchmark) PlayerSettings.enableFrameTimingStats = true;
                 var options = new BuildPlayerOptions
                 {
                     scenes = new[] { scene },
-                    locationPathName = server ? "Builds/WindowsServer/FirelineServer.exe" : "Builds/WindowsClient/FirelineClient.exe",
-                    target = BuildTarget.StandaloneWindows64,
+                    locationPathName = linux ? "Builds/LinuxServer/FirelineServer.x86_64" : benchmark ? "Builds/WindowsBenchmark/FirelineBenchmark.exe" : server ? "Builds/WindowsServer/FirelineServer.exe" : "Builds/WindowsClient/FirelineClient.exe",
+                    target = linux ? BuildTarget.StandaloneLinux64 : BuildTarget.StandaloneWindows64,
                     subtarget = (int)(server ? StandaloneBuildSubtarget.Server : StandaloneBuildSubtarget.Player),
-                    options = BuildOptions.DetailedBuildReport | BuildOptions.StrictMode,
+                    options = BuildOptions.DetailedBuildReport | BuildOptions.StrictMode | (server ? BuildOptions.CleanBuildCache : BuildOptions.None),
                     extraScriptingDefines = server ? Array.Empty<string>() : new[] { "UNITY_CLIENT" }
                 };
                 var report = BuildPipeline.BuildPlayer(options);
@@ -146,6 +150,13 @@ namespace Fireline.Authoring
                 File.WriteAllText(resultPath, JsonUtility.ToJson(result, true));
                 if (report.summary.result != BuildResult.Succeeded || (server && visualAssets))
                     throw new BuildFailedException("M00 build or server asset isolation failed: " + resultPath);
+                if (benchmark)
+                {
+                    string legal = Path.Combine(Path.GetDirectoryName(options.locationPathName), "Legal");
+                    Directory.CreateDirectory(legal);
+                    File.Copy("THIRD_PARTY_ASSETS.md", Path.Combine(legal, "THIRD_PARTY_ASSETS.md"), true);
+                    File.Copy("AssetSources/Environment/Copernicus/cop_dem_licenses_2025.pdf", Path.Combine(legal, "cop_dem_licenses_2025.pdf"), true);
+                }
                 string failurePath = $"{Evidence}/{role}-build-failure.txt";
                 if (File.Exists(failurePath)) File.Delete(failurePath);
                 Debug.Log($"FIRELINE_BUILD_SUCCESS role={role}");
@@ -163,6 +174,7 @@ namespace Fireline.Authoring
                 QualitySettings.SetQualityLevel(quality, false);
                 EditorUserBuildSettings.standaloneBuildSubtarget = oldSubtarget;
                 PlayerSettings.SetScriptingBackend(server ? NamedBuildTarget.Server : NamedBuildTarget.Standalone, oldBackend);
+                PlayerSettings.enableFrameTimingStats = oldFrameTiming;
                 AssetDatabase.SaveAssets();
             }
         }

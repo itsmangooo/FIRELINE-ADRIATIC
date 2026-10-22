@@ -1,0 +1,4 @@
+FIRELINE_CLIENT_START
+FIRELINE_CLIENT_RENDERER graphics=Direct3D12 pipeline=HDRenderPipelineAsset quality=Balanced
+FIRELINE_CLIENT_CONNECTED networkId=2
+FIRELINE_CLIENT_SMOKE passed=True frames=1188 renderedFrames=1187

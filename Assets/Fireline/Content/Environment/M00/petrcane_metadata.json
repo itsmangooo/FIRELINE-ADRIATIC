@@ -1,0 +1,35 @@
+{
+  "source": {
+    "url": "https://copernicus-dem-90m.s3.amazonaws.com/Copernicus_DSM_COG_30_N44_00_E015_00_DEM/Copernicus_DSM_COG_30_N44_00_E015_00_DEM.tif",
+    "bytes": 4859003,
+    "sha256": "9cb2975e0c48f8f00f7b7673d0d0fe60bc0f277255feb2f9d249758be91c7a26"
+  },
+  "dataset": "Copernicus GLO-90 DSM, AWS 2021 release",
+  "licenseBundle": "AssetSources/Environment/Copernicus/cop_dem_licenses_2025.pdf, pages 19-21",
+  "centerLatitude": 44.19,
+  "centerLongitude": 15.16,
+  "sizeMeters": 6000.0,
+  "resolution": 257,
+  "heightRangeMeters": [
+    0.0,
+    71.54148864746094
+  ],
+  "heightDatum": "EGM2008",
+  "landFractionAbove1m": 0.4783418371209254,
+  "format": "little-endian float32 meters, x=east fastest, rows south to north",
+  "georeference": "spherical local equirectangular, radius 6371000m, bilinear resampling; DSM not bare-earth survey",
+  "inputPixelScale": [
+    0.0008333333333333334,
+    0.0008333333333333334,
+    0.0
+  ],
+  "inputTiePoint": [
+    0.0,
+    0.0,
+    0.0,
+    15.0,
+    45.0,
+    0.0
+  ],
+  "outputSha256": "a15f0c1d5970437af68af4590b0321c744a7ee3df1273c5d9bfb2e6dd166cc03"
+}

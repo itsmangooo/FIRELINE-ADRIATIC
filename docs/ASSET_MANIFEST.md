@@ -1,8 +1,25 @@
-# Asset Manifest — Source links and pipeline (NO actual assets bundled)
+# Asset Manifest — Imported content, source links and pipeline
 
-## M00 foundation assets — 2026-10-22
+## M00 coastal import — 2026-10-22
 
-`AssetSources/` was absent at inspection. No external model, texture or audio source has been downloaded or approved by this foundation increment. Aircraft/cockpit and coastal asset integration remain outstanding M00 tasks.
+Five Poly Haven CC0 surfaces and a Copernicus GLO-90 DSM crop have now been acquired and imported into the separate `M00_CoastalBenchmark` scene. Exact official URLs, creator records, input sizes/SHA-256 and derived hashes are in [acquisition manifest](../AssetSources/Environment/acquisition-manifest.json). Original JPEG/GeoTIFF downloads remain locally under `AssetSources/` and are ignored by Git; the runtime derivatives, metadata and applicable licence bundle are tracked. Reproduce with [acquisition script](../scripts/acquire_m00_environment.py).
+
+| ID | Imported content / source | Status and limits |
+|---|---|---|
+| PH-ROCK-01 | `rocky_terrain` — Amal Kumar, [official source](https://polyhaven.com/a/rocky_terrain) | 2K albedo, DX normal and HDRP terrain mask imported; CC0; 90 m authoring tile |
+| PH-DRY-01 | `dry_ground_rocks` — Rob Tuytel, [official source](https://polyhaven.com/a/dry_ground_rocks) | 2K maps imported; CC0; benchmark uses 8 m tiling rather than upstream 4 m reference |
+| PH-FOREST-01 | `forrest_ground_01` — Rob Tuytel, [official source](https://polyhaven.com/a/forrest_ground_01) | 2K maps imported; CC0; benchmark uses 8 m tiling |
+| PH-SAND-01 | `coast_sand_01` — Rob Tuytel, [official source](https://polyhaven.com/a/coast_sand_01) | 2K maps imported; CC0; benchmark uses 14 m tiling |
+| PH-CHAR-01 | `burned_ground_01` — Rob Tuytel, [official source](https://polyhaven.com/a/burned_ground_01) | 2K maps imported; CC0; static material swatch, no simulated burn state; 8 m tiling |
+| COP-PETRCANE-90 | [Copernicus GLO-90](https://registry.opendata.aws/copernicus-dem/), N44/E015 tile, 6 km crop centered 44.19° N / 15.16° E | Acquired DSM, converted to 257×257 float32 SI heights and Unity TerrainData; licence/notices in [credits](../THIRD_PARTY_ASSETS.md); resampling adds no geographic detail; not a bare-earth survey |
+| FL-M00-COAST-PROXIES | 640 generated trunk/canopy pairs, 24 generated building boxes, static sea reference plane, optional 8 static local fog volumes | Project-authored benchmark proxies; no game-ready pine models, vehicle/crew actors, hydrodynamics or gameplay smoke model |
+| SF-CL415 | helijah's approved listing | Original OBJ archive acquired through the signed-in official download. Embedded GPL notice and Gary BROWN texture credit conflict with listing CC BY 4.0. [Inventory, hashes and licence audit](../AssetSources/Aircraft/CL415/AUDIT.md). No Unity import; M00 aircraft task remains open |
+
+The converted mask is linear: R=0 metallic, G=AO, B=128/255 neutral height, A=255−roughness. JPEG inputs retain their existing precision/compression; no displacement detail is invented. Albedo imports as sRGB, data maps as linear, normals as NormalMap with DX green-channel conversion; mipmaps/streaming and 2048 cap are enabled. Actual benchmark performance and screenshot evidence are recorded separately; this import is not approval of final production quality.
+
+## Original M00 foundation assets — 2026-10-22
+
+`AssetSources/` was absent during the original foundation inspection. That earlier increment acquired no external content; the later coastal import above supersedes its terrain/material gap. Aircraft/cockpit acquisition remains outstanding.
 
 | ID | Content | Provenance / paths | Status and limits |
 |---|---|---|---|

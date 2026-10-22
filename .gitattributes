@@ -1,0 +1,10 @@
+# Shell acceptance runners execute under WSL; Windows checkout conversion must preserve LF.
+*.sh text eol=lf
+
+# Preserve Unity's native empty-field formatting rather than rewriting serialized assets.
+*.meta whitespace=-blank-at-eol
+*.unity whitespace=-blank-at-eol
+*.mat whitespace=-blank-at-eol
+
+# Detailed Unity build inventories contain the literal built-in asset name "Built-in Sprite: ".
+docs/reports/m00-coastal-evidence/**/*-packed-assets.txt whitespace=-blank-at-eol

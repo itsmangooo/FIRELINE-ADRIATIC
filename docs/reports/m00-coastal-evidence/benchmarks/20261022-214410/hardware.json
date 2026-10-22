@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-22T19:58:45.0329688Z",
+  "cpu": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+  "physicalMemoryBytes": 17116717056,
+  "physicalMemoryMiB": 16323.7734375,
+  "os": "Microsoft Windows 11 Pro",
+  "build": "26300",
+  "gpu": [
+    {
+      "Name": "NVIDIA GeForce GTX 1660 SUPER",
+      "DriverVersion": "32.0.16.1742"
+    }
+  ],
+  "scope": "Host query after completed release benchmark pair; no background-load or GPU-memory-residency trace"
+}

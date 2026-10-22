@@ -1,0 +1,17 @@
+{
+  "os": "Ubuntu Base 24.04.5 / GLIBC 2.39 under existing WSL2 kernel 6.6.87.2",
+  "expectedExit": 4,
+  "observedExit": 4,
+  "headless": true,
+  "ticks": 300,
+  "clients": 0,
+  "scope": "Negative five-second startup/clock test only; no Linux client handshake, native Linux host or load/capacity certification.",
+  "runtime": "Workspace-local rootfs; temporary proc/device/build mounts removed by shell trap. Underlying Docker Desktop WSL reports read-only VHD fallback; no repair attempted.",
+  "ubuntuArchiveSha256": "e77b6f10c2590cef872b33ee9f635a0e3fd1f57fb074c0e52b5c7f56147a0c86",
+  "binarySha256": "c9724c53ae3bc7a0ac1143ab71679b777055196707c1f2be3b65de355cd46e82",
+  "assemblies": {
+    "Fireline.Server.dll": "0db47bb1e9aff214063c24f38625ed55179542a3d2a43513a198c35d9dc361ce",
+    "Fireline.Shared.dll": "4eac02d4a206e7f05f49fa21f61a12cf61f44e41ba33234baecb5b567ea41ac5",
+    "Fireline.Simulation.dll": "56927a41089562d7635ff71822b0a6d85b2e4b3e44dc470207fc6dd7dec25bfd"
+  }
+}

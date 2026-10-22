@@ -2,6 +2,16 @@
 
 **Document created:** 2026-10-22
 
+## Current follow-up — 2026-10-22 coastal import and cross-platform foundation
+
+- Continued from clean `main` at `db4ab83`; Unity 6000.6.7f1 / HDRP 17.6.0 and Netcode/Entities/Transport 6.6.0 remain unchanged. Unity automatically added the Linux 1.1.0 SDK/toolchain dependencies required by its installed support module. [Latest report and dependency audit](reports/2026-10-22-m00-coastal-foundation.md).
+- Imported five licensed 2K Poly Haven PBR sets and a Copernicus GLO-90 6 km Petrčane DSM crop into a separate coastal benchmark scene. Source/derived hashes, all mask pixels and import flags passed validation; native Unity height checkpoints match within 0.002 m. [Manifest](ASSET_MANIFEST.md), [notices](../THIRD_PARTY_ASSETS.md), [actual release image](previews/m00-coastal/COMPARISON.md).
+- All **20 EditMode cases passed** in the local closed-Editor path and again after the final recorder fix. Windows client/server and Linux x64 Mono server builds succeeded with zero errors; their nonzero warning counts are reported explicitly. The Windows server/two-rendered-client smoke passed on the rebuilt client. [Final markers and executable/runtime hashes](reports/m00-coastal-evidence/final/smoke-summary.json).
+- Linux executed a five-second negative headless/clock test under the existing WSL2 kernel with workspace-local Ubuntu Base 24.04.5: null graphics, zero cameras, 300 ticks, expected exit 4 because there were no clients. Both full server inventories exclude coastal content/project materials and both server outputs exclude the client assembly. [Linux scope/hashes](reports/m00-coastal-evidence/linux/startup-summary.json). Native Linux hosting, Linux two-client networking, WAN and capacity remain unverified.
+- Added explicit existing-preset selection and a separate five-minute coastal benchmark recorder/runner, with actual rendered warm-up and optional CPU/GPU/draw-call counters. Ordinary scene inspection does not accumulate samples. New data does not establish that the earlier 83.47 ms hitch was fixed; optimization remains deferred.
+- Corrected and visually verified the static fog fixture, reran all 20 tests, rebuilt both Windows clients and passed another two-client connection smoke. Two five-minute 1080p Balanced runs completed: clear/static fog averaged 60.00/60.00 FPS, 1% lows 57.93/58.11, p95 16.994/16.988 ms. Both exceed the strict 16.67 ms target. [Current evidence, raw counters, SVG chart and graph reader guide](performance/2026-10-22-m00-coastal.md). VRAM/GC/server tick duration/bandwidth and representative gameplay remain outstanding; no optimization or production pass.
+- **M00 remains open.** The user signed into Sketchfab and the official original CL-415 OBJ archive was acquired. Its embedded GPL notice and separate texture credit conflict with the CC BY 4.0 listing. [Licensing/technical archive audit](../AssetSources/Aircraft/CL415/AUDIT.md). Clarify contributor rights/notices or audit an authorized replacement before Unity import; scale/pivots/cockpit/HDRP checks remain outstanding. M01 has not started.
+
 ## Latest follow-up — 2026-10-22 frame-loss locations (optimization deferred)
 
 - Analyzed the existing M00 evidence at clean `main` checkpoint `7e11ca9`; no new runtime/build or scene change. All 896 intervals were marked and the six recorded summary fields matched the original JSON.
@@ -41,15 +51,15 @@
 
 ## Remaining acceptance gaps
 
-- Windows local build/connection/render smoke is verified; Linux execution, WAN/NAT, packet-loss/reconnect and hosted CI remain unverified.
-- No gameplay fire/wind/water/flight model, database instance, persistent world or game-ready aircraft/coastal assets exist. The tick clock is a scheduling utility only.
-- Asset URLs may be indexed; actual download/import/rig readiness must be checked at integration time.
+- Windows local build/connection/render smoke and the scoped Linux WSL negative startup are verified; native Linux hosting, Linux multiplayer, WAN/NAT, packet-loss/reconnect and hosted CI remain unverified.
+- No gameplay fire/wind/water/flight model, database instance, persistent world or game-ready aircraft exists. Actual coastal DSM/PBR derivatives are imported; generated vegetation/building/sea/fog proxies are benchmark content. The tick clock is a scheduling utility only.
+- CL-415 authentication/download is resolved; inconsistent listing/archive licence notices and separate texture authorship block Unity import. Resolve that record or audit an authorized replacement; then validate pivots, scale, materials, missing parts and screenshots.
 - No representative 1080p/60 FPS acceptance or 100-player benchmark exists. Diagnostic calibration-scene frame intervals cannot establish either.
 - CL-415 realistic flight coefficients, cockpit and specific licensing details still need investigation/calibration.
 
 ## Immediate next action
 
-Complete remaining M00 asset provenance/import and representative benchmark work before starting M01. Reproduce this foundation using [M00_BUILD_AND_TEST.md](M00_BUILD_AND_TEST.md): filtered live EditMode tests, sequential `FoundationBuild.BuildServer()` / `BuildClient()` and `pwsh -File scripts/Test-M00Smoke.ps1`. Runtime logs remain under `Builds/Smoke/20261022-185723/`; concise committed evidence is indexed in the [M00 report](reports/2026-10-22-m00-foundation.md). The connection harness establishes the process boundary; M01/M02 must implement and verify shared authoritative fire state separately.
+Resolve the [CL-415 licence/import gate](../AssetSources/Aircraft/CL415/AUDIT.md) and remaining representative measurement tasks before closing M00 and starting M01. Reproduce the current foundation using [M00_BUILD_AND_TEST.md](M00_BUILD_AND_TEST.md). Latest Windows regression logs remain under `Builds/Smoke/20261022-214232/`; [current source/runtime evidence](reports/2026-10-22-m00-coastal-foundation.md) supersedes earlier captures. The connection harness establishes the process boundary; M01/M02 must implement and verify shared authoritative fire state separately.
 
 ## Update template for each checkpoint
 

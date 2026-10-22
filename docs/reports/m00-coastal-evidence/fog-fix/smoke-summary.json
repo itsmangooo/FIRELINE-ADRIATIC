@@ -1,0 +1,78 @@
+{
+  "clientRuntimeHashes": [
+    {
+      "sha256": "D49962E965B5ACA8814922712EFD2DF6057478F5411C98EFDA8F6B9A0D2B734C",
+      "name": "Fireline.Client.dll"
+    },
+    {
+      "sha256": "F77FF60D053097C3A1F584EC7F8182E30E29E51DE1CB694A3F87197AA839926D",
+      "name": "Fireline.Shared.dll"
+    },
+    {
+      "sha256": "C2B0D272B7490DD6465CA0FC88889FDCED872B52023AD3D69F9FF6DE917725C7",
+      "name": "Fireline.Simulation.dll"
+    }
+  ],
+  "rawLogs": "Builds\\Smoke\\20261022-214232",
+  "passed": true,
+  "serverSha256": "3CACBB9917B8980B3B9E91E6120DE4D7456F108EE9B88622F5B85F7F3AEFF26F",
+  "utc": "2026-10-22T19:44:04.0376111Z",
+  "processes": [
+    {
+      "markers": [
+        "FIRELINE_CLIENT_START",
+        "FIRELINE_CLIENT_RENDERER graphics=Direct3D12 pipeline=HDRenderPipelineAsset quality=Balanced",
+        "FIRELINE_CLIENT_CONNECTED networkId=1",
+        "FIRELINE_CAPTURE_SAVED foundation_regression.png",
+        "FIRELINE_CLIENT_SMOKE passed=True frames=1183 renderedFrames=1182",
+        "FIRELINE_METRICS_SAVED client-diagnostic-metrics.json"
+      ],
+      "pid": 32764,
+      "exitCode": 0,
+      "role": "client-1"
+    },
+    {
+      "markers": [
+        "FIRELINE_CLIENT_START",
+        "FIRELINE_CLIENT_RENDERER graphics=Direct3D12 pipeline=HDRenderPipelineAsset quality=Balanced",
+        "FIRELINE_CLIENT_CONNECTED networkId=2",
+        "FIRELINE_CLIENT_SMOKE passed=True frames=1188 renderedFrames=1187"
+      ],
+      "pid": 27020,
+      "exitCode": 0,
+      "role": "client-2"
+    },
+    {
+      "markers": [
+        "FIRELINE_SERVER_START endpoint=127.0.0.1:7979",
+        "FIRELINE_SERVER_HEADLESS valid=True graphics=Null cameras=0",
+        "FIRELINE_SERVER_CONNECTIONS count=0",
+        "FIRELINE_SERVER_CONNECTIONS count=1",
+        "FIRELINE_SERVER_CONNECTIONS count=2",
+        "FIRELINE_SERVER_CONNECTIONS count=1",
+        "FIRELINE_SERVER_CONNECTIONS count=0",
+        "FIRELINE_SERVER_SMOKE passed=True peakClients=2 ticks=4799"
+      ],
+      "pid": 28932,
+      "exitCode": 0,
+      "role": "server"
+    }
+  ],
+  "port": 7979,
+  "serverRuntimeHashes": [
+    {
+      "sha256": "8E1FD5AAC6AF13F1DFDB1060F9301E8D614983D4161696F256AB5FAFDB04B3E4",
+      "name": "Fireline.Server.dll"
+    },
+    {
+      "sha256": "13CD365B0C5AC25E4FE73755CDF8858C06367739E507F8E766F6AF17CC982AF4",
+      "name": "Fireline.Shared.dll"
+    },
+    {
+      "sha256": "E2DBF9F2AE69A9CAB3BC173C06CFDB5C3F6C67F0D9215694A1CAC130A920F9EA",
+      "name": "Fireline.Simulation.dll"
+    }
+  ],
+  "clientSha256": "9806ABDE4A406ED68647E9505852C49F6AA72A372F4F084E2AA2821AFFEA57A2",
+  "scope": "One local dedicated server and two rendered client processes; connection handshake only"
+}

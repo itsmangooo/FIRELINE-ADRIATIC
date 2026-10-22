@@ -1,0 +1,52 @@
+{
+  "binary": "9806ABDE4A406ED68647E9505852C49F6AA72A372F4F084E2AA2821AFFEA57A2",
+  "assemblies": [
+    {
+      "name": "Fireline.Client.dll",
+      "sha256": "D49962E965B5ACA8814922712EFD2DF6057478F5411C98EFDA8F6B9A0D2B734C"
+    },
+    {
+      "name": "Fireline.Shared.dll",
+      "sha256": "F77FF60D053097C3A1F584EC7F8182E30E29E51DE1CB694A3F87197AA839926D"
+    },
+    {
+      "name": "Fireline.Simulation.dll",
+      "sha256": "C2B0D272B7490DD6465CA0FC88889FDCED872B52023AD3D69F9FF6DE917725C7"
+    }
+  ],
+  "runs": [
+    {
+      "name": "balanced-clear",
+      "exitCode": 0,
+      "processId": 31252,
+      "metrics": "docs\\reports\\m00-coastal-evidence\\benchmarks\\20261022-214410\\balanced-clear.json",
+      "capture": "docs\\previews\\m00-coastal\\balanced-clear.png",
+      "markers": [
+        "FIRELINE_CLIENT_START",
+        "FIRELINE_CLIENT_RENDERER graphics=Direct3D12 pipeline=HDRenderPipelineAsset quality=Balanced",
+        "FIRELINE_BENCHMARK_START scenario=clear seconds=300 warmup=30",
+        "FIRELINE_CAPTURE_SAVED balanced-clear.png",
+        "FIRELINE_BENCHMARK_COMPLETE samples=18000 renderedSeconds=330.003"
+      ],
+      "averageFps": 59.99848635818647,
+      "p95FrameMs": 16.99410000003354
+    },
+    {
+      "name": "balanced-smoky",
+      "exitCode": 0,
+      "processId": 30028,
+      "metrics": "docs\\reports\\m00-coastal-evidence\\benchmarks\\20261022-214410\\balanced-smoky.json",
+      "capture": "docs\\previews\\m00-coastal\\balanced-smoky.png",
+      "markers": [
+        "FIRELINE_CLIENT_START",
+        "FIRELINE_CLIENT_RENDERER graphics=Direct3D12 pipeline=HDRenderPipelineAsset quality=Balanced",
+        "FIRELINE_BENCHMARK_START scenario=smoky seconds=300 warmup=30",
+        "FIRELINE_CAPTURE_SAVED balanced-smoky.png",
+        "FIRELINE_BENCHMARK_COMPLETE samples=18001 renderedSeconds=330.016"
+      ],
+      "averageFps": 59.99850761336695,
+      "p95FrameMs": 16.988400000002457
+    }
+  ],
+  "limitations": "Initial populated coastal proxy workload, not S1-S6 production acceptance or multiplayer capacity. No optimizations applied."
+}
