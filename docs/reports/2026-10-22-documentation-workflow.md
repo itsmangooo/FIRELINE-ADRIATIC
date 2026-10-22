@@ -26,7 +26,7 @@ Local validation passed on 2026-10-22:
 - `git diff --name-only 8577e4d -- Assets Packages ProjectSettings prompts .vsconfig`: empty; project content/configuration and original prompts are unchanged.
 - `git ls-files` review: no generated Unity/IDE state tracked. `git check-ignore Library/probe Temp/probe Logs/probe UserSettings/probe 'FIRELINE ADRIATIC.slnx' Assembly-CSharp.csproj`: all six paths correctly excluded.
 
-Publication verification is pending commit/push; compare `git rev-parse HEAD` with `git ls-remote origin refs/heads/main` after publishing.
+Publication verified on 2026-10-22: workflow commit `7e544a1ba3270d336ed345767437e477a595d10a` was pushed with `git push -u origin main`; `git rev-parse HEAD` and `git ls-remote origin refs/heads/main` returned the same revision. The working tree was clean. This subsequent documentation-only checkpoint records that observed publication; no game milestone was advanced.
 
 ## Applicability and limitations
 

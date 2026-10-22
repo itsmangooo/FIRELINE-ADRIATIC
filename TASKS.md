@@ -8,7 +8,7 @@
 - [x] Add the nine README showcase sections, documentation directories and reusable templates.
 - [x] Establish chronological changelog and performance history with no invented evidence.
 - [x] Verify documentation structure/links and preservation of existing Unity files and prompts.
-- [ ] Commit and push the verified documentation increment to the existing remote.
+- [x] Commit and push the verified documentation increment to the existing remote (`7e544a1`; remote `main` matched local HEAD after push).
 
 Evidence: [documentation workflow report](docs/reports/2026-10-22-documentation-workflow.md). This administrative increment does not complete M00.
 

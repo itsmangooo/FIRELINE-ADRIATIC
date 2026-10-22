@@ -7,7 +7,7 @@
 - Local filesystem inspected: existing Unity 6000.6.7f1 project, declared HDRP 17.6.0, starter scene/settings/tutorial scripts. No FIRELINE gameplay implementation found in the source inventory.
 - Existing remote: `https://github.com/itsmangooo/FIRELINE-ADRIATIC`, confirmed empty before publication. Local Git was initialized on `main`; baseline checkpoint `8577e4d` preserves existing project/planning files.
 - Added permanent AGENTS rules, README showcase structure, evidence templates/directories, changelog, performance history and Git cache exclusions. See [workflow report](reports/2026-10-22-documentation-workflow.md).
-- Documentation validation: passed required README headings, 58 local links across 31 Markdown files, balanced code fences, retained original principles/reference sections, whitespace, cache exclusions and preservation of Unity files/prompts. Publication: pending commit and push.
+- Documentation validation: passed required README headings, 58 local links across 31 Markdown files, balanced code fences, retained original principles/reference sections, whitespace, cache exclusions and preservation of Unity files/prompts. Workflow commit `7e544a1` was pushed to existing remote `main`; `git ls-remote` matched local HEAD. This publication record is a subsequent documentation-only checkpoint.
 - Runtime tests, screenshots, physics comparisons and hardware profiling: not applicable to this documentation-only change; none performed or claimed. All game milestones remain pending, including the full M00 Editor/package/build audit.
 
 ## What exists in this pack
