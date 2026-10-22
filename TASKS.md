@@ -40,8 +40,12 @@ Apply this checklist to each milestone using [the workflow](docs/DOCUMENTATION_W
 The calibration scene is not the representative populated/coastal/smoky benchmark required for performance acceptance. Aircraft/terrain asset integration, full profiling counters and Linux execution remain outstanding.
 
 - [x] Record the initial 720p diagnostic sample with raw render intervals and named hardware; no 1080p/60 FPS pass claimed.
+- [x] Map recorded slow intervals and source suspects in the [frame-loss register](docs/performance/FRAME_LOSS_REGISTER.md), verify the metrics and add rendered SVG timeline/flowchart.
+- [ ] **Deferred at user request:** resume FL-01–FL-05 attribution and only then optimize with equivalent BEFORE/AFTER measurements. Continue M00 work independently; this deferral does not waive its benchmark acceptance gate.
 - [ ] Collect representative 1080p baseline and five-minute runs, CPU/GPU execution counters, draw calls, VRAM, server tick duration and network bandwidth.
 - [ ] Validate Linux dedicated-server build/run and the supplied closed-Editor batch/CI path on a configured worker.
+
+Future evidence diagrams/flowcharts must be actual embedded SVG drawings with editable sources; mathematical formulas must use correctly formatted Markdown math or an SVG fallback. Explain graph axes, ticks, intervals, recording origin and annotations in plain language before each milestone's final commit. See [permanent rendering rules](docs/DOCUMENTATION_WORKFLOW.md#rendered-diagrams-and-mathematics).
 
 **Accept:** Project opens, tests run, one client release build and headless server build smoke launches; docs complete; no gameplay falsely marked complete.
 

@@ -19,11 +19,7 @@ TBD authority, input validation, messages/schema/revisions, synchronization, per
 
 ## Updated flow
 
-```mermaid
-flowchart LR
-    A[Template: actual player or system input] --> B[Template: implemented validation and state transition]
-    B --> C[Template: actual outcome and replication]
-```
+TBD: draw and embed an actual SVG flowchart showing player/system input, implemented validation/state transition and outcome/replication. Retain editable source and generation command. A source-only Mermaid block is insufficient; inspect the exported image for legibility.
 
 Replace the flow with implemented dispatch/assignment, aircraft mission, firefighting, multiplayer, dedicated-server, persistence or incident-resolution behavior as applicable. Separate and label proposed architecture.
 

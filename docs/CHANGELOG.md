@@ -2,6 +2,13 @@
 
 Record meaningful development changes in dated entries, newest first. Link implementation evidence and disclose limitations. Plans and templates are not completed game features.
 
+## 2026-10-22 — Frame-loss register and rendered documentation rules
+
+- Analyzed the existing 896 M00 callback intervals: three exceed 20 ms; the largest is 83.47170 ms at sample #2. Added a [location register](performance/FRAME_LOSS_REGISTER.md), every-sample flags, recomputed metrics, a reproducible analyzer, and actual SVG/PNG timeline and flowchart.
+- Marked screenshot/readback, instrumentation, resource-sharing and startup paths for later profiling; their contribution to individual hitches remains unproven. Optimization is deferred at the user's request. No runtime, scene, package or physical model changed; previous build/test evidence is unchanged and M00 stays open.
+- Updated permanent AGENTS/workflow/template guidance: render actual SVG diagrams and flowcharts, retain editable sources, and correctly typeset Markdown mathematics with vector fallbacks when needed. Added a plain-language graph guide and required axes/tick/interval explanations before future final milestone commits.
+- Verified metrics against the original JSON, rejection of inconsistent evidence, local links, SVG structure, plot/flowchart appearance and authored whitespace. See the register for exact commands and limits.
+
 ## 2026-10-22 — M00 Unity client/server foundation
 
 - Added six modular C# assemblies, a pure fixed clock, validated direct-IP startup and role-specific foundation scenes/build entry points.

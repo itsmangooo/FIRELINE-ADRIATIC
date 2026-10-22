@@ -41,7 +41,7 @@ The initial hidden-window samples were rejected because update loops advanced wi
 
 ## Acceptance limits and outstanding work
 
-No earlier standalone baseline was measured. The test is 720p, short, contains calibration geometry and runs two clients simultaneously. It does **not** pass the representative 1080p/60 FPS gate or establish 100-player server capacity. There is no claimed speedup or matched before/after result. A graph of these short diagnostic intervals would not resolve those missing workload/measurement conditions; raw samples are retained for later analysis.
+No earlier standalone baseline was measured. The test is 720p, short, contains calibration geometry and runs two clients simultaneously. It does **not** pass the representative 1080p/60 FPS gate or establish 100-player server capacity. There is no claimed speedup or matched before/after result. The subsequent [frame-loss register and rendered timeline](FRAME_LOSS_REGISTER.md) locate recorded overruns without resolving those missing workload/measurement conditions. Optimization is deferred at the user's request.
 
 - [ ] Build the representative populated/coastal/smoky benchmark scenes and record an equivalent pre-change baseline.
 - [ ] Run a single-client 1080p preset matrix for at least five minutes per representative case.

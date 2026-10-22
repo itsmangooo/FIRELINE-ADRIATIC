@@ -1,0 +1,122 @@
+{
+  "sourceCsv": "docs/reports/m00-evidence/client-diagnostic-metrics.csv",
+  "sourceMetrics": "docs/reports/m00-evidence/client-diagnostic-metrics.json",
+  "normalizedCsvSha256": "463b78878242d616762780367d01c5e33ca2a9d5e23a8a6690854512ed1f1018",
+  "hashNormalization": "UTF-8 without BOM, universal newlines (LF)",
+  "timeOrigin": "Start of first stored callback interval; absolute event timestamps unavailable",
+  "frameBudgetMs": 16.666666666666668,
+  "recomputedMetrics": {
+    "samples": 896,
+    "sampledSeconds": 15.000975395552814,
+    "averageFps": 59.729449344049186,
+    "onePercentLowFps": 38.22727397513812,
+    "p95FrameMs": 17.360100522637367,
+    "p99FrameMs": 18.064800649881363
+  },
+  "verifiedAgainstRecordedMetrics": true,
+  "strictThresholdCounts": {
+    "over60hzBudget": 444,
+    "over18ms": 9,
+    "over20ms": 3,
+    "overTwoBudgets": 1,
+    "over50ms": 1
+  },
+  "slowestOnePercent": [
+    {
+      "sample": 2,
+      "interval_start_s": 0.022026199847459793,
+      "interval_end_s": 0.10549790039658546,
+      "frame_interval_ms": 83.47170054912567,
+      "over_60hz_budget": true,
+      "over_20ms": true,
+      "over_two_budgets": true,
+      "slowest_one_percent": true
+    },
+    {
+      "sample": 1,
+      "interval_start_s": 0.0,
+      "interval_end_s": 0.022026199847459793,
+      "frame_interval_ms": 22.026199847459793,
+      "over_60hz_budget": true,
+      "over_20ms": true,
+      "over_two_budgets": false,
+      "slowest_one_percent": true
+    },
+    {
+      "sample": 216,
+      "interval_start_s": 3.6503181029111147,
+      "interval_end_s": 3.670499602332711,
+      "frame_interval_ms": 20.181499421596527,
+      "over_60hz_budget": true,
+      "over_20ms": true,
+      "over_two_budgets": false,
+      "slowest_one_percent": true
+    },
+    {
+      "sample": 91,
+      "interval_start_s": 1.5678765997290611,
+      "interval_end_s": 1.5863848999142647,
+      "frame_interval_ms": 18.508300185203552,
+      "over_60hz_budget": true,
+      "over_20ms": false,
+      "over_two_budgets": false,
+      "slowest_one_percent": true
+    },
+    {
+      "sample": 701,
+      "interval_start_s": 11.734155184589326,
+      "interval_end_s": 11.752533284015954,
+      "frame_interval_ms": 18.37809942662716,
+      "over_60hz_budget": true,
+      "over_20ms": false,
+      "over_two_budgets": false,
+      "slowest_one_percent": true
+    },
+    {
+      "sample": 115,
+      "interval_start_s": 1.9673655033111572,
+      "interval_end_s": 1.9857248030602932,
+      "frame_interval_ms": 18.35929974913597,
+      "over_60hz_budget": true,
+      "over_20ms": false,
+      "over_two_budgets": false,
+      "slowest_one_percent": true
+    },
+    {
+      "sample": 703,
+      "interval_start_s": 11.766960884444416,
+      "interval_end_s": 11.785278384573758,
+      "frame_interval_ms": 18.31750012934208,
+      "over_60hz_budget": true,
+      "over_20ms": false,
+      "over_two_budgets": false,
+      "slowest_one_percent": true
+    },
+    {
+      "sample": 64,
+      "interval_start_s": 1.117307597771287,
+      "interval_end_s": 1.1354341972619295,
+      "frame_interval_ms": 18.126599490642548,
+      "over_60hz_budget": true,
+      "over_20ms": false,
+      "over_two_budgets": false,
+      "slowest_one_percent": true
+    },
+    {
+      "sample": 851,
+      "interval_start_s": 14.233695791102946,
+      "interval_end_s": 14.251760591752827,
+      "frame_interval_ms": 18.064800649881363,
+      "over_60hz_budget": true,
+      "over_20ms": false,
+      "over_two_budgets": false,
+      "slowest_one_percent": true
+    }
+  ],
+  "sensitivityExcludingFirstTwo": {
+    "samples": 894,
+    "averageFps": 60.01821695818174,
+    "maxFrameMs": 20.181499421596527,
+    "interpretation": "Descriptive subset only; not a replacement benchmark or measured optimization"
+  }
+}

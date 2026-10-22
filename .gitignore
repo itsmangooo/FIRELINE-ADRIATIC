@@ -21,6 +21,8 @@
 /*.user
 /*.pidb
 /*.booproj
+__pycache__/
+*.pyc
 
 # Machine-local credentials, never project evidence.
 .env

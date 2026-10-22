@@ -12,15 +12,11 @@ TBD actual governing equations, algorithm or logic and its behavior. If no imple
 
 ### BEFORE diagram
 
-```mermaid
-flowchart LR
-    A[Template: actual previous inputs or no implementation] --> B[Template: actual previous logic or absence]
-    B --> C[Template: actual previous outputs or none]
-```
+TBD: draw and embed `before.svg` showing actual previous inputs, logic and outputs (or their absence). Retain editable source and generation command. A source-only Mermaid block does not satisfy this diagram.
 
 ## New implementation
 
-TBD actual equations in LaTeX-compatible Markdown (`$$ ... $$`) or a precise algorithm, integration method, time step, boundary conditions and clamps. Do not insert a plausible model that differs from the source.
+TBD actual equations using `$...$` inline or display math between standalone `$$` lines, or a precise algorithm, integration method, time step, boundary conditions and clamps. Do not insert a plausible model that differs from the source. Export an SVG formula if the target viewer cannot render math reliably.
 
 | Symbol | Meaning | SI unit or dimensionless | Source/configuration |
 |---|---|---|---|
@@ -30,11 +26,7 @@ TBD assumptions, approximations, calibration and validity range.
 
 ### AFTER diagram
 
-```mermaid
-flowchart LR
-    A[Template: actual new inputs] --> B[Template: implemented calculation]
-    B --> C[Template: actual outputs and authority]
-```
+TBD: draw and embed `after.svg` showing actual new inputs, implemented calculation, outputs and authority. Retain editable source and generation command; inspect the exported drawing for legibility.
 
 Add physical plots or annotated diagrams if these process diagrams cannot communicate trajectories, forces or spread. Link the measured dataset and plot generation command; label axes and units.
 

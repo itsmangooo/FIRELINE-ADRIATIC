@@ -2,6 +2,12 @@
 
 Target: **60 FPS at 1080p on documented reference hardware**, with the build scenarios, presets and percentile gates in the [performance plan](PERFORMANCE_60FPS.md). Client rendering and 100-player dedicated-server capacity have separate acceptance gates.
 
+## 2026-10-22 — Existing M00 frame intervals mapped; optimization deferred
+
+Offline analysis of the diagnostic below found three intervals above 20 ms: #1 (22.02620 ms), #2 (83.47170 ms) and #216 (20.18150 ms). The largest interval spans reconstructed sample-window time 0.022026–0.105498 s. All six recorded summary fields were recomputed and matched; the original samples and full-run results remain unchanged. These are callback overruns, not confirmed dropped presentations or CPU/GPU execution measurements.
+
+The [frame-loss register](performance/FRAME_LOSS_REGISTER.md) includes rendered vector drawings, all sample flags, source suspects and reproducible analysis. No new benchmark, measured improvement or cause attribution is claimed. Profiling and optimization are deferred; representative 1080p acceptance remains outstanding.
+
 ## 2026-10-22 — M00 calibration diagnostic (not acceptance)
 
 Recorded on i5-9400F / GTX 1660 SUPER, 16,323 MiB RAM, Windows 11, driver 32.0.16.1742. Two rendered Windows release clients plus a headless server ran on loopback with the Editor open. Resolution 1280×720, High Fidelity preset, VSync=1; no representative coastal/fire/smoke entities.

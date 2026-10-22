@@ -18,6 +18,14 @@ Inspect branch, working tree, Unity/package versions and current implementation;
 
 Start from [templates](templates/README.md). Replace placeholders before publishing a report; retain honest unavailable/not measured entries with reasons and follow-up tasks. Never create empty image links to imply captures exist. Embed real representative images in root README using paths from the repository root. Detailed reports can link additional images, plots and raw data.
 
+## Rendered diagrams and mathematics
+
+For future reports, embed actual diagrams and flowcharts as self-contained SVG files beside the Markdown. Keep Mermaid/Graphviz or a compact generating script as editable source, with a reproduction command; source blocks alone do not satisfy the drawing requirement. Check labels, arrows, bounds and readability in the exported image. Prefer static SVG for GitHub and PNG only as a necessary fallback; a JavaScript canvas will not render in a repository README. Historical source-only diagrams can be converted when next edited.
+
+Use `$...$` for inline mathematics and display equations between standalone `$$` lines. Use proper fractions, subscripts/superscripts, symbols and SI units, and define each variable. Math inside a fenced code block is source, not a formatted equation. If the intended viewer lacks math support, export and embed an SVG formula. Keep generators and reports concise; do not duplicate the same diagram or equation in several forms without a rendering need. Quantitative plots must use actual data and standard plotting tools, with labeled axes and units. See the [frame-loss register](performance/FRAME_LOSS_REGISTER.md) for rendered SVG examples and reproducible data analysis.
+
+Before a milestone's final commit, give every performance graph a plain-language reader guide: axes/units, ruler tick spacing, recording origin and warm-up, interval/sample definition, target lines, annotations and zoomed panels. Explain whether it measures callback spacing, CPU/GPU execution or presentation loss; graph ticks are not simulation ticks. Carry that interpretation into the handoff without claiming the milestone complete while its acceptance gaps remain.
+
 ## Verify, document and publish
 
 1. Implement and verify behavior; run the relevant unit, integration, rendering and network checks. Record commands, environments, revisions, expected/actual outcomes and artifacts.

@@ -49,14 +49,21 @@ These requirements apply to **all future development tasks and milestones**. Rea
 
 - Significant changes to aerodynamics, lift/drag/thrust, aircraft mass/inertia/control, wind/turbulence, scooping, water release/trajectory/dispersion, ignition/combustion/spread, fuel consumption, suppression, smoke transport, hose pressure/flow, vehicle physics or other simulation mechanics require an implementation-based comparison.
 - Write `docs/physics/<system-name>/COMPARISON.md`: actual previous behavior and equations/algorithm/governing logic; new equations/algorithm in LaTeX-compatible Markdown; important variable definitions and SI units; assumptions/approximations; reason for the change; solved problems and remaining limitations.
-- Include **two diagrams, BEFORE and AFTER**, describing the real versions. Use Mermaid for processes and architecture, and plots or annotated physical diagrams when flowcharts cannot explain the behavior. For a new system, explicitly show that the baseline had no implementation; never invent a previous model.
+- Include **two rendered diagrams, BEFORE and AFTER**, describing the real versions. Embed SVG exports of processes/architecture and plots or annotated physical diagrams when flowcharts cannot explain the behavior. Keep Mermaid/Graphviz or generating code as editable source. For a new system, explicitly show that the baseline had no implementation; never invent a previous model.
 - Compare numerical results under equivalent inputs, environment, time step, duration and random seeds where applicable. Include test cases, units, tolerances, verification results, source-code references and reproducible commands/raw data. Use tables and graphs where appropriate. Never invent benchmark values; unavailable baseline results must be labeled unavailable.
 - Relevant metrics include aircraft lift/drag/climb/stall/payload response, water footprint/dispersion/wind drift/coverage, and fire spread/burned area/fuel/intensity/suppression. Summarize and link the comparison from README.
 
 ### Gameplay and architecture evidence
 
 - For changed mechanics, record previous and new behavior, player-facing impact, network/server implications, updated gameplay flow and relevant tests.
-- Use Mermaid for gameplay loops, dispatch/unit assignment, aircraft missions, firefighting operations, multiplayer synchronization, dedicated servers, persistence and incident resolution as relevant. Keep implementation diagrams consistent with code and clearly label proposed designs.
+- Draw and embed actual SVG diagrams for gameplay loops, dispatch/unit assignment, aircraft missions, firefighting operations, multiplayer synchronization, dedicated servers, persistence and incident resolution as relevant. Keep implementation diagrams consistent with code and clearly label proposed designs.
+
+### Diagram and formula rendering — permanent preference (2026-10-22)
+
+- Future diagrams and flowcharts must include an actual rendered drawing embedded in Markdown, preferably a self-contained **SVG vector file** stored beside the report. Retain concise editable source and a reproducible generation command; a Mermaid/code block alone is insufficient. Use PNG fallbacks only when needed for a viewer. GitHub Markdown must work without JavaScript or a live canvas.
+- Typeset formulas with GitHub-supported inline `$...$` and display `$$` math blocks, keeping display delimiters on separate lines. Use correct fractions, indices, Greek symbols and SI unit notation; define variables. Do not present literal LaTeX in a code fence as a rendered formula. Supply an SVG formula if the target viewer cannot render math reliably.
+- Inspect exported drawings for clipped labels, overlaps, arrow direction and legibility. Use standard plotting tools for quantitative graphs, with labeled axes/units and real source data. Prefer compact reusable generators and linked artifacts over repeated verbose diagram markup. Existing historical diagrams may be upgraded when next edited; never fabricate implementation evidence while converting them.
+- At milestone handoff, explain each published performance graph in plain language: axes, units, tick spacing, recording/warm-up origin, meaning of an interval/sample, thresholds, annotations and zoom panels. Distinguish graph ruler ticks from simulation ticks and callback spacing from CPU/GPU execution time or actual dropped presentations. Include the explanation in the report before the milestone's final commit.
 
 ### Performance evidence
 

@@ -2,6 +2,14 @@
 
 **Document created:** 2026-10-22
 
+## Latest follow-up — 2026-10-22 frame-loss locations (optimization deferred)
+
+- Analyzed the existing M00 evidence at clean `main` checkpoint `7e11ca9`; no new runtime/build or scene change. All 896 intervals were marked and the six recorded summary fields matched the original JSON.
+- Three intervals exceed 20 ms: #1 22.02620 ms, #2 83.47170 ms, #216 20.18150 ms. The largest occurs at reconstructed sample-window time 0.022026–0.105498 s. [Register, SVG timeline/flowchart, exact commands and derived data](performance/FRAME_LOSS_REGISTER.md).
+- Screenshot/readback, per-callback instrumentation, shared-machine load and cold startup are documented investigation paths. No cause has been attributed to an individual sample; optimization is deferred at the user's request. The accepted full-run performance results below remain unchanged.
+- Recorded permanent guidance for actual rendered SVG diagrams/flowcharts and correctly typeset Markdown formulas, with editable sources and fallback images where necessary. The register explains the first graph's axes, tick spacing, intervals, target lines and zoom; future final milestone commits must include such reader guidance.
+- Verification: `python scripts/analyze_frame_intervals.py --plot` (Matplotlib 3.11.2 in ignored tools directory); original metrics agreement, negative mismatch rejection, SVG XML/local links and visual review. Runtime screenshots/physics comparisons/new builds are not applicable to this offline evidence change. M00 remains In Progress, with future gameplay milestones pending.
+
 ## Current checkpoint — 2026-10-22 M00 foundation (In Progress)
 
 - Starting branch/checkpoint: clean `main` at `f93ad75`; the existing Unity project was preserved.

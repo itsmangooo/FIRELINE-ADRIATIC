@@ -13,6 +13,8 @@
 - Measurement tools/versions, warm-up, sampling duration, repeats and commands: TBD
 - Definition of 1% low FPS and aggregation/percentile method: TBD; do not silently substitute reciprocal p99 frame time.
 - Raw captures/data paths, plots and generating commands: TBD
+- Embed rendered SVG plots/flowcharts with labeled axes/units and real data; retain compact editable generators. Use correctly typeset GitHub math or SVG formula fallbacks where necessary.
+- Plain-language graph guide before final milestone commit: axes/units and tick spacing; recording origin/warm-up; what an interval/sample measures; target lines, labels and zooms. Distinguish ruler ticks from server simulation ticks and callback intervals from CPU/GPU timings or actual presentation loss: TBD
 
 ## Equivalent measurements
 
