@@ -15,6 +15,7 @@
 - Initial diagnostic: 896 real-render intervals over 15 s after five rendered seconds of warm-up, 720p High Fidelity, two clients on i5-9400F / GTX 1660 SUPER: average 59.73 FPS, 1% low 38.23, p95 interval 17.36 ms. [Conditions/raw data](performance/2026-10-22-m00-calibration.md). No representative 1080p/60 FPS acceptance.
 - All M01–M09 tasks remain pending. M00 stays open for aircraft/coastal asset provenance/import and representative benchmark evidence.
 - Detailed implementation, package references, known build issues and verification limits: [M00 report](reports/2026-10-22-m00-foundation.md). Commands: [build and test guide](M00_BUILD_AND_TEST.md).
+- Implementation/evidence commit `3d006ae1aecb8ba15a850d66c7a5aae96fc0c943` was pushed to existing remote `main` and verified against `git ls-remote`; this publication record follows in a documentation-only checkpoint.
 
 ## Previous checkpoint — 2026-10-22 documentation workflow
 
