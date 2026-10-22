@@ -1,0 +1,28 @@
+# Unity-generated state; retain Assets and their .meta files.
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Bb]uild/
+/[Bb]uilds/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Generated IDE state.
+/.vs/
+/.idea/
+/*.csproj
+/*.sln
+/*.slnx
+/*.suo
+/*.user
+/*.pidb
+/*.booproj
+
+# Machine-local credentials, never project evidence.
+.env
+.env.local
+.env.*.local
+*.pfx
+*.p12

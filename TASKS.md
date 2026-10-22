@@ -1,6 +1,27 @@
 # FIRELINE: ADRIATIC — Ordered implementation backlog
 
-**Statuses:** Pending / In Progress / Blocked / Done / Verified. Do not mark Verified without build/run evidence. Every milestone ends in docs + Git checkpoint and a handoff summary. Initial status for all tasks: **Pending**.
+**Statuses:** Pending / In Progress / Blocked / Done / Verified. Do not mark game milestones Verified without build/run evidence. Documentation-only increments require applicable documentation checks. Every milestone ends in docs + Git checkpoint and a handoff summary. Initial status for all game milestones: **Pending**.
+
+## Documentation workflow — 2026-10-22
+
+- [x] Apply permanent evidence/showcase rules to AGENTS.md and preserve existing project guidance.
+- [x] Add the nine README showcase sections, documentation directories and reusable templates.
+- [x] Establish chronological changelog and performance history with no invented evidence.
+- [x] Verify documentation structure/links and preservation of existing Unity files and prompts.
+- [ ] Commit and push the verified documentation increment to the existing remote.
+
+Evidence: [documentation workflow report](docs/reports/2026-10-22-documentation-workflow.md). This administrative increment does not complete M00.
+
+## Evidence gates for every significant feature
+
+- [ ] Capture applicable baseline before editing; record actual missing baselines.
+- [ ] Verify implementation and run relevant tests with reproducible commands/artifacts.
+- [ ] Add real visual captures, actual mathematics, two physics diagrams, equivalent numerical comparisons and gameplay/architecture flows where applicable.
+- [ ] Measure rendering/simulation performance where possible; record limitations and concrete evidence follow-ups.
+- [ ] Update README, CHANGELOG, this task list, DEVELOPMENT_STATUS and applicable asset/performance records.
+- [ ] Commit implementation and evidence together, push through the existing branch workflow, and verify the remote revision.
+
+Apply this checklist to each milestone using [the workflow](docs/DOCUMENTATION_WORKFLOW.md). These are recurring gates, not tasks that can be permanently checked once. Missing required evidence keeps the affected milestone open.
 
 ## M00 — Preproduction & Unity audit (start here)
 

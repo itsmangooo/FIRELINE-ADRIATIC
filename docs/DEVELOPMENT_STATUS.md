@@ -2,6 +2,14 @@
 
 **Document created:** 2026-10-22
 
+## Current checkpoint — 2026-10-22 documentation workflow
+
+- Local filesystem inspected: existing Unity 6000.6.7f1 project, declared HDRP 17.6.0, starter scene/settings/tutorial scripts. No FIRELINE gameplay implementation found in the source inventory.
+- Existing remote: `https://github.com/itsmangooo/FIRELINE-ADRIATIC`, confirmed empty before publication. Local Git was initialized on `main`; baseline checkpoint `8577e4d` preserves existing project/planning files.
+- Added permanent AGENTS rules, README showcase structure, evidence templates/directories, changelog, performance history and Git cache exclusions. See [workflow report](reports/2026-10-22-documentation-workflow.md).
+- Documentation validation: passed required README headings, 58 local links across 31 Markdown files, balanced code fences, retained original principles/reference sections, whitespace, cache exclusions and preservation of Unity files/prompts. Publication: pending commit and push.
+- Runtime tests, screenshots, physics comparisons and hardware profiling: not applicable to this documentation-only change; none performed or claimed. All game milestones remain pending, including the full M00 Editor/package/build audit.
+
 ## What exists in this pack
 
 - Complete planning specifications, verified/candidate asset source URLs, simulation/gameplay/network/persistence/performance designs.
@@ -10,7 +18,7 @@
 
 ## What has NOT been done or independently verified
 
-- Unity project exists/compiles at user's machine — **not inspected from this environment**.
+- Unity project files now confirmed by filesystem inspection; Editor compilation and client/server builds remain **unverified**.
 - No Unity scripts, scenes, materials, downloaded asset source files, dedicated server builds, database instance or physics have been created by this documentation task.
 - Asset URLs may be indexed; actual download/import/rig readiness must be checked at integration time.
 - No 60 FPS measurements or 100-player performance benchmark exists.
