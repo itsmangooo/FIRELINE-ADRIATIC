@@ -1,5 +1,16 @@
 # Performance history
 
+## 2026-10-23 — M02 concurrent-client callback/UDP diagnostic
+
+Three 1280×720 Balanced/VSync=1 D3D11 Mono release clients (third joining later), one local server and optional UDP proxy, Editor closed, i5-9400F / GTX 1660 SUPER / 16,323 MiB / Windows 11 build 26300 / driver 32.0.16.2101. Five wall seconds of adapter warm-up; short per-client recordings, not matched five-minute 1080p scenarios. Direct client #1 averaged 52.63 FPS, 1% low 4.19, p95 19.034 ms, with **1193.136 ms at sample #602**; client #2 also recorded 1166.763 ms at #605. All six p95 intervals exceed 16.67 ms. Later impaired timings cannot establish an improvement: startup/history/duration differ.
+
+| Phase | Proxy seconds | Received / forwarded UDP payload bytes | Observed random drops / received datagrams | Peak queued | Received / forwarded KiB/s |
+|---|---:|---:|---:|---:|---:|
+| initial | 44.883 | 854,530 / 816,376 | 74 / 1657 | 20 | 18.593 / 17.763 |
+| restart | 13.641 | 42,652 / 39,017 | 9 / 132 | 20 | 3.054 / 2.793 |
+
+Actual UDP payload counts exclude IP/UDP headers and include protocol ACK/retransmission/startup/idle. Constant 80 ms each-way delay and configured 5% loss passed replication/restart; jittered startup failed separately. CPU/GPU execution, draw calls, VRAM, complete server tick execution and confirmed dropped presentations remain unavailable; Unity allocated bytes are in raw JSON. No overlay isolated-cost, optimization, 60 FPS or capacity claim. [Raw CSV, six-panel/full-detail SVG, statistical definitions, all scales/ticks/warm-up/interval explanations](reports/2026-10-23-m02-replication.md#callback-measurements-and-graph-reader-guide); [FL-06 locations/deferred attribution](performance/FRAME_LOSS_REGISTER.md#m02-measured-callback-overruns--2026-10-23). Historical data below unchanged.
+
 Target: **60 FPS at 1080p on documented reference hardware**, with the build scenarios, presets and percentile gates in the [performance plan](PERFORMANCE_60FPS.md). Client rendering and 100-player dedicated-server capacity have separate acceptance gates.
 
 ## 2026-10-23 — M01 bounded headless fire-step timing

@@ -1,0 +1,123 @@
+[
+  {
+    "rawLogs": "Builds/M02Replication/direct-20261023-151315",
+    "accepted": false,
+    "reason": "Initial two-client baseline/startup deadline was not met",
+    "serverConnectionDiagnostics": [
+      "FIRELINE_FIRE_SUBSCRIBE client=1",
+      "[Fireline.Server][Connection] NetworkConnection[id1,v1] timed out after 5014ms (threshold:5000ms, state:Handshake)!"
+    ]
+  },
+  {
+    "rawLogs": "Builds/M02Replication/impaired-20261023-151546",
+    "accepted": false,
+    "reason": "Initial two-client baseline/startup deadline was not met",
+    "serverConnectionDiagnostics": [
+      "FIRELINE_FIRE_SUBSCRIBE client=1"
+    ]
+  },
+  {
+    "rawLogs": "Builds/M02Replication/impaired-20261023-151731",
+    "accepted": false,
+    "reason": "Initial two-client baseline/startup deadline was not met",
+    "serverConnectionDiagnostics": [
+      "FIRELINE_FIRE_SUBSCRIBE client=1"
+    ],
+    "lastProxyCounters": [
+      {
+        "port": 8091,
+        "seed": 415,
+        "receivedDatagrams": 476,
+        "receivedBytes": 18609,
+        "sentDatagrams": 450,
+        "sentBytes": 16866,
+        "randomDrops": 24,
+        "blackoutDrops": 0,
+        "queueDrops": 0,
+        "clientToServerBytes": 6574,
+        "serverToClientBytes": 12035,
+        "socketResets": 0
+      },
+      {
+        "port": 8092,
+        "seed": 416,
+        "receivedDatagrams": 7,
+        "receivedBytes": 226,
+        "sentDatagrams": 7,
+        "sentBytes": 226,
+        "randomDrops": 0,
+        "blackoutDrops": 0,
+        "queueDrops": 0,
+        "clientToServerBytes": 45,
+        "serverToClientBytes": 181,
+        "socketResets": 0
+      },
+      {
+        "port": 8093,
+        "seed": 417,
+        "receivedDatagrams": 0,
+        "receivedBytes": 0,
+        "sentDatagrams": 0,
+        "sentBytes": 0,
+        "randomDrops": 0,
+        "blackoutDrops": 0,
+        "queueDrops": 0,
+        "clientToServerBytes": 0,
+        "serverToClientBytes": 0,
+        "socketResets": 0
+      }
+    ]
+  },
+  {
+    "rawLogs": "Builds/M02Replication/impaired-20261023-151932",
+    "accepted": false,
+    "reason": "Initial two-client baseline/startup deadline was not met",
+    "serverConnectionDiagnostics": [
+      "FIRELINE_FIRE_SUBSCRIBE client=1"
+    ],
+    "lastProxyCounters": [
+      {
+        "port": 8091,
+        "seed": 415,
+        "receivedDatagrams": 304,
+        "receivedBytes": 13006,
+        "sentDatagrams": 285,
+        "sentBytes": 12544,
+        "randomDrops": 18,
+        "blackoutDrops": 0,
+        "queueDrops": 0,
+        "clientToServerBytes": 4097,
+        "serverToClientBytes": 8909,
+        "socketResets": 0
+      },
+      {
+        "port": 8092,
+        "seed": 416,
+        "receivedDatagrams": 7,
+        "receivedBytes": 226,
+        "sentDatagrams": 7,
+        "sentBytes": 226,
+        "randomDrops": 0,
+        "blackoutDrops": 0,
+        "queueDrops": 0,
+        "clientToServerBytes": 45,
+        "serverToClientBytes": 181,
+        "socketResets": 0
+      },
+      {
+        "port": 8093,
+        "seed": 417,
+        "receivedDatagrams": 0,
+        "receivedBytes": 0,
+        "sentDatagrams": 0,
+        "sentBytes": 0,
+        "randomDrops": 0,
+        "blackoutDrops": 0,
+        "queueDrops": 0,
+        "clientToServerBytes": 0,
+        "serverToClientBytes": 0,
+        "socketResets": 0
+      }
+    ]
+  }
+]

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-23 — M02 live replication and checkpoint proof verified
+
+- Implemented targeted bounded baselines/revision deltas, guarded fragment assembly, exact ACK/gap repair, heartbeat/timeouts and invalid-control rejection. Clients display authoritative state without stepping/mutating fire. Explicit checkpoint load/save now runs in the actual dedicated lifecycle.
+- 48/48 Unity tests, current Windows release client/headless builds and sixteen accepted direct/delayed-loss/restart process exits pass; independent validation confirms all 16 canonical state files. Blackout/corrupt-load negative exits and save preservation pass separately.
+- Added actual before/after screenshots, rendered editable SVG architecture/interval graphs, raw callback/UDP evidence, explanations of graph ticks/intervals and marked hitches. [Full report and limitations](reports/2026-10-23-m02-replication.md). Cold/jittered startup attempts failed and remain NET-01; constant 80 ms each-way/5% loss passed. No optimization, 60 FPS, 100-player, public/Linux-network, M05A or production-persistence claim. M03 is next with its existing asset-rights gate.
+
 Record meaningful development changes in dated entries, newest first. Link implementation evidence and disclose limitations. Plans and templates are not completed game features.
 
 ## 2026-10-23 — M02 bounded checkpoint helper increment

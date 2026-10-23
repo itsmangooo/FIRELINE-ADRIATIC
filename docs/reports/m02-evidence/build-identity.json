@@ -1,0 +1,141 @@
+{
+  "sourceHashes": [
+    {
+      "path": "Assets\\Fireline\\Authoring\\CoastalBenchmarkAuthoring.cs",
+      "sha256": "273B7AE27C4873E93CB3F0089126F25192208DBF85777BD32BC2EA036ACF728B"
+    },
+    {
+      "path": "Assets\\Fireline\\Authoring\\FoundationBuild.cs",
+      "sha256": "C79B6BED751DEE7AE3E3C8136D28D1B62FEB2811C63A39D93D10DABD828D6D65"
+    },
+    {
+      "path": "Assets\\Fireline\\Client\\ClientFireReplication.cs",
+      "sha256": "1EBAAC51D584B4D8C8BEF46DCECA6FE0E136D2D7DDF58BCF0CA38C380CC606DF"
+    },
+    {
+      "path": "Assets\\Fireline\\Client\\ClientProbe.cs",
+      "sha256": "7FC2A42C38955148699AEAB1298AF7F3D59546F16894050E12216D2F5A2713FD"
+    },
+    {
+      "path": "Assets\\Fireline\\Client\\CoastalBenchmarkRecorder.cs",
+      "sha256": "740375E4689ADCDDADBED35CC3645F636C24146CBA7D9A1E896C182F1135F04D"
+    },
+    {
+      "path": "Assets\\Fireline\\Client\\FireStateView.cs",
+      "sha256": "97CCA85FC0D5232EA9CDCA03077F7F704E03E8A9CB92C869BACC9AE88DB216AF"
+    },
+    {
+      "path": "Assets\\Fireline\\Client\\FoundationMetrics.cs",
+      "sha256": "03E30E3B50DDDD9F9EC285F37756B88836AB11ADAD717FCC47DC6DB68DC3B5F5"
+    },
+    {
+      "path": "Assets\\Fireline\\Server\\AuthoritativeFireService.cs",
+      "sha256": "7D7C039C136A62A3A6CCAB6F34ABFED231CE806BADFB6854D21C3E78E71D4200"
+    },
+    {
+      "path": "Assets\\Fireline\\Server\\FileFireSnapshotStore.cs",
+      "sha256": "5A9499ACBAA4D7F405FAE6F80910698BA5ADA59391A3F912E3F56AF6CF1BC740"
+    },
+    {
+      "path": "Assets\\Fireline\\Server\\FireSimulationRunner.cs",
+      "sha256": "CFEF46D99B865F39084880D5ABBEAA55D8B78BBD43BD28F54295E8FB02F1540F"
+    },
+    {
+      "path": "Assets\\Fireline\\Server\\FireVerification.cs",
+      "sha256": "687FA22416EC318651865FAB496C45FEB33F6112A41459075C8937287FC2C8FB"
+    },
+    {
+      "path": "Assets\\Fireline\\Server\\ServerFireReplication.cs",
+      "sha256": "281D6DEB91B71CF4BCC4F336F899342D0831A74367C02BA5693F5AF72337AFF6"
+    },
+    {
+      "path": "Assets\\Fireline\\Server\\ServerProbe.cs",
+      "sha256": "2B37E2882D22A9CEED85825FBCC8FB12768100658E47D1D710DE05725A970E4E"
+    },
+    {
+      "path": "Assets\\Fireline\\Shared\\FireMessages.cs",
+      "sha256": "129742FAF053E79DEE202931F2BD15E66BEB2B0DA723D976600194839036D94B"
+    },
+    {
+      "path": "Assets\\Fireline\\Shared\\FoundationBootstrap.cs",
+      "sha256": "B9C63BFFCADC706E4CAAD129E26064D555D426A75F5ABD894E547962F9B08F18"
+    },
+    {
+      "path": "Assets\\Fireline\\Shared\\LaunchOptions.cs",
+      "sha256": "9712E1DE6068BB252CFE0E4DA53F69C3EDC64CDFBFE8600E7F36542385ECFC26"
+    },
+    {
+      "path": "Assets\\Fireline\\Simulation\\FireReplicationCodec.cs",
+      "sha256": "CC63F76961E56E1E787FDFD5FE902A82BFD57839A4F9BA9977EAC88E4352A041"
+    },
+    {
+      "path": "Assets\\Fireline\\Simulation\\FireSnapshotCodec.cs",
+      "sha256": "A038F453A5AA18D283ECE59E56CC7E9F2D56F601E4E12535CCF21512064FBB68"
+    },
+    {
+      "path": "Assets\\Fireline\\Simulation\\FireState.cs",
+      "sha256": "3B25F622B7F2DAD0D641AFD1EF0C7625B19D3D70FD4FED1CCCD1EAC9B82B6C83"
+    },
+    {
+      "path": "Assets\\Fireline\\Simulation\\FireWorld.cs",
+      "sha256": "B9FDE8B11C80B2204E8959EF24DEF791F25791597B5A5B4D6F6BDCA7AF7D40E0"
+    },
+    {
+      "path": "Assets\\Fireline\\Simulation\\TickClock.cs",
+      "sha256": "1C3FC78A1B346CD90F4557118344C482C6342E5E26942DFBD2E775A23DBF17EE"
+    },
+    {
+      "path": "Assets\\Fireline\\Simulation\\WindField.cs",
+      "sha256": "046E83F2AA94FEE9E83E598B2DAF2ACB7CEA298188D0964DD921ABD49FF764B9"
+    },
+    {
+      "path": "Assets\\Fireline\\Tests\\Editor\\FireReplicationTests.cs",
+      "sha256": "B760F8CC5BEEC75969AA75D47048A24898E0D3D0D6E797F5A774EC676A241E34"
+    },
+    {
+      "path": "Assets\\Fireline\\Tests\\Editor\\FireSimulationTests.cs",
+      "sha256": "E6A28E6390FCFEC721D5D596E83BE78E8B0ED55BADDB388698E5A025B7AB8795"
+    },
+    {
+      "path": "Assets\\Fireline\\Tests\\Editor\\FireSnapshotTests.cs",
+      "sha256": "662E135E7D4A942B408328E5A8E5F74BBF3C3A2D06FE6A93C8B9E572FA4FEE47"
+    },
+    {
+      "path": "Assets\\Fireline\\Tests\\Editor\\FoundationTests.cs",
+      "sha256": "CDF867AA8FDDDBC0EE9717C9D8EF8F4C80D4EC919925A72688C18C6F1D96ECFD"
+    }
+  ],
+  "runtimeHashes": [
+    {
+      "role": "WindowsServer",
+      "name": "Fireline.Server.dll",
+      "sha256": "A0AA961BA6665D378304EE4162EE834DA1D43703CF4FEBDC414F2F9F3BAF7C19"
+    },
+    {
+      "role": "WindowsServer",
+      "name": "Fireline.Shared.dll",
+      "sha256": "5DDA16B298AF2F3969BF7F9EB8C9738E5D2CEFD3AB70ED52D7F9AA675D8E7D74"
+    },
+    {
+      "role": "WindowsServer",
+      "name": "Fireline.Simulation.dll",
+      "sha256": "0FADA9099F201542B09C5A15174854F03F18BE501831F7BB3B7C9672491CEEED"
+    },
+    {
+      "role": "WindowsClient",
+      "name": "Fireline.Client.dll",
+      "sha256": "E903BDFE8B25C01B86A7A527B79FE33866CB532C81EC8FC332050D52D210F092"
+    },
+    {
+      "role": "WindowsClient",
+      "name": "Fireline.Shared.dll",
+      "sha256": "86B0FC1F4F6C4002DE00DD8B969B532DC19960A6FB0F6EDF6EE6E9737CBF1E0B"
+    },
+    {
+      "role": "WindowsClient",
+      "name": "Fireline.Simulation.dll",
+      "sha256": "6F80D41E170E599A41B4F5EEB42B38CD08ECE6B89C7AC06FCA5B7C789A094899"
+    }
+  ],
+  "assemblyIsolationPassed": true
+}

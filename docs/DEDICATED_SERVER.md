@@ -1,8 +1,10 @@
 # Dedicated servers — self-hosting and operational model
 
-## Current M02 local helper boundary
+## Current M02 local checkpoint operation
 
-The [checkpoint increment](reports/2026-10-23-m02-checkpoints.md) supplies a bounded codec, validated candidate restoration and a single-writer local file store. These are not yet connected to normal server startup/save scheduling or demonstrated across process restart. Missing/corrupt data throws rather than silently resetting vegetation. Database/event replay, admission, operator backup policy and power-loss qualification remain future work. The lifecycle below remains proposed.
+`--fireline-world-load file.fls` requires a valid existing snapshot and installs its validated candidate before WORLD_READY. Missing/corrupt loads exit 6; no fresh-world fallback. `--fireline-world-save file.fls` enables five-second/controlled-shutdown writes; write failure exits 7. Omitting the load flag intentionally starts a fresh synthetic world, even if the save destination exists; back up saves first. `Saves/` is ignored operator state. File replacement is flushed/single-writer, not a database transaction or power-loss guarantee.
+
+[Actual build/direct-IP commands](M02_BUILD_AND_TEST.md), [three-client separate-process restore, corrupt-load/blackout proof and limitations](reports/2026-10-23-m02-replication.md). Automatic reconnect UX, authentication/admission, remote administration, event replay, backups and native Linux/public-hosting qualification remain future work. The broader deliverables below remain proposed; historical Linux M01 tests are not M02 networking evidence.
 
 ## Deliverables for self-hostable game
 

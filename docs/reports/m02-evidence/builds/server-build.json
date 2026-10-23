@@ -1,0 +1,12 @@
+{
+    "role": "server",
+    "unity": "6000.6.7f1",
+    "result": "Succeeded",
+    "errors": 0,
+    "warnings": 505,
+    "seconds": 283.8075252,
+    "bytes": 141360911,
+    "development": false,
+    "subtarget": 1,
+    "containsVisualAssets": false
+}

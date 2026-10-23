@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "observations": [
+    {
+      "case": "direct",
+      "phase": "initial",
+      "state": {
+        "sha256": "4408f309d4803da8b013277cfadd54cad5ac8e187266413e3b7ca7b37bdde211",
+        "checksum": "7ba53d73d78a059a",
+        "tick": 120,
+        "wind": {
+          "EastMps": 0.0,
+          "NorthMps": 8.0,
+          "GustMps": 2.0,
+          "Revision": 2
+        },
+        "appliedWaterKg": 14700.0,
+        "retainedWaterKg": 13131.999999999987,
+        "evaporatedWaterKg": 1568.0000000000825,
+        "consumedFuelKg": 225.5468380653195,
+        "charredVegetation": 5,
+        "exhaustedCharredCells": 1
+      }
+    },
+    {
+      "case": "direct",
+      "phase": "restart",
+      "state": {
+        "sha256": "4408f309d4803da8b013277cfadd54cad5ac8e187266413e3b7ca7b37bdde211",
+        "checksum": "7ba53d73d78a059a",
+        "tick": 120,
+        "wind": {
+          "EastMps": 0.0,
+          "NorthMps": 8.0,
+          "GustMps": 2.0,
+          "Revision": 2
+        },
+        "appliedWaterKg": 14700.0,
+        "retainedWaterKg": 13131.999999999987,
+        "evaporatedWaterKg": 1568.0000000000825,
+        "consumedFuelKg": 225.5468380653195,
+        "charredVegetation": 5,
+        "exhaustedCharredCells": 1
+      }
+    },
+    {
+      "case": "impaired",
+      "phase": "initial",
+      "state": {
+        "sha256": "4408f309d4803da8b013277cfadd54cad5ac8e187266413e3b7ca7b37bdde211",
+        "checksum": "7ba53d73d78a059a",
+        "tick": 120,
+        "wind": {
+          "EastMps": 0.0,
+          "NorthMps": 8.0,
+          "GustMps": 2.0,
+          "Revision": 2
+        },
+        "appliedWaterKg": 14700.0,
+        "retainedWaterKg": 13131.999999999987,
+        "evaporatedWaterKg": 1568.0000000000825,
+        "consumedFuelKg": 225.5468380653195,
+        "charredVegetation": 5,
+        "exhaustedCharredCells": 1
+      }
+    },
+    {
+      "case": "impaired",
+      "phase": "restart",
+      "state": {
+        "sha256": "4408f309d4803da8b013277cfadd54cad5ac8e187266413e3b7ca7b37bdde211",
+        "checksum": "7ba53d73d78a059a",
+        "tick": 120,
+        "wind": {
+          "EastMps": 0.0,
+          "NorthMps": 8.0,
+          "GustMps": 2.0,
+          "Revision": 2
+        },
+        "appliedWaterKg": 14700.0,
+        "retainedWaterKg": 13131.999999999987,
+        "evaporatedWaterKg": 1568.0000000000825,
+        "consumedFuelKg": 225.5468380653195,
+        "charredVegetation": 5,
+        "exhaustedCharredCells": 1
+      }
+    }
+  ],
+  "scope": "Actual Windows player artifacts; standard-library SHA/FNV/layout/mass verification, not client resimulation or WAN/capacity qualification"
+}

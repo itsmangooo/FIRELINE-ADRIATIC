@@ -1,0 +1,28 @@
+{
+  "seconds": 23.77574079995975,
+  "configuredDelayMsPerDirection": 0.0,
+  "configuredJitterMs": 0.0,
+  "configuredRandomLoss": 0.0,
+  "maximumQueuedDatagrams": 1,
+  "pendingAtStop": 0,
+  "blackoutStartSeconds": -1,
+  "blackoutDurationSeconds": 0,
+  "clients": [
+    {
+      "port": 8081,
+      "seed": 415,
+      "receivedDatagrams": 1083,
+      "receivedBytes": 290856,
+      "sentDatagrams": 19,
+      "sentBytes": 5052,
+      "randomDrops": 0,
+      "blackoutDrops": 1064,
+      "queueDrops": 0,
+      "clientToServerBytes": 33305,
+      "serverToClientBytes": 257551,
+      "socketResets": 0
+    }
+  ],
+  "blackoutFileControlUsed": true,
+  "scope": "Actual loopback UDP datagrams including handshake, ACKs and retransmissions; excludes IP/UDP header bytes. Not WAN/capacity evidence."
+}

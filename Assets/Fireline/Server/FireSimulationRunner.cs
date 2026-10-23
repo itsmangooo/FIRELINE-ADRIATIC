@@ -15,6 +15,12 @@ namespace Fireline.Server
         /// </summary>
         public static AuthoritativeFireService Authority { get; private set; }
         private double accumulated;
+        private double nextSave;
+        /// <summary>Proof-only freeze at 120 ticks; normal servers continue their authoritative simulation.</summary>
+        public static bool Frozen { get; private set; }
+        /// <summary>Digest read from an explicit checkpoint, or null for a newly created world.</summary>
+        public static string LoadedDigest { get; private set; }
+
 
 #if UNITY_SERVER
         /// <summary>
@@ -31,8 +37,23 @@ namespace Fireline.Server
         private void Start()
         {
             DontDestroyOnLoad(gameObject);
-            Authority = new AuthoritativeFireService(FireVerification.Fixture(8, 0));
-            Debug.Log("FIRELINE_SIMULATION_START hz=5 grid=32 cellM=10 seed=415 authority=server fixture=synthetic");
+            try
+            {
+                var options = FoundationBootstrap.Options;
+                var world = options.WorldLoadPath != null ? Fireline.Simulation.FireWorld.Restore(new FileFireSnapshotStore(options.WorldLoadPath).Read())
+                    : options.ReplicationProofPath != null ? ReplicationFixture() : FireVerification.Fixture(8, 0);
+                LoadedDigest = options.WorldLoadPath != null ? world.Checksum() : null;
+                Authority = new AuthoritativeFireService(world);
+                Frozen = options.ReplicationProofPath != null && world.Tick >= 120;
+                nextSave = Time.realtimeSinceStartupAsDouble + 5;
+                Debug.Log($"FIRELINE_WORLD_READY restored={LoadedDigest != null} tick={world.Tick} checksum={world.Checksum()}");
+            }
+            catch (Exception error)
+            {
+                Debug.LogError("FIRELINE_WORLD_LOAD_FAILED " + error.GetType().Name);
+                Application.Quit(6); enabled = false; return;
+            }
+            Debug.Log($"FIRELINE_SIMULATION_START hz=5 grid={Authority.World.Size} cellM={Authority.World.CellSizeM} seed={Authority.World.Wind.Seed} authority=server fixture=synthetic");
             string path = FoundationBootstrap.Options.SimulationProofPath;
             if (path == null) return;
             try
@@ -73,11 +94,59 @@ namespace Fireline.Server
         /// </summary>
         private void FixedUpdate()
         {
-            if (Authority == null) return;
+            if (Authority == null || Frozen || (FoundationBootstrap.Options.ReplicationProofPath != null && !ServerFireReplication.ProofMayAdvance)) return;
             accumulated += Time.fixedDeltaTime;
             while (accumulated + 1e-9 >= Authority.World.StepSeconds)
-            { Authority.World.Step(); accumulated -= Authority.World.StepSeconds; }
+            {
+                Authority.World.Step(); accumulated -= Authority.World.StepSeconds;
+                if (FoundationBootstrap.Options.ReplicationProofPath != null)
+                {
+                    var world = Authority.World; var id = new Fireline.Simulation.ChunkId(1, 0, 0);
+                    if (world.Tick == 20) { world.Wind.Set(0, 8, 2); Debug.Log("FIRELINE_PROOF_EVENT wind tick=20"); }
+                    if (world.Tick == 40)
+                    {
+                        var hits = new System.Collections.Generic.List<Fireline.Simulation.WaterHit>();
+                        for (int z = 5; z <= 11; z++) for (int x = 5; x <= 11; x++) hits.Add(new Fireline.Simulation.WaterHit(id, z * 16 + x, 1.0 / 49));
+                        Authority.ApplyManualTestWater(14700, hits.ToArray()); Debug.Log("FIRELINE_PROOF_EVENT waterKg=14700 tick=40");
+                    }
+                    if (world.Tick == 60) { world.Ignite(id, 8 * 16 + 12); Debug.Log("FIRELINE_PROOF_EVENT ignition tick=60"); }
+                    if (world.Tick >= 120) { Frozen = true; SaveCheckpoint(); Debug.Log($"FIRELINE_WORLD_FROZEN tick={world.Tick} checksum={world.Checksum()}"); break; }
+                }
+            }
         }
+
+        /// <summary>Create a named two-chunk synthetic test: brush plus fast-burning low fuel for visible persistent char.</summary>
+        private static Fireline.Simulation.FireWorld ReplicationFixture()
+        {
+            var world = new Fireline.Simulation.FireWorld(415, 16);
+            world.AddChunk(new Fireline.Simulation.ChunkId(1, 0, 0), true);
+            world.AddChunk(new Fireline.Simulation.ChunkId(1, -1, 0), true, 0.1);
+            world.Ignite(new Fireline.Simulation.ChunkId(1, 0, 0), 8 * 16 + 8);
+            world.Ignite(new Fireline.Simulation.ChunkId(1, -1, 0), 8 * 16 + 8);
+            world.Wind.Set(8, 0, 2); return world;
+        }
+
+        /// <summary>Persist complete server-owned state every five wall seconds when an explicit destination was supplied.</summary>
+        private void Update()
+        {
+            if (Authority != null && Time.realtimeSinceStartupAsDouble >= nextSave)
+            { SaveCheckpoint(); nextSave = Time.realtimeSinceStartupAsDouble + 5; }
+        }
+
+        /// <summary>Flush a validated local checkpoint; a failed write is a visible fatal persistence error, never a fresh-world reset.</summary>
+        public static void SaveCheckpoint()
+        {
+            if (Authority == null || FoundationBootstrap.Options.WorldSavePath == null) return;
+            try
+            {
+                new FileFireSnapshotStore(FoundationBootstrap.Options.WorldSavePath).Write(Authority.World.CaptureSnapshot());
+                Debug.Log($"FIRELINE_WORLD_SAVED tick={Authority.World.Tick} checksum={Authority.World.Checksum()}");
+            }
+            catch (Exception error) { Debug.LogError("FIRELINE_WORLD_SAVE_FAILED " + error.GetType().Name); Application.Quit(7); }
+        }
+
+        /// <summary>Capture the complete current state before a controlled application shutdown.</summary>
+        private void OnApplicationQuit() => SaveCheckpoint();
 
         /// <summary>
         /// Record actual live fire tick/digest at shutdown and clear the process-wide service reference.

@@ -33,6 +33,13 @@ namespace Fireline.Shared
         /// <summary>Server-only JSON output path that enables accelerated M01 numerical acceptance instead of normal live operation.</summary>
         public string SimulationProofPath { get; private set; }
 
+        /// <summary>Optional role-specific M02 proof result JSON; enables the bounded scripted acceptance scenario.</summary>
+        public string ReplicationProofPath { get; private set; }
+        /// <summary>Explicit checkpoint to load; missing/corrupt input fails startup instead of creating a fresh world.</summary>
+        public string WorldLoadPath { get; private set; }
+        /// <summary>Optional server checkpoint destination, written every five seconds and on controlled shutdown.</summary>
+        public string WorldSavePath { get; private set; }
+
         /// <summary>
         /// Read only --fireline-* options, leaving Unity arguments alone; return validated local/direct-IP defaults.
         /// Reject unknown/duplicate/missing options and incompatible benchmark/smoke timers before starting a role.
@@ -52,6 +59,15 @@ namespace Fireline.Shared
                 string value = args[i];
                 switch (key)
                 {
+                    case "--fireline-replication-proof":
+                        if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Proof path is empty.");
+                        options.ReplicationProofPath = value; break;
+                    case "--fireline-world-load":
+                        if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Load path is empty.");
+                        options.WorldLoadPath = value; break;
+                    case "--fireline-world-save":
+                        if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Save path is empty.");
+                        options.WorldSavePath = value; break;
                     case "--fireline-sim-proof":
                         if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Simulation proof output is empty.");
                         options.SimulationProofPath = value;
@@ -103,6 +119,8 @@ namespace Fireline.Shared
             }
             if (options.BenchmarkSeconds > 0 && (options.SmokeSeconds > 0 || options.BenchmarkOutput == null))
                 throw new ArgumentException("Benchmark requires output and cannot share the smoke exit timer.");
+            if (options.SimulationProofPath != null && (options.ReplicationProofPath != null || options.WorldLoadPath != null || options.WorldSavePath != null))
+                throw new ArgumentException("Accelerated M01 proof cannot share live checkpoint/replication modes.");
             return options;
         }
 

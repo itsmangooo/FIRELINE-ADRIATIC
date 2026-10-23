@@ -1,4 +1,27 @@
-# Frame-loss investigation register — M00
+# Frame-loss investigation register
+
+## M02 measured callback overruns — 2026-10-23
+
+**FL-06: measured locations; attribution/optimization deferred.** New independent M02 diagnostic; historical M00 data below are unchanged. Three concurrent 720p Balanced D3D11 release clients, late join, local headless server, optional proxy; i5-9400F / GTX 1660 SUPER, driver 32.0.16.2101, Editor closed. [Full conditions/raw CSV/SVG and graph reader guide](../reports/2026-10-23-m02-replication.md#callback-measurements-and-graph-reader-guide).
+
+| Case / client | Samples / seconds | Average FPS | 1% low FPS | p95 / p99 (ms) | Worst sample, start–end (s), duration |
+|---|---:|---:|---:|---:|---|
+| direct/client-1 | 1157 / 21.985 | 52.63 | 4.19 | 19.034 / 32.578 | #602, 10.134332–11.327469, **1193.136 ms** |
+| direct/client-2 | 1145 / 21.868 | 52.36 | 4.04 | 18.670 / 27.136 | #605, 10.116415–11.283178, **1166.763 ms** |
+| direct/client-3 | 468 / 7.834 | 59.74 | 33.97 | 17.177 / 23.953 | #45, 0.734047–0.783360, **49.314 ms** |
+| impaired/client-1 | 1760 / 29.517 | 59.63 | 33.10 | 17.541 / 23.141 | #781, 13.101187–13.150962, **49.775 ms** |
+| impaired/client-2 | 1324 / 22.202 | 59.63 | 33.54 | 17.514 / 23.012 | #298, 4.968062–5.016839, **48.777 ms** |
+| impaired/client-3 | 469 / 7.817 | 60.00 | 42.70 | 17.133 / 22.845 | #254, 4.216946–4.241839, **24.893 ms** |
+
+![Actual M02 interval locations and zoom panels](../reports/m02-evidence/callback-intervals.svg)
+
+`#602` marks a measured **1.193-second callback gap**, from recording 10.134332 to 11.327469 seconds; it does not count dropped presentations or measure pure GPU/CPU execution. Each recording has its own origin; timestamps are not aligned across client processes or server events. The first two direct clients' large gaps occur while the run includes a late client startup, but no event-timestamp/timeline evidence proves causation. The impaired case's smaller hitches do not demonstrate an optimization.
+
+All samples have location/threshold flags in each `*.metrics.marked.csv` beside [direct](../reports/m02-evidence/direct/initial/) and [impaired](../reports/m02-evidence/impaired/initial/) evidence. [Summary and exact maximum positions](../reports/m02-evidence/performance-analysis.json). Graph x ruler ticks are 5 s; full-range y spacing differs per row, detailed panels use 2 ms ticks across 14–26 ms. Left panels retain every spike; right panels crop larger gaps. The report explains warm-up origin, statistics and the separate 0.2 s authoritative simulation tick.
+
+Deferred investigation locations: `ServerFireReplication.Prepare` (capture/encode/compress per peer), `ClientFireReplication.Receive` (decompress/validate/patch), `FireStateView.Show` (texture/text updates), `ClientFireReplication.Rendered` (actual interval observation), and concurrent process/driver startup and OS scheduling. These are **source suspects**, not demonstrated causes. M08/M09 follow-up: capture synchronized player/host CPU/GPU/GC/presentation timelines and startup events, reproduce under equivalent hardware/workload, then optimize only with matched BEFORE/AFTER measurements. Keep presets. Do not infer a fixed hitch from this data or erase the failure.
+
+NET-01 is separate: cold/jittered handshake startup failures are in the [M02 report](../reports/2026-10-23-m02-replication.md#failed-attempts-and-open-startup-limitation). No causal relationship to FL-06 is established.
 
 **Status note — 2026-10-23:** historical M00-open statements below describe the capture/report checkpoint. [Foundation closeout](../reports/2026-10-23-m00-closeout.md) supersedes their scheduling; all raw results, failures and deferred qualification tasks remain unchanged.
 

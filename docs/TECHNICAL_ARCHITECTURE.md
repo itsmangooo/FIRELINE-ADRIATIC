@@ -1,12 +1,16 @@
 # Technical architecture — Unity 6 HDRP, C#, headless server
 
+## M02 runtime boundaries — verified bounded Windows proof
+
+`Fireline.Simulation` keeps canonical state validation and pure bounded patch/compression helpers without Unity. `Fireline.Shared` owns RPC DTOs/targeted send helpers and validated launch options. `Fireline.Server` owns the world, checkpoint lifecycle and per-peer transfers; `Fireline.Client` references Simulation only to decode/validate received state and draws a runtime uGUI diagnostic, never `FireWorld.Step`. Client/Server opposite-role assemblies remain excluded in successful builds. No packages/scenes/settings were added or reset. [Actual diagram, source/build identities, process tests, failed startup cases and limits](reports/2026-10-23-m02-replication.md). M05A UI remains planned; this diagnostic has no player controls.
+
 ## Planned player-experience boundary — M05A
 
 [M05A](PLAYER_EXPERIENCE_SPEC.md) owns input-context routing, menus/HUD/navigation, persistent local settings, accessibility and tutorials. Client presentation submits validated requests and displays authoritative results; simulation/resources/permissions/smoke visibility remain server-owned. M01–M05 supply mechanics, M06 supplies operations producers, and final M05A operations bindings need both. M09 retains release/performance qualification. Existing Input System/presets are audited at implementation; this plan adds no packages or UI.
 
 ## M02 local checkpoint boundary — 2026-10-23
 
-`FireSnapshotCodec` encodes bounded explicit fields with a corruption hash; `FireWorld.Restore` validates/copies a complete candidate, retaining scheduling, char, wind/revisions and mass totals. `FileFireSnapshotStore` supplies bounded local reads and flushed temporary-file replacement. There is no automatic authority installation, event replay, live persistence scheduling or client state protocol yet. [Actual flow/tests/remaining work](reports/2026-10-23-m02-checkpoints.md). No Unity packages changed.
+`FireSnapshotCodec` encodes bounded explicit fields with a corruption hash; `FireWorld.Restore` validates/copies a complete candidate, retaining scheduling, char, wind/revisions and mass totals. `FileFireSnapshotStore` supplies bounded local reads and flushed temporary-file replacement. M02 now adds explicit startup candidate installation, five-second/local shutdown saves and the actual read-only baseline/delta client protocol; generalized event replay remains unimplemented. [Actual flow/tests/remaining work](reports/2026-10-23-m02-checkpoints.md). No Unity packages changed.
 
 ## M01 implementation boundary — 2026-10-23 (historical)
 

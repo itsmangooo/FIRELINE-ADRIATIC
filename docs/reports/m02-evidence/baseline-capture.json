@@ -1,0 +1,10 @@
+{
+  "scope": "Actual pre-M02 build capture; disconnected calibration client, no fire display",
+  "binarySha256": "9806abde4a406ed68647e9505852c49f6aa72a372f4f084e2aa2821affea57a2",
+  "managedSha256": {
+    "Fireline.Client.dll": "d49962e965b5aca8814922712efd2df6057478f5411c98efda8f6b9a0d2b734c",
+    "Fireline.Shared.dll": "f77ff60d053097c3a1f584ec7f8182e30e29e51de1cb694a3f87197aa839926d",
+    "Fireline.Simulation.dll": "c2b0d272b7490dd6465ca0fc88889fdced872b52023ad3d69f9ff6de917725c7"
+  },
+  "captureSha256": "2ab3b7c1bc51ac418832817629aded05a87e8d55f0c89f9456d49db49cbe0e13"
+}

@@ -1,0 +1,56 @@
+{
+  "seconds": 44.88315419998253,
+  "configuredDelayMsPerDirection": 80,
+  "configuredJitterMs": 0.0,
+  "configuredRandomLoss": 0.05,
+  "maximumQueuedDatagrams": 20,
+  "pendingAtStop": 0,
+  "blackoutStartSeconds": -1,
+  "blackoutDurationSeconds": 0,
+  "clients": [
+    {
+      "port": 8091,
+      "seed": 415,
+      "receivedDatagrams": 697,
+      "receivedBytes": 345698,
+      "sentDatagrams": 665,
+      "sentBytes": 329881,
+      "randomDrops": 32,
+      "blackoutDrops": 0,
+      "queueDrops": 0,
+      "clientToServerBytes": 7945,
+      "serverToClientBytes": 337753,
+      "socketResets": 0
+    },
+    {
+      "port": 8092,
+      "seed": 416,
+      "receivedDatagrams": 663,
+      "receivedBytes": 352192,
+      "sentDatagrams": 637,
+      "sentBytes": 339026,
+      "randomDrops": 26,
+      "blackoutDrops": 0,
+      "queueDrops": 0,
+      "clientToServerBytes": 7386,
+      "serverToClientBytes": 344806,
+      "socketResets": 1
+    },
+    {
+      "port": 8093,
+      "seed": 417,
+      "receivedDatagrams": 297,
+      "receivedBytes": 156640,
+      "sentDatagrams": 281,
+      "sentBytes": 147469,
+      "randomDrops": 16,
+      "blackoutDrops": 0,
+      "queueDrops": 0,
+      "clientToServerBytes": 3190,
+      "serverToClientBytes": 153450,
+      "socketResets": 0
+    }
+  ],
+  "blackoutFileControlUsed": false,
+  "scope": "Actual loopback UDP datagrams including handshake, ACKs and retransmissions; excludes IP/UDP header bytes. Not WAN/capacity evidence."
+}

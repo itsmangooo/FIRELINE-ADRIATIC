@@ -1,7 +1,18 @@
 {
   "name": "Fireline.Client",
   "rootNamespace": "Fireline.Client",
-  "references": ["Fireline.Shared", "Unity.Entities", "Unity.Collections", "Unity.NetCode", "Unity.RenderPipelines.HighDefinition.Runtime", "Unity.RenderPipelines.Core.Runtime"],
-  "defineConstraints": ["!UNITY_SERVER"],
+  "references": [
+    "Fireline.Shared",
+    "Unity.Entities",
+    "Unity.Collections",
+    "Unity.NetCode",
+    "Unity.RenderPipelines.HighDefinition.Runtime",
+    "Unity.RenderPipelines.Core.Runtime",
+    "Fireline.Simulation",
+    "UnityEngine.UI"
+  ],
+  "defineConstraints": [
+    "!UNITY_SERVER"
+  ],
   "autoReferenced": true
 }

@@ -1,0 +1,17 @@
+FIRELINE_CLIENT_START
+FIRELINE_CLIENT_RENDERER graphics=Direct3D11 pipeline=HDRenderPipelineAsset quality=Balanced
+FIRELINE_CLIENT_CONNECTED networkId=3
+FIRELINE_FIRE_APPLY kind=1 tick=71 checksum=17831957a5d72c06 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=76 checksum=57fd72eb31de2661 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=81 checksum=3ed350e99d1ef29a charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=86 checksum=d6f21f13880bac11 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=93 checksum=60087ea2d296cdf2 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=97 checksum=9bfb500e06d8e65c charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=101 checksum=d616c2d7418bf7ce charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=105 checksum=97d61cc31686c87a charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=109 checksum=c009f8148c9c02d8 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=113 checksum=256230f589a0b8f6 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=118 checksum=680d9c84f61f0655 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=120 checksum=7ba53d73d78a059a charred=5
+FIRELINE_METRICS_SAVED client-3.metrics.json
+FIRELINE_REPLICATION_PROOF role=client passed=True tick=120 checksum=7ba53d73d78a059a

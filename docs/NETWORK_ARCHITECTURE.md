@@ -1,8 +1,10 @@
 # Multiplayer/network architecture — 100 players as a target
 
-## M02 checkpoint helpers — protocol still pending
+## M02 implemented bounded protocol — 2026-10-23
 
-A bounded schema-1 binary codec and validated independent restoration now exist, with a local single-writer file store. They are not yet wired into normal server startup/save scheduling or client transport. [Current helper evidence and limits](reports/2026-10-23-m02-checkpoints.md). Actual baseline delivery, ordered deltas, repair, late join and process restart remain M02 acceptance work.
+Actual dedicated-to-client schema-1 baselines and exact-base revision deltas now cross targeted reliable RPCs, in bounded 480-character fragments. Clients validate/ACK canonical state, repair gaps through a baseline, display phases read-only and exchange one-second heartbeats with a 15-second silent timeout. Eight peers / eight fragments per peer per Update / at least 0.5 seconds after ACK bound this prototype. No client ignition/water RPC is exposed. Explicit local load/save is integrated and separate-process restart is demonstrated.
+
+[Implemented BEFORE/AFTER SVG, wire guards, actual three-client/late-join/restart evidence and limits](reports/2026-10-23-m02-replication.md). Both direct and constant-delay/loss cases pass; cold/jittered startup remains NET-01. Production interest, unreliable snapshots/traffic scheduling, auth/admission, reconnect UX, WAN and capacity are unimplemented/unqualified. The historical checkpoints and broader proposed message classes below must not be read as current implementation.
 
 ## M01 server state — historical checkpoint
 

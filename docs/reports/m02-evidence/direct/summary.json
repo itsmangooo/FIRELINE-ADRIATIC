@@ -1,0 +1,140 @@
+{
+  "passed": true,
+  "scenario": "direct",
+  "scope": "Three actual rendered Windows clients; initial late join and separate server restart; synthetic M02 world",
+  "phases": [
+    {
+      "checksum": "7ba53d73d78a059a",
+      "serverExitCode": 0,
+      "restoredChecksum": "",
+      "passed": true,
+      "canonicalSha256": "4408F309D4803DA8B013277CFADD54CAD5AC8E187266413E3B7CA7B37BDDE211",
+      "clients": [
+        {
+          "exitCode": 0,
+          "repairs": 1,
+          "pid": 6836,
+          "initialCharredCells": 0,
+          "initialTick": 0,
+          "canonicalSha256": "4408F309D4803DA8B013277CFADD54CAD5AC8E187266413E3B7CA7B37BDDE211",
+          "baselines": 2,
+          "deltas": 37,
+          "networkId": 1,
+          "checksum": "7ba53d73d78a059a",
+          "number": 1
+        },
+        {
+          "exitCode": 0,
+          "repairs": 0,
+          "pid": 32188,
+          "initialCharredCells": 0,
+          "initialTick": 0,
+          "canonicalSha256": "4408F309D4803DA8B013277CFADD54CAD5AC8E187266413E3B7CA7B37BDDE211",
+          "baselines": 1,
+          "deltas": 37,
+          "networkId": 2,
+          "checksum": "7ba53d73d78a059a",
+          "number": 2
+        },
+        {
+          "exitCode": 0,
+          "repairs": 0,
+          "pid": 16432,
+          "initialCharredCells": 5,
+          "initialTick": 82,
+          "canonicalSha256": "4408F309D4803DA8B013277CFADD54CAD5AC8E187266413E3B7CA7B37BDDE211",
+          "baselines": 1,
+          "deltas": 13,
+          "networkId": 3,
+          "checksum": "7ba53d73d78a059a",
+          "number": 3
+        }
+      ],
+      "serverPid": 18340,
+      "phase": "initial"
+    },
+    {
+      "checksum": "7ba53d73d78a059a",
+      "serverExitCode": 0,
+      "restoredChecksum": "7ba53d73d78a059a",
+      "passed": true,
+      "canonicalSha256": "4408F309D4803DA8B013277CFADD54CAD5AC8E187266413E3B7CA7B37BDDE211",
+      "clients": [
+        {
+          "exitCode": 0,
+          "repairs": 0,
+          "pid": 25996,
+          "initialCharredCells": 5,
+          "initialTick": 120,
+          "canonicalSha256": "4408F309D4803DA8B013277CFADD54CAD5AC8E187266413E3B7CA7B37BDDE211",
+          "baselines": 1,
+          "deltas": 0,
+          "networkId": 2,
+          "checksum": "7ba53d73d78a059a",
+          "number": 1
+        },
+        {
+          "exitCode": 0,
+          "repairs": 0,
+          "pid": 18212,
+          "initialCharredCells": 5,
+          "initialTick": 120,
+          "canonicalSha256": "4408F309D4803DA8B013277CFADD54CAD5AC8E187266413E3B7CA7B37BDDE211",
+          "baselines": 1,
+          "deltas": 0,
+          "networkId": 3,
+          "checksum": "7ba53d73d78a059a",
+          "number": 2
+        },
+        {
+          "exitCode": 0,
+          "repairs": 0,
+          "pid": 31676,
+          "initialCharredCells": 5,
+          "initialTick": 120,
+          "canonicalSha256": "4408F309D4803DA8B013277CFADD54CAD5AC8E187266413E3B7CA7B37BDDE211",
+          "baselines": 1,
+          "deltas": 0,
+          "networkId": 1,
+          "checksum": "7ba53d73d78a059a",
+          "number": 3
+        }
+      ],
+      "serverPid": 9956,
+      "phase": "restart"
+    }
+  ],
+  "rawLogs": "Builds\\M02Replication\\direct-20261023-151451",
+  "runtimeHashes": [
+    {
+      "role": "WindowsServer",
+      "name": "Fireline.Server.dll",
+      "sha256": "A0AA961BA6665D378304EE4162EE834DA1D43703CF4FEBDC414F2F9F3BAF7C19"
+    },
+    {
+      "role": "WindowsServer",
+      "name": "Fireline.Shared.dll",
+      "sha256": "5DDA16B298AF2F3969BF7F9EB8C9738E5D2CEFD3AB70ED52D7F9AA675D8E7D74"
+    },
+    {
+      "role": "WindowsServer",
+      "name": "Fireline.Simulation.dll",
+      "sha256": "0FADA9099F201542B09C5A15174854F03F18BE501831F7BB3B7C9672491CEEED"
+    },
+    {
+      "role": "WindowsClient",
+      "name": "Fireline.Client.dll",
+      "sha256": "E903BDFE8B25C01B86A7A527B79FE33866CB532C81EC8FC332050D52D210F092"
+    },
+    {
+      "role": "WindowsClient",
+      "name": "Fireline.Shared.dll",
+      "sha256": "86B0FC1F4F6C4002DE00DD8B969B532DC19960A6FB0F6EDF6EE6E9737CBF1E0B"
+    },
+    {
+      "role": "WindowsClient",
+      "name": "Fireline.Simulation.dll",
+      "sha256": "6F80D41E170E599A41B4F5EEB42B38CD08ECE6B89C7AC06FCA5B7C789A094899"
+    }
+  ]
+}

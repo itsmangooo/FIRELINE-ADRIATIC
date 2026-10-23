@@ -1,5 +1,9 @@
 # Asset Manifest — Imported content, source links and pipeline
 
+## M02 diagnostic display — 2026-10-23
+
+`FL-M02-STATE-VIEW`: project-authored runtime uGUI panels and 32×16 nearest-filtered phase-color texture, generated from validated server state; Unity built-in `LegacyRuntime.ttf`. No external downloads, model, material conversion or licence change. Original calibration scene/assets and user's sky-profile edit preserved. [Actual game screenshots and provenance](previews/m02-replication/COMPARISON.md). Engineering display only; not a terrain/fire VFX/player UI asset or M05A completion.
+
 ## M00 coastal import — 2026-10-22
 
 Five Poly Haven CC0 surfaces and a Copernicus GLO-90 DSM crop have now been acquired and imported into the separate `M00_CoastalBenchmark` scene. Exact official URLs, creator records, input sizes/SHA-256 and derived hashes are in [acquisition manifest](../AssetSources/Environment/acquisition-manifest.json). Original JPEG/GeoTIFF downloads remain locally under `AssetSources/` and are ignored by Git; the runtime derivatives, metadata and applicable licence bundle are tracked. Reproduce with [acquisition script](../scripts/acquire_m00_environment.py).

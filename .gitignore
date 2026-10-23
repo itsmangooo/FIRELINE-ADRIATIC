@@ -36,3 +36,10 @@ __pycache__/
 .env.*.local
 *.pfx
 *.p12
+
+# Operator-owned live checkpoints; curated test evidence remains under docs/reports.
+/Saves/
+
+# Generated output from the maintained source-comment audit tool.
+/scripts/CommentAudit/bin/
+/scripts/CommentAudit/obj/

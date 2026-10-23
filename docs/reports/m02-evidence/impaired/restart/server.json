@@ -1,0 +1,48 @@
+{
+    "passed": true,
+    "role": "server",
+    "checksum": "7ba53d73d78a059a",
+    "loadedChecksum": "7ba53d73d78a059a",
+    "tick": 120,
+    "charredCells": 5,
+    "waterKg": 14700.0,
+    "seconds": 11.189265,
+    "peers": [
+        {
+            "networkId": 1,
+            "baselines": 1,
+            "deltas": 0,
+            "acknowledgements": 1,
+            "repairs": 0,
+            "pings": 2,
+            "rejected": 1,
+            "payloadCharacters": 7436,
+            "checksum": "7ba53d73d78a059a",
+            "tick": 120
+        },
+        {
+            "networkId": 2,
+            "baselines": 1,
+            "deltas": 0,
+            "acknowledgements": 1,
+            "repairs": 0,
+            "pings": 2,
+            "rejected": 1,
+            "payloadCharacters": 7436,
+            "checksum": "7ba53d73d78a059a",
+            "tick": 120
+        },
+        {
+            "networkId": 3,
+            "baselines": 1,
+            "deltas": 0,
+            "acknowledgements": 1,
+            "repairs": 0,
+            "pings": 2,
+            "rejected": 1,
+            "payloadCharacters": 7436,
+            "checksum": "7ba53d73d78a059a",
+            "tick": 120
+        }
+    ]
+}

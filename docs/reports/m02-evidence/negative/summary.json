@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "disconnectExpectedExit": 9,
+  "disconnectActualExit": 9,
+  "disconnectReason": "heartbeat-timeout",
+  "corruptExpectedExit": 6,
+  "corruptActualExit": 6,
+  "previousCheckpointPreserved": true,
+  "rawLogs": "Builds\\M02Negative\\20261023-152203"
+}

@@ -1,0 +1,19 @@
+{
+    "utc": "2026-10-23T13:21:40.7141477Z",
+    "cpu": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "driver": "Direct3D 11.0 [level 11.1]",
+    "os": "Windows 11  (10.0.26300)",
+    "quality": "Balanced",
+    "unavailable": "CPU/GPU execution timings, draw calls, VRAM, network bandwidth and server tick duration were not instrumented. Frame intervals include presentation/wait time.",
+    "ramMB": 16323,
+    "width": 1280,
+    "height": 720,
+    "samples": 1760,
+    "sampledSeconds": 29.51718340581283,
+    "averageFps": 59.626285333627145,
+    "onePercentLowFps": 33.101408876566055,
+    "p95FrameMs": 17.541000619530678,
+    "p99FrameMs": 23.140599951148033,
+    "peakUnityAllocatedBytes": 464418909
+}

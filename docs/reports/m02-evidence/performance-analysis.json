@@ -1,0 +1,164 @@
+[
+  {
+    "case": "direct/client-1.metrics",
+    "source": "docs/reports/m02-evidence/direct/initial/client-1.metrics.json",
+    "samples": 1157,
+    "sampledSeconds": 21.98465312551707,
+    "averageFps": 52.627621340866064,
+    "onePercentLowFps": 4.187846634946879,
+    "p95FrameMs": 19.03429999947548,
+    "p99FrameMs": 32.57820010185242,
+    "worst": {
+      "sample": 602,
+      "interval_start_s": 10.134332386311144,
+      "interval_end_s": 11.327468839939684,
+      "frame_interval_ms": 1193.13645362854,
+      "over_60hz_budget": true,
+      "over_20ms": true,
+      "over_two_budgets": true,
+      "slowest_one_percent": true
+    },
+    "strictThresholdCounts": {
+      "over60hzBudget": 584,
+      "over18ms": 75,
+      "over20ms": 49,
+      "overTwoBudgets": 11,
+      "over50ms": 5
+    }
+  },
+  {
+    "case": "direct/client-2.metrics",
+    "source": "docs/reports/m02-evidence/direct/initial/client-2.metrics.json",
+    "samples": 1145,
+    "sampledSeconds": 21.867581505328417,
+    "averageFps": 52.36061426001777,
+    "onePercentLowFps": 4.041605614379671,
+    "p95FrameMs": 18.67000013589859,
+    "p99FrameMs": 27.13640034198761,
+    "worst": {
+      "sample": 605,
+      "interval_start_s": 10.116414682939649,
+      "interval_end_s": 11.283177988603711,
+      "frame_interval_ms": 1166.7633056640625,
+      "over_60hz_budget": true,
+      "over_20ms": true,
+      "over_two_budgets": true,
+      "slowest_one_percent": true
+    },
+    "strictThresholdCounts": {
+      "over60hzBudget": 581,
+      "over18ms": 79,
+      "over20ms": 46,
+      "overTwoBudgets": 9,
+      "over50ms": 6
+    }
+  },
+  {
+    "case": "direct/client-3.metrics",
+    "source": "docs/reports/m02-evidence/direct/initial/client-3.metrics.json",
+    "samples": 468,
+    "sampledSeconds": 7.833697522990406,
+    "averageFps": 59.74190331277273,
+    "onePercentLowFps": 33.97306896428263,
+    "p95FrameMs": 17.17749983072281,
+    "p99FrameMs": 23.952599614858627,
+    "worst": {
+      "sample": 45,
+      "interval_start_s": 0.7340465998277068,
+      "interval_end_s": 0.783360498957336,
+      "frame_interval_ms": 49.313899129629135,
+      "over_60hz_budget": true,
+      "over_20ms": true,
+      "over_two_budgets": true,
+      "slowest_one_percent": true
+    },
+    "strictThresholdCounts": {
+      "over60hzBudget": 242,
+      "over18ms": 13,
+      "over20ms": 13,
+      "overTwoBudgets": 1,
+      "over50ms": 0
+    }
+  },
+  {
+    "case": "impaired/client-1.metrics",
+    "source": "docs/reports/m02-evidence/impaired/initial/client-1.metrics.json",
+    "samples": 1760,
+    "sampledSeconds": 29.51718340581283,
+    "averageFps": 59.626285333627145,
+    "onePercentLowFps": 33.101408876566055,
+    "p95FrameMs": 17.541000619530678,
+    "p99FrameMs": 23.140599951148033,
+    "worst": {
+      "sample": 781,
+      "interval_start_s": 13.101187182124704,
+      "interval_end_s": 13.150962182786316,
+      "frame_interval_ms": 49.77500066161156,
+      "over_60hz_budget": true,
+      "over_20ms": true,
+      "over_two_budgets": true,
+      "slowest_one_percent": true
+    },
+    "strictThresholdCounts": {
+      "over60hzBudget": 908,
+      "over18ms": 53,
+      "over20ms": 40,
+      "overTwoBudgets": 4,
+      "over50ms": 0
+    }
+  },
+  {
+    "case": "impaired/client-2.metrics",
+    "source": "docs/reports/m02-evidence/impaired/initial/client-2.metrics.json",
+    "samples": 1324,
+    "sampledSeconds": 22.20197140239179,
+    "averageFps": 59.63434399601862,
+    "onePercentLowFps": 33.53749676190298,
+    "p95FrameMs": 17.51440018415451,
+    "p99FrameMs": 23.01199920475483,
+    "worst": {
+      "sample": 298,
+      "interval_start_s": 4.968061610125005,
+      "interval_end_s": 5.016838910989463,
+      "frame_interval_ms": 48.777300864458084,
+      "over_60hz_budget": true,
+      "over_20ms": true,
+      "over_two_budgets": true,
+      "slowest_one_percent": true
+    },
+    "strictThresholdCounts": {
+      "over60hzBudget": 673,
+      "over18ms": 41,
+      "over20ms": 31,
+      "overTwoBudgets": 4,
+      "over50ms": 0
+    }
+  },
+  {
+    "case": "impaired/client-3.metrics",
+    "source": "docs/reports/m02-evidence/impaired/initial/client-3.metrics.json",
+    "samples": 469,
+    "sampledSeconds": 7.816916185431182,
+    "averageFps": 59.998084778509096,
+    "onePercentLowFps": 42.7048932945835,
+    "p95FrameMs": 17.132699489593506,
+    "p99FrameMs": 22.84500002861023,
+    "worst": {
+      "sample": 254,
+      "interval_start_s": 4.216946296393871,
+      "interval_end_s": 4.241839297115803,
+      "frame_interval_ms": 24.893000721931458,
+      "over_60hz_budget": true,
+      "over_20ms": true,
+      "over_two_budgets": false,
+      "slowest_one_percent": true
+    },
+    "strictThresholdCounts": {
+      "over60hzBudget": 235,
+      "over18ms": 9,
+      "over20ms": 9,
+      "overTwoBudgets": 0,
+      "over50ms": 0
+    }
+  }
+]

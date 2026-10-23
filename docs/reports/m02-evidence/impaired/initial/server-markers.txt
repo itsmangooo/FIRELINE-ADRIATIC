@@ -1,0 +1,179 @@
+FIRELINE_SERVER_START endpoint=127.0.0.1:8090
+FIRELINE_WORLD_READY restored=False tick=0 checksum=1eeeb063f893a6f8
+FIRELINE_SIMULATION_START hz=5 grid=16 cellM=10 seed=415 authority=server fixture=synthetic
+FIRELINE_SERVER_HEADLESS valid=True graphics=Null cameras=0
+FIRELINE_SERVER_CONNECTIONS count=0
+FIRELINE_WORLD_SAVED tick=0 checksum=1eeeb063f893a6f8
+FIRELINE_SERVER_CONNECTIONS count=1
+FIRELINE_FIRE_SUBSCRIBE client=1
+FIRELINE_FIRE_REJECT client=1 kind=99
+FIRELINE_FIRE_SEND client=1 kind=1 tick=0 rawBytes=47314 payloadChars=2004
+FIRELINE_FIRE_ACK client=1 kind=1 tick=0 checksum=1eeeb063f893a6f8
+FIRELINE_WORLD_SAVED tick=0 checksum=1eeeb063f893a6f8
+FIRELINE_SERVER_CONNECTIONS count=2
+FIRELINE_FIRE_SUBSCRIBE client=2
+FIRELINE_FIRE_REJECT client=2 kind=99
+FIRELINE_FIRE_SEND client=2 kind=1 tick=0 rawBytes=47314 payloadChars=2004
+FIRELINE_FIRE_ACK client=2 kind=1 tick=0 checksum=1eeeb063f893a6f8
+FIRELINE_FIRE_SEND client=1 kind=2 tick=1 rawBytes=711 payloadChars=560
+FIRELINE_FIRE_ACK client=1 kind=2 tick=1 checksum=7f984710067b3697
+FIRELINE_FIRE_SEND client=2 kind=2 tick=2 rawBytes=794 payloadChars=656
+FIRELINE_FIRE_ACK client=2 kind=2 tick=2 checksum=466454e834fa2000
+FIRELINE_FIRE_SEND client=1 kind=2 tick=5 rawBytes=1346 payloadChars=1092
+FIRELINE_FIRE_ACK client=1 kind=2 tick=5 checksum=114a37c384a2f307
+FIRELINE_FIRE_SEND client=2 kind=2 tick=6 rawBytes=1624 payloadChars=1308
+FIRELINE_FIRE_ACK client=2 kind=2 tick=6 checksum=70e56e24503264d7
+FIRELINE_FIRE_SEND client=1 kind=2 tick=8 rawBytes=2375 payloadChars=1852
+FIRELINE_WORLD_SAVED tick=9 checksum=6f5b91a4ed613bb3
+FIRELINE_FIRE_SEND client=2 kind=2 tick=10 rawBytes=3074 payloadChars=2336
+FIRELINE_FIRE_ACK client=1 kind=2 tick=8 checksum=e2a1e7ede15b270b
+FIRELINE_FIRE_ACK client=2 kind=2 tick=10 checksum=380049698b24329a
+FIRELINE_FIRE_SEND client=1 kind=2 tick=12 rawBytes=3685 payloadChars=2804
+FIRELINE_FIRE_ACK client=1 kind=2 tick=12 checksum=fbbd59bbf723c727
+FIRELINE_FIRE_SEND client=2 kind=2 tick=14 rawBytes=4193 payloadChars=3168
+FIRELINE_FIRE_ACK client=2 kind=2 tick=14 checksum=1893c4b298f4d84f
+FIRELINE_FIRE_SEND client=1 kind=2 tick=16 rawBytes=4592 payloadChars=3460
+FIRELINE_FIRE_ACK client=1 kind=2 tick=16 checksum=f08234a005b28478
+FIRELINE_FIRE_SEND client=2 kind=2 tick=18 rawBytes=5393 payloadChars=4044
+FIRELINE_FIRE_ACK client=2 kind=2 tick=18 checksum=f4f776a0926bce7f
+FIRELINE_PROOF_EVENT wind tick=20
+FIRELINE_FIRE_SEND client=1 kind=2 tick=20 rawBytes=6235 payloadChars=4628
+FIRELINE_FIRE_SEND client=2 kind=2 tick=21 rawBytes=6586 payloadChars=4904
+FIRELINE_FIRE_ACK client=1 kind=2 tick=20 checksum=20bbf6f205d75301
+FIRELINE_FIRE_ACK client=2 kind=2 tick=21 checksum=a8bc96a995abe88b
+FIRELINE_FIRE_SEND client=1 kind=2 tick=25 rawBytes=7238 payloadChars=5328
+FIRELINE_FIRE_SEND client=2 kind=2 tick=25 rawBytes=7221 payloadChars=5344
+FIRELINE_FIRE_ACK client=1 kind=2 tick=25 checksum=c8db0f4bed6e0cdc
+FIRELINE_FIRE_ACK client=2 kind=2 tick=25 checksum=c8db0f4bed6e0cdc
+FIRELINE_FIRE_SEND client=1 kind=2 tick=29 rawBytes=8085 payloadChars=5920
+FIRELINE_FIRE_SEND client=2 kind=2 tick=29 rawBytes=8085 payloadChars=5920
+FIRELINE_FIRE_ACK client=1 kind=2 tick=29 checksum=dfabfad23f7c3bfc
+FIRELINE_FIRE_ACK client=2 kind=2 tick=29 checksum=dfabfad23f7c3bfc
+FIRELINE_FIRE_FAULT injected-stale-base client=1
+FIRELINE_FIRE_SEND client=1 kind=2 tick=33 rawBytes=8990 payloadChars=6568
+FIRELINE_WORLD_SAVED tick=34 checksum=f5e0137fe4adcbab
+FIRELINE_FIRE_SEND client=2 kind=2 tick=34 rawBytes=9050 payloadChars=6544
+FIRELINE_FIRE_ACK client=2 kind=2 tick=34 checksum=f5e0137fe4adcbab
+FIRELINE_FIRE_SEND client=1 kind=1 tick=37 rawBytes=47314 payloadChars=6988
+FIRELINE_FIRE_ACK client=1 kind=1 tick=37 checksum=1c1a2111b16faa76
+FIRELINE_FIRE_SEND client=2 kind=2 tick=38 rawBytes=9455 payloadChars=6812
+FIRELINE_PROOF_EVENT waterKg=14700 tick=40
+FIRELINE_FIRE_ACK client=2 kind=2 tick=38 checksum=b8341ac732e5b55e
+FIRELINE_FIRE_SEND client=1 kind=2 tick=41 rawBytes=10266 payloadChars=7024
+FIRELINE_FIRE_SEND client=2 kind=2 tick=42 rawBytes=10245 payloadChars=6964
+FIRELINE_FIRE_ACK client=1 kind=2 tick=41 checksum=89e13723553fb0e0
+FIRELINE_FIRE_ACK client=2 kind=2 tick=42 checksum=de18a95d94463aa6
+FIRELINE_FIRE_SEND client=1 kind=2 tick=46 rawBytes=9868 payloadChars=6816
+FIRELINE_FIRE_SEND client=2 kind=2 tick=47 rawBytes=9845 payloadChars=6800
+FIRELINE_FIRE_ACK client=2 kind=2 tick=47 checksum=b7b67029f3b6f267
+FIRELINE_FIRE_ACK client=1 kind=2 tick=46 checksum=9868b9bde585af26
+FIRELINE_FIRE_SEND client=2 kind=2 tick=51 rawBytes=10018 payloadChars=6856
+FIRELINE_FIRE_SEND client=1 kind=2 tick=52 rawBytes=10134 payloadChars=6960
+FIRELINE_FIRE_ACK client=2 kind=2 tick=51 checksum=c368ba17ecf49a1c
+FIRELINE_FIRE_ACK client=1 kind=2 tick=52 checksum=411094e6c3284ddf
+FIRELINE_FIRE_SEND client=2 kind=2 tick=55 rawBytes=10289 payloadChars=7028
+FIRELINE_FIRE_SEND client=1 kind=2 tick=56 rawBytes=10275 payloadChars=7016
+FIRELINE_FIRE_ACK client=2 kind=2 tick=55 checksum=68c93c0530417deb
+FIRELINE_FIRE_ACK client=1 kind=2 tick=56 checksum=c4c67ae9bf17f926
+FIRELINE_WORLD_SAVED tick=59 checksum=f10b1c94702c51a0
+FIRELINE_FIRE_SEND client=2 kind=2 tick=59 rawBytes=10262 payloadChars=7036
+FIRELINE_PROOF_EVENT ignition tick=60
+FIRELINE_FIRE_SEND client=1 kind=2 tick=60 rawBytes=10278 payloadChars=7016
+FIRELINE_FIRE_ACK client=2 kind=2 tick=59 checksum=f10b1c94702c51a0
+FIRELINE_FIRE_ACK client=1 kind=2 tick=60 checksum=68b46367f1c66ad7
+FIRELINE_FIRE_SEND client=2 kind=2 tick=63 rawBytes=10412 payloadChars=7156
+FIRELINE_FIRE_SEND client=1 kind=2 tick=64 rawBytes=10384 payloadChars=7136
+FIRELINE_FIRE_ACK client=1 kind=2 tick=64 checksum=a786eccccd8b64f7
+FIRELINE_FIRE_ACK client=2 kind=2 tick=63 checksum=397750b5f7da4481
+FIRELINE_FIRE_SEND client=1 kind=2 tick=68 rawBytes=10394 payloadChars=7096
+FIRELINE_FIRE_SEND client=2 kind=2 tick=69 rawBytes=10386 payloadChars=7100
+FIRELINE_FIRE_ACK client=1 kind=2 tick=68 checksum=94cb93633b0a65db
+FIRELINE_SERVER_CONNECTIONS count=3
+FIRELINE_FIRE_SUBSCRIBE client=3
+FIRELINE_FIRE_REJECT client=3 kind=99
+FIRELINE_FIRE_SEND client=3 kind=1 tick=71 rawBytes=47314 payloadChars=7224
+FIRELINE_FIRE_ACK client=2 kind=2 tick=69 checksum=19f8214961a295b2
+FIRELINE_FIRE_SEND client=1 kind=2 tick=72 rawBytes=10433 payloadChars=7128
+FIRELINE_FIRE_ACK client=3 kind=1 tick=71 checksum=17831957a5d72c06
+FIRELINE_FIRE_SEND client=2 kind=2 tick=74 rawBytes=10430 payloadChars=7088
+FIRELINE_FIRE_ACK client=1 kind=2 tick=72 checksum=f116fe6e0985f676
+FIRELINE_FIRE_SEND client=3 kind=2 tick=76 rawBytes=10445 payloadChars=7108
+FIRELINE_FIRE_ACK client=2 kind=2 tick=74 checksum=b348f685d26404ca
+FIRELINE_FIRE_SEND client=1 kind=2 tick=77 rawBytes=10383 payloadChars=7104
+FIRELINE_FIRE_ACK client=1 kind=2 tick=77 checksum=c3472c65876d1213
+FIRELINE_FIRE_ACK client=3 kind=2 tick=76 checksum=57fd72eb31de2661
+FIRELINE_FIRE_SEND client=2 kind=2 tick=79 rawBytes=10402 payloadChars=7152
+FIRELINE_FIRE_ACK client=2 kind=2 tick=79 checksum=aeff8f8b76667e12
+FIRELINE_FIRE_SEND client=1 kind=2 tick=81 rawBytes=10361 payloadChars=7088
+FIRELINE_FIRE_SEND client=3 kind=2 tick=81 rawBytes=10379 payloadChars=7112
+FIRELINE_FIRE_SEND client=2 kind=2 tick=83 rawBytes=10494 payloadChars=7252
+FIRELINE_FIRE_ACK client=1 kind=2 tick=81 checksum=3ed350e99d1ef29a
+FIRELINE_FIRE_ACK client=3 kind=2 tick=81 checksum=3ed350e99d1ef29a
+FIRELINE_WORLD_SAVED tick=84 checksum=07d1fedf116a8b50
+FIRELINE_FIRE_ACK client=2 kind=2 tick=83 checksum=6ca8b2343ed05fc0
+FIRELINE_FIRE_SEND client=1 kind=2 tick=86 rawBytes=10479 payloadChars=7224
+FIRELINE_FIRE_SEND client=3 kind=2 tick=86 rawBytes=10479 payloadChars=7224
+FIRELINE_FIRE_SEND client=2 kind=2 tick=87 rawBytes=10410 payloadChars=7120
+FIRELINE_FIRE_ACK client=1 kind=2 tick=86 checksum=d6f21f13880bac11
+FIRELINE_FIRE_ACK client=2 kind=2 tick=87 checksum=4f55631f5a545ab7
+FIRELINE_FIRE_SEND client=1 kind=2 tick=90 rawBytes=10468 payloadChars=7204
+FIRELINE_FIRE_ACK client=3 kind=2 tick=86 checksum=d6f21f13880bac11
+FIRELINE_FIRE_SEND client=2 kind=2 tick=91 rawBytes=10488 payloadChars=7216
+FIRELINE_FIRE_ACK client=1 kind=2 tick=90 checksum=aa5db507e8501fc5
+FIRELINE_FIRE_ACK client=2 kind=2 tick=91 checksum=dd439a4bf32692c8
+FIRELINE_FIRE_SEND client=3 kind=2 tick=93 rawBytes=10516 payloadChars=7256
+FIRELINE_FIRE_SEND client=1 kind=2 tick=94 rawBytes=10466 payloadChars=7164
+FIRELINE_FIRE_ACK client=3 kind=2 tick=93 checksum=60087ea2d296cdf2
+FIRELINE_FIRE_ACK client=1 kind=2 tick=94 checksum=701078128188cc56
+FIRELINE_FIRE_SEND client=2 kind=2 tick=95 rawBytes=10439 payloadChars=7144
+FIRELINE_FIRE_SEND client=3 kind=2 tick=97 rawBytes=10437 payloadChars=7136
+FIRELINE_FIRE_ACK client=2 kind=2 tick=95 checksum=3494f28fb7f318af
+FIRELINE_FIRE_SEND client=1 kind=2 tick=98 rawBytes=10462 payloadChars=7148
+FIRELINE_FIRE_ACK client=3 kind=2 tick=97 checksum=9bfb500e06d8e65c
+FIRELINE_FIRE_ACK client=1 kind=2 tick=98 checksum=84285c8c60d43349
+FIRELINE_FIRE_SEND client=2 kind=2 tick=100 rawBytes=10561 payloadChars=7248
+FIRELINE_FIRE_SEND client=3 kind=2 tick=101 rawBytes=10590 payloadChars=7272
+FIRELINE_FIRE_ACK client=2 kind=2 tick=100 checksum=d54e46159f17441e
+FIRELINE_FIRE_ACK client=3 kind=2 tick=101 checksum=d616c2d7418bf7ce
+FIRELINE_FIRE_SEND client=1 kind=2 tick=103 rawBytes=10631 payloadChars=7288
+FIRELINE_FIRE_ACK client=1 kind=2 tick=103 checksum=1375a4cb0e5cf021
+FIRELINE_FIRE_SEND client=2 kind=2 tick=104 rawBytes=10569 payloadChars=7204
+FIRELINE_FIRE_SEND client=3 kind=2 tick=105 rawBytes=10560 payloadChars=7156
+FIRELINE_FIRE_ACK client=2 kind=2 tick=104 checksum=366f8a61d4f1f42a
+FIRELINE_FIRE_ACK client=3 kind=2 tick=105 checksum=97d61cc31686c87a
+FIRELINE_FIRE_SEND client=1 kind=2 tick=106 rawBytes=10485 payloadChars=7196
+FIRELINE_FIRE_ACK client=1 kind=2 tick=106 checksum=20dbbba2f1177050
+FIRELINE_FIRE_SEND client=2 kind=2 tick=108 rawBytes=10492 payloadChars=7184
+FIRELINE_FIRE_SEND client=3 kind=2 tick=109 rawBytes=10496 payloadChars=7196
+FIRELINE_FIRE_ACK client=2 kind=2 tick=108 checksum=5bcb9ed9d823f07f
+FIRELINE_WORLD_SAVED tick=109 checksum=c009f8148c9c02d8
+FIRELINE_FIRE_ACK client=3 kind=2 tick=109 checksum=c009f8148c9c02d8
+FIRELINE_FIRE_SEND client=1 kind=2 tick=110 rawBytes=10525 payloadChars=7212
+FIRELINE_FIRE_ACK client=1 kind=2 tick=110 checksum=871fa53ec9d895cc
+FIRELINE_FIRE_SEND client=2 kind=2 tick=112 rawBytes=10544 payloadChars=7264
+FIRELINE_FIRE_SEND client=3 kind=2 tick=113 rawBytes=10655 payloadChars=7348
+FIRELINE_FIRE_ACK client=2 kind=2 tick=112 checksum=b6fa7f643c1e27aa
+FIRELINE_FIRE_SEND client=1 kind=2 tick=114 rawBytes=10682 payloadChars=7368
+FIRELINE_FIRE_ACK client=3 kind=2 tick=113 checksum=256230f589a0b8f6
+FIRELINE_FIRE_ACK client=1 kind=2 tick=114 checksum=529efb42b48148ef
+FIRELINE_FIRE_SEND client=2 kind=2 tick=116 rawBytes=10662 payloadChars=7340
+FIRELINE_FIRE_ACK client=2 kind=2 tick=116 checksum=ed425625bf8ff5a4
+FIRELINE_FIRE_SEND client=3 kind=2 tick=118 rawBytes=10642 payloadChars=7316
+FIRELINE_FIRE_SEND client=1 kind=2 tick=118 rawBytes=10576 payloadChars=7268
+FIRELINE_FIRE_ACK client=3 kind=2 tick=118 checksum=680d9c84f61f0655
+FIRELINE_WORLD_SAVED tick=120 checksum=7ba53d73d78a059a
+FIRELINE_WORLD_FROZEN tick=120 checksum=7ba53d73d78a059a
+FIRELINE_FIRE_SEND client=2 kind=2 tick=120 rawBytes=10665 payloadChars=7380
+FIRELINE_FIRE_ACK client=1 kind=2 tick=118 checksum=680d9c84f61f0655
+FIRELINE_FIRE_SEND client=3 kind=2 tick=120 rawBytes=10630 payloadChars=7308
+FIRELINE_FIRE_ACK client=2 kind=2 tick=120 checksum=7ba53d73d78a059a
+FIRELINE_FIRE_ACK client=3 kind=2 tick=120 checksum=7ba53d73d78a059a
+FIRELINE_FIRE_SEND client=1 kind=2 tick=120 rawBytes=10630 payloadChars=7308
+FIRELINE_FIRE_ACK client=1 kind=2 tick=120 checksum=7ba53d73d78a059a
+FIRELINE_SERVER_CONNECTIONS count=2
+FIRELINE_SERVER_CONNECTIONS count=1
+FIRELINE_SERVER_CONNECTIONS count=0
+FIRELINE_WORLD_SAVED tick=120 checksum=7ba53d73d78a059a
+FIRELINE_REPLICATION_PROOF role=server passed=True tick=120 checksum=7ba53d73d78a059a peers=3
+FIRELINE_WORLD_SAVED tick=120 checksum=7ba53d73d78a059a
+FIRELINE_SIMULATION_STOP ticks=120 checksum=7ba53d73d78a059a

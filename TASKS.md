@@ -25,7 +25,7 @@ Apply this checklist to each milestone using [the workflow](docs/DOCUMENTATION_W
 
 ## M00 — Preproduction & Unity audit (start here)
 
-**Status: Verified — foundation scope, closed 2026-10-23.** [Acceptance and dependency closeout](docs/reports/2026-10-23-m00-closeout.md), [original foundation](docs/reports/2026-10-22-m00-foundation.md), [coastal/build evidence](docs/reports/2026-10-22-m00-coastal-foundation.md). Project opens, 20 tests pass, client/headless builds and direct-IP smoke are verified. Aircraft import is an open M03 dependency; production art/60 FPS qualification remains M04/M09 work. No licence or performance requirement is waived. M01 is now active.
+**Status: Verified — foundation scope, closed 2026-10-23.** [Acceptance and dependency closeout](docs/reports/2026-10-23-m00-closeout.md), [original foundation](docs/reports/2026-10-22-m00-foundation.md), [coastal/build evidence](docs/reports/2026-10-22-m00-coastal-foundation.md). Project opens, 20 tests pass, client/headless builds and direct-IP smoke are verified. Aircraft import is an open M03 dependency; production art/60 FPS qualification remains M04/M09 work. No licence or performance requirement is waived. M01 followed this closeout and is verified below.
 
 - [x] Inspect existing Unity 6 HDRP project, package versions, CLI/editor tooling and Git branch; preserve original project.
 - [x] Research and resolve Unity 6.6 / HDRP 17.6 / Netcode for Entities + Transport 6.6 versions; record build integration issues.
@@ -65,16 +65,18 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 
 ## M02 — Two-client replication + persistence proof
 
-**Status: In Progress.** M00/M01 and the requested explanatory comment pass are verified. Begin bounded snapshot serialization/validation and restoration, then baseline/delta transport, late join and restart recovery. M01 DTOs are not completed replication.
+**Status: Verified — bounded Windows proof, 2026-10-23.** [Live build/process/state/screenshot/measurement report](docs/reports/2026-10-23-m02-replication.md), [reproduction](docs/M02_BUILD_AND_TEST.md). 48/48 Unity tests and two successful current Windows builds; direct and 80 ms each-way/5% loss cases each passed two separate server processes with three real rendered clients per phase. Sixteen canonical state files agree. Cold/jittered connection startup remains NET-01 in M08/M09, not a claimed pass; no production/capacity qualification.
 
 - [x] Bounded checkpoint codec, candidate restoration and local store: 41/41 Unity tests passed; [scope/evidence](docs/reports/2026-10-23-m02-checkpoints.md). Real process restart remains separate.
-- [ ] Connect two real processes; initial fire baseline + ordered revision deltas.
-- [ ] Late join client #3 gets identical burned world after convergence.
-- [ ] Snapshot/write restore after restart: no regrowth/score duplication; test packet delay/loss.
+- [x] Connect two real processes; initial fire baseline + ordered revision deltas, stale-base gap repair and invalid-control rejection.
+- [x] Late join client #3 gets identical burned world after convergence; initial char and canonical SHA-256 checked in direct/delayed-loss cases.
+- [x] Snapshot/write restore after restart: no regrowth or repeat proof events; actual constant delay/UDP loss, heartbeat blackout and corrupt-load tests pass. Scores/inventory do not exist; their exactly-once persistence remains M07, not a completed score-duplication test.
 
 **Accept:** 3-client smoke test, no conflicting fire states, video/log evidence and digest match.
 
 ## M03 — CL-415 flight & water physics
+
+**Next milestone; aircraft import blocked by the existing licence conflict.** M02 is verified. Resolve the source-rights gate or audit an authorized replacement before importing the aircraft; do not treat the current engineering display as a flyable game.
 
 - [ ] Acquire and audit the minimum CL-415 source archive, import its exterior and document moving parts, textures, scale and missing cockpit parts. **Licensing blocker:** official original OBJ archive acquired, but its included GPL notice/texture contributor conflicts with the listing’s CC BY 4.0 record. Reconcile contributor rights and notices, or audit an authorized replacement, before Unity import. No rig/pivot/cockpit validation is claimed.
 
@@ -135,6 +137,9 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 
 ## M08 — Region streaming & 100-user scalability
 
+- [ ] **NET-01:** reproduce/fix the observed cold and jittered connection startup stalls with UTP/handshake diagnostics, bounded startup failure/retry behavior and the original failing network conditions; qualify again for public hosting in M09. M02 constant-delay/loss replication passed; jittered startup did not.
+- [ ] Replace/qualify the bounded reliable-RPC prototype with relevant/adaptive production state delivery; measure traffic and head-of-line effects under representative load.
+
 - [ ] Validate dynamic/adversarial active-sector membership scheduling and refine the prototype budget/estimated fuel-weather calibration against documented reference scenarios; do not extend fixed-membership fixture claims to production interest/load behavior.
 
 - [ ] Geographic compression and streaming sectors, floating origin if necessary.
@@ -145,7 +150,7 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 
 ## M09 — Modding, host packaging, 60 FPS and release
 
-- [ ] **Deferred at user request:** resume FL-01–FL-05 attribution and only then optimize with equivalent BEFORE/AFTER measurements. Continue independent milestones; deferred optimization does not waive final performance acceptance.
+- [ ] **Deferred at user request:** resume FL-01–FL-05 and M02 FL-06 attribution and only then optimize with equivalent BEFORE/AFTER measurements. Continue independent milestones; deferred optimization does not waive final performance acceptance.
 - [ ] Collect representative 1080p baseline and five-minute runs, CPU/GPU execution counters, draw calls, VRAM, server tick duration and network bandwidth.
 - [ ] Add missing VRAM/residency, GC, render-thread/triangle counters and actual dedicated-server tick-duration/transport-byte measurements; populate representative scenarios as their licensed assets/gameplay dependencies become available. Current proxies and clock tick counts cannot substitute for those gates.
 

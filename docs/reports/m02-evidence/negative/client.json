@@ -1,0 +1,19 @@
+{
+    "passed": false,
+    "role": "client",
+    "checksum": "2f79d43d3f999008",
+    "reason": "heartbeat-timeout",
+    "tick": 29,
+    "networkId": 1,
+    "baselines": 1,
+    "deltas": 0,
+    "repairs": 0,
+    "pongs": 1,
+    "rejected": 1,
+    "charredCells": 0,
+    "initialCharredCells": 0,
+    "frameSamples": 0,
+    "initialTick": 29,
+    "payloadCharacters": 4144,
+    "seconds": 0.0
+}

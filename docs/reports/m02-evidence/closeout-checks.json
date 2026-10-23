@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checkedStagedFiles": 138,
+  "localMarkdownLinks": 228,
+  "firelineMetadataGuids": 81,
+  "sourceHashesMatchBuiltSourceRecord": true,
+  "skyPreservedAndExcluded": true,
+  "projectSettingsExcluded": true,
+  "pngDimensions": "All seven actual captures 1280x720",
+  "markdownTablesFencesLinksSvgXmlAndSecretPatterns": "Passed; native format/credential-pattern check only"
+}

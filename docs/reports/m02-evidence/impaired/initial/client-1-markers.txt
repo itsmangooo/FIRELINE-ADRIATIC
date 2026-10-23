@@ -1,0 +1,36 @@
+FIRELINE_CLIENT_START
+FIRELINE_CLIENT_RENDERER graphics=Direct3D11 pipeline=HDRenderPipelineAsset quality=Balanced
+FIRELINE_CLIENT_CONNECTED networkId=1
+FIRELINE_FIRE_APPLY kind=1 tick=0 checksum=1eeeb063f893a6f8 charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=1 checksum=7f984710067b3697 charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=5 checksum=114a37c384a2f307 charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=8 checksum=e2a1e7ede15b270b charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=12 checksum=fbbd59bbf723c727 charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=16 checksum=f08234a005b28478 charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=20 checksum=20bbf6f205d75301 charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=25 checksum=c8db0f4bed6e0cdc charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=29 checksum=dfabfad23f7c3bfc charred=0
+FIRELINE_FIRE_GAP repair=True reason=Delta base digest gap.
+FIRELINE_FIRE_APPLY kind=1 tick=37 checksum=1c1a2111b16faa76 charred=1
+FIRELINE_FIRE_APPLY kind=2 tick=41 checksum=89e13723553fb0e0 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=46 checksum=9868b9bde585af26 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=52 checksum=411094e6c3284ddf charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=56 checksum=c4c67ae9bf17f926 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=60 checksum=68b46367f1c66ad7 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=64 checksum=a786eccccd8b64f7 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=68 checksum=94cb93633b0a65db charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=72 checksum=f116fe6e0985f676 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=77 checksum=c3472c65876d1213 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=81 checksum=3ed350e99d1ef29a charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=86 checksum=d6f21f13880bac11 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=90 checksum=aa5db507e8501fc5 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=94 checksum=701078128188cc56 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=98 checksum=84285c8c60d43349 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=103 checksum=1375a4cb0e5cf021 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=106 checksum=20dbbba2f1177050 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=110 checksum=871fa53ec9d895cc charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=114 checksum=529efb42b48148ef charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=118 checksum=680d9c84f61f0655 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=120 checksum=7ba53d73d78a059a charred=5
+FIRELINE_METRICS_SAVED client-1.metrics.json
+FIRELINE_REPLICATION_PROOF role=client passed=True tick=120 checksum=7ba53d73d78a059a

@@ -1,0 +1,14 @@
+FIRELINE_SERVER_START endpoint=127.0.0.1:8080
+FIRELINE_WORLD_READY restored=False tick=0 checksum=ba0ecc7466f19ace
+FIRELINE_SIMULATION_START hz=5 grid=32 cellM=10 seed=415 authority=server fixture=synthetic
+FIRELINE_SERVER_HEADLESS valid=True graphics=Null cameras=0
+FIRELINE_SERVER_CONNECTIONS count=0
+FIRELINE_SERVER_CONNECTIONS count=1
+FIRELINE_FIRE_SUBSCRIBE client=1
+FIRELINE_FIRE_REJECT client=1 kind=99
+FIRELINE_FIRE_SEND client=1 kind=1 tick=29 rawBytes=94385 payloadChars=4144
+FIRELINE_FIRE_ACK client=1 kind=1 tick=29 checksum=2f79d43d3f999008
+FIRELINE_FIRE_SEND client=1 kind=2 tick=33 rawBytes=1175 payloadChars=960
+FIRELINE_FIRE_SEND client=1 kind=1 tick=73 rawBytes=94385 payloadChars=5432
+FIRELINE_FIRE_TIMEOUT client=1
+FIRELINE_SERVER_CONNECTIONS count=0

@@ -13,6 +13,8 @@ namespace Fireline.Client
     {
         private readonly List<double> frameMilliseconds = new List<double>();
         private long peakAllocatedBytes;
+        /// <summary>Number of accepted render-callback intervals; callers can avoid writing an empty recording.</summary>
+        public int SampleCount => frameMilliseconds.Count;
 
         /// <summary>
         /// Accept a positive finite callback interval in seconds, store milliseconds, and track peak Unity allocation.
