@@ -1,5 +1,7 @@
 # M00 coastal import and acceptance follow-up — 2026-10-22
 
+**Status note — 2026-10-23:** historical M00-open statements below describe the capture/report checkpoint. [Foundation closeout](2026-10-23-m00-closeout.md) supersedes their scheduling; all raw results, failures and deferred qualification tasks remain unchanged.
+
 **Status: In Progress. This increment does not yet close M00 or start M01.**
 
 Starting checkpoint: clean `main` at `db4ab838f705d793fc1cdcacd4c067572ccf8916`. Unity 6000.6.7f1, HDRP 17.6.0, Netcode/Entities/Transport 6.6.0 and the original quality presets remain in place. CLI 1.0.0-beta.14 was confirmed current. Live preflight found a clean original SampleScene, active HDRP and no compilation in progress. Original scenes/configuration were inspected before edits.

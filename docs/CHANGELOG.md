@@ -2,6 +2,11 @@
 
 Record meaningful development changes in dated entries, newest first. Link implementation evidence and disclose limitations. Plans and templates are not completed game features.
 
+## 2026-10-23 — M00 foundation closed; M01 activated
+
+- Closed M00 against committed project-open/test/build/headless/direct-IP evidence; [acceptance/dependency report](reports/2026-10-23-m00-closeout.md).
+- Kept aircraft licensing/import in M03, art/counter coverage in M04 and final performance qualification/deferred optimization in M09. No issue is relabeled passed. M01 is active; M05A remains Pending.
+
 ## 2026-10-23 — M05A player-experience roadmap integration
 
 - Added M05A after M05 and before M06 without renumbering: controls/interactions, functional UI/HUD, persistent settings, accessibility and tutorials. [Complete requirements and dependencies](PLAYER_EXPERIENCE_SPEC.md).

@@ -1,5 +1,7 @@
 # Frame-loss investigation register — M00
 
+**Status note — 2026-10-23:** historical M00-open statements below describe the capture/report checkpoint. [Foundation closeout](../reports/2026-10-23-m00-closeout.md) supersedes their scheduling; all raw results, failures and deferred qualification tasks remain unchanged.
+
 **2026-10-22 · Locations measured; cause attribution and optimization deferred at the user's request.**
 
 The largest recorded hitch is **83.47170 ms at sample #2**, from **0.022026 to 0.105498 seconds** relative to the start of the first stored interval. Three of 896 intervals exceed 20 ms. This report marks slow callback intervals, not confirmed dropped display frames: no presentation-loss counter, CPU timeline or GPU timestamps were captured.

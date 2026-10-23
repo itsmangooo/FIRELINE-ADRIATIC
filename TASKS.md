@@ -25,14 +25,13 @@ Apply this checklist to each milestone using [the workflow](docs/DOCUMENTATION_W
 
 ## M00 — Preproduction & Unity audit (start here)
 
-**Status: In Progress.** [Original foundation](docs/reports/2026-10-22-m00-foundation.md) and [coastal/build acceptance follow-up](docs/reports/2026-10-22-m00-coastal-foundation.md). M01 remains locked while required M00 acceptance gaps remain. The official CL-415 archive was downloaded after user sign-in; conflicting listing/archive licences now block import. [Audit](AssetSources/Aircraft/CL415/AUDIT.md).
+**Status: Verified — foundation scope, closed 2026-10-23.** [Acceptance and dependency closeout](docs/reports/2026-10-23-m00-closeout.md), [original foundation](docs/reports/2026-10-22-m00-foundation.md), [coastal/build evidence](docs/reports/2026-10-22-m00-coastal-foundation.md). Project opens, 20 tests pass, client/headless builds and direct-IP smoke are verified. Aircraft import is an open M03 dependency; production art/60 FPS qualification remains M04/M09 work. No licence or performance requirement is waived. M01 is now active.
 
 - [x] Inspect existing Unity 6 HDRP project, package versions, CLI/editor tooling and Git branch; preserve original project.
 - [x] Research and resolve Unity 6.6 / HDRP 17.6 / Netcode for Entities + Transport 6.6 versions; record build integration issues.
 - [x] Verify the rendered HDRP release client and dedicated server with two separate client processes on direct-IP loopback; all three accepted smoke exits were 0.
 - [x] Inspect `AssetSources/`; acquire five licensed 2K PBR surfaces and an actual Copernicus GLO-90 crop, convert/import terrain and retain provenance, pixel/hash/import checks and notices.
-- [ ] Acquire and audit the minimum CL-415 source archive, import its exterior and document moving parts, textures, scale and missing cockpit parts. **Licensing blocker:** official original OBJ archive acquired, but its included GPL notice/texture contributor conflicts with the listing’s CC BY 4.0 record. Reconcile contributor rights and notices, or audit an authorized replacement, before Unity import. No rig/pivot/cockpit validation is claimed.
-- [x] Set up six modular assemblies, 15 passing EditMode cases and minimal CI/build instructions; document actual dependency boundaries.
+- [x] Set up six modular assemblies, 20 passing EditMode cases and minimal CI/build instructions; document actual dependency boundaries.
 - [x] Build Windows dedicated server and verify null-graphics/no-camera startup plus expected failure when clients are absent.
 - [x] Finish release client build/runtime evidence and verify opposite-role assembly exclusion in both outputs; inspect actual release screenshot after rendered warm-up.
 - [x] Add an initial calibration render scene and record named local hardware; preserve existing quality presets.
@@ -42,10 +41,7 @@ The original box calibration scene is not a representative performance benchmark
 
 - [x] Record the initial 720p diagnostic sample with raw render intervals and named hardware; no 1080p/60 FPS pass claimed.
 - [x] Map recorded slow intervals and source suspects in the [frame-loss register](docs/performance/FRAME_LOSS_REGISTER.md), verify the metrics and add rendered SVG timeline/flowchart.
-- [ ] **Deferred at user request:** resume FL-01–FL-05 attribution and only then optimize with equivalent BEFORE/AFTER measurements. Continue M00 work independently; this deferral does not waive its benchmark acceptance gate.
-- [ ] Collect representative 1080p baseline and five-minute runs, CPU/GPU execution counters, draw calls, VRAM, server tick duration and network bandwidth.
 - [x] Complete the initial proxy scene's matched 1080p Balanced five-minute clear/static-fog pair, inspect actual release captures, verify raw CSV summaries and render/inspect SVG interval plots with reader guides. CPU/main/GPU timing, draw calls and Unity allocated bytes were available. [Measured results](docs/performance/2026-10-22-m00-coastal.md); p95 exceeds 16.67 ms, no production pass.
-- [ ] Add missing VRAM/residency, GC, render-thread/triangle counters and actual dedicated-server tick-duration/transport-byte measurements; populate representative scenarios as their licensed assets/gameplay dependencies become available. Current proxies and clock tick counts cannot substitute for those gates.
 - [x] Validate Windows and Linux dedicated-server builds and the supplied closed-Editor batch/test path on this licensed local worker. Linux executed a five-second headless/clock negative test under WSL2 with a workspace-local Ubuntu Base root; it is not native Linux, Linux multiplayer, hosted CI or capacity qualification.
 
 Future evidence diagrams/flowcharts must be actual embedded SVG drawings with editable sources; mathematical formulas must use correctly formatted Markdown math or an SVG fallback. Explain graph axes, ticks, intervals, recording origin and annotations in plain language before each milestone's final commit. See [permanent rendering rules](docs/DOCUMENTATION_WORKFLOW.md#rendered-diagrams-and-mathematics).
@@ -53,6 +49,8 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 **Accept:** Project opens, tests run, one client release build and headless server build smoke launches; docs complete; no gameplay falsely marked complete.
 
 ## M01 — Headless fire/wind simulation
+
+**Status: In Progress.** Depends on verified M00. Pure authoritative core and server integration; M02 owns client replication. No gameplay-completion claim until deterministic tests and headless build/run evidence pass.
 
 - [ ] Data model fixed chunk IDs, burn phases, fuel/wetness, deterministic seeded tests.
 - [ ] Fixed-step authoritative wind field, with gusts and changes; fuel/slope/wind influence spread.
@@ -71,6 +69,8 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 
 ## M03 — CL-415 flight & water physics
 
+- [ ] Acquire and audit the minimum CL-415 source archive, import its exterior and document moving parts, textures, scale and missing cockpit parts. **Licensing blocker:** official original OBJ archive acquired, but its included GPL notice/texture contributor conflicts with the listing’s CC BY 4.0 record. Reconcile contributor rights and notices, or audit an authorized replacement, before Unity import. No rig/pivot/cockpit validation is claimed.
+
 - [ ] Approved CL-415 asset, distinct movable parts inventory; flight model in SI, config curves+HUD telemetry.
 - [ ] Takeoff, landing, wind response; payload/fuel mass; water scoop validity.
 - [ ] Server-calculated droplet parcels, wind-drift coverage and graded fire reduction.
@@ -78,6 +78,8 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 **Accept:** Repeatable high vs low drop + crosswind footprint tests, mass conservation, comparable clients observe same suppressed cells.
 
 ## M04 — HDRP coastal art + VFX
+
+- [ ] Complete representative visual workload/counter coverage (VRAM/residency, GC, render-thread/triangles) as real assets/VFX become available; current generated proxies do not establish production acceptance. M01 adds server simulation tick duration; M02 adds gameplay traffic measurements.
 
 - [ ] Import Poly Haven CC0 materials correctly into HDRP Terrain Lit/Lit and sky setup.
 - [ ] Authored small coastal hills + sea + woodland + airstrip; bind burning/char states to visual material swaps.
@@ -133,6 +135,10 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 **Accept:** Verified benchmark results with server hardware, tick p95, traffic and RAM; no '100-player ready' claim if failing.
 
 ## M09 — Modding, host packaging, 60 FPS and release
+
+- [ ] **Deferred at user request:** resume FL-01–FL-05 attribution and only then optimize with equivalent BEFORE/AFTER measurements. Continue independent milestones; deferred optimization does not waive final performance acceptance.
+- [ ] Collect representative 1080p baseline and five-minute runs, CPU/GPU execution counters, draw calls, VRAM, server tick duration and network bandwidth.
+- [ ] Add missing VRAM/residency, GC, render-thread/triangle counters and actual dedicated-server tick-duration/transport-byte measurements; populate representative scenarios as their licensed assets/gameplay dependencies become available. Current proxies and clock tick counts cannot substitute for those gates.
 
 **Dependencies:** Completed M05A controls/UI/settings/tutorials and M06–M08 operations/persistence/scale evidence. M09 qualifies and packages these systems rather than substituting release placeholders.
 

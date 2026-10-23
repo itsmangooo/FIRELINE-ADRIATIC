@@ -16,7 +16,7 @@ The OBJ has 20,100 position records and 144 distinct object/group declarations. 
 
 Raw bounds are approximately 19.795 × 8.816 × 28.785 source units. Units/orientation, scale normalization, pivots, hierarchy, logos/livery rights, mesh quality, HDRP material conversion, cockpit coverage and runtime cost remain unverified in Unity. No import screenshot exists because the licensing gate prevents integration. These dimensions are an archive observation, not validated aircraft specifications or flight physics.
 
-M00's required exterior import remains unchecked. The project instructions require switching to independent work when licensing blocks an asset; M01 remains gated rather than falsely marking M00 complete.
+The exterior import remains unchecked under M03. The user-approved 2026-10-23 dependency closeout closes M00's verified foundation scope and permits independent M01 fire/wind work; it does not resolve this licence gate or authorize aircraft integration.
 
 Reproduce the read-only inventory/hash checks from the repository root after obtaining the official original download:
 

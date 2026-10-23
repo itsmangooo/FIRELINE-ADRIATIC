@@ -2,15 +2,17 @@
 
 ## Project Overview
 
-**Status:** M00 Unity foundation in progress. The existing HDRP project has modular C# assemblies, direct-IP client/server startup, tests, Windows/Linux build entry points and an imported coastal render benchmark. Flight, fire, wind, water, dispatch and persistence remain planned. The original documentation pack and project guidance are preserved; proposed mechanics and numeric budgets remain design targets pending testing.
+**Status:** M00 Unity foundation verified; M01 authoritative fire/wind development in progress. The existing HDRP project has modular C# assemblies, direct-IP client/server startup, tests, Windows/Linux build entry points and an imported coastal render benchmark. Flight, fire, wind, water, dispatch and persistence remain planned. The original documentation pack and project guidance are preserved; proposed mechanics and numeric budgets remain design targets pending testing.
 
 A persistent, self-hosted, cooperative Croatian/Herzegovinian aerial and ground firefighting simulator. Unity 6 HDRP, C#, up to 100 players per server (target, **not demonstrated**), up to 9 aircraft (design cap), server-authoritative fire/wind/water/combustion, modding, 60 FPS client target.
 
 ## Current Development Status
 
-Unity **6000.6.7f1** / HDRP **17.6.0** are retained; Netcode for Entities, Entities and Transport **6.6.0** remain resolved. **20 EditMode tests pass**, including the closed-Editor path. Windows client/server and Linux x64 server builds succeeded with zero errors; the Windows server/two-client smoke passed. Linux also passed its headless/clock negative startup test under WSL2. Five licensed PBR surfaces and a real Petrčane DSM crop are imported into a separate benchmark scene. See the [latest M00 evidence](docs/reports/2026-10-22-m00-coastal-foundation.md). M00 remains open for the CL-415 licence conflict/import and remaining representative evidence; M01–M09 remain pending.
+Unity **6000.6.7f1** / HDRP **17.6.0** are retained; Netcode for Entities, Entities and Transport **6.6.0** remain resolved. **20 EditMode tests pass**, including the closed-Editor path. Windows client/server and Linux x64 server builds succeeded with zero errors; the Windows server/two-client smoke passed. Linux also passed its headless/clock negative startup test under WSL2. Five licensed PBR surfaces and a real Petrčane DSM crop are imported into a separate benchmark scene. See the [latest M00 evidence](docs/reports/2026-10-22-m00-coastal-foundation.md). M00 is closed against its foundation acceptance criteria; M01 is active. Aircraft licence/import and production graphics/performance qualification remain open under M03/M04/M09. [Scope/dependency closeout](docs/reports/2026-10-23-m00-closeout.md). M05A and later gameplay milestones remain pending.
 
 ## Latest Development Updates
+
+- **2026-10-23 — M00 closed; M01 active:** verified the recorded foundation acceptance evidence and assigned aircraft/art/release gaps to their actual dependencies. [Closeout and open follow-ups](docs/reports/2026-10-23-m00-closeout.md). No gameplay or 60 FPS pass is implied by the foundation closeout.
 
 - **2026-10-23 — M05A added to the roadmap:** planned Player Experience, Controls, UI/UX & Settings after M05 and before M06. [Scope and staged dependencies](docs/PLAYER_EXPERIENCE_SPEC.md). Documentation only; M05A is not implemented and does not interrupt the active milestone.
 
@@ -65,8 +67,8 @@ The new **1080p Balanced five-minute clear/static-fog pair** averaged 60.00/60.0
 
 | Milestone | Planned outcome | Status |
 |---|---|---|
-| M00 | Unity/tooling audit, assemblies, build and benchmark foundation | In Progress |
-| M01 | Authoritative fire and wind | Pending |
+| M00 | Unity/tooling audit, assemblies, build and benchmark foundation | Verified |
+| M01 | Authoritative fire and wind | In Progress |
 | M02 | Multi-process replication and persistence proof | Pending |
 | M03 | CL-415 flight and water physics | Pending |
 | M04 | HDRP coastal art and VFX | Pending |

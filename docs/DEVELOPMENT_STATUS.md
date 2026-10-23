@@ -2,6 +2,10 @@
 
 **Document created:** 2026-10-22
 
+## Active milestone — 2026-10-23
+
+**M00 Verified; M01 In Progress.** The user authorized automatic progression after verified completion. [Foundation closeout](reports/2026-10-23-m00-closeout.md) closes M00 against its actual foundation acceptance criteria using the committed build/test/runtime evidence. Aircraft licensing/import remains unchecked in M03; art/counter coverage in M04 and production qualification/deferred optimization in M09. M05A remains Pending. These assignments change scheduling, not evidence requirements or pass results. Historical open-M00 statements below are superseded by this entry.
+
 ## Roadmap update — 2026-10-23 M05A
 
 Added **M05A — Player Experience, Controls, UI/UX & Settings** after M05 and before M06. [Scope/dependencies](PLAYER_EXPERIENCE_SPEC.md), [documentation verification](reports/2026-10-23-m05a-roadmap.md). M05A remains Pending; no controls/UI/settings/tutorials were implemented. Real M01–M05 mechanics are prerequisites; final operations screens bind to M06 services. Active foundation closeout/M01 work continues independently.
@@ -63,7 +67,7 @@ Added **M05A — Player Experience, Controls, UI/UX & Settings** after M05 and b
 
 ## Immediate next action
 
-Resolve the [CL-415 licence/import gate](../AssetSources/Aircraft/CL415/AUDIT.md) and remaining representative measurement tasks before closing M00 and starting M01. Reproduce the current foundation using [M00_BUILD_AND_TEST.md](M00_BUILD_AND_TEST.md). Latest Windows regression logs remain under `Builds/Smoke/20261022-214232/`; [current source/runtime evidence](reports/2026-10-22-m00-coastal-foundation.md) supersedes earlier captures. The connection harness establishes the process boundary; M01/M02 must implement and verify shared authoritative fire state separately.
+Continue M01 fixed-step authoritative fire/wind and server validation. The [CL-415 licence/import gate](../AssetSources/Aircraft/CL415/AUDIT.md) remains an M03 prerequisite, not a pure fire-simulation dependency. Reproduce the current foundation using [M00_BUILD_AND_TEST.md](M00_BUILD_AND_TEST.md). Latest Windows regression logs remain under `Builds/Smoke/20261022-214232/`; [current source/runtime evidence](reports/2026-10-22-m00-coastal-foundation.md) supersedes earlier captures. The connection harness establishes the process boundary; M01/M02 must implement and verify shared authoritative fire state separately.
 
 ## Update template for each checkpoint
 
