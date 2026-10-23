@@ -14,6 +14,10 @@ namespace Fireline.Client
         private readonly List<double> frameMilliseconds = new List<double>();
         private long peakAllocatedBytes;
 
+        /// <summary>
+        /// Accept a positive finite callback interval in seconds, store milliseconds, and track peak Unity allocation.
+        /// The caller decides when warm-up ends; this collector does not remove samples itself.
+        /// </summary>
         public void Sample(float seconds)
         {
             if (seconds <= 0 || float.IsNaN(seconds) || float.IsInfinity(seconds)) return;
@@ -21,6 +25,11 @@ namespace Fireline.Client
             peakAllocatedBytes = Math.Max(peakAllocatedBytes, Profiler.GetTotalAllocatedMemoryLong());
         }
 
+        /// <summary>
+        /// Write raw interval CSV and hardware/settings JSON; reject an empty recording.
+        /// Average FPS uses mean spacing, and 1% low uses the mean of the slowest ceiling(1%) intervals.
+        /// Uninstrumented execution/bandwidth counters stay explicitly unavailable.
+        /// </summary>
         public void Save(string path)
         {
             if (frameMilliseconds.Count == 0)

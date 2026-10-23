@@ -11,10 +11,12 @@ import zipfile
 
 
 def sha256(data):
+    """Return the SHA-256 fingerprint of the supplied bytes without changing or extracting them."""
     return hashlib.sha256(data).hexdigest()
 
 
 def main():
+    """Read the supplied original archive and compare nested files, notices and OBJ geometry against the recorded audit. Assert on any mismatch; success still leaves the conflicting licence/import gate unresolved."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("archive", type=Path)
     args = parser.parse_args()

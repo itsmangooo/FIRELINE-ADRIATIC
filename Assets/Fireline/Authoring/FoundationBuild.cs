@@ -15,8 +15,15 @@ namespace Fireline.Authoring
     {
         public const string ClientScene = "Assets/Fireline/Scenes/M00_Client.unity";
         public const string ServerScene = "Assets/Fireline/Scenes/M00_Server.unity";
+        /// <summary>
+        /// Directory for build reports; an environment override keeps milestone evidence separate.
+        /// </summary>
         private static string Evidence => Environment.GetEnvironmentVariable("FIRELINE_BUILD_EVIDENCE") ?? "docs/reports/m00-evidence";
 
+        /// <summary>
+        /// Create only missing foundation scenes and calibration assets, preserving the starter scene.
+        /// Refuse unsaved scene edits and restore the previous open-scene setup even if generation fails.
+        /// </summary>
         [MenuItem("FIRELINE/M00/Create missing foundation scenes")]
         public static void CreateScenes()
         {
@@ -74,11 +81,28 @@ namespace Fireline.Authoring
             }
         }
 
+        /// <summary>
+        /// Build the Windows rendered calibration client and write its asset inventory/result report.
+        /// </summary>
         public static void BuildClient() => Build(false);
+        /// <summary>
+        /// Build the Windows headless server with an empty scene and temporarily remove render pipelines.
+        /// </summary>
         public static void BuildServer() => Build(true);
+        /// <summary>
+        /// Build the Windows coastal render fixture with timing counters and bundled asset notices.
+        /// </summary>
         public static void BuildBenchmarkClient() => Build(false, benchmark: true);
+        /// <summary>
+        /// Cross-build the Linux x64 headless server; running that player is a separate verification step.
+        /// </summary>
         public static void BuildLinuxServer() => Build(true, linux: true);
 
+        /// <summary>
+        /// Build the requested role and fail on build errors or detected server presentation assets.
+        /// Temporarily select pipeline/backend/quality options, write evidence, and restore settings in finally.
+        /// The inventory check covers named presentation assets, not every possible graphics resource.
+        /// </summary>
         private static void Build(bool server, bool benchmark = false, bool linux = false)
         {
             if (BuildPipeline.isBuildingPlayer || EditorApplication.isCompiling || EditorApplication.isPlayingOrWillChangePlaymode)
@@ -179,6 +203,10 @@ namespace Fireline.Authoring
             }
         }
 
+        /// <summary>
+        /// Reload a saved pipeline asset path after a build may have unloaded the original Unity object.
+        /// An empty path means no pipeline; a missing nonempty path fails rather than silently changing settings.
+        /// </summary>
         private static RenderPipelineAsset LoadPipeline(string path)
         {
             if (string.IsNullOrEmpty(path)) return null;
@@ -187,6 +215,9 @@ namespace Fireline.Authoring
             return pipeline;
         }
 
+        /// <summary>
+        /// Select a quality tier without applying expensive changes, then assign its render pipeline.
+        /// </summary>
         private static void SetQualityPipeline(int index, RenderPipelineAsset pipeline)
         {
             QualitySettings.SetQualityLevel(index, false);

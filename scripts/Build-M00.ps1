@@ -1,3 +1,16 @@
+<#
+.SYNOPSIS
+Run foundation unit tests and client/server builds from a closed project Editor.
+.DESCRIPTION
+Writes fresh test/build evidence, verifies headless asset isolation, and optionally runs the process smoke test.
+Temporarily sets the evidence environment variable and restores it even on failure; never closes the user's Editor.
+.PARAMETER Smoke
+Run the local two-client connection/render test after successful builds.
+.PARAMETER LinuxServer
+Also cross-build the Linux server; this switch does not execute that player.
+.PARAMETER EvidenceRoot
+Repository-relative destination for reports; existing report names may be replaced by this run.
+#>
 param([switch]$Smoke, [switch]$LinuxServer, [string]$EvidenceRoot = 'docs/reports/m00-evidence')
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
@@ -20,6 +33,7 @@ try {
     }
     New-Item -ItemType Directory -Force $EvidenceRoot | Out-Null
     Copy-Item -LiteralPath Builds/CI/editmode.xml -Destination (Join-Path $EvidenceRoot 'editmode.xml') -Force
+    # Build roles sequentially, then require a fresh successful report and a nonempty server asset inventory.
     foreach ($role in @('Server', 'Client')) {
         $started = [DateTime]::UtcNow
         unity run $projectRoot --editor-version 6000.6.7f1 --timeout 1800 --log-file "Builds/CI/$role-build.log" --no-tail -- -executeMethod "Fireline.Authoring.FoundationBuild.Build$role"
@@ -34,6 +48,7 @@ try {
             throw 'The incremental server report omitted its asset inventory; obtain a clean build report before certifying asset isolation.'
         }
     }
+    # Cross-compilation is a build check only; the separate WSL script verifies Linux execution.
     if ($LinuxServer) {
         $started = [DateTime]::UtcNow
         unity run $projectRoot --editor-version 6000.6.7f1 --timeout 1800 --log-file Builds/CI/LinuxServer-build.log --no-tail -- -buildTarget Linux64 -executeMethod Fireline.Authoring.FoundationBuild.BuildLinuxServer

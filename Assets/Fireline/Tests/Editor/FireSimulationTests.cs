@@ -9,11 +9,17 @@ namespace Fireline.Tests
     public sealed class FireSimulationTests
     {
         private static readonly ChunkId Id = new ChunkId(1, 0, 0);
+        /// <summary>
+        /// Create a 4x4, 10 m-cell test world with one active brush chunk and supplied fuel density in kg/m2.
+        /// </summary>
         private static FireWorld Small(double fuel = 2)
         {
             var world = new FireWorld(415, 4); world.AddChunk(Id, true, fuel); return world;
         }
 
+        /// <summary>
+        /// Run the same nine-case acceptance matrix used in real headless players and require all checks to pass.
+        /// </summary>
         [Test]
         public void ScenarioMatrixIsDeterministicDirectionalAndSuppressible()
         {
@@ -21,6 +27,9 @@ namespace Fireline.Tests
             Assert.That(result.passed, Is.True); Assert.That(result.cases.Length, Is.EqualTo(9));
         }
 
+        /// <summary>
+        /// Check unequal dose weights produce correct kg/m2 and retained plus evaporated mass equals the applied 250 kg.
+        /// </summary>
         [Test]
         public void WaterMassIsDistributedAndConservedAfterEvaporation()
         {
@@ -32,6 +41,9 @@ namespace Fireline.Tests
             Assert.That(retained + world.EvaporatedWaterKg, Is.EqualTo(250).Within(1e-9));
         }
 
+        /// <summary>
+        /// Prove invalid cells, weight totals and NaN doses throw before any state or accounting changes.
+        /// </summary>
         [Test]
         public void InvalidWaterCoverageFailsAtomically()
         {
@@ -42,6 +54,9 @@ namespace Fireline.Tests
             Assert.That(world.Checksum(), Is.EqualTo(before));
         }
 
+        /// <summary>
+        /// Prove the client-facing placeholder rejects mutation with a reason and leaves the authoritative digest unchanged.
+        /// </summary>
         [Test]
         public void ClientWaterRequestCannotMutateAuthority()
         {
@@ -50,6 +65,9 @@ namespace Fireline.Tests
             Assert.That(reason, Is.Not.Empty); Assert.That(world.Checksum(), Is.EqualTo(before));
         }
 
+        /// <summary>
+        /// Check a small dose reduces intensity, a larger dose extinguishes without deleting fuel, and wet fuel cannot reignite.
+        /// </summary>
         [Test]
         public void SmallDoseReducesIntensityAndStrongDoseExtinguishesWithoutDeletingFuel()
         {
@@ -64,6 +82,9 @@ namespace Fireline.Tests
             Assert.That(world.Ignite(Id, 5), Is.False, "Wet fuel cannot immediately reignite.");
         }
 
+        /// <summary>
+        /// Run low-fuel combustion through smoldering to exhaustion; verify char survives later ignition/water attempts.
+        /// </summary>
         [Test]
         public void BurnConsumesFuelThroughSmolderingAndNeverRegrowsChar()
         {
@@ -77,6 +98,9 @@ namespace Fireline.Tests
             Assert.That(world.GetCell(Id, 5).Phase, Is.EqualTo(BurnPhase.Charred));
         }
 
+        /// <summary>
+        /// Verify heat crosses a negative-X chunk seam and vegetation IDs remain distinct across chunks.
+        /// </summary>
         [Test]
         public void AdjacentNegativeCoordinateChunkReceivesHeatAcrossBoundary()
         {
@@ -86,9 +110,13 @@ namespace Fireline.Tests
             Assert.That(world.GetCell(left, 7).VegetationId, Is.Not.EqualTo(world.GetCell(Id, 7).VegetationId));
         }
 
+        /// <summary>
+        /// Build equivalent worlds in reversed insertion order and require equal state digests after every step.
+        /// </summary>
         [Test]
         public void InsertionOrderCannotChangeWorldResults()
         {
+            // Construct the same two chunks in the requested order so the test isolates traversal-order effects.
             FireWorld Create(bool reverse)
             {
                 var world = new FireWorld(415, 4); var other = new ChunkId(1, 1, 0);
@@ -99,6 +127,9 @@ namespace Fireline.Tests
             for (int i = 0; i < 100; i++) { a.Step(); b.Step(); Assert.That(a.Checksum(), Is.EqualTo(b.Checksum())); }
         }
 
+        /// <summary>
+        /// Fill capacity, reject extra/overactive chunks and verify bounded per-step work while inactive chunks still consume fuel.
+        /// </summary>
         [Test]
         public void ChunkBudgetsBoundWorkAndInactiveChunksKeepProgressing()
         {
@@ -114,6 +145,9 @@ namespace Fireline.Tests
             foreach (var id in ids) Assert.That(world.GetCell(id, 5).RemainingFuelKgPerM2, Is.LessThan(2));
         }
 
+        /// <summary>
+        /// Verify snapshot cells are detached and latest-step delta indices, values, ticks and revisions agree.
+        /// </summary>
         [Test]
         public void SnapshotsAreDetachedAndDeltasHaveOrderedRevisions()
         {
@@ -125,6 +159,9 @@ namespace Fireline.Tests
             for (int i = 0; i < delta.Indices.Length; i++) Assert.That(delta.Values[i].LastChangedTick, Is.EqualTo(world.Tick));
         }
 
+        /// <summary>
+        /// Verify equal seeds/inputs repeat gusts, time changes gusts, wind changes advance revision, and infinity is rejected.
+        /// </summary>
         [Test]
         public void SeededGustsAndWindChangesAreFiniteRepeatableAndVersioned()
         {
@@ -138,6 +175,9 @@ namespace Fireline.Tests
             Assert.Throws<ArgumentOutOfRangeException>(() => a.Set(double.PositiveInfinity, 0, 0));
         }
 
+        /// <summary>
+        /// Verify the authoritative hazard field becomes stronger downwind without relying on any client particle system.
+        /// </summary>
         [Test]
         public void SmokeHazardMovesDownwindWithoutClientParticles()
         {
@@ -146,9 +186,13 @@ namespace Fireline.Tests
             Assert.That(world.GetCell(Id, 6).Smoke, Is.GreaterThan(world.GetCell(Id, 4).Smoke));
         }
 
+        /// <summary>
+        /// Compare neighbor heat with identical seed, moisture, fuel density and duration, varying only the fuel class.
+        /// </summary>
         [Test]
         public void FuelClassChangesNeighborHeatingUnderEquivalentInputs()
         {
+            // Return east-neighbor heat after 20 equivalent steps for the supplied fuel class.
             double Heat(FuelKind kind)
             {
                 var world = new FireWorld(415, 4); world.AddChunk(Id, true, 2, 0.1, kind); world.Ignite(Id, 5);
@@ -159,6 +203,9 @@ namespace Fireline.Tests
             Assert.That(Heat(FuelKind.Brush), Is.GreaterThan(Heat(FuelKind.PineLitter)));
         }
 
+        /// <summary>
+        /// Verify evaporation eventually permits remaining fuel to reignite without restoring already charred vegetation.
+        /// </summary>
         [Test]
         public void DryingAllowsReignitionWithoutRestoringCharredVegetation()
         {

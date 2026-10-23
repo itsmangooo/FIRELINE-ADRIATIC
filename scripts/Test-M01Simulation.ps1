@@ -1,3 +1,13 @@
+<#
+.SYNOPSIS
+Verify the current Windows headless simulation in two independent dedicated-server processes.
+.DESCRIPTION
+Requires the Editor closed, a role-isolated existing build, and free loopback port 7992.
+Checks fresh nine-case outputs, 600-step coverage, zero exits and matching digests; retains first raw run plus both hashes.
+Only this invocation's process is stopped on timeout/failure. Timings are fixture evidence, not full-host capacity.
+.PARAMETER EvidenceRoot
+Repository-relative report destination; raw logs and the second full result remain under ignored Builds.
+#>
 param([string]$EvidenceRoot = 'docs/reports/m01-evidence')
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
@@ -15,6 +25,7 @@ $raw = Join-Path $projectRoot "Builds/M01Proof/$stamp"
 $evidence = Join-Path $projectRoot $EvidenceRoot
 New-Item -ItemType Directory -Force $raw, $evidence | Out-Null
 $runs = @()
+# Start a fresh process for each replay; matching final digests test same-runtime repeatability.
 foreach ($iteration in 1..2) {
     $resultPath = Join-Path $raw "proof-$iteration.json"
     $log = Join-Path $raw "proof-$iteration.log"
@@ -33,6 +44,7 @@ foreach ($iteration in 1..2) {
         $data = Get-Content -LiteralPath $resultPath -Raw | ConvertFrom-Json
         $markers = @(Get-Content -LiteralPath $log | Where-Object { $_ -match '^FIRELINE_' })
         if (-not $data.passed -or $data.cases.Count -ne 9 -or -not ($markers -match 'PROOF passed=True headless=True')) { throw 'Incomplete/invalid headless proof.' }
+        # Require the complete scenario duration before comparing state digests; timing samples may differ between runs.
         $checksums = @{}
         foreach ($case in $data.cases) {
             if ($case.samples.Count -ne 600 -or $case.finalState.Tick -ne 600) { throw 'Missing simulation steps.' }
@@ -54,6 +66,7 @@ foreach ($iteration in 1..2) {
     }
     finally { if (-not $process.HasExited) { Stop-Process -Id $process.Id -Force } }
 }
+# Record DLL hashes as well as the launcher hash so this evidence identifies the actual simulation code.
 [ordered]@{ utc = [DateTime]::UtcNow.ToString('o'); passed = $true; runs = $runs;
     binarySha256 = (Get-FileHash $binary -Algorithm SHA256).Hash;
     runtimeHashes = @(Get-ChildItem $managed -Filter 'Fireline*.dll' | ForEach-Object {

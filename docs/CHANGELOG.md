@@ -2,6 +2,12 @@
 
 Record meaningful development changes in dated entries, newest first. Link implementation evidence and disclose limitations. Plans and templates are not completed game features.
 
+## 2026-10-23 — Human-readable source explanations
+
+- Explained all 144 project C# function/property declarations and all 14 existing tooling scripts, with purpose, units, ownership, side effects and limits. Vendor/generated code is excluded.
+- Added reproducible offline source-identity/coverage audits: unchanged C# tokens in five symbol configurations, Python ASTs, PowerShell tokens and shell tokens; 34/34 Unity tests pass.
+- [Report and verification artifacts](reports/2026-10-23-source-comments.md). No visual, mathematical or runtime behavior changed; new screenshots/physics/performance captures are not applicable. M02 is now active.
+
 ## 2026-10-23 — M01 authoritative fire/wind implementation
 
 - Added bounded pure C# fire/fuel/wind/moisture/slope/manual-water/hazard/char behavior, stable IDs and detached snapshot/latest-step delta contracts; a 5 Hz dedicated adapter runs the same model.

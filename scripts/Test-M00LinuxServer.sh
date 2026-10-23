@@ -2,6 +2,7 @@
 # Execute the Linux player in an ignored workspace-local Ubuntu Base root under the existing WSL kernel.
 # No Docker daemon, new WSL distribution, system package install or public listen socket.
 set -eu
+# Entry point: the first argument is the checkout's WSL path; all generated runtime data stays under Builds.
 project=${1:?Pass the WSL path to the checkout}
 runtime="$project/Builds/LinuxRuntime/rootfs"
 archive="$project/Builds/LinuxRuntime/ubuntu-base-24.04.5-base-amd64.tar.gz"
@@ -18,6 +19,7 @@ if [ "${2:-}" = "--prepare" ]; then
 fi
 mkdir -p "$runtime/workspace" "$runtime/proc"
 mount --bind "$project/Builds/LinuxServer" "$runtime/workspace"
+# On any exit, release this fixture's proc/device/workspace bind mounts; do not alter the host installation.
 cleanup() {
     umount "$runtime/proc" 2>/dev/null || true
     for device in null zero random urandom; do umount "$runtime/dev/$device" 2>/dev/null || true; done

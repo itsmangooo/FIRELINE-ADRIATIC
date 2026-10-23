@@ -19,17 +19,50 @@ namespace Fireline.Simulation
         private readonly List<ChunkDelta> deltas = new List<ChunkDelta>();
         private int inactiveCursor;
         public const int MaximumChunks = 16, MaximumActiveChunks = 4, InactiveChunksPerStep = 1;
+        /// <summary>
+        /// Cells along one chunk edge, between 4 and 32; total cells per chunk are Size squared.
+        /// </summary>
         public int Size { get; }
+        /// <summary>
+        /// Width/depth of each square cell in meters, used to convert areal density into kilograms.
+        /// </summary>
         public double CellSizeM { get; }
+        /// <summary>
+        /// One authoritative fire tick represents 0.2 simulated seconds (5 Hz), independent of render frames.
+        /// </summary>
         public double StepSeconds => 0.2;
+        /// <summary>
+        /// Completed global fire steps, including steps where some inactive chunks wait their turn.
+        /// </summary>
         public ulong Tick { get; private set; }
+        /// <summary>
+        /// Server-owned wind sampler used by cell updates; no client particles feed back into this field.
+        /// </summary>
         public WindField Wind { get; }
+        /// <summary>
+        /// Number of cells updated during the latest step, for checking the bounded work budget.
+        /// </summary>
         public int LastVisitedCells { get; private set; }
+        /// <summary>
+        /// Sum of chunk update ages in simulated seconds; this is not a queued wall-time pause.
+        /// </summary>
         public double BacklogSeconds { get; private set; }
+        /// <summary>
+        /// Cumulative kilograms admitted by validated water applications.
+        /// </summary>
         public double AppliedWaterKg { get; private set; }
+        /// <summary>
+        /// Cumulative kilograms removed by the modeled evaporation term.
+        /// </summary>
         public double EvaporatedWaterKg { get; private set; }
+        /// <summary>
+        /// Cumulative kilograms burned, summed from cell density loss times cell area.
+        /// </summary>
         public double ConsumedFuelKg { get; private set; }
 
+        /// <summary>
+        /// Create an empty bounded SI grid with seeded wind; reject invalid side length or 5-100 m cell size.
+        /// </summary>
         public FireWorld(int seed, int size = 16, double cellSizeM = 10)
         {
             if (size < 4 || size > 32) throw new ArgumentOutOfRangeException(nameof(size));
@@ -37,6 +70,11 @@ namespace Fireline.Simulation
             Size = size; CellSizeM = cellSizeM; Wind = new WindField(seed);
         }
 
+        /// <summary>
+        /// Validate capacity, ID, fuel density in kg/m2 and moisture in [0,1], then allocate both cell buffers.
+        /// Pack stable vegetation IDs from sector, signed-coordinate bit patterns and local cell index.
+        /// At most 16 chunks and four active chunks are accepted; terrain is configured separately before stepping.
+        /// </summary>
         public void AddChunk(ChunkId id, bool active, double fuelKgPerM2 = 2, double moisture = 0.1, FuelKind fuel = FuelKind.Brush)
         {
             if (chunks.Count >= MaximumChunks || chunks.ContainsKey(id)) throw new InvalidOperationException("Chunk capacity or duplicate ID.");
@@ -54,14 +92,27 @@ namespace Fireline.Simulation
             chunks.Add(id, chunk);
         }
 
+        /// <summary>
+        /// Count active chunks so admission and activation enforce the same four-chunk work limit.
+        /// </summary>
         private int ActiveCount() { int n = 0; foreach (var c in chunks.Values) if (c.Active) n++; return n; }
+        /// <summary>
+        /// Change a known chunk scheduling tier, refusing a fifth active chunk.
+        /// Dynamic membership starvation bounds are not yet qualified; fixed-membership round-robin is the M01 proof.
+        /// </summary>
         public void SetActive(ChunkId id, bool active)
         {
             var c = chunks[id];
             if (active && !c.Active && ActiveCount() >= MaximumActiveChunks) throw new InvalidOperationException("Active chunk budget exceeded.");
             c.Active = active;
         }
+        /// <summary>
+        /// Return a value copy of a known cell; editing it cannot mutate the world. Invalid IDs/indices throw.
+        /// </summary>
         public FireCell GetCell(ChunkId id, int index) => chunks[id].Cells[index];
+        /// <summary>
+        /// Configure a known cell elevation in meters before the first step; reject later terrain edits or invalid height.
+        /// </summary>
         public void SetElevation(ChunkId id, int index, double elevationM)
         {
             if (Tick != 0) throw new InvalidOperationException("Terrain configuration is immutable after stepping.");
@@ -69,6 +120,10 @@ namespace Fireline.Simulation
             var c = chunks[id]; var cell = c.Cells[index]; cell.ElevationM = elevationM; c.Cells[index] = cell;
         }
 
+        /// <summary>
+        /// Attempt server-side ignition; return false for charred, exhausted, very moist or wet fuel.
+        /// On success set burning heat/intensity, preserve existing charred vegetation, and increment chunk revision.
+        /// </summary>
         public bool Ignite(ChunkId id, int index)
         {
             var c = chunks[id]; var cell = c.Cells[index];
@@ -80,6 +135,11 @@ namespace Fireline.Simulation
         }
 
         // Validate the whole coverage before mutation. Mass is distributed, not multiplied by hits.
+        /// <summary>
+        /// Validate the entire nonempty weighted footprint before changing any cells; weights must sum to one.
+        /// Distribute massKg once across cell area, cool/wet affected cells and update revisions/accounting.
+        /// Water can extinguish and char vegetation without deleting remaining fuel; this is a trusted server operation.
+        /// </summary>
         public void ApplyWater(double massKg, WaterHit[] hits)
         {
             SimMath.Range(massKg, 0.000001, 100000, nameof(massKg));
@@ -105,6 +165,11 @@ namespace Fireline.Simulation
             AppliedWaterKg += massKg;
         }
 
+        /// <summary>
+        /// Advance one global 0.2 s tick, updating all active chunks plus one round-robin inactive chunk.
+        /// Compute selected cells from old buffers before committing any chunk, then record changed-cell revisions.
+        /// Inactive updates use accumulated simulated time; work is bounded, but coarse behavior is an approximation.
+        /// </summary>
         public void Step()
         {
             checked { Tick++; }
@@ -143,6 +208,10 @@ namespace Fireline.Simulation
             foreach (var c in chunks.Values) BacklogSeconds += (Tick - c.LastTick) * StepSeconds;
         }
 
+        /// <summary>
+        /// Resolve local/adjacent cell coordinates, including negative chunk seams, within the same sector.
+        /// Return false outside loaded chunks; absent space contributes no neighbor heat/smoke.
+        /// </summary>
         private bool Neighbor(Chunk c, int x, int z, out FireCell result)
         {
             int dx = (int)Math.Floor(x / (double)Size), dz = (int)Math.Floor(z / (double)Size);
@@ -151,6 +220,11 @@ namespace Fireline.Simulation
             result = default; return false;
         }
 
+        /// <summary>
+        /// Compute one cell after dt simulated seconds using old neighbor buffers and sampled wind.
+        /// Apply estimated wind/slope/fuel/moisture heating, evaporation and coarse smoke transport, then burn/suppress fuel.
+        /// Return the next cell while accumulating kg accounting; charred vegetation never regrows. See the model comparison.
+        /// </summary>
         private FireCell Advance(Chunk chunk, int index, double dt)
         {
             var cell = chunk.Cells[index];
@@ -209,8 +283,16 @@ namespace Fireline.Simulation
             return cell;
         }
 
+        /// <summary>
+        /// Return a new outer array of the latest step deltas; entries/inner arrays remain mutable DTO references.
+        /// This is not a transport queue or a deep-copy guarantee and does not include earlier manual mutations.
+        /// </summary>
         public ChunkDelta[] CaptureDeltas() => deltas.ToArray();
 
+        /// <summary>
+        /// Clone every current cell buffer and include scheduling, wind and mass totals for a detached baseline.
+        /// Schema/checksum describe this prototype; no serializer, restore path or durable storage is supplied here.
+        /// </summary>
         public FireSnapshot CaptureSnapshot()
         {
             var snapshots = new List<ChunkSnapshot>();
@@ -222,10 +304,16 @@ namespace Fireline.Simulation
         }
 
         // Canonical sorted IDs and explicit IEEE-754 bits; a regression digest, not a cryptographic signature.
+        /// <summary>
+        /// Produce a sorted FNV-1a regression digest from explicit integer and IEEE-754 double bits.
+        /// This detects state differences; it is neither cryptographic authentication nor universal cross-runtime determinism.
+        /// </summary>
         public string Checksum()
         {
             ulong hash = 14695981039346656037UL;
+            // Feed one unsigned 64-bit value least-significant byte first into the running FNV digest.
             void Add(ulong n) { unchecked { for (int i = 0; i < 8; i++) { hash ^= (byte)(n >> (8 * i)); hash *= 1099511628211UL; } } }
+            // Preserve the exact double bit pattern when adding a simulation number to the digest.
             void Number(double n) => Add(unchecked((ulong)BitConverter.DoubleToInt64Bits(n)));
             Add(Tick); Add(unchecked((ulong)Wind.Seed)); Add((ulong)Size); Number(CellSizeM);
             Add(Wind.State.Revision); Number(Wind.State.EastMps); Number(Wind.State.NorthMps); Number(Wind.State.GustMps);

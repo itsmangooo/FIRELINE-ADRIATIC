@@ -1,3 +1,18 @@
+<#
+.SYNOPSIS
+Run one local dedicated server and two visible rendered clients to verify connection and capture paths.
+.DESCRIPTION
+Requires existing role-isolated builds and a free UDP port. Writes fresh markers, screenshot, raw metrics and hashes.
+Stops only processes started by this invocation on failure. Connection success does not prove shared gameplay state.
+.PARAMETER Port
+Loopback UDP port to reserve for this run.
+.PARAMETER ClientSeconds
+Rendered duration in seconds before each client checks success; server allows another 60 seconds.
+.PARAMETER EvidenceRoot
+Repository-relative destination for markers, diagnostic metrics and process summary.
+.PARAMETER CapturePath
+Repository-relative PNG destination for the first client's actual rendered frame.
+#>
 param(
     [ValidateRange(1024, 65535)][int]$Port = 7979,
     [ValidateRange(10, 120)][int]$ClientSeconds = 20,
@@ -6,6 +21,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 if (-not ('FirelineM00WindowPlacement' -as [type])) {
+    # SetWindowPos is a native window-placement helper: keep both clients exposed without resizing their render area.
     Add-Type @'
 using System;
 using System.Runtime.InteropServices;
@@ -88,6 +104,7 @@ try {
         Start-Sleep -Milliseconds 500
     }
 
+    # Validate every exit/marker and publish only FIRELINE diagnostics, avoiding unrelated raw-log contents.
     $results = foreach ($record in $records) {
         $record.process.WaitForExit()
         $logText = Get-Content -LiteralPath $record.log -Raw
@@ -107,6 +124,7 @@ try {
             throw "Fresh runtime artifact missing: $artifact"
         }
     }
+    # Bind the run to executable AND managed DLL hashes; the Unity launcher alone does not identify C# changes.
     $summary = @{
         utc = [DateTime]::UtcNow.ToString('o'); scope = 'One local dedicated server and two rendered client processes; connection handshake only'
         port = $Port; passed = $true; processes = @($results)

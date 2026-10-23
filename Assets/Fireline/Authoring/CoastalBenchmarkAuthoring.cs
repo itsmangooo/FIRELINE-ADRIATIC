@@ -17,6 +17,11 @@ namespace Fireline.Authoring
             "rocky_terrain", "dry_ground_rocks", "forrest_ground_01", "coast_sand_01", "burned_ground_01"
         };
 
+        /// <summary>
+        /// Create a new coastal render fixture from audited elevation/material data without replacing an existing scene.
+        /// Heights and positions are meters; trees/buildings/sea are static workload proxies, not gameplay simulation.
+        /// Write scene/material/terrain assets, then restore the previously open scenes even on failure.
+        /// </summary>
         public static void CreateScene()
         {
             if (File.Exists(ScenePath)) throw new InvalidOperationException("Benchmark already exists; edit it explicitly.");
@@ -122,6 +127,10 @@ namespace Fireline.Authoring
             finally { EditorSceneManager.RestoreSceneManagerSetup(setup); }
         }
 
+        /// <summary>
+        /// Reimport audited 2K maps with mip streaming, linear masks and the DirectX-normal green-channel flip.
+        /// Only albedo uses sRGB; missing maps stop authoring instead of producing an unverified substitute.
+        /// </summary>
         private static void ConfigureTextures()
         {
             foreach (string surface in Surfaces)
@@ -140,6 +149,9 @@ namespace Fireline.Authoring
             }
         }
 
+        /// <summary>
+        /// Create and save a named benchmark material using the requested shader and optional base color.
+        /// </summary>
         private static Material Material(string name, string shader, Color color)
         {
             var material = new Material(Shader.Find(shader)) { name = "M00 " + name };
@@ -148,6 +160,10 @@ namespace Fireline.Authoring
             return material;
         }
 
+        /// <summary>
+        /// Add a static visual proxy with the supplied meter position, scale, parent and shared material.
+        /// Remove its primitive collider so render workload proxies do not imply physical gameplay geometry.
+        /// </summary>
         private static void Primitive(string name, PrimitiveType type, Vector3 position, Vector3 scale,
             Material material, Transform parent)
         {

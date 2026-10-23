@@ -8,19 +8,35 @@ namespace Fireline.Shared
     /// <summary>Explicit local/direct-IP startup. Unity's own arguments are left alone.</summary>
     public sealed class LaunchOptions
     {
+        /// <summary>UDP port shared by the direct-IP server/client endpoint; defaults to 7979.</summary>
         public ushort Port { get; private set; } = 7979;
+        /// <summary>Numeric IPv4 interface to listen on; loopback by default and wildcard only when explicitly requested.</summary>
         public string BindAddress { get; private set; } = "127.0.0.1";
+        /// <summary>Explicit remote IPv4 address, or null to leave the client disconnected.</summary>
         public string ConnectAddress { get; private set; }
+        /// <summary>Timed smoke-test seconds; zero leaves ordinary runtime running.</summary>
         public int SmokeSeconds { get; private set; }
+        /// <summary>Peak connected identities needed for server smoke success; this is not a capacity qualification.</summary>
         public int MinimumClients { get; private set; } = 2;
+        /// <summary>Optional PNG path for an actual rendered-frame capture.</summary>
         public string CapturePath { get; private set; }
+        /// <summary>Optional JSON path for calibration callback metrics, with paired CSV.</summary>
         public string MetricsPath { get; private set; }
+        /// <summary>Coastal recording seconds after warm-up; zero disables the timed benchmark.</summary>
         public int BenchmarkSeconds { get; private set; }
+        /// <summary>Destination JSON path for the coastal benchmark summary and paired raw CSV.</summary>
         public string BenchmarkOutput { get; private set; }
+        /// <summary>Named static clear/smoky workload; this does not select authoritative gameplay weather.</summary>
         public string BenchmarkScenario { get; private set; } = "clear";
+        /// <summary>Optional existing Unity quality tier; no new preset is created.</summary>
         public string QualityPreset { get; private set; }
+        /// <summary>Server-only JSON output path that enables accelerated M01 numerical acceptance instead of normal live operation.</summary>
         public string SimulationProofPath { get; private set; }
 
+        /// <summary>
+        /// Read only --fireline-* options, leaving Unity arguments alone; return validated local/direct-IP defaults.
+        /// Reject unknown/duplicate/missing options and incompatible benchmark/smoke timers before starting a role.
+        /// </summary>
         public static LaunchOptions Parse(string[] args)
         {
             var options = new LaunchOptions();
@@ -90,6 +106,10 @@ namespace Fireline.Shared
             return options;
         }
 
+        /// <summary>
+        /// Parse a culture-independent unsigned-looking integer and enforce the inclusive caller-supplied bounds.
+        /// Throw on malformed or out-of-range input instead of falling back to a different port or duration.
+        /// </summary>
         private static int ReadInteger(string value, int min, int max)
         {
             if (!int.TryParse(value, NumberStyles.None, CultureInfo.InvariantCulture, out int number)
@@ -98,6 +118,10 @@ namespace Fireline.Shared
             return number;
         }
 
+        /// <summary>
+        /// Return a normalized numeric IPv4 address; hostnames and IPv6 are not supported by this baseline.
+        /// Allow 0.0.0.0 only for server binding, since clients cannot connect to a wildcard.
+        /// </summary>
         private static string ReadAddress(string value, bool allowWildcard)
         {
             if (!IPAddress.TryParse(value, out var address)

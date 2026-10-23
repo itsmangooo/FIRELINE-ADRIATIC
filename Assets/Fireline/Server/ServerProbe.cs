@@ -17,6 +17,9 @@ namespace Fireline.Server
         private double started;
 
 #if UNITY_SERVER
+        /// <summary>
+        /// Attach the connection/clock probe only in dedicated-server builds after the scene loads.
+        /// </summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Install()
         {
@@ -24,6 +27,10 @@ namespace Fireline.Server
         }
 #endif
 
+        /// <summary>
+        /// Set a 60 Hz foundation clock, query connected identities, and verify no graphics device/pipeline/camera exists.
+        /// Exit code 3 signals a failed headless boundary; this clock does not measure simulation execution cost.
+        /// </summary>
         private void Start()
         {
             DontDestroyOnLoad(gameObject);
@@ -40,8 +47,15 @@ namespace Fireline.Server
                 Application.Quit(3);
         }
 
+        /// <summary>
+        /// Advance the foundation clock once per Unity fixed callback; fire has a separate 5 Hz accumulator.
+        /// </summary>
         private void FixedUpdate() => clock.Step();
 
+        /// <summary>
+        /// Track current/peak client identities and, at the smoke deadline, verify the requested peak and clock progress.
+        /// This proves connections and process activity, not replicated fire state or multiplayer capacity.
+        /// </summary>
         private void Update()
         {
             int count = connections.CalculateEntityCount();
@@ -62,6 +76,9 @@ namespace Fireline.Server
             }
         }
 
+        /// <summary>
+        /// Release the query only if its ECS owner survived shutdown ordering.
+        /// </summary>
         private void OnDestroy()
         {
             // ECS worlds own query storage and can be disposed before MonoBehaviours at exit.

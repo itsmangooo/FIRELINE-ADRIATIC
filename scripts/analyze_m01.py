@@ -10,14 +10,17 @@ OUT = Path("docs/physics/fire-wind")
 
 
 def digest(snapshot):
+    """Reconstruct the C# sorted FNV regression digest from serialized integer/double bits. This independent check detects representation changes; it is not a cryptographic signature or a promise of cross-OS bit identity."""
     value = 14695981039346656037
 
     def add(number):
+        """Mix one masked 64-bit integer as little-endian bytes into the enclosing FNV accumulator."""
         nonlocal value
         for byte in struct.pack("<Q", number & ((1 << 64) - 1)):
             value = ((value ^ byte) * 1099511628211) & ((1 << 64) - 1)
 
     def number(n):
+        """Reinterpret a Python double as its IEEE-754 64-bit pattern before hashing, preserving exact snapshot precision."""
         add(struct.unpack("<Q", struct.pack("<d", n))[0])
 
     add(snapshot["Tick"]); add(snapshot["Seed"]); add(snapshot["Size"]); number(snapshot["CellSizeM"])
@@ -39,6 +42,7 @@ def digest(snapshot):
 
 
 def main():
+    """Verify nine Windows cases, raw row counts, digests and kg/m2 accounting; write the analysis and actual model/area/timing/grid figures. These are offline numerical plots, not Unity screenshots or client FPS results."""
     report = json.loads((ROOT / "simulation.json").read_text(encoding="utf-8-sig"))
     rows = list(csv.DictReader((ROOT / "simulation.csv").open(encoding="utf-8-sig")))
     assert report["passed"] and len(rows) == 5400 and len(report["cases"]) == 9
@@ -81,6 +85,7 @@ def main():
     plt.rcParams.update({"svg.fonttype": "none", "svg.hashsalt": "fireline-m01", "font.size": 10})
 
     def save(fig, name):
+        """Write the current figure as editable SVG and PNG, remove trailing SVG whitespace, and close it to release plotting memory."""
         path = OUT / f"{name}.svg"
         fig.savefig(path, metadata={"Date": None})
         path.write_text("\n".join(l.rstrip() for l in path.read_text(encoding="utf-8").splitlines()) + "\n", encoding="utf-8")

@@ -8,10 +8,12 @@ import statistics
 
 
 def percentile(values, fraction):
+    """Return the nearest-rank percentile using ceil(count * fraction), or None for no available samples."""
     return sorted(values)[math.ceil(len(values) * fraction) - 1] if values else None
 
 
 def analyze(path):
+    """Read paired runtime JSON/CSV, verify interval-derived metrics, and return raw rows with worst-interval locations and available-counter percentiles. Blank counters remain unavailable, not zero."""
     recorded = json.loads(path.read_text(encoding="utf-8-sig"))
     rows = list(csv.DictReader(path.with_suffix(".csv").open(encoding="utf-8-sig")))
     intervals = [float(row["callback_interval_ms"]) for row in rows]
@@ -39,6 +41,7 @@ def analyze(path):
 
 
 def main():
+    """Find completed clear/smoky recordings, verify them, then write summaries, overrun rows and labeled SVG/PNG timelines in that directory. This analyzes existing data and does not establish a measured optimization."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path)
     args = parser.parse_args()

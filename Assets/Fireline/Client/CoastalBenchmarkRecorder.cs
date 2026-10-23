@@ -22,6 +22,9 @@ namespace Fireline.Client
         private double previousRender;
         private bool finished;
 
+        /// <summary>
+        /// Attach this recorder only in the named coastal benchmark scene, leaving ordinary scenes alone.
+        /// </summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Install()
         {
@@ -29,6 +32,10 @@ namespace Fireline.Client
                 new GameObject("M00 Coastal Benchmark Recorder").AddComponent<CoastalBenchmarkRecorder>();
         }
 
+        /// <summary>
+        /// Optionally add the static fog workload, then start draw-call/render recording only for a timed benchmark.
+        /// Untimed scene inspection disables recording to avoid unbounded sample growth.
+        /// </summary>
         private void Start()
         {
             var options = FoundationBootstrap.Options;
@@ -40,6 +47,10 @@ namespace Fireline.Client
             Debug.Log($"FIRELINE_BENCHMARK_START scenario={options.BenchmarkScenario} seconds={options.BenchmarkSeconds} warmup=30");
         }
 
+        /// <summary>
+        /// After 30 rendered seconds of warm-up, record main-camera spacing in milliseconds and available timing counters.
+        /// Store elapsed recording seconds, preserve unavailable counters, then save/exit when the requested run ends.
+        /// </summary>
         private void Rendered(ScriptableRenderContext context, Camera camera)
         {
             if (camera != Camera.main || finished) return;
@@ -69,9 +80,14 @@ namespace Fireline.Client
             }
         }
 
+        /// <summary>
+        /// Write raw samples and a hardware/settings summary to the requested path and matching CSV.
+        /// Unavailable values remain blank; callback FPS and lagging profiler values are not pure execution timings.
+        /// </summary>
         private void Save(string path)
         {
             Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(path)));
+            // Format finite milliseconds/seconds using culture-independent round-trip text; leave missing counters blank.
             string Number(double value) => double.IsFinite(value) ? value.ToString("R", CultureInfo.InvariantCulture) : "";
             using (var writer = new StreamWriter(Path.ChangeExtension(path, ".csv")))
             {
@@ -96,6 +112,10 @@ namespace Fireline.Client
             }, true));
         }
 
+        /// <summary>
+        /// Create eight local fog columns and enable their camera/volume settings on scene-local profile copies.
+        /// These are cosmetic overdraw proxies, with distances in meters, not authoritative smoke or combustion.
+        /// </summary>
         private static void CreateStaticFogWorkload()
         {
             // Scene-local profile copy: the original starter/shared profile stays unchanged.
@@ -128,6 +148,9 @@ namespace Fireline.Client
             }
         }
 
+        /// <summary>
+        /// Detach the render callback and dispose the draw-call recorder when this component is destroyed.
+        /// </summary>
         private void OnDestroy()
         {
             RenderPipelineManager.endCameraRendering -= Rendered;

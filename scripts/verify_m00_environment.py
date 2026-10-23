@@ -10,6 +10,7 @@ import tifffile
 ROOT = Path(__file__).resolve().parent.parent
 source = ROOT / "AssetSources/Environment"
 content = ROOT / "Assets/Fireline/Content/Environment/M00"
+# Entry point: verify recorded sources and derived files in place; never download or repair a failed asset.
 manifest = json.loads((source / "acquisition-manifest.json").read_text())
 for asset in manifest["materials"]:
     name = asset["id"]
@@ -24,6 +25,7 @@ for asset in manifest["materials"]:
             assert image.size == (2048, 2048)
         meta = path.with_suffix(path.suffix + ".meta").read_text()
         def field(key):
+            """Read an integer Unity texture-import flag from the current map metadata; missing fields fail verification instead of defaulting to success."""
             return int(re.search(rf"^\s*{key}: (\d+)$", meta, re.M).group(1))
         assert field("sRGBTexture") == int(name_part == "albedo.jpg")
         assert field("textureType") == int(name_part == "normal_dx.jpg")
@@ -38,6 +40,7 @@ for asset in manifest["materials"]:
     assert np.array_equal(packed[:, :, 3], 255 - rough)
     print("PASS: source/derived hashes, all mask pixels, 2K dimensions and Unity import flags:", name)
 
+# Check the meter-valued heightfield, PixelIsPoint semantics and fixed orientation checkpoints independently of textures.
 record = manifest["heightfield"]
 height_path = content / "petrcane_heights.bytes"
 assert hashlib.sha256(height_path.read_bytes()).hexdigest() == record["outputSha256"]

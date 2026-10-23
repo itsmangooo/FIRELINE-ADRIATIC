@@ -61,11 +61,11 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 
 ## Post-M01 — Human-readable source documentation
 
-**Status: Pending after M01 publication.** User request: explain each project function in plain language, including inputs/outputs, important SI units, authority, side effects and non-obvious logic. Cover maintained C# and tooling scripts; preserve third-party/generated code and behavior. Verify the comment-only diff and relevant checks, then commit/push before M02 implementation.
+**Status: Verified — 2026-10-23.** [Coverage/source-identity and 34-test evidence](docs/reports/2026-10-23-source-comments.md). User request: explain each project function in plain language, including inputs/outputs, important SI units, authority, side effects and non-obvious logic. Cover maintained C# and tooling scripts; preserve third-party/generated code and behavior. Verify the comment-only diff and relevant checks, then commit/push before M02 implementation.
 
 ## M02 — Two-client replication + persistence proof
 
-**Status: Pending — next gameplay milestone.** M01 acceptance is verified. The user requested a whole-codebase explanatory comment pass immediately after M01 publication; complete that pass first, then begin bounded snapshot serialization/validation, baseline/delta transport, late join and restart recovery. M01 DTOs are not completed replication.
+**Status: In Progress.** M00/M01 and the requested explanatory comment pass are verified. Begin bounded snapshot serialization/validation and restoration, then baseline/delta transport, late join and restart recovery. M01 DTOs are not completed replication.
 
 - [ ] Connect two real processes; initial fire baseline + ordered revision deltas.
 - [ ] Late join client #3 gets identical burned world after convergence.

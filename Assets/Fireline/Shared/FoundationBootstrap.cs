@@ -9,9 +9,20 @@ namespace Fireline.Shared
     /// <summary>Creates exactly one role per process; no listen-host or cloud dependency.</summary>
     public sealed class FoundationBootstrap : ClientServerBootstrap
     {
+        /// <summary>
+        /// Validated startup settings shared by the process adapters after bootstrap initialization.
+        /// </summary>
         public static LaunchOptions Options { get; private set; }
+        /// <summary>
+        /// The single server or client ECS world created for this process; consumers must check shutdown lifetime.
+        /// </summary>
         public static World RuntimeWorld { get; private set; }
 
+        /// <summary>
+        /// Parse direct-IP options and create exactly one Netcode role according to the build target.
+        /// Servers enqueue a listen request; clients connect only when an address was explicitly supplied.
+        /// Disable automatic Editor endpoint overrides and reject server proof mode in client builds.
+        /// </summary>
         public override bool Initialize(string defaultWorldName)
         {
             Options = LaunchOptions.Parse(Environment.GetCommandLineArgs());

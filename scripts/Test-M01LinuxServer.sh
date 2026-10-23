@@ -1,12 +1,14 @@
 #!/bin/sh
 # Reuse the already-verified workspace Ubuntu root; no Docker daemon or distro installation.
 set -eu
+# Entry point: the first argument is the checkout's WSL path; all generated runtime data stays under Builds.
 project=${1:?Pass the WSL path to the checkout}
 runtime="$project/Builds/LinuxRuntime/rootfs"
 test -f "$runtime/.fireline-root-ready"
 test -f "$project/Builds/LinuxServer/FirelineServer.x86_64"
 mkdir -p "$runtime/workspace" "$runtime/proc"
 mount --bind "$project/Builds/LinuxServer" "$runtime/workspace"
+# On any exit, release this fixture's proc/device/workspace bind mounts; do not alter the host installation.
 cleanup() {
     umount "$runtime/proc" 2>/dev/null || true
     for device in null zero random urandom; do umount "$runtime/dev/$device" 2>/dev/null || true; done
@@ -18,6 +20,7 @@ for device in null zero random urandom; do
     touch "$runtime/dev/$device"
     mount --bind "/dev/$device" "$runtime/dev/$device"
 done
+# Run two independent headless replays with a 300-second wall timeout; any nonzero exit/absent proof marker fails.
 for iteration in 1 2; do
     timeout 300 chroot "$runtime" /workspace/FirelineServer.x86_64 -batchmode -nographics \
         -logFile "/workspace/m01-proof-$iteration.log" --fireline-bind 127.0.0.1 --fireline-port 7993 \

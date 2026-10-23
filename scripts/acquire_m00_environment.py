@@ -24,6 +24,7 @@ USER_AGENT = "FIRELINE-ADRIATIC-M00-import/1.0 (Poly Haven CC0 asset acquisition
 
 
 def fetch(url, target, md5=None, expected_size=None):
+    """Download a missing official source, validate optional upstream MD5/size, and return URL/bytes/SHA-256. Existing files are rechecked; network or validation errors stop acquisition."""
     target.parent.mkdir(parents=True, exist_ok=True)
     if not target.exists():
         request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
@@ -39,11 +40,13 @@ def fetch(url, target, md5=None, expected_size=None):
 
 
 def json_source(url, target):
+    """Cache the official JSON response through fetch, then decode it as UTF-8 metadata for the caller."""
     fetch(url, target)
     return json.loads(target.read_text(encoding="utf-8"))
 
 
 def materials():
+    """Acquire five audited 2K surface sets, verify dimensions/host, and write Unity color/normal/HDRP mask maps plus provenance records. This writes derived assets; it does not import them into Unity."""
     records = []
     for name in MATERIALS:
         source = SOURCES / "PolyHaven" / name
@@ -79,6 +82,7 @@ def materials():
 
 
 def heightfield():
+    """Crop the audited PixelIsPoint GLO-90 DSM to a 6 km local grid, bilinearly resample 257 squared heights in meters, and save little-endian float32 plus geographic/hash metadata. Sea heights clamp to zero; this is a DSM approximation."""
     source = SOURCES / "Copernicus"
     tile = "Copernicus_DSM_COG_30_N44_00_E015_00_DEM"
     url = f"https://copernicus-dem-90m.s3.amazonaws.com/{tile}/{tile}.tif"

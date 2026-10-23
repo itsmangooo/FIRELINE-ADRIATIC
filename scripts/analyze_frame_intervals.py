@@ -15,6 +15,7 @@ import statistics
 
 
 def analyze(csv_path, metrics_path):
+    """Validate positive callback milliseconds against the recorded JSON, then return indexed interval/time/threshold rows and a summary. Cumulative recording time starts at the first stored interval; this does not attribute CPU/GPU causes or count dropped presentations."""
     source = csv_path.read_text(encoding="utf-8-sig")
     values = [float(row["frame_interval_ms"]) for row in csv.DictReader(io.StringIO(source))]
     if not values or any(not math.isfinite(value) or value <= 0 for value in values):
@@ -80,6 +81,7 @@ def analyze(csv_path, metrics_path):
 
 
 def plot(rows, output):
+    """Write timeline/detail and analysis-flow SVG/PNG drawings from real marked rows. Highlight measured overruns against 60 Hz spacing while leaving optimization and causal profiling explicitly deferred."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -147,6 +149,7 @@ def plot(rows, output):
 
 
 def main():
+    """Parse source/output paths, verify the historical recording, write marked CSV/summary, and optionally render plots. Outputs are derived evidence; no Unity run or original sample replacement occurs."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--csv", type=Path, default=Path("docs/reports/m00-evidence/client-diagnostic-metrics.csv"))
     parser.add_argument("--metrics", type=Path, default=Path("docs/reports/m00-evidence/client-diagnostic-metrics.json"))

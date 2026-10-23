@@ -2,15 +2,17 @@
 
 ## Project Overview
 
-**Status:** M00 Unity foundation verified; M01 bounded headless fire/wind prototype verified; source-comment pass next. The existing HDRP project has modular C# assemblies, direct-IP client/server startup, tests, Windows/Linux build entry points and an imported coastal render benchmark. A bounded server-side fire/wind/suppression prototype now exists; flight, replicated fire, player controls, dispatch and restart persistence remain planned. The original documentation pack and project guidance are preserved; proposed mechanics and numeric budgets remain design targets pending testing.
+**Status:** M00 Unity foundation verified; M01 bounded headless fire/wind prototype verified; source comments verified; M02 started. The existing HDRP project has modular C# assemblies, direct-IP client/server startup, tests, Windows/Linux build entry points and an imported coastal render benchmark. A bounded server-side fire/wind/suppression prototype now exists; flight, replicated fire, player controls, dispatch and restart persistence remain planned. The original documentation pack and project guidance are preserved; proposed mechanics and numeric budgets remain design targets pending testing.
 
 A persistent, self-hosted, cooperative Croatian/Herzegovinian aerial and ground firefighting simulator. Unity 6 HDRP, C#, up to 100 players per server (target, **not demonstrated**), up to 9 aircraft (design cap), server-authoritative fire/wind/water/combustion, modding, 60 FPS client target.
 
 ## Current Development Status
 
-Unity **6000.6.7f1** / HDRP **17.6.0** are retained; Netcode for Entities, Entities and Transport **6.6.0** remain resolved. **34 EditMode tests pass**, including the closed-Editor path. Windows client/server and Linux x64 server builds succeeded with zero errors; the Windows server/two-client smoke passed. Linux also passed its headless/clock negative startup test under WSL2. Five licensed PBR surfaces and a real Petrčane DSM crop are imported into a separate benchmark scene. See the [latest M00 evidence](docs/reports/2026-10-22-m00-coastal-foundation.md). M00 and the bounded M01 headless prototype are verified. The requested source-comment pass precedes M02 replication/restart work. Aircraft licence/import and production graphics/performance qualification remain open under M03/M04/M09. [Scope/dependency closeout](docs/reports/2026-10-23-m00-closeout.md). M05A and later gameplay milestones remain pending.
+Unity **6000.6.7f1** / HDRP **17.6.0** are retained; Netcode for Entities, Entities and Transport **6.6.0** remain resolved. **34 EditMode tests pass**, including the closed-Editor path. Windows client/server and Linux x64 server builds succeeded with zero errors; the Windows server/two-client smoke passed. Linux also passed its headless/clock negative startup test under WSL2. Five licensed PBR surfaces and a real Petrčane DSM crop are imported into a separate benchmark scene. See the [latest M00 evidence](docs/reports/2026-10-22-m00-coastal-foundation.md). M00 and the bounded M01 headless prototype are verified. The requested source-comment pass is verified; M02 replication/restart work is now active. Aircraft licence/import and production graphics/performance qualification remain open under M03/M04/M09. [Scope/dependency closeout](docs/reports/2026-10-23-m00-closeout.md). M05A and later gameplay milestones remain pending.
 
 ## Latest Development Updates
+
+- **2026-10-23 — Source explanations verified:** all 144 C# function/property declarations and 14 tooling scripts now have human-readable explanations; executable-code identity checks and 34 Unity tests pass. [Scope and evidence](docs/reports/2026-10-23-source-comments.md). M02 starts next.
 
 - **2026-10-23 — M01 headless fire/wind implemented:** bounded 5 Hz cells, seeded wind/gusts, fuel/moisture/slope response, graded manual water, smoke hazard and irreversible vegetation char. 34 tests and two independent Windows headless scenario runs pass; Linux/WSL replays also pass with the recorded cross-OS gust precision limit. Real client replication is M02 work. [Implementation and evidence](docs/reports/2026-10-23-m01-fire-wind.md).
 
@@ -79,7 +81,7 @@ The new **1080p Balanced five-minute clear/static-fog pair** averaged 60.00/60.0
 |---|---|---|
 | M00 | Unity/tooling audit, assemblies, build and benchmark foundation | Verified |
 | M01 | Authoritative fire and wind | Verified |
-| M02 | Multi-process replication and persistence proof | Pending |
+| M02 | Multi-process replication and persistence proof | In Progress |
 | M03 | CL-415 flight and water physics | Pending |
 | M04 | HDRP coastal art and VFX | Pending |
 | M05 | Ground crews and working hose | Pending |

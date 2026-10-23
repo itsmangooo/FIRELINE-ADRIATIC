@@ -11,6 +11,7 @@ plt.rcParams.update({"svg.fonttype": "none", "svg.hashsalt": "fireline-coastal",
 
 
 def drawing(name, title, labels, footer):
+    """Render the supplied actual process labels/title/footer as SVG and PNG beside the report, strip trailing SVG whitespace, and release the figure. These diagrams describe evidence paths, not implemented gameplay."""
     fig, axis = plt.subplots(figsize=(11, 2.6), layout="constrained")
     axis.set_xlim(0, 11)
     axis.set_ylim(0, 2.5)
@@ -32,6 +33,7 @@ def drawing(name, title, labels, footer):
     plt.close(fig)
 
 
+# Entry point: publish the real earlier/current import paths, including the missing numerical coastal baseline.
 drawing("before", "BEFORE: M00 calibration foundation at db4ab83",
         ["Starter sky / lighting", "Generated box scene", "No imported coastal\nDSM or PBR surfaces", "Short 720p diagnostic\n896 render intervals"],
         "No coastal heightfield baseline existed; no comparative speedup can be calculated.")

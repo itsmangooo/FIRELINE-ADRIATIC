@@ -5,6 +5,7 @@ using Fireline.Simulation;
 
 namespace Fireline.Server
 {
+    /// <summary>One post-step observation: seconds, m2 area, kg masses, meter centroids, elapsed step ms and unitless sums.</summary>
     [Serializable]
     public sealed class FireSample
     {
@@ -15,6 +16,7 @@ namespace Fireline.Server
         public int visitedCells;
     }
 
+    /// <summary>Named synthetic case with every sample, final state and its canonical digest.</summary>
     [Serializable]
     public sealed class FireCaseResult
     {
@@ -23,6 +25,7 @@ namespace Fireline.Server
         public FireSnapshot finalState;
     }
 
+    /// <summary>Reproducible inputs/results plus bounded-step timing and GC observations; not production performance certification.</summary>
     [Serializable]
     public sealed class FireVerificationResult
     {
@@ -39,6 +42,10 @@ namespace Fireline.Server
     public static class FireVerification
     {
         public static readonly ChunkId TestChunk = new ChunkId(1, 0, 0);
+        /// <summary>
+        /// Build the seeded 32x32 test grid with 10 m cells and center ignition.
+        /// Wind/gust inputs are m/s, slope is rise/run, and moisture is a fraction; terrain rises eastward before stepping.
+        /// </summary>
         public static FireWorld Fixture(double eastMps, double northMps, double moisture = 0.1, double slope = 0, double gust = 0)
         {
             var world = new FireWorld(415, 32);
@@ -50,6 +57,11 @@ namespace Fireline.Server
             return world;
         }
 
+        /// <summary>
+        /// Run 600 accelerated 0.2 s steps (120 simulated seconds) and return raw samples plus detached final state.
+        /// Optional wind rotation occurs at 60 s; optional 14,700 kg dose covers 49 cells at 10 s.
+        /// Time only World.Step in elapsed milliseconds; sampling/file output and networking are outside that timer.
+        /// </summary>
         public static FireCaseResult RunCase(string name, double east, double north, bool rotate = false, bool suppress = false,
             double moisture = 0.1, double slope = 0, double gust = 0)
         {
@@ -74,6 +86,10 @@ namespace Fireline.Server
             return new FireCaseResult { scenario = name, checksum = world.Checksum(), samples = rows.ToArray(), finalState = world.CaptureSnapshot() };
         }
 
+        /// <summary>
+        /// Measure the named single-chunk fixture, enforcing finite bounded cell state and water/fuel conservation.
+        /// Report ever-ignited area in m2 and centroid meters relative to cell (16,16); heat/hazard sums are dimensionless.
+        /// </summary>
         public static FireSample Measure(FireWorld world, string name)
         {
             var row = new FireSample { scenario = name, tick = world.Tick, seconds = world.Tick * world.StepSeconds,
@@ -105,6 +121,10 @@ namespace Fireline.Server
             return row;
         }
 
+        /// <summary>
+        /// Execute nine named cases, require directional/suppression/replay behavior, then time a 16-chunk budget fixture.
+        /// Throw on a failed acceptance check; returned timing/GC data qualifies this fixture, not 100-player capacity.
+        /// </summary>
         public static FireVerificationResult Run()
         {
             var east = RunCase("east", 8, 0);
@@ -112,6 +132,7 @@ namespace Fireline.Server
             var repeat = RunCase("east-repeat", 8, 0);
             var rotated = RunCase("rotated", 8, 0, rotate: true);
             var wet = RunCase("suppressed", 8, 0, suppress: true);
+            // Read the final stored sample so acceptance checks compare the same simulated duration.
             FireSample Last(FireCaseResult c) => c.samples[c.samples.Length - 1];
             var calm = RunCase("calm", 0, 0);
             var moisture = RunCase("moist", 8, 0, moisture: 0.7);

@@ -9,6 +9,9 @@ namespace Fireline.Tests
 {
     public class FoundationTests
     {
+        /// <summary>
+        /// Verify omitted options bind only to loopback and leave the client disconnected with no timed auto-exit.
+        /// </summary>
         [Test]
         public void DefaultsKeepServerLocalAndClientDisconnected()
         {
@@ -19,6 +22,9 @@ namespace Fireline.Tests
             Assert.That(options.SmokeSeconds, Is.Zero);
         }
 
+        /// <summary>
+        /// Verify explicit direct-IP/smoke options are parsed while Unity-specific arguments are ignored.
+        /// </summary>
         [Test]
         public void ExplicitEndpointAndSmokeOptionsIgnoreUnityArguments()
         {
@@ -31,6 +37,9 @@ namespace Fireline.Tests
             Assert.That(options.SmokeSeconds, Is.EqualTo(15));
         }
 
+        /// <summary>
+        /// For each malformed/out-of-range option, require an exception instead of accepting unsafe fallback settings.
+        /// </summary>
         [TestCase("--fireline-port", "0")]
         [TestCase("--fireline-port", "65536")]
         [TestCase("--fireline-port", "-1")]
@@ -45,6 +54,9 @@ namespace Fireline.Tests
             Assert.Throws<ArgumentException>(() => LaunchOptions.Parse(new[] { key, value }));
         }
 
+        /// <summary>
+        /// Require missing values and repeated options to fail before process startup.
+        /// </summary>
         [Test]
         public void MissingAndDuplicateValuesAreRejected()
         {
@@ -53,6 +65,9 @@ namespace Fireline.Tests
                 "--fireline-port", "8000", "--fireline-port", "9000" }));
         }
 
+        /// <summary>
+        /// Verify the five-minute benchmark timer and existing preset selection, including conflicts with smoke mode.
+        /// </summary>
         [Test]
         public void BenchmarkUsesSeparateFiveMinuteTimerAndExistingPresets()
         {
@@ -68,6 +83,9 @@ namespace Fireline.Tests
                 "--fireline-benchmark-output", "run.json", "--fireline-smoke-seconds", "20" }));
         }
 
+        /// <summary>
+        /// Require unsupported benchmark durations, scenario names and invented presets to be rejected.
+        /// </summary>
         [TestCase("--fireline-benchmark-seconds", "299")]
         [TestCase("--fireline-benchmark-seconds", "901")]
         [TestCase("--fireline-benchmark-scenario", "unknown")]
@@ -77,6 +95,9 @@ namespace Fireline.Tests
             Assert.Throws<ArgumentException>(() => LaunchOptions.Parse(new[] { key, value }));
         }
 
+        /// <summary>
+        /// Verify 120 steps at 60 Hz mean two simulated seconds and a zero-rate clock is rejected.
+        /// </summary>
         [Test]
         public void ClockUsesFixedStepSecondsAndMonotonicTicks()
         {
@@ -87,6 +108,9 @@ namespace Fireline.Tests
             Assert.Throws<ArgumentOutOfRangeException>(() => new TickClock(0));
         }
 
+        /// <summary>
+        /// Inspect assembly references so pure simulation cannot silently acquire Unity or client dependencies.
+        /// </summary>
         [Test]
         public void SimulationAssemblyHasNoUnityOrPresentationDependencies()
         {
@@ -94,6 +118,9 @@ namespace Fireline.Tests
                 Assert.That(reference.Name, Does.Not.StartWith("Unity").And.Not.StartWith("Fireline.Client"));
         }
 
+        /// <summary>
+        /// Check the dedicated scene exists and its recursive asset dependencies exclude HDRP settings/materials.
+        /// </summary>
         [Test]
         public void ServerSceneHasNoVisualAssetDependencies()
         {

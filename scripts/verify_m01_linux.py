@@ -9,6 +9,7 @@ from analyze_m01 import digest
 
 
 def main():
+    """Validate two fresh Linux replays with independent digests/mass checks, compare phase and floating-point differences against Windows, and retain scoped markers/raw files/hashes. A successful same-runtime replay does not require cross-OS bit equality."""
     target = Path("docs/reports/m01-evidence/linux")
     target.mkdir(parents=True, exist_ok=True)
     build = Path("Builds/LinuxServer")
@@ -43,6 +44,7 @@ def main():
         (target / f"proof-{i}-markers.txt").write_text("\n".join(markers) + "\n", encoding="utf-8")
     for suffix in ("json", "csv"):
         shutil.copyfile(build / f"m01-proof-1.{suffix}", target / f"simulation.{suffix}")
+    # Fingerprint exact on-disk bytes so retained outputs can be tied to this player and its managed assemblies.
     sha = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
     hashes = {p.name: sha(p) for p in (build / "FirelineServer_Data/Managed").glob("Fireline*.dll")}
     assert "Fireline.Client.dll" not in hashes
