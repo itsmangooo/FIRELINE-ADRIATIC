@@ -50,16 +50,22 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 
 ## M01 — Headless fire/wind simulation
 
-**Status: In Progress.** Depends on verified M00. Pure authoritative core and server integration; M02 owns client replication. No gameplay-completion claim until deterministic tests and headless build/run evidence pass.
+**Status: Verified — 2026-10-23.** Depends on verified M00. [Implementation/build/runtime evidence](docs/reports/2026-10-23-m01-fire-wind.md), [actual equations/comparisons and SVG plots](docs/physics/fire-wind/COMPARISON.md). 34 tests, two Windows and two Linux/WSL headless scenario processes, and a live two-client connection regression passed. Same-runtime replay is verified; the cross-OS gust precision difference is recorded. M02 owns actual client replication/restart recovery; no player-facing fire or field calibration is claimed.
 
-- [ ] Data model fixed chunk IDs, burn phases, fuel/wetness, deterministic seeded tests.
-- [ ] Fixed-step authoritative wind field, with gusts and changes; fuel/slope/wind influence spread.
-- [ ] Vegetation burn states, char and smoke hazard grid; bounded inactive sector simulation.
-- [ ] Simple water application to fire grid (manual test event only), state assertions.
+- [x] Data model fixed chunk IDs, burn phases, fuel/wetness, deterministic seeded tests.
+- [x] Fixed-step authoritative wind field, with gusts and changes; fuel/slope/wind influence spread.
+- [x] Vegetation burn states, char and smoke hazard grid; bounded inactive sector simulation.
+- [x] Simple water application to fire grid (manual test event only), state assertions.
 
 **Accept:** Server-only fire simulation produces reproducible checksums and expected wind-driven direction change; no Unity HDRP graphics initialized on server.
 
+## Post-M01 — Human-readable source documentation
+
+**Status: Pending after M01 publication.** User request: explain each project function in plain language, including inputs/outputs, important SI units, authority, side effects and non-obvious logic. Cover maintained C# and tooling scripts; preserve third-party/generated code and behavior. Verify the comment-only diff and relevant checks, then commit/push before M02 implementation.
+
 ## M02 — Two-client replication + persistence proof
+
+**Status: Pending — next gameplay milestone.** M01 acceptance is verified. The user requested a whole-codebase explanatory comment pass immediately after M01 publication; complete that pass first, then begin bounded snapshot serialization/validation, baseline/delta transport, late join and restart recovery. M01 DTOs are not completed replication.
 
 - [ ] Connect two real processes; initial fire baseline + ordered revision deltas.
 - [ ] Late join client #3 gets identical burned world after convergence.
@@ -127,6 +133,8 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 **Accept:** Kill server, restart and restore burns, players and active incident exactly once.
 
 ## M08 — Region streaming & 100-user scalability
+
+- [ ] Validate dynamic/adversarial active-sector membership scheduling and refine the prototype budget/estimated fuel-weather calibration against documented reference scenarios; do not extend fixed-membership fixture claims to production interest/load behavior.
 
 - [ ] Geographic compression and streaming sectors, floating origin if necessary.
 - [ ] Relevancy interest management and adaptive network updates.

@@ -1,0 +1,15 @@
+FIRELINE_SERVER_START endpoint=127.0.0.1:7992
+FIRELINE_SIMULATION_START hz=5 grid=32 cellM=10 seed=415 authority=server fixture=synthetic
+FIRELINE_SIMULATION_CASE name=calm ticks=600 checksum=88cd6c17745a7e64
+FIRELINE_SIMULATION_CASE name=east ticks=600 checksum=8b271f5012d09513
+FIRELINE_SIMULATION_CASE name=north ticks=600 checksum=57191a5e12b9a4f3
+FIRELINE_SIMULATION_CASE name=east-repeat ticks=600 checksum=8b271f5012d09513
+FIRELINE_SIMULATION_CASE name=rotated ticks=600 checksum=6e939354b06a7ef8
+FIRELINE_SIMULATION_CASE name=suppressed ticks=600 checksum=ad9ec1e45edcc32d
+FIRELINE_SIMULATION_CASE name=moist ticks=600 checksum=5385619908ac18e2
+FIRELINE_SIMULATION_CASE name=uphill ticks=600 checksum=e71fd6d7f3e48833
+FIRELINE_SIMULATION_CASE name=gust ticks=600 checksum=873b3b05b7e439e0
+FIRELINE_SIMULATION_PROOF passed=True headless=True cases=9
+FIRELINE_SERVER_HEADLESS valid=True graphics=Null cameras=0
+FIRELINE_SERVER_CONNECTIONS count=0
+FIRELINE_SIMULATION_STOP ticks=0 checksum=ba0ecc7466f19ace

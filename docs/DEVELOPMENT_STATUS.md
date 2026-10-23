@@ -2,9 +2,13 @@
 
 **Document created:** 2026-10-22
 
+## M01 implementation — 2026-10-23
+
+Implemented pure bounded fire/wind/suppression/hazard/char state and the server's 5 Hz adapter. **34/34 Unity tests passed**, Windows dedicated build succeeded with 0 errors/506 warnings, and two independent Windows headless runs matched all nine scenario digests. The live direct-IP regression passed with two existing M00 clients and 349 actual fire steps. [Full evidence/scope](reports/2026-10-23-m01-fire-wind.md), [equations/SVG plots/reader guide](physics/fire-wind/COMPARISON.md), [reproduction](M01_BUILD_AND_TEST.md). Linux/WSL build and two headless replays also passed. Eight cross-OS digests match; gust heat differs by at most 1.11e-16 with identical phase grids, so clients must consume authoritative state. M01 is now Verified. After its publication, the user-requested function-comment pass takes priority; M02 serialization/transport/restart work follows. Client fire replication, restart restoration and player-facing fire remain unimplemented. M05A stays Pending.
+
 ## Active milestone — 2026-10-23
 
-**M00 Verified; M01 In Progress.** The user authorized automatic progression after verified completion. [Foundation closeout](reports/2026-10-23-m00-closeout.md) closes M00 against its actual foundation acceptance criteria using the committed build/test/runtime evidence. Aircraft licensing/import remains unchecked in M03; art/counter coverage in M04 and production qualification/deferred optimization in M09. M05A remains Pending. These assignments change scheduling, not evidence requirements or pass results. Historical open-M00 statements below are superseded by this entry.
+**M00 and M01 Verified; post-M01 comment pass next; M02 Pending.** The user authorized automatic progression after verified completion. [Foundation closeout](reports/2026-10-23-m00-closeout.md) closes M00 against its actual foundation acceptance criteria using the committed build/test/runtime evidence. Aircraft licensing/import remains unchecked in M03; art/counter coverage in M04 and production qualification/deferred optimization in M09. M05A remains Pending. These assignments change scheduling, not evidence requirements or pass results. Historical open-M00 statements below are superseded by this entry.
 
 ## Roadmap update — 2026-10-23 M05A
 
@@ -67,7 +71,7 @@ Added **M05A — Player Experience, Controls, UI/UX & Settings** after M05 and b
 
 ## Immediate next action
 
-Continue M01 fixed-step authoritative fire/wind and server validation. The [CL-415 licence/import gate](../AssetSources/Aircraft/CL415/AUDIT.md) remains an M03 prerequisite, not a pure fire-simulation dependency. Reproduce the current foundation using [M00_BUILD_AND_TEST.md](M00_BUILD_AND_TEST.md). Latest Windows regression logs remain under `Builds/Smoke/20261022-214232/`; [current source/runtime evidence](reports/2026-10-22-m00-coastal-foundation.md) supersedes earlier captures. The connection harness establishes the process boundary; M01/M02 must implement and verify shared authoritative fire state separately.
+After publishing M01, explain every maintained project function in human-readable comments without changing behavior; verify and publish that pass. Then continue M02 snapshot serialization/validation, real baseline/delta transport, late join and restart validation. The [CL-415 licence/import gate](../AssetSources/Aircraft/CL415/AUDIT.md) remains an M03 prerequisite, not a pure fire-simulation dependency. Reproduce the current foundation using [M00_BUILD_AND_TEST.md](M00_BUILD_AND_TEST.md). Latest Windows regression logs remain under `Builds/Smoke/20261022-214232/`; [current source/runtime evidence](reports/2026-10-22-m00-coastal-foundation.md) supersedes earlier captures. The connection harness establishes the process boundary; M01/M02 must implement and verify shared authoritative fire state separately.
 
 ## Update template for each checkpoint
 

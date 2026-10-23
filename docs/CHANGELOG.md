@@ -2,6 +2,13 @@
 
 Record meaningful development changes in dated entries, newest first. Link implementation evidence and disclose limitations. Plans and templates are not completed game features.
 
+## 2026-10-23 — M01 authoritative fire/wind implementation
+
+- Added bounded pure C# fire/fuel/wind/moisture/slope/manual-water/hazard/char behavior, stable IDs and detached snapshot/latest-step delta contracts; a 5 Hz dedicated adapter runs the same model.
+- All 34 Unity tests passed. Windows and Linux/WSL dedicated builds and two independent headless 9-case runs per platform passed; digests and accounting were independently recomputed. Existing two-client connection smoke also passed while the server advanced the real fire model.
+- Closed M01; queued the user-requested whole-codebase comment pass before M02 implementation. The gust case has a recorded 1.11e-16 cross-OS heat difference; same-platform replay and all cross-OS phase grids match in these fixtures.
+- Added actual SI/proxy equations, BEFORE/AFTER SVG flows, raw numerical comparisons, final-grid/time-series plots and plain-language graph guides. [Results and limitations](reports/2026-10-23-m01-fire-wind.md). Parameters remain uncalibrated gameplay approximations; no client fire/VFX, replication, restart persistence, 60 FPS or capacity pass is claimed.
+
 ## 2026-10-23 — M00 foundation closed; M01 activated
 
 - Closed M00 against committed project-open/test/build/headless/direct-IP evidence; [acceptance/dependency report](reports/2026-10-23-m00-closeout.md).

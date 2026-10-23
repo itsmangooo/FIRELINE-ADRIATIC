@@ -1,0 +1,12 @@
+{
+    "role": "linux-server",
+    "unity": "6000.6.7f1",
+    "result": "Succeeded",
+    "errors": 0,
+    "warnings": 983,
+    "seconds": 431.46200519999996,
+    "bytes": 150535165,
+    "development": false,
+    "subtarget": 1,
+    "containsVisualAssets": false
+}

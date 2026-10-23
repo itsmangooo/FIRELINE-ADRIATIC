@@ -1,5 +1,9 @@
 # Multiplayer/network architecture — 100 players as a target
 
+## M01 server state — protocol still pending
+
+The authoritative server now owns fire chunks, revisions, wind and coarse hazard, with detached snapshot/latest-step delta types. These are data contracts, not a replication implementation. Two clients still prove only the original connection handshake; no client receives fire or sends a water command in M01. M02 must implement/test serialization, reliable baselines, ordered deltas/gap repair, late join and restart state. [Actual M01 implementation](reports/2026-10-23-m01-fire-wind.md).
+
 ## M00 foundation boundary
 
 The foundation uses Netcode for Entities 6.6.0 and Transport 6.6.0 with one client or server world per process. Explicit numeric IPv4 listen/connect requests support local and direct-IP startup without a managed lobby. Connection `NetworkId` values can be observed for smoke verification. No `NetworkStreamInGame`, ghost snapshots, fire chunks or gameplay messages are added at this stage. Authentication, public admission, reconnect and packet-loss recovery remain unimplemented. See the [M00 report](reports/2026-10-22-m00-foundation.md) for the exact verification scope; the protocol below remains proposed.

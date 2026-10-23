@@ -1,0 +1,57 @@
+{
+  "utc": "2026-10-23T07:12:44.0544700Z",
+  "passed": true,
+  "runs": [
+    {
+      "checksums": {
+        "east-repeat": "8b271f5012d09513",
+        "north": "57191a5e12b9a4f3",
+        "calm": "88cd6c17745a7e64",
+        "suppressed": "ad9ec1e45edcc32d",
+        "east": "8b271f5012d09513",
+        "uphill": "e71fd6d7f3e48833",
+        "moist": "5385619908ac18e2",
+        "rotated": "6e939354b06a7ef8",
+        "gust": "873b3b05b7e439e0"
+      },
+      "exitCode": 0,
+      "iteration": 1,
+      "pid": 33228,
+      "rawResultSha256": "EDC0234E89B5B1C6C130E706A0AC78D873165AD4ED8E947E58922780E3F350C0"
+    },
+    {
+      "checksums": {
+        "east-repeat": "8b271f5012d09513",
+        "north": "57191a5e12b9a4f3",
+        "calm": "88cd6c17745a7e64",
+        "suppressed": "ad9ec1e45edcc32d",
+        "east": "8b271f5012d09513",
+        "uphill": "e71fd6d7f3e48833",
+        "moist": "5385619908ac18e2",
+        "rotated": "6e939354b06a7ef8",
+        "gust": "873b3b05b7e439e0"
+      },
+      "exitCode": 0,
+      "iteration": 2,
+      "pid": 33480,
+      "rawResultSha256": "78049980370E3A63FECEEE9D029D59ED3DBB4B0B55B81995CA53F0CEDB898A4A"
+    }
+  ],
+  "binarySha256": "3CACBB9917B8980B3B9E91E6120DE4D7456F108EE9B88622F5B85F7F3AEFF26F",
+  "runtimeHashes": [
+    {
+      "name": "Fireline.Server.dll",
+      "sha256": "4443569D003620E1CD803F6B7991A76DEB3026ECB33828266B422B31ABC67045"
+    },
+    {
+      "name": "Fireline.Shared.dll",
+      "sha256": "C68ABA72285484F16E646BDD1432C5E85009A79A741A218BDEACE8A7FDCE1B2B"
+    },
+    {
+      "name": "Fireline.Simulation.dll",
+      "sha256": "81DE7541D9B25B9E2B9D7F5E0915DD69AEA19B83862C63BA1459E933045626BE"
+    }
+  ],
+  "rawLogs": "Builds\\M01Proof\\20261023-091204",
+  "scope": "Two independent Windows dedicated-server processes, same seeded synthetic simulation; no client state protocol or capacity claim."
+}

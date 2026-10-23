@@ -1,0 +1,259 @@
+{
+  "success": true,
+  "command": "command test run",
+  "data": {
+    "command": "test run",
+    "parameters": {
+      "mode": "EditMode",
+      "filter": "Fireline.Tests"
+    },
+    "result": {
+      "Summary": {
+        "Total": 32,
+        "Passed": 32,
+        "Failed": 0,
+        "Skipped": 0,
+        "Inconclusive": 0
+      },
+      "Results": [
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.AdjacentNegativeCoordinateChunkReceivesHeatAcrossBoundary",
+          "Status": "Passed",
+          "Duration": 0.0420108,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.BurnConsumesFuelThroughSmolderingAndNeverRegrowsChar",
+          "Status": "Passed",
+          "Duration": 0.0174505,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.ChunkBudgetsBoundWorkAndInactiveChunksKeepProgressing",
+          "Status": "Passed",
+          "Duration": 0.0320187,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.ClientWaterRequestCannotMutateAuthority",
+          "Status": "Passed",
+          "Duration": 0.0096845,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.InsertionOrderCannotChangeWorldResults",
+          "Status": "Passed",
+          "Duration": 0.0152634,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.InvalidWaterCoverageFailsAtomically",
+          "Status": "Passed",
+          "Duration": 0.0008771,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.ScenarioMatrixIsDeterministicDirectionalAndSuppressible",
+          "Status": "Passed",
+          "Duration": 14.271809,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.SeededGustsAndWindChangesAreFiniteRepeatableAndVersioned",
+          "Status": "Passed",
+          "Duration": 0.0008897,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.SmallDoseReducesIntensityAndStrongDoseExtinguishesWithoutDeletingFuel",
+          "Status": "Passed",
+          "Duration": 0.0012005,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.SmokeHazardMovesDownwindWithoutClientParticles",
+          "Status": "Passed",
+          "Duration": 0.005954,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.SnapshotsAreDetachedAndDeltasHaveOrderedRevisions",
+          "Status": "Passed",
+          "Duration": 0.0014073,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.WaterMassIsDistributedAndConservedAfterEvaporation",
+          "Status": "Passed",
+          "Duration": 0.0017826,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.BenchmarkUsesSeparateFiveMinuteTimerAndExistingPresets",
+          "Status": "Passed",
+          "Duration": 0.0022176,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.ClockUsesFixedStepSecondsAndMonotonicTicks",
+          "Status": "Passed",
+          "Duration": 0.0008468,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.DefaultsKeepServerLocalAndClientDisconnected",
+          "Status": "Passed",
+          "Duration": 0.0025791,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.ExplicitEndpointAndSmokeOptionsIgnoreUnityArguments",
+          "Status": "Passed",
+          "Duration": 0.0010336,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-port\",\"0\")",
+          "Status": "Passed",
+          "Duration": 0.0013178,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-port\",\"65536\")",
+          "Status": "Passed",
+          "Duration": 0.0001336,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-port\",\"-1\")",
+          "Status": "Passed",
+          "Duration": 0.0001174,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-connect\",\"0.0.0.0\")",
+          "Status": "Passed",
+          "Duration": 0.0001837,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-connect\",\"not-an-ip\")",
+          "Status": "Passed",
+          "Duration": 0.0001812,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-smoke-seconds\",\"0\")",
+          "Status": "Passed",
+          "Duration": 0.0001157,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-smoke-seconds\",\"301\")",
+          "Status": "Passed",
+          "Duration": 0.0001051,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-min-clients\",\"0\")",
+          "Status": "Passed",
+          "Duration": 0.0001194,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-typo\",\"1\")",
+          "Status": "Passed",
+          "Duration": 0.0001473,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected(\"--fireline-benchmark-seconds\",\"299\")",
+          "Status": "Passed",
+          "Duration": 0.000529,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected(\"--fireline-benchmark-seconds\",\"901\")",
+          "Status": "Passed",
+          "Duration": 0.0003463,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected(\"--fireline-benchmark-scenario\",\"unknown\")",
+          "Status": "Passed",
+          "Duration": 0.0000916,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected(\"--fireline-quality\",\"invented-preset\")",
+          "Status": "Passed",
+          "Duration": 0.000141,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.MissingAndDuplicateValuesAreRejected",
+          "Status": "Passed",
+          "Duration": 0.0004504,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.ServerSceneHasNoVisualAssetDependencies",
+          "Status": "Passed",
+          "Duration": 0.006869,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.SimulationAssemblyHasNoUnityOrPresentationDependencies",
+          "Status": "Passed",
+          "Duration": 0.0008571,
+          "Message": null,
+          "StackTrace": null
+        }
+      ],
+      "Duration": 20.6,
+      "StatusPath": null,
+      "Mode": "EditMode",
+      "FilterApplied": "testname: Fireline.Tests",
+      "success": true,
+      "result": null
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7801,
+      "projectPath": "A:\\Unity Projects\\FIRELINE ADRIATIC"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

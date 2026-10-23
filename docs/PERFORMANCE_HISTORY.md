@@ -2,6 +2,12 @@
 
 Target: **60 FPS at 1080p on documented reference hardware**, with the build scenarios, presets and percentile gates in the [performance plan](PERFORMANCE_60FPS.md). Client rendering and 100-player dedicated-server capacity have separate acceptance gates.
 
+## 2026-10-23 — M01 bounded headless fire-step timing
+
+On i5-9400F / Windows 11 build 26300, Editor closed and one proof server at a time, the 16-chunk/16,384-cell capacity fixture visited at most 5120 cells per step. Across 120 accelerated steps, `World.Step` p95 was **9.6310 ms**, maximum **10.1727 ms**, with four generation-0 collections and bounded total update-age backlog up to 13.2 simulated seconds. This measures elapsed CPU-body duration, including preemption/delta creation, not complete host ticks, client FPS, GPU work or 100-player capacity. No explicit warm-up was discarded.
+
+M00 had no fire model, so a comparable previous fire-step cost is unavailable rather than zero. [Raw data, hardware, numerical plots and graph reader guide](reports/2026-10-23-m01-fire-wind.md#performance-and-graph-interpretation). Whole-host timing, per-frame allocations/GC pauses and gameplay bandwidth remain future measurements; headless GPU/VRAM/client counters are not applicable here. Existing 1080p rendering qualification remains open.
+
 ## 2026-10-22 — Five-minute 1080p coastal clear/static-fog release pair
 
 On i5-9400F / GTX 1660 SUPER / driver 32.0.16.1742, one visible Balanced release client at a time, Editor closed, 30 s warm-up + 300 s recording: clear averaged 59.99849 FPS, 1% low 57.93009, p95 16.99410 ms; static fog averaged 59.99851 FPS, 1% low 58.11117, p95 16.98840 ms. Both exited 0; CSV summaries matched recomputation. CPU/main/GPU timing, draw-call and Unity allocated-memory counters were available; VRAM, GC attribution, server tick duration and bandwidth remain uninstrumented.

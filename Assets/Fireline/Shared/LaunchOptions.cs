@@ -19,6 +19,7 @@ namespace Fireline.Shared
         public string BenchmarkOutput { get; private set; }
         public string BenchmarkScenario { get; private set; } = "clear";
         public string QualityPreset { get; private set; }
+        public string SimulationProofPath { get; private set; }
 
         public static LaunchOptions Parse(string[] args)
         {
@@ -35,6 +36,10 @@ namespace Fireline.Shared
                 string value = args[i];
                 switch (key)
                 {
+                    case "--fireline-sim-proof":
+                        if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Simulation proof output is empty.");
+                        options.SimulationProofPath = value;
+                        break;
                     case "--fireline-benchmark-seconds":
                         options.BenchmarkSeconds = ReadInteger(value, 300, 900);
                         break;

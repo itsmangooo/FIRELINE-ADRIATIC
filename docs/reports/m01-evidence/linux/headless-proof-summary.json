@@ -1,0 +1,163 @@
+{
+  "passed": true,
+  "processes": 2,
+  "casesPerProcess": 9,
+  "scope": "Linux x64 Mono under WSL2/workspace Ubuntu Base 24.04.5 / GLIBC 2.39; not native hosting or Linux client networking",
+  "binarySha256": "c9724c53ae3bc7a0ac1143ab71679b777055196707c1f2be3b65de355cd46e82",
+  "runtimeHashes": {
+    "Fireline.Server.dll": "db1b2949d55140f09ff8d016aa552b5f14390c879c09585591ddc727e58024db",
+    "Fireline.Shared.dll": "a5ecb7e40a6be00d91a7b14347d55f0b8d5c9a0077b69f7adabc79cabfe61cbb",
+    "Fireline.Simulation.dll": "58cfa081b0babd421f8496d418f16b04fc1895318829a5c2631c08088d794774"
+  },
+  "rawResultHashes": [
+    "aa78ede7abc6ad2131989994d33a35cfd79a869df7beca0830989a7441aaaa3e",
+    "1faa5a656c968c0d0bd9ff53c56b0f9840936532d9a7d28b70e1b58ec5069002"
+  ],
+  "comparison": [
+    {
+      "scenario": "calm",
+      "windowsChecksum": "88cd6c17745a7e64",
+      "linuxChecksum": "88cd6c17745a7e64",
+      "linuxRepeatMatches": true,
+      "crossOsBitExact": true,
+      "phaseDifferences": 0,
+      "maximumAbsoluteCellDifferences": {
+        "RemainingFuelKgPerM2": 0.0,
+        "WaterKgPerM2": 0.0,
+        "Heat": 0.0,
+        "Intensity": 0.0,
+        "Smoke": 0.0
+      },
+      "linuxBurnedAreaM2": 93800.0
+    },
+    {
+      "scenario": "east",
+      "windowsChecksum": "8b271f5012d09513",
+      "linuxChecksum": "8b271f5012d09513",
+      "linuxRepeatMatches": true,
+      "crossOsBitExact": true,
+      "phaseDifferences": 0,
+      "maximumAbsoluteCellDifferences": {
+        "RemainingFuelKgPerM2": 0.0,
+        "WaterKgPerM2": 0.0,
+        "Heat": 0.0,
+        "Intensity": 0.0,
+        "Smoke": 0.0
+      },
+      "linuxBurnedAreaM2": 58300.0
+    },
+    {
+      "scenario": "north",
+      "windowsChecksum": "57191a5e12b9a4f3",
+      "linuxChecksum": "57191a5e12b9a4f3",
+      "linuxRepeatMatches": true,
+      "crossOsBitExact": true,
+      "phaseDifferences": 0,
+      "maximumAbsoluteCellDifferences": {
+        "RemainingFuelKgPerM2": 0.0,
+        "WaterKgPerM2": 0.0,
+        "Heat": 0.0,
+        "Intensity": 0.0,
+        "Smoke": 0.0
+      },
+      "linuxBurnedAreaM2": 58100.0
+    },
+    {
+      "scenario": "east-repeat",
+      "windowsChecksum": "8b271f5012d09513",
+      "linuxChecksum": "8b271f5012d09513",
+      "linuxRepeatMatches": true,
+      "crossOsBitExact": true,
+      "phaseDifferences": 0,
+      "maximumAbsoluteCellDifferences": {
+        "RemainingFuelKgPerM2": 0.0,
+        "WaterKgPerM2": 0.0,
+        "Heat": 0.0,
+        "Intensity": 0.0,
+        "Smoke": 0.0
+      },
+      "linuxBurnedAreaM2": 58300.0
+    },
+    {
+      "scenario": "rotated",
+      "windowsChecksum": "6e939354b06a7ef8",
+      "linuxChecksum": "6e939354b06a7ef8",
+      "linuxRepeatMatches": true,
+      "crossOsBitExact": true,
+      "phaseDifferences": 0,
+      "maximumAbsoluteCellDifferences": {
+        "RemainingFuelKgPerM2": 0.0,
+        "WaterKgPerM2": 0.0,
+        "Heat": 0.0,
+        "Intensity": 0.0,
+        "Smoke": 0.0
+      },
+      "linuxBurnedAreaM2": 79900.0
+    },
+    {
+      "scenario": "suppressed",
+      "windowsChecksum": "ad9ec1e45edcc32d",
+      "linuxChecksum": "ad9ec1e45edcc32d",
+      "linuxRepeatMatches": true,
+      "crossOsBitExact": true,
+      "phaseDifferences": 0,
+      "maximumAbsoluteCellDifferences": {
+        "RemainingFuelKgPerM2": 0.0,
+        "WaterKgPerM2": 0.0,
+        "Heat": 0.0,
+        "Intensity": 0.0,
+        "Smoke": 0.0
+      },
+      "linuxBurnedAreaM2": 800.0
+    },
+    {
+      "scenario": "moist",
+      "windowsChecksum": "5385619908ac18e2",
+      "linuxChecksum": "5385619908ac18e2",
+      "linuxRepeatMatches": true,
+      "crossOsBitExact": true,
+      "phaseDifferences": 0,
+      "maximumAbsoluteCellDifferences": {
+        "RemainingFuelKgPerM2": 0.0,
+        "WaterKgPerM2": 0.0,
+        "Heat": 0.0,
+        "Intensity": 0.0,
+        "Smoke": 0.0
+      },
+      "linuxBurnedAreaM2": 100.0
+    },
+    {
+      "scenario": "uphill",
+      "windowsChecksum": "e71fd6d7f3e48833",
+      "linuxChecksum": "e71fd6d7f3e48833",
+      "linuxRepeatMatches": true,
+      "crossOsBitExact": true,
+      "phaseDifferences": 0,
+      "maximumAbsoluteCellDifferences": {
+        "RemainingFuelKgPerM2": 0.0,
+        "WaterKgPerM2": 0.0,
+        "Heat": 0.0,
+        "Intensity": 0.0,
+        "Smoke": 0.0
+      },
+      "linuxBurnedAreaM2": 76300.0
+    },
+    {
+      "scenario": "gust",
+      "windowsChecksum": "873b3b05b7e439e0",
+      "linuxChecksum": "feab1b34e01be509",
+      "linuxRepeatMatches": true,
+      "crossOsBitExact": false,
+      "phaseDifferences": 0,
+      "maximumAbsoluteCellDifferences": {
+        "RemainingFuelKgPerM2": 0.0,
+        "WaterKgPerM2": 0.0,
+        "Heat": 1.1102230246251565e-16,
+        "Intensity": 0.0,
+        "Smoke": 0.0
+      },
+      "linuxBurnedAreaM2": 59200.0
+    }
+  ],
+  "limitation": "Gust heat differs at floating-point precision across OS runtimes; same-runtime replays match. M02 must replicate authority rather than assume client resimulation matches."
+}

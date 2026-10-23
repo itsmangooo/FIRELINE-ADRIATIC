@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-23T07:14:54.0778776Z",
+  "cpu": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+  "physicalMemoryBytes": 17116717056,
+  "os": "Microsoft Windows 11 Pro",
+  "build": "26300",
+  "unity": "6000.6.7f1",
+  "renderer": "Null",
+  "measurement": "Stopwatch elapsed around World.Step, including scheduling/preemption and delta creation; excludes serialization/networking/full host update",
+  "conditions": "Project Editor closed, builds finished, one proof server at a time, ordinary desktop apps and light documentation work present; no rendered clients during proof"
+}

@@ -1,5 +1,9 @@
 # Simulation specification — Fire, wind, water and environmental destruction
 
+## Current M01 prototype — implementation boundary
+
+The [implementation comparison](physics/fire-wind/COMPARISON.md) records the actual bounded 5 Hz synthetic-grid model, seeded horizontal wind, six named phases, normalized heat/intensity/hazard, SI fuel/water and irreversible vegetation char. Its estimated coefficients are not a calibrated field forecast or the full proposed fidelity below. M01 tests and headless runs establish deterministic gameplay behavior; aircraft/drop physics, real map descriptors, refined thermodynamics, networking and persistence remain later work. The kickoff phrase “7 burn stages” conflicts with the six explicitly named states below; implementation follows those six names rather than inventing another phase.
+
 ## Absolute authority invariant
 
 **Dedicated server calculates the state of all gameplay-affecting fire, wind, water coverage, structures and vegetation.** Clients can render different individual sparks and flames but must show identical underlying burning/extinguished/charred state, fire perimeter and gameplay smoke density (allowing network latency and visual interpolation). Client smoke graphics do not determine gameplay visibility.

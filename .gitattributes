@@ -7,4 +7,4 @@
 *.mat whitespace=-blank-at-eol
 
 # Detailed Unity build inventories contain the literal built-in asset name "Built-in Sprite: ".
-docs/reports/m00-coastal-evidence/**/*-packed-assets.txt whitespace=-blank-at-eol
+docs/reports/**/*-packed-assets.txt whitespace=-blank-at-eol
