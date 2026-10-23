@@ -12,6 +12,8 @@ Unity **6000.6.7f1** / HDRP **17.6.0** are retained; Netcode for Entities, Entit
 
 ## Latest Development Updates
 
+- **2026-10-23 — M05A added to the roadmap:** planned Player Experience, Controls, UI/UX & Settings after M05 and before M06. [Scope and staged dependencies](docs/PLAYER_EXPERIENCE_SPEC.md). Documentation only; M05A is not implemented and does not interrupt the active milestone.
+
 - **2026-10-22 — Coastal import and build acceptance follow-up:** five audited CC0 surface sets, a 6 km Copernicus DSM crop, an initial coastal proxy workload, longer benchmark instrumentation and a verified local batch/Windows/Linux startup path. The aircraft archive was downloaded after sign-in, but conflicting CC BY/GPL notices block its import; see the [source audit](AssetSources/Aircraft/CL415/AUDIT.md). [Actual implementation, diagrams, numerical checks and limits](docs/reports/2026-10-22-m00-coastal-foundation.md).
 - **2026-10-22 — Frame-loss locations recorded; optimization deferred:** marked all 896 diagnostic intervals, including the 83.47 ms hitch at sample #2, and separated source suspects from proven findings. Added rendered SVG timeline/flowchart and permanent SVG/math formatting rules. [Investigation register](docs/performance/FRAME_LOSS_REGISTER.md).
 - **2026-10-22 — M00 foundation verified increment:** six assembly boundaries, direct-IP bootstrap, 15 passing tests, two successful Windows release builds and an accepted headless-server/two-rendered-client smoke. Added actual captures and limited calibration diagnostics. [Implementation, commands and verification](docs/reports/2026-10-22-m00-foundation.md).
@@ -69,6 +71,7 @@ The new **1080p Balanced five-minute clear/static-fog pair** averaged 60.00/60.0
 | M03 | CL-415 flight and water physics | Pending |
 | M04 | HDRP coastal art and VFX | Pending |
 | M05 | Ground crews and working hose | Pending |
+| M05A | Player experience, controls, UI/UX, settings and training | Pending |
 | M06 | Operations and regional incidents | Pending |
 | M07 | PostgreSQL and permanent world | Pending |
 | M08 | Streaming and measured 100-user scalability | Pending |

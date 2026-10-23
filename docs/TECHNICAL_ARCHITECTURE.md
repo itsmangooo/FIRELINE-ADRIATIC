@@ -1,5 +1,9 @@
 # Technical architecture — Unity 6 HDRP, C#, headless server
 
+## Planned player-experience boundary — M05A
+
+[M05A](PLAYER_EXPERIENCE_SPEC.md) owns input-context routing, menus/HUD/navigation, persistent local settings, accessibility and tutorials. Client presentation submits validated requests and displays authoritative results; simulation/resources/permissions/smoke visibility remain server-owned. M01–M05 supply mechanics, M06 supplies operations producers, and final M05A operations bindings need both. M09 retains release/performance qualification. Existing Input System/presets are audited at implementation; this plan adds no packages or UI.
+
 ## M00 implementation checkpoint — 2026-10-22
 
 The initial boundaries now exist as `Fireline.Server`, `Fireline.Simulation`, `Fireline.Shared`, `Fireline.Client`, `Fireline.Authoring` and `Fireline.Tests`. Unity 6000.6.7f1 / HDRP 17.6.0 are retained; Netcode for Entities, Entities and Transport 6.6.0 were resolved through Package Manager. Shared currently contains startup/connection configuration and the custom Netcode bootstrap; Simulation contains only a pure fixed tick clock. This does not implement the proposed world contracts below.

@@ -92,7 +92,24 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 
 **Accept:** Ground and aircraft users suppress same fire, correctly debit resources.
 
+## M05A — Player Experience, Controls, UI/UX & Settings
+
+**Status: Pending. Do not implement ahead of the active milestone.** [Complete specification/dependencies](docs/PLAYER_EXPERIENCE_SPEC.md), from [the supplied prompt](prompts/FIRELINE_ADRIATIC_M05A_Player_Experience.md). Integrates actual M01–M05 systems after M05; earlier basic test controls remain allowed. M06 server producers unblock the final operations screen bindings; full M05A and player-facing M06 acceptance require both sides.
+
+- [ ] First-person/optional third-person movement, contextual interactions, equipment/inventory, tool pickup/carry/use, vehicle entry/exit, trucks/pumps/hoses, aircraft/cockpit controls and real assignment/radio interfaces.
+- [ ] Unity Input System contexts for on-foot, flight, vehicles, equipment, tactical map/command and UI; keyboard/mouse/controller, saved rebinding, sensitivity/dead zones, inversion, hold/toggle, future HOTAS/joystick profiles and server-permitted simplified/advanced flight.
+- [ ] Functional Main Menu, Server Browser, Connection/Lobby, Unit/Duty, Profile, Aircraft Selection/Assignment, Equipment/Vehicle Interaction, Operational Map, Incident Information, Aircraft/Cockpit HUD, Firefighter HUD, Dispatch/Command, AAR and Settings with a consistent responsive design.
+- [ ] Persistent Low/Performance, Medium/Balanced, High, Ultra and Custom graphics settings; supported display/FPS/VSync/render-scale/texture/shadow/vegetation/terrain/fog/smoke/reflection/AA/upscaling effects, measured mappings and authoritative smoke visibility parity.
+- [ ] Persistent audio/radio/microphone, controls and gameplay/accessibility settings: HUD, subtitles, scaling, colorblind overlays, shake, assistance, units and hints.
+- [ ] Playable movement/interactions/tools, pumps/hoses, driving, aircraft startup/flight, scoop/drop and dispatch/map tutorials using normal simulation/validation paths.
+- [ ] Document controls/contexts, player flow, UI hierarchy, interaction states, settings/presets and tutorials with editable diagram sources and inspected embedded SVG exports.
+- [ ] Verify normal-control completion of an actual operational loop without debug commands, server-validated multiplayer, saved/reloaded bindings/settings, real setting effects, common-resolution/accessibility navigation, actual screenshots/UI comparisons and reference-hardware performance.
+
+**Accept:** All required systems/bindings/evidence work against actual gameplay. M06-dependent screens/training remain open until real services exist. Placeholder interfaces and arbitrary preset values do not count. M09 uses this finished experience for final qualification.
+
 ## M06 — Operations and regional incidents
+
+**Dependencies:** M01–M05 services and M05A command/UI contracts. Final player-facing acceptance includes actual M05A operations bindings; server work can unblock them without declaring M05A complete prematurely.
 
 - [ ] Zemunik staging, fictional units, in-game qualifications, commander, dispatcher and role leases.
 - [ ] Procedural incident creation and multiple simultaneous active fires.
@@ -116,6 +133,8 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 **Accept:** Verified benchmark results with server hardware, tick p95, traffic and RAM; no '100-player ready' claim if failing.
 
 ## M09 — Modding, host packaging, 60 FPS and release
+
+**Dependencies:** Completed M05A controls/UI/settings/tutorials and M06–M08 operations/persistence/scale evidence. M09 qualifies and packages these systems rather than substituting release placeholders.
 
 - [ ] Versioned data/bundle content pipeline and server mod validation.
 - [ ] Windows/Linux server packaging, operator docs/config and backups.

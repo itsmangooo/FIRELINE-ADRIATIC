@@ -2,6 +2,10 @@
 
 **Document created:** 2026-10-22
 
+## Roadmap update — 2026-10-23 M05A
+
+Added **M05A — Player Experience, Controls, UI/UX & Settings** after M05 and before M06. [Scope/dependencies](PLAYER_EXPERIENCE_SPEC.md), [documentation verification](reports/2026-10-23-m05a-roadmap.md). M05A remains Pending; no controls/UI/settings/tutorials were implemented. Real M01–M05 mechanics are prerequisites; final operations screens bind to M06 services. Active foundation closeout/M01 work continues independently.
+
 ## Current follow-up — 2026-10-22 coastal import and cross-platform foundation
 
 - Continued from clean `main` at `db4ab83`; Unity 6000.6.7f1 / HDRP 17.6.0 and Netcode/Entities/Transport 6.6.0 remain unchanged. Unity automatically added the Linux 1.1.0 SDK/toolchain dependencies required by its installed support module. [Latest report and dependency audit](reports/2026-10-22-m00-coastal-foundation.md).

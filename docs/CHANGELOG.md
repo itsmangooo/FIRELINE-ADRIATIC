@@ -2,6 +2,12 @@
 
 Record meaningful development changes in dated entries, newest first. Link implementation evidence and disclose limitations. Plans and templates are not completed game features.
 
+## 2026-10-23 — M05A player-experience roadmap integration
+
+- Added M05A after M05 and before M06 without renumbering: controls/interactions, functional UI/HUD, persistent settings, accessibility and tutorials. [Complete requirements and dependencies](PLAYER_EXPERIENCE_SPEC.md).
+- Defined real M01–M05 mechanics and staged M06 producer/UI bindings; M09 retains release qualification. Earlier diagnostic controls do not complete M05A.
+- Updated roadmap/design/architecture/prompt navigation/status. Documentation only, M05A remains Pending; active M00 closeout/M01 work continues. [Verification and scope](reports/2026-10-23-m05a-roadmap.md).
+
 ## 2026-10-22 — M00 coastal import, Linux startup and batch verification
 
 - Acquired five audited Poly Haven CC0 surface sets and a real Copernicus GLO-90 crop, with exact source/derivative hashes, full mask/import verification and required distribution notices. Added a separate coastal render scene with explicitly generated vegetation/building/sea/fog proxies and actual [visual evidence](previews/m00-coastal/COMPARISON.md).

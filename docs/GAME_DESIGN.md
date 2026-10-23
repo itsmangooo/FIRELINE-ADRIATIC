@@ -1,5 +1,9 @@
 # GAME DESIGN — Systems & gameplay logic
 
+## Player-experience delivery — planned M05A
+
+[M05A](PLAYER_EXPERIENCE_SPEC.md) integrates actual M01–M05 mechanics into normal controls, contextual interactions, responsive UI, persistent settings, accessibility and playable training. It follows M05 and precedes M06; final operations bindings require real M06 producers. Earlier diagnostic controls are allowed but do not complete M05A. This addition is planned, not runtime implementation.
+
 ## Player-facing loop
 
 **Join → Authenticate → Unit/qualification check → Report for shift → Standby & preparation → Dispatch → Assignment → Travel/deploy → Observe/suppress/contain → Reallocate or stand down → Refill/repair → After Action Report → Continue shift.**

@@ -3,6 +3,7 @@
 - **First message:** `00_KICKOFF.md` only. It introduces the game, asks Codex to read all context/docs and perform a project audit.
 - Then **one prompt at a time** in numbered order; do not paste all sessions together to implement simultaneously.
 - Some tests/dependencies overlap. If M01 fire code works but no multiplayer, continue into the real two-client replication test before claiming fire is multiplayer-ready.
+- Insert [M05A Player Experience](FIRELINE_ADRIATIC_M05A_Player_Experience.md) after M05 ground work (`07_GROUND.md`) and before M06 operations (`08_OPERATIONS.md`), without renumbering prompts. Its current scope is roadmap integration only. See [staged M06 dependencies](../docs/PLAYER_EXPERIENCE_SPEC.md).
 - Read `TASKS.md` before each new session. Status + docs survive context clearing, chat history does not.
 - At the end of each verified task: build/tests, docs update, Git commit, push, new task. Reuse existing Git remote.
 - Save screenshots/benchmark data to trace what 'implemented' actually means. Asset URLs are not imported assets.
