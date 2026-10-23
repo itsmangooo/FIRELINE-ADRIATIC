@@ -1,6 +1,10 @@
 # Multiplayer/network architecture — 100 players as a target
 
-## M01 server state — protocol still pending
+## M02 checkpoint helpers — protocol still pending
+
+A bounded schema-1 binary codec and validated independent restoration now exist, with a local single-writer file store. They are not yet wired into normal server startup/save scheduling or client transport. [Current helper evidence and limits](reports/2026-10-23-m02-checkpoints.md). Actual baseline delivery, ordered deltas, repair, late join and process restart remain M02 acceptance work.
+
+## M01 server state — historical checkpoint
 
 The authoritative server now owns fire chunks, revisions, wind and coarse hazard, with detached snapshot/latest-step delta types. These are data contracts, not a replication implementation. Two clients still prove only the original connection handshake; no client receives fire or sends a water command in M01. M02 must implement/test serialization, reliable baselines, ordered deltas/gap repair, late join and restart state. [Actual M01 implementation](reports/2026-10-23-m01-fire-wind.md).
 

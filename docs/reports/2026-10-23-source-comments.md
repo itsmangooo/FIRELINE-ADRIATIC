@@ -12,7 +12,7 @@ Unity's two starter tutorial scripts under `Assets/TutorialInfo`, vendor package
 
 ## Verification and reproduction
 
-Run from the repository root:
+Reproduce this historical identity check from the repository root at the comment-pass revision `3b0e936c11db3d550da8cfdc2e6fa70c37ee65a3` (use a separate checkout). Later implementation commits intentionally change executable code and are not expected to pass an identity check against M01:
 
 ```powershell
 python scripts/verify_source_comments.py cc232b921ef9472cac1f43ec36813eb44f7d31e5

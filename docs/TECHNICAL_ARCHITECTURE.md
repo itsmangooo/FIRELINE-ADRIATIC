@@ -4,7 +4,11 @@
 
 [M05A](PLAYER_EXPERIENCE_SPEC.md) owns input-context routing, menus/HUD/navigation, persistent local settings, accessibility and tutorials. Client presentation submits validated requests and displays authoritative results; simulation/resources/permissions/smoke visibility remain server-owned. M01–M05 supply mechanics, M06 supplies operations producers, and final M05A operations bindings need both. M09 retains release/performance qualification. Existing Input System/presets are audited at implementation; this plan adds no packages or UI.
 
-## M01 implementation boundary — 2026-10-23
+## M02 local checkpoint boundary — 2026-10-23
+
+`FireSnapshotCodec` encodes bounded explicit fields with a corruption hash; `FireWorld.Restore` validates/copies a complete candidate, retaining scheduling, char, wind/revisions and mass totals. `FileFireSnapshotStore` supplies bounded local reads and flushed temporary-file replacement. There is no automatic authority installation, event replay, live persistence scheduling or client state protocol yet. [Actual flow/tests/remaining work](reports/2026-10-23-m02-checkpoints.md). No Unity packages changed.
+
+## M01 implementation boundary — 2026-10-23 (historical)
 
 `Fireline.Simulation` now contains `FireWorld`, `WindField` and detached schema-1 state/delta/store contracts without Unity dependencies. `Fireline.Server` owns manual ignition/water and a 5 Hz dedicated adapter, bounded active/inactive scheduling and proof runs. Client mutation requests are not exposed; M02 must implement actual baseline/delta/restart handling. [Equations, diagrams, evidence and limits](physics/fire-wind/COMPARISON.md). The following M00 checkpoint describes the earlier foundation; its clock-only statement is historical.
 

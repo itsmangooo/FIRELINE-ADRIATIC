@@ -1,0 +1,16 @@
+{
+  "runtime": ".NET 10.0.13",
+  "passed": 7,
+  "cases": [
+    "RoundTripContinuesIdenticallyIncludingCharWindAndInactiveCursor",
+    "EmptyAndMaximumWorldsFitTheFormat",
+    "InvalidByteEnvelopesAreRejected",
+    "ValidHashCannotBypassSchemaCountsFlagsOrTrailingData",
+    "InvalidSnapshotCandidatesCannotReplaceOrMutateAuthority",
+    "RestoredWorldDoesNotShareSnapshotBuffers",
+    "FileStoreReplacesValidCheckpointsAndPreservesPreviousOnInvalidWrite"
+  ],
+  "emptyBytes": 144,
+  "maximumWorldBytes": 1508000,
+  "scope": "Supplementary .NET test execution; Unity regression is separate"
+}

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Fireline.Simulation
 {
@@ -291,7 +292,7 @@ namespace Fireline.Simulation
 
         /// <summary>
         /// Clone every current cell buffer and include scheduling, wind and mass totals for a detached baseline.
-        /// Schema/checksum describe this prototype; no serializer, restore path or durable storage is supplied here.
+        /// Schema/checksum describe this prototype; the snapshot codec/store supply separate validated persistence boundaries.
         /// </summary>
         public FireSnapshot CaptureSnapshot()
         {
@@ -302,6 +303,85 @@ namespace Fireline.Simulation
                 AppliedWaterKg = AppliedWaterKg, EvaporatedWaterKg = EvaporatedWaterKg, ConsumedFuelKg = ConsumedFuelKg, InactiveCursor = inactiveCursor,
                 Tick = Tick, Wind = Wind.State, Chunks = snapshots.ToArray(), Checksum = Checksum() };
         }
+
+        /// <summary>
+        /// Validate and copy a complete schema-1 checkpoint into a new world, leaving any live authority untouched on failure.
+        /// Preserve tick, wind/chunk revisions, inactive scheduling cursor, char and kg totals so the next step can continue.
+        /// Recompute the canonical digest and mass balances; this validates data, not its origin or permission to replace a server.
+        /// The caller must not mutate the supplied DTO concurrently; worlds remain single-owner, non-thread-safe objects.
+        /// </summary>
+        public static FireWorld Restore(FireSnapshot snapshot)
+        {
+            Require(snapshot != null && snapshot.Schema == 1, "Unsupported/missing snapshot.");
+            Require(snapshot.Size >= 4 && snapshot.Size <= 32 && snapshot.StepSeconds == 0.2, "Invalid grid/step.");
+            Require(Bounded(snapshot.CellSizeM, 5, 100), "Invalid cell size.");
+            Require(snapshot.Chunks != null && snapshot.Chunks.Length <= MaximumChunks, "Invalid chunk count.");
+            Require(snapshot.InactiveCursor >= 0 && snapshot.InactiveCursor < MaximumChunks, "Invalid scheduler cursor.");
+            Require(Bounded(snapshot.Wind.EastMps, -40, 40) && Bounded(snapshot.Wind.NorthMps, -40, 40)
+                && Bounded(snapshot.Wind.GustMps, 0, 10), "Invalid wind.");
+            Require(snapshot.Wind.Revision != 0 || (snapshot.Wind.EastMps == 0 && snapshot.Wind.NorthMps == 0
+                && snapshot.Wind.GustMps == 0), "Unversioned wind change.");
+            Require(Bounded(snapshot.AppliedWaterKg, 0, double.MaxValue) && Bounded(snapshot.EvaporatedWaterKg, 0, double.MaxValue)
+                && Bounded(snapshot.ConsumedFuelKg, 0, double.MaxValue), "Invalid mass totals.");
+            var world = new FireWorld(snapshot.Seed, snapshot.Size, snapshot.CellSizeM);
+            world.Tick = snapshot.Tick; world.inactiveCursor = snapshot.InactiveCursor;
+            world.Wind.Restore(snapshot.Wind);
+            world.AppliedWaterKg = snapshot.AppliedWaterKg; world.EvaporatedWaterKg = snapshot.EvaporatedWaterKg;
+            world.ConsumedFuelKg = snapshot.ConsumedFuelKg;
+            double initial = 0, remaining = 0, retained = 0;
+            ChunkId previous = default; int active = 0;
+            for (int n = 0; n < snapshot.Chunks.Length; n++)
+            {
+                var source = snapshot.Chunks[n];
+                Require(source != null, "Missing chunk.");
+                var id = source.Id;
+                Require(id.Sector >= 0 && id.Sector <= ushort.MaxValue && Math.Abs((long)id.X) <= 10000
+                    && Math.Abs((long)id.Z) <= 10000, "Invalid chunk ID.");
+                Require(n == 0 || previous.CompareTo(id) < 0, "Chunks must be unique and canonically ordered."); previous = id;
+                Require(source.LastSimulatedTick <= snapshot.Tick && source.Cells != null
+                    && source.Cells.Length == snapshot.Size * snapshot.Size, "Invalid chunk tick/cell count.");
+                if (source.Active) active++;
+                Require(active <= MaximumActiveChunks, "Active chunk budget exceeded.");
+                world.AddChunk(id, source.Active);
+                var target = world.chunks[id]; target.Revision = source.Revision; target.LastTick = source.LastSimulatedTick;
+                target.Cells = (FireCell[])source.Cells.Clone();
+                for (int i = 0; i < target.Cells.Length; i++)
+                {
+                    var cell = target.Cells[i];
+                    ulong expectedId = ((ulong)(ushort)id.Sector << 48) | ((ulong)(ushort)id.X << 32)
+                        | ((ulong)(ushort)id.Z << 16) | (ushort)i;
+                    Require(Enum.IsDefined(typeof(FuelKind), cell.Fuel) && Enum.IsDefined(typeof(BurnPhase), cell.Phase)
+                        && Enum.IsDefined(typeof(VegetationPhase), cell.Vegetation), "Invalid cell enum.");
+                    Require(Bounded(cell.InitialFuelKgPerM2, 0, 20) && Bounded(cell.RemainingFuelKgPerM2, 0, cell.InitialFuelKgPerM2)
+                        && Bounded(cell.Moisture, 0, 1) && Bounded(cell.WaterKgPerM2, 0, double.MaxValue)
+                        && Bounded(cell.Heat, 0, 1) && Bounded(cell.Intensity, 0, 1) && Bounded(cell.Smoke, 0, 1)
+                        && Bounded(cell.ElevationM, -1000, 10000), "Invalid cell number.");
+                    Require(cell.VegetationId == expectedId && cell.LastChangedTick <= snapshot.Tick, "Invalid cell identity/tick.");
+                    Require(cell.Phase != BurnPhase.Charred || (cell.RemainingFuelKgPerM2 == 0 && cell.Heat == 0
+                        && cell.Intensity == 0 && cell.Vegetation == VegetationPhase.Charred), "Invalid exhausted cell.");
+                    Require(cell.Phase != BurnPhase.Extinguished || (cell.Intensity == 0 && cell.Vegetation == VegetationPhase.Charred),
+                        "Invalid extinguished cell.");
+                    double area = world.CellSizeM * world.CellSizeM;
+                    initial += cell.InitialFuelKgPerM2 * area; remaining += cell.RemainingFuelKgPerM2 * area;
+                    retained += cell.WaterKgPerM2 * area;
+                }
+                world.BacklogSeconds += (snapshot.Tick - source.LastSimulatedTick) * world.StepSeconds;
+            }
+            Require(Close(initial, remaining + world.ConsumedFuelKg) && Close(world.AppliedWaterKg, retained + world.EvaporatedWaterKg),
+                "Snapshot mass accounting failed.");
+            Require(string.Equals(world.Checksum(), snapshot.Checksum, StringComparison.Ordinal), "Snapshot digest mismatch.");
+            return world;
+        }
+
+        /// <summary>Check finite inclusive numeric bounds without mutating a candidate checkpoint.</summary>
+        private static bool Bounded(double value, double low, double high) => SimMath.Finite(value) && value >= low && value <= high;
+
+        /// <summary>Allow small floating-point summation error in kg balances; reject non-finite sums.</summary>
+        private static bool Close(double a, double b) => SimMath.Finite(a) && SimMath.Finite(b)
+            && Math.Abs(a - b) <= 1e-6 + 1e-10 * Math.Max(Math.Abs(a), Math.Abs(b));
+
+        /// <summary>Reject malformed checkpoint data with one consistent exception before a candidate world can be installed.</summary>
+        private static void Require(bool condition, string message) { if (!condition) throw new InvalidDataException(message); }
 
         // Canonical sorted IDs and explicit IEEE-754 bits; a regression digest, not a cryptographic signature.
         /// <summary>

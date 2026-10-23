@@ -2,6 +2,12 @@
 
 Record meaningful development changes in dated entries, newest first. Link implementation evidence and disclose limitations. Plans and templates are not completed game features.
 
+## 2026-10-23 — M02 bounded checkpoint helper increment
+
+- Added explicit bounded binary snapshot encoding, SHA-256 corruption detection, semantic/canonical validation and independent world restoration retaining char, wind, revisions, scheduling and kg balances.
+- Added a single-writer local file store with bounded reads and flushed temporary-file replacement; no silent fresh-world fallback. Seven new tests and the full 41/41 Unity suite pass.
+- [Actual flow, tests, format limits and remaining work](reports/2026-10-23-m02-checkpoints.md). M02 remains In Progress: no normal server lifecycle wiring, live baseline/delta protocol, three-client convergence, packet-loss recovery or process-restart proof yet. No physics/render/performance improvement claimed.
+
 ## 2026-10-23 — Human-readable source explanations
 
 - Explained all 144 project C# function/property declarations and all 14 existing tooling scripts, with purpose, units, ownership, side effects and limits. Vendor/generated code is excluded.

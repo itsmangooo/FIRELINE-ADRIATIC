@@ -88,7 +88,7 @@ namespace Fireline.Simulation
         public FireCell[] Values;
     }
 
-    /// <summary>Schema-1 detached world data and regression digest; this DTO alone does not implement durable restoration.</summary>
+    /// <summary>Schema-1 detached world data and regression digest; codec validation/restoration is separate from this DTO.</summary>
     [Serializable]
     public sealed class FireSnapshot
     {
@@ -102,15 +102,15 @@ namespace Fireline.Simulation
         public string Checksum;
     }
 
-    // M02 supplies a real serializer/store; this contract is not persistence evidence.
+    // M02 supplies a bounded codec and local file store; normal server lifecycle/event replay wiring remains pending.
     public interface IFireSnapshotStore
     {
         /// <summary>
-        /// Contract for a future store to write a complete snapshot; M01 provides no storage implementation.
+        /// Write a complete snapshot; FileFireSnapshotStore is the initial single-writer implementation.
         /// </summary>
         void Write(FireSnapshot snapshot);
         /// <summary>
-        /// Contract for a future store to load a snapshot; restoring/validating a world belongs to later work.
+        /// Load checkpoint data; the owner explicitly validates/restores a candidate before replacing its authority.
         /// </summary>
         FireSnapshot Read();
     }

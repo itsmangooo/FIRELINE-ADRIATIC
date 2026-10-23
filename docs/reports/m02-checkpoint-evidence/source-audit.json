@@ -1,0 +1,23 @@
+{
+  "baseline": "3b0e936c11db3d550da8cfdc2e6fa70c37ee65a3",
+  "sourceGitBlobIds": {
+    "Assets/Fireline/Simulation/FireWorld.cs": "d1d9e0b09ea2af0bc53459ee8f3d0dcbfb65279c",
+    "Assets/Fireline/Simulation/WindField.cs": "2c531d0a5e211beafda542b47034eeb1b0692439",
+    "Assets/Fireline/Simulation/FireSnapshotCodec.cs": "933a8acc16ee87a122b38e41d73aee957a4cb550",
+    "Assets/Fireline/Simulation/FireState.cs": "3a86a986bad55f0c1919717ec4f25b7207fec4ef",
+    "Assets/Fireline/Server/FileFireSnapshotStore.cs": "86274d81640cfe2dd16cef72ffdf0c650dbfe311",
+    "Assets/Fireline/Tests/Editor/FireSnapshotTests.cs": "a3b2807e219be896dae10e304bb643233916f3ed"
+  },
+  "markdownLocalTargets": 333,
+  "svgXml": "passed",
+  "pythonSyntax": "passed",
+  "diagramVisualReview": "passed; labels and arrow order inspected",
+  "scope": "M02 local helpers; real server/client restart/transport acceptance pending",
+  "uniqueAssetGuids": 101,
+  "unityTests": {
+    "total": 41,
+    "passed": 41,
+    "failed": 0
+  },
+  "skyProfilePreserved": true
+}

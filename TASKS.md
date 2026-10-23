@@ -67,6 +67,7 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 
 **Status: In Progress.** M00/M01 and the requested explanatory comment pass are verified. Begin bounded snapshot serialization/validation and restoration, then baseline/delta transport, late join and restart recovery. M01 DTOs are not completed replication.
 
+- [x] Bounded checkpoint codec, candidate restoration and local store: 41/41 Unity tests passed; [scope/evidence](docs/reports/2026-10-23-m02-checkpoints.md). Real process restart remains separate.
 - [ ] Connect two real processes; initial fire baseline + ordered revision deltas.
 - [ ] Late join client #3 gets identical burned world after convergence.
 - [ ] Snapshot/write restore after restart: no regrowth/score duplication; test packet delay/loss.

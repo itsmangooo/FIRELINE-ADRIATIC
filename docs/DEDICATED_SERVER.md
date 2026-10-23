@@ -1,5 +1,9 @@
 # Dedicated servers — self-hosting and operational model
 
+## Current M02 local helper boundary
+
+The [checkpoint increment](reports/2026-10-23-m02-checkpoints.md) supplies a bounded codec, validated candidate restoration and a single-writer local file store. These are not yet connected to normal server startup/save scheduling or demonstrated across process restart. Missing/corrupt data throws rather than silently resetting vegetation. Database/event replay, admission, operator backup policy and power-loss qualification remain future work. The lifecycle below remains proposed.
+
 ## Deliverables for self-hostable game
 
 - Windows x64 headless build and Linux x64 headless build, generated using Unity Dedicated Server build target where supported by installed editor.

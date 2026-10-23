@@ -35,6 +35,15 @@ namespace Fireline.Simulation
         /// </summary>
         public WindField(int seed) { Seed = seed; }
 
+        /// <summary>Restore validated checkpoint wind without inventing a new weather-change revision.</summary>
+        internal void Restore(WindState state)
+        {
+            SimMath.Range(state.EastMps, -40, 40, nameof(state.EastMps));
+            SimMath.Range(state.NorthMps, -40, 40, nameof(state.NorthMps));
+            SimMath.Range(state.GustMps, 0, 10, nameof(state.GustMps));
+            State = state;
+        }
+
         // Called at the authoritative step boundary, never from a client weather effect.
         /// <summary>
         /// At a server step boundary, validate base components within +/-40 m/s and gust amplitude within 0-10 m/s.

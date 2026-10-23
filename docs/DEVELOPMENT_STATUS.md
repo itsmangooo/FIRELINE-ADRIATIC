@@ -4,7 +4,7 @@
 
 ## M01 implementation — 2026-10-23
 
-Implemented pure bounded fire/wind/suppression/hazard/char state and the server's 5 Hz adapter. **34/34 Unity tests passed**, Windows dedicated build succeeded with 0 errors/506 warnings, and two independent Windows headless runs matched all nine scenario digests. The live direct-IP regression passed with two existing M00 clients and 349 actual fire steps. [Full evidence/scope](reports/2026-10-23-m01-fire-wind.md), [equations/SVG plots/reader guide](physics/fire-wind/COMPARISON.md), [reproduction](M01_BUILD_AND_TEST.md). Linux/WSL build and two headless replays also passed. Eight cross-OS digests match; gust heat differs by at most 1.11e-16 with identical phase grids, so clients must consume authoritative state. M01 is now Verified. The user-requested function-comment pass is verified (144 C# declarations, 14 tooling scripts, identical executable code, 34 tests); M02 serialization/transport/restart work is now active. Client fire replication, restart restoration and player-facing fire remain unimplemented. M05A stays Pending.
+Implemented pure bounded fire/wind/suppression/hazard/char state and the server's 5 Hz adapter. **34/34 Unity tests passed**, Windows dedicated build succeeded with 0 errors/506 warnings, and two independent Windows headless runs matched all nine scenario digests. The live direct-IP regression passed with two existing M00 clients and 349 actual fire steps. [Full evidence/scope](reports/2026-10-23-m01-fire-wind.md), [equations/SVG plots/reader guide](physics/fire-wind/COMPARISON.md), [reproduction](M01_BUILD_AND_TEST.md). Linux/WSL build and two headless replays also passed. Eight cross-OS digests match; gust heat differs by at most 1.11e-16 with identical phase grids, so clients must consume authoritative state. M01 is now Verified. The user-requested function-comment pass is verified (144 C# declarations, 14 tooling scripts, identical executable code, 34 tests); M02 serialization/transport/restart work is now active. Client fire replication, process-restart integration and player-facing fire remain unimplemented; M02 local checkpoint helpers are described below. M05A stays Pending.
 
 ## Active milestone — 2026-10-23
 
@@ -71,7 +71,7 @@ Added **M05A — Player Experience, Controls, UI/UX & Settings** after M05 and b
 
 ## Immediate next action
 
-Continue M02 snapshot serialization/validation, real baseline/delta transport, late join and restart validation. The [CL-415 licence/import gate](../AssetSources/Aircraft/CL415/AUDIT.md) remains an M03 prerequisite, not a pure fire-simulation dependency. Reproduce the current foundation using [M00_BUILD_AND_TEST.md](M00_BUILD_AND_TEST.md). Latest Windows regression logs remain under `Builds/Smoke/20261022-214232/`; [current source/runtime evidence](reports/2026-10-22-m00-coastal-foundation.md) supersedes earlier captures. The connection harness establishes the process boundary; M01/M02 must implement and verify shared authoritative fire state separately.
+Continue M02 by wiring validated checkpoints into the real server lifecycle, then implement baseline/delta transport, late join and restart validation. The [CL-415 licence/import gate](../AssetSources/Aircraft/CL415/AUDIT.md) remains an M03 prerequisite, not a pure fire-simulation dependency. Reproduce the current foundation using [M00_BUILD_AND_TEST.md](M00_BUILD_AND_TEST.md). Latest Windows regression logs remain under `Builds/Smoke/20261022-214232/`; [current source/runtime evidence](reports/2026-10-22-m00-coastal-foundation.md) supersedes earlier captures. The connection harness establishes the process boundary; M01/M02 must implement and verify shared authoritative fire state separately.
 
 ## Update template for each checkpoint
 
@@ -87,3 +87,7 @@ Continue M02 snapshot serialization/validation, real baseline/delta transport, l
 ## Source explanations — 2026-10-23
 
 [Comment-pass evidence](reports/2026-10-23-source-comments.md): project C# functions/properties and tooling entry points are documented; source identity and 34/34 Unity tests pass. This is documentation/audit tooling, with no new runtime or performance claims. M02 starts with bounded snapshot encoding/validation and restoration; its real transport/three-client/restart acceptance remains open.
+
+## M02 local checkpoint increment — 2026-10-23
+
+Bounded little-endian snapshots, SHA-256 corruption detection, semantic/canonical validation, independent world restoration and a single-writer file store are implemented. [Report and rendered flow](reports/2026-10-23-m02-checkpoints.md). Seven supplementary .NET test methods and the full **41/41 Unity EditMode regression pass**, including real local file replacement checks. Normal server startup/save scheduling, baseline/delta delivery, three-client convergence, delayed/lost packets and actual process restart remain pending. M02 is In Progress. No physics/render/performance acceptance is inferred.
