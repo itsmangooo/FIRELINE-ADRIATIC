@@ -1,0 +1,16 @@
+{
+  "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+  "driver": "32.0.16.2101",
+  "hdrp": "17.6.0",
+  "osBuild": "26300",
+  "scene": "unchanged M03_FlightTest; one generic finite-fuel aircraft/prototype and new read-only instrument panel; late headless observer",
+  "os": "Microsoft Windows 11 Pro",
+  "limits": "No airborne or water gate, populated coast/smoke, base GTX1660/Ultra qualification",
+  "vSync": "retained 1",
+  "graphics": "per-process Direct3D11",
+  "ramVisibleMiB": 16324.0,
+  "unity": "6000.6.7f1",
+  "resolution": "1920x1080",
+  "cpu": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+  "preset": "existing Balanced"
+}

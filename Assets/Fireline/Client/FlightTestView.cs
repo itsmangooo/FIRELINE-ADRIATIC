@@ -14,7 +14,7 @@ namespace Fireline.Client
         private FlightTestControls controls = new FlightTestControls();
         private Transform anchor, visual;
         private Camera camera;
-        private UnityEngine.UI.Text detail, status;
+        private UnityEngine.UI.Text detail, status, instruments;
         private GameObject canvas;
         private ulong shownTick;
         private double nextInput;
@@ -36,6 +36,10 @@ namespace Fireline.Client
         public Vector3 AnchorPosition => anchor.position;
         /// <summary>Actual body-origin offset under the CoG anchor, preserving the imported mesh's original orientation.</summary>
         public Vector3 VisualOffset => visual.localPosition;
+        /// <summary>The actual visible instrument text; proof code records it rather than reconstructing a substitute display.</summary>
+        public string InstrumentText => instruments.text;
+        /// <summary>The exact server snapshot used to format the visible instruments this Update, retained across later network callbacks.</summary>
+        public FlightStateRpc InstrumentSource { get; private set; }
 
         /// <summary>Install only in the separate opt-in test scene, preserving every earlier scene and static preview.</summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
@@ -79,9 +83,14 @@ namespace Fireline.Client
                 : owns ? "PILOT SEAT / SERVER AUTHORITY" : "OBSERVER / ENTER TO REQUEST SEAT";
             if (!focus) status.text += " / INPUT UNFOCUSED";
             var s = session.Latest;
+            if (session.HasState)
+            {
+                InstrumentSource = s;
+                instruments.text = FlightTelemetry.Format(FlightTelemetry.Read(s));
+            }
             detail.text = $"CLIENT {session.Identity}   PILOT {s.Owner}   SEAT EPOCH {s.Epoch}\n"
                 + $"AIRCRAFT TICK {s.Tick}   FIRE TICK {s.FireTick}\n"
-                + $"Ground speed {Math.Sqrt(s.Vx*s.Vx+s.Vy*s.Vy+s.Vz*s.Vz):F2} m/s\n"
+                + $"Ground speed {Math.Sqrt(s.Vx*s.Vx+s.Vz*s.Vz):F2} m/s\n"
                 + $"CoG altitude {s.Y:F2} m   Vertical {s.Vy:F2} m/s\n"
                 + $"Local throttle {LocalControls.Throttle:P0}   Flaps {LocalControls.Flaps:P0}\n"
                 + $"Local gear {LocalControls.Gear:F0}   Brake {LocalControls.Brake:F0}\n"
@@ -121,6 +130,9 @@ namespace Fireline.Client
             Label(panel,"FIRELINE / M03 FLIGHT TEST",new Vector2(14,-12),new Vector2(410,26),20);
             status = Label(panel,"CONNECTING",new Vector2(14,-44),new Vector2(410,22),14); status.color = new Color(.64f,.89f,.8f);
             detail = Label(panel,"Waiting for server pose",new Vector2(14,-74),new Vector2(410,170),16);
+            var data = Panel("AirData",new Vector2(1,1),new Vector2(-16,-16),new Vector2(360,250));
+            Label(data,"INSTRUMENTS / SERVER SAMPLE",new Vector2(14,-12),new Vector2(334,25),17);
+            instruments = Label(data,"Waiting for validated server data",new Vector2(14,-48),new Vector2(334,194),14);
             var guide = Panel("Controls",new Vector2(0,0),new Vector2(16,16),new Vector2(1248,91));
             Label(guide,"ENTER claim | BACKSPACE release | SHIFT / CTRL throttle | W/S pitch | A/D roll | Q/E yaw | SPACE brake | F flaps | G gear | C camera\n"
                 + "PAD: START / SELECT seat | triggers throttle | left stick pitch/roll | right X yaw | A brake | Y gear | D-pad UP flaps | RB camera\n"
@@ -132,7 +144,8 @@ namespace Fireline.Client
         {
             var item = new GameObject(name,typeof(RectTransform),typeof(UnityEngine.UI.Image)); item.transform.SetParent(canvas.transform,false);
             var rect = item.GetComponent<RectTransform>(); rect.anchorMin=rect.anchorMax=rect.pivot=corner; rect.anchoredPosition=position; rect.sizeDelta=size;
-            item.GetComponent<UnityEngine.UI.Image>().color = new Color(.025f,.045f,.065f,.9f); return rect;
+            var background = item.GetComponent<UnityEngine.UI.Image>(); background.color = new Color(.025f,.045f,.065f,.9f);
+            background.raycastTarget = false; return rect;
         }
 
         /// <summary>Attach built-in-font text to the panel's top-left with explicit bounds and no input raycast.</summary>

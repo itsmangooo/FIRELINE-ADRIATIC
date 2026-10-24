@@ -1,5 +1,9 @@
 # Multiplayer/network architecture — 100 players as a target
 
+## M03 aircraft protocol v2 — 2026-10-25
+
+Aircraft request/reply/state headers now use `FlightWire.Version=2`; state adds horizontal `WindX/WindZ`, sampled by the server at the published post-step position/fire tick. Wind revision and aircraft/fire ticks remain included. Client rejects incompatible/nonfinite/out-of-bounds replicas before installing them, computes readouts only and cannot publish wind/pose/fuel. Matched rebuilt client/server RPC collections are mandatory; mixed earlier binaries are unqualified, even for scenes whose fire schema itself is unchanged. Reliable/ACK/lease/seat bounds remain as previously implemented. No measured bandwidth claim. Actual owner+late observer receive **404** exactly matched snapshots; **406** server wind publications independently reconstruct. [Evidence, actual message/readout SVG and limits](reports/2026-10-25-m03-flight-instruments.md). Impaired-network flight/admission/capacity/persistence remain open.
+
 ## M03 finite-fuel authority — 2026-10-24
 
 Fuel now decreases only in accepted server physical steps; the existing complete-pose `FuelKg` field carries that truth without a schema change. There is no client fuel/refuel command and the existing forged-state rejection still applies. The client uses received fuel/water to derive its CoG visual offset; it never runs the fuel integrator. [Actual transaction, tests and evidence](physics/aircraft-fuel/COMPARISON.md). This does not add aircraft persistence, production admission, prediction or impaired-network qualification.

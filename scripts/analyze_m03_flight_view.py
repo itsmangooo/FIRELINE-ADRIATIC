@@ -8,6 +8,7 @@ import math
 from pathlib import Path
 import struct
 import tempfile
+from analyze_m03_instruments import verify as verify_instruments
 
 
 def read(path):
@@ -35,6 +36,7 @@ def verify(capture, evidence, image):
     assert view["cameraMask"] == 3 and view["snapshots"] > 100 and view["acceptedInputs"] > 100
     assert server["owner"] == 0 and server["disconnectReleases"] == 1 and server["expirations"] >= 1 and not server["faulted"]
     publications = {(row["identity"], row["state"]["Tick"]): row["state"] for row in frames(capture / "server.snapshots.jsonl")}
+    instruments = verify_instruments(capture, publications, view["identity"], server)
     if server.get("fuelProfile") == "DEBUG_FUEL_V1":
         assert abs(server["consumedFuelKg"] - (400 - server["finalState"]["FuelKg"])) < 1e-10
         assert 0 < server["consumedFuelKg"] < 400 and server["finalState"]["WaterKg"] == 0
@@ -126,7 +128,7 @@ def verify(capture, evidence, image):
         assert raw[:8] == b"\x89PNG\r\n\x1a\n" and struct.unpack(">II", raw[16:24]) == (1920, 1080)
     archives = []
     for role in ("server", "view-owner", "observer"):
-        for suffix in (".json", ".csv", ".snapshots.jsonl"):
+        for suffix in (".json", ".csv", ".snapshots.jsonl", ".instruments.jsonl"):
             path = capture / (role + suffix)
             if path.exists():
                 raw = path.read_bytes()
@@ -138,6 +140,8 @@ def verify(capture, evidence, image):
                   callbackMaximum=sorted(worst, key=lambda row: row["callbackMs"], reverse=True)[:10],
                   intervalsOver16_667Ms=sum(value > 1000/60 for value in intervals), intervalsOver33_333Ms=sum(value > 1000/30 for value in intervals),
                   archives=archives, limits="One rendered 1080p engineering runway client and one headless observer; synthetic Input System devices, no native OS key/gamepad hardware, airborne/water/WAN/capacity or representative 60 FPS acceptance.")
+    if instruments is not None:
+        result['instruments'] = instruments
     (evidence / "verification.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(dict(passed=True, snapshots=counts, displayFrames=checked, maxPositionErrorM=max_position,
                           maximumCallback=result["callbackMaximum"][0], averageFps=metrics["averageFps"])))

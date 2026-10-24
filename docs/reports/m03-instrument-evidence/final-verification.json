@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "baseline": "c90b6e87b6ed80b5816f338c1836e76e542482fe",
+  "localMarkdownLinksChecked": 391,
+  "configurationFilesPreserved": 5,
+  "configurationHashes": [
+    {
+      "sha256": "8324E681D5FFA8B9475A8073DB17275732B9691C9EE27CC40936445C15BC2D4E",
+      "path": "Assets/Settings/SkyandFogSettingsProfile.asset"
+    },
+    {
+      "sha256": "DF7C96B14CD0AF4B6332D656088371B08BDF0901A24719332B51764B27C8F49F",
+      "path": "ProjectSettings/ProjectSettings.asset"
+    },
+    {
+      "sha256": "D4280F9D0397FC6738786DB164976AD7456E0B2A77823C4C61684628E84A2373",
+      "path": "ProjectSettings/UnityConnectSettings.asset"
+    },
+    {
+      "sha256": "C7879726D0F4A76046D945462340987D33FD23BA3EE06132EF0C1E5C501E121E",
+      "path": "Packages/manifest.json"
+    },
+    {
+      "sha256": "819DDB5DB90FCF02148D15C736464D39AE5A9773A60AE0752065807DFECB4FBB",
+      "path": "Packages/packages-lock.json"
+    }
+  ],
+  "editModePassed": 110,
+  "playModePassed": 3,
+  "csharpFiles": 53,
+  "documentedMembers": 427,
+  "receivedPosesExactlyMatched": 404,
+  "displayFramesIndependentlyChecked": 1715,
+  "realProcessExits": [
+    0,
+    0,
+    0
+  ],
+  "actualLateJoinVerified": true,
+  "sourceAssetsScenesAndSimulationKernelsUnchanged": true,
+  "aircraftWireVersion": 2,
+  "newAssetGuidsUnique": 2,
+  "roleAssembliesAndLegalCopiesVerified": true,
+  "selfContainedSvgFiles": 4,
+  "inspectedGamePngs": 3,
+  "inspectedDrawingFallbacks": 4,
+  "immutableArchiveReplayPassed": true,
+  "originalFuelTrajectoriesUnchanged": true,
+  "checkedActualInstrumentTexts": 1721,
+  "originalFlightTrajectoriesUnchanged": true,
+  "initialFuelKg": 400,
+  "consumedLiveFuelKg": 0.647064955007977,
+  "credentialPatternScanPassed": true,
+  "imageHashes": {
+    "before.png": "D9556525FA67E48C7FB74A01F2EB2630AF30E938358A78518BF342110FB02148",
+    "after.png": "5DFDA107F4C030AD6969E2BC7434AB71C56FB2FB24609EA3388983DB56B4FBD3",
+    "after.inspection.png": "54A69D0045F4FC716D7114CE33E2E2064F17EC2C912212D81C5C5DA4015D01A4"
+  },
+  "limits": "Verified read-only flight instruments and bounded runway/device/presentation increment; M03 open for airborne/cockpit/animation/calibration/collision/water. No physical hardware/native focus, fresh Linux/WAN/100-player or representative 60 FPS qualification."
+}

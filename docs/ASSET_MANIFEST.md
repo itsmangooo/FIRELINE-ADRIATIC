@@ -1,5 +1,9 @@
 # Asset Manifest — Imported content, source links and pipeline
 
+## M03 read-only instruments — 2026-10-25
+
+Adds a runtime uGUI panel using the existing built-in `LegacyRuntime.ttf`; no font/package/download, scene, material, texture or model import. Original temporary CL-415 source/notices, static parts, existing eleven materials/nine textures and runway assets are unchanged. Actual captures retain the user's uncommitted sky settings. [BEFORE/AFTER, asset provenance and remaining model/cockpit limits](previews/m03-flight-instruments/COMPARISON.md). This does not change the future supplied-map audit or production replacement gate.
+
 ## Future supplied map — planned 2026-10-24
 
 The user expects to supply an approximately **30 × 4 km** map. Source path, actual extent/units, format, tiles, contents and provenance are not yet audited; no integration is claimed. M04 owns bounded-sector HDRP texture/lighting work, M08 full streaming and M05A/M09 measured quality options/qualification. [Delivery and target-hardware plan](LARGE_MAP_AND_QUALITY_PLAN.md). The current M03 fuel increment reuses the existing engineering scene/prototype unchanged and adds no downloaded/graphical asset or licence change.

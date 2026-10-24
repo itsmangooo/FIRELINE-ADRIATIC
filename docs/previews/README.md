@@ -1,5 +1,7 @@
 # Visual progress evidence
 
+[M03 server-wind flight instruments](m03-flight-instruments/COMPARISON.md): actual earlier fuel BEFORE and rebuilt chase/inspection AFTER; independent actual visible-text checks, SI equations, rendered data-flow/airdata/callback SVGs and full graph reader guide. M03 airborne/water remains open; two failed offline routes retained separately. No asset/model change or representative performance pass.
+
 [M03 finite-fuel regression](m03-fuel/COMPARISON.md): actual earlier 1080p chase BEFORE and rebuilt chase/inspection AFTER, unchanged scene/model/HUD, correct fuel-derived body offset and FL-09 diagnostic. Fuel behavior is established by raw authoritative/numerical data, not screenshot appearance.
 
 [M03 engineering aircraft view](m03-flight-view/COMPARISON.md): actual static BEFORE and running-build chase/inspection AFTER images, server-owned test controls, receipt-time interpolation, synthetic runway/HUD and measured callback locations. This is no certified aircraft, cockpit, airborne/water loop or M05A production interface.

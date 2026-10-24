@@ -1,5 +1,13 @@
 # Performance history
 
+## 2026-10-25 — M03 instrument rendered diagnostic
+
+Actual Windows Mono release, Editor closed, **1920×1080 Balanced / VSync=1 / per-process D3D11**, i5-9400F / GTX 1660 SUPER / driver 32.0.16.2101 / Windows 11 26300 / 16,323 MB Unity RAM. Existing synthetic runway/prototype plus read-only instrument panel; one late headless observer and dedicated server. Five rendered seconds warm-up; **1,440 intervals / 24.515733 s** retained. Average/1% low **58.737791 / 17.839704 FPS**, p95/p99 callback spacing **19.093599 / 24.828499 ms**, peak allocated **495,136,036 bytes**. CPU/GPU execution, draw calls, VRAM, bandwidth and full server tick timings unavailable.
+
+**FL-10:** #504 **184.623405 ms** at **8.532061–8.716684 s**; #242 **172.498405 ms** at **4.016753–4.189251 s**; #760 **52.085102 ms** at **13.049114–13.101199 s**. 729/10 intervals exceed 16.667/33.333 ms rulers; these are not dropped-presentation counts. Six host catch-up overruns separately discard **128.7779 ms**; largest host gap **89.7431 ms** at host elapsed **34.1454958 s**, adapter there **0.1349 ms**, not full-server timing. [Real data, conditions, exact scopes and both graph reader guides](reports/2026-10-25-m03-flight-instruments.md#actual-visual-and-performance-evidence), [follow-up sites](performance/FRAME_LOSS_REGISTER.md#m03-instrument-client-callbacks--2026-10-25).
+
+No matched instrument-cost regression/speedup: cache/startup/admission/scheduling conditions are uncontrolled. No resource-step execution-cost comparison, representative five-minute coastal/smoke 60 FPS, future Ultra, Linux/WAN/capacity or full route qualification. Optimization remains deferred; older observations stay open.
+
 ## 2026-10-24 — M03 finite-fuel rendered regression
 
 Actual Windows Mono release, Editor closed, **1920×1080 existing Balanced / VSync=1 / per-process D3D11**, i5-9400F / GTX 1660 SUPER / driver 32.0.16.2101 / Windows 11 26300 / 16,323 MB Unity RAM. Same debug runway/model/HUD, now 400 kg initial finite fuel, one late headless observer plus dedicated server. Five rendered seconds warm up; **1,448 intervals / 24.417126 s** retained. Average/1% low **59.302638 / 25.811398 FPS**, p95/p99 callback spacing **17.182400 / 17.807700 ms**, peak allocated **491,292,791 bytes**.

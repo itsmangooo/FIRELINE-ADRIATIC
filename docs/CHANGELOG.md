@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-25 — M03 sampled-wind flight instruments verified increment
+
+- Aircraft protocol v2 carries actual server wind at published CoG/fire tick. Added validated read-only speed/attitude/heading/resource/mass instruments and corrected horizontal ground speed; no Simulation-law/package/model/scene change. Matching rebuilt players required.
+- **110 EditMode + 3 PlayMode tests**, zero-error Windows server/client builds (510/499 warnings), unchanged exact flight/fuel replay in two actual 8,800-sample processes; real dedicated/rendered-owner/late-observer exits 0. **404** source poses, **1,715** model frames, **1,721** actual instrument texts and **406** independently reconstructed wind publications pass. [Actual captures/SVGs/equations, raw evidence, commands and limits](reports/2026-10-25-m03-flight-instruments.md). Human comments: 53 C# files / 427 members.
+- Retained two **failed** offline takeoff/landing/stop control attempts (exit 2); M03 airborne gate remains open. No physics coefficients changed to manufacture acceptance; M04/M05A not started.
+- FL-10 records client #504 184.623 ms / #242 172.498 ms and six host catch-up overruns. Diagnostic 58.738 average / 17.840 1% low FPS is not a representative 60 FPS or matched cost claim; optimization deferred. User sky and configuration preserved.
+
 ## 2026-10-24 — M03 finite-fuel propulsion and future map/quality requirements
 
 - Installed finite server fuel debit, partial-last-interval thrust, zero empty-tank thrust and mass/CoG frame updates around the unchanged contact/flight kernels. Default 400 kg fuel and 0.25 kg/s full-throttle burn are explicit debug estimates; no refuel/startup/calibrated variant or water completion.

@@ -1,0 +1,21 @@
+{
+  "qualified": false,
+  "recordEverySteps": 400,
+  "runtime": "dotnet SDK 10.0.402 / net10.0; not a Unity-player result",
+  "kernelDtSeconds": 0.005,
+  "recordedTime": "post-step time, first retained state at 0.005 s; no warmup removed",
+  "runs": [
+    {
+      "csvSha256": "B55615E8F4F4C76C5EA219D3150D09D09A7D4742D8951D6850CBF308373C1A13",
+      "profile": "initial",
+      "exitCode": 2
+    },
+    {
+      "csvSha256": "1F9B747B92EF6CC8F4218E0681A77F84258C41303C8AD72EEDFA230884DAA1A0",
+      "profile": "damped",
+      "exitCode": 2
+    }
+  ],
+  "sourceSha256": "BCBB7B3E57F6EA7901DE1792DFB24FCD318814A1471613D78FA158367BD778C3",
+  "durationSeconds": 120
+}

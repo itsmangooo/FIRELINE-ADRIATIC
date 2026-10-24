@@ -1,5 +1,19 @@
 # Frame-loss investigation register
 
+## M03 instrument client callbacks — 2026-10-25
+
+**FL-10: observed locations; attribution/optimization deferred.** Real matched v2 Windows release server/rendered owner/late headless observer, Editor closed; 1080p Balanced/VSync=1 D3D11 engineering runway plus instruments. i5-9400F / GTX 1660 SUPER / 16 GB / driver 32.0.16.2101 / Windows 11 26300. [Full report/raw metrics](../reports/2026-10-25-m03-flight-instruments.md), [actual SVG and clock/interval/ruler/zoom guide](../reports/2026-10-25-m03-flight-instruments.md#graph-reader-guide).
+
+| Callback sample | Interval start–end (s) | Gap (ms) |
+|---|---|---:|
+| #504 | 8.532061–8.716684 | 184.623405 |
+| #242 | 4.016753–4.189251 | 172.498405 |
+| #760 | 13.049114–13.101199 | 52.085102 |
+
+After five rendered seconds warm-up: 1,440 intervals / 24.515733 s, 729 >16.667 ms and 10 >33.333 ms. Average/1% low 58.737791/17.839704 FPS. [Every marked interval](../reports/m03-instrument-evidence/runtime/callback-intervals.marked.csv). These are callback spacings, not CPU/GPU work or confirmed lost presentations. Observation point remains `ClientProbe.OnCameraRendered`; investigate capture/readback/encode, actual UI text formatting/layout and per-frame verification writes (`FlightTelemetry.Format`, `FlightTestView.Update`, `FlightViewVerification.LateUpdate`), pose/cameras, HDRP/driver/GC/OS and local server contention. These are profiling sites, not demonstrated causes. Capture-on/off and verification-on/off matched repeats plus synchronized CPU/GPU/presentation traces are outstanding; no instrumentation-cost conclusion follows from the historical-run difference.
+
+Host catch-up events remain separate from render frame loss. Six overruns cumulatively discard **128.7779 ms**: host CSV callbacks **#2/#2016/#2033/#2081/#2083/#2084**, at host elapsed **0.073320/34.145496/34.494781/35.343686/35.416588/35.468778 s**. Largest gap #2016 **89.7431 ms**, eight steps, **52.1758 ms newly discarded**, adapter **0.1349 ms**. Startup #2 **50.5699 ms** gap / **13.32 ms** discarded / **0.0681 ms** adapter. Overall max adapter duration **31.0643 ms**; not full-host timing. [Actual host trace](../reports/m03-instrument-evidence/runtime/server.csv.gz) stores cumulative discarded seconds; subtract successive rows for event debit. No cross-clock client/host correlation is claimed. HOST-01 and earlier FL/NET entries stay unresolved. No optimization, representative 60 FPS/Ultra or capacity claim.
+
 ## M03 finite-fuel client callbacks — 2026-10-24
 
 **FL-09: exact observed locations; attribution/optimization deferred.** One actual rebuilt 1080p Balanced/VSync=1 D3D11 client, same synthetic runway/prototype/HUD, server-owned finite fuel, one headless late observer and dedicated server; Editor closed. i5-9400F / GTX 1660 SUPER / 16 GB / driver 32.0.16.2101 / Windows 11 26300. [Actual report/raw metrics](../reports/2026-10-24-m03-fuel.md), [SVG and full reader guide](../physics/aircraft-fuel/COMPARISON.md#actual-visual-evidence-and-deferred-performance).

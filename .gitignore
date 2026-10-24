@@ -43,3 +43,5 @@ __pycache__/
 # Generated output from the maintained source-comment audit tool.
 /scripts/CommentAudit/bin/
 /scripts/CommentAudit/obj/
+/scripts/FlightRouteInvestigation/bin/
+/scripts/FlightRouteInvestigation/obj/

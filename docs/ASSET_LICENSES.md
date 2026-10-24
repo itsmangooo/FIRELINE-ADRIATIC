@@ -1,5 +1,9 @@
 # Asset licenses and provenance
 
+## 2026-10-25 instrument increment
+
+No new external asset, font, texture or package is acquired. The panel reuses the existing built-in runtime font and scene/prototype. All original source notices and shipped legal copies remain unchanged and verified; this increment does not resolve or waive the temporary model's existing rights/replacement limitations. [Actual provenance](previews/m03-flight-instruments/COMPARISON.md#asset-and-presentation-provenance).
+
 ## M03 engineering view provenance — 2026-10-24
 
 The new scene reuses the existing user-authorized CL-415 prototype and copies its original notice/audit into the new client build's `Legal/` directory. New runway/surround/marking geometry and three flat-color materials are project-authored primitives; the engineering HUD uses Unity's built-in font. No new external asset or package was downloaded and no contributor rights declaration changed. [Actual generation, source reuse and screenshots](previews/m03-flight-view/COMPARISON.md).

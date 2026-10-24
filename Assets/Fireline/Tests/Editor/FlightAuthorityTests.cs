@@ -13,13 +13,14 @@ namespace Fireline.Tests
         [Test]
         public void SnapshotEvidenceRetainsPhysicalAndOwnershipFields()
         {
-            var frame = new FlightStateRpc { Version = 1, Owner = 10, Epoch = 7, Tick = 1234, FireTick = 30,
-                Z = 12.34567890123456, Qw = 1, FuelKg = 400, WaterKg = 2500 };
+            var frame = new FlightStateRpc { Version = FlightWire.Version, Owner = 10, Epoch = 7, Tick = 1234, FireTick = 30,
+                Z = 12.34567890123456, Qw = 1, FuelKg = 400, WaterKg = 2500, WindX = 8.25, WindZ = -2.5 };
             string json = UnityEngine.JsonUtility.ToJson(frame);
             var read = UnityEngine.JsonUtility.FromJson<FlightStateRpc>(json);
             Assert.That(json, Does.Contain("\"Qw\"")); Assert.That(read.Tick, Is.EqualTo(frame.Tick));
             Assert.That(read.Owner, Is.EqualTo(frame.Owner)); Assert.That(read.Z, Is.EqualTo(frame.Z));
             Assert.That(read.WaterKg, Is.EqualTo(2500));
+            Assert.That(read.Version, Is.EqualTo(2)); Assert.That(read.WindX, Is.EqualTo(8.25)); Assert.That(read.WindZ, Is.EqualTo(-2.5));
         }
         /// <summary>Issue a finite full-throttle command using the currently observed server state.</summary>
         private static FlightResult Command(FlightAuthority host, int identity = 10, uint serial = 1, double now = 1)

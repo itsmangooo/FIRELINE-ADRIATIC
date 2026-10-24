@@ -29,7 +29,13 @@ namespace Fireline.Client
         private double launched,started,ownedAt;
         private double initialZ;
         private bool captured,finished;
-        private StreamWriter trace;
+        private StreamWriter trace, instrumentTrace;
+        [Serializable]
+        private sealed class InstrumentFrame
+        {
+            public FlightStateRpc source;
+            public string text;
+        }
         private InputSettings.BackgroundBehavior previousBackground;
 
         /// <summary>Use isolated devices so the proof never sends native OS keystrokes or claims physical gamepad hardware was exercised.</summary>
@@ -44,6 +50,7 @@ namespace Fireline.Client
             string path=FoundationBootstrap.Options.FlightViewProofPath;
             Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(path)));
             trace=new StreamWriter(Path.ChangeExtension(path,".csv"));
+            instrumentTrace=new StreamWriter(Path.ChangeExtension(path,".instruments.jsonl"));
             trace.WriteLine("wall_s,received_at_s,aircraft_tick,epoch,owner,received_z_m,displayed_x_m,displayed_y_m,displayed_z_m,qx,qy,qz,qw,anchor_x_m,anchor_y_m,anchor_z_m,visual_y_m,visual_z_m,throttle,pitch,roll,yaw,brake,focused,camera");
         }
 
@@ -101,6 +108,7 @@ namespace Fireline.Client
             double offset=(view.VisualOffset-expected).magnitude;
             evidence.maximumAnchorErrorM=Math.Max(evidence.maximumAnchorErrorM,error); evidence.maximumVisualOffsetErrorM=Math.Max(evidence.maximumVisualOffsetErrorM,offset);
             var c=view.LocalControls; evidence.cameraMask|=1<<view.CameraMode;
+            instrumentTrace.WriteLine(JsonUtility.ToJson(new InstrumentFrame { source=view.InstrumentSource, text=view.InstrumentText }));
             if(age>.2 && age<2 && c.Throttle>.05) evidence.keyboardThrottle=true;
             if(age>6.2 && age<8 && c.Throttle>.05) evidence.gamepadThrottle=true;
             if(age>7 && age<7.5 && Math.Abs(c.Yaw)>.01 && Math.Abs(c.Roll)>.01 && Math.Abs(c.Pitch)>.01) evidence.gamepadAxes=true;
@@ -126,7 +134,7 @@ namespace Fireline.Client
         /// <summary>Save checked view outcomes, flush actual rendered callback metrics and exit with a distinct failure code.</summary>
         private void Finish(bool passed,string reason)
         {
-            if(finished) return; finished=true; trace?.Dispose(); trace=null;
+            if(finished) return; finished=true; trace?.Dispose(); trace=null; instrumentTrace?.Dispose(); instrumentTrace=null;
             evidence.passed=passed; evidence.reason=reason; evidence.seconds=Time.realtimeSinceStartupAsDouble-launched;
             FindAnyObjectByType<ClientProbe>().SaveMetrics();
             File.WriteAllText(FoundationBootstrap.Options.FlightViewProofPath,JsonUtility.ToJson(evidence,true));
@@ -137,7 +145,7 @@ namespace Fireline.Client
         /// <summary>Release only the proof's synthetic input devices, event subscription and trace on controlled shutdown.</summary>
         private void OnDestroy()
         {
-            trace?.Dispose(); InputSystem.onEvent-=OnInput;
+            trace?.Dispose(); instrumentTrace?.Dispose(); InputSystem.onEvent-=OnInput;
             if(keyboard!=null) InputSystem.RemoveDevice(keyboard); if(gamepad!=null) InputSystem.RemoveDevice(gamepad);
             InputSystem.settings.backgroundBehavior=previousBackground;
         }

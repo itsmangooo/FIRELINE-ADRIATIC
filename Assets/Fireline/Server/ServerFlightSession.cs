@@ -35,6 +35,8 @@ namespace Fireline.Server
             public int owner, disconnectReleases, expirations, overruns, updates, steps;
             public double seconds, discardedSeconds, maximumUpdateMs, consumedFuelKg;
             public FlightState finalState;
+            public WindState sampledWindState;
+            public int sampledWindSeed;
             public Peer[] peers;
         }
         private readonly Dictionary<Entity, Peer> peers = new Dictionary<Entity, Peer>();
@@ -147,12 +149,12 @@ namespace Fireline.Server
             if (!Live(source)) return;
             if (!peers.TryGetValue(source, out var peer))
             {
-                if (message.Kind != 1 || message.Version != 1 || history.Count >= 8) { Disconnect(source); return; }
+                if (message.Kind != 1 || message.Version != FlightWire.Version || history.Count >= 8) { Disconnect(source); return; }
                 peer = new Peer { identity = manager.GetComponentData<NetworkId>(source).Value }; peers.Add(source, peer); history.Add(peer);
             }
             if (++peer.Budget > 8) { Disconnect(source); return; }
             FlightResult result = FlightResult.Protocol;
-            if (message.Version == 1)
+            if (message.Version == FlightWire.Version)
             {
                 switch (message.Kind)
                 {
@@ -170,7 +172,7 @@ namespace Fireline.Server
                 }
             }
             if (result == FlightResult.Accepted) peer.accepted++; else peer.rejected++;
-            FlightRpcIO.Reply(manager, source, new FlightReplyRpc { Version = 1, Kind = message.Kind, Result = (byte)result,
+            FlightRpcIO.Reply(manager, source, new FlightReplyRpc { Version = FlightWire.Version, Kind = message.Kind, Result = (byte)result,
                 Sequence = message.Sequence, Epoch = authority.Epoch, Owner = authority.Owner });
         }
 
@@ -200,11 +202,13 @@ namespace Fireline.Server
         private FlightStateRpc Snapshot(FireWorld world)
         {
             var s = authority.State;
-            return new FlightStateRpc { Version = 1, Faulted = (byte)(authority.Faulted ? 1 : 0), Epoch = authority.Epoch,
+            var wind = world.Wind.Sample(s.PositionM.X, s.PositionM.Z, s.PositionM.Y, world.Tick);
+            return new FlightStateRpc { Version = FlightWire.Version, Faulted = (byte)(authority.Faulted ? 1 : 0), Epoch = authority.Epoch,
                 Owner = authority.Owner, Sequence = authority.Sequence, Tick = authority.Tick, FireTick = world.Tick, WindRevision = world.Wind.State.Revision,
                 X = s.PositionM.X, Y = s.PositionM.Y, Z = s.PositionM.Z, Vx = s.VelocityMps.X, Vy = s.VelocityMps.Y, Vz = s.VelocityMps.Z,
                 Wx = s.AngularVelocityRadps.X, Wy = s.AngularVelocityRadps.Y, Wz = s.AngularVelocityRadps.Z,
-                Qx = s.Attitude.X, Qy = s.Attitude.Y, Qz = s.Attitude.Z, Qw = s.Attitude.W, FuelKg = s.FuelKg, WaterKg = s.WaterKg };
+                Qx = s.Attitude.X, Qy = s.Attitude.Y, Qz = s.Attitude.Z, Qw = s.Attitude.W, FuelKg = s.FuelKg, WaterKg = s.WaterKg,
+                WindX = wind.X, WindZ = wind.Z };
         }
 
         /// <summary>Write bounded acceptance evidence and return a distinct process failure; no capacity or rendered-frame claim is made.</summary>
@@ -217,6 +221,8 @@ namespace Fireline.Server
             evidence.expirations = authority.Expirations; evidence.overruns = authority.Overruns;
             evidence.consumedFuelKg = authority.ConsumedFuelKg;
             evidence.fireTick = FireSimulationRunner.Authority.World.Tick;
+            evidence.sampledWindState = FireSimulationRunner.Authority.World.Wind.State;
+            evidence.sampledWindSeed = FireSimulationRunner.Authority.World.Wind.Seed;
             string path = FoundationBootstrap.Options.FlightNetworkProofPath;
             if (path != null) File.WriteAllText(path, JsonUtility.ToJson(evidence, true));
             Debug.Log($"FIRELINE_FLIGHT_NETWORK role=server passed={passed} reason={reason} tick={authority.Tick} owner={authority.Owner}");

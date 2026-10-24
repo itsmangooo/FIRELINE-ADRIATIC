@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "originalFlightTrajectoriesUnchanged": true,
+  "originalFuelTrajectoriesUnchanged": true,
+  "resourceSamplesPerRun": 8800,
+  "retainedRawRun": 1,
+  "processes": {
+    "runtimeHashes": [
+      {
+        "name": "Fireline.Server.dll",
+        "sha256": "F02308DCD0B6207A244F049C40EDC3A8D3AE74FEEF7B6A6422840A9FF194CBA5"
+      },
+      {
+        "name": "Fireline.Shared.dll",
+        "sha256": "CD13160F71E9C2992D17C865780F3680C20D34139CCB224A78775B7AE346AA2E"
+      },
+      {
+        "name": "Fireline.Simulation.dll",
+        "sha256": "7294A58A10233DE0E94A1B3DCF8536E395DC60E11B016E8DC67FEAB46B204BBB"
+      }
+    ],
+    "passed": true,
+    "rawLogs": "Builds\\M03Fuel\\20261025-002850",
+    "runs": [
+      {
+        "pid": 11080,
+        "run": 1,
+        "resultSha256": "DC3FCFF6AD6A87348E25ECE84FE11F6B5D282BFE30C1608F0D876648F65D640E",
+        "exitCode": 0
+      },
+      {
+        "pid": 4692,
+        "run": 2,
+        "resultSha256": "90DA7A4E8D88A83F8D0F51479A3C8E5C12D911E98AA06FE9A7F398647E281C64",
+        "exitCode": 0
+      }
+    ]
+  },
+  "retainedRawSha256": "DC3FCFF6AD6A87348E25ECE84FE11F6B5D282BFE30C1608F0D876648F65D640E",
+  "kernelHashes": {
+    "Assets\\Fireline\\Simulation\\FireReplicationCodec.cs": "cc63f76961e56e1e787fdfd5fe902a82bfd57839a4f9ba9977eac88e4352a041",
+    "Assets\\Fireline\\Simulation\\FireSnapshotCodec.cs": "a038f453a5aa18d283ece59e56cc7e9f2d56f601e4e12535ccf21512064fbb68",
+    "Assets\\Fireline\\Simulation\\FireState.cs": "3b25f622b7f2dad0d641afd1ef0c7625b19d3d70fd4fed1cccd1eac9b82b6c83",
+    "Assets\\Fireline\\Simulation\\FireWorld.cs": "b9fde8b11c80b2204e8959ef24def791f25791597b5a5b4d6f6bdca7af7d40e0",
+    "Assets\\Fireline\\Simulation\\FlightDynamics.cs": "134ac26fbb65fe0cd7bd0ef9ea7468c90825b63912b7747982af407ebf235c1f",
+    "Assets\\Fireline\\Simulation\\FlightMath.cs": "92170afdb0eef72cc5683b85db2d92df41c717f44662082b1e5bb33ed0530eef",
+    "Assets\\Fireline\\Simulation\\FuelFlight.cs": "b6cca133112c56a7effe75cb45d103473c90e2b4f92fc44e569a44562e33b88c",
+    "Assets\\Fireline\\Simulation\\RunwayContact.cs": "a002219ab7b4e4b7e47bcfdd59aebd7901c8fe988f99c8bd57343bae1d19825e",
+    "Assets\\Fireline\\Simulation\\TickClock.cs": "1c3fc78a1b346cd90f4557118344c482c6342e5e26942dfbd2e775a23dbf17ee",
+    "Assets\\Fireline\\Simulation\\WindField.cs": "046e83f2aa94fee9e83e598b2daf2acb7cea298188d0964dd921abd49ff764b9"
+  },
+  "limits": "Two actual current dedicated numerical processes; one full raw run retained here, second raw run remains at recorded ignored path. No airborne route, rendered/gameplay or CPU-cost qualification."
+}

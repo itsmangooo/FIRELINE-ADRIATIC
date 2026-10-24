@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Fireline.Client
 {
-    /// <summary>Read-only aircraft replica and opt-in scripted network probe. No local aircraft integrator or graphical binding exists yet.</summary>
+    /// <summary>Read-only aircraft replica and opt-in scripted network probe. The graphical adapter reads this replica; no local aircraft integrator runs.</summary>
     public sealed class ClientFlightSession : MonoBehaviour
     {
         [Serializable]
@@ -55,7 +55,7 @@ namespace Fireline.Client
         public bool SubmitControls(FlightRequestRpc controls)
         {
             if (!Ready || !received || latest.Owner != Identity || Time.realtimeSinceStartupAsDouble - receivedAt > .5) return false;
-            controls.Version = 1; controls.Kind = 3; controls.Epoch = latest.Epoch; controls.Tick = latest.Tick; controls.Sequence = ++sequence;
+            controls.Version = FlightWire.Version; controls.Kind = 3; controls.Epoch = latest.Epoch; controls.Tick = latest.Tick; controls.Sequence = ++sequence;
             FlightRpcIO.Request(manager, connection, controls); return true;
         }
         /// <summary>Request a real transport disconnect for the rendered proof; ownership is released by the server lifecycle.</summary>
@@ -103,7 +103,7 @@ namespace Fireline.Client
                 {
                     var source = manager.GetComponentData<ReceiveRpcCommandRequest>(entity).SourceConnection;
                     var reply = manager.GetComponentData<FlightReplyRpc>(entity); manager.DestroyEntity(entity);
-                    if (source != connection || reply.Version != 1) continue;
+                    if (source != connection || reply.Version != FlightWire.Version) continue;
                     if (reply.Kind == 1 && reply.Result == 0) subscribed = true;
                     if (reply.Kind == 3 && reply.Result == 0) evidence.acceptedInputs++;
                     if (reply.Result != 0)
@@ -171,7 +171,7 @@ namespace Fireline.Client
                 if (attack == 0 && latest.Owner != 0)
                 {
                     Send(2); Send(3, 1, latest.Epoch, latest.Tick, 1);
-                    FlightRpcIO.State(manager, connection, new FlightStateRpc { Version = 1, Owner = evidence.identity, Z = 999999 }); attack++;
+                    FlightRpcIO.State(manager, connection, new FlightStateRpc { Version = FlightWire.Version, Owner = evidence.identity, Z = 999999 }); attack++;
                 }
                 if (evidence.sawVacantAfterOwner && evidence.snapshots >= 35 && evidence.rejected >= 2)
                     Finish(true, "observer-replica-and-seat-release");
@@ -181,17 +181,14 @@ namespace Fireline.Client
         /// <summary>Send finite normal commands or deliberate proof-invalid payloads; no caller can attach a claimed connection identity.</summary>
         private void Send(byte kind, uint serial = 0, uint epoch = 0, ulong tick = 0, float throttle = 0)
         {
-            FlightRpcIO.Request(manager, connection, new FlightRequestRpc { Version = 1, Kind = kind, Sequence = serial,
+            FlightRpcIO.Request(manager, connection, new FlightRequestRpc { Version = FlightWire.Version, Kind = kind, Sequence = serial,
                 Epoch = epoch, Tick = tick, Throttle = throttle, Gear = 1, Brake = kind == 3 ? 0 : 1 });
         }
 
         /// <summary>Check the received SI pose before installation without advancing any physical state on the client.</summary>
         private static void Validate(FlightStateRpc state)
         {
-            if (state.Version != 1 || state.Owner < 0 || state.Faulted > 1) throw new ArgumentException("Invalid state header.");
-            new FlightState { PositionM = new FlightVector(state.X, state.Y, state.Z), VelocityMps = new FlightVector(state.Vx, state.Vy, state.Vz),
-                AngularVelocityRadps = new FlightVector(state.Wx, state.Wy, state.Wz), Attitude = new FlightRotation(state.Qx, state.Qy, state.Qz, state.Qw),
-                FuelKg = state.FuelKg, WaterKg = state.WaterKg }.Validate();
+            FlightTelemetry.Read(state);
         }
 
         /// <summary>Close the proof trace, record measured replica outcomes and exit with a distinct failure code.</summary>

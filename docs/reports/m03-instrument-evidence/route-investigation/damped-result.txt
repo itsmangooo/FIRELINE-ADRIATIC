@@ -1,0 +1,1 @@
+ROUTE_NOT_QUALIFIED duration=120s maximum_height_m=4.251863707173468 final_north_m=5462.904010775288

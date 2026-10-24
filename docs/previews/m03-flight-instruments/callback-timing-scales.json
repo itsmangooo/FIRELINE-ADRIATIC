@@ -1,0 +1,10 @@
+{
+  "xMajorSeconds": 5,
+  "fullYMajorMs": 25,
+  "zoomYMajorMs": 10,
+  "zoomMinMs": 0,
+  "zoomMaxMs": 50,
+  "maximumSample": 504,
+  "maximumMs": 184.62340533733368,
+  "recordingOrigin": "First retained interval start near five rendered seconds warm-up"
+}

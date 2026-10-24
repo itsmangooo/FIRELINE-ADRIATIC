@@ -1,5 +1,9 @@
 # Technical architecture — Unity 6 HDRP, C#, headless server
 
+## M03 actual instrument boundary — 2026-10-25
+
+Shared `FlightWire.Version=2` unifies aircraft headers; pose RPC adds `WindX/WindZ` doubles. Server samples its existing authoritative wind at the published post-step CoG/fire tick. Client-only `FlightTelemetry` validates the complete replica and derives air/ground/vertical speeds, angles and existing debug mass/CoG without integration. `FlightTestView` retains the exact source and actual visible text for independent verification; cosmetic pose interpolation remains a separate 100 ms receipt history. Dedicated runtime never loads UI/model/HDRP content. Matching rebuilt Netcode players required; old binary collections are not qualified. Fire schema and all Simulation laws unchanged. [Implemented BEFORE/AFTER SVGs, math and exact visible-text proof](previews/m03-flight-instruments/COMPARISON.md). Production cockpit/prediction/flight/water remain open; earlier descriptions retain historical scope.
+
 ## M03 resource/physics installation — 2026-10-24
 
 `FuelFlight` remains pure C# in the engine-free Simulation assembly; it returns a complete validated resource/pose candidate. `FlightAuthority` alone installs the accepted result and exposes initial-minus-remaining fuel accounting. No package, scene, headless visual reference or network message type is added. Existing `FuelKg` snapshots and client mass-derived visual offset carry the changed state. [Actual before/after resource flow, equations and evidence](physics/aircraft-fuel/COMPARISON.md). Legacy force/contact entry points remain unchanged for exact historical replay; live aircraft authority uses the finite-fuel adapter. Production configuration/refueling/water/persistence remain pending.

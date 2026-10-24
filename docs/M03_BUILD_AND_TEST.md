@@ -1,5 +1,7 @@
 # M03 isolated debug-flight verification
 
+Latest instrumentation path: [sampled-wind flight instruments](#sampled-wind-flight-instruments). It changes the aircraft RPC contract to **v2**; use matching freshly built client/server players. The earlier v1 command/data results below remain historical evidence.
+
 Latest installed resource increment: [finite-fuel propulsion](#finite-fuel-propulsion). The following original numerical/view sections retain their historical scope and measured counts; current server fuel is finite by default in the explicit debug flight session.
 
 Latest presentation increment: [engineering flight view/device proof](#engineering-flight-view-and-device-proof). Historical numerical and data-only sections retain their original scopes.
@@ -177,3 +179,42 @@ python scripts/analyze_m03_flight_view.py --archive docs/reports/m03-fuel-eviden
 ```
 
 The first command recomputes the numerical summary beside the unchanged raw archives; the second writes to fresh scratch. No physical controller/native-focus, flight route, water, Linux/WAN/capacity or representative 60 FPS qualification is implied. D3D11 is per-process, all original quality assets remain unchanged, and the future Low/Medium/High/Ultra plan remains [planned](LARGE_MAP_AND_QUALITY_PLAN.md). Current M03 manual launch/control commands above still apply, with finite fuel now installed.
+
+## Sampled-wind flight instruments
+
+The current engineering client adds a read-only airdata/resource panel. The server samples horizontal wind at the published CoG position/fire tick; protocol v2 carries both components. Client rejects incompatible headers/nonfinite state or wind, derives SI speed/attitude/mass and records the actual visible text with the exact source used by the view. No integrator, new force law, refuel command or production M05A cockpit/menu is added. Mixed pre-v2 binaries are not qualified; Netcode RPC collections also require matching builds.
+
+Use the existing checkout with Editor closed; run sequentially and stop on a nonzero build/test/runtime result. Fresh output paths preserve published evidence:
+
+```powershell
+New-Item -ItemType Directory -Force Builds/M03InstrumentReplay | Out-Null
+unity self-update --check --format json
+unity test "$PWD" --editor-version 6000.6.7f1 --mode EditMode --filter Fireline.Tests --output Builds/M03InstrumentReplay/editmode.xml --timeout 900 -- -buildTarget Win64 -standaloneBuildSubtarget Player -nographics -force-d3d11 *> Builds/M03InstrumentReplay/editmode-cli.log
+$env:FIRELINE_BUILD_EVIDENCE='Builds/M03InstrumentReplay/builds'
+unity run "$PWD" --editor-version 6000.6.7f1 --timeout 1200 --log-file Builds/M03InstrumentReplay/server-build.log --no-tail -- -buildTarget Win64 -nographics -executeMethod Fireline.Authoring.FoundationBuild.BuildServer
+./scripts/Test-M03Fuel.ps1 -Port 8370 -EvidenceRoot Builds/M03InstrumentReplay/physics-regression
+python scripts/analyze_m03_instrument_regression.py --capture Builds/M03InstrumentReplay/physics-regression --evidence Builds/M03InstrumentReplay
+unity test "$PWD" --editor-version 6000.6.7f1 --mode PlayMode --filter Fireline.Tests --output Builds/M03InstrumentReplay/playmode.xml --timeout 900 -- -buildTarget Win64 -standaloneBuildSubtarget Player -nographics -force-d3d11 *> Builds/M03InstrumentReplay/playmode-cli.log
+unity run "$PWD" --editor-version 6000.6.7f1 --timeout 1200 --log-file Builds/M03InstrumentReplay/client-build.log --no-tail -- -buildTarget Win64 -standaloneBuildSubtarget Player -force-d3d11 -executeMethod Fireline.Authoring.FoundationBuild.BuildFlightTestClient
+./scripts/Test-M03FlightView.ps1 -Port 8371 -EvidenceRoot Builds/M03InstrumentReplay/runtime -CapturePath Builds/M03InstrumentReplay/after.png
+$env:PYTHONPATH=(Join-Path $PWD Builds/AnalysisTools)
+python scripts/render_m03_instruments.py --evidence Builds/M03InstrumentReplay/runtime --output Builds/M03InstrumentReplay/plots
+```
+
+The view harness now requires a `view-owner.instruments.jsonl` trace for v2 acceptance. Its independent checker reconstructs every initialized displayed string and every published wind vector from recorded wind metadata/seed. It also retains source-pose equality, actual late admission, control/lease/seat/disconnect, interpolation/float placement and callback-metric checks. Historical v1 archives still revalidate as their original scopes and do not acquire invented instrument evidence.
+
+Published archives can be rechecked without Unity:
+
+```powershell
+python scripts/analyze_m03_instrument_regression.py
+python scripts/analyze_m03_flight_view.py --archive docs/reports/m03-instrument-evidence/runtime --evidence Builds/M03InstrumentArchiveReplay --image docs/previews/m03-flight-instruments/after.png
+```
+
+Separate **offline, unqualified** control investigations use the existing pure kernel in .NET 10, not the Unity player or normal network controls:
+
+```powershell
+dotnet run --project scripts/FlightRouteInvestigation/FlightRouteInvestigation.csproj
+dotnet run --project scripts/FlightRouteInvestigation/FlightRouteInvestigation.csproj -- --damped
+```
+
+Both retained attempts return **2** because no takeoff/route/landing/stop inside the finite runway was qualified. This expected diagnostic failure is not a successful airborne gate. CSV rows are every 400th 5 ms step, labeled with post-step physical time (first at 0.005 s); no warm-up removal. Controls are a test strategy, not a shipped autopilot or calibration data. Preserve/review the actual failure before changing coefficients or promoting the flight task. The existing manual debug flight launch/control commands still apply to matched v2 builds; the view remains an engineering test.

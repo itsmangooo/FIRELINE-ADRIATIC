@@ -3,9 +3,14 @@ using Unity.NetCode;
 
 namespace Fireline.Shared
 {
+    /// <summary>One version for the bounded aircraft protocol; version two adds the server's sampled horizontal wind to each pose.</summary>
+    public static class FlightWire
+    {
+        public const byte Version = 2;
+    }
     /// <summary>Stable request outcomes, independent of transport or localized UI text.</summary>
     public enum FlightResult : byte { Accepted = 0, NotOwner = 1, Sequence = 2, Tick = 3, Invalid = 4, Rate = 5, Protocol = 6 }
-    /// <summary>Version-one single-aircraft commands. Identity is always ReceiveRpcCommandRequest.SourceConnection.</summary>
+    /// <summary>Versioned single-aircraft commands. Identity is always ReceiveRpcCommandRequest.SourceConnection.</summary>
     public struct FlightRequestRpc : IRpcCommand
     {
         // Subscribe=1, claim=2, input=3, release=4, exact snapshot ACK=5. No pose, wind, fuel or water mutation is exposed.
@@ -32,6 +37,7 @@ namespace Fireline.Shared
         public int Owner;
         public ulong Tick, FireTick, WindRevision;
         public double X, Y, Z, Vx, Vy, Vz, Wx, Wy, Wz, Qx, Qy, Qz, Qw, FuelKg, WaterKg;
+        public double WindX, WindZ;
     }
 
     /// <summary>Typed targeted RPC enqueue helpers without simulation or presentation dependencies.</summary>

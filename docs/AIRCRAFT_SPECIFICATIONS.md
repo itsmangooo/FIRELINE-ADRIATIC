@@ -1,5 +1,11 @@
 # Aircraft specifications & flight-simulation data sheet
 
+## M03 engineering instruments and route limit — 2026-10-25
+
+Read-only airspeed uses authoritative velocity minus actual sampled horizontal wind; ground speed is horizontal, not the old 3D magnitude. Pitch/bank/heading derive from the received unit quaternion; displayed fuel/water and point-mass CoG remain debug estimates. CoG Y is a scene datum, not radar altitude; airspeed is geometric relative speed, not calibrated IAS. No cockpit/navigation calibration or client integration. [SI equations, analytic before/after fixture and actual UI/source checks](previews/m03-flight-instruments/COMPARISON.md).
+
+Two offline unchanged-kernel control attempts both failed the finite-runway takeoff/landing/stop gate (exit 2); maximum CoG Y 13.419/4.252 m, final north Z 6203.982/5462.904 m beyond the 2500 m end. This is not a Unity airborne result or proof that all controls fail. [Retained investigation and next gate](reports/2026-10-25-m03-flight-instruments.md#failed-route-investigation--airborne-gate-remains-open). M03 remains open for actual live route/collision/calibration/cockpit/water acceptance.
+
 ## M03 finite debug fuel — 2026-10-24
 
 The live generic body now starts with **400 kg** server-owned fuel and uses `DEBUG_FUEL_V1`: estimated **0.25 kg/s at full throttle**, linear with requested throttle, zero idle burn. Accepted physical steps debit fuel, limit final-interval mean thrust and rebase the CoG frame while preserving fixed body points/velocities; mass/inertia use the existing point-mass model. [Actual equations, matched BEFORE/AFTER results, tests and limits](physics/aircraft-fuel/COMPARISON.md). These are not verified CL-415 engine/variant data. Calibrated curves, startup/refueling/persistence, real gear/CoG and water transfer remain open; the older zero/frozen-fuel statements below describe prior increments.
