@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="360pt" viewBox="0 0 864 360" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 360
+L 864 360
+L 864 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <g id="patch_2">
+     <path d="M 94.504219 114.331261
+L 207.895781 114.331261
+Q 214.195781 114.331261 214.195781 108.031261
+L 214.195781 86.426339
+Q 214.195781 80.126339 207.895781 80.126339
+L 94.504219 80.126339
+Q 88.204219 80.126339 88.204219 86.426339
+L 88.204219 108.031261
+Q 88.204219 114.331261 94.504219 114.331261
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(94.504219 94.165812)">Actual source connection</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(96.647344 104.968273)">Subscribe / claim / input</text>
+   </g>
+   <g id="text_2">
+    <g id="patch_3">
+     <path d="M 363.603516 114.331261
+L 500.396484 114.331261
+Q 506.696484 114.331261 506.696484 108.031261
+L 506.696484 86.426339
+Q 506.696484 80.126339 500.396484 80.126339
+L 363.603516 80.126339
+Q 357.303516 80.126339 357.303516 86.426339
+L 357.303516 108.031261
+Q 357.303516 114.331261 363.603516 114.331261
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(369.068906 94.165812)">Server: owner + seat epoch</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(363.603516 104.968273)">Sequence / tick / range / lease</text>
+   </g>
+   <g id="text_3">
+    <g id="patch_4">
+     <path d="M 664.280859 114.331261
+L 761.319141 114.331261
+Q 767.619141 114.331261 767.619141 108.031261
+L 767.619141 86.426339
+Q 767.619141 80.126339 761.319141 80.126339
+L 664.280859 80.126339
+Q 657.980859 80.126339 657.980859 86.426339
+L 657.980859 108.031261
+Q 657.980859 114.331261 664.280859 114.331261
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(668.640937 94.165812)">Bounded host clock</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(664.280859 104.968273)">≤ 8 × 5 ms / callback</text>
+   </g>
+   <g id="text_4">
+    <g id="patch_5">
+     <path d="M 646.840547 275.851261
+L 778.759453 275.851261
+Q 785.059453 275.851261 785.059453 269.551261
+L 785.059453 247.946339
+Q 785.059453 241.646339 778.759453 241.646339
+L 646.840547 241.646339
+Q 640.540547 241.646339 640.540547 247.946339
+L 640.540547 269.551261
+Q 640.540547 275.851261 646.840547 275.851261
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(646.840547 255.685812)">Existing contact + flight Step</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(650.107969 266.488273)">Authoritative wind / fire tick</text>
+   </g>
+   <g id="text_5">
+    <g id="patch_6">
+     <path d="M 378.606797 275.850909
+L 485.393203 275.850909
+Q 491.693203 275.850909 491.693203 269.550909
+L 491.693203 247.946691
+Q 491.693203 241.646691 485.393203 241.646691
+L 378.606797 241.646691
+Q 372.306797 241.646691 372.306797 247.946691
+L 372.306797 269.550909
+Q 372.306797 275.850909 378.606797 275.850909
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(378.606797 255.686163)">Server pose / seat / tick</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(382.130156 266.487921)">10 Hz max, exact ACK</text>
+   </g>
+   <g id="text_6">
+    <g id="patch_7">
+     <path d="M 96.554531 275.851261
+L 205.845469 275.851261
+Q 212.145469 275.851261 212.145469 269.551261
+L 212.145469 247.946339
+Q 212.145469 241.646339 205.845469 241.646339
+L 96.554531 241.646339
+Q 90.254531 241.646339 90.254531 247.946339
+L 90.254531 269.551261
+Q 90.254531 275.851261 96.554531 275.851261
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(96.554531 255.685812)">Clients validate + retain</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(105.141094 266.488273)">No client integration</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 251.477512 97.2288
+Q 291.598584 97.2288 329.818999 97.2288
+" style="fill: none; stroke: #38526b; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 325.818999 95.2288
+L 329.818999 97.2288
+L 325.818999 99.2288
+" style="fill: none; stroke: #38526b; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 532.277512 97.2288
+Q 572.398584 97.2288 610.618999 97.2288
+" style="fill: none; stroke: #38526b; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 606.618999 95.2288
+L 610.618999 97.2288
+L 606.618999 99.2288
+" style="fill: none; stroke: #38526b; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 712.8 130.241619
+Q 712.8 177.988094 712.8 223.833911
+" style="fill: none; stroke: #38526b; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 714.8 219.833911
+L 712.8 223.833911
+L 710.8 219.833911
+" style="fill: none; stroke: #38526b; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 612.522488 258.7488
+Q 572.401416 258.7488 534.181001 258.7488
+" style="fill: none; stroke: #38526b; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 538.181001 260.7488
+L 534.181001 258.7488
+L 538.181001 256.7488
+" style="fill: none; stroke: #38526b; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 331.722488 258.7488
+Q 291.601416 258.7488 253.381001 258.7488
+" style="fill: none; stroke: #38526b; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 257.381001 260.7488
+L 253.381001 258.7488
+L 257.381001 256.7488
+" style="fill: none; stroke: #38526b; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="432" y="333.048" transform="rotate(-0 432 333.048)">ACK returns on the existing connection; one pending snapshot per peer. Invalid controls/poses cannot install state.</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="432" y="20.16" transform="rotate(-0 432 20.16)">AFTER: opt-in live aircraft authority + read-only replicas</text>
+   </g>
+  </g>
+ </g>
+</svg>

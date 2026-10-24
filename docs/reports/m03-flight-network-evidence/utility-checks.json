@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "freshOutputRealProcessProof": true,
+  "matchedSnapshots": {
+    "owner": 85,
+    "observer": 59
+  },
+  "archiveHashReplay": true,
+  "limits": "Fresh-output utility validation only; published timing remains the first accepted proof."
+}

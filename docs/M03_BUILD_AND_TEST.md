@@ -1,5 +1,7 @@
 # M03 isolated debug-flight verification
 
+The latest increment also adds an explicit [live debug-aircraft / two-client proof](#live-debug-aircraft-and-two-client-network-proof). Older sections below describe their isolated proof scopes.
+
 M03 is **In Progress**. This increment verifies a pure numerical solver in an opt-in dedicated-player harness; it does not implement a playable aircraft. [Equations, debug values, before/after diagrams and limitations](physics/debug-flight/COMPARISON.md), [actual verification report](reports/2026-10-24-m03-debug-flight.md).
 
 Run from the existing repository root, project Editor closed:
@@ -68,3 +70,37 @@ For later captures, preserve the published evidence by selecting fresh outputs. 
 python scripts/analyze_m03_runway.py --evidence Builds/M03RunwayReplay/evidence
 python scripts/render_m03_runway.py --evidence Builds/M03RunwayReplay/evidence --output Builds/M03RunwayReplay/plots
 ```
+
+## Live debug aircraft and two-client network proof
+
+This opt-in prototype adds one estimated server aircraft and read-only client replicas. The static mesh is still separate. No normal scene/assets/preset change or new package is required. [Actual behavior, SI clock equations, rendered SVGs, data, graph guide and limitations](physics/live-flight-host/COMPARISON.md).
+
+From the existing repository root, Editor closed, use the latest CLI (verified `1.0.0-beta.14` for this capture) and retained Unity `6000.6.7f1` / HDRP `17.6.0` / Netcode `6.6.0`:
+
+```powershell
+New-Item -ItemType Directory -Force Builds/M03Authority | Out-Null
+unity self-update --check --format json
+unity test "$PWD" --editor-version 6000.6.7f1 --mode EditMode --filter Fireline.Tests --output Builds/M03Authority/editmode.xml --timeout 900 -- -buildTarget Win64 -nographics -force-d3d11 *> Builds/M03Authority/tests.log
+$env:FIRELINE_BUILD_EVIDENCE='Builds/M03AuthorityReplay/evidence/builds'
+unity run "$PWD" --editor-version 6000.6.7f1 --timeout 1200 --log-file Builds/M03Authority/server-build.log --no-tail -- -buildTarget Win64 -nographics -executeMethod Fireline.Authoring.FoundationBuild.BuildServer
+unity run "$PWD" --editor-version 6000.6.7f1 --timeout 1800 --log-file Builds/M03Authority/client-build.log --no-tail -- -buildTarget Win64 -force-d3d11 -executeMethod Fireline.Authoring.FoundationBuild.BuildAircraftPreviewClient
+./scripts/Test-M03FlightNetwork.ps1 -Port 8330 -EvidenceRoot Builds/M03AuthorityReplay/evidence
+$env:PYTHONPATH=(Join-Path $PWD Builds/AnalysisTools)
+python scripts/render_m03_flight_network.py --evidence Builds/M03AuthorityReplay/evidence --output Builds/M03AuthorityReplay/plots
+```
+
+Check each exit before proceeding; do not run builds concurrently against this checkout. `-force-d3d11` is a process override for the existing graphics-driver limitation, not a project API change. Raw Unity logs can contain credentials; do not publish them. Published [results](reports/2026-10-24-m03-live-flight-host.md) use `docs/reports/m03-flight-network-evidence/`; use fresh paths for later replays. The harness refuses to overwrite an existing process summary.
+
+The harness starts one real dedicated player and two real client players with `-batchmode -nographics`: these are actual Netcode client worlds/UDP connections, **not rendered-client performance runs**. It waits for server readiness, starts owner, then observer three seconds later. `--fireline-flight-session debug` explicitly enables the mode on each role. `--fireline-flight-network-proof output.json` owns the proof lifecycle; clients additionally require `--fireline-connect 127.0.0.1 --fireline-flight-probe-role owner|observer`. That role flag only enables a local test script; it grants no server permission. Failure exits are 12 (server), 13 (client). Other proof/smoke/benchmark/persistence modes are mutually excluded; the accelerated numerical flags remain unchanged.
+
+The owner sends valid controls, deliberate invalid packets, a >0.5 s silence and a real disconnect. The late observer tests denied claim/input and a forged pose, then observes the vacant seat. The server requires real input/ACK/rejection/disconnect/expiry outcomes and fails after 50 wall seconds if they never occur. Independent Python verification matches every received pose to its actual server publication, checks all recorded clock rows, and archives only scoped JSON/JSONL/CSV plus FIRELINE markers. No graphical binding, airborne flight loop, WAN/loss result, production authentication, flight persistence, bandwidth or capacity is implied.
+
+For non-proof use, omit proof/role/output options and explicitly connect a debug-session client. It subscribes read-only; no keyboard/pad control path is installed yet. Normal fire/weather continues on the server alongside the aircraft. With no debug-session option, existing normal startup is retained.
+
+The committed evidence can also be checked without Unity or the original ignored capture folder:
+
+```powershell
+python scripts/analyze_m03_flight_network.py --archive docs/reports/m03-flight-network-evidence --evidence Builds/M03AuthorityArchiveReplay
+```
+
+This verifies gzip raw hashes, process-result hash bindings, every client/server snapshot and host clock row, writing fresh results to the scratch destination. To reproduce the no-peer failure gate, launch the same dedicated binary with `-batchmode -nographics --fireline-flight-session debug --fireline-flight-network-proof <fresh-output.json>` and an unused `--fireline-port`, start no clients, wait at least 50 seconds, and require exit 12 with `passed=false` / `reason=network-proof-timeout`. Its trace is not a performance reference.

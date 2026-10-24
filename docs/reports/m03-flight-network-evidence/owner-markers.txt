@@ -1,0 +1,4 @@
+FIRELINE_CLIENT_START
+FIRELINE_CLIENT_RENDERER graphics=Null pipeline=HDRenderPipelineAsset quality=Balanced
+FIRELINE_CLIENT_CONNECTED networkId=1
+FIRELINE_FLIGHT_NETWORK role=owner passed=True reason=owner-input-and-disconnect snapshots=87

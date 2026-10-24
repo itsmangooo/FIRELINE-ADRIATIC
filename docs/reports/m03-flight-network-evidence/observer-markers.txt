@@ -1,0 +1,4 @@
+FIRELINE_CLIENT_START
+FIRELINE_CLIENT_RENDERER graphics=Null pipeline=HDRenderPipelineAsset quality=Balanced
+FIRELINE_CLIENT_CONNECTED networkId=2
+FIRELINE_FLIGHT_NETWORK role=observer passed=True reason=observer-replica-and-seat-release snapshots=67

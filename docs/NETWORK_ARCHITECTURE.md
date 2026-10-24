@@ -1,5 +1,11 @@
 # Multiplayer/network architecture — 100 players as a target
 
+## M03 implemented debug-aircraft protocol — 2026-10-24
+
+An explicit opt-in session now accepts subscribe/claim/input/release/exact-tick ACK requests for one estimated aircraft. Only actual transport source identity can control its occupied seat. Epoch, sequence, observed tick, control bounds, 50 Hz accepted-input rate and 0.5 s lease guard the server-owned state. Complete SI poses use reliable RPCs at most 10 Hz, one unacknowledged pose per peer, five-second ACK timeout; client-published poses are rejected. Eight admitted identities per debug-session lifetime, 64 processed requests per host callback/eight per peer bound application work. This is no transport-level flood protection or production authentication/qualification service. [Actual flow, wire/clock details, late observer/disconnect proof and limitations](physics/live-flight-host/COMPARISON.md).
+
+Flight poses are read-only data in the client adapter; prediction/interpolation, mesh binding, reconnect, real traffic measurement, impaired-network flight tests and production ghost/interest scheduling remain pending. M02 checkpoint encoding is unchanged; this flight mode explicitly excludes save/load. M02 fire RPCs remain separate and normal server fire/wind continues alongside the opt-in aircraft.
+
 ## M02 implemented bounded protocol — 2026-10-23
 
 Actual dedicated-to-client schema-1 baselines and exact-base revision deltas now cross targeted reliable RPCs, in bounded 480-character fragments. Clients validate/ACK canonical state, repair gaps through a baseline, display phases read-only and exchange one-second heartbeats with a 15-second silent timeout. Eight peers / eight fragments per peer per Update / at least 0.5 seconds after ACK bound this prototype. No client ignition/water RPC is exposed. Explicit local load/save is integrated and separate-process restart is demonstrated.

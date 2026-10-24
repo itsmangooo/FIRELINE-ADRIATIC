@@ -1,5 +1,13 @@
 # Performance history
 
+## 2026-10-24 — M03 live debug host and two headless client replicas
+
+One actual Windows Mono dedicated player plus two real Netcode client players on loopback, all Null graphics; one dry estimated aircraft and the existing synthetic fire/wind fixture. Editor closed, i5-9400F / Windows 11 Pro 26300 / 16,324 MiB visible RAM. All **835 host callbacks / 14.001966 wall s** retained, no warm-up excluded; 2797 aircraft steps (13.985 physical s), fire tick 69. Application catch-up discards **0.0132569 wall s** once. Independent checker matches **154 received aircraft snapshots** to server publications.
+
+`FlightAuthority.Advance` Stopwatch p95/max **0.0633 / 6.3483 ms**, maximum at callback **#1**. This is the bounded adapter (wind/validation/contact/flight substeps), not total host execution. Callback-gap p95/max **18.3073 / 51.6976 ms**; maximum **#2**, interval **0.0265593–0.0782569 s** after adapter Start. Carried remainder plus that gap triggers the one cap event (**HOST-01**). Startup and proof-only trace I/O remain included. No synchronized attribution, optimization or equivalent previous live-host baseline exists.
+
+FPS/1% low/GPU/draw calls/VRAM are not applicable to headless players; full CPU stages/GC/allocations/RTT/network bytes unavailable. This local short proof is not impaired-network/capacity or representative rendering qualification. [Raw traces, hardware/build identities, actual SVGs and full axis/tick/warm-up/sample guide](physics/live-flight-host/COMPARISON.md#measured-timing-and-graph-guide), [exact event and deferred profiling sites](performance/FRAME_LOSS_REGISTER.md#m03-live-host-catch-up-observation--2026-10-24). FL-06/FL-07 and NET-01 remain unchanged.
+
 ## 2026-10-24 — M03 isolated runway-contact Step diagnostic
 
 Two separate Windows Mono dedicated players on i5-9400F / Windows 11 Pro build 26300 / 16,324 MiB visible RAM (CIM), Editor closed. Each times 1000 independent three-wheel-contact Step calls after 100 explicit warm-ups, state reset per call, physical step 5 ms. Actual p50/p95/p99: **7.1/7.2/7.6 µs** (run 1) and **7.1/7.3/7.4 µs** (run 2). Maxima **61.0 µs at #1** and **98.9 µs at #322**. These are entire function elapsed observations, not complete host ticks, render intervals or dropped presentations.

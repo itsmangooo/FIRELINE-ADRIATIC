@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="208.8pt" viewBox="0 0 864 208.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 208.8
+L 864 208.8
+L 864 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <g id="patch_2">
+     <path d="M 108.780469 123.454461
+L 193.619531 123.454461
+Q 199.919531 123.454461 199.919531 117.154461
+L 199.919531 95.549539
+Q 199.919531 89.249539 193.619531 89.249539
+L 108.780469 89.249539
+Q 102.480469 89.249539 102.480469 95.549539
+L 102.480469 117.154461
+Q 102.480469 123.454461 108.780469 123.454461
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(117.172969 103.289012)">Scripted inputs</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(108.780469 114.091473)">No connected pilot</text>
+   </g>
+   <g id="text_2">
+    <g id="patch_3">
+     <path d="M 365.832422 123.454461
+L 498.167578 123.454461
+Q 504.467578 123.454461 504.467578 117.154461
+L 504.467578 95.549539
+Q 504.467578 89.249539 498.167578 89.249539
+L 365.832422 89.249539
+Q 359.532422 89.249539 359.532422 95.549539
+L 359.532422 117.154461
+Q 359.532422 123.454461 365.832422 123.454461
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(365.832422 103.289012)">Isolated RunwayContact.Step</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(383.070234 114.091473)">Numerical JSON / CSV</text>
+   </g>
+   <g id="text_3">
+    <g id="patch_4">
+     <path d="M 662.963203 123.454461
+L 762.636797 123.454461
+Q 768.936797 123.454461 768.936797 117.154461
+L 768.936797 95.549539
+Q 768.936797 89.249539 762.636797 89.249539
+L 662.963203 89.249539
+Q 656.663203 89.249539 656.663203 95.549539
+L 656.663203 117.154461
+Q 656.663203 123.454461 662.963203 123.454461
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(663.223359 103.289012)">Static aircraft preview</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(662.963203 114.091473)">No pose binding / RPC</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 251.477512 106.352
+Q 291.598584 106.352 329.818999 106.352
+" style="fill: none; stroke: #38526b; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 325.818999 104.352
+L 329.818999 106.352
+L 325.818999 108.352
+" style="fill: none; stroke: #38526b; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="432" y="20.16" transform="rotate(-0 432 20.16)">BEFORE: 50ce914 — isolated runway proof, no live aircraft authority</text>
+   </g>
+  </g>
+ </g>
+</svg>

@@ -1,0 +1,44 @@
+{
+    "passed": false,
+    "faulted": false,
+    "reason": "network-proof-timeout",
+    "role": "server",
+    "profile": "DEBUG_FLIGHT_ONLY_V1",
+    "tick": 9968,
+    "fireTick": 249,
+    "owner": 0,
+    "disconnectReleases": 0,
+    "expirations": 0,
+    "overruns": 16,
+    "updates": 2837,
+    "steps": 9968,
+    "seconds": 50.0187037,
+    "discardedSeconds": 0.17624009999999835,
+    "maximumUpdateMs": 6.8476,
+    "finalState": {
+        "PositionM": {
+            "X": 3.4426668639366063,
+            "Y": 1.8912544025367028,
+            "Z": 0.7331086830316459
+        },
+        "VelocityMps": {
+            "X": 0.0522572372044153,
+            "Y": 0.000006438866893661438,
+            "Z": 0.02342620494070263
+        },
+        "AngularVelocityRadps": {
+            "X": 0.000010596156256015139,
+            "Y": -0.008444345304085343,
+            "Z": 0.000011428749600423008
+        },
+        "Attitude": {
+            "X": 0.00013471321565037514,
+            "Y": -0.2551137492800215,
+            "Z": -0.0006455818364665949,
+            "W": 0.9669108231914318
+        },
+        "FuelKg": 0.0,
+        "WaterKg": 0.0
+    },
+    "peers": []
+}

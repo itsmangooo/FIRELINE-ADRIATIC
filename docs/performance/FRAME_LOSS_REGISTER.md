@@ -1,5 +1,16 @@
 # Frame-loss investigation register
 
+## M03 live-host catch-up observation — 2026-10-24
+
+**HOST-01: measured headless scheduling location; attribution and optimization deferred.** This is no new rendered frame-loss result. One live debug aircraft, existing fire/wind, one dedicated and two real headless client worlds on loopback, Editor closed, i5-9400F / Windows 11 Pro 26300 / 16,324 MiB visible RAM. [Full conditions, SVGs, raw data and graph guide](../physics/live-flight-host/COMPARISON.md#measured-timing-and-graph-guide).
+
+- Host callback **#2**, wall interval **0.0265593–0.0782569 s** after `ServerFlightSession.Start`: **51.6976 ms** spacing. Existing fractional remainder plus this gap exceeds the 40 ms accumulated-work cap; exactly **13.2569 ms** wall time is discarded. It is not silently counted as physical time. [Machine-readable exact event](../reports/m03-flight-network-evidence/verification.json), [all 835 raw callback rows](../reports/m03-flight-network-evidence/server.csv.gz).
+- Stopwatch around `FlightAuthority.Advance` reaches **6.3483 ms at callback #1**; p95 **0.0633 ms**. This includes zero to eight 5 ms physical steps per call and excludes other server/network/fire/Unity/trace work. It is not a 6.3483 ms full-host tick or GPU frame. All startup callbacks retained; no warm-up removed.
+- Source observation sites: `ServerFlightSession.Update` samples callback gaps and brackets `FlightAuthority.Advance`; that authority samples wind and calls contact/flight kernels. Input processing, Netcode dispatch, fire callbacks, Unity startup, proof-only CSV/JSONL buffers, JIT, GC and OS scheduling are candidate profiling sites. No synchronized timeline proves a cause or a bottleneck.
+- Follow-up: reproduce with full host profiler/GC/transport timelines and diagnostic I/O off/on, keep per-step/callback clocks distinct, then qualify representative graphical flight/coast/smoke. No rendered client, presentation trace, FPS, draw-call or network-byte measurement was made. The eight-step cap is a bounded stability policy, not a measured performance optimization.
+
+FL-06/FL-07 and NET-01 remain unresolved. This new host is installed only by explicit debug-session option; earlier isolated-contact observations below describe their original scope.
+
 ## M03 contact-call observations — 2026-10-24
 
 The contact prerequisite is nonvisual and records **no new frame-loss measurement**. Its isolated contact Step maxima are **61.0 µs at retained call #1** and **98.9 µs at #322**, after 100 explicit warm-ups in each of two dedicated processes. [Raw data, SVG, hardware and complete graph guide](../physics/runway-contact/COMPARISON.md#measured-call-timing-and-graph-guide). These elapsed call gaps are not renderer callbacks, whole server ticks or confirmed dropped presentations. No CPU/GC/OS timeline attributes them.

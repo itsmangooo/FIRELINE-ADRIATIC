@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "baseline": "50ce91439a536678af1d39022f7a664e27b32d84",
+  "localMarkdownLinksChecked": 294,
+  "configurationFilesPreserved": 5,
+  "unityTests": 89,
+  "csharpFiles": 40,
+  "documentedMembers": 343,
+  "selfContainedSvgFiles": 4,
+  "inspectedDrawingPngs": 4,
+  "exactMatchedClientSnapshots": {
+    "owner": 87,
+    "observer": 67
+  },
+  "realPositiveProcessExits": [
+    0,
+    0,
+    0
+  ],
+  "negativeExit": 12,
+  "bothRoleAssemblyBoundariesVerified": true,
+  "sourceArtifactsCredentialPatternScanPassed": true,
+  "immutableArchiveReplay": true,
+  "freshOutputUtilityProof": true,
+  "limits": "Verified bounded Windows live-authority increment. M03 open for visual/controls/correction/collision/calibration/water; no new rendering/Linux/WAN/capacity qualification."
+}

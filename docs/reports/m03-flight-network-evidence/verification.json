@@ -1,0 +1,169 @@
+{
+  "passed": true,
+  "roles": {
+    "server": {
+      "passed": true,
+      "faulted": false,
+      "reason": "two-client-authority-proof",
+      "role": "server",
+      "profile": "DEBUG_FLIGHT_ONLY_V1",
+      "tick": 2797,
+      "fireTick": 69,
+      "owner": 0,
+      "disconnectReleases": 1,
+      "expirations": 2,
+      "overruns": 1,
+      "updates": 835,
+      "steps": 2797,
+      "seconds": 14.0019657,
+      "discardedSeconds": 0.013256899999999738,
+      "maximumUpdateMs": 6.3483,
+      "finalState": {
+        "PositionM": {
+          "X": -5.121848055101135,
+          "Y": 1.8913604683198475,
+          "Z": 27.388512194747907
+        },
+        "VelocityMps": {
+          "X": 0.037257571947309394,
+          "Y": -2.0203743458272057e-05,
+          "Z": 0.017664802542030875
+        },
+        "AngularVelocityRadps": {
+          "X": -0.00045950066107467417,
+          "Y": -0.007477168291142559,
+          "Z": 0.0029449872504296554
+        },
+        "Attitude": {
+          "X": 0.00016696416038120508,
+          "Y": -0.31487424691339233,
+          "Z": -0.0005416205681235853,
+          "W": 0.949133229531478
+        },
+        "FuelKg": 0.0,
+        "WaterKg": 0.0
+      },
+      "peers": [
+        {
+          "identity": 1,
+          "accepted": 136,
+          "rejected": 4,
+          "acknowledgements": 87,
+          "snapshots": 88,
+          "forgedPoses": 0,
+          "disconnected": true
+        },
+        {
+          "identity": 2,
+          "accepted": 1,
+          "rejected": 3,
+          "acknowledgements": 67,
+          "snapshots": 68,
+          "forgedPoses": 1,
+          "disconnected": true
+        }
+      ]
+    },
+    "owner": {
+      "passed": true,
+      "sawOwner": true,
+      "sawVacantAfterOwner": false,
+      "role": "owner",
+      "reason": "owner-input-and-disconnect",
+      "identity": 1,
+      "snapshots": 87,
+      "acceptedInputs": 134,
+      "rejected": 4,
+      "sequenceRejects": 1,
+      "epochRejects": 1,
+      "invalidRejects": 1,
+      "tickRejects": 1,
+      "firstTick": 667,
+      "finalTick": 2484,
+      "seconds": 9.253396,
+      "firstZ": 0.0027606916289709235,
+      "lastZ": 25.902686578105108,
+      "maximumReceiveGapSeconds": 0.11820009999999925
+    },
+    "observer": {
+      "passed": true,
+      "sawOwner": true,
+      "sawVacantAfterOwner": true,
+      "role": "observer",
+      "reason": "observer-replica-and-seat-release",
+      "identity": 2,
+      "snapshots": 67,
+      "acceptedInputs": 0,
+      "rejected": 2,
+      "sequenceRejects": 0,
+      "epochRejects": 2,
+      "invalidRejects": 0,
+      "tickRejects": 0,
+      "firstTick": 1202,
+      "finalTick": 2587,
+      "seconds": 7.067986900000001,
+      "firstZ": 3.7244590523791894,
+      "lastZ": 27.059612340164392,
+      "maximumReceiveGapSeconds": 0.11806230000000006
+    }
+  },
+  "exactMatchedClientSnapshots": {
+    "owner": 87,
+    "observer": 67
+  },
+  "recording": "Every live host callback from startup; no warm-up removed. Stopwatch covers FlightAuthority.Advance only.",
+  "hostAdvanceMs": {
+    "p95": 0.06330000000000001,
+    "max": 6.3483
+  },
+  "callbackGapMs": {
+    "p95": 18.307300000000026,
+    "max": 51.697600000000236
+  },
+  "discardedTimeEvents": [
+    {
+      "sample": 2,
+      "elapsedSeconds": 0.07825689999999974,
+      "callbackGapMs": 51.697600000000236,
+      "discardedThisUpdateSeconds": 0.013256899999999738
+    }
+  ],
+  "limits": "Two loopback headless client players; reliable RPC prototype. No rendered frames, WAN/loss, 100-player, full host CPU/GPU or bandwidth qualification.",
+  "archives": [
+    {
+      "path": "server.json.gz",
+      "rawBytes": 1627,
+      "rawSha256": "7ad3de8857c433a9644426d7748c4daa499860fb47679ec1c27558488817a62a"
+    },
+    {
+      "path": "server.snapshots.jsonl.gz",
+      "rawBytes": 75875,
+      "rawSha256": "cbc15f782609cd97b951a0bc205510c48e02fb7f3223c8f58c505acab15d77c3"
+    },
+    {
+      "path": "server.csv.gz",
+      "rawBytes": 102480,
+      "rawSha256": "1536bfedf45d2d7fcffcd1b86fbfdbc1fe9f721e39777622fae76a225ced82d4"
+    },
+    {
+      "path": "owner.json.gz",
+      "rawBytes": 518,
+      "rawSha256": "c937c40fdcb110b150ff56440000f1603dc086dea2cb72f854829224e2a8b121"
+    },
+    {
+      "path": "owner.snapshots.jsonl.gz",
+      "rawBytes": 40363,
+      "rawSha256": "1b68d6660eb7ff80a5da0586c2e737d20559ada3fd07d28a43715350b8566902"
+    },
+    {
+      "path": "observer.json.gz",
+      "rawBytes": 532,
+      "rawSha256": "1036b8fc5ebca63a491753026155cec1c3170dcf898b2ec4eb83b53ba49ca92e"
+    },
+    {
+      "path": "observer.snapshots.jsonl.gz",
+      "rawBytes": 31004,
+      "rawSha256": "ff28aecde33ffd7b04d4d1ed9bc92791f364317196fdff9a8c49751b9ec44340"
+    }
+  ]
+}

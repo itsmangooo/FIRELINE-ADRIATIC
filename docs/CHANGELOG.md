@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-24 — M03 live debug-aircraft authority verified increment
+
+- Added an opt-in live dedicated aircraft host with bounded 5 ms substeps and actual server wind; guarded seat/input ownership, epoch/sequence/tick/range/rate/lease checks and disconnect/envelope failure handling. Client replicas validate and ACK complete authoritative SI poses without running flight integration.
+- **89/89 tests**, zero-error Windows dedicated/client builds (505/501 warnings), and real dedicated/owner/late-observer exits 0. All **154 received poses** match actual server publications; 134 owner inputs accepted, invalid/nonowner/forged-pose requests rejected, timeout fallback and disconnect release observed. Missing-peer negative correctly fails with exit 12. Human source-comment audit covers 40 C# files / 343 members.
+- Added rendered BEFORE/AFTER SVGs, clock equations, trace/hash checks, trajectory/timing graphs with full reader guides and **HOST-01** at callback #2 (51.6976 ms gap / 13.2569 ms discard), retaining attribution/optimization for later. [Actual evidence and limitations](reports/2026-10-24-m03-live-flight-host.md). M03 stays open for graphical/control binding, correction, general collision/calibration and water operations. No scene/asset/package change or fresh Linux/graphical flight/60 FPS/capacity claim.
+
 ## 2026-10-24 — M03 bounded runway-contact prerequisite verified
 
 - Added pure tricycle spring/damper reactions, CoG/rotating-point contact velocity, combined Coulomb-limited tire forces, braking/steering, finite debug runway and candidate rejection. Reused the unchanged 6DOF integrator; no ground snapping or graphical flight binding.

@@ -1,6 +1,10 @@
 # Simulation specification — Fire, wind, water and environmental destruction
 
-## M03 debug runway-contact boundary — 2026-10-24
+## M03 live aircraft scheduling boundary — 2026-10-24
+
+The explicit debug session now drives the existing contact/flight kernel on the dedicated server with 5 ms steps, at most eight per `Update`, and recorded excess wall-time discard. It samples the actual server wind at the aircraft position using the existing fire tick. Validated seat-owner commands expire after 0.5 wall seconds; clients only retain validated server poses. [Actual equations, unchanged-physics reference checks, runtime evidence and clock limitations](physics/live-flight-host/COMPARISON.md). This is one estimated dry debug aircraft on a synthetic runway, with separate fire/aircraft clocks; general collision, calibrated airframe/fuel, visual/control binding and water remain pending. The older scope statements below describe earlier increments.
+
+## M03 debug runway-contact boundary — historical, 2026-10-24
 
 The optional pure contact adapter now adds finite-plane three-point support, combined friction/braking/steering and current/candidate envelope validation to the unchanged flight core. All gear values are uncalibrated estimates independent of the static imported mesh. [Actual equations, SI constants, comparisons, raw evidence and limitations](physics/runway-contact/COMPARISON.md). It is verified in an isolated dedicated-player harness, not installed live flight/contact, general airframe/terrain collision or pilot/network gameplay. Historical paragraphs below describe their original increments.
 

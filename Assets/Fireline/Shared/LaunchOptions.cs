@@ -38,6 +38,13 @@ namespace Fireline.Shared
         /// <summary>Server-only isolated runway-contact numerical proof; it does not enable live piloting or replication.</summary>
         public string RunwayProofPath { get; private set; }
 
+        /// <summary>Explicit opt-in to the single estimated live aircraft; absent by default.</summary>
+        public bool FlightSession { get; private set; }
+        /// <summary>Optional role-specific output for the real two-client aircraft transport proof.</summary>
+        public string FlightNetworkProofPath { get; private set; }
+        /// <summary>Client-only scripted owner/observer identity for the opt-in network proof, never server admission credentials.</summary>
+        public string FlightProbeRole { get; private set; }
+
         /// <summary>Optional role-specific M02 proof result JSON; enables the bounded scripted acceptance scenario.</summary>
         public string ReplicationProofPath { get; private set; }
         /// <summary>Explicit checkpoint to load; missing/corrupt input fails startup instead of creating a fresh world.</summary>
@@ -64,6 +71,15 @@ namespace Fireline.Shared
                 string value = args[i];
                 switch (key)
                 {
+                    case "--fireline-flight-session":
+                        if (value != "debug") throw new ArgumentException("Only the estimated debug aircraft session exists.");
+                        options.FlightSession = true; break;
+                    case "--fireline-flight-network-proof":
+                        if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Flight network proof path is empty.");
+                        options.FlightNetworkProofPath = value; break;
+                    case "--fireline-flight-probe-role":
+                        if (value != "owner" && value != "observer") throw new ArgumentException("Expected owner or observer proof role.");
+                        options.FlightProbeRole = value; break;
                     case "--fireline-runway-proof":
                         if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Runway proof path is empty.");
                         options.RunwayProofPath = value; break;
@@ -130,6 +146,14 @@ namespace Fireline.Shared
             }
             if (options.BenchmarkSeconds > 0 && (options.SmokeSeconds > 0 || options.BenchmarkOutput == null))
                 throw new ArgumentException("Benchmark requires output and cannot share the smoke exit timer.");
+            if ((options.FlightNetworkProofPath != null || options.FlightProbeRole != null) && !options.FlightSession)
+                throw new ArgumentException("Flight network proof requires an explicit debug flight session.");
+            if (options.FlightProbeRole != null && options.FlightNetworkProofPath == null)
+                throw new ArgumentException("Scripted flight role requires network proof output.");
+            if (options.FlightSession && (options.SimulationProofPath != null || options.FlightProofPath != null
+                || options.RunwayProofPath != null || options.ReplicationProofPath != null || options.WorldLoadPath != null
+                || options.WorldSavePath != null || options.SmokeSeconds > 0 || options.BenchmarkSeconds > 0))
+                throw new ArgumentException("Debug flight session cannot share other proof, persistence or timed modes.");
             if (options.FlightProofPath != null && (options.SimulationProofPath != null || options.ReplicationProofPath != null
                 || options.RunwayProofPath != null || options.WorldLoadPath != null || options.WorldSavePath != null || options.SmokeSeconds > 0 || options.BenchmarkSeconds > 0))
                 throw new ArgumentException("Flight proof requires an isolated server run.");

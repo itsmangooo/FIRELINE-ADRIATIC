@@ -1,10 +1,16 @@
 # Technical architecture — Unity 6 HDRP, C#, headless server
 
-## M03 contact prerequisite — actual boundary, 2026-10-24
+## M03 live debug-aircraft boundary — 2026-10-24
+
+Explicit `--fireline-flight-session debug` installs one server-owned `FlightAuthority`, a bounded 200 Hz physical substep adapter and versioned targeted aircraft RPCs. Transport identity controls seat ownership; epoch/sequence/tick/range/rate/lease checks guard inputs. Server wind is sampled using the existing fire-world tick. Clients validate complete poses and ACK exact ticks without running an aircraft integrator. Shared remains independent of Simulation/HDRP; the headless server has no mesh/presentation reference. [Actual before/after SVGs, clock equations, network behavior, verification and limits](physics/live-flight-host/COMPARISON.md).
+
+The mesh remains static and separate. Player controls/cameras, prediction/correction, production ghosts/interest, admission/qualifications, general collision, flight persistence and water operations are pending. The following M03 paragraphs are historical increment boundaries.
+
+## M03 contact prerequisite — historical boundary, 2026-10-24
 
 The Simulation assembly now contains an optional bounded runway-contact adapter around the unchanged 6DOF integrator. Server-only RunwayVerification drives it only for an explicit isolated numerical proof; normal fire runtime and network protocol are unchanged. No live aircraft entity, pilot permission service or client binding is installed. [Actual BEFORE/AFTER force/state diagrams, SI equations and evidence](physics/runway-contact/COMPARISON.md). Live fixed-substep scheduling, input authorization and pose replication are the next dependencies, not completed architecture.
 
-## M03 isolated flight boundary — 2026-10-24
+## M03 isolated flight boundary — historical, 2026-10-24
 
 `Fireline.Simulation` now adds pure `FlightVector`, `FlightRotation`, `FlightDynamics`, bounded state/input DTOs and the explicitly estimated `DebugFlightProfile`. It retains `noEngineReferences`; no package or assembly dependency is added. `Fireline.Server.FlightVerification` runs an opt-in dedicated numerical proof; ordinary live fire/replication remains unchanged without its flag. No client flight state, live aircraft entity, pilot ownership, contact solver or prediction/correction exists yet. [Actual flow/math/evidence and remaining integration tasks](reports/2026-10-24-m03-debug-flight.md).
 
