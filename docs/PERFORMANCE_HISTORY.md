@@ -1,5 +1,11 @@
 # Performance history
 
+## 2026-10-24 — M03 static aircraft preview callback diagnostic
+
+One 1920×1080 Balanced/VSync=1 D3D11 release client and one local headless server; Editor closed, i5-9400F / GTX 1660 SUPER / Windows 11 26300 / driver 32.0.16.2101 / 16,323 MB visible RAM. Five rendered seconds warm-up; **1489 intervals / 25.000917 s**, 59.558 average FPS, 32.506 1% low (mean slowest 15 intervals), p95/p99 **16.9248/17.3213 ms**. Maximum **206.632495 ms**, sample **#2**, recording **0.017872–0.224504 s**. 744 intervals exceed 16.667 ms; one exceeds 33.333 ms. These are callback spacings, not execution times or dropped-presentation counts.
+
+Peak Unity allocated bytes 475,032,553; CPU/GPU execution, draw calls, VRAM, GC, bandwidth and full host tick counters unavailable. Static pad/one aircraft only, no representative coast/smoke/flight workload; single short run, no matched BEFORE. p95 exceeds the 60 Hz ruler. **No 60 FPS acceptance, improvement or capacity claim.** [Actual screenshot, raw CSV/marked positions/SVG, build IDs, environment, definitions and complete graph guide](previews/m03-cl415-prototype/COMPARISON.md#performance-diagnostic-and-graph-guide), [FL-07 deferred attribution](performance/FRAME_LOSS_REGISTER.md#m03-static-aircraft-callback-overrun--2026-10-24).
+
 ## 2026-10-24 — M03 isolated flight Step elapsed diagnostic
 
 Two separate Mono Windows dedicated players on i5-9400F / Windows 11 build 26300 / 16324 MiB visible RAM; Editor closed, one proof at a time, 100 warm-up calls excluded and 1000 retained independent 5 ms physical-step evaluations per run. These measure one pure `Step` call, not the complete server tick or a client frame.

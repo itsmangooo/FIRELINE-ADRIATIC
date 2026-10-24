@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-24 — M03 temporary aircraft exterior verified
+
+- Imported the already acquired official CL-415 source as an isolated prototype: exact originals preserved, reproducible OBJ grouping derivative, 144 named meshes, eleven HDRP materials and nine source textures. User authorized temporary use and plans production replacement; original notices retained/bundled.
+- **60/60 tests**, Windows aircraft-preview and dedicated builds (0 errors, 501/505 warnings), and one actual rendered-client/headless-server smoke pass. Server inventory contains no aircraft/HDRP presentation assets; role assemblies remain separate.
+- Added an inspected actual 1080p screenshot, rendered BEFORE/AFTER SVGs, raw interval data, graph guide and FL-07 maximum at sample #2 (**206.632 ms**). [Full evidence and remaining work](previews/m03-cl415-prototype/COMPARISON.md). M03 stays In Progress: no live flight, animation, contact or water integration. No optimization/60 FPS/capacity pass.
+
 ## 2026-10-24 — M03 independent debug-flight core verified increment
 
 - Added pure double-precision SI force/moment, payload/CoG/inertia and quaternion 6DOF stepping with numerical guards; all parameters explicitly synthetic, not CL-415 calibration.

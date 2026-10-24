@@ -1,0 +1,9 @@
+FIRELINE_SERVER_START endpoint=127.0.0.1:8190
+FIRELINE_WORLD_READY restored=False tick=0 checksum=ba0ecc7466f19ace
+FIRELINE_SIMULATION_START hz=5 grid=32 cellM=10 seed=415 authority=server fixture=synthetic
+FIRELINE_SERVER_HEADLESS valid=True graphics=Null cameras=0
+FIRELINE_SERVER_CONNECTIONS count=0
+FIRELINE_SERVER_CONNECTIONS count=1
+FIRELINE_SERVER_CONNECTIONS count=0
+FIRELINE_SERVER_SMOKE passed=True peakClients=1 ticks=5399
+FIRELINE_SIMULATION_STOP ticks=449 checksum=aa5565ca9c4e5cec

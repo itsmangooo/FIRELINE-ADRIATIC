@@ -76,13 +76,15 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 
 ## M03 — CL-415 flight & water physics
 
-**Status: In Progress — isolated debug-flight core verified 2026-10-24; full milestone open.** M02 is verified. [Actual model, 57 tests, headless build/two-process proof and fire regression](docs/reports/2026-10-24-m03-debug-flight.md), [equations/BEFORE-AFTER SVGs](docs/physics/debug-flight/COMPARISON.md). `DEBUG_FLIGHT_ONLY_V1` has estimated parameters and no imported aircraft. Resolve the existing source-rights gate or audit an authorized replacement before import; no playable flight is claimed.
+**Status: In Progress — isolated debug-flight core verified 2026-10-24; full milestone open.** M02 is verified. [Actual model, 57 tests, headless build/two-process proof and fire regression](docs/reports/2026-10-24-m03-debug-flight.md), [equations/BEFORE-AFTER SVGs](docs/physics/debug-flight/COMPARISON.md). `DEBUG_FLIGHT_ONLY_V1` retains estimated parameters. The user authorized temporary CL-415 prototype use on 2026-10-24; its separate static HDRP exterior is now imported. The model is not bound to the numerical solver; no playable flight is claimed. [Import/capture evidence](docs/previews/m03-cl415-prototype/COMPARISON.md).
 
 - [x] Pure SI debug force/mass/CoG/inertia, quaternion 6DOF candidate stepping and bounded numerical inputs, with analytic and repeated real headless-player evidence. This does not complete the CL-415/telemetry/flight-loop tasks below.
 - [ ] Integrate a live server-owned aircraft and pilot permission/input handling, flight replication/correction, physical contact, test controls/cameras and actual gameplay telemetry; capture real screenshots and populated-build performance when introduced.
 - [ ] Replace debug estimates with documented aircraft/variant config and calibrated curves; implement fuel consumption and actual variable-mass/resource behavior.
 
-- [ ] Acquire and audit the minimum CL-415 source archive, import its exterior and document moving parts, textures, scale and missing cockpit parts. **Licensing blocker:** official original OBJ archive acquired, but its included GPL notice/texture contributor conflicts with the listing’s CC BY 4.0 record. Reconcile contributor rights and notices, or audit an authorized replacement, before Unity import. No rig/pivot/cockpit validation is claimed.
+- [x] Acquire/audit the official original archive and import its exterior as a **user-authorized temporary prototype**: 144 named meshes, eleven HDRP materials, nine textures, orientation/dimensions audit and separate static inspection scene. Original notices retained. [Actual build/capture and limits](docs/previews/m03-cl415-prototype/COMPARISON.md). Source names do not establish working pivots/rig or a complete cockpit.
+- [ ] Verify/rebase animated-part pivots and usable cockpit coverage; bind visuals to the actual server-owned flight state when live flight is implemented.
+- [ ] Replace the temporary model with the user's intended commercial production asset before launch, or reconcile all contributor rights/notices; re-run import/animation/build/screenshots after replacement.
 
 - [ ] Approved CL-415 asset, distinct movable parts inventory; flight model in SI, config curves+HUD telemetry.
 - [ ] Takeoff, landing, wind response; payload/fuel mass; water scoop validity.

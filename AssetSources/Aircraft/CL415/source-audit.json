@@ -13,14 +13,14 @@
   "faceCount": 35799,
   "source": "https://sketchfab.com/3d-models/cl415-bf3eaa6a1f4f4fc18df9b05cf40de927",
   "author": "helijah",
-  "downloadStatus": "Downloaded through official signed-in Sketchfab original OBJ button on 2026-10-22. Held outside Unity due conflicting archive license notice.",
+  "downloadStatus": "Downloaded through official signed-in Sketchfab original OBJ button on 2026-10-22; exact original source extracted for temporary prototype use on 2026-10-24.",
   "archiveBytes": 5566058,
   "archiveSha256": "1b45ee5122ed6800bb5c5b5469f7ac29722e38c56d0e379dfe56bcc7bf9a6d8c",
   "sourceArchiveSha256": "49f6c200e950bf36940ab4b1f60caa59ba63561ec393ce775f8c9e73b812f3e6",
   "includedNotice": "Bombardier CL 415 \"Canadair\"\n----------------------------\n\nAuthor  : BARANGER Emmanuel (helijah)\ntools   : Blender 2.69 and The Gimp 2.8\nUse     : For FlightGear\nTexture : Gary BROWN\n\nThis files are GPL.\n\n--------\nBARANGER Emmanuel\nhttp://helijah.free.fr\nhttp://embaranger.free.fr\n",
   "licenseConflict": "Listing says CC BY 4.0; included Read-Me says GPL without version or license text and credits textures to Gary BROWN. No assumption of a relicensing grant or independent texture rights.",
-  "approval": "BLOCKED_LICENSE_RECONCILIATION",
-  "usedInBuild": false,
+  "approval": "USER_AUTHORIZED_TEMPORARY_PROTOTYPE_NOT_PRODUCTION_CLEARANCE",
+  "usedInBuild": true,
   "format": "OBJ + MTL + nine PNG textures; no skeleton or animation format in archive",
   "vertices": 20100,
   "objFaces": 20559,
@@ -245,5 +245,12 @@
       "sha256": "3219b1eb9104019fe4b1687035b19ea8e07177fc4deff9174d5cd83cb76938dd"
     }
   ],
-  "nextAction": "Obtain authoritative clarification covering geometry and Gary BROWN textures, including exact grant and notices, or audit a different authorized replacement. Then perform Unity HDRP import/scale/parts/visual checks."
+  "nextAction": "Obtain authoritative clarification covering geometry and Gary BROWN textures, including exact grant and notices, or audit a different authorized replacement. Then perform Unity HDRP import/scale/parts/visual checks.",
+  "prototypeDecision": {
+    "date": "2026-10-24",
+    "instruction": "User explicitly requested prototype import despite the recorded source-notice conflict and intends replacement with a commercial model before launch.",
+    "replacementGate": "Replace or obtain authoritative contributor rights/notices before production distribution.",
+    "changes": "Exact source bytes retained; Unity HDRP conversion, orientation and static preview are project-authored derivatives."
+  },
+  "buildUse": "Separate WindowsAircraftPreview static inspection client; not connected to flight simulation. Runtime capture evidence is recorded separately."
 }

@@ -2,19 +2,20 @@
 
 ## Project Overview
 
-**Status:** M00/M01/source comments/M02 verified for their documented prototype scopes; M03 has a verified isolated numerical flight core and remains In Progress; its aircraft licence/import gate is unresolved. The existing HDRP project has modular C# assemblies, direct-IP client/server startup, tests, Windows/Linux build entry points and an imported coastal render benchmark. A bounded server-side fire/wind/suppression prototype now exists; M02 adds live authoritative fire replication, read-only client display and verified local checkpoint/restart integration; an isolated debug flight solver now exists, while playable flight, player controls, dispatch and production persistence remain planned. The original documentation pack and project guidance are preserved; proposed mechanics and numeric budgets remain design targets pending testing.
+**Status:** M00/M01/source comments/M02 verified for their documented prototype scopes; M03 has a verified isolated numerical flight core and remains In Progress; a temporary CL-415 exterior is now imported and verified in a separate static preview build. The existing HDRP project has modular C# assemblies, direct-IP client/server startup, tests, Windows/Linux build entry points and an imported coastal render benchmark. A bounded server-side fire/wind/suppression prototype now exists; M02 adds live authoritative fire replication, read-only client display and verified local checkpoint/restart integration; an isolated debug flight solver now exists, while playable flight, player controls, dispatch and production persistence remain planned. The original documentation pack and project guidance are preserved; proposed mechanics and numeric budgets remain design targets pending testing.
 
 A persistent, self-hosted, cooperative Croatian/Herzegovinian aerial and ground firefighting simulator. Unity 6 HDRP, C#, up to 100 players per server (target, **not demonstrated**), up to 9 aircraft (design cap), server-authoritative fire/wind/water/combustion, modding, 60 FPS client target.
 
 ## Current Development Status
 
-M03's fresh build evidence is the Windows dedicated server with 57 passing tests and isolated numerical flight replay. Client/Linux build evidence below is historical; this increment does not rebuild or qualify those targets. [Exact current scope](docs/reports/2026-10-24-m03-debug-flight.md).
+M03 now has **60 passing tests**, fresh Windows dedicated/aircraft-preview builds, an actual 1080p HDRP aircraft capture and a successful server/client connection smoke. The numerical flight solver remains separate; regular M02 client/Linux evidence below is historical. [Latest import/capture scope](docs/previews/m03-cl415-prototype/COMPARISON.md), [separate numerical solver scope](docs/reports/2026-10-24-m03-debug-flight.md).
 
-Unity **6000.6.7f1** / HDRP **17.6.0** are retained; Netcode for Entities, Entities and Transport **6.6.0** remain resolved. **57 EditMode tests pass**, including the closed-Editor path. Windows client/server and Linux x64 server builds succeeded with zero errors; the Windows server/two-client smoke passed. Linux also passed its headless/clock negative startup test under WSL2. Five licensed PBR surfaces and a real Petrčane DSM crop are imported into a separate benchmark scene. See the [latest M00 evidence](docs/reports/2026-10-22-m00-coastal-foundation.md). M00 and the bounded M01 headless prototype are verified. The requested source-comment pass and M02 bounded Windows replication/restart proof are verified. [Actual current builds, three-client evidence and limitations](docs/reports/2026-10-23-m02-replication.md). Cold/jittered startup remains NET-01; constant-delay/loss passed. Aircraft licence/import and production graphics/performance qualification remain open under M03/M04/M09. [Scope/dependency closeout](docs/reports/2026-10-23-m00-closeout.md). M05A and later gameplay milestones remain pending.
+Unity **6000.6.7f1** / HDRP **17.6.0** are retained; Netcode for Entities, Entities and Transport **6.6.0** remain resolved. **60 EditMode tests pass**, including the closed-Editor path. Windows client/server and Linux x64 server builds succeeded with zero errors; the Windows server/two-client smoke passed. Linux also passed its headless/clock negative startup test under WSL2. Five licensed PBR surfaces and a real Petrčane DSM crop are imported into a separate benchmark scene. See the [latest M00 evidence](docs/reports/2026-10-22-m00-coastal-foundation.md). M00 and the bounded M01 headless prototype are verified. The requested source-comment pass and M02 bounded Windows replication/restart proof are verified. [Actual current builds, three-client evidence and limitations](docs/reports/2026-10-23-m02-replication.md). Cold/jittered startup remains NET-01; constant-delay/loss passed. Aircraft animation/live-flight integration, the planned production-model replacement and graphics/performance qualification remain open under M03/M04/M09. [Scope/dependency closeout](docs/reports/2026-10-23-m00-closeout.md). M05A and later gameplay milestones remain pending.
 
 ## Latest Development Updates
 
-- **2026-10-24 — M03 independent debug flight core:** SI forces/moments, estimated stall/controls, payload/CoG/inertia and quaternion 6DOF stepping. 57 tests, current Windows headless build, exact two-process numerical replay and unchanged fire-network regression pass. [Actual data, scope and limits](docs/reports/2026-10-24-m03-debug-flight.md). M03 remains In Progress: no aircraft import, live/networked flight or playable route yet.
+- **2026-10-24 — M03 CL-415 prototype exterior:** reused the audited official archive; 144 named meshes, eleven HDRP materials and nine textures now render in a separate inspection client. 60 tests, zero-error client/headless builds and actual connection/capture smoke pass. [Screenshot, source/part inventory, BEFORE/AFTER SVGs and measured hitch](docs/previews/m03-cl415-prototype/COMPARISON.md). Temporary model authorized by the user; replacement planned before launch. M03 remains open for live flight and water operations.
+- **2026-10-24 — M03 independent debug flight core:** SI forces/moments, estimated stall/controls, payload/CoG/inertia and quaternion 6DOF stepping. 57 tests, current Windows headless build, exact two-process numerical replay and unchanged fire-network regression pass. [Actual data, scope and limits](docs/reports/2026-10-24-m03-debug-flight.md). At that earlier increment no aircraft was imported; live/networked flight and the playable route remain pending.
 
 - **2026-10-23 — M02 live replication/restart verified:** three actual rendered clients converge through baselines/deltas/gap repair; late join sees existing char, and a fresh server restores identical bytes. Direct and constant 80 ms each-way/5% UDP loss initial/restart cases pass; blackout/corrupt-load negatives pass. 48 tests and fresh Windows builds have zero errors. [Evidence, failed startup attempts, screenshots, diagrams and graph guide](docs/reports/2026-10-23-m02-replication.md). Jittered startup is unresolved; no production/60 FPS/capacity claim.
 
@@ -34,6 +35,10 @@ Unity **6000.6.7f1** / HDRP **17.6.0** are retained; Netcode for Entities, Entit
 - **2026-10-22 — Permanent documentation workflow:** added project-wide evidence rules, README showcase sections, visual/physics/gameplay/performance templates, a changelog and performance history. Existing Unity content and configuration were checkpointed before documentation edits. No game feature was added. See the [workflow report](docs/reports/2026-10-22-documentation-workflow.md) and [changelog](docs/CHANGELOG.md).
 
 ## Visual Progress — Before & After
+
+The temporary CL-415 exterior now has an actual running-build capture. **No baseline was captured**: no earlier imported aircraft existed. This is a static inspection scene; flight controls, animation and runway contact remain pending. [Capture conditions, conversion, measured callback gaps and limits](docs/previews/m03-cl415-prototype/COMPARISON.md).
+
+![CL-415 prototype in the actual 1080p HDRP Windows client](docs/previews/m03-cl415-prototype/aircraft_after.png)
 
 M02 now displays received authoritative phase IDs, char, wind, water and canonical digest over the original calibration scene. These are actual separate-process game captures; this diagnostic is not world-space fire/VFX or M05A gameplay UI. [Provenance, six client captures and limits](docs/previews/m02-replication/COMPARISON.md).
 
@@ -81,6 +86,10 @@ Dispatch, aerial sorties, ground operations, persistent incidents and cooperativ
 
 ## Architecture & Technical Diagrams
 
+![Implemented temporary aircraft import path](docs/previews/m03-cl415-prototype/after.svg)
+
+[Previous path, editable generator and actual asset/build boundaries](docs/previews/m03-cl415-prototype/COMPARISON.md).
+
 ![Implemented M02 authority, validated replicas, ACK/repair and local checkpoints](docs/reports/m02-evidence/replication-after.svg)
 
 [Actual protocol/restart flow and bounded scope](docs/reports/2026-10-23-m02-replication.md), [editable SVG generator](scripts/render_m02_replication.py). Reliable RPCs are a bounded prototype; production interest/traffic/load qualification remains M08/M09.
@@ -90,6 +99,8 @@ Dispatch, aerial sorties, ground operations, persistent incidents and cooperativ
 ![Implemented M00 coastal import and release-measurement flow](docs/reports/m00-coastal-evidence/diagrams/after.svg)
 
 ## Performance Benchmarks
+
+The single static aircraft preview recorded 1489 callback intervals over 25.001 s: 59.56 average FPS, 32.51 1% low, p95 16.925 ms and a **206.632 ms gap at sample #2**. [Raw data, SVG, graph ticks/interval explanation and limitations](docs/previews/m03-cl415-prototype/COMPARISON.md#performance-diagnostic-and-graph-guide). This is not representative gameplay qualification or an optimization; CPU/GPU execution and confirmed dropped presentations remain unmeasured. [Deferred FL-07 investigation](docs/performance/FRAME_LOSS_REGISTER.md#m03-static-aircraft-callback-overrun--2026-10-24).
 
 M03's one-body pure-Step microdiagnostic records elapsed function cost separately from whole-host ticks/rendering. [Two-process timing, raw data and graph interpretation](docs/reports/2026-10-24-m03-debug-flight.md#timing-method-measured-results-and-graph-guide). It establishes no client FPS, optimization or server-capacity pass.
 
@@ -110,7 +121,7 @@ The new **1080p Balanced five-minute clear/static-fog pair** averaged 60.00/60.0
 | M00 | Unity/tooling audit, assemblies, build and benchmark foundation | Verified |
 | M01 | Authoritative fire and wind | Verified |
 | M02 | Multi-process replication and local checkpoint proof | Verified (bounded Windows scope) |
-| M03 | CL-415 flight and water physics | In Progress; numerical core verified, aircraft import blocked |
+| M03 | CL-415 flight and water physics | In Progress; numerical core and static prototype exterior verified; live flight/water pending |
 | M04 | HDRP coastal art and VFX | Pending |
 | M05 | Ground crews and working hose | Pending |
 | M05A | Player experience, controls, UI/UX, settings and training | Pending |
@@ -129,7 +140,7 @@ The instructions below are retained for the original development pack. This repo
 2. Open `docs/GAME_VISION.md` and `docs/GAME_DESIGN.md` first. Read the architectural constraints in `docs/TECHNICAL_ARCHITECTURE.md`, `docs/NETWORK_ARCHITECTURE.md` and `docs/PERFORMANCE_60FPS.md`.
 3. Use `prompts/00_KICKOFF.md` as the **first Codex message**. It tells Codex to inspect and document the current project, not recreate it.
 4. Use one subsequent prompt per implementation stage. Check actual build/test evidence, commit, push, update `TASKS.md` and `docs/DEVELOPMENT_STATUS.md`.
-5. Review `docs/ASSET_MANIFEST.md` before acquiring further content. Audited M00 terrain/PBR derivatives are included; original downloads remain local. Candidate listings and the licence-blocked CL-415 archive are not approved imports.
+5. Review `docs/ASSET_MANIFEST.md` before acquiring further content. Audited M00 terrain/PBR derivatives are included; original downloads remain local. Candidate listings remain unimported. The CL-415 is a user-authorized temporary prototype with retained notices and planned replacement before launch.
 
 ## Core docs
 

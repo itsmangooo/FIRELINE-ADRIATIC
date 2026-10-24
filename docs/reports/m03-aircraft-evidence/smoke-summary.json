@@ -1,0 +1,72 @@
+{
+  "serverRuntimeHashes": [
+    {
+      "sha256": "9416FE808B3B6E9612C6F715C547D4B7025FFD516327297674741EF30728BAB9",
+      "name": "Fireline.Server.dll"
+    },
+    {
+      "sha256": "2866F3A6C300F2BEB03FCFBE8E9D85B3A60BE0741A58B683B697EDEFFBED7E2C",
+      "name": "Fireline.Shared.dll"
+    },
+    {
+      "sha256": "71D71A9C8541FADC05452AD137FA214969F38B2BF17104519DB78CFCA30DF22D",
+      "name": "Fireline.Simulation.dll"
+    }
+  ],
+  "clientExecutable": "Builds/WindowsAircraftPreview/FirelineAircraftPreview.exe",
+  "scope": "One local dedicated server and 1 rendered client processes; connection handshake only",
+  "forcedD3D11": true,
+  "serverSha256": "3CACBB9917B8980B3B9E91E6120DE4D7456F108EE9B88622F5B85F7F3AEFF26F",
+  "requestedWidth": 1920,
+  "passed": true,
+  "port": 8190,
+  "processes": [
+    {
+      "exitCode": 0,
+      "role": "client-1",
+      "markers": [
+        "FIRELINE_CLIENT_START",
+        "FIRELINE_CLIENT_RENDERER graphics=Direct3D11 pipeline=HDRenderPipelineAsset quality=Balanced",
+        "FIRELINE_CLIENT_CONNECTED networkId=1",
+        "FIRELINE_CAPTURE_SAVED aircraft_after.png",
+        "FIRELINE_CLIENT_SMOKE passed=True frames=1605 renderedFrames=1604",
+        "FIRELINE_METRICS_SAVED client-diagnostic-metrics.json"
+      ],
+      "pid": 6656
+    },
+    {
+      "exitCode": 0,
+      "role": "server",
+      "markers": [
+        "FIRELINE_SERVER_START endpoint=127.0.0.1:8190",
+        "FIRELINE_WORLD_READY restored=False tick=0 checksum=ba0ecc7466f19ace",
+        "FIRELINE_SIMULATION_START hz=5 grid=32 cellM=10 seed=415 authority=server fixture=synthetic",
+        "FIRELINE_SERVER_HEADLESS valid=True graphics=Null cameras=0",
+        "FIRELINE_SERVER_CONNECTIONS count=0",
+        "FIRELINE_SERVER_CONNECTIONS count=1",
+        "FIRELINE_SERVER_CONNECTIONS count=0",
+        "FIRELINE_SERVER_SMOKE passed=True peakClients=1 ticks=5399",
+        "FIRELINE_SIMULATION_STOP ticks=449 checksum=aa5565ca9c4e5cec"
+      ],
+      "pid": 34812
+    }
+  ],
+  "rawLogs": "Builds\\Smoke\\20261024-094831",
+  "clientRuntimeHashes": [
+    {
+      "sha256": "098A129EF6B984872EB0A0D7EE81B8329FE70AC96C5A57060B7329C814EDD9F9",
+      "name": "Fireline.Client.dll"
+    },
+    {
+      "sha256": "972BDA8305F620978581A5CDD6B4F27DA72793D46AB7CC807CC53097F8D6615A",
+      "name": "Fireline.Shared.dll"
+    },
+    {
+      "sha256": "2B8CC2762D1E31EE2C454CEA3026513D3E5C5845EC6D3E282B61040C0B369318",
+      "name": "Fireline.Simulation.dll"
+    }
+  ],
+  "utc": "2026-10-24T07:50:13.6990271Z",
+  "requestedHeight": 1080,
+  "clientSha256": "9806ABDE4A406ED68647E9505852C49F6AA72A372F4F084E2AA2821AFFEA57A2"
+}

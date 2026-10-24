@@ -1,5 +1,9 @@
 # Asset licenses and provenance
 
+## CL-415 prototype decision — 2026-10-24
+
+The user explicitly authorized importing the official archive for temporary prototype use despite the previously recorded conflicting notices, and intends a commercial replacement before launch. The import retains all original source bytes and the BARANGER Emmanuel / Gary BROWN notice. This is a scoped project decision, not a declaration that the contributors' rights were reconciled. The prior import hold below is superseded for the prototype; replace or resolve all applicable rights/notices before production distribution. [Original source, hashes and decision](../AssetSources/Aircraft/CL415/AUDIT.md), [distributed notices](../THIRD_PARTY_ASSETS.md).
+
 ## M00 coastal source audit — 2026-10-22
 
 The five imported surfaces are Poly Haven CC0 assets: Rocky Terrain by Amal Kumar; Dry Ground Rocks, Forest Ground 01, Coast Sand 01 and Burned Ground 01 by Rob Tuytel. Checked the official asset pages and [licence](https://polyhaven.com/license), then obtained real 2K map files through the [official public API](https://github.com/Poly-Haven/Public-API/blob/master/ToS.md), using the required project-specific user-agent. Size and upstream MD5 checks passed; input/derived SHA-256, URLs and creator metadata are retained in the [acquisition manifest](../AssetSources/Environment/acquisition-manifest.json). No preview renders were used as textures.
@@ -26,7 +30,7 @@ No third-party aircraft, vegetation, texture or audio source was acquired during
 | ID | Asset | Author | Original URL | License and URL | Changed? | Attribution text | Source hash | Used in build? | Approval |
 |---|---|---|---|---|---|---|---|---|
 | PH-ROCK-01 | Rocky Terrain | Poly Haven / page author | https://polyhaven.com/a/rocky_terrain | CC0 https://polyhaven.com/license | TBD | optional | TBD | No | Candidate |
-| SF-CL415 | CL-415 | helijah / textures credited to Gary BROWN | https://sketchfab.com/3d-models/cl415-bf3eaa6a1f4f4fc18df9b05cf40de927 | Listing CC BY 4.0; embedded GPL notice unresolved | No import | Unresolved contributor/licence notices | See source-audit.json | No | Downloaded; import blocked |
+| SF-CL415 | CL-415 | helijah / textures credited to Gary BROWN | https://sketchfab.com/3d-models/cl415-bf3eaa6a1f4f4fc18df9b05cf40de927 | Listing CC BY 4.0; embedded GPL notice unresolved | Unity group derivative, HDRP conversion, orientation and static preview | Original contributor notices retained | See source-audit.json | Yes: separate static preview client only | User-authorized temporary prototype; replace before launch |
 
 ## Attribution policy
 

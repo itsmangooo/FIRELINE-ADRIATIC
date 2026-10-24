@@ -8,3 +8,10 @@
 
 # Detailed Unity build inventories contain the literal built-in asset name "Built-in Sprite: ".
 docs/reports/**/*-packed-assets.txt whitespace=-blank-at-eol
+
+# Preserve exact source bytes; avoid expanding large mesh data into source-code reviews.
+Assets/Fireline/Content/Aircraft/CL415Prototype/Source/*.obj binary
+Assets/Fireline/Content/Aircraft/CL415Prototype/Source/*.mtl -text
+Assets/Fireline/Content/Aircraft/CL415Prototype/Source/*.txt -text
+Assets/Fireline/Content/Aircraft/CL415Prototype/Import/*.obj binary
+Assets/Fireline/Content/Aircraft/CL415Prototype/Import/*.mtl -text

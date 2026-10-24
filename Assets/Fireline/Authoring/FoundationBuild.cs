@@ -93,6 +93,8 @@ namespace Fireline.Authoring
         /// Build the Windows coastal render fixture with timing counters and bundled asset notices.
         /// </summary>
         public static void BuildBenchmarkClient() => Build(false, benchmark: true);
+        /// <summary>Build the isolated static aircraft inspection client with its original asset notices.</summary>
+        public static void BuildAircraftPreviewClient() => Build(false, aircraftPreview: true);
         /// <summary>
         /// Cross-build the Linux x64 headless server; running that player is a separate verification step.
         /// </summary>
@@ -103,15 +105,15 @@ namespace Fireline.Authoring
         /// Temporarily select pipeline/backend/quality options, write evidence, and restore settings in finally.
         /// The inventory check covers named presentation assets, not every possible graphics resource.
         /// </summary>
-        private static void Build(bool server, bool benchmark = false, bool linux = false)
+        private static void Build(bool server, bool benchmark = false, bool linux = false, bool aircraftPreview = false)
         {
             if (BuildPipeline.isBuildingPlayer || EditorApplication.isCompiling || EditorApplication.isPlayingOrWillChangePlaymode)
                 throw new InvalidOperationException("Wait until the Editor is idle before building.");
 
-            string role = linux ? "linux-server" : benchmark ? "benchmark-client" : server ? "server" : "client";
+            string role = aircraftPreview ? "aircraft-preview-client" : linux ? "linux-server" : benchmark ? "benchmark-client" : server ? "server" : "client";
             Directory.CreateDirectory(Evidence);
             string resultPath = $"{Evidence}/{role}-build.json";
-            string scene = benchmark ? CoastalBenchmarkAuthoring.ScenePath : server ? ServerScene : ClientScene;
+            string scene = aircraftPreview ? AircraftPrototypeAuthoring.ScenePath : benchmark ? CoastalBenchmarkAuthoring.ScenePath : server ? ServerScene : ClientScene;
             if (!File.Exists(scene))
                 throw new BuildFailedException("Run FoundationBuild.CreateScenes first.");
 
@@ -145,11 +147,11 @@ namespace Fireline.Authoring
                     QualitySettings.SetQualityLevel(Array.IndexOf(QualitySettings.names, "Balanced"), false);
                 }
                 PlayerSettings.SetScriptingBackend(server ? NamedBuildTarget.Server : NamedBuildTarget.Standalone, ScriptingImplementation.Mono2x);
-                if (benchmark) PlayerSettings.enableFrameTimingStats = true;
+                if (benchmark || aircraftPreview) PlayerSettings.enableFrameTimingStats = true;
                 var options = new BuildPlayerOptions
                 {
                     scenes = new[] { scene },
-                    locationPathName = linux ? "Builds/LinuxServer/FirelineServer.x86_64" : benchmark ? "Builds/WindowsBenchmark/FirelineBenchmark.exe" : server ? "Builds/WindowsServer/FirelineServer.exe" : "Builds/WindowsClient/FirelineClient.exe",
+                    locationPathName = aircraftPreview ? "Builds/WindowsAircraftPreview/FirelineAircraftPreview.exe" : linux ? "Builds/LinuxServer/FirelineServer.x86_64" : benchmark ? "Builds/WindowsBenchmark/FirelineBenchmark.exe" : server ? "Builds/WindowsServer/FirelineServer.exe" : "Builds/WindowsClient/FirelineClient.exe",
                     target = linux ? BuildTarget.StandaloneLinux64 : BuildTarget.StandaloneWindows64,
                     subtarget = (int)(server ? StandaloneBuildSubtarget.Server : StandaloneBuildSubtarget.Player),
                     options = BuildOptions.DetailedBuildReport | BuildOptions.StrictMode | (server ? BuildOptions.CleanBuildCache : BuildOptions.None),
@@ -162,7 +164,8 @@ namespace Fireline.Authoring
                 // Detailed reports also list source scripts compiled into assemblies. Those
                 // are not serialized render assets and must not cause a false isolation failure.
                 bool visualAssets = assetPaths.Where(p => !p.EndsWith(".cs", StringComparison.OrdinalIgnoreCase))
-                    .Any(p => p.Contains("high-definition") || p.StartsWith("Assets/Settings/") || p.EndsWith(".mat"));
+                    .Any(p => p.Contains("high-definition") || p.StartsWith("Assets/Settings/") || p.EndsWith(".mat")
+                        || p.StartsWith("Assets/Fireline/Content/Aircraft/"));
                 var result = new BuildEvidence
                 {
                     role = role, unity = Application.unityVersion, result = report.summary.result.ToString(),
@@ -180,6 +183,14 @@ namespace Fireline.Authoring
                     Directory.CreateDirectory(legal);
                     File.Copy("THIRD_PARTY_ASSETS.md", Path.Combine(legal, "THIRD_PARTY_ASSETS.md"), true);
                     File.Copy("AssetSources/Environment/Copernicus/cop_dem_licenses_2025.pdf", Path.Combine(legal, "cop_dem_licenses_2025.pdf"), true);
+                }
+                if (aircraftPreview)
+                {
+                    string legal = Path.Combine(Path.GetDirectoryName(options.locationPathName), "Legal");
+                    Directory.CreateDirectory(legal);
+                    File.Copy("THIRD_PARTY_ASSETS.md", Path.Combine(legal, "THIRD_PARTY_ASSETS.md"), true);
+                    File.Copy("AssetSources/Aircraft/CL415/Read-Me.upstream.txt", Path.Combine(legal, "CL415-Read-Me.upstream.txt"), true);
+                    File.Copy("AssetSources/Aircraft/CL415/AUDIT.md", Path.Combine(legal, "CL415-AUDIT.md"), true);
                 }
                 string failurePath = $"{Evidence}/{role}-build-failure.txt";
                 if (File.Exists(failurePath)) File.Delete(failurePath);

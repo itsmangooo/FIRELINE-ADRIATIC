@@ -1,0 +1,12 @@
+{
+    "role": "aircraft-preview-client",
+    "unity": "6000.6.7f1",
+    "result": "Succeeded",
+    "errors": 0,
+    "warnings": 501,
+    "seconds": 368.2884276,
+    "bytes": 202500580,
+    "development": false,
+    "subtarget": 2,
+    "containsVisualAssets": true
+}

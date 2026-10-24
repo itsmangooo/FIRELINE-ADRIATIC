@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="194.4pt" viewBox="0 0 864 194.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 194.4
+L 864 194.4
+L 864 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <g id="patch_2">
+     <path d="M 63.232813 127.376744
+L 168.967188 127.376744
+Q 175.967188 127.376744 175.967188 120.376744
+L 175.967188 96.372056
+Q 175.967188 89.372056 168.967188 89.372056
+L 63.232813 89.372056
+Q 56.232813 89.372056 56.232813 96.372056
+L 56.232813 120.376744
+Q 56.232813 127.376744 63.232813 127.376744
+z
+" style="fill: #e9f1f8; stroke: #334d68; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(63.232813 104.97147)">Audited exact source</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(64.364063 116.973423)">OBJ + MTL + 9 PNGs</text>
+   </g>
+   <g id="patch_3">
+    <path d="M 198.830511 108.3744
+Q 221.400441 108.3744 241.957908 108.3744
+" style="fill: none; stroke: #334d68; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 237.957908 106.3744
+L 241.957908 108.3744
+L 237.957908 110.3744
+" style="fill: none; stroke: #334d68; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_2">
+    <g id="patch_4">
+     <path d="M 271.767188 127.377134
+L 381.632813 127.377134
+Q 388.632813 127.377134 388.632813 120.377134
+L 388.632813 96.371666
+Q 388.632813 89.371666 381.632813 89.371666
+L 271.767188 89.371666
+Q 264.767188 89.371666 264.767188 96.371666
+L 264.767188 120.377134
+Q 264.767188 127.377134 271.767188 127.377134
+z
+" style="fill: #e9f1f8; stroke: #334d68; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(285.035156 104.97108)">Unity OBJ import</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(271.767188 116.973814)">11 HDRP/Lit materials</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 409.430511 108.3744
+Q 432.000441 108.3744 452.557908 108.3744
+" style="fill: none; stroke: #334d68; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 448.557908 106.3744
+L 452.557908 108.3744
+L 448.557908 110.3744
+" style="fill: none; stroke: #334d68; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_3">
+    <g id="patch_6">
+     <path d="M 480.930469 127.377134
+L 593.669531 127.377134
+Q 600.669531 127.377134 600.669531 120.377134
+L 600.669531 96.371666
+Q 600.669531 89.371666 593.669531 89.371666
+L 480.930469 89.371666
+Q 473.930469 89.371666 473.930469 96.371666
+L 473.930469 120.377134
+Q 473.930469 127.377134 480.930469 127.377134
+z
+" style="fill: #e9f1f8; stroke: #334d68; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(483.175781 104.97108)">Static prefab + scene</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(480.930469 116.973814)">No rig or flight binding</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 620.030511 108.3744
+Q 642.600441 108.3744 663.157908 108.3744
+" style="fill: none; stroke: #334d68; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 659.157908 106.3744
+L 663.157908 108.3744
+L 659.157908 110.3744
+" style="fill: none; stroke: #334d68; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <g id="patch_8">
+     <path d="M 688.186719 127.377134
+L 807.613281 127.377134
+Q 814.613281 127.377134 814.613281 120.377134
+L 814.613281 96.371666
+Q 814.613281 89.371666 807.613281 89.371666
+L 688.186719 89.371666
+Q 681.186719 89.371666 681.186719 96.371666
+L 681.186719 120.377134
+Q 681.186719 127.377134 688.186719 127.377134
+z
+" style="fill: #e9f1f8; stroke: #334d68; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(694.751562 104.97108)">Rendered client build</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(688.186719 116.973814)">Capture + raw intervals</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 13px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="432" y="20.88" transform="rotate(-0 432 20.88)">AFTER — user-authorized temporary prototype import</text>
+   </g>
+  </g>
+ </g>
+</svg>

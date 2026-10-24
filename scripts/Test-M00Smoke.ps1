@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Run one local dedicated server and two visible rendered clients to verify connection and capture paths.
+Run one local dedicated server and one or two visible rendered clients to verify connection and capture paths.
 .DESCRIPTION
 Requires existing role-isolated builds and a free UDP port. Writes fresh markers, screenshot, raw metrics and hashes.
 Stops only processes started by this invocation on failure. Connection success does not prove shared gameplay state.
@@ -12,12 +12,27 @@ Rendered duration in seconds before each client checks success; server allows an
 Repository-relative destination for markers, diagnostic metrics and process summary.
 .PARAMETER CapturePath
 Repository-relative PNG destination for the first client's actual rendered frame.
+.PARAMETER ClientRelativeExe
+Repository-relative rendered client executable; permits isolated inspection scenes.
+.PARAMETER ClientCount
+Number of local clients required by the server; defaults to the original two-client proof.
+.PARAMETER ForceD3D11
+Use the verified diagnostic graphics API without changing the project's API configuration.
+.PARAMETER Width
+Requested render width; actual dimensions are checked in the saved metrics.
+.PARAMETER Height
+Requested render height; actual dimensions are checked in the saved metrics.
 #>
 param(
     [ValidateRange(1024, 65535)][int]$Port = 7979,
     [ValidateRange(10, 120)][int]$ClientSeconds = 20,
     [string]$EvidenceRoot = 'docs/reports/m00-evidence',
-    [string]$CapturePath = 'docs/previews/m00-foundation/foundation_after.png'
+    [string]$CapturePath = 'docs/previews/m00-foundation/foundation_after.png',
+    [string]$ClientRelativeExe = 'Builds/WindowsClient/FirelineClient.exe',
+    [ValidateRange(1,2)][int]$ClientCount = 2,
+    [switch]$ForceD3D11,
+    [ValidateRange(640,3840)][int]$Width = 1280,
+    [ValidateRange(360,2160)][int]$Height = 720
 )
 $ErrorActionPreference = 'Stop'
 if (-not ('FirelineM00WindowPlacement' -as [type])) {
@@ -34,7 +49,7 @@ public static class FirelineM00WindowPlacement
 }
 $projectRoot = Split-Path $PSScriptRoot -Parent
 $serverExe = Join-Path $projectRoot 'Builds/WindowsServer/FirelineServer.exe'
-$clientExe = Join-Path $projectRoot 'Builds/WindowsClient/FirelineClient.exe'
+$clientExe = Join-Path $projectRoot $ClientRelativeExe
 $runDirectory = Join-Path $projectRoot ('Builds/Smoke/' + (Get-Date -Format 'yyyyMMdd-HHmmss'))
 $evidenceDirectory = Join-Path $projectRoot $EvidenceRoot
 $capture = Join-Path $projectRoot $CapturePath
@@ -44,7 +59,8 @@ foreach ($binary in @($serverExe, $clientExe)) {
     if (-not (Test-Path -LiteralPath $binary)) { throw "Missing build: $binary" }
 }
 $serverAssemblies = @(Get-ChildItem (Join-Path $projectRoot 'Builds/WindowsServer/FirelineServer_Data/Managed') -Filter 'Fireline*.dll')
-$clientAssemblies = @(Get-ChildItem (Join-Path $projectRoot 'Builds/WindowsClient/FirelineClient_Data/Managed') -Filter 'Fireline*.dll')
+$clientManaged = Join-Path (Split-Path $clientExe -Parent) (([IO.Path]::GetFileNameWithoutExtension($clientExe)) + '_Data/Managed')
+$clientAssemblies = @(Get-ChildItem $clientManaged -Filter 'Fireline*.dll')
 if ($serverAssemblies.Name -contains 'Fireline.Client.dll' -or $clientAssemblies.Name -contains 'Fireline.Server.dll') {
     throw 'Client/server assembly isolation failed.'
 }
@@ -64,7 +80,7 @@ try {
     $server = Start-Process -FilePath $serverExe -WorkingDirectory $projectRoot -WindowStyle Hidden -PassThru -ArgumentList @(
         '-batchmode', '-nographics', '-logFile', ('"' + $serverLog + '"'),
         '--fireline-bind', '127.0.0.1', '--fireline-port', $Port,
-        '--fireline-smoke-seconds', $serverSeconds, '--fireline-min-clients', '2')
+        '--fireline-smoke-seconds', $serverSeconds, '--fireline-min-clients', $ClientCount)
     $processes += $server
     $deadline = [DateTime]::UtcNow.AddSeconds(25)
     do {
@@ -74,11 +90,12 @@ try {
     } until ($ready -or [DateTime]::UtcNow -gt $deadline)
     if (-not $ready) { throw 'Server startup timed out.' }
 
-    foreach ($number in 1..2) {
+    foreach ($number in 1..$ClientCount) {
         $clientLog = Join-Path $runDirectory "client-$number.log"
-        $clientArgs = @('-logFile', ('"' + $clientLog + '"'), '-screen-width', '1280', '-screen-height', '720',
+        $clientArgs = @('-logFile', ('"' + $clientLog + '"'), '-screen-width', $Width, '-screen-height', $Height,
             '-screen-fullscreen', '0', '--fireline-connect', '127.0.0.1', '--fireline-port', $Port,
             '--fireline-smoke-seconds', $ClientSeconds)
+        if ($ForceD3D11) { $clientArgs += '-force-d3d11' }
         if ($number -eq 1) { $clientArgs += @('--fireline-capture', ('"' + $capture + '"'), '--fireline-metrics', ('"' + $metrics + '"')) }
         # These are interactive game clients under visual QA. Hidden windows can skip
         # presentation completely on Windows, invalidating screenshots and frame samples.
@@ -126,7 +143,8 @@ try {
     }
     # Bind the run to executable AND managed DLL hashes; the Unity launcher alone does not identify C# changes.
     $summary = @{
-        utc = [DateTime]::UtcNow.ToString('o'); scope = 'One local dedicated server and two rendered client processes; connection handshake only'
+        utc = [DateTime]::UtcNow.ToString('o'); scope = "One local dedicated server and $ClientCount rendered client processes; connection handshake only"
+        clientExecutable = $ClientRelativeExe; requestedWidth = $Width; requestedHeight = $Height; forcedD3D11 = [bool]$ForceD3D11
         port = $Port; passed = $true; processes = @($results)
         serverSha256 = (Get-FileHash $serverExe -Algorithm SHA256).Hash
         clientSha256 = (Get-FileHash $clientExe -Algorithm SHA256).Hash

@@ -1,5 +1,17 @@
 # Frame-loss investigation register
 
+## M03 static aircraft callback overrun — 2026-10-24
+
+**FL-07: measured location; attribution and optimization deferred.** One static aircraft/pad client at 1920×1080 Balanced/VSync=1 D3D11, one local headless server; Editor closed, i5-9400F / GTX 1660 SUPER / driver 32.0.16.2101. [Actual run, raw samples, SVG and graph guide](../previews/m03-cl415-prototype/COMPARISON.md#performance-diagnostic-and-graph-guide).
+
+- Maximum: retained callback **#2**, **206.632495 ms**, start **0.017872 s**, end **0.224504 s** after the recording origin near the five-second rendered warm-up boundary.
+- Recording: **1489 samples / 25.000917 s**; 744 intervals >16.667 ms, one >33.333 ms. These are measured callback overruns, **not 744 confirmed lost frames**. No presentation trace exists.
+- [Every interval with exact start/end and threshold flags](../reports/m03-aircraft-evidence/callback-intervals.marked.csv), [ten largest gaps and plot scales](../reports/m03-aircraft-evidence/callback-analysis.json). Upper SVG panel uses 5 s X / 25 ms Y rulers; lower 0–50 ms zoom uses 10 ms Y rulers and clips the large spike. Neither ruler is the server's 0.2 s fire tick.
+- Observation site: `ClientProbe.OnCameraRendered`. Capture/readback/PNG encoding begins around the same warm-up boundary in `ClientProbe.Capture`; shader/asset warm-up, driver activity and OS scheduling are also potential investigation locations. **No synchronized CPU/GPU/GC/capture timeline proves any cause.** 144 mesh renderers are an imported geometry count, not a draw-call measurement or demonstrated bottleneck.
+- M04/M09 follow-up: reproduce with synchronized capture/event and profiler/presentation timelines, separate capture-on/off diagnostic runs, qualify representative coastal/smoky/flight scenes, then optimize only with equivalent BEFORE/AFTER measurements. Keep this raw observation and existing presets. No optimization was performed in this increment; FL-06/NET-01 remain unchanged.
+
+![Actual static aircraft callback gap and vertical zoom](../previews/m03-cl415-prototype/callback-intervals.svg)
+
 ## M03 numerical Step cost observations — 2026-10-24
 
 The new debug-flight headless path records isolated function intervals, **not frame-loss evidence**. p95 is 1.700/2.000 µs across the two runs; maxima 45.700/47.900 µs occur at retained call #1 after 100 warm-ups. [All actual samples, SVG and graph reader guide](../reports/2026-10-24-m03-debug-flight.md#timing-method-measured-results-and-graph-guide). No rendered client is active in this timing diagnostic, and no causal JIT/CPU/GC trace exists. Do not count these as dropped presentations, infer client smoothness or claim an optimization.

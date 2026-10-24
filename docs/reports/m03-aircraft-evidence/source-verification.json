@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "archiveSha256": "1b45ee5122ed6800bb5c5b5469f7ac29722e38c56d0e379dfe56bcc7bf9a6d8c",
+  "importedChecked": true,
+  "files": [
+    {
+      "path": "Assets/Fireline/Content/Aircraft/CL415Prototype/Source/adf.png",
+      "bytes": 50259,
+      "sha256": "bacfba337a81725ba0bc79ea98c8486316160a9b2c5a09885607ba6240ead654"
+    },
+    {
+      "path": "Assets/Fireline/Content/Aircraft/CL415Prototype/Source/ai.png",
+      "bytes": 22880,
+      "sha256": "c064d795b4c50d555e198d6ac2146d319817ceb4e967f1508a0f779a2e0f6d14"
+    },
+    {
+      "path": "Assets/Fireline/Content/Aircraft/CL415Prototype/Source/alt.png",
+      "bytes": 133539,
+      "sha256": "2fac62b625575c2efd68775645d7bf2e238b42af819602ddb122cd98f465b176"
+    },
+    {
+      "path": "Assets/Fireline/Content/Aircraft/CL415Prototype/Source/asi.png",
+      "bytes": 39579,
+      "sha256": "8e861b531d73740c2daf75231f352480df49ec24fe096f4a88192cf013dd399d"
+    },
+    {
+      "path": "Assets/Fireline/Content/Aircraft/CL415Prototype/Source/cl415.mtl",
+      "bytes": 1974,
+      "sha256": "c402508e825f1453ad5306b187ad529fcef201bc85cc401df76500b0aec117f9"
+    },
+    {
+      "path": "Assets/Fireline/Content/Aircraft/CL415Prototype/Source/cl415.obj",
+      "bytes": 1847860,
+      "sha256": "325f55f8173993a78db47de391d878cd2157f0ff7d27745efb4be25ac91326ec"
+    },
+    {
+      "path": "Assets/Fireline/Content/Aircraft/CL415Prototype/Source/interior.png",
+      "bytes": 23907,
+      "sha256": "2c6478b7689a15c2233892f90f7a6b56c8ff713df9b8f677bed5e92d1f4cb12f"
+    },
+    {
+      "path": "Assets/Fireline/Content/Aircraft/CL415Prototype/Source/panel.png",
+      "bytes": 20785,
+      "sha256": "48ef540af20aa5956469183c9a2b29c9316aa63236edc315a363dda3b8855833"
+    },
+    {
+      "path": "Assets/Fireline/Content/Aircraft/CL415Prototype/Source/Read-Me.txt",
+      "bytes": 281,
+      "sha256": "9e3f2a7376df83d710b09ab028e3a5eac601ac984581378fb2d402e3fd5d8631"
+    },
+    {
+      "path": "Assets/Fireline/Content/Aircraft/CL415Prototype/Source/texture.png",
+      "bytes": 2249559,
+      "sha256": "7c4d203c5f514afc3482fbd4e34a3f6bd124248a7630b3ce0f392cadfccfc19b"
+    },
+    {
+      "path": "Assets/Fireline/Content/Aircraft/CL415Prototype/Source/tmp.png",
+      "bytes": 12372,
+      "sha256": "280d9c7275515b304ed99a1ed9d4d92aa393d43a9ad9698ce6b7035ba7fb7e49"
+    },
+    {
+      "path": "Assets/Fireline/Content/Aircraft/CL415Prototype/Source/vsi.png",
+      "bytes": 24474,
+      "sha256": "3219b1eb9104019fe4b1687035b19ea8e07177fc4deff9174d5cd83cb76938dd"
+    },
+    {
+      "path": "Assets/Fireline/Content/Aircraft/CL415Prototype/Import/cl415-unity.obj",
+      "bytes": 1847860,
+      "sha256": "c2117523101fd4fef378178d3ebaad7d4f1fd3108d978eb88a826896a4123d6b"
+    },
+    {
+      "path": "Assets/Fireline/Content/Aircraft/CL415Prototype/Import/cl415.mtl",
+      "bytes": 2064,
+      "sha256": "2ea30776f4d40408d2a869099f02c19a3ca66c22aed10f1f89f6c78e3e9182b9"
+    }
+  ]
+}

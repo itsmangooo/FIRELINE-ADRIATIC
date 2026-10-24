@@ -1,0 +1,81 @@
+{
+  "samples": 1489,
+  "sampledSeconds": 25.000916983000934,
+  "above16_667ms": 744,
+  "above33_333ms": 1,
+  "maximumSample": 2,
+  "maximumMs": 206.63249492645264,
+  "maximumRecordedSeconds": 0.22450419515371323,
+  "plotGuide": {
+    "xMajorSpacingSeconds": 5,
+    "fullYMajorTicksMs": [
+      0.0,
+      25.0,
+      50.0,
+      75.0,
+      100.0,
+      125.0,
+      150.0,
+      175.0,
+      200.0,
+      225.0
+    ],
+    "zoomYRangeMs": [
+      0,
+      50
+    ],
+    "zoomYMajorSpacingMs": 10
+  },
+  "largestIntervals": [
+    {
+      "sample": 2,
+      "recordedSeconds": 0.22450419515371323,
+      "ms": 206.63249492645264
+    },
+    {
+      "sample": 101,
+      "recordedSeconds": 1.8715802943333983,
+      "ms": 19.642500206828117
+    },
+    {
+      "sample": 93,
+      "recordedSeconds": 1.7367518935352564,
+      "ms": 19.17389966547489
+    },
+    {
+      "sample": 103,
+      "recordedSeconds": 1.9042264949530363,
+      "ms": 18.849000334739685
+    },
+    {
+      "sample": 41,
+      "recordedSeconds": 0.8697621934115887,
+      "ms": 18.78039911389351
+    },
+    {
+      "sample": 104,
+      "recordedSeconds": 1.9229930955916643,
+      "ms": 18.766600638628006
+    },
+    {
+      "sample": 96,
+      "recordedSeconds": 1.7860201941803098,
+      "ms": 18.18710006773472
+    },
+    {
+      "sample": 74,
+      "recordedSeconds": 1.418535390868783,
+      "ms": 18.044399097561836
+    },
+    {
+      "sample": 1,
+      "recordedSeconds": 0.01787170022726059,
+      "ms": 17.87170022726059
+    },
+    {
+      "sample": 53,
+      "recordedSeconds": 1.0680054938420653,
+      "ms": 17.84669980406761
+    }
+  ]
+}

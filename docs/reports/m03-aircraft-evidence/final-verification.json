@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "localMarkdownLinksChecked": 242,
+  "rawCallbackStatisticsIndependentlyRecomputed": true,
+  "svgFilesParsed": 3,
+  "screenshotSize": [
+    1920,
+    1080
+  ],
+  "screenshotSha256": "4eca774894c44909ba00474f39acb2355a01a273a19de84181ec3574f08560ed",
+  "preservedConfigurationFiles": 5,
+  "userSkyUnchangedAndUnstaged": true,
+  "packageFilesUnchanged": true,
+  "unityTestsPassed": 60,
+  "documentedCSharpMembers": 263,
+  "csharpFiles": 32,
+  "runtimeExits": [
+    0,
+    0
+  ],
+  "limits": "Static visual import and handshake only; not full M03, flight authority, representative performance or capacity acceptance."
+}

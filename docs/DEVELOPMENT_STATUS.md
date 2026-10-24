@@ -1,5 +1,11 @@
 # Development status — handoff
 
+## Latest increment — 2026-10-24 M03 aircraft prototype
+
+M03 remains **In Progress**. The user authorized temporary use of the downloaded official CL-415 model and plans replacement before launch. **60/60 Unity tests**, fresh Windows preview/server builds (0 errors; 501/505 warnings), inspected 1080p capture and real client/server smoke pass; server packages no aircraft content. A 206.632 ms callback gap at sample #2 is recorded as FL-07 with optimization deferred. The separate static inspection prefab now preserves 144 named meshes / 35,799 triangles with eleven HDRP materials and nine source textures. Original source bytes/notices remain intact; a verified object-to-group derivative preserves parts that Unity's direct OBJ import merged. [Actual build, capture, performance and limitations](previews/m03-cl415-prototype/COMPARISON.md). This supersedes the import hold in historical entries below for the prototype only; it does not certify production rights or aerodynamic calibration.
+
+The numerical solver remains independent. Next: live dedicated aircraft state, pilot/input permissions, replication, physical runway contact, controls/cameras/telemetry, calibrated aircraft configuration and later scoop/drop integration. M05A remains Pending. Existing NET-01 and performance hitches remain recorded for later investigation.
+
 ## Current progress — 2026-10-24 M03
 
 **M00/M01/M02 Verified; M03 In Progress.** Implemented the independent `DEBUG_FLIGHT_ONLY_V1` numerical flight core without importing the disputed CL-415 content. Pure SI lift/drag/thrust/gravity, estimated controls/stall/flap/gear response, centerline mass/CoG/inertia, gyro-coupled quaternion stepping and validation are verified by **57/57 Unity tests**, a successful current Windows dedicated build (0 errors / 505 warnings), and two separate headless player processes with exact serialized replay. The corrected full runner passes independent analytic/state/raw-file checks. Current server + existing M02 clients also passed three-client fire late-join/repair/restart regression with unchanged fire digest. [Complete report, actual data, failed initialization attempt and graph guides](reports/2026-10-24-m03-debug-flight.md), [reproduce](M03_BUILD_AND_TEST.md), [actual equations/diagrams](physics/debug-flight/COMPARISON.md).

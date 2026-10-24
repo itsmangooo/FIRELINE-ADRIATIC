@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "roles": {
+    "server": [
+      "Fireline.Server.dll",
+      "Fireline.Shared.dll",
+      "Fireline.Simulation.dll"
+    ],
+    "client": [
+      "Fireline.Client.dll",
+      "Fireline.Shared.dll",
+      "Fireline.Simulation.dll"
+    ]
+  },
+  "clientAircraftAssetPaths": 22,
+  "clientAircraftTextures": 9,
+  "serverAircraftAssetPaths": 0,
+  "serverPresentationAssetGuardPassed": true,
+  "bundledNoticesByteMatch": true
+}
