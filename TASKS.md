@@ -76,7 +76,7 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 
 ## M03 — CL-415 flight & water physics
 
-**Status: In Progress — engineering view/control increment verified 2026-10-24; full milestone open.** M02 is verified. [Current 94 EditMode + 3 PlayMode checks, zero-error Windows builds, rendered owner/actual late observer, 401 source-pose matches and 1,723 checked display frames](docs/reports/2026-10-24-m03-flight-view.md). `DEBUG_FLIGHT_ONLY_V1` retains estimated parameters. The temporary exterior is bound in a separate engineering view; original static preview remains. This is a dry taxi/control proof, not an airborne/cockpit/water completion. [Actual images, input/pose equations and limits](docs/previews/m03-flight-view/COMPARISON.md).
+**Status: In Progress — finite-fuel increment verified 2026-10-24; full milestone open.** M02 is verified. [Current 102 EditMode + 3 PlayMode checks, zero-error Windows builds, two exact 8,800-sample numerical replays, rendered owner/actual late observer, 403 source-pose matches and 1,724 checked display frames](docs/reports/2026-10-24-m03-fuel.md). `DEBUG_FLIGHT_ONLY_V1` and installed `DEBUG_FUEL_V1` retain estimated parameters. The temporary exterior is bound in a separate engineering view; original static preview remains. This is a finite-resource taxi/control proof, not an airborne/cockpit/water completion. [Actual equations, diagrams, matched results and limits](docs/physics/aircraft-fuel/COMPARISON.md).
 
 - [x] Pure SI debug force/mass/CoG/inertia, quaternion 6DOF candidate stepping and bounded numerical inputs, with analytic and repeated real headless-player evidence. This does not complete the CL-415/telemetry/flight-loop tasks below.
 - [x] Pure bounded debug runway-contact prerequisite: three-point gear support, CoG/rotating-point forces, Coulomb-limited braking/steering, finite surface and candidate rejection. **71 tests and two actual headless 19,800-sample runs pass**; not a live aircraft, terrain/airframe collision or landing-gameplay completion. [Equations, matched comparisons, diagrams and evidence](docs/physics/runway-contact/COMPARISON.md).
@@ -84,7 +84,8 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 - [ ] Add complete airframe/terrain/obstacle collision; the live debug rectangle/three tire points do not cover wingtip, belly, slope or swept impacts. Unsupported states currently freeze/release/fail rather than resolving a crash.
 - [x] Bind the temporary visual to authoritative poses using explicit debug CoG/body offsets; add keyboard/gamepad test mapping, two external cameras, readable engineering telemetry and tested 100 ms receipt interpolation without extrapolation. 94 EditMode/3 PlayMode checks and actual rendered-owner/late-observer proof pass, with real BEFORE/AFTER screenshots and measured callback locations. [Evidence](docs/reports/2026-10-24-m03-flight-view.md).
 - [ ] Calibrate real mesh/gear/CoG/pivots, add usable cockpit/animated surfaces, prediction/correction and impaired-network flight tests; qualify actual airborne route/landings and representative populated coastal/smoky performance. Existing view is a dry synthetic runway prototype; basic connected-seat authorization is not production admission/unit/pilot qualifications.
-- [ ] Replace debug estimates with documented aircraft/variant config and calibrated curves; implement fuel consumption and actual variable-mass/resource behavior.
+- [ ] Replace debug estimates with documented aircraft/variant config and calibrated curves; extend installed debug fuel debit/mass behavior with calibrated flow, startup/refueling and actual water/resource transfer.
+- [x] Install finite **debug** fuel debit/starvation thrust and mass/CoG/inertia updates in server-owned accepted steps; verify partial depletion, empty fuel, failed-step/discarded-time accounting and equivalent legacy/new numerical cases. [Actual model and independent evidence](docs/physics/aircraft-fuel/COMPARISON.md). Variant calibration, startup/refueling, resource persistence and water transfer remain open.
 
 - [x] Acquire/audit the official original archive and import its exterior as a **user-authorized temporary prototype**: 144 named meshes, eleven HDRP materials, nine textures, orientation/dimensions audit and separate static inspection scene. Original notices retained. [Actual build/capture and limits](docs/previews/m03-cl415-prototype/COMPARISON.md). Source names do not establish working pivots/rig or a complete cockpit.
 - [ ] Verify/rebase animated-part pivots and usable cockpit coverage; bind visuals to the actual server-owned flight state when live flight is implemented.
@@ -97,6 +98,11 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 **Accept:** Repeatable high vs low drop + crosswind footprint tests, mass conservation, comparable clients observe same suppressed cells.
 
 ## M04 — HDRP coastal art + VFX
+
+**Future map/quality requirements (2026-10-24):** [delivery plan](docs/LARGE_MAP_AND_QUALITY_PLAN.md). The expected ~30 × 4 km map is not yet verified or integrated. Begin with a bounded playable sector; full streaming is M08 and measured final qualification is M09.
+
+- [ ] Audit the supplied map on arrival, preserve its source, verify dimensions/units/tiles/provenance and create lightweight authoritative geometry/fuel descriptors. Do not declare full-map support from file presence.
+- [ ] Integrate HDRP textures, coastal materials, lighting/sky/atmosphere in a bounded sector with actual BEFORE/AFTER captures and measured cost; establish real view-distance, animation and VFX quality budgets for M05A.
 
 - [ ] Complete representative visual workload/counter coverage (VRAM/residency, GC, render-thread/triangles) as real assets/VFX become available; current generated proxies do not establish production acceptance. M01 adds server simulation tick duration; M02 adds gameplay traffic measurements.
 
@@ -121,6 +127,7 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 - [ ] Unity Input System contexts for on-foot, flight, vehicles, equipment, tactical map/command and UI; keyboard/mouse/controller, saved rebinding, sensitivity/dead zones, inversion, hold/toggle, future HOTAS/joystick profiles and server-permitted simplified/advanced flight.
 - [ ] Functional Main Menu, Server Browser, Connection/Lobby, Unit/Duty, Profile, Aircraft Selection/Assignment, Equipment/Vehicle Interaction, Operational Map, Incident Information, Aircraft/Cockpit HUD, Firefighter HUD, Dispatch/Command, AAR and Settings with a consistent responsive design.
 - [ ] Persistent Low/Performance, Medium/Balanced, High, Ultra and Custom graphics settings; supported display/FPS/VSync/render-scale/texture/shadow/vegetation/terrain/fog/smoke/reflection/AA/upscaling effects, measured mappings and authoritative smoke visibility parity.
+- [ ] Include measured view/draw distance, animation detail/update distance and effect-quality controls; preserve/reload Low/Medium/High/Ultra/Custom settings. Target Ultra 1080p/60 FPS on i5-9400F / 16 GB / GTX 1660-class hardware, with final evidence in M09; no arbitrary preset relabeling or hidden scaling.
 - [ ] Persistent audio/radio/microphone, controls and gameplay/accessibility settings: HUD, subtitles, scaling, colorblind overlays, shake, assistance, units and hints.
 - [ ] Playable movement/interactions/tools, pumps/hoses, driving, aircraft startup/flight, scoop/drop and dispatch/map tutorials using normal simulation/validation paths.
 - [ ] Document controls/contexts, player flow, UI hierarchy, interaction states, settings/presets and tutorials with editable diagram sources and inspected embedded SVG exports.
@@ -153,6 +160,7 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 - [ ] Validate dynamic/adversarial active-sector membership scheduling and refine the prototype budget/estimated fuel-weather calibration against documented reference scenarios; do not extend fixed-membership fixture claims to production interest/load behavior.
 
 - [ ] Geographic compression and streaming sectors, floating origin if necessary.
+- [ ] Qualify full supplied ~30 × 4 km map traversal/prefetch/precision/memory across sector boundaries, after the M04 bounded sector; retain lightweight dedicated-server descriptors.
 - [ ] Relevancy interest management and adaptive network updates.
 - [ ] Load tests 4/16/32/64/100 **realistic** simulated clients and multiple fires/9 aircraft.
 
@@ -169,6 +177,7 @@ Future evidence diagrams/flowcharts must be actual embedded SVG drawings with ed
 - [ ] Versioned data/bundle content pipeline and server mod validation.
 - [ ] Windows/Linux server packaging, operator docs/config and backups.
 - [ ] Client Balanced preset achieves p95 frame ≤16.67ms at 1080p on named reference PC in S3/S4 scenes, with multiple fires and smoke; report p99 and exceptions.
+- [ ] Qualify the user's additional Ultra target at 1080p/60 FPS on i5-9400F / 16 GB / GTX 1660-class hardware across representative populated/coastal/smoky workloads and map streaming; use the same percentile gates and report base 1660 separately from local 1660 SUPER results. Target remains open if measurements fail.
 - [ ] AAR UI, radio/communication, tutorial, Steam/demo/marketing material with true gameplay only.
 
 **Accept:** Self-hosted dedicated server startup + mods validation + 60 FPS evidence + demo loop. If not, leave unfinished.

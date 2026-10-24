@@ -1,5 +1,9 @@
 # Technical architecture — Unity 6 HDRP, C#, headless server
 
+## M03 resource/physics installation — 2026-10-24
+
+`FuelFlight` remains pure C# in the engine-free Simulation assembly; it returns a complete validated resource/pose candidate. `FlightAuthority` alone installs the accepted result and exposes initial-minus-remaining fuel accounting. No package, scene, headless visual reference or network message type is added. Existing `FuelKg` snapshots and client mass-derived visual offset carry the changed state. [Actual before/after resource flow, equations and evidence](physics/aircraft-fuel/COMPARISON.md). Legacy force/contact entry points remain unchanged for exact historical replay; live aircraft authority uses the finite-fuel adapter. Production configuration/refueling/water/persistence remain pending.
+
 ## M03 engineering presentation boundary — 2026-10-24
 
 The separate flight-test client now binds received authoritative CoG/attitude to the reused model with explicit debug frame offsets. Client-only `FlightPoseTrack` interpolates two received poses at 100 ms delay, clamps endpoints and resets on epoch/jump; no client integrator or predicted authority. `FlightTestControls` reads installed Input System devices, gates focus/seat/staleness and submits through `ClientFlightSession` with server metadata. Two external cameras/uGUI show actual server pose/seat plus labeled local requests. Dedicated physics and wire structs remain unchanged. [Actual flow, equations, source/device/render checks and limitations](previews/m03-flight-view/COMPARISON.md).

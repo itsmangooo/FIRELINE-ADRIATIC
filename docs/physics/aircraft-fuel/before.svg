@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="216pt" viewBox="0 0 864 216" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 216
+L 864 216
+L 864 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <g id="patch_2">
+     <path d="M 72.457734 131.882461
+L 159.742266 131.882461
+Q 165.142266 131.882461 165.142266 126.482461
+L 165.142266 104.877539
+Q 165.142266 99.477539 159.742266 99.477539
+L 72.457734 99.477539
+Q 67.057734 99.477539 67.057734 104.877539
+L 67.057734 126.482461
+Q 67.057734 131.882461 72.457734 131.882461
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(88.401797 112.617012)">Owner input</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(72.457734 123.419473)">Bounded 5 ms step</text>
+   </g>
+   <g id="patch_3">
+    <path d="M 195.322011 115.68
+Q 219.645967 115.68 241.957463 115.68
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 237.957463 113.68
+L 241.957463 115.68
+L 237.957463 117.68
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_2">
+    <g id="patch_4">
+     <path d="M 277.532578 131.882461
+L 375.867422 131.882461
+Q 381.267422 131.882461 381.267422 126.482461
+L 381.267422 104.877539
+Q 381.267422 99.477539 375.867422 99.477539
+L 277.532578 99.477539
+Q 272.132578 99.477539 272.132578 104.877539
+L 272.132578 126.482461
+Q 272.132578 131.882461 277.532578 131.882461
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(277.532578 112.617012)">Existing contact/flight</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(284.397891 123.419473)">Thrust ignores fuel</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 405.922011 115.68
+Q 430.245967 115.68 452.557463 115.68
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 448.557463 113.68
+L 452.557463 115.68
+L 448.557463 117.68
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_3">
+    <g id="patch_6">
+     <path d="M 488.509453 131.882461
+L 586.090547 131.882461
+Q 591.490547 131.882461 591.490547 126.482461
+L 591.490547 104.877539
+Q 591.490547 99.477539 586.090547 99.477539
+L 488.509453 99.477539
+Q 483.109453 99.477539 483.109453 104.877539
+L 483.109453 126.482461
+Q 483.109453 131.882461 488.509453 131.882461
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(488.509453 112.617012)">Frozen fuel mass/CoG</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(497.359687 123.419473)">No resource debit</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 616.522011 115.68
+Q 640.845967 115.68 663.157463 115.68
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 659.157463 113.68
+L 663.157463 115.68
+L 659.157463 117.68
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <g id="patch_8">
+     <path d="M 702.799453 131.882461
+L 793.000547 131.882461
+Q 798.400547 131.882461 798.400547 126.482461
+L 798.400547 104.877539
+Q 798.400547 99.477539 793.000547 99.477539
+L 702.799453 99.477539
+Q 697.399453 99.477539 697.399453 104.877539
+L 697.399453 126.482461
+Q 697.399453 131.882461 702.799453 131.882461
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(718.243594 112.617012)">Server install</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(702.799453 123.419473)">Read-only pose RPC</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="432" y="20.16" transform="rotate(-0 432 20.16)">BEFORE: 146297c — frozen fuel, unlimited powered thrust</text>
+   </g>
+  </g>
+ </g>
+</svg>

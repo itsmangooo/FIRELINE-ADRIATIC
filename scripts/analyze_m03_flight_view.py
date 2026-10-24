@@ -35,6 +35,13 @@ def verify(capture, evidence, image):
     assert view["cameraMask"] == 3 and view["snapshots"] > 100 and view["acceptedInputs"] > 100
     assert server["owner"] == 0 and server["disconnectReleases"] == 1 and server["expirations"] >= 1 and not server["faulted"]
     publications = {(row["identity"], row["state"]["Tick"]): row["state"] for row in frames(capture / "server.snapshots.jsonl")}
+    if server.get("fuelProfile") == "DEBUG_FUEL_V1":
+        assert abs(server["consumedFuelKg"] - (400 - server["finalState"]["FuelKg"])) < 1e-10
+        assert 0 < server["consumedFuelKg"] < 400 and server["finalState"]["WaterKg"] == 0
+        for identity in {identity for identity, tick in publications}:
+            states = sorted((state for (peer, tick), state in publications.items() if peer == identity), key=lambda state: state["Tick"])
+            assert all(0 <= state["FuelKg"] <= 400 and state["WaterKg"] == 0 for state in states)
+            assert all(b["FuelKg"] <= a["FuelKg"] for a, b in zip(states, states[1:]))
     counts = {}
     source = {}
     first_ticks = {}
@@ -84,7 +91,9 @@ def verify(capture, evidence, image):
         assert q_error < 1e-10
         anchor_error = math.dist([float32(value) for value in shown], [float(row[key]) for key in ("anchor_x_m", "anchor_y_m", "anchor_z_m")])
         assert anchor_error < 1e-6
-        assert float(row["visual_y_m"]) == -2 and float(row["visual_z_m"]) == 0
+        fuel, water = current["FuelKg"], current["WaterKg"]
+        cg = (-.8 * fuel + 1.2 * water) / (10000 + fuel + water)
+        assert float(row["visual_y_m"]) == -2 and abs(float(row["visual_z_m"]) - float32(-cg)) < 1e-9
         if int(row["focused"]) == 0:
             assert float(row["throttle"]) == 0 and float(row["brake"]) == 1
         max_position, max_quaternion, max_anchor = max(max_position, error), max(max_quaternion, q_error), max(max_anchor, anchor_error)

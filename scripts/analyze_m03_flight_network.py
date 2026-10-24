@@ -40,7 +40,7 @@ def verify(capture, evidence):
             assert state == published[roles[role]["identity"], state["Tick"]], (role, state["Tick"])
             assert all(math.isfinite(value) for value in state.values())
             assert abs(sum(state[key] ** 2 for key in ("Qx", "Qy", "Qz", "Qw")) - 1) < 1e-8
-            assert state["Z"] != 999999 and state["FuelKg"] == 0 and state["WaterKg"] == 0
+            assert state["Z"] != 999999 and 0 <= state["FuelKg"] <= 1000 and state["WaterKg"] == 0
             assert state["Owner"] in (0, owner["identity"]) and state["Sequence"] < 1000
             assert state["WindRevision"] >= 1 and state["FireTick"] > 0
         counts[role] = len(frames)

@@ -1,5 +1,9 @@
 # Aircraft specifications & flight-simulation data sheet
 
+## M03 finite debug fuel — 2026-10-24
+
+The live generic body now starts with **400 kg** server-owned fuel and uses `DEBUG_FUEL_V1`: estimated **0.25 kg/s at full throttle**, linear with requested throttle, zero idle burn. Accepted physical steps debit fuel, limit final-interval mean thrust and rebase the CoG frame while preserving fixed body points/velocities; mass/inertia use the existing point-mass model. [Actual equations, matched BEFORE/AFTER results, tests and limits](physics/aircraft-fuel/COMPARISON.md). These are not verified CL-415 engine/variant data. Calibrated curves, startup/refueling/persistence, real gear/CoG and water transfer remain open; the older zero/frozen-fuel statements below describe prior increments.
+
 ## Current M03 engineering boundary — 2026-10-24
 
 The estimated dry server aircraft now has live seat/input/pose authority and a separate client engineering view with test keyboard/gamepad mapping, two external cameras, explicit debug CoG/model offsets, 100 ms cosmetic interpolation and telemetry. [Actual behavior, equations, screenshots, device/render evidence and limits](previews/m03-flight-view/COMPARISON.md). The existing flight/contact constants are unchanged and are **not the production CL-415 baseline below**. Real CoG/gear rig, movable parts, cockpit, calibrated aerodynamic/fuel/resource behavior, airborne route, full collision and water acceptance remain pending. Earlier scope paragraphs below are historical.

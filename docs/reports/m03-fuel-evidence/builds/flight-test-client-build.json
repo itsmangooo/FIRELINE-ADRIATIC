@@ -1,0 +1,12 @@
+{
+    "role": "flight-test-client",
+    "unity": "6000.6.7f1",
+    "result": "Succeeded",
+    "errors": 0,
+    "warnings": 499,
+    "seconds": 286.4808316,
+    "bytes": 202723249,
+    "development": false,
+    "subtarget": 2,
+    "containsVisualAssets": true
+}

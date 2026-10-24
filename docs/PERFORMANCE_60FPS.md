@@ -4,10 +4,14 @@
 
 **1080p / 60 FPS on named minimum-target hardware** in a representative gameplay scene. 60 FPS budget = **16.67 ms per frame**. Specify test hardware, driver, graphics settings, native/upscaled resolution, populated world and active fire intensity with every capture. A 60 FPS capture of an empty HDRP scene does NOT pass.
 
-Suggested reference PCs for QA (examples, not verified to pass):
+## User reference target — 2026-10-24
+
+The requested **Ultra target is 1920×1080 / at least 60 FPS on i5-9400F, 16 GB RAM and GTX 1660-class graphics**, with measured settings for suitable higher hardware. This is an unverified acceptance target. The local GTX 1660 SUPER does not prove a base GTX 1660 pass. Apply the representative scenario/percentile gates below to Ultra as well; report native/upscaled results separately and retain image-quality presets. [Map, material/lighting, view-distance, animation/effect quality and milestone responsibilities](LARGE_MAP_AND_QUALITY_PLAN.md). Existing Performant/Balanced/High Fidelity assets are not yet the final Low/Medium/High/Ultra presets.
+
+Other reference PCs for additional QA (examples, not verified to pass; they do not replace the user's target):
 - Mid-range target: recent 6-core desktop CPU, 16–32 GB RAM, RTX 3060 12 GB or comparable GPU, SSD, Windows 11.
 - Higher quality target: RTX 4070-class or comparable, 32 GB RAM.
-- Budget/lower presets on weaker GPUs where feasible; test actual VRAM and GPU bottlenecks rather than promising specific hardware support.
+- Lower presets on weaker GPUs where feasible; test actual VRAM and GPU bottlenecks. Ultra support on the user's reference hardware must be demonstrated rather than promised from hardware labels.
 
 ## Frame budgets (planning only)
 

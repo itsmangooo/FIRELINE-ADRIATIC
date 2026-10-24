@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-24 — M03 finite-fuel propulsion and future map/quality requirements
+
+- Installed finite server fuel debit, partial-last-interval thrust, zero empty-tank thrust and mass/CoG frame updates around the unchanged contact/flight kernels. Default 400 kg fuel and 0.25 kg/s full-throttle burn are explicit debug estimates; no refuel/startup/calibrated variant or water completion.
+- **102 EditMode + 3 PlayMode tests**, zero-error Windows server/client builds (510/499 warnings), two exact 8,800-sample numerical replays and unchanged original flight trajectories. Real dedicated/rendered-owner/late-observer all exit 0; **403 matched source poses / 1,724 checked display frames**, 0.647945 kg live consumption, controls/seat/focus/disconnect pass. [Full report, raw data, inspected screenshots/SVGs, math/graph guides and limitations](reports/2026-10-24-m03-fuel.md).
+- **FL-09** retains 182.221/160.174 ms callback gaps for later profiling. No optimization, representative 60 FPS, fresh Linux/WAN/capacity or full M03 completion. User sky/configs/assets preserved; human comments cover 51 C# files / 416 members.
+- Recorded the user's future ~30 × 4 km map, HDRP material/lighting, view-distance/animation/effect quality and Ultra 1080p/60 FPS i5-9400F/16 GB/GTX 1660-class target under M04/M05A/M08/M09. [Delivery/playability gates](LARGE_MAP_AND_QUALITY_PLAN.md). Documentation only for that future scope; no map/preset import or measured Ultra pass.
+
 ## 2026-10-24 — M03 engineering view and device controls verified increment
 
 - Bound the temporary model to received authoritative poses on a separate synthetic runway; added explicit debug body/CoG offset, tested 100 ms receipt interpolation without extrapolation, keyboard/gamepad mapping, two external cameras and readable engineering telemetry. Physical flight/contact laws remain unchanged; no new package.

@@ -1,5 +1,7 @@
 # Physics implementation comparisons
 
+[M03 finite-fuel propulsion](aircraft-fuel/COMPARISON.md) records installed accepted-step fuel/thrust, mass/CoG rebase, matched frozen-fuel/new numerical cases, exact legacy replay, actual diagrams, raw proof data and graph guides. Debug coefficients remain uncalibrated and water/airborne-route work remains open.
+
 Implemented comparisons: [M00 scheduling utility](foundation-clock/COMPARISON.md), [M01 fire/wind/suppression](fire-wind/COMPARISON.md), [M03 debug flight](debug-flight/COMPARISON.md), [M03 runway contact](runway-contact/COMPARISON.md) and [M03 live aircraft authority/clock](live-flight-host/COMPARISON.md). Each records its actual scope and remaining limits. Water trajectory/scooping, calibrated aircraft and broader production fidelity in the [simulation specification](../SIMULATION_SPEC.md) and [aircraft specifications](../AIRCRAFT_SPECIFICATIONS.md) remain proposed.
 
 For each significant physics change, create `<system-name>/COMPARISON.md` from the [physics template](../templates/PHYSICS_COMPARISON.md). Include actual old/new mathematics, SI variables, two diagrams, equivalent numerical cases, source references, verification and plots when needed. Keep raw data and plot generation instructions with the report. Link completed reports here and summarize them in root README. Never invent an old model for a newly implemented system.

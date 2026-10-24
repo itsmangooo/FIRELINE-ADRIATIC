@@ -44,6 +44,7 @@ namespace Fireline.Server
         public int timingWarmupCalls = 100, timingCalls = 1000, gc0Collections;
         public double checksumGuard;
         public FlightPolarPoint[] polar;
+        public FuelProof fuel;
     }
 
     /// <summary>Actual debug lift-curve evaluations at two flap settings; angles are degrees for the report only.</summary>
@@ -153,7 +154,8 @@ namespace Fireline.Server
                 watch.Restart(); var next = FlightDynamics.Step(initial, input, new FlightVector(), 1.225, .005); watch.Stop();
                 result.stepMs[i] = watch.Elapsed.TotalMilliseconds; result.checksumGuard += next.PositionM.Y;
             }
-            result.gc0Collections = GC.CollectionCount(0) - before; return result;
+            result.gc0Collections = GC.CollectionCount(0) - before;
+            result.fuel = FuelVerification.Run(); return result;
         }
     }
 }

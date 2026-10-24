@@ -27,12 +27,19 @@ namespace Fireline.Server
         public int Overruns { get; private set; }
         /// <summary>Number of transitions from a live input to the neutral timeout fallback.</summary>
         public int Expirations { get; private set; }
+        /// <summary>Fuel removed by accepted physical steps, in kg; discarded wall time and rejected steps consume none.</summary>
+        public double ConsumedFuelKg => initialFuelKg - State.FuelKg;
+        private readonly double initialFuelKg;
         private FlightInput input = new FlightInput { Gear = 1 };
         private double brake = 1, deadline, accumulated, lastInputTime = double.NegativeInfinity;
         private bool leased;
 
-        /// <summary>Start the estimated dry aircraft above the synthetic runway, without modifying the existing solver or art.</summary>
-        public FlightAuthority() { State = new FlightState { PositionM = new FlightVector(0, 2.05, 0), Attitude = FlightRotation.Identity }; }
+        /// <summary>Start the estimated aircraft with server-selected finite fuel above the synthetic runway; no client refuel command exists.</summary>
+        public FlightAuthority(double fuelKg = DebugFuelProfile.InitialFuelKg)
+        {
+            FlightDynamics.Mass(fuelKg, 0); initialFuelKg = fuelKg;
+            State = new FlightState { PositionM = new FlightVector(0, 2.05, 0), Attitude = FlightRotation.Identity, FuelKg = fuelKg };
+        }
 
         /// <summary>Reserve a vacant seat for a live positive identity; repeated claim by the same pilot is idempotent.</summary>
         public FlightResult Claim(int identity)
@@ -84,8 +91,9 @@ namespace Fireline.Server
                 {
                     var p = State.PositionM;
                     var sampled = wind.Sample(p.X, p.Z, p.Y, fireTick);
-                    State = RunwayContact.Step(State, input, new FlightVector(sampled.X, 0, sampled.Z),
+                    var accepted = FuelFlight.Step(State, input, new FlightVector(sampled.X, 0, sampled.Z),
                         DebugFlightProfile.ReferenceDensity, StepSeconds, brake, RunwayPlane.Debug);
+                    State = accepted.State;
                     Tick++; steps++; accumulated = Math.Max(0, accumulated - StepSeconds);
                 }
             }

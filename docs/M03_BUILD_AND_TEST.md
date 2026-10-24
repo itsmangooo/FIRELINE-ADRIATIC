@@ -1,5 +1,7 @@
 # M03 isolated debug-flight verification
 
+Latest installed resource increment: [finite-fuel propulsion](#finite-fuel-propulsion). The following original numerical/view sections retain their historical scope and measured counts; current server fuel is finite by default in the explicit debug flight session.
+
 Latest presentation increment: [engineering flight view/device proof](#engineering-flight-view-and-device-proof). Historical numerical and data-only sections retain their original scopes.
 
 The latest increment also adds an explicit [live debug-aircraft / two-client proof](#live-debug-aircraft-and-two-client-network-proof). Older sections below describe their isolated proof scopes.
@@ -144,3 +146,34 @@ python scripts/analyze_m03_flight_view.py --archive docs/reports/m03-flight-view
 ```
 
 Use a fresh destination; raw hash bindings, actual role result hashes, source snapshots, sampled focus, presentation math/float placement and FPS summaries are revalidated. The initial rejected attempt's callbacks remain a separate diagnostic archive/report and are not mixed into accepted view metrics.
+
+## Finite-fuel propulsion
+
+Current evidence: **102 EditMode + 3 PlayMode tests**, zero-error Windows dedicated/client builds (510/499 warnings), two 8,800-sample resource replays and the actual rendered/late-observer proof. [Actual results, provenance, measured limits and preservation](reports/2026-10-24-m03-fuel.md), [SI algorithms/BEFORE-AFTER SVGs/matched comparisons/graph guides](physics/aircraft-fuel/COMPARISON.md).
+
+From the existing checkout with Editor closed, run sequentially and stop on any nonzero exit. Use fresh replay paths so published evidence remains immutable:
+
+```powershell
+New-Item -ItemType Directory -Force Builds/M03FuelReplay | Out-Null
+unity self-update --check --format json
+unity test "$PWD" --editor-version 6000.6.7f1 --mode EditMode --filter Fireline.Tests --output Builds/M03FuelReplay/editmode.xml --timeout 900 -- -buildTarget Win64 -standaloneBuildSubtarget Player -nographics -force-d3d11 *> Builds/M03FuelReplay/editmode-cli.log
+$env:FIRELINE_BUILD_EVIDENCE='Builds/M03FuelReplay/builds'
+unity run "$PWD" --editor-version 6000.6.7f1 --timeout 1200 --log-file Builds/M03FuelReplay/server-build.log --no-tail -- -buildTarget Win64 -nographics -executeMethod Fireline.Authoring.FoundationBuild.BuildServer
+./scripts/Test-M03Fuel.ps1 -Port 8360 -EvidenceRoot Builds/M03FuelReplay/numerical
+unity test "$PWD" --editor-version 6000.6.7f1 --mode PlayMode --filter Fireline.Tests --output Builds/M03FuelReplay/playmode.xml --timeout 900 -- -buildTarget Win64 -standaloneBuildSubtarget Player -nographics -force-d3d11 *> Builds/M03FuelReplay/playmode-cli.log
+unity run "$PWD" --editor-version 6000.6.7f1 --timeout 1200 --log-file Builds/M03FuelReplay/client-build.log --no-tail -- -buildTarget Win64 -standaloneBuildSubtarget Player -force-d3d11 -executeMethod Fireline.Authoring.FoundationBuild.BuildFlightTestClient
+./scripts/Test-M03FlightView.ps1 -Port 8361 -EvidenceRoot Builds/M03FuelReplay/runtime -CapturePath Builds/M03FuelReplay/after.png
+$env:PYTHONPATH=(Join-Path $PWD Builds/AnalysisTools)
+python scripts/render_m03_fuel.py --evidence Builds/M03FuelReplay --output Builds/M03FuelReplay/plots
+```
+
+The numerical harness uses the existing dedicated-only `--fireline-flight-proof` flag (failure exit 10); its JSON now includes the ten fuel cases plus the original nine flight cases. Two actual process exits, raw SHA bindings, all fuel/CoG/force data and exact physical replay must pass the independent checker. The old trajectory/polar archive must remain unchanged. The live/view harness still uses the existing flags and normal control/session path. A fresh `FlightAuthority` starts with 400 kg; no client refuel or arbitrary aircraft-config option exists. Empty fuel cannot supply thrust, while valid empty-tank controls may still be acknowledged. Inputs, seat/lease guards and reliable pose schema are unchanged.
+
+Revalidate published archives without Unity or ignored raw logs:
+
+```powershell
+python scripts/analyze_m03_fuel.py
+python scripts/analyze_m03_flight_view.py --archive docs/reports/m03-fuel-evidence/runtime --evidence Builds/M03FuelArchiveReplay --image docs/previews/m03-fuel/after.png
+```
+
+The first command recomputes the numerical summary beside the unchanged raw archives; the second writes to fresh scratch. No physical controller/native-focus, flight route, water, Linux/WAN/capacity or representative 60 FPS qualification is implied. D3D11 is per-process, all original quality assets remain unchanged, and the future Low/Medium/High/Ultra plan remains [planned](LARGE_MAP_AND_QUALITY_PLAN.md). Current M03 manual launch/control commands above still apply, with finite fuel now installed.

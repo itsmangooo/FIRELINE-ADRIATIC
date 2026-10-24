@@ -1,0 +1,7 @@
+FIRELINE_CLIENT_START
+FIRELINE_CLIENT_RENDERER graphics=Direct3D11 pipeline=HDRenderPipelineAsset quality=Balanced
+FIRELINE_FLIGHT_VIEW ready=True mode=engineering physics=server cameras=external
+FIRELINE_CLIENT_CONNECTED networkId=1
+FIRELINE_CAPTURE_SAVED after.png
+FIRELINE_METRICS_SAVED metrics.json
+FIRELINE_FLIGHT_VIEW_PROOF passed=True snapshots=273 inputs=442 reason=rendered-device-and-pose-proof

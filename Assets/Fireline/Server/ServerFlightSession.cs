@@ -30,10 +30,10 @@ namespace Fireline.Server
         private sealed class Evidence
         {
             public bool passed, faulted;
-            public string reason, role = "server", profile = DebugFlightProfile.Identifier;
+            public string reason, role = "server", profile = DebugFlightProfile.Identifier, fuelProfile = DebugFuelProfile.Identifier;
             public ulong tick, fireTick;
             public int owner, disconnectReleases, expirations, overruns, updates, steps;
-            public double seconds, discardedSeconds, maximumUpdateMs;
+            public double seconds, discardedSeconds, maximumUpdateMs, consumedFuelKg;
             public FlightState finalState;
             public Peer[] peers;
         }
@@ -215,6 +215,7 @@ namespace Fireline.Server
             evidence.owner = authority.Owner; evidence.finalState = authority.State; evidence.peers = history.ToArray();
             evidence.seconds = Time.realtimeSinceStartupAsDouble - started; evidence.discardedSeconds = authority.DiscardedSeconds;
             evidence.expirations = authority.Expirations; evidence.overruns = authority.Overruns;
+            evidence.consumedFuelKg = authority.ConsumedFuelKg;
             evidence.fireTick = FireSimulationRunner.Authority.World.Tick;
             string path = FoundationBootstrap.Options.FlightNetworkProofPath;
             if (path != null) File.WriteAllText(path, JsonUtility.ToJson(evidence, true));

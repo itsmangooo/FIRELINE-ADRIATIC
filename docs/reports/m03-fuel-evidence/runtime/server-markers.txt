@@ -1,0 +1,12 @@
+FIRELINE_SERVER_START endpoint=127.0.0.1:8361
+FIRELINE_WORLD_READY restored=False tick=0 checksum=ba0ecc7466f19ace
+FIRELINE_SIMULATION_START hz=5 grid=32 cellM=10 seed=415 authority=server fixture=synthetic
+FIRELINE_FLIGHT_SESSION ready=True hz=200 maximumSteps=8 authority=server profile=DEBUG_FLIGHT_ONLY_V1
+FIRELINE_SERVER_HEADLESS valid=True graphics=Null cameras=0
+FIRELINE_SERVER_CONNECTIONS count=0
+FIRELINE_SERVER_CONNECTIONS count=1
+FIRELINE_SERVER_CONNECTIONS count=2
+FIRELINE_SERVER_CONNECTIONS count=1
+FIRELINE_FLIGHT_NETWORK role=server passed=True reason=two-client-authority-proof tick=7293 owner=0
+FIRELINE_SERVER_CONNECTIONS count=0
+FIRELINE_SIMULATION_STOP ticks=182 checksum=45456a6442137d37

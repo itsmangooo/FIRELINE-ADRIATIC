@@ -1,5 +1,9 @@
 # Multiplayer/network architecture — 100 players as a target
 
+## M03 finite-fuel authority — 2026-10-24
+
+Fuel now decreases only in accepted server physical steps; the existing complete-pose `FuelKg` field carries that truth without a schema change. There is no client fuel/refuel command and the existing forged-state rejection still applies. The client uses received fuel/water to derive its CoG visual offset; it never runs the fuel integrator. [Actual transaction, tests and evidence](physics/aircraft-fuel/COMPARISON.md). This does not add aircraft persistence, production admission, prediction or impaired-network qualification.
+
 ## M03 engineering input/view binding — 2026-10-24
 
 The client now has explicit keyboard/gamepad seat/input requests and a 20 Hz fresh-owner transmission gate; the existing server still independently validates connection identity, epoch, serial, observed tick, bounds/rate and lease. Visual poses use tested 100 ms receipt interpolation with endpoint holding, no extrapolation or client simulation. Actual rendered-owner/late-observer proof matches 401 received snapshots to server publications and reconstructs 1,723 display frames. Focus gate, release/reclaim and final disconnect are verified through real transport. [Actual evidence and initial failed recording correction](reports/2026-10-24-m03-flight-view.md).

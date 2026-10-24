@@ -1,5 +1,13 @@
 # Performance history
 
+## 2026-10-24 — M03 finite-fuel rendered regression
+
+Actual Windows Mono release, Editor closed, **1920×1080 existing Balanced / VSync=1 / per-process D3D11**, i5-9400F / GTX 1660 SUPER / driver 32.0.16.2101 / Windows 11 26300 / 16,323 MB Unity RAM. Same debug runway/model/HUD, now 400 kg initial finite fuel, one late headless observer plus dedicated server. Five rendered seconds warm up; **1,448 intervals / 24.417126 s** retained. Average/1% low **59.302638 / 25.811398 FPS**, p95/p99 callback spacing **17.182400 / 17.807700 ms**, peak allocated **491,292,791 bytes**.
+
+**FL-09:** #499 **182.220802 ms** at **8.433306–8.615527 s**; #242 **160.174206 ms** at **4.017848–4.178022 s**. 744/2 intervals exceed 16.667/33.333 ms rulers. These callback intervals include waits/presentation; they are not CPU/GPU execution or confirmed dropped presentations. Other counters remain unavailable as detailed in the [report](reports/2026-10-24-m03-fuel.md#actual-visual-and-performance-evidence). Host startup #2 separately discards 14.1929 ms wall time; host adapter max 5.6332 ms is not full-host execution. [Actual raw CSV/SVG and all ruler/sample/origin/zoom explanations](physics/aircraft-fuel/COMPARISON.md#actual-visual-evidence-and-deferred-performance), [exact profiling follow-up sites](performance/FRAME_LOSS_REGISTER.md#m03-finite-fuel-client-callbacks--2026-10-24).
+
+Changed fuel mass and uncontrolled cache/startup/admission conditions prevent a matched rendering-cost comparison with the earlier engineering run. No speedup/optimization, resource-step CPU-cost baseline, representative coast/smoke five-minute 60 FPS, Ultra/base-GTX-1660 or capacity qualification is claimed. The user's new Ultra target and planned large map are future [M04/M05A/M08/M09 work](LARGE_MAP_AND_QUALITY_PLAN.md), not results. Optimization stays deferred.
+
 ## 2026-10-24 — M03 rendered engineering aircraft view
 
 Actual Windows Mono release client **1920×1080 Balanced / VSync=1 / per-process D3D11**, one dry aircraft (144 imported renderers), 31 synthetic primitive surfaces and engineering HUD, one headless observer plus dedicated fire/wind/aircraft host. Editor closed; i5-9400F / GTX 1660 SUPER / driver 32.0.16.2101 / Windows 11 build 26300 / 16,323 MB Unity-reported RAM. Five rendered seconds warm up, **1448 intervals / 24.433480 s** retained. Average/1% low **59.262945 / 25.649861 FPS**, p95/p99 callback spacings **17.394099 / 17.924000 ms**. Peak Unity allocated bytes **482,846,054**.

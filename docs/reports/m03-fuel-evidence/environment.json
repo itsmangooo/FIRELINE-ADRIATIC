@@ -1,0 +1,16 @@
+{
+  "limits": "No representative coast/population/smoke/water, base GTX1660 or Ultra qualification",
+  "driver": "32.0.16.2101",
+  "hdrp": "17.6.0",
+  "cpu": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+  "osBuild": "26300",
+  "graphics": "per-process Direct3D11",
+  "ramVisibleMiB": 16324.0,
+  "scene": "unchanged M03_FlightTest; one generic body with 400kg initial finite fuel, temporary exterior, synthetic runway, engineering HUD; one late headless observer",
+  "preset": "existing Balanced",
+  "unity": "6000.6.7f1",
+  "os": "Microsoft Windows 11 Pro",
+  "resolution": "1920x1080",
+  "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+  "vSync": "retained 1"
+}

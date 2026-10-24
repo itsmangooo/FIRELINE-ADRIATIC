@@ -1,5 +1,9 @@
 # Simulation specification — Fire, wind, water and environmental destruction
 
+## M03 accepted-step fuel transaction — 2026-10-24
+
+The server now calls pure `FuelFlight.Step` around the unchanged contact/force kernels. Estimated throttle-proportional fuel burn supplies partial-interval mean thrust, zero thrust when empty, and a CoG position/velocity rebase preserving fixed dry-body points before validated atomic installation. Only accepted 5 ms physical steps consume fuel; rejected candidates, discarded wall time and neutral throttle do not. Default live fuel is 400 kg; water is unchanged. [Exact SI equations, actual before/after samples, legacy replay and limits](physics/aircraft-fuel/COMPARISON.md). No idle/engine-start/refuel model, production curves, water transfer or persistence is added. Older frozen/dry scope statements below retain their historical meaning.
+
 ## M03 engineering presentation — 2026-10-24
 
 The dry debug aircraft now has an interactive client view with keyboard/gamepad test inputs and receipt-time cosmetic interpolation. Physical contact/flight functions, server wind sampling, mass and force laws are unchanged; Client never integrates flight. [Actual frame-mapping equations, device/render evidence and synthetic-runway limits](previews/m03-flight-view/COMPARISON.md). This does not complete calibrated real gear/CoG, fuel/resources, airborne route/cockpit/animation, general collision or water physics. Earlier implementation boundaries below describe their original increments.

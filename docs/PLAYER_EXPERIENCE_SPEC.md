@@ -20,6 +20,8 @@
 
 These future player-facing tiers do not relabel today's Performant/Balanced/High Fidelity assets as complete. Preserve existing presets until measured mappings/replacements are verified. Settings must affect supported systems and survive restart; explain unsupported options. Local preferences cannot override server rules or weaken authoritative smoke visibility. Benchmark presets against the documented 1080p/60 FPS target rather than assigning arbitrary quality values.
 
+**2026-10-24 user requirements:** the future supplied ~30 × 4 km map receives HDRP textures/lighting in M04, full streaming in M08, and quality qualification in M09. Include view/draw distance, animation detail/update distance and effect quality in the saved Low/Medium/High/Ultra/Custom settings. Ultra targets 1080p/60 FPS on i5-9400F / 16 GB / GTX 1660-class hardware; this is unverified and does not weaken percentile/smoke-parity gates. [Detailed delivery and evidence plan](LARGE_MAP_AND_QUALITY_PLAN.md).
+
 ## Dependencies and staged delivery
 
 | Producer | M05A integration |

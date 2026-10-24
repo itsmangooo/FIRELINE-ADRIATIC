@@ -127,7 +127,7 @@ namespace Fireline.Tests
             for (int i = 0; i < 40; i++)
             {
                 var p = direct.PositionM; var sampled = wind.Sample(p.X, p.Z, p.Y, 13);
-                direct = RunwayContact.Step(direct, command, new FlightVector(sampled.X, 0, sampled.Z), 1.225, .005, 0, RunwayPlane.Debug);
+                direct = FuelFlight.Step(direct, command, new FlightVector(sampled.X, 0, sampled.Z), 1.225, .005, 0, RunwayPlane.Debug).State;
                 host.Advance(.005, (i + 1) * .005, wind, 13);
                 Assert.That(host.State.PositionM.X, Is.EqualTo(direct.PositionM.X));
                 Assert.That(host.State.PositionM.Z, Is.EqualTo(direct.PositionM.Z));
@@ -144,7 +144,7 @@ namespace Fireline.Tests
             for (int i = 0; i < 80; i++) host.Advance(.005, i * .005, wind, 0);
             Assert.That(Command(host, 20, 2, .49), Is.EqualTo(FlightResult.NotOwner));
             var reference = host.State;
-            reference = RunwayContact.Step(reference, new FlightInput { Gear = 1 }, new FlightVector(), 1.225, .005, 1, RunwayPlane.Debug);
+            reference = FuelFlight.Step(reference, new FlightInput { Gear = 1 }, new FlightVector(), 1.225, .005, 1, RunwayPlane.Debug).State;
             host.Advance(.005, .5, wind, 0);
             Assert.That(host.Expirations, Is.EqualTo(1)); Assert.That(host.State.VelocityMps.Z, Is.EqualTo(reference.VelocityMps.Z));
         }

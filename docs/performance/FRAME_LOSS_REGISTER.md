@@ -1,5 +1,20 @@
 # Frame-loss investigation register
 
+## M03 finite-fuel client callbacks — 2026-10-24
+
+**FL-09: exact observed locations; attribution/optimization deferred.** One actual rebuilt 1080p Balanced/VSync=1 D3D11 client, same synthetic runway/prototype/HUD, server-owned finite fuel, one headless late observer and dedicated server; Editor closed. i5-9400F / GTX 1660 SUPER / 16 GB / driver 32.0.16.2101 / Windows 11 26300. [Actual report/raw metrics](../reports/2026-10-24-m03-fuel.md), [SVG and full reader guide](../physics/aircraft-fuel/COMPARISON.md#actual-visual-evidence-and-deferred-performance).
+
+| Sample | Recording start–end (s) | Camera-callback spacing |
+|---:|---|---:|
+| **499** | **8.433306–8.615527** | **182.220802 ms** |
+| **242** | **4.017848–4.178022** | **160.174206 ms** |
+
+1,448 intervals / 24.417126 s after five rendered seconds warm-up; 744 >16.667 ms and two >33.333 ms. Average/1% low 59.302638/25.811398 FPS. These are **not counts of dropped presentations** or execution timings. [Every marked interval](../reports/m03-fuel-evidence/runtime/callback-intervals.marked.csv). Same observation point `ClientProbe.OnCameraRendered`; later profiling sites remain screenshot readback/PNG encode (`ClientProbe.Capture`, `FlightViewVerification.CaptureInspection`), per-frame HUD strings/uGUI, pose/camera work, surrounding HDRP/driver/GC/OS scheduling and possible local host contention. New host `FuelFlight.Step`/rebase/validation is a profiling site, not an attributed cause of the client gaps. No synchronized CPU/GPU/presentation trace proves a bottleneck or a resource-step cost regression.
+
+The live host separately records callback #2 at elapsed 0.0741929 s: **49.7146 ms gap**, eight bounded steps and **14.1929 ms discarded wall time** including prior remainder; adapter execution there **0.0676 ms**, overall max **5.6332 ms**. No pilot throttle is active at this startup discard. This extends the unresolved HOST-01 observations; it is not rendered-frame loss or full-host timing. [Raw host CSV](../reports/m03-fuel-evidence/runtime/server.csv.gz), [actual host result](../reports/m03-fuel-evidence/runtime/server.json.gz).
+
+Follow up with capture-on/off and synchronized CPU/GPU/GC/presentation/host counters, then representative populated/coastal/smoky and streamed-map scenes. No optimization or matched before/after improvement is claimed. All earlier FL entries, HOST-01 and NET-01 remain open; the future Ultra target is unqualified.
+
 ## M03 engineering-view callbacks — 2026-10-24
 
 **FL-08: measured locations retained; attribution/optimization deferred.** One rendered 1080p Balanced/VSync=1 D3D11 client on i5-9400F / GTX 1660 SUPER / driver 32.0.16.2101 / Windows 11 26300, Editor closed; one dry debug aircraft, synthetic runway/HUD, one headless observer and dedicated server. These are **render-callback overruns, not confirmed dropped presentations**. [Full conditions, actual images/SVGs, raw traces and graph guide](../previews/m03-flight-view/COMPARISON.md#performance-graph-guide).

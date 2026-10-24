@@ -1,5 +1,9 @@
 # Asset Manifest — Imported content, source links and pipeline
 
+## Future supplied map — planned 2026-10-24
+
+The user expects to supply an approximately **30 × 4 km** map. Source path, actual extent/units, format, tiles, contents and provenance are not yet audited; no integration is claimed. M04 owns bounded-sector HDRP texture/lighting work, M08 full streaming and M05A/M09 measured quality options/qualification. [Delivery and target-hardware plan](LARGE_MAP_AND_QUALITY_PLAN.md). The current M03 fuel increment reuses the existing engineering scene/prototype unchanged and adds no downloaded/graphical asset or licence change.
+
 ## M03 engineering flight view — 2026-10-24
 
 `FL-M03-FLIGHT-TEST`: separate generated `M03_FlightTest.unity`, one received-CoG anchor and the unchanged user-authorized temporary CL-415 prefab. Adds a synthetic 45×3000 m visual runway matching the debug contact rectangle, a 1000×4000 m visual surround, 29 centerline marks and three project-authored flat-color HDRP/Lit materials under `Content/Foundation/FlightTest*.mat`. No external texture/model/download or measured PBR conversion is added; primitives have no Unity colliders. Runtime uGUI uses the existing built-in `LegacyRuntime.ttf`. [Actual captures, generation source, pose offsets and remaining asset limits](previews/m03-flight-view/COMPARISON.md). Original static preview, model/source bytes, eleven materials/nine maps and contributor notices remain unchanged. Moving gear/propellers, cockpit and production replacement remain pending.
