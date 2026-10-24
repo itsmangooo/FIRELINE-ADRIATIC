@@ -1,5 +1,9 @@
 # Asset Manifest — Imported content, source links and pipeline
 
+## M03 engineering flight view — 2026-10-24
+
+`FL-M03-FLIGHT-TEST`: separate generated `M03_FlightTest.unity`, one received-CoG anchor and the unchanged user-authorized temporary CL-415 prefab. Adds a synthetic 45×3000 m visual runway matching the debug contact rectangle, a 1000×4000 m visual surround, 29 centerline marks and three project-authored flat-color HDRP/Lit materials under `Content/Foundation/FlightTest*.mat`. No external texture/model/download or measured PBR conversion is added; primitives have no Unity colliders. Runtime uGUI uses the existing built-in `LegacyRuntime.ttf`. [Actual captures, generation source, pose offsets and remaining asset limits](previews/m03-flight-view/COMPARISON.md). Original static preview, model/source bytes, eleven materials/nine maps and contributor notices remain unchanged. Moving gear/propellers, cockpit and production replacement remain pending.
+
 ## M03 runway-contact prerequisite — 2026-10-24
 
 No new external asset, texture, scene, material or UI is introduced. The test runway is a synthetic finite mathematical rectangle, not a mesh/geographic import. Gear points and coefficients are project-authored debug estimates; the static CL-415 prefab remains unbound to physics. No new screenshot applies to this nonvisual increment. [Actual numerical implementation/evidence](physics/runway-contact/COMPARISON.md).

@@ -2,17 +2,19 @@
 
 ## Project Overview
 
-**Status:** M00/M01/source comments/M02 verified for their documented prototype scopes; M03 now has a verified live debug-aircraft authority/replica foundation and remains In Progress. The temporary CL-415 exterior remains separate in its static HDRP preview. The existing project has modular C# assemblies, direct-IP client/server startup, tests, Windows/Linux build entry points and an imported coastal benchmark. Fire/wind/suppression, bounded fire replication/local restart and opt-in server-owned debug flight/contact now exist. Playable flight, visual/control binding, water operations, dispatch and production persistence remain planned. Proposed mechanics and numeric budgets remain design targets pending testing.
+**Status:** M00/M01/source comments/M02 are verified for their documented prototype scopes. M03 now has a live server-owned debug aircraft, client keyboard/gamepad test controls, external cameras, receipt-time pose interpolation and engineering telemetry on a synthetic runway. The temporary CL-415 exterior is bound in a separate flight-test view; its original static preview remains available. M03 stays In Progress for airborne route/cockpit/animation, general collision/calibration/fuel and water operations. Dispatch, production persistence, 100-player capacity and representative 60 FPS remain unverified design targets.
 
 A persistent, self-hosted, cooperative Croatian/Herzegovinian aerial and ground firefighting simulator. Unity 6 HDRP, C#, up to 100 players per server (target, **not demonstrated**), up to 9 aircraft (design cap), server-authoritative fire/wind/water/combustion, modding, 60 FPS client target.
 
 ## Current Development Status
 
-M03 now has **89 passing tests**, zero-error current Windows dedicated/client builds, and an actual dedicated/owner/late-observer authority proof. All **154 received poses** match server publications; invalid/nonowner/forged-pose requests are rejected, stale input expires and disconnect releases the pilot seat. The mesh is still static and separate; no new graphical flight screenshot or fresh Linux result is claimed. [Actual results and limitations](docs/reports/2026-10-24-m03-live-flight-host.md), [clock/authority math, rendered diagrams, raw plots and graph guide](docs/physics/live-flight-host/COMPARISON.md), [preceding actual model capture](docs/previews/m03-cl415-prototype/COMPARISON.md).
+Current M03 verification: **94 EditMode + 3 PlayMode tests**, zero-error current Windows client/dedicated builds, and an actual rendered 1080p owner plus late headless observer. **401 received snapshots** match server publications; **1,723 displayed frames** pass independent position/quaternion interpolation checks. Keyboard/pad requests, logical focus fallback, two cameras, release/reclaim and disconnect pass. [Actual results and limits](docs/reports/2026-10-24-m03-flight-view.md), [screenshots, controls, equations, diagrams and graph guide](docs/previews/m03-flight-view/COMPARISON.md). No airborne/cockpit/water or fresh Linux qualification is claimed.
 
-Unity **6000.6.7f1** / HDRP **17.6.0** and Netcode for Entities, Entities and Transport **6.6.0** are retained. The current **89 EditMode tests pass**; final Windows builds have 0 errors (505 server / 501 client warnings). Earlier Linux/WSL foundation checks remain historical, not fresh M03 flight qualification. Five licensed PBR surfaces and a real Petrčane DSM crop remain in the separate benchmark scene. [M00 evidence](docs/reports/2026-10-22-m00-coastal-foundation.md), [M02 bounded replication/restart proof](docs/reports/2026-10-23-m02-replication.md). Cold/jittered startup remains NET-01; earlier constant-delay/loss fire tests passed. Aircraft visual/control binding, animation, correction, broader collision, calibrated airframe/fuel/water behavior, production-model replacement and representative graphics/performance qualification remain open under M03/M04/M09. [Scope/dependency closeout](docs/reports/2026-10-23-m00-closeout.md). M05A and later gameplay milestones remain pending.
+Unity **6000.6.7f1** / HDRP **17.6.0** / Netcode, Entities and Transport **6.6.0** are retained; installed Input System **1.20.1** is now referenced by Client for test controls. No package was added. Current Windows builds have **0 errors** (499 client / 505 server warnings). Earlier Linux/WSL foundation results remain historical. [M00 scope](docs/reports/2026-10-22-m00-coastal-foundation.md), [M02 bounded fire replication/restart](docs/reports/2026-10-23-m02-replication.md). NET-01 cold/jittered startup, aircraft calibration/resources/full collision, production-model replacement and representative populated coast/smoke qualification remain open. M05A and later gameplay milestones remain Pending.
 
 ## Latest Development Updates
+
+- **2026-10-24 — M03 engineering flight view:** server-owned test controls, explicit model/CoG binding, two external cameras, 100 ms cosmetic interpolation and telemetry. 94 EditMode + 3 PlayMode tests, zero-error Windows builds and actual rendered-owner/late-observer proof pass. [401 matched source poses, 1,723 independently checked display frames, actual screenshots and limits](docs/reports/2026-10-24-m03-flight-view.md). FL-08 records the accepted #499 hitch (178.723 ms) and separately retains the initial 418.063 ms diagnostic; optimization remains deferred.
 
 - **2026-10-24 — M03 live debug-aircraft authority:** bounded 5 ms server substeps, actual server wind, validated seat-owner inputs with expiry, complete read-only pose replicas and disconnect/fault handling. 89 tests, zero-error Windows builds and real two-client proof pass; 154 received poses match actual publications. [Evidence, limitations and next dependencies](docs/reports/2026-10-24-m03-live-flight-host.md). HOST-01 records one 51.698 ms startup callback gap and 13.257 ms discarded wall time; optimization remains deferred. M03 stays open.
 
@@ -39,7 +41,13 @@ Unity **6000.6.7f1** / HDRP **17.6.0** and Netcode for Entities, Entities and Tr
 
 ## Visual Progress — Before & After
 
-The temporary CL-415 exterior now has an actual running-build capture. **No baseline was captured**: no earlier imported aircraft existed. This is a static inspection scene; flight controls, animation and visual/contact binding remain pending. [Capture conditions, conversion, measured callback gaps and limits](docs/previews/m03-cl415-prototype/COMPARISON.md).
+The temporary aircraft now follows received authoritative poses in the separate engineering test scene, with basic controls and HUD. These are actual game captures: static 720p BEFORE and 1080p live AFTER are different workloads, not a matched speed comparison. [Full report, second camera, provenance and measured limits](docs/previews/m03-flight-view/COMPARISON.md).
+
+| BEFORE — static preview | AFTER — server-owned engineering view |
+|---|---|
+| ![Actual earlier static build](docs/previews/m03-flight-view/before.png) | ![Actual rendered flight-test build](docs/previews/m03-flight-view/after.png) |
+
+The separate static inspection scene remains available. Its earlier actual capture established the imported model baseline; no model existed before that import. The new live view above reuses the same exterior, with animation, real gear/CoG calibration and cockpit coverage still pending. [Earlier import/capture conditions and provenance](docs/previews/m03-cl415-prototype/COMPARISON.md).
 
 ![CL-415 prototype in the actual 1080p HDRP Windows client](docs/previews/m03-cl415-prototype/aircraft_after.png)
 
@@ -87,13 +95,15 @@ The [coastal conversion report](docs/reports/2026-10-22-m00-coastal-foundation.m
 
 ## Gameplay Systems
 
-M03 now has one opt-in live server aircraft with bounded contact stepping, connected-seat ownership/input guards and read-only client pose replication. A real owner/observer test verifies inputs, late join, lease expiry and disconnect release. The user-facing mesh/controls/cameras, qualifications/admission, prediction/correction and full flight/water loop remain pending. [Actual implemented behavior and remaining dependencies](docs/reports/2026-10-24-m03-live-flight-host.md).
+M03 now exposes the opt-in server aircraft through a separate engineering runway view. Users can request/release the seat, send bounded keyboard/gamepad controls, switch two external cameras and read actual received aircraft state plus explicitly labeled local requests. Only the server integrates flight/contact; presentation uses tested 100 ms receipt-time interpolation and never extrapolates. [Actual device/render/network proof and remaining dependencies](docs/reports/2026-10-24-m03-flight-view.md). This is a dry debug taxi/control increment; airborne route, cockpit/animations, qualifications, prediction/correction and water/suppression remain pending.
 
 The dedicated server now advances a bounded synthetic fire/wind fixture, accepts manual server water events and retains char/hazard state. Two headless process runs match every scenario digest; the normal server also advanced 349 fire steps during the connection regression. M02 now exposes that authority in a read-only client phase display with baseline/delta synchronization; player-operated ignition/suppression and world-space fire visuals remain unimplemented. [Model, actual curves and limits](docs/physics/fire-wind/COMPARISON.md).
 
 Dispatch, aerial sorties, ground operations, persistent incidents and cooperative suppression are **planned**, not playable systems. See [game design](docs/GAME_DESIGN.md). Each implemented change will summarize player impact here and link a [gameplay/architecture report](docs/templates/GAMEPLAY_ARCHITECTURE_CHANGE.md) covering behavior, authority and tests.
 
 ## Architecture & Technical Diagrams
+
+![Implemented engineering input/server/presentation path](docs/previews/m03-flight-view/after-flow.svg)
 
 ![Implemented live aircraft command, authority and read-only replica path](docs/physics/live-flight-host/after.svg)
 
@@ -110,6 +120,8 @@ Dispatch, aerial sorties, ground operations, persistent incidents and cooperativ
 ![Implemented M00 coastal import and release-measurement flow](docs/reports/m00-coastal-evidence/diagrams/after.svg)
 
 ## Performance Benchmarks
+
+The 1080p Balanced engineering run records **59.263 average / 25.650 1% low FPS**, p95/p99 callback intervals **17.394/17.924 ms**, maximum **178.723 ms at #499** (8.450635–8.629358 recording seconds). This is one dry aircraft/runway and one headless observer; **no representative 60 FPS pass**. The initial trace-rejected attempt's 418.063 ms callback is retained separately. [Actual raw positions, SVGs, units/ticks/interval/warm-up explanations and deferred attribution](docs/previews/m03-flight-view/COMPARISON.md#performance-graph-guide).
 
 The live M03 headless proof records 835 host callbacks: adapter execution p95/max **0.0633/6.3483 ms**; callback-gap p95/max **18.3073/51.6976 ms**. HOST-01 marks callback #2 and its 13.2569 ms catch-up discard. These are headless host observations, not rendered FPS or a capacity pass. [Actual raw plots, source sites, clocks/rulers/sample explanation and deferred attribution](docs/physics/live-flight-host/COMPARISON.md#measured-timing-and-graph-guide).
 
@@ -136,7 +148,7 @@ The new **1080p Balanced five-minute clear/static-fog pair** averaged 60.00/60.0
 | M00 | Unity/tooling audit, assemblies, build and benchmark foundation | Verified |
 | M01 | Authoritative fire and wind | Verified |
 | M02 | Multi-process replication and local checkpoint proof | Verified (bounded Windows scope) |
-| M03 | CL-415 flight and water physics | In Progress; live debug authority/replicas and static exterior verified; visual/control/water loop pending |
+| M03 | CL-415 flight and water physics | In Progress; live debug authority/view/test controls verified; airborne/cockpit/calibration/water loop pending |
 | M04 | HDRP coastal art and VFX | Pending |
 | M05 | Ground crews and working hose | Pending |
 | M05A | Player experience, controls, UI/UX, settings and training | Pending |

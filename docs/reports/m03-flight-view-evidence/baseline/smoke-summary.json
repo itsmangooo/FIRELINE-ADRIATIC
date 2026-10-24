@@ -1,0 +1,72 @@
+{
+  "utc": "2026-10-24T15:40:32.8484428Z",
+  "scope": "One local dedicated server and 1 rendered client processes; connection handshake only",
+  "clientExecutable": "Builds/WindowsAircraftPreview/FirelineAircraftPreview.exe",
+  "rawLogs": "Builds\\Smoke\\20261024-173909",
+  "requestedWidth": 1280,
+  "port": 7979,
+  "clientRuntimeHashes": [
+    {
+      "sha256": "7B85C70675BC67B9A6A05C4DEBBBE86A9E79FF814D4A5AD08E3D338418734F9A",
+      "name": "Fireline.Client.dll"
+    },
+    {
+      "sha256": "9AB3721B3000FE68951E5432FFC44A2D1E888425EA45C766BE22CBC159D979B9",
+      "name": "Fireline.Shared.dll"
+    },
+    {
+      "sha256": "A9C3DE3E97D565AB538E42E3F99C7395FCA3ABC0EB9E8DAE714F9B72B227646E",
+      "name": "Fireline.Simulation.dll"
+    }
+  ],
+  "serverSha256": "3CACBB9917B8980B3B9E91E6120DE4D7456F108EE9B88622F5B85F7F3AEFF26F",
+  "passed": true,
+  "clientSha256": "9806ABDE4A406ED68647E9505852C49F6AA72A372F4F084E2AA2821AFFEA57A2",
+  "forcedD3D11": true,
+  "requestedHeight": 720,
+  "processes": [
+    {
+      "pid": 32572,
+      "markers": [
+        "FIRELINE_CLIENT_START",
+        "FIRELINE_CLIENT_RENDERER graphics=Direct3D11 pipeline=HDRenderPipelineAsset quality=Balanced",
+        "FIRELINE_CLIENT_CONNECTED networkId=1",
+        "FIRELINE_CAPTURE_SAVED before.png",
+        "FIRELINE_CLIENT_SMOKE passed=True frames=1178 renderedFrames=1177",
+        "FIRELINE_METRICS_SAVED client-diagnostic-metrics.json"
+      ],
+      "exitCode": 0,
+      "role": "client-1"
+    },
+    {
+      "pid": 15868,
+      "markers": [
+        "FIRELINE_SERVER_START endpoint=127.0.0.1:7979",
+        "FIRELINE_WORLD_READY restored=False tick=0 checksum=ba0ecc7466f19ace",
+        "FIRELINE_SIMULATION_START hz=5 grid=32 cellM=10 seed=415 authority=server fixture=synthetic",
+        "FIRELINE_SERVER_HEADLESS valid=True graphics=Null cameras=0",
+        "FIRELINE_SERVER_CONNECTIONS count=0",
+        "FIRELINE_SERVER_CONNECTIONS count=1",
+        "FIRELINE_SERVER_CONNECTIONS count=0",
+        "FIRELINE_SERVER_SMOKE passed=True peakClients=1 ticks=4799",
+        "FIRELINE_SIMULATION_STOP ticks=399 checksum=f5bae14d98d17d72"
+      ],
+      "exitCode": 0,
+      "role": "server"
+    }
+  ],
+  "serverRuntimeHashes": [
+    {
+      "sha256": "9112FA65C06AAF262425DC70D9FCF018E05CC83D26AC0D7303EFE0C15530C5FB",
+      "name": "Fireline.Server.dll"
+    },
+    {
+      "sha256": "DD33233B89AA1920762B86C667F6208F38B37E49062A0DD19CA918F171F2B95F",
+      "name": "Fireline.Shared.dll"
+    },
+    {
+      "sha256": "1FE3E38CFE7EF6A1BB909239A4C8C3A3FD812BCC6990D581EF070091D80C788D",
+      "name": "Fireline.Simulation.dll"
+    }
+  ]
+}

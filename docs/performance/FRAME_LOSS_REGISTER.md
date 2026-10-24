@@ -1,5 +1,21 @@
 # Frame-loss investigation register
 
+## M03 engineering-view callbacks — 2026-10-24
+
+**FL-08: measured locations retained; attribution/optimization deferred.** One rendered 1080p Balanced/VSync=1 D3D11 client on i5-9400F / GTX 1660 SUPER / driver 32.0.16.2101 / Windows 11 26300, Editor closed; one dry debug aircraft, synthetic runway/HUD, one headless observer and dedicated server. These are **render-callback overruns, not confirmed dropped presentations**. [Full conditions, actual images/SVGs, raw traces and graph guide](../previews/m03-flight-view/COMPARISON.md#performance-graph-guide).
+
+| Actual dataset | Retained sample | Recording start–end (s) | Callback spacing |
+|---|---:|---|---:|
+| Accepted rendered/view proof | **499** | **8.450635–8.629358** | **178.722903 ms** |
+| Same accepted proof, second maximum | **243** | **4.038424–4.203493** | **165.068999 ms** |
+| Initial attempt, view-trace gate rejected; diagnostic retained separately | **1** | **0–0.418063** | **418.062896 ms** |
+
+Accepted recording: 1448 intervals / 24.433480 s; 736 >16.667 ms and two >33.333 ms. Initial: 1733 intervals / 29.682669 s; 908/5 above those rulers. These are not counts of physically lost frames. Warm-up is five rendered seconds; origin is the start of the first retained interval near that boundary, not application launch. [Every accepted interval](../reports/m03-flight-view-evidence/callback-intervals.marked.csv), [every initial diagnostic interval](../reports/m03-flight-view-evidence/rejected-attempt-callbacks.marked.csv.gz), [exact maxima and initial exclusion reason](../reports/m03-flight-view-evidence/attempt-history.json).
+
+Source observation is `ClientProbe.OnCameraRendered`. Candidate profiling sites include `ClientProbe.Capture` / `FlightViewVerification.CaptureInspection` readback/PNG encoding, `FlightTestView.Update` string/uGUI updates, `LateUpdate` model/camera work, and surrounding HDRP/driver/GC/OS scheduling. Screenshot activity occurs within these recordings; proximity is not a demonstrated cause. No synchronized CPU/GPU/GC/presentation trace proves any bottleneck. Mesh-renderer count is not a draw-call measurement.
+
+Follow up in M03/M04/M09 with capture-on/off repeats, synchronized profiler/presentation counters and actual populated/coast/smoke/airborne scenes. Preserve presets; measure each CPU/GPU budget and network workload separately. No optimization, matched before/after speedup or representative 60 FPS pass. The trace-rejected attempt remains excluded from presentation acceptance; its valid callback observations are not erased. Existing FL-06/FL-07, HOST-01 and NET-01 remain unchanged.
+
 ## M03 live-host catch-up observation — 2026-10-24
 
 **HOST-01: measured headless scheduling location; attribution and optimization deferred.** This is no new rendered frame-loss result. One live debug aircraft, existing fire/wind, one dedicated and two real headless client worlds on loopback, Editor closed, i5-9400F / Windows 11 Pro 26300 / 16,324 MiB visible RAM. [Full conditions, SVGs, raw data and graph guide](../physics/live-flight-host/COMPARISON.md#measured-timing-and-graph-guide).

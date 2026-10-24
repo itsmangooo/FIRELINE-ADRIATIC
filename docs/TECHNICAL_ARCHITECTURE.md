@@ -1,5 +1,11 @@
 # Technical architecture — Unity 6 HDRP, C#, headless server
 
+## M03 engineering presentation boundary — 2026-10-24
+
+The separate flight-test client now binds received authoritative CoG/attitude to the reused model with explicit debug frame offsets. Client-only `FlightPoseTrack` interpolates two received poses at 100 ms delay, clamps endpoints and resets on epoch/jump; no client integrator or predicted authority. `FlightTestControls` reads installed Input System devices, gates focus/seat/staleness and submits through `ClientFlightSession` with server metadata. Two external cameras/uGUI show actual server pose/seat plus labeled local requests. Dedicated physics and wire structs remain unchanged. [Actual flow, equations, source/device/render checks and limitations](previews/m03-flight-view/COMPARISON.md).
+
+Runtime roles remain separated; client-only pure tests and device PlayMode tests use additional isolated test assemblies, excluded from Server and normal players. No HDRP/model is serialized in the headless build. Original scene/prefab/configuration and package lock are preserved. Airborne route/cockpit/animated parts, calibrated collision/resources, prediction/correction and production controls/UI remain pending. Older M03 integration paragraphs below retain their original increment scopes.
+
 ## M03 live debug-aircraft boundary — 2026-10-24
 
 Explicit `--fireline-flight-session debug` installs one server-owned `FlightAuthority`, a bounded 200 Hz physical substep adapter and versioned targeted aircraft RPCs. Transport identity controls seat ownership; epoch/sequence/tick/range/rate/lease checks guard inputs. Server wind is sampled using the existing fire-world tick. Clients validate complete poses and ACK exact ticks without running an aircraft integrator. Shared remains independent of Simulation/HDRP; the headless server has no mesh/presentation reference. [Actual before/after SVGs, clock equations, network behavior, verification and limits](physics/live-flight-host/COMPARISON.md).

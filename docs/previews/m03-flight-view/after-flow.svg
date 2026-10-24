@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="223.2pt" viewBox="0 0 864 223.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 223.2
+L 864 223.2
+L 864 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <g id="patch_2">
+     <path d="M 62.399531 135.932461
+L 169.800469 135.932461
+Q 175.650469 135.932461 175.650469 130.082461
+L 175.650469 108.477539
+Q 175.650469 102.627539 169.800469 102.627539
+L 62.399531 102.627539
+Q 56.549531 102.627539 56.549531 108.477539
+L 56.549531 130.082461
+Q 56.549531 135.932461 62.399531 135.932461
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(69.330938 116.217012)">Keyboard / gamepad</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(62.399531 127.019473)">Focus + seat input gate</text>
+   </g>
+   <g id="patch_3">
+    <path d="M 198.83244 119.28
+Q 219.646333 119.28 238.447765 119.28
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 234.447765 117.28
+L 238.447765 119.28
+L 234.447765 121.28
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_2">
+    <g id="patch_4">
+     <path d="M 271.389375 135.932461
+L 382.010625 135.932461
+Q 387.860625 135.932461 387.860625 130.082461
+L 387.860625 108.477539
+Q 387.860625 102.627539 382.010625 102.627539
+L 271.389375 102.627539
+Q 265.539375 102.627539 265.539375 108.477539
+L 265.539375 130.082461
+Q 265.539375 135.932461 271.389375 135.932461
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(271.389375 116.217012)">Server validates + steps</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(271.430859 127.019473)">Complete SI poses / ACK</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 409.43244 119.28
+Q 430.246333 119.28 449.047765 119.28
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 445.047765 117.28
+L 449.047765 119.28
+L 445.047765 121.28
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_3">
+    <g id="patch_6">
+     <path d="M 477.147656 135.932461
+L 597.452344 135.932461
+Q 603.302344 135.932461 603.302344 130.082461
+L 603.302344 108.477539
+Q 603.302344 102.627539 597.452344 102.627539
+L 477.147656 102.627539
+Q 471.297656 102.627539 471.297656 108.477539
+L 471.297656 130.082461
+Q 471.297656 135.932461 477.147656 135.932461
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(478.246641 116.217012)">100 ms pose interpolation</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(477.147656 127.019473)">CoG → explicit mesh offset</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 620.03244 119.28
+Q 640.846333 119.28 659.647765 119.28
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 655.647765 117.28
+L 659.647765 119.28
+L 655.647765 121.28
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <g id="patch_8">
+     <path d="M 691.689375 135.932461
+L 804.110625 135.932461
+Q 809.960625 135.932461 809.960625 130.082461
+L 809.960625 108.477539
+Q 809.960625 102.627539 804.110625 102.627539
+L 691.689375 102.627539
+Q 685.839375 102.627539 685.839375 108.477539
+L 685.839375 130.082461
+Q 685.839375 135.932461 691.689375 135.932461
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(691.689375 116.217012)">External cameras + HUD</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(701.841094 127.019473)">No client integration</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="432" y="20.16" transform="rotate(-0 432 20.16)">AFTER: engineering controls + delayed authoritative model view</text>
+   </g>
+  </g>
+ </g>
+</svg>

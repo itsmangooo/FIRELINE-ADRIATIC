@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "serverRuntimeHashes": [
+    {
+      "name": "Fireline.Server.dll",
+      "sha256": "6BB8E4D8B10B7A76A67EF090D68C9448B0C354AE42ACB34F1F5696EBC88AC135"
+    },
+    {
+      "name": "Fireline.Shared.dll",
+      "sha256": "1AF31E74824E4DFBA8D498571CA9D6166FCB304B983BDA853DB1BE09F612956C"
+    },
+    {
+      "name": "Fireline.Simulation.dll",
+      "sha256": "1FE3E38CFE7EF6A1BB909239A4C8C3A3FD812BCC6990D581EF070091D80C788D"
+    }
+  ],
+  "capture": "docs/previews/m03-flight-view/after.png",
+  "clientRuntimeHashes": [
+    {
+      "name": "Fireline.Client.dll",
+      "sha256": "03C57CEBB7EAD5FD29BEBC32E5B923E727D4DCCED661AB2ABBFD6DCBA1B205B3"
+    },
+    {
+      "name": "Fireline.Shared.dll",
+      "sha256": "7DAC80A8D3F0CFB05A8985FB0960AC1975BC52CF7FF15551237E05356236030C"
+    },
+    {
+      "name": "Fireline.Simulation.dll",
+      "sha256": "E626F0F667841EC9BC901D89594AC7A8D0C11DD4812B5FE791DB96146D2A787B"
+    }
+  ],
+  "runs": [
+    {
+      "role": "server",
+      "exitCode": 0,
+      "pid": 22884,
+      "resultSha256": "15531B262EE389FF3DC96AD99A4CED48DD96655FB86D8C2156AC8227E45EDBF0"
+    },
+    {
+      "role": "view-owner",
+      "exitCode": 0,
+      "pid": 20316,
+      "resultSha256": "7769B9A0C87D1E4DF2C48AE1E15224C5221958AFA58D010BDE317AAFD6EF8269"
+    },
+    {
+      "role": "observer",
+      "exitCode": 0,
+      "pid": 5952,
+      "resultSha256": "246E6B265E59D924D1B7690FFC14067D255E0C9AC7F99301D929944523D49454"
+    }
+  ],
+  "port": 8351,
+  "rawLogs": "Builds\\M03FlightView\\20261024-183403"
+}

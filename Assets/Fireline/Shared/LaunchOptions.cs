@@ -40,6 +40,10 @@ namespace Fireline.Shared
 
         /// <summary>Explicit opt-in to the single estimated live aircraft; absent by default.</summary>
         public bool FlightSession { get; private set; }
+        /// <summary>Explicit client-only engineering view and input adapter for the dedicated debug aircraft.</summary>
+        public bool FlightView { get; private set; }
+        /// <summary>Optional rendered-view proof using synthetic Input System devices through the normal client controls.</summary>
+        public string FlightViewProofPath { get; private set; }
         /// <summary>Optional role-specific output for the real two-client aircraft transport proof.</summary>
         public string FlightNetworkProofPath { get; private set; }
         /// <summary>Client-only scripted owner/observer identity for the opt-in network proof, never server admission credentials.</summary>
@@ -71,6 +75,12 @@ namespace Fireline.Shared
                 string value = args[i];
                 switch (key)
                 {
+                    case "--fireline-flight-view":
+                        if (value != "debug") throw new ArgumentException("Only the debug flight view exists.");
+                        options.FlightView = true; break;
+                    case "--fireline-flight-view-proof":
+                        if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Flight view proof path is empty.");
+                        options.FlightViewProofPath = value; break;
                     case "--fireline-flight-session":
                         if (value != "debug") throw new ArgumentException("Only the estimated debug aircraft session exists.");
                         options.FlightSession = true; break;
@@ -146,8 +156,14 @@ namespace Fireline.Shared
             }
             if (options.BenchmarkSeconds > 0 && (options.SmokeSeconds > 0 || options.BenchmarkOutput == null))
                 throw new ArgumentException("Benchmark requires output and cannot share the smoke exit timer.");
-            if ((options.FlightNetworkProofPath != null || options.FlightProbeRole != null) && !options.FlightSession)
+            if ((options.FlightView || options.FlightNetworkProofPath != null || options.FlightProbeRole != null) && !options.FlightSession)
                 throw new ArgumentException("Flight network proof requires an explicit debug flight session.");
+            if (options.FlightViewProofPath != null && !options.FlightView)
+                throw new ArgumentException("Rendered flight proof requires the explicit flight view.");
+            if (options.FlightViewProofPath != null && (options.CapturePath == null || options.MetricsPath == null))
+                throw new ArgumentException("Rendered flight proof requires capture and metrics paths.");
+            if (options.FlightView && (options.FlightNetworkProofPath != null || options.FlightProbeRole != null))
+                throw new ArgumentException("Rendered view and existing scripted network probe have separate input owners.");
             if (options.FlightProbeRole != null && options.FlightNetworkProofPath == null)
                 throw new ArgumentException("Scripted flight role requires network proof output.");
             if (options.FlightSession && (options.SimulationProofPath != null || options.FlightProofPath != null

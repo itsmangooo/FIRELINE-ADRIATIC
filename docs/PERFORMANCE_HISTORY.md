@@ -1,5 +1,15 @@
 # Performance history
 
+## 2026-10-24 — M03 rendered engineering aircraft view
+
+Actual Windows Mono release client **1920×1080 Balanced / VSync=1 / per-process D3D11**, one dry aircraft (144 imported renderers), 31 synthetic primitive surfaces and engineering HUD, one headless observer plus dedicated fire/wind/aircraft host. Editor closed; i5-9400F / GTX 1660 SUPER / driver 32.0.16.2101 / Windows 11 build 26300 / 16,323 MB Unity-reported RAM. Five rendered seconds warm up, **1448 intervals / 24.433480 s** retained. Average/1% low **59.262945 / 25.649861 FPS**, p95/p99 callback spacings **17.394099 / 17.924000 ms**. Peak Unity allocated bytes **482,846,054**.
+
+**FL-08:** max **#499, 178.722903 ms**, recording **8.450635–8.629358 s**; second **#243, 165.068999 ms**, **4.038424–4.203493 s**. 736 intervals exceed 16.667 ms; two exceed 33.333 ms. These are observed main-camera callback intervals, not execution or confirmed dropped-present counts. CPU/GPU execution, draw calls/VRAM, allocations/GC, RTT/bandwidth and complete host/fire execution remain unavailable. No representative populated/coastal/smoky five-minute qualification or 60 FPS pass; p95 exceeds its ruler. No measured optimization claim.
+
+The first rendered attempt was rejected by the independent view-trace checker for a one-frame focus-label mismatch and lacked actual late admission. Its **1733 intervals / 29.682669 s**, 58.384237 average / 15.775237 1% low, p95/p99 17.179800/17.757099 ms and **418.062896 ms at #1 (0–0.418063 s)** remain separately recorded. 908/5 intervals exceed the 16.667/33.333 ms rulers. Different startup/admission/cache conditions prevent treating attempts as a matched speedup comparison. The prior static BEFORE is 720p/different scene/camera; no matched rendering-impact baseline.
+
+[Full source/hardware/hash/method evidence](reports/2026-10-24-m03-flight-view.md), [actual SVGs and complete interval/tick/warm-up/axis/zoom guides](previews/m03-flight-view/COMPARISON.md#performance-graph-guide), [exact locations and deferred profiling sites](performance/FRAME_LOSS_REGISTER.md#m03-engineering-view-callbacks--2026-10-24). Existing FL-06/FL-07, HOST-01 and NET-01 remain unresolved. Optimization remains deferred.
+
 ## 2026-10-24 — M03 live debug host and two headless client replicas
 
 One actual Windows Mono dedicated player plus two real Netcode client players on loopback, all Null graphics; one dry estimated aircraft and the existing synthetic fire/wind fixture. Editor closed, i5-9400F / Windows 11 Pro 26300 / 16,324 MiB visible RAM. All **835 host callbacks / 14.001966 wall s** retained, no warm-up excluded; 2797 aircraft steps (13.985 physical s), fire tick 69. Application catch-up discards **0.0132569 wall s** once. Independent checker matches **154 received aircraft snapshots** to server publications.

@@ -1,5 +1,11 @@
 # Multiplayer/network architecture — 100 players as a target
 
+## M03 engineering input/view binding — 2026-10-24
+
+The client now has explicit keyboard/gamepad seat/input requests and a 20 Hz fresh-owner transmission gate; the existing server still independently validates connection identity, epoch, serial, observed tick, bounds/rate and lease. Visual poses use tested 100 ms receipt interpolation with endpoint holding, no extrapolation or client simulation. Actual rendered-owner/late-observer proof matches 401 received snapshots to server publications and reconstructs 1,723 display frames. Focus gate, release/reclaim and final disconnect are verified through real transport. [Actual evidence and initial failed recording correction](reports/2026-10-24-m03-flight-view.md).
+
+This adds no new RPC schema, prediction/correction, account/pilot qualification, flight persistence, WAN/traffic/capacity result or cloud dependency. Existing reliable stop-and-wait pose bounds remain. The engineering mesh/controls/interpolation now exist; the following older pending statements describe their earlier scope.
+
 ## M03 implemented debug-aircraft protocol — 2026-10-24
 
 An explicit opt-in session now accepts subscribe/claim/input/release/exact-tick ACK requests for one estimated aircraft. Only actual transport source identity can control its occupied seat. Epoch, sequence, observed tick, control bounds, 50 Hz accepted-input rate and 0.5 s lease guard the server-owned state. Complete SI poses use reliable RPCs at most 10 Hz, one unacknowledged pose per peer, five-second ACK timeout; client-published poses are rejected. Eight admitted identities per debug-session lifetime, 64 processed requests per host callback/eight per peer bound application work. This is no transport-level flood protection or production authentication/qualification service. [Actual flow, wire/clock details, late observer/disconnect proof and limitations](physics/live-flight-host/COMPARISON.md).

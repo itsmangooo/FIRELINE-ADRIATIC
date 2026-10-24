@@ -1,0 +1,9 @@
+{
+  "name": "Fireline.Client.Tests",
+  "rootNamespace": "Fireline.Tests",
+  "references": ["Fireline.Client", "Fireline.Shared", "Fireline.Simulation", "Unity.InputSystem"],
+  "includePlatforms": ["Editor"],
+  "defineConstraints": ["!UNITY_SERVER"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "autoReferenced": false
+}

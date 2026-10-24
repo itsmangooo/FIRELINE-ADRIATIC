@@ -20,6 +20,12 @@ namespace Fireline.Client
         private double firstRenderTime;
         private readonly FoundationMetrics metrics = new FoundationMetrics();
 
+        /// <summary>Flush the existing rendered callback diagnostic when an external proof owns the process exit timer.</summary>
+        public void SaveMetrics()
+        {
+            if (FoundationBootstrap.Options.MetricsPath != null && renderedFrames > 1) metrics.Save(FoundationBootstrap.Options.MetricsPath);
+        }
+
         /// <summary>
         /// Attach the client-only startup probe after scene loading; assembly separation keeps it out of servers.
         /// </summary>
@@ -60,7 +66,7 @@ namespace Fireline.Client
             var options = FoundationBootstrap.Options;
             double now = Time.realtimeSinceStartupAsDouble;
             double elapsed = firstRenderTime > 0 ? now - firstRenderTime : 0;
-            if (!captureStarted && elapsed > 5 && options.CapturePath != null)
+            if (!captureStarted && elapsed > (options.FlightViewProofPath != null ? 9 : 5) && options.CapturePath != null)
             {
                 captureStarted = true;
                 StartCoroutine(Capture(options.CapturePath));

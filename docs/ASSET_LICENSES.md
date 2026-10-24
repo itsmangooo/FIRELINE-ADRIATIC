@@ -1,5 +1,9 @@
 # Asset licenses and provenance
 
+## M03 engineering view provenance — 2026-10-24
+
+The new scene reuses the existing user-authorized CL-415 prototype and copies its original notice/audit into the new client build's `Legal/` directory. New runway/surround/marking geometry and three flat-color materials are project-authored primitives; the engineering HUD uses Unity's built-in font. No new external asset or package was downloaded and no contributor rights declaration changed. [Actual generation, source reuse and screenshots](previews/m03-flight-view/COMPARISON.md).
+
 ## CL-415 prototype decision — 2026-10-24
 
 The user explicitly authorized importing the official archive for temporary prototype use despite the previously recorded conflicting notices, and intends a commercial replacement before launch. The import retains all original source bytes and the BARANGER Emmanuel / Gary BROWN notice. This is a scoped project decision, not a declaration that the contributors' rights were reconciled. The prior import hold below is superseded for the prototype; replace or resolve all applicable rights/notices before production distribution. [Original source, hashes and decision](../AssetSources/Aircraft/CL415/AUDIT.md), [distributed notices](../THIRD_PARTY_ASSETS.md).

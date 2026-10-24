@@ -1,0 +1,48 @@
+{
+  "independentAcceptance": false,
+  "reason": "Trace recorded the next logical focus gate instead of the value consumed by the current control sample; checker rejected that transition. Cold rendered startup also let the initially later-launched observer connect first.",
+  "correction": "Record FlightTestView.InputFocused used by Sample; wait for confirmed occupied-seat trace before launching observer. The independent checks are retained unchanged and strengthened with actual late-join order.",
+  "processExits": [
+    0,
+    0,
+    0
+  ],
+  "rawLogs": "Builds\\M03FlightView\\20261024-182757",
+  "diagnosticsOnly": {
+    "metrics": {
+      "utc": "2026-10-24T16:28:42.4680649Z",
+      "cpu": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "driver": "Direct3D 11.0 [level 11.1]",
+      "os": "Windows 11  (10.0.26300)",
+      "quality": "Balanced",
+      "unavailable": "CPU/GPU execution timings, draw calls, VRAM, network bandwidth and server tick duration were not instrumented. Frame intervals include presentation/wait time.",
+      "ramMB": 16323,
+      "width": 1920,
+      "height": 1080,
+      "samples": 1733,
+      "sampledSeconds": 29.682669080095366,
+      "averageFps": 58.38423745936368,
+      "onePercentLowFps": 15.775237468492197,
+      "p95FrameMs": 17.17980019748211,
+      "p99FrameMs": 17.757099121809006,
+      "peakUnityAllocatedBytes": 487362993
+    },
+    "maximumCallback": {
+      "sample": 1,
+      "start_s": 0,
+      "end_s": 0.41806289553642273,
+      "interval_ms": 418.06289553642273,
+      "over_16_667_ms": true,
+      "over_33_333_ms": true
+    },
+    "intervalsOver16_667Ms": 908,
+    "intervalsOver33_333Ms": 5
+  },
+  "archive": {
+    "path": "rejected-attempt-callbacks.marked.csv.gz",
+    "rawSha256": "f16d6d5d749afba1f27d83e0845240a7da8d257a7af146d509fbab276560ad7f",
+    "rawBytes": 125638
+  },
+  "limits": "This first attempt is excluded from view acceptance; actual callback observations remain recorded separately. It is not a matched performance baseline or an optimization comparison."
+}

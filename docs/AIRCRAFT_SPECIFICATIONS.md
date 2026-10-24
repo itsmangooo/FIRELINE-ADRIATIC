@@ -1,5 +1,9 @@
 # Aircraft specifications & flight-simulation data sheet
 
+## Current M03 engineering boundary — 2026-10-24
+
+The estimated dry server aircraft now has live seat/input/pose authority and a separate client engineering view with test keyboard/gamepad mapping, two external cameras, explicit debug CoG/model offsets, 100 ms cosmetic interpolation and telemetry. [Actual behavior, equations, screenshots, device/render evidence and limits](previews/m03-flight-view/COMPARISON.md). The existing flight/contact constants are unchanged and are **not the production CL-415 baseline below**. Real CoG/gear rig, movable parts, cockpit, calibrated aerodynamic/fuel/resource behavior, airborne route, full collision and water acceptance remain pending. Earlier scope paragraphs below are historical.
+
 ## M03 debug contact prerequisite — 2026-10-24
 
 The optional pure contact adapter now adds finite-plane three-point support, combined friction/braking/steering and current/candidate envelope validation to the unchanged flight core. All gear values are uncalibrated estimates independent of the static imported mesh. [Actual equations, SI constants, comparisons, raw evidence and limitations](physics/runway-contact/COMPARISON.md). It is verified in an isolated dedicated-player harness, not installed live flight/contact, general airframe/terrain collision or pilot/network gameplay. Historical paragraphs below describe their original increments.

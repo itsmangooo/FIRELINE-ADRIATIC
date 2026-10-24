@@ -1,0 +1,231 @@
+{
+  "passed": true,
+  "roles": {
+    "server": {
+      "passed": true,
+      "faulted": false,
+      "reason": "two-client-authority-proof",
+      "role": "server",
+      "profile": "DEBUG_FLIGHT_ONLY_V1",
+      "tick": 7336,
+      "fireTick": 183,
+      "owner": 0,
+      "disconnectReleases": 1,
+      "expirations": 1,
+      "overruns": 1,
+      "updates": 2199,
+      "steps": 7336,
+      "seconds": 36.697008100000005,
+      "discardedSeconds": 0.013330099999999949,
+      "maximumUpdateMs": 5.6475,
+      "finalState": {
+        "PositionM": {
+          "X": 2.044734781912911,
+          "Y": 1.8912089460195642,
+          "Z": 3.631401758921338
+        },
+        "VelocityMps": {
+          "X": 0.056841181416117575,
+          "Y": 6.307412537028243e-06,
+          "Z": 0.022113046427638908
+        },
+        "AngularVelocityRadps": {
+          "X": 1.1780310300577922e-05,
+          "Y": -0.008931764547101312,
+          "Z": 1.1843747169383925e-05
+        },
+        "Attitude": {
+          "X": 0.00012671297701729136,
+          "Y": -0.22510772192283424,
+          "Z": -0.0006913094102020253,
+          "W": 0.9743336284691363
+        },
+        "FuelKg": 0.0,
+        "WaterKg": 0.0
+      },
+      "peers": [
+        {
+          "identity": 1,
+          "accepted": 444,
+          "rejected": 3,
+          "acknowledgements": 271,
+          "snapshots": 272,
+          "forgedPoses": 0,
+          "disconnected": true
+        },
+        {
+          "identity": 2,
+          "accepted": 1,
+          "rejected": 3,
+          "acknowledgements": 130,
+          "snapshots": 131,
+          "forgedPoses": 1,
+          "disconnected": true
+        }
+      ]
+    },
+    "view-owner": {
+      "passed": true,
+      "keyboardThrottle": true,
+      "gamepadThrottle": true,
+      "gamepadAxes": true,
+      "neutralOnFocusLoss": true,
+      "released": true,
+      "reclaimed": true,
+      "inspectionCapture": true,
+      "role": "rendered-owner",
+      "reason": "rendered-device-and-pose-proof",
+      "identity": 1,
+      "snapshots": 271,
+      "acceptedInputs": 439,
+      "appliedFrames": 1730,
+      "keyboardEvents": 1730,
+      "gamepadEvents": 1730,
+      "cameraMask": 3,
+      "seconds": 30.610072299999995,
+      "distanceM": 3.600985258902751,
+      "maximumAnchorErrorM": 0.0,
+      "maximumVisualOffsetErrorM": 0.0
+    },
+    "observer": {
+      "passed": true,
+      "sawOwner": true,
+      "sawVacantAfterOwner": true,
+      "role": "observer",
+      "reason": "observer-replica-and-seat-release",
+      "identity": 2,
+      "snapshots": 130,
+      "acceptedInputs": 0,
+      "rejected": 2,
+      "sequenceRejects": 0,
+      "epochRejects": 2,
+      "invalidRejects": 0,
+      "tickRejects": 0,
+      "firstTick": 2113,
+      "finalTick": 4876,
+      "seconds": 13.950401200000002,
+      "firstZ": 1.0062538340087592,
+      "lastZ": 3.445342962029245,
+      "maximumReceiveGapSeconds": 0.11837929999999997
+    }
+  },
+  "exactMatchedSnapshots": {
+    "view-owner": 271,
+    "observer": 130
+  },
+  "firstReceivedTicks": {
+    "view-owner": 1409,
+    "observer": 2113
+  },
+  "independentlyCheckedDisplayFrames": 1723,
+  "maximumPositionDifferenceM": 4.027524346742929e-15,
+  "maximumQuaternionComponentDifference": 1.1102230246251565e-16,
+  "maximumFloatAnchorDifferenceM": 0.0,
+  "callbackMaximum": [
+    {
+      "sample": 499,
+      "startSeconds": 8.4506352012977,
+      "endSeconds": 8.629358104430139,
+      "callbackMs": 178.72290313243866
+    },
+    {
+      "sample": 243,
+      "startSeconds": 4.038424104452133,
+      "endSeconds": 4.203493103384972,
+      "callbackMs": 165.06899893283844
+    },
+    {
+      "sample": 242,
+      "startSeconds": 4.016856703907251,
+      "endSeconds": 4.038424104452133,
+      "callbackMs": 21.56740054488182
+    },
+    {
+      "sample": 298,
+      "startSeconds": 5.100251906551421,
+      "endSeconds": 5.119695506058633,
+      "callbackMs": 19.44359950721264
+    },
+    {
+      "sample": 148,
+      "startSeconds": 2.449802204966545,
+      "endSeconds": 2.468739904463291,
+      "callbackMs": 18.937699496746063
+    },
+    {
+      "sample": 234,
+      "startSeconds": 3.8840601043775678,
+      "endSeconds": 3.90246460493654,
+      "callbackMs": 18.40450055897236
+    },
+    {
+      "sample": 1045,
+      "startSeconds": 17.70002052001655,
+      "endSeconds": 17.7184008192271,
+      "callbackMs": 18.3802992105484
+    },
+    {
+      "sample": 611,
+      "startSeconds": 10.466964403167367,
+      "endSeconds": 10.485171403735876,
+      "callbackMs": 18.207000568509102
+    },
+    {
+      "sample": 898,
+      "startSeconds": 15.250714617781341,
+      "endSeconds": 15.268882517702878,
+      "callbackMs": 18.167899921536446
+    },
+    {
+      "sample": 253,
+      "startSeconds": 4.350186503492296,
+      "endSeconds": 4.368262103758752,
+      "callbackMs": 18.075600266456604
+    }
+  ],
+  "intervalsOver16_667Ms": 736,
+  "intervalsOver33_333Ms": 2,
+  "archives": [
+    {
+      "path": "server.json.gz",
+      "rawSha256": "15531b262ee389ff3dc96ad99a4ced48dd96655fb86d8c2156ac8227e45edbf0",
+      "rawBytes": 1641
+    },
+    {
+      "path": "server.csv.gz",
+      "rawSha256": "ae33d0c91d54ef74f0e5ca3f00f767bb85e1e08f371224c8de5ab346be86ab42",
+      "rawBytes": 269436
+    },
+    {
+      "path": "server.snapshots.jsonl.gz",
+      "rawSha256": "c81547843d1765a1491d186725a61f5dbc14e26c7b4f69d5db93b0ddedaac9c0",
+      "rawBytes": 198001
+    },
+    {
+      "path": "view-owner.json.gz",
+      "rawSha256": "7769b9a0c87d1e4df2c48ae1e15224c5221958afa58d010bde317aafd6ef8269",
+      "rawBytes": 604
+    },
+    {
+      "path": "view-owner.csv.gz",
+      "rawSha256": "10ccf826f7ef74804f042c57c0f7366b5ff2ba2cfd20b57c1ac872516e7ce393",
+      "rawBytes": 503816
+    },
+    {
+      "path": "view-owner.snapshots.jsonl.gz",
+      "rawSha256": "3e479ce5b602f8a1fa1677f62baacc638747b28c831e988cb20ebed1d6daf0d9",
+      "rawBytes": 126987
+    },
+    {
+      "path": "observer.json.gz",
+      "rawSha256": "246e6b265e59d924d1b7690ffc14067d255e0c9ac7f99301d929944523d49454",
+      "rawBytes": 533
+    },
+    {
+      "path": "observer.snapshots.jsonl.gz",
+      "rawSha256": "c6d31bbdfd750da0765a46e6b8a0e137222480c01547bd6cbedece91b6178b5a",
+      "rawBytes": 60808
+    }
+  ],
+  "limits": "One rendered 1080p engineering runway client and one headless observer; synthetic Input System devices, no native OS key/gamepad hardware, airborne/water/WAN/capacity or representative 60 FPS acceptance."
+}

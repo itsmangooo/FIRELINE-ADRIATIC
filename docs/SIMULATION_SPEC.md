@@ -1,5 +1,9 @@
 # Simulation specification — Fire, wind, water and environmental destruction
 
+## M03 engineering presentation — 2026-10-24
+
+The dry debug aircraft now has an interactive client view with keyboard/gamepad test inputs and receipt-time cosmetic interpolation. Physical contact/flight functions, server wind sampling, mass and force laws are unchanged; Client never integrates flight. [Actual frame-mapping equations, device/render evidence and synthetic-runway limits](previews/m03-flight-view/COMPARISON.md). This does not complete calibrated real gear/CoG, fuel/resources, airborne route/cockpit/animation, general collision or water physics. Earlier implementation boundaries below describe their original increments.
+
 ## M03 live aircraft scheduling boundary — 2026-10-24
 
 The explicit debug session now drives the existing contact/flight kernel on the dedicated server with 5 ms steps, at most eight per `Update`, and recorded excess wall-time discard. It samples the actual server wind at the aircraft position using the existing fire tick. Validated seat-owner commands expire after 0.5 wall seconds; clients only retain validated server poses. [Actual equations, unchanged-physics reference checks, runtime evidence and clock limitations](physics/live-flight-host/COMPARISON.md). This is one estimated dry debug aircraft on a synthetic runway, with separate fire/aircraft clocks; general collision, calibrated airframe/fuel, visual/control binding and water remain pending. The older scope statements below describe earlier increments.

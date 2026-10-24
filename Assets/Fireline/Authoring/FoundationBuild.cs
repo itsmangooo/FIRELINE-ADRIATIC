@@ -95,6 +95,8 @@ namespace Fireline.Authoring
         public static void BuildBenchmarkClient() => Build(false, benchmark: true);
         /// <summary>Build the isolated static aircraft inspection client with its original asset notices.</summary>
         public static void BuildAircraftPreviewClient() => Build(false, aircraftPreview: true);
+        /// <summary>Build the separate M03 engineering runway/client view and retain the temporary aircraft notices.</summary>
+        public static void BuildFlightTestClient() => Build(false, aircraftPreview: true, flightTest: true);
         /// <summary>
         /// Cross-build the Linux x64 headless server; running that player is a separate verification step.
         /// </summary>
@@ -105,15 +107,15 @@ namespace Fireline.Authoring
         /// Temporarily select pipeline/backend/quality options, write evidence, and restore settings in finally.
         /// The inventory check covers named presentation assets, not every possible graphics resource.
         /// </summary>
-        private static void Build(bool server, bool benchmark = false, bool linux = false, bool aircraftPreview = false)
+        private static void Build(bool server, bool benchmark = false, bool linux = false, bool aircraftPreview = false, bool flightTest = false)
         {
             if (BuildPipeline.isBuildingPlayer || EditorApplication.isCompiling || EditorApplication.isPlayingOrWillChangePlaymode)
                 throw new InvalidOperationException("Wait until the Editor is idle before building.");
 
-            string role = aircraftPreview ? "aircraft-preview-client" : linux ? "linux-server" : benchmark ? "benchmark-client" : server ? "server" : "client";
+            string role = flightTest ? "flight-test-client" : aircraftPreview ? "aircraft-preview-client" : linux ? "linux-server" : benchmark ? "benchmark-client" : server ? "server" : "client";
             Directory.CreateDirectory(Evidence);
             string resultPath = $"{Evidence}/{role}-build.json";
-            string scene = aircraftPreview ? AircraftPrototypeAuthoring.ScenePath : benchmark ? CoastalBenchmarkAuthoring.ScenePath : server ? ServerScene : ClientScene;
+            string scene = flightTest ? FlightTestAuthoring.ScenePath : aircraftPreview ? AircraftPrototypeAuthoring.ScenePath : benchmark ? CoastalBenchmarkAuthoring.ScenePath : server ? ServerScene : ClientScene;
             if (!File.Exists(scene))
                 throw new BuildFailedException("Run FoundationBuild.CreateScenes first.");
 
@@ -151,7 +153,7 @@ namespace Fireline.Authoring
                 var options = new BuildPlayerOptions
                 {
                     scenes = new[] { scene },
-                    locationPathName = aircraftPreview ? "Builds/WindowsAircraftPreview/FirelineAircraftPreview.exe" : linux ? "Builds/LinuxServer/FirelineServer.x86_64" : benchmark ? "Builds/WindowsBenchmark/FirelineBenchmark.exe" : server ? "Builds/WindowsServer/FirelineServer.exe" : "Builds/WindowsClient/FirelineClient.exe",
+                    locationPathName = flightTest ? "Builds/WindowsFlightTest/FirelineFlightTest.exe" : aircraftPreview ? "Builds/WindowsAircraftPreview/FirelineAircraftPreview.exe" : linux ? "Builds/LinuxServer/FirelineServer.x86_64" : benchmark ? "Builds/WindowsBenchmark/FirelineBenchmark.exe" : server ? "Builds/WindowsServer/FirelineServer.exe" : "Builds/WindowsClient/FirelineClient.exe",
                     target = linux ? BuildTarget.StandaloneLinux64 : BuildTarget.StandaloneWindows64,
                     subtarget = (int)(server ? StandaloneBuildSubtarget.Server : StandaloneBuildSubtarget.Player),
                     options = BuildOptions.DetailedBuildReport | BuildOptions.StrictMode | (server ? BuildOptions.CleanBuildCache : BuildOptions.None),

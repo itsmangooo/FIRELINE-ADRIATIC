@@ -32,6 +32,35 @@ namespace Fireline.Client
         private bool connected, subscribed, claimed, received, finished;
         private StreamWriter snapshots;
 
+        /// <summary>True only after the real connection handshake and subscription acknowledgement.</summary>
+        public bool Ready => connected && subscribed && !finished;
+        /// <summary>Whether any validated authoritative pose is available.</summary>
+        public bool HasState => received;
+        /// <summary>Actual handshake identity used for local seat status; the server independently derives its own source identity.</summary>
+        public int Identity => evidence.identity;
+        /// <summary>Most recent validated server snapshot; returned by value so presentation cannot mutate the replica.</summary>
+        public FlightStateRpc Latest => latest;
+        /// <summary>Monotonic wall time when the current snapshot arrived, used only for stale-state display/interpolation.</summary>
+        public double ReceivedAt => receivedAt;
+        /// <summary>Number of accepted input replies actually received, rather than merely enqueued commands.</summary>
+        public int AcceptedInputs => evidence.acceptedInputs;
+        /// <summary>Number of validated snapshots received over the actual server connection.</summary>
+        public int SnapshotCount => evidence.snapshots;
+
+        /// <summary>Ask for the vacant debug seat; claiming is still subject to server authorization.</summary>
+        public void RequestSeat() { if (Ready) Send(2); }
+        /// <summary>Release only the locally observed seat generation; stale requests fail on the server.</summary>
+        public void ReleaseSeat() { if (Ready && received && latest.Owner == Identity) Send(4, epoch: latest.Epoch); }
+        /// <summary>Queue normalized local controls with transport-owned metadata; suppress stale or nonowner input before transmission.</summary>
+        public bool SubmitControls(FlightRequestRpc controls)
+        {
+            if (!Ready || !received || latest.Owner != Identity || Time.realtimeSinceStartupAsDouble - receivedAt > .5) return false;
+            controls.Version = 1; controls.Kind = 3; controls.Epoch = latest.Epoch; controls.Tick = latest.Tick; controls.Sequence = ++sequence;
+            FlightRpcIO.Request(manager, connection, controls); return true;
+        }
+        /// <summary>Request a real transport disconnect for the rendered proof; ownership is released by the server lifecycle.</summary>
+        public void Disconnect() { if (connected && manager.Exists(connection) && !manager.HasComponent<NetworkStreamRequestDisconnect>(connection)) manager.AddComponent<NetworkStreamRequestDisconnect>(connection); }
+
         /// <summary>Install only for explicit debug flight sessions; the existing static preview remains unchanged by default.</summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Install()
@@ -49,7 +78,7 @@ namespace Fireline.Client
             connections = manager.CreateEntityQuery(typeof(NetworkId));
             started = receivedAt = Time.realtimeSinceStartupAsDouble;
             evidence.role = FoundationBootstrap.Options.FlightProbeRole ?? "replica";
-            string path = FoundationBootstrap.Options.FlightNetworkProofPath;
+            string path = FoundationBootstrap.Options.FlightNetworkProofPath ?? FoundationBootstrap.Options.FlightViewProofPath;
             if (path != null)
             {
                 Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(path)));

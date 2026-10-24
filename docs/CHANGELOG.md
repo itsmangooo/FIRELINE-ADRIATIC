@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-24 — M03 engineering view and device controls verified increment
+
+- Bound the temporary model to received authoritative poses on a separate synthetic runway; added explicit debug body/CoG offset, tested 100 ms receipt interpolation without extrapolation, keyboard/gamepad mapping, two external cameras and readable engineering telemetry. Physical flight/contact laws remain unchanged; no new package.
+- **94 EditMode + 3 PlayMode tests**, zero-error Windows client/dedicated builds (499/505 warnings), actual rendered-owner/late-observer exits 0. **401 received poses** match server publications; **1,723 display frames** independently reconstruct, with 439 acknowledged controls, focus/lease fallback, release/reclaim and disconnect pass. The independent checker caught and prompted correction of a one-frame trace-label mismatch; actual late admission is now gated/verified.
+- Added real static BEFORE / 1080p chase+inspection AFTER captures, rendered flows/equations/plots and complete axis/tick/sample guides. **FL-08:** accepted #499 178.723 ms and #243 165.069 ms; initial trace-rejected 418.063 ms retained separately. [Full evidence/limits](reports/2026-10-24-m03-flight-view.md). No matched speedup, 60 FPS, airborne/cockpit/water, fresh Linux/WAN/capacity or M05A completion; M03 remains open and optimization deferred.
+
 ## 2026-10-24 — M03 live debug-aircraft authority verified increment
 
 - Added an opt-in live dedicated aircraft host with bounded 5 ms substeps and actual server wind; guarded seat/input ownership, epoch/sequence/tick/range/rate/lease checks and disconnect/envelope failure handling. Client replicas validate and ACK complete authoritative SI poses without running flight integration.

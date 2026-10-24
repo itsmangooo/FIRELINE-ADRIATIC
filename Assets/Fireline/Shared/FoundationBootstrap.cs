@@ -30,7 +30,7 @@ namespace Fireline.Shared
             // Explicit requests avoid the Editor play-mode endpoint overrides.
             AutoConnectPort = 0;
 #if UNITY_SERVER
-            if (Options.FlightProbeRole != null) throw new ArgumentException("Flight probe roles are client-only.");
+            if (Options.FlightProbeRole != null || Options.FlightView) throw new ArgumentException("Flight view/probe roles are client-only.");
             RuntimeWorld = CreateServerWorld("Fireline.Server");
             var request = RuntimeWorld.EntityManager.CreateEntity(typeof(NetworkStreamRequestListen));
             RuntimeWorld.EntityManager.SetComponentData(request, new NetworkStreamRequestListen
@@ -39,6 +39,7 @@ namespace Fireline.Shared
             });
             Debug.Log($"FIRELINE_SERVER_START endpoint={Options.BindAddress}:{Options.Port}");
 #else
+            if (Options.FlightView && Options.ConnectAddress == null) throw new ArgumentException("Flight view requires an explicit direct-IP server.");
             if (Options.FlightNetworkProofPath != null && (Options.FlightProbeRole == null || Options.ConnectAddress == null))
                 throw new ArgumentException("Client flight proof requires a role and explicit direct-IP connection.");
             if (Options.SimulationProofPath != null || Options.FlightProofPath != null || Options.RunwayProofPath != null || Options.WorldLoadPath != null || Options.WorldSavePath != null)

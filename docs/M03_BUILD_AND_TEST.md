@@ -1,5 +1,7 @@
 # M03 isolated debug-flight verification
 
+Latest presentation increment: [engineering flight view/device proof](#engineering-flight-view-and-device-proof). Historical numerical and data-only sections retain their original scopes.
+
 The latest increment also adds an explicit [live debug-aircraft / two-client proof](#live-debug-aircraft-and-two-client-network-proof). Older sections below describe their isolated proof scopes.
 
 M03 is **In Progress**. This increment verifies a pure numerical solver in an opt-in dedicated-player harness; it does not implement a playable aircraft. [Equations, debug values, before/after diagrams and limitations](physics/debug-flight/COMPARISON.md), [actual verification report](reports/2026-10-24-m03-debug-flight.md).
@@ -104,3 +106,41 @@ python scripts/analyze_m03_flight_network.py --archive docs/reports/m03-flight-n
 ```
 
 This verifies gzip raw hashes, process-result hash bindings, every client/server snapshot and host clock row, writing fresh results to the scratch destination. To reproduce the no-peer failure gate, launch the same dedicated binary with `-batchmode -nographics --fireline-flight-session debug --fireline-flight-network-proof <fresh-output.json>` and an unused `--fireline-port`, start no clients, wait at least 50 seconds, and require exit 12 with `passed=false` / `reason=network-proof-timeout`. Its trace is not a performance reference.
+
+## Engineering flight view and device proof
+
+This separate scene/client binds the temporary model to received poses, adds test controls/two external cameras/uGUI telemetry and verifies actual device events. It leaves the physical flight/contact solver unchanged. [Actual screenshots, presentation equations, controls, diagrams, raw plots and limitations](previews/m03-flight-view/COMPARISON.md).
+
+Close the Editor; preserve existing edits and use fresh output destinations. Installed Unity 6000.6.7f1 / HDRP 17.6.0 / Input System 1.20.1 / Netcode 6.6.0 are retained. The current CLI is 1.0.0-beta.14. **Explicit Player subtarget is required for Client/test assemblies**; a retained Server subtarget excludes them. Device edge tests run in PlayMode using the installed Input System test fixture; pure simulation/presentation/scene checks run in EditMode.
+
+```powershell
+New-Item -ItemType Directory -Force Builds/M03FlightViewReplay | Out-Null
+unity test "$PWD" --editor-version 6000.6.7f1 --mode EditMode --filter Fireline.Tests --output Builds/M03FlightViewReplay/editmode.xml --timeout 900 -- -buildTarget Win64 -standaloneBuildSubtarget Player -nographics -force-d3d11 *> Builds/M03FlightViewReplay/edit-tests.log
+unity test "$PWD" --editor-version 6000.6.7f1 --mode PlayMode --filter Fireline.Tests --output Builds/M03FlightViewReplay/playmode.xml --timeout 900 -- -buildTarget Win64 -standaloneBuildSubtarget Player -nographics -force-d3d11 *> Builds/M03FlightViewReplay/play-tests.log
+$env:FIRELINE_BUILD_EVIDENCE='Builds/M03FlightViewReplay/evidence/builds'
+unity run "$PWD" --editor-version 6000.6.7f1 --timeout 1800 --log-file Builds/M03FlightViewReplay/client-build.log --no-tail -- -buildTarget Win64 -standaloneBuildSubtarget Player -force-d3d11 -executeMethod Fireline.Authoring.FoundationBuild.BuildFlightTestClient
+unity run "$PWD" --editor-version 6000.6.7f1 --timeout 1200 --log-file Builds/M03FlightViewReplay/server-build.log --no-tail -- -buildTarget Win64 -standaloneBuildSubtarget Server -nographics -executeMethod Fireline.Authoring.FoundationBuild.BuildServer
+./scripts/Test-M03FlightView.ps1 -Port 8360 -EvidenceRoot Builds/M03FlightViewReplay/evidence -CapturePath Builds/M03FlightViewReplay/after.png
+$env:PYTHONPATH=(Join-Path $PWD Builds/AnalysisTools)
+python scripts/render_m03_flight_view.py --evidence Builds/M03FlightViewReplay/evidence --output Builds/M03FlightViewReplay/plots
+```
+
+Check each exit before the next command; builds/tests share one checkout and must not run concurrently. Plotting uses matplotlib only for report exports; it is no runtime dependency. Keep raw Unity logs ignored because they may contain credentials. The official source [documents the Player/Server command-line switch](https://docs.unity.com/en-us/engine/6000.7/manual/unity-editor/command-line-arguments/editor).
+
+The scene/materials are committed. Only when generating them from a state where they are absent, run `Fireline.Authoring.FlightTestAuthoring.CreateScene` through `unity run`. It refuses an edited existing test scene; only an exact, otherwise unmodified copy left by an interrupted first attempt may resume. It locates the aircraft by prefab asset identity, not its generated display name. Do not recreate the original project/preview/prefab.
+
+The harness runs a new dedicated server, one **visible 1920×1080 Balanced D3D11** owner and a late headless observer from the new client binary. The owner enables `--fireline-flight-session debug --fireline-flight-view debug --fireline-flight-view-proof <output.json>` with capture/metrics paths and explicit direct IP. The proof queues isolated keyboard/gamepad state events through the normal reader/session/RPC path, tests logical focus loss, external-camera change, release/reclaim, and a real final disconnect. Observer checks occupied-seat denial and a forged pose, then sees a vacant seat. No native OS keystrokes or physical-controller hardware claim. Server/observer use the existing network-proof mode; owner returns failure **14** if any rendered/device/pose gate fails. A view option in the wrong scene returns **15**.
+
+Observer admission waits for the rendered owner's confirmed occupied-seat CSV row, then one additional second; a fixed process-launch delay alone does not prove actual late join after a cold graphical startup. The independent checker requires the observer's actual first received tick to exceed the owner's. Every raw view row records the focus value actually consumed by that frame, along with exact receipt/sample clocks.
+
+For manual use, start the dedicated binary with `--fireline-flight-session debug --fireline-port 7979`. Launch `Builds/WindowsFlightTest/FirelineFlightTest.exe -force-d3d11 --fireline-flight-session debug --fireline-flight-view debug --fireline-connect 127.0.0.1 --fireline-port 7979`. Omit proof options: it uses actual application focus/current devices and remains running. Enter claims the seat; use the on-screen/documented keyboard/pad mappings. Seat claim is server validated; any connected peer can request a vacant debug seat, without production qualifications/admission. Keep gear down on the runway; unsupported contact faults freeze/fail this prototype rather than resolving a crash. External cameras are not a verified cockpit.
+
+[Accepted results and build identities](reports/2026-10-24-m03-flight-view.md) distinguish rendered-frame callbacks from physical/server ticks and preserve actual missing counters. The scene does not implement takeoff/landing acceptance, coast/cockpit/animation, aircraft calibration/fuel, water/suppression or 100-player/WAN qualification. M03 remains open.
+
+Recheck the committed raw archives without Unity or the original ignored logs:
+
+```powershell
+python scripts/analyze_m03_flight_view.py --archive docs/reports/m03-flight-view-evidence --evidence Builds/M03ViewArchiveReplay --image docs/previews/m03-flight-view/after.png
+```
+
+Use a fresh destination; raw hash bindings, actual role result hashes, source snapshots, sampled focus, presentation math/float placement and FPS summaries are revalidated. The initial rejected attempt's callbacks remain a separate diagnostic archive/report and are not mixed into accepted view metrics.

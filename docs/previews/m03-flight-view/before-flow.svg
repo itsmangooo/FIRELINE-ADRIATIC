@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="223.2pt" viewBox="0 0 864 223.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 223.2
+L 864 223.2
+L 864 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <g id="patch_2">
+     <path d="M 58.292578 135.932461
+L 173.907422 135.932461
+Q 179.757422 135.932461 179.757422 130.082461
+L 179.757422 108.477539
+Q 179.757422 102.627539 173.907422 102.627539
+L 58.292578 102.627539
+Q 52.442578 102.627539 52.442578 108.477539
+L 52.442578 130.082461
+Q 52.442578 135.932461 58.292578 135.932461
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(61.865156 116.217012)">Server aircraft authority</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(58.292578 127.019473)">Validated controls / poses</text>
+   </g>
+   <g id="patch_3">
+    <path d="M 198.83244 119.28
+Q 219.646333 119.28 238.447765 119.28
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 234.447765 117.28
+L 238.447765 119.28
+L 234.447765 121.28
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_2">
+    <g id="patch_4">
+     <path d="M 275.189063 135.932461
+L 378.210938 135.932461
+Q 384.060938 135.932461 384.060938 130.082461
+L 384.060938 108.477539
+Q 384.060938 102.627539 378.210938 102.627539
+L 275.189063 102.627539
+Q 269.339063 102.627539 269.339063 108.477539
+L 269.339063 130.082461
+Q 269.339063 135.932461 275.189063 135.932461
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(276.060234 116.217012)">Read-only replica data</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(275.189063 127.019473)">Scripted network proof</text>
+   </g>
+   <g id="text_3">
+    <g id="patch_5">
+     <path d="M 484.870781 135.932461
+L 589.729219 135.932461
+Q 595.579219 135.932461 595.579219 130.082461
+L 595.579219 108.477539
+Q 595.579219 102.627539 589.729219 102.627539
+L 484.870781 102.627539
+Q 479.020781 102.627539 479.020781 108.477539
+L 479.020781 130.082461
+Q 479.020781 135.932461 484.870781 135.932461
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(489.820781 116.217012)">Static preview model</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(484.870781 127.019473)">No input / pose binding</text>
+   </g>
+   <g id="text_4">
+    <g id="patch_6">
+     <path d="M 690.641719 135.932461
+L 805.158281 135.932461
+Q 811.008281 135.932461 811.008281 130.082461
+L 811.008281 108.477539
+Q 811.008281 102.627539 805.158281 102.627539
+L 690.641719 102.627539
+Q 684.791719 102.627539 684.791719 108.477539
+L 684.791719 130.082461
+Q 684.791719 135.932461 690.641719 135.932461
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(690.641719 116.217012)">No flight view / telemetry</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(705.856641 127.019473)">No local prediction</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="432" y="20.16" transform="rotate(-0 432 20.16)">BEFORE: 3035aea — live data, separate static aircraft preview</text>
+   </g>
+  </g>
+ </g>
+</svg>
