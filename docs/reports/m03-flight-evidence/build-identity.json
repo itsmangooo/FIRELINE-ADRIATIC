@@ -1,0 +1,133 @@
+{
+  "sourceCheckpoint": "8af54d1a5eee658570a36601e04cb7f615370547",
+  "sourceHashes": [
+    {
+      "path": "Assets/Fireline/Authoring/CoastalBenchmarkAuthoring.cs",
+      "sha256": "273b7ae27c4873e93cb3f0089126f25192208dbf85777bd32bc2ea036acf728b"
+    },
+    {
+      "path": "Assets/Fireline/Authoring/FoundationBuild.cs",
+      "sha256": "c79b6bed751dee7ae3e3c8136d28d1b62feb2811c63a39d93d10dabd828d6d65"
+    },
+    {
+      "path": "Assets/Fireline/Client/ClientFireReplication.cs",
+      "sha256": "1ebaac51d584b4d8c8bef46dceca6fe0e136d2d7ddf58bcf0ca38c380cc606df"
+    },
+    {
+      "path": "Assets/Fireline/Client/ClientProbe.cs",
+      "sha256": "7fc2a42c38955148699aeab1298af7f3d59546f16894050e12216d2f5a2713fd"
+    },
+    {
+      "path": "Assets/Fireline/Client/CoastalBenchmarkRecorder.cs",
+      "sha256": "740375e4689adcddadbed35cc3645f636c24146cba7d9a1e896c182f1135f04d"
+    },
+    {
+      "path": "Assets/Fireline/Client/FireStateView.cs",
+      "sha256": "97cca85fc0d5232ea9cdca03077f7f704e03e8a9cb92c869bacc9ae88db216af"
+    },
+    {
+      "path": "Assets/Fireline/Client/FoundationMetrics.cs",
+      "sha256": "03e30e3b50dddd9f9ec285f37756b88836ab11adad717fcc47dc6db68dc3b5f5"
+    },
+    {
+      "path": "Assets/Fireline/Server/AuthoritativeFireService.cs",
+      "sha256": "7d7c039c136a62a3a6ccab6f34abfed231ce806badfb6854d21c3e78e71d4200"
+    },
+    {
+      "path": "Assets/Fireline/Server/FileFireSnapshotStore.cs",
+      "sha256": "5a9499acbaa4d7f405fae6f80910698ba5ada59391a3f912e3f56af6cf1bc740"
+    },
+    {
+      "path": "Assets/Fireline/Server/FireSimulationRunner.cs",
+      "sha256": "f240c5b3f6a4f989a201ffa5c776eb5a37c9b0f5502835694bdbed16e957297e"
+    },
+    {
+      "path": "Assets/Fireline/Server/FireVerification.cs",
+      "sha256": "687fa22416ec318651865fab496c45feb33f6112a41459075c8937287fc2c8fb"
+    },
+    {
+      "path": "Assets/Fireline/Server/FlightVerification.cs",
+      "sha256": "75859d8644cff9c6dfe42e01010293084b61d379a802304f5c2b4151150fff2d"
+    },
+    {
+      "path": "Assets/Fireline/Server/ServerFireReplication.cs",
+      "sha256": "281d6deb91b71cf4bcc4f336f899342d0831a74367c02ba5693f5af72337aff6"
+    },
+    {
+      "path": "Assets/Fireline/Server/ServerProbe.cs",
+      "sha256": "2b37e2882d22a9ceed85825fbcc8fb12768100658e47d1d710de05725a970e4e"
+    },
+    {
+      "path": "Assets/Fireline/Shared/FireMessages.cs",
+      "sha256": "129742faf053e79dee202931f2bd15e66beb2b0da723d976600194839036d94b"
+    },
+    {
+      "path": "Assets/Fireline/Shared/FoundationBootstrap.cs",
+      "sha256": "6982ac5f73fe4297adf6bee3c8497dc13125b693e8bffc924bc99b25af6aff4a"
+    },
+    {
+      "path": "Assets/Fireline/Shared/LaunchOptions.cs",
+      "sha256": "69e59db6243306ac3fc8934f9e85e20540651c6c782f8126c284df26af159d2f"
+    },
+    {
+      "path": "Assets/Fireline/Simulation/FireReplicationCodec.cs",
+      "sha256": "cc63f76961e56e1e787fdfd5fe902a82bfd57839a4f9ba9977eac88e4352a041"
+    },
+    {
+      "path": "Assets/Fireline/Simulation/FireSnapshotCodec.cs",
+      "sha256": "a038f453a5aa18d283ece59e56cc7e9f2d56f601e4e12535ccf21512064fbb68"
+    },
+    {
+      "path": "Assets/Fireline/Simulation/FireState.cs",
+      "sha256": "3b25f622b7f2dad0d641afd1ef0c7625b19d3d70fd4fed1cccd1eac9b82b6c83"
+    },
+    {
+      "path": "Assets/Fireline/Simulation/FireWorld.cs",
+      "sha256": "b9fde8b11c80b2204e8959ef24def791f25791597b5a5b4d6f6bdca7af7d40e0"
+    },
+    {
+      "path": "Assets/Fireline/Simulation/FlightDynamics.cs",
+      "sha256": "a2077a9c104c5076f0fcae98e09e3da9d087f87e731b36231d03bc4dd6f5b331"
+    },
+    {
+      "path": "Assets/Fireline/Simulation/FlightMath.cs",
+      "sha256": "92170afdb0eef72cc5683b85db2d92df41c717f44662082b1e5bb33ed0530eef"
+    },
+    {
+      "path": "Assets/Fireline/Simulation/TickClock.cs",
+      "sha256": "1c3fc78a1b346cd90f4557118344c482c6342e5e26942dfbd2e775a23dbf17ee"
+    },
+    {
+      "path": "Assets/Fireline/Simulation/WindField.cs",
+      "sha256": "046e83f2aa94fee9e83e598b2daf2acb7cea298188d0964dd921abd49ff764b9"
+    },
+    {
+      "path": "Assets/Fireline/Tests/Editor/FireReplicationTests.cs",
+      "sha256": "b760f8cc5beec75969aa75d47048a24898e0d3d0d6e797f5a774ec676a241e34"
+    },
+    {
+      "path": "Assets/Fireline/Tests/Editor/FireSimulationTests.cs",
+      "sha256": "e6a28e6390fcfec721d5d596e83be78e8b0ed55baddb388698e5a025b7ab8795"
+    },
+    {
+      "path": "Assets/Fireline/Tests/Editor/FireSnapshotTests.cs",
+      "sha256": "662e135e7d4a942b408328e5a8e5f74bbf3c3a2d06fe6a93c8b9e572fa4fee47"
+    },
+    {
+      "path": "Assets/Fireline/Tests/Editor/FlightDynamicsTests.cs",
+      "sha256": "24e196f831d69c1191665b9484176be2b0ceb03f7a7504a0ded9f6ea5d2f4ebe"
+    },
+    {
+      "path": "Assets/Fireline/Tests/Editor/FoundationTests.cs",
+      "sha256": "cdf867aa8fdddbc0ee9717c9d8ef8f4c80d4ec919925a72688c18c6f1d96ecfd"
+    }
+  ],
+  "editor": "6000.6.7f1",
+  "packages": {
+    "HDRP": "17.6.0",
+    "Entities": "6.6.0",
+    "Netcode": "6.6.0",
+    "Transport": "6.6.0"
+  },
+  "currentClientBuild": "Not rebuilt in this increment; M02 client binaries used only for unchanged fire-protocol regression"
+}

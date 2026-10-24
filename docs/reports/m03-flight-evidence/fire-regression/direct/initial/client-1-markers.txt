@@ -1,0 +1,47 @@
+FIRELINE_CLIENT_START
+FIRELINE_CLIENT_RENDERER graphics=Direct3D11 pipeline=HDRenderPipelineAsset quality=Balanced
+FIRELINE_CLIENT_CONNECTED networkId=1
+FIRELINE_FIRE_APPLY kind=1 tick=0 checksum=1eeeb063f893a6f8 charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=1 checksum=7f984710067b3697 charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=4 checksum=07a61b5f9af864ea charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=7 checksum=11846e7ea5c8d20d charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=10 checksum=380049698b24329a charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=13 checksum=fe17ede1cb346ea6 charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=15 checksum=6d211b39b1b10418 charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=18 checksum=f4f776a0926bce7f charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=21 checksum=a8bc96a995abe88b charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=24 checksum=c4dc51a24ca98c31 charred=0
+FIRELINE_FIRE_APPLY kind=2 tick=27 checksum=6987433850672d9a charred=0
+FIRELINE_FIRE_GAP repair=True reason=Delta base digest gap.
+FIRELINE_FIRE_APPLY kind=1 tick=33 checksum=2cf5c489a018e1f1 charred=1
+FIRELINE_FIRE_APPLY kind=2 tick=36 checksum=485c04579f570c73 charred=1
+FIRELINE_FIRE_APPLY kind=2 tick=39 checksum=744ba0a5fccfa7bb charred=1
+FIRELINE_FIRE_APPLY kind=2 tick=42 checksum=de18a95d94463aa6 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=45 checksum=23f60118cca0712c charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=48 checksum=e9c426b7c4ef70ac charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=52 checksum=411094e6c3284ddf charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=55 checksum=68c93c0530417deb charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=58 checksum=461d32248f619caf charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=61 checksum=586dbc4df3e577ef charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=64 checksum=a786eccccd8b64f7 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=67 checksum=be487216fac3300d charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=70 checksum=9ddb7cb1ccaa6e86 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=73 checksum=76c652417e8d95b1 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=76 checksum=57fd72eb31de2661 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=79 checksum=aeff8f8b76667e12 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=82 checksum=fa11db063f73bf20 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=85 checksum=f7523f711714bb98 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=88 checksum=e0d7494a5413e37b charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=91 checksum=dd439a4bf32692c8 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=94 checksum=701078128188cc56 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=97 checksum=9bfb500e06d8e65c charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=100 checksum=d54e46159f17441e charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=103 checksum=1375a4cb0e5cf021 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=106 checksum=20dbbba2f1177050 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=109 checksum=c009f8148c9c02d8 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=112 checksum=b6fa7f643c1e27aa charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=115 checksum=87b7fe3ed2a655db charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=118 checksum=680d9c84f61f0655 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=120 checksum=7ba53d73d78a059a charred=5
+FIRELINE_METRICS_SAVED client-1.metrics.json
+FIRELINE_REPLICATION_PROOF role=client passed=True tick=120 checksum=7ba53d73d78a059a

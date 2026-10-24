@@ -1,0 +1,19 @@
+{
+    "passed": true,
+    "role": "client",
+    "checksum": "7ba53d73d78a059a",
+    "reason": "",
+    "tick": 120,
+    "networkId": 1,
+    "baselines": 2,
+    "deltas": 39,
+    "repairs": 1,
+    "pongs": 33,
+    "rejected": 1,
+    "charredCells": 5,
+    "initialCharredCells": 0,
+    "frameSamples": 1799,
+    "initialTick": 0,
+    "payloadCharacters": 250972,
+    "seconds": 35.0623054
+}

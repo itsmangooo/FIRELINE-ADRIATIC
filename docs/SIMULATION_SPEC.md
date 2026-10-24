@@ -1,5 +1,9 @@
 # Simulation specification — Fire, wind, water and environmental destruction
 
+## M03 numerical flight increment — 2026-10-24
+
+An isolated pure C# free-body flight solver now exists; [actual equations, SI units, estimated constants, diagrams and numerical checks](physics/debug-flight/COMPARISON.md). It evaluates explicit wind samples and is exercised with the existing seeded `WindField` in a dedicated debug proof. No live shared aircraft/fire clock, water trajectory/coverage, scoop, fuel burn or collision integration is implemented. M02 already verifies live fire replication/local restart; the historical M01 scope paragraph below describes that earlier checkpoint.
+
 ## Current M01 prototype — implementation boundary
 
 The [implementation comparison](physics/fire-wind/COMPARISON.md) records the actual bounded 5 Hz synthetic-grid model, seeded horizontal wind, six named phases, normalized heat/intensity/hazard, SI fuel/water and irreversible vegetation char. Its estimated coefficients are not a calibrated field forecast or the full proposed fidelity below. M01 tests and headless runs establish deterministic gameplay behavior; aircraft/drop physics, real map descriptors, refined thermodynamics, networking and persistence remain later work. The kickoff phrase “7 burn stages” conflicts with the six explicitly named states below; implementation follows those six names rather than inventing another phase.

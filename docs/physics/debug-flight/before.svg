@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="244.8pt" viewBox="0 0 864 244.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 244.8
+L 864 244.8
+L 864 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 11.580235 162.069171
+L 265.405093 162.069171
+Q 267.907592 162.069171 267.907592 159.448917
+L 267.907592 84.584515
+Q 267.907592 81.964261 265.405093 81.964261
+L 11.580235 81.964261
+Q 9.077737 81.964261 9.077737 84.584515
+L 9.077737 159.448917
+Q 9.077737 162.069171 11.580235 162.069171
+z
+" clip-path="url(#pf6b8e048e6)" style="fill: #edf6fb; stroke: #2676a3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 270.983172 122.016716
+Q 277.917445 122.016716 283.733684 122.016716
+" clip-path="url(#pf6b8e048e6)" style="fill: none; stroke: #000000; stroke-linecap: round"/>
+    <path d="M 278.133684 119.216716
+L 283.733684 122.016716
+L 278.133684 124.816716
+z
+" clip-path="url(#pf6b8e048e6)" style="fill: #1f77b4; stroke: #000000; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 297.580075 162.069171
+L 551.404933 162.069171
+Q 553.907432 162.069171 553.907432 159.448917
+L 553.907432 84.584515
+Q 553.907432 81.964261 551.404933 81.964261
+L 297.580075 81.964261
+Q 295.077577 81.964261 295.077577 84.584515
+L 295.077577 159.448917
+Q 295.077577 162.069171 297.580075 162.069171
+z
+" clip-path="url(#pf6b8e048e6)" style="fill: #edf6fb; stroke: #2676a3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 556.983012 122.016716
+Q 563.917285 122.016716 569.733524 122.016716
+" clip-path="url(#pf6b8e048e6)" style="fill: none; stroke: #000000; stroke-linecap: round"/>
+    <path d="M 564.133524 119.216716
+L 569.733524 122.016716
+L 564.133524 124.816716
+z
+" clip-path="url(#pf6b8e048e6)" style="fill: #1f77b4; stroke: #000000; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 583.579915 162.069171
+L 837.404773 162.069171
+Q 839.907272 162.069171 839.907272 159.448917
+L 839.907272 84.584515
+Q 839.907272 81.964261 837.404773 81.964261
+L 583.579915 81.964261
+Q 581.077417 81.964261 581.077417 84.584515
+L 581.077417 159.448917
+Q 581.077417 162.069171 583.579915 162.069171
+z
+" clip-path="url(#pf6b8e048e6)" style="fill: #edf6fb; stroke: #2676a3; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(99.935399 118.953728)">Server fire / wind</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(77.609774 129.756189)">Replicated fire checkpoints</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(355.593989 118.953728)">No aircraft forces, mass model</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(369.273989 129.756189)">or 6DOF state integrator</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(647.974688 118.953728)">Read-only client fire display</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(643.65961 129.756189)">No aircraft state or pilot input</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="432" y="208.110779" transform="rotate(-0 432 208.110779)">Actual baseline absence; previous numerical flight results are unavailable, not zero</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="432" y="238.05654" transform="rotate(-0 432 238.05654)">No mesh / runway / collision / pilot RPC / flight replication / takeoff-landing loop implemented in this increment</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 10.8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="432" y="11.206552" transform="rotate(-0 432 11.206552)">BEFORE: M02 has no flight implementation</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pf6b8e048e6">
+   <rect x="3.00024" y="17.206552" width="857.99952" height="224.593208"/>
+  </clipPath>
+ </defs>
+</svg>

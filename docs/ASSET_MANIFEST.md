@@ -1,5 +1,9 @@
 # Asset Manifest — Imported content, source links and pipeline
 
+## M03 numerical fixture — 2026-10-24
+
+`DEBUG_FLIGHT_ONLY_V1` is project-authored scalar test data and a headless mathematical body, **not an imported model or generated graphical aircraft**. No texture, geometry, font or external asset is added; the existing CL-415 archive remains outside Unity under its unresolved rights gate. [Implemented scope/provenance](reports/2026-10-24-m03-debug-flight.md). No new screenshot is applicable to this nonvisual increment; graphics and aircraft-import evidence remain future M03 tasks.
+
 ## M02 diagnostic display — 2026-10-23
 
 `FL-M02-STATE-VIEW`: project-authored runtime uGUI panels and 32×16 nearest-filtered phase-color texture, generated from validated server state; Unity built-in `LegacyRuntime.ttf`. No external downloads, model, material conversion or licence change. Original calibration scene/assets and user's sky-profile edit preserved. [Actual game screenshots and provenance](previews/m02-replication/COMPARISON.md). Engineering display only; not a terrain/fire VFX/player UI asset or M05A completion.

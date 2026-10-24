@@ -36,6 +36,7 @@ namespace Fireline.Server
         /// </summary>
         private void Start()
         {
+            if (FoundationBootstrap.Options.FlightProofPath != null) { enabled = false; return; }
             DontDestroyOnLoad(gameObject);
             try
             {

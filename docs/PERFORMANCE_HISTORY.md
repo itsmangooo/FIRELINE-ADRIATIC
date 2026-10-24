@@ -1,5 +1,16 @@
 # Performance history
 
+## 2026-10-24 — M03 isolated flight Step elapsed diagnostic
+
+Two separate Mono Windows dedicated players on i5-9400F / Windows 11 build 26300 / 16324 MiB visible RAM; Editor closed, one proof at a time, 100 warm-up calls excluded and 1000 retained independent 5 ms physical-step evaluations per run. These measure one pure `Step` call, not the complete server tick or a client frame.
+
+| Actual process | Warm-up / retained calls | p50 / p95 / p99 (ms) | Maximum (ms) / retained call | Gen-0 collections |
+|---|---:|---:|---:|---:|
+| Run 1 | 100 / 1000 | 0.0017000 / 0.0017000 / 0.0018000 | 0.0457000 / #1 | 0 |
+| Run 2 | 100 / 1000 | 0.0017000 / 0.0020000 / 0.0023000 | 0.0479000 / #1 | 0 |
+
+GPU/FPS/draw calls are not applicable to Null graphics; complete host timing, memory/residency/allocation bytes and flight network bandwidth are unmeasured. Zero gen-0 collections does not prove zero allocation. No earlier flight implementation exists, so BEFORE cost/improvement is unavailable. [Raw lossless runtime files, method, SVG plot, exact units/tick/warm-up/interval guide and limitations](reports/2026-10-24-m03-debug-flight.md#timing-method-measured-results-and-graph-guide). Existing render-hitch data remain unchanged; optimization is deferred.
+
 ## 2026-10-23 — M02 concurrent-client callback/UDP diagnostic
 
 Three 1280×720 Balanced/VSync=1 D3D11 Mono release clients (third joining later), one local server and optional UDP proxy, Editor closed, i5-9400F / GTX 1660 SUPER / 16,323 MiB / Windows 11 build 26300 / driver 32.0.16.2101. Five wall seconds of adapter warm-up; short per-client recordings, not matched five-minute 1080p scenarios. Direct client #1 averaged 52.63 FPS, 1% low 4.19, p95 19.034 ms, with **1193.136 ms at sample #602**; client #2 also recorded 1166.763 ms at #605. All six p95 intervals exceed 16.67 ms. Later impaired timings cannot establish an improvement: startup/history/duration differ.

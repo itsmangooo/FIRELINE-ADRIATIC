@@ -10,16 +10,21 @@ Route every client through an independent loopback impairment socket; this is no
 Server port; the next three ports are reserved for optional proxies.
 .PARAMETER JitterMs
 Optional per-direction jitter to reproduce NET-01; zero is the verified impairment. Jittered outputs use a separate case folder.
+.PARAMETER EvidenceBase
+Repository-relative evidence parent; later milestones can preserve the original M02 artifacts during regression runs.
+.PARAMETER PreviewBase
+Repository-relative screenshot parent; use an ignored destination for unchanged-presentation regressions.
 #>
-param([switch]$Impaired, [ValidateRange(1024,65000)][int]$Port = 8070, [ValidateRange(0,80)][double]$JitterMs = 0)
+param([switch]$Impaired, [ValidateRange(1024,65000)][int]$Port = 8070, [ValidateRange(0,80)][double]$JitterMs = 0,
+    [string]$EvidenceBase = 'docs/reports/m02-evidence', [string]$PreviewBase = 'docs/previews/m02-replication')
 $ErrorActionPreference = 'Stop'
 $project = Split-Path $PSScriptRoot -Parent
 $serverBinary = Join-Path $project 'Builds/WindowsServer/FirelineServer.exe'
 $clientBinary = Join-Path $project 'Builds/WindowsClient/FirelineClient.exe'
 $caseName = if ($Impaired -and $JitterMs -gt 0) { 'jittered' } elseif ($Impaired) { 'impaired' } else { 'direct' }
 $raw = Join-Path $project ('Builds/M02Replication/' + $caseName + '-' + (Get-Date -Format 'yyyyMMdd-HHmmss'))
-$published = Join-Path $project ('docs/reports/m02-evidence/' + $caseName)
-$previews = Join-Path $project 'docs/previews/m02-replication'
+$published = Join-Path $project (Join-Path $EvidenceBase $caseName)
+$previews = Join-Path $project $PreviewBase
 New-Item -ItemType Directory -Force $raw,$published,$previews | Out-Null
 foreach ($number in $Port..($Port+3)) {
     if (Get-NetUDPEndpoint -LocalPort $number -ErrorAction SilentlyContinue) { throw "UDP port $number is occupied." }

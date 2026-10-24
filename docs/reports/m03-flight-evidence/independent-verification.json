@@ -1,0 +1,129 @@
+{
+  "passed": true,
+  "exactSameRuntimeReplay": true,
+  "exactCsvReplay": true,
+  "maximumJsonCsvHeightDifferenceM": 1.1368683772161603e-13,
+  "trajectorySha256": "77ee69abec552e7ea9783b997f3953bd3ebd5142fc126463e01a1502c34b1f75",
+  "caseSummaries": [
+    {
+      "case": "ballistic_20ms",
+      "samples": 200,
+      "dtSeconds": 0.02,
+      "endHeightM": 921.1545340000005,
+      "endEastM": 0.0,
+      "endNorthM": 239.99999999999915,
+      "endAirspeedMps": 71.68490878532249,
+      "massKg": 10400.0,
+      "cgZM": -0.03076923076923077
+    },
+    {
+      "case": "ballistic_10ms",
+      "samples": 400,
+      "dtSeconds": 0.01,
+      "endHeightM": 921.3506669999997,
+      "endEastM": 0.0,
+      "endNorthM": 239.99999999999844,
+      "endAirspeedMps": 71.68490878532265,
+      "massKg": 10400.0,
+      "cgZM": -0.03076923076923077
+    },
+    {
+      "case": "ballistic_5ms",
+      "samples": 800,
+      "dtSeconds": 0.005,
+      "endHeightM": 921.4487334999992,
+      "endEastM": 0.0,
+      "endNorthM": 240.00000000000338,
+      "endAirspeedMps": 71.68490878532272,
+      "massKg": 10400.0,
+      "cgZM": -0.03076923076923077
+    },
+    {
+      "case": "dry",
+      "samples": 800,
+      "dtSeconds": 0.005,
+      "endHeightM": 963.296206811938,
+      "endEastM": 0.0,
+      "endNorthM": 246.0956690045231,
+      "endAirspeedMps": 66.62596615032508,
+      "massKg": 10400.0,
+      "cgZM": -0.03076923076923077
+    },
+    {
+      "case": "loaded",
+      "samples": 800,
+      "dtSeconds": 0.005,
+      "endHeightM": 939.6221523969957,
+      "endEastM": 0.0,
+      "endNorthM": 244.28085802791176,
+      "endAirspeedMps": 69.76949973038312,
+      "massKg": 14400.0,
+      "cgZM": 0.3111111111111111
+    },
+    {
+      "case": "dry_10ms",
+      "samples": 400,
+      "dtSeconds": 0.01,
+      "endHeightM": 963.2418168730419,
+      "endEastM": 0.0,
+      "endNorthM": 246.10067777770374,
+      "endAirspeedMps": 66.62442241256704,
+      "massKg": 10400.0,
+      "cgZM": -0.03076923076923077
+    },
+    {
+      "case": "crosswind",
+      "samples": 800,
+      "dtSeconds": 0.005,
+      "endHeightM": 963.645975263091,
+      "endEastM": 1.463372828070964,
+      "endNorthM": 245.80644498031717,
+      "endAirspeedMps": 66.91098796185734,
+      "massKg": 10400.0,
+      "cgZM": -0.03076923076923077
+    },
+    {
+      "case": "server_wind",
+      "samples": 800,
+      "dtSeconds": 0.005,
+      "endHeightM": 962.9869077782832,
+      "endEastM": 1.7538994921324396,
+      "endNorthM": 246.02586498160227,
+      "endAirspeedMps": 66.18218944671433,
+      "massKg": 10400.0,
+      "cgZM": -0.03076923076923077
+    },
+    {
+      "case": "controls",
+      "samples": 400,
+      "dtSeconds": 0.005,
+      "endHeightM": 995.7471993911208,
+      "endEastM": 2.1322230259644694,
+      "endNorthM": 120.84157367980653,
+      "endAirspeedMps": 61.448808845893105,
+      "massKg": 10400.0,
+      "cgZM": -0.03076923076923077
+    }
+  ],
+  "timingRuns": [
+    {
+      "calls": 1000,
+      "warmupCalls": 100,
+      "p50Ms": 0.0017000000000000001,
+      "p95Ms": 0.0017000000000000001,
+      "p99Ms": 0.0018000000000000002,
+      "maxMs": 0.045700000000000005,
+      "gc0Collections": 0
+    },
+    {
+      "calls": 1000,
+      "warmupCalls": 100,
+      "p50Ms": 0.0017000000000000001,
+      "p95Ms": 0.002,
+      "p99Ms": 0.0023,
+      "maxMs": 0.047900000000000005,
+      "gc0Collections": 0
+    }
+  ],
+  "source": "Two actual Windows dedicated-player processes; pure numerical debug model, no meshes/networked aircraft"
+}

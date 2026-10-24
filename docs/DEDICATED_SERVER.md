@@ -1,5 +1,9 @@
 # Dedicated servers — self-hosting and operational model
 
+## M03 isolated numerical proof
+
+`--fireline-flight-proof output.json` runs the distinctly named debug flight fixture in a dedicated player, writes actual JSON/CSV and returns 0 or failure 10. It cannot share live checkpoint or other proof/timed modes; clients reject it. Without that flag, the ordinary fire/replication host remains active. [Build/run instructions](M03_BUILD_AND_TEST.md), [actual two-process/replay/regression evidence and limits](reports/2026-10-24-m03-debug-flight.md). This option is verification tooling, not a playable aircraft server.
+
 ## Current M02 local checkpoint operation
 
 `--fireline-world-load file.fls` requires a valid existing snapshot and installs its validated candidate before WORLD_READY. Missing/corrupt loads exit 6; no fresh-world fallback. `--fireline-world-save file.fls` enables five-second/controlled-shutdown writes; write failure exits 7. Omitting the load flag intentionally starts a fresh synthetic world, even if the save destination exists; back up saves first. `Saves/` is ignored operator state. File replacement is flushed/single-writer, not a database transaction or power-loss guarantee.

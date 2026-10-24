@@ -1,5 +1,9 @@
 # Aircraft specifications & flight-simulation data sheet
 
+## Implemented M03 debug boundary — 2026-10-24
+
+`DEBUG_FLIGHT_ONLY_V1` now implements an isolated numerical 6DOF core with synthetic 10000 kg dry body, 4000 kg water limit and estimated aerodynamic/inertia/thrust constants. **It is not the CL-415 baseline below** and does not blend aircraft variants or claim manufacturer performance. [All actual constants, equations and tests](physics/debug-flight/COMPARISON.md), [real headless build/process evidence](reports/2026-10-24-m03-debug-flight.md). Production variant JSON, licensed model, calibration, fuel consumption, live pilot authority/contact/replication and flight loop remain open M03 work.
+
 ## Reference policy
 
 Model **CL-415** first. Published specifications are references, not a complete aerodynamic model. Every value is tagged `SOURCE_VERIFIED`, `APPROX`, `CALIBRATE` or `UNKNOWN` in the actual JSON aircraft definition. Different CL-415 variants can have different operating weights/capacity; do not blend data from the CL-415EAF conversion with Croatian operational CL-415 without documentation.

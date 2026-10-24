@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "localMarkdownLinks": 235,
+  "uniqueFirelineMetadataGuids": 85,
+  "sourceHashesMatchBuiltSourceRecord": true,
+  "skyPreservedAndExcluded": true,
+  "packageFilesUnchanged": true,
+  "projectSettingsExcluded": true,
+  "currentServerFireRegressionCanonicalFiles": 8,
+  "fireRegressionMatchesOriginalM02CanonicalBytes": true,
+  "syntaxTablesFencesSvgMetadataSecretPatterns": "Passed; formatting and pattern checks do not replace runtime tests"
+}

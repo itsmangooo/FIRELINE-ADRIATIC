@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-24 — M03 independent debug-flight core verified increment
+
+- Added pure double-precision SI force/moment, payload/CoG/inertia and quaternion 6DOF stepping with numerical guards; all parameters explicitly synthetic, not CL-415 calibration.
+- 57/57 Unity tests, fresh Windows headless build (0 errors / 505 warnings), two real debug-proof processes and unchanged fire late-join/repair/restart regression pass. Raw trajectories/CSV replay exactly within each format; the independent cross-format decimal tolerance is disclosed.
+- Added actual BEFORE/AFTER SVGs, recorded coefficient/payload/convergence plots, elapsed-Step measurements and plain-language graph guides. [Evidence and limits](reports/2026-10-24-m03-debug-flight.md). M03 stays In Progress; aircraft import remains licence-blocked. No visual/gameplay/aircraft-network, optimization, 60 FPS or capacity claim.
+
 ## 2026-10-23 — M02 live replication and checkpoint proof verified
 
 - Implemented targeted bounded baselines/revision deltas, guarded fragment assembly, exact ACK/gap repair, heartbeat/timeouts and invalid-control rejection. Clients display authoritative state without stepping/mutating fire. Explicit checkpoint load/save now runs in the actual dedicated lifecycle.

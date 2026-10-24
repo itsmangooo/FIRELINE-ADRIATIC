@@ -1,5 +1,11 @@
 # Frame-loss investigation register
 
+## M03 numerical Step cost observations — 2026-10-24
+
+The new debug-flight headless path records isolated function intervals, **not frame-loss evidence**. p95 is 1.700/2.000 µs across the two runs; maxima 45.700/47.900 µs occur at retained call #1 after 100 warm-ups. [All actual samples, SVG and graph reader guide](../reports/2026-10-24-m03-debug-flight.md#timing-method-measured-results-and-graph-guide). No rendered client is active in this timing diagnostic, and no causal JIT/CPU/GC trace exists. Do not count these as dropped presentations, infer client smoothness or claim an optimization.
+
+Future profiling locations when flight is attached to the actual host: `FlightDynamics.Evaluate` (validation/forces), `FlightDynamics.Step` (inertia/rotation/candidate validation), existing wind sampling, and host scheduling/contact/network work still to be introduced. Preserve these observations; optimize later only after representative host/client timelines establish a cost. M00/M02 frame-hitch locations below and NET-01 remain unchanged.
+
 ## M02 measured callback overruns — 2026-10-23
 
 **FL-06: measured locations; attribution/optimization deferred.** New independent M02 diagnostic; historical M00 data below are unchanged. Three concurrent 720p Balanced D3D11 release clients, late join, local headless server, optional proxy; i5-9400F / GTX 1660 SUPER, driver 32.0.16.2101, Editor closed. [Full conditions/raw CSV/SVG and graph reader guide](../reports/2026-10-23-m02-replication.md#callback-measurements-and-graph-reader-guide).

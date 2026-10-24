@@ -1,5 +1,9 @@
 # Technical architecture — Unity 6 HDRP, C#, headless server
 
+## M03 isolated flight boundary — 2026-10-24
+
+`Fireline.Simulation` now adds pure `FlightVector`, `FlightRotation`, `FlightDynamics`, bounded state/input DTOs and the explicitly estimated `DebugFlightProfile`. It retains `noEngineReferences`; no package or assembly dependency is added. `Fireline.Server.FlightVerification` runs an opt-in dedicated numerical proof; ordinary live fire/replication remains unchanged without its flag. No client flight state, live aircraft entity, pilot ownership, contact solver or prediction/correction exists yet. [Actual flow/math/evidence and remaining integration tasks](reports/2026-10-24-m03-debug-flight.md).
+
 ## M02 runtime boundaries — verified bounded Windows proof
 
 `Fireline.Simulation` keeps canonical state validation and pure bounded patch/compression helpers without Unity. `Fireline.Shared` owns RPC DTOs/targeted send helpers and validated launch options. `Fireline.Server` owns the world, checkpoint lifecycle and per-peer transfers; `Fireline.Client` references Simulation only to decode/validate received state and draws a runtime uGUI diagnostic, never `FireWorld.Step`. Client/Server opposite-role assemblies remain excluded in successful builds. No packages/scenes/settings were added or reset. [Actual diagram, source/build identities, process tests, failed startup cases and limits](reports/2026-10-23-m02-replication.md). M05A UI remains planned; this diagnostic has no player controls.

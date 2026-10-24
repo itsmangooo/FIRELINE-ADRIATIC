@@ -1,0 +1,7 @@
+FIRELINE_CLIENT_START
+FIRELINE_CLIENT_RENDERER graphics=Direct3D11 pipeline=HDRenderPipelineAsset quality=Balanced
+FIRELINE_CLIENT_CONNECTED networkId=3
+FIRELINE_FIRE_APPLY kind=1 tick=114 checksum=529efb42b48148ef charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=117 checksum=c15d22c35c19c566 charred=5
+FIRELINE_FIRE_APPLY kind=2 tick=120 checksum=7ba53d73d78a059a charred=5
+FIRELINE_REPLICATION_PROOF role=client passed=True tick=120 checksum=7ba53d73d78a059a

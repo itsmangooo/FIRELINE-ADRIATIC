@@ -1,0 +1,40 @@
+{
+  "runtimeHashes": [
+    {
+      "sha256": "9416FE808B3B6E9612C6F715C547D4B7025FFD516327297674741EF30728BAB9",
+      "name": "Fireline.Server.dll"
+    },
+    {
+      "sha256": "2866F3A6C300F2BEB03FCFBE8E9D85B3A60BE0741A58B683B697EDEFFBED7E2C",
+      "name": "Fireline.Shared.dll"
+    },
+    {
+      "sha256": "71D71A9C8541FADC05452AD137FA214969F38B2BF17104519DB78CFCA30DF22D",
+      "name": "Fireline.Simulation.dll"
+    }
+  ],
+  "rawLogs": "Builds\\M03Flight\\20261024-084846",
+  "hardware": {
+    "cpu": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+    "build": "26300",
+    "ramMiB": 16324.0,
+    "os": "Microsoft Windows 11 Pro"
+  },
+  "passed": true,
+  "runs": [
+    {
+      "resultSha256": "9103F5C38B26FF0BD210FA8640D55A2A17CF5046C11A8045B53907CF43A514FB",
+      "run": 1,
+      "exitCode": 0,
+      "csvSha256": "09FA7555FBE48AD9F9A30228E9D4B77083C2D693F76DAD2C1AB3CA024BE8B900",
+      "pid": 22920
+    },
+    {
+      "resultSha256": "071A4850C32156E92F7F418F02ACC91825792FAB7EFF1FBD32544B1EB6E1F0B9",
+      "run": 2,
+      "exitCode": 0,
+      "csvSha256": "09FA7555FBE48AD9F9A30228E9D4B77083C2D693F76DAD2C1AB3CA024BE8B900",
+      "pid": 26520
+    }
+  ]
+}

@@ -38,7 +38,7 @@ namespace Fireline.Shared
             });
             Debug.Log($"FIRELINE_SERVER_START endpoint={Options.BindAddress}:{Options.Port}");
 #else
-            if (Options.SimulationProofPath != null || Options.WorldLoadPath != null || Options.WorldSavePath != null)
+            if (Options.SimulationProofPath != null || Options.FlightProofPath != null || Options.WorldLoadPath != null || Options.WorldSavePath != null)
                 throw new ArgumentException("Simulation proof is available only in a dedicated-server build.");
             RuntimeWorld = CreateClientWorld("Fireline.Client");
             if (Options.ConnectAddress != null)
