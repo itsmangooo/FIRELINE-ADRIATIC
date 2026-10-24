@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="71" result="Passed" total="71" passed="71" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:56:03Z" duration="11.8812069">
+  <test-suite type="TestSuite" id="1000" name="FIRELINE ADRIATIC" fullname="FIRELINE ADRIATIC" runstate="Runnable" testcasecount="71" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:56:03Z" duration="11.881207" total="71" passed="71" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1082" name="Fireline.Tests.dll" fullname="A:/Unity Projects/FIRELINE ADRIATIC/Library/ScriptAssemblies/Fireline.Tests.dll" runstate="Runnable" testcasecount="71" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:56:03Z" duration="11.862675" total="71" passed="71" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="28124" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1083" name="Fireline" fullname="Fireline" runstate="Runnable" testcasecount="71" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:56:03Z" duration="11.859378" total="71" passed="71" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1084" name="Tests" fullname="Fireline.Tests" runstate="Runnable" testcasecount="71" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:56:03Z" duration="11.849218" total="71" passed="71" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1001" name="AircraftImportTests" fullname="Fireline.Tests.AircraftImportTests" classname="Fireline.Tests.AircraftImportTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.138033" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1003" name="GeometryIsOrientedGroundedAndExplicitlyStatic" fullname="Fireline.Tests.AircraftImportTests.GeometryIsOrientedGroundedAndExplicitlyStatic" methodname="GeometryIsOrientedGroundedAndExplicitlyStatic" classname="Fireline.Tests.AircraftImportTests" runstate="Runnable" seed="1954578048" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.036768" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1002" name="MaterialsRetainTexturesAndGlassOpacity" fullname="Fireline.Tests.AircraftImportTests.MaterialsRetainTexturesAndGlassOpacity" methodname="MaterialsRetainTexturesAndGlassOpacity" classname="Fireline.Tests.AircraftImportTests" runstate="Runnable" seed="593692524" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.080847" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1004" name="OriginalContributorNoticeIsUnchanged" fullname="Fireline.Tests.AircraftImportTests.OriginalContributorNoticeIsUnchanged" methodname="OriginalContributorNoticeIsUnchanged" classname="Fireline.Tests.AircraftImportTests" runstate="Runnable" seed="607803741" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.000796" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1005" name="FireReplicationTests" fullname="Fireline.Tests.FireReplicationTests" classname="Fireline.Tests.FireReplicationTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.054328" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1011" name="CompressionRejectsInvalidAndExpandingPayloads" fullname="Fireline.Tests.FireReplicationTests.CompressionRejectsInvalidAndExpandingPayloads" methodname="CompressionRejectsInvalidAndExpandingPayloads" classname="Fireline.Tests.FireReplicationTests" runstate="Runnable" seed="2073493553" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.019598" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1007" name="DeltaGapAndReplayLeaveValidStateUntouched" fullname="Fireline.Tests.FireReplicationTests.DeltaGapAndReplayLeaveValidStateUntouched" methodname="DeltaGapAndReplayLeaveValidStateUntouched" classname="Fireline.Tests.FireReplicationTests" runstate="Runnable" seed="364190988" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.020537" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1006" name="DeltaPreservesExactAuthoritativeState" fullname="Fireline.Tests.FireReplicationTests.DeltaPreservesExactAuthoritativeState" methodname="DeltaPreservesExactAuthoritativeState" classname="Fireline.Tests.FireReplicationTests" runstate="Runnable" seed="288977314" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.004308" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1008" name="DeltaRejectsRevisionCorruptionTruncationAndTrailingBytes" fullname="Fireline.Tests.FireReplicationTests.DeltaRejectsRevisionCorruptionTruncationAndTrailingBytes" methodname="DeltaRejectsRevisionCorruptionTruncationAndTrailingBytes" classname="Fireline.Tests.FireReplicationTests" runstate="Runnable" seed="575102748" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.003594" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1010" name="FragmentAssemblyIsBoundedAndOrderIndependent" fullname="Fireline.Tests.FireReplicationTests.FragmentAssemblyIsBoundedAndOrderIndependent" methodname="FragmentAssemblyIsBoundedAndOrderIndependent" classname="Fireline.Tests.FireReplicationTests" runstate="Runnable" seed="146185298" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.001048" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1012" name="LiveCheckpointOptionsAreExplicitAndConflictWithAcceleratedProof" fullname="Fireline.Tests.FireReplicationTests.LiveCheckpointOptionsAreExplicitAndConflictWithAcceleratedProof" methodname="LiveCheckpointOptionsAreExplicitAndConflictWithAcceleratedProof" classname="Fireline.Tests.FireReplicationTests" runstate="Runnable" seed="1257882094" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.001591" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1009" name="TopologyChangeRequiresBaseline" fullname="Fireline.Tests.FireReplicationTests.TopologyChangeRequiresBaseline" methodname="TopologyChangeRequiresBaseline" classname="Fireline.Tests.FireReplicationTests" runstate="Runnable" seed="419661143" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.000666" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1013" name="FireSimulationTests" fullname="Fireline.Tests.FireSimulationTests" classname="Fireline.Tests.FireSimulationTests" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:56:02Z" duration="10.962732" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1020" name="AdjacentNegativeCoordinateChunkReceivesHeatAcrossBoundary" fullname="Fireline.Tests.FireSimulationTests.AdjacentNegativeCoordinateChunkReceivesHeatAcrossBoundary" methodname="AdjacentNegativeCoordinateChunkReceivesHeatAcrossBoundary" classname="Fireline.Tests.FireSimulationTests" runstate="Runnable" seed="475187962" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.001423" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1019" name="BurnConsumesFuelThroughSmolderingAndNeverRegrowsChar" fullname="Fireline.Tests.FireSimulationTests.BurnConsumesFuelThroughSmolderingAndNeverRegrowsChar" methodname="BurnConsumesFuelThroughSmolderingAndNeverRegrowsChar" classname="Fireline.Tests.FireSimulationTests" runstate="Runnable" seed="823118381" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.015056" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1022" name="ChunkBudgetsBoundWorkAndInactiveChunksKeepProgressing" fullname="Fireline.Tests.FireSimulationTests.ChunkBudgetsBoundWorkAndInactiveChunksKeepProgressing" methodname="ChunkBudgetsBoundWorkAndInactiveChunksKeepProgressing" classname="Fireline.Tests.FireSimulationTests" runstate="Runnable" seed="673828547" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.070058" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1017" name="ClientWaterRequestCannotMutateAuthority" fullname="Fireline.Tests.FireSimulationTests.ClientWaterRequestCannotMutateAuthority" methodname="ClientWaterRequestCannotMutateAuthority" classname="Fireline.Tests.FireSimulationTests" runstate="Runnable" seed="445767684" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.000883" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1027" name="DryingAllowsReignitionWithoutRestoringCharredVegetation" fullname="Fireline.Tests.FireSimulationTests.DryingAllowsReignitionWithoutRestoringCharredVegetation" methodname="DryingAllowsReignitionWithoutRestoringCharredVegetation" classname="Fireline.Tests.FireSimulationTests" runstate="Runnable" seed="689836329" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.008361" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1026" name="FuelClassChangesNeighborHeatingUnderEquivalentInputs" fullname="Fireline.Tests.FireSimulationTests.FuelClassChangesNeighborHeatingUnderEquivalentInputs" methodname="FuelClassChangesNeighborHeatingUnderEquivalentInputs" classname="Fireline.Tests.FireSimulationTests" runstate="Runnable" seed="314329975" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.004909" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1021" name="InsertionOrderCannotChangeWorldResults" fullname="Fireline.Tests.FireSimulationTests.InsertionOrderCannotChangeWorldResults" methodname="InsertionOrderCannotChangeWorldResults" classname="Fireline.Tests.FireSimulationTests" runstate="Runnable" seed="1207748576" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.019815" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1016" name="InvalidWaterCoverageFailsAtomically" fullname="Fireline.Tests.FireSimulationTests.InvalidWaterCoverageFailsAtomically" methodname="InvalidWaterCoverageFailsAtomically" classname="Fireline.Tests.FireSimulationTests" runstate="Runnable" seed="972995110" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:55:51Z" duration="0.000957" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1014" name="ScenarioMatrixIsDeterministicDirectionalAndSuppressible" fullname="Fireline.Tests.FireSimulationTests.ScenarioMatrixIsDeterministicDirectionalAndSuppressible" methodname="ScenarioMatrixIsDeterministicDirectionalAndSuppressible" classname="Fireline.Tests.FireSimulationTests" runstate="Runnable" seed="635463340" result="Passed" start-time="2026-10-24 08:55:51Z" end-time="2026-10-24 08:56:02Z" duration="10.833382" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1024" name="SeededGustsAndWindChangesAreFiniteRepeatableAndVersioned" fullname="Fireline.Tests.FireSimulationTests.SeededGustsAndWindChangesAreFiniteRepeatableAndVersioned" methodname="SeededGustsAndWindChangesAreFiniteRepeatableAndVersioned" classname="Fireline.Tests.FireSimulationTests" runstate="Runnable" seed="857524175" result="Passed" start-time="2026-10-24 08:56:02Z" end-time="2026-10-24 08:56:02Z" duration="0.000829" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1018" name="SmallDoseReducesIntensityAndStrongDoseExtinguishesWithoutDeletingFuel" fullname="Fireline.Tests.FireSimulationTests.SmallDoseReducesIntensityAndStrongDoseExtinguishesWithoutDeletingFuel" methodname="SmallDoseReducesIntensityAndStrongDoseExtinguishesWithoutDeletingFuel" classname="Fireline.Tests.FireSimulationTests" runstate="Runnable" seed="1086460039" result="Passed" start-time="2026-10-24 08:56:02Z" end-time="2026-10-24 08:56:02Z" duration="0.000539" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1025" name="SmokeHazardMovesDownwindWithoutClientParticles" fullname="Fireline.Tests.FireSimulationTests.SmokeHazardMovesDownwindWithoutClientParticles" methodname="SmokeHazardMovesDownwindWithoutClientParticles" classname="Fireline.Tests.FireSimulationTests" runstate="Runnable" seed="1540699349" result="Passed" start-time="2026-10-24 08:56:02Z" end-time="2026-10-24 08:56:02Z" duration="0.000496" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1023" name="SnapshotsAreDetachedAndDeltasHaveOrderedRevisions" fullname="Fireline.Tests.FireSimulationTests.SnapshotsAreDetachedAndDeltasHaveOrderedRevisions" methodname="SnapshotsAreDetachedAndDeltasHaveOrderedRevisions" classname="Fireline.Tests.FireSimulationTests" runstate="Runnable" seed="407388839" result="Passed" start-time="2026-10-24 08:56:02Z" end-time="2026-10-24 08:56:02Z" duration="0.000503" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1015" name="WaterMassIsDistributedAndConservedAfterEvaporation" fullname="Fireline.Tests.FireSimulationTests.WaterMassIsDistributedAndConservedAfterEvaporation" methodname="WaterMassIsDistributedAndConservedAfterEvaporation" classname="Fireline.Tests.FireSimulationTests" runstate="Runnable" seed="538535295" result="Passed" start-time="2026-10-24 08:56:02Z" end-time="2026-10-24 08:56:02Z" duration="0.001546" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1028" name="FireSnapshotTests" fullname="Fireline.Tests.FireSnapshotTests" classname="Fireline.Tests.FireSnapshotTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-10-24 08:56:02Z" end-time="2026-10-24 08:56:03Z" duration="0.486188" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1030" name="EmptyAndMaximumWorldsFitTheFormat" fullname="Fireline.Tests.FireSnapshotTests.EmptyAndMaximumWorldsFitTheFormat" methodname="EmptyAndMaximumWorldsFitTheFormat" classname="Fireline.Tests.FireSnapshotTests" runstate="Runnable" seed="985083969" result="Passed" start-time="2026-10-24 08:56:02Z" end-time="2026-10-24 08:56:02Z" duration="0.252336" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1035" name="FileStoreReplacesValidCheckpointsAndPreservesPreviousOnInvalidWrite" fullname="Fireline.Tests.FireSnapshotTests.FileStoreReplacesValidCheckpointsAndPreservesPreviousOnInvalidWrite" methodname="FileStoreReplacesValidCheckpointsAndPreservesPreviousOnInvalidWrite" classname="Fireline.Tests.FireSnapshotTests" runstate="Runnable" seed="815935320" result="Passed" start-time="2026-10-24 08:56:02Z" end-time="2026-10-24 08:56:03Z" duration="0.049876" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1031" name="InvalidByteEnvelopesAreRejected" fullname="Fireline.Tests.FireSnapshotTests.InvalidByteEnvelopesAreRejected" methodname="InvalidByteEnvelopesAreRejected" classname="Fireline.Tests.FireSnapshotTests" runstate="Runnable" seed="22525667" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.067533" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1033" name="InvalidSnapshotCandidatesCannotReplaceOrMutateAuthority" fullname="Fireline.Tests.FireSnapshotTests.InvalidSnapshotCandidatesCannotReplaceOrMutateAuthority" methodname="InvalidSnapshotCandidatesCannotReplaceOrMutateAuthority" classname="Fireline.Tests.FireSnapshotTests" runstate="Runnable" seed="1977891010" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.030711" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1034" name="RestoredWorldDoesNotShareSnapshotBuffers" fullname="Fireline.Tests.FireSnapshotTests.RestoredWorldDoesNotShareSnapshotBuffers" methodname="RestoredWorldDoesNotShareSnapshotBuffers" classname="Fireline.Tests.FireSnapshotTests" runstate="Runnable" seed="853300581" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.017387" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1029" name="RoundTripContinuesIdenticallyIncludingCharWindAndInactiveCursor" fullname="Fireline.Tests.FireSnapshotTests.RoundTripContinuesIdenticallyIncludingCharWindAndInactiveCursor" methodname="RoundTripContinuesIdenticallyIncludingCharWindAndInactiveCursor" classname="Fireline.Tests.FireSnapshotTests" runstate="Runnable" seed="445795973" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.043279" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1032" name="ValidHashCannotBypassSchemaCountsFlagsOrTrailingData" fullname="Fireline.Tests.FireSnapshotTests.ValidHashCannotBypassSchemaCountsFlagsOrTrailingData" methodname="ValidHashCannotBypassSchemaCountsFlagsOrTrailingData" classname="Fireline.Tests.FireSnapshotTests" runstate="Runnable" seed="1179763133" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.019047" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1036" name="FlightDynamicsTests" fullname="Fireline.Tests.FlightDynamicsTests" classname="Fireline.Tests.FlightDynamicsTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.034240" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1041" name="AttitudeAndThreeAxisControlSigns" fullname="Fireline.Tests.FlightDynamicsTests.AttitudeAndThreeAxisControlSigns" methodname="AttitudeAndThreeAxisControlSigns" classname="Fireline.Tests.FlightDynamicsTests" runstate="Runnable" seed="545671769" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.004404" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1040" name="BallisticTimeStepConvergenceAndNoInputMutation" fullname="Fireline.Tests.FlightDynamicsTests.BallisticTimeStepConvergenceAndNoInputMutation" methodname="BallisticTimeStepConvergenceAndNoInputMutation" classname="Fireline.Tests.FlightDynamicsTests" runstate="Runnable" seed="1805193713" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.002995" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1043" name="DegenerateFlowIsFinite" fullname="Fireline.Tests.FlightDynamicsTests.DegenerateFlowIsFinite" methodname="DegenerateFlowIsFinite" classname="Fireline.Tests.FlightDynamicsTests" runstate="Runnable" seed="1135667174" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000475" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1042" name="EulerGyroscopicTermIsPresent" fullname="Fireline.Tests.FlightDynamicsTests.EulerGyroscopicTermIsPresent" methodname="EulerGyroscopicTermIsPresent" classname="Fireline.Tests.FlightDynamicsTests" runstate="Runnable" seed="1110444028" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000398" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1045" name="FlightProofOptionIsExclusive" fullname="Fireline.Tests.FlightDynamicsTests.FlightProofOptionIsExclusive" methodname="FlightProofOptionIsExclusive" classname="Fireline.Tests.FlightDynamicsTests" runstate="Runnable" seed="573256883" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000555" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1037" name="ForcesMatchAnalyticLiftDragGravityAndWindFrame" fullname="Fireline.Tests.FlightDynamicsTests.ForcesMatchAnalyticLiftDragGravityAndWindFrame" methodname="ForcesMatchAnalyticLiftDragGravityAndWindFrame" classname="Fireline.Tests.FlightDynamicsTests" runstate="Runnable" seed="1520592946" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000671" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1044" name="InvalidStateCommandsMassAndStepAreRejected" fullname="Fireline.Tests.FlightDynamicsTests.InvalidStateCommandsMassAndStepAreRejected" methodname="InvalidStateCommandsMassAndStepAreRejected" classname="Fireline.Tests.FlightDynamicsTests" runstate="Runnable" seed="538985559" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.001360" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1038" name="PayloadHasExactMassCenterAndInertia" fullname="Fireline.Tests.FlightDynamicsTests.PayloadHasExactMassCenterAndInertia" methodname="PayloadHasExactMassCenterAndInertia" classname="Fireline.Tests.FlightDynamicsTests" runstate="Runnable" seed="1964960298" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000565" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1039" name="StallFlapsAndGearBehaveAsDocumented" fullname="Fireline.Tests.FlightDynamicsTests.StallFlapsAndGearBehaveAsDocumented" methodname="StallFlapsAndGearBehaveAsDocumented" classname="Fireline.Tests.FlightDynamicsTests" runstate="Runnable" seed="76815047" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000499" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1046" name="FoundationTests" fullname="Fireline.Tests.FoundationTests" classname="Fireline.Tests.FoundationTests" runstate="Runnable" testcasecount="20" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.063138" total="20" passed="20" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1060" name="BenchmarkUsesSeparateFiveMinuteTimerAndExistingPresets" fullname="Fireline.Tests.FoundationTests.BenchmarkUsesSeparateFiveMinuteTimerAndExistingPresets" methodname="BenchmarkUsesSeparateFiveMinuteTimerAndExistingPresets" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="1919228744" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.001185" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1066" name="ClockUsesFixedStepSecondsAndMonotonicTicks" fullname="Fireline.Tests.FoundationTests.ClockUsesFixedStepSecondsAndMonotonicTicks" methodname="ClockUsesFixedStepSecondsAndMonotonicTicks" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="1091614882" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000756" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1047" name="DefaultsKeepServerLocalAndClientDisconnected" fullname="Fireline.Tests.FoundationTests.DefaultsKeepServerLocalAndClientDisconnected" methodname="DefaultsKeepServerLocalAndClientDisconnected" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="1039548381" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000698" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1048" name="ExplicitEndpointAndSmokeOptionsIgnoreUnityArguments" fullname="Fireline.Tests.FoundationTests.ExplicitEndpointAndSmokeOptionsIgnoreUnityArguments" methodname="ExplicitEndpointAndSmokeOptionsIgnoreUnityArguments" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="762672066" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000901" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1058" name="InvalidArgumentsFailClosed" fullname="Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed" classname="Fireline.Tests.FoundationTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.030451" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1049" name="InvalidArgumentsFailClosed(&quot;--fireline-port&quot;,&quot;0&quot;)" fullname="Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(&quot;--fireline-port&quot;,&quot;0&quot;)" methodname="InvalidArgumentsFailClosed" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="1573834145" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000563" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1050" name="InvalidArgumentsFailClosed(&quot;--fireline-port&quot;,&quot;65536&quot;)" fullname="Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(&quot;--fireline-port&quot;,&quot;65536&quot;)" methodname="InvalidArgumentsFailClosed" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="2018179443" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000132" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1051" name="InvalidArgumentsFailClosed(&quot;--fireline-port&quot;,&quot;-1&quot;)" fullname="Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(&quot;--fireline-port&quot;,&quot;-1&quot;)" methodname="InvalidArgumentsFailClosed" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="2001803101" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000101" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1052" name="InvalidArgumentsFailClosed(&quot;--fireline-connect&quot;,&quot;0.0.0.0&quot;)" fullname="Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(&quot;--fireline-connect&quot;,&quot;0.0.0.0&quot;)" methodname="InvalidArgumentsFailClosed" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="1111516197" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000100" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1053" name="InvalidArgumentsFailClosed(&quot;--fireline-connect&quot;,&quot;not-an-ip&quot;)" fullname="Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(&quot;--fireline-connect&quot;,&quot;not-an-ip&quot;)" methodname="InvalidArgumentsFailClosed" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="1842161907" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000095" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1054" name="InvalidArgumentsFailClosed(&quot;--fireline-smoke-seconds&quot;,&quot;0&quot;)" fullname="Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(&quot;--fireline-smoke-seconds&quot;,&quot;0&quot;)" methodname="InvalidArgumentsFailClosed" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="1807532011" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000125" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1055" name="InvalidArgumentsFailClosed(&quot;--fireline-smoke-seconds&quot;,&quot;301&quot;)" fullname="Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(&quot;--fireline-smoke-seconds&quot;,&quot;301&quot;)" methodname="InvalidArgumentsFailClosed" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="1902372347" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000127" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1056" name="InvalidArgumentsFailClosed(&quot;--fireline-min-clients&quot;,&quot;0&quot;)" fullname="Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(&quot;--fireline-min-clients&quot;,&quot;0&quot;)" methodname="InvalidArgumentsFailClosed" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="201424398" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000132" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1057" name="InvalidArgumentsFailClosed(&quot;--fireline-typo&quot;,&quot;1&quot;)" fullname="Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(&quot;--fireline-typo&quot;,&quot;1&quot;)" methodname="InvalidArgumentsFailClosed" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="1220265275" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000123" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1065" name="InvalidBenchmarkConfigurationIsRejected" fullname="Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected" classname="Fireline.Tests.FoundationTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.001652" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1061" name="InvalidBenchmarkConfigurationIsRejected(&quot;--fireline-benchmark-seconds&quot;,&quot;299&quot;)" fullname="Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected(&quot;--fireline-benchmark-seconds&quot;,&quot;299&quot;)" methodname="InvalidBenchmarkConfigurationIsRejected" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="1426240918" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000323" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1062" name="InvalidBenchmarkConfigurationIsRejected(&quot;--fireline-benchmark-seconds&quot;,&quot;901&quot;)" fullname="Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected(&quot;--fireline-benchmark-seconds&quot;,&quot;901&quot;)" methodname="InvalidBenchmarkConfigurationIsRejected" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="653024647" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000109" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1063" name="InvalidBenchmarkConfigurationIsRejected(&quot;--fireline-benchmark-scenario&quot;,&quot;unknown&quot;)" fullname="Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected(&quot;--fireline-benchmark-scenario&quot;,&quot;unknown&quot;)" methodname="InvalidBenchmarkConfigurationIsRejected" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="1381985065" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000093" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1064" name="InvalidBenchmarkConfigurationIsRejected(&quot;--fireline-quality&quot;,&quot;invented-preset&quot;)" fullname="Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected(&quot;--fireline-quality&quot;,&quot;invented-preset&quot;)" methodname="InvalidBenchmarkConfigurationIsRejected" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="1429577575" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000093" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1059" name="MissingAndDuplicateValuesAreRejected" fullname="Fireline.Tests.FoundationTests.MissingAndDuplicateValuesAreRejected" methodname="MissingAndDuplicateValuesAreRejected" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="1772770826" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000460" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1068" name="ServerSceneHasNoVisualAssetDependencies" fullname="Fireline.Tests.FoundationTests.ServerSceneHasNoVisualAssetDependencies" methodname="ServerSceneHasNoVisualAssetDependencies" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="1770682274" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.002796" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1067" name="SimulationAssemblyHasNoUnityOrPresentationDependencies" fullname="Fireline.Tests.FoundationTests.SimulationAssemblyHasNoUnityOrPresentationDependencies" methodname="SimulationAssemblyHasNoUnityOrPresentationDependencies" classname="Fireline.Tests.FoundationTests" runstate="Runnable" seed="2028197073" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000580" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1069" name="RunwayContactTests" fullname="Fireline.Tests.RunwayContactTests" classname="Fireline.Tests.RunwayContactTests" runstate="Runnable" testcasecount="11" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.106823" total="11" passed="11" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1071" name="AirbornePathMatchesExistingSolverExactly" fullname="Fireline.Tests.RunwayContactTests.AirbornePathMatchesExistingSolverExactly" methodname="AirbornePathMatchesExistingSolverExactly" classname="Fireline.Tests.RunwayContactTests" runstate="Runnable" seed="291049094" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.007261" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1076" name="BrakesReduceSpeedAndTravelWithoutChangingMass" fullname="Fireline.Tests.RunwayContactTests.BrakesReduceSpeedAndTravelWithoutChangingMass" methodname="BrakesReduceSpeedAndTravelWithoutChangingMass" classname="Fireline.Tests.RunwayContactTests" runstate="Runnable" seed="1153569493" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.030560" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1072" name="ContactIsUnilateralAndUsesRotatingPointVelocity" fullname="Fireline.Tests.RunwayContactTests.ContactIsUnilateralAndUsesRotatingPointVelocity" methodname="ContactIsUnilateralAndUsesRotatingPointVelocity" classname="Fireline.Tests.RunwayContactTests" runstate="Runnable" seed="1210624960" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000497" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1073" name="FrictionIsDissipativeAndCoulombLimited" fullname="Fireline.Tests.RunwayContactTests.FrictionIsDissipativeAndCoulombLimited" methodname="FrictionIsDissipativeAndCoulombLimited" classname="Fireline.Tests.RunwayContactTests" runstate="Runnable" seed="1887481016" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000493" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1080" name="InvalidAndUnsupportedStatesFailWithoutMutatingInput" fullname="Fireline.Tests.RunwayContactTests.InvalidAndUnsupportedStatesFailWithoutMutatingInput" methodname="InvalidAndUnsupportedStatesFailWithoutMutatingInput" classname="Fireline.Tests.RunwayContactTests" runstate="Runnable" seed="148545769" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000938" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1074" name="NoseSteeringProducesExpectedYawMoment" fullname="Fireline.Tests.RunwayContactTests.NoseSteeringProducesExpectedYawMoment" methodname="NoseSteeringProducesExpectedYawMoment" classname="Fireline.Tests.RunwayContactTests" runstate="Runnable" seed="1378037251" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000269" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1079" name="RestSettlesAndMassIsPreserved" fullname="Fireline.Tests.RunwayContactTests.RestSettlesAndMassIsPreserved" classname="Fireline.Tests.RunwayContactTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.062570" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1077" name="RestSettlesAndMassIsPreserved(0.005d,0)" fullname="Fireline.Tests.RunwayContactTests.RestSettlesAndMassIsPreserved(0.005d,0)" methodname="RestSettlesAndMassIsPreserved" classname="Fireline.Tests.RunwayContactTests" runstate="Runnable" seed="672795136" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.014822" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1078" name="RestSettlesAndMassIsPreserved(0.0025d,4000)" fullname="Fireline.Tests.RunwayContactTests.RestSettlesAndMassIsPreserved(0.0025d,4000)" methodname="RestSettlesAndMassIsPreserved" classname="Fireline.Tests.RunwayContactTests" runstate="Runnable" seed="495024917" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.029635" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1081" name="RunwayProofCannotShareOtherExitOrPersistenceModes" fullname="Fireline.Tests.RunwayContactTests.RunwayProofCannotShareOtherExitOrPersistenceModes" methodname="RunwayProofCannotShareOtherExitOrPersistenceModes" classname="Fireline.Tests.RunwayContactTests" runstate="Runnable" seed="242673679" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000799" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1070" name="StaticEquilibriumMatchesWeightAndSymmetricMoments" fullname="Fireline.Tests.RunwayContactTests.StaticEquilibriumMatchesWeightAndSymmetricMoments" methodname="StaticEquilibriumMatchesWeightAndSymmetricMoments" classname="Fireline.Tests.RunwayContactTests" runstate="Runnable" seed="677083277" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000491" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1075" name="SurfaceBoundsAndGearRetractionAreExplicit" fullname="Fireline.Tests.RunwayContactTests.SurfaceBoundsAndGearRetractionAreExplicit" methodname="SurfaceBoundsAndGearRetractionAreExplicit" classname="Fireline.Tests.RunwayContactTests" runstate="Runnable" seed="1703852116" result="Passed" start-time="2026-10-24 08:56:03Z" end-time="2026-10-24 08:56:03Z" duration="0.000346" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: C:/Users/emanu/AppData/LocalLow/DefaultCompany/FIRELINE ADRIATIC\TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

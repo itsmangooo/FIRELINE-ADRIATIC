@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "actualExit": 0,
+  "caseCount": 9,
+  "allFinalStatesDigestsAndPhysicalSamplesMatch": true,
+  "excludedField": "stepMs (elapsed CPU observation varies)",
+  "reference": "docs/reports/m01-evidence/simulation.json",
+  "rawSha256": "33d4e33ad99c6535d0a8ca16f2d4332d5643d795cd2e306ef5cb1b2932fdd213",
+  "limits": "Headless M01 numerical regression, not a fresh M02 network test."
+}

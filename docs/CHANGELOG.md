@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-24 — M03 bounded runway-contact prerequisite verified
+
+- Added pure tricycle spring/damper reactions, CoG/rotating-point contact velocity, combined Coulomb-limited tire forces, braking/steering, finite debug runway and candidate rejection. Reused the unchanged 6DOF integrator; no ground snapping or graphical flight binding.
+- **71/71 Unity tests**, current dedicated build (0 errors / 505 warnings), two separate headless proofs with 19,800 samples each replay exactly. An independent matrix/force/CSV audit passes; prior free-flight and fire physical results are unchanged in actual legacy proof runs.
+- Added correctly formatted equations, BEFORE/AFTER SVGs, real trajectory/braking/payload plots, raw compressed evidence and call-timing graph explanations. [Evidence, approximations and remaining dependencies](physics/runway-contact/COMPARISON.md). M03 stays open: live authority/input/replication, general collisions and flight/water gameplay remain pending. No new visual/client/Linux, 60 FPS, capacity or optimization claim.
+
 ## 2026-10-24 — M03 temporary aircraft exterior verified
 
 - Imported the already acquired official CL-415 source as an isolated prototype: exact originals preserved, reproducible OBJ grouping derivative, 144 named meshes, eleven HDRP materials and nine source textures. User authorized temporary use and plans production replacement; original notices retained/bundled.

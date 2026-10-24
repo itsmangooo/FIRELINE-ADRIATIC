@@ -1,5 +1,9 @@
 # Aircraft specifications & flight-simulation data sheet
 
+## M03 debug contact prerequisite — 2026-10-24
+
+The optional pure contact adapter now adds finite-plane three-point support, combined friction/braking/steering and current/candidate envelope validation to the unchanged flight core. All gear values are uncalibrated estimates independent of the static imported mesh. [Actual equations, SI constants, comparisons, raw evidence and limitations](physics/runway-contact/COMPARISON.md). It is verified in an isolated dedicated-player harness, not installed live flight/contact, general airframe/terrain collision or pilot/network gameplay. Historical paragraphs below describe their original increments.
+
 ## Implemented M03 debug boundary — 2026-10-24
 
 `DEBUG_FLIGHT_ONLY_V1` now implements an isolated numerical 6DOF core with synthetic 10000 kg dry body, 4000 kg water limit and estimated aerodynamic/inertia/thrust constants. **It is not the CL-415 baseline below** and does not blend aircraft variants or claim manufacturer performance. [All actual constants, equations and tests](physics/debug-flight/COMPARISON.md), [real headless build/process evidence](reports/2026-10-24-m03-debug-flight.md). Production variant JSON, licensed model, calibration, fuel consumption, live pilot authority/contact/replication and flight loop remain open M03 work.

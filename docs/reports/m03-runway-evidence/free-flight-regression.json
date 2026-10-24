@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "actualExit": 0,
+  "headless": true,
+  "caseCount": 9,
+  "reference": "docs/reports/m03-flight-evidence/run-1.json.gz",
+  "allPhysicalCasesExactlyMatchPreviousArtifact": true,
+  "rawSha256": "490fc27a6ed391bce2c2a93f7694a6d5a5b3423afcc8ad38a8f1af717ff9c9c5",
+  "limits": "Isolated numerical regression; not a fresh client/network or real-time flight test."
+}

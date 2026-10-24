@@ -1,0 +1,177 @@
+{
+  "passed": true,
+  "replayExact": true,
+  "physicalSha256": "60f228f58c5dac98df5d51d8cf5584e3fb22dd6c27db041921e2b8ecd48c2f77",
+  "samplesPerRun": 19800,
+  "tolerances": {
+    "forcesNmWJ": 1e-06,
+    "positionsM": 1e-09,
+    "csvHeightM": 1e-10,
+    "restSupportN": 0.1
+  },
+  "cases": [
+    {
+      "case": "before_rest",
+      "samples": 400,
+      "dtSeconds": 0.005,
+      "finalHeightM": -17.6123332500001,
+      "finalNorthM": 0.0,
+      "finalForwardMps": 0.0,
+      "finalLateralMps": 0.0,
+      "maximumCompressionM": 0.0,
+      "firstBelowPoint2MpsSeconds": 0.005
+    },
+    {
+      "case": "rest",
+      "samples": 2000,
+      "dtSeconds": 0.005,
+      "finalHeightM": 1.886672636261371,
+      "finalNorthM": -0.0003924207913836707,
+      "finalForwardMps": 4.0437923711029766e-19,
+      "finalLateralMps": 0.0,
+      "maximumCompressionM": 0.11909698545790759,
+      "firstBelowPoint2MpsSeconds": 0.005
+    },
+    {
+      "case": "rest_fine",
+      "samples": 4000,
+      "dtSeconds": 0.0025,
+      "finalHeightM": 1.886672636261374,
+      "finalNorthM": -0.0003924200669672511,
+      "finalForwardMps": -9.164931738492172e-19,
+      "finalLateralMps": 0.0,
+      "maximumCompressionM": 0.11961527321476284,
+      "firstBelowPoint2MpsSeconds": 0.0025
+    },
+    {
+      "case": "loaded",
+      "samples": 2000,
+      "dtSeconds": 0.005,
+      "finalHeightM": 1.8422272897406669,
+      "finalNorthM": 0.005507530753182776,
+      "finalForwardMps": -2.4512131669082533e-17,
+      "finalLateralMps": 0.0,
+      "maximumCompressionM": 0.19154542089428284,
+      "firstBelowPoint2MpsSeconds": 0.005
+    },
+    {
+      "case": "before_brake",
+      "samples": 2000,
+      "dtSeconds": 0.005,
+      "finalHeightM": -488.72766624999815,
+      "finalNorthM": 250.0,
+      "finalForwardMps": 25.0,
+      "finalLateralMps": 0.0,
+      "maximumCompressionM": 0.0,
+      "firstBelowPoint2MpsSeconds": null
+    },
+    {
+      "case": "coast",
+      "samples": 2000,
+      "dtSeconds": 0.005,
+      "finalHeightM": 1.8866805185652193,
+      "finalNorthM": 240.1877130646282,
+      "finalForwardMps": 23.03866999999981,
+      "finalLateralMps": 0.0,
+      "maximumCompressionM": 0.14992438624349158,
+      "firstBelowPoint2MpsSeconds": null
+    },
+    {
+      "case": "brake",
+      "samples": 2000,
+      "dtSeconds": 0.005,
+      "finalHeightM": 1.8866726362609736,
+      "finalNorthM": 88.01978419196888,
+      "finalForwardMps": -3.316935107793566e-10,
+      "finalLateralMps": 0.0,
+      "maximumCompressionM": 0.15387919132567984,
+      "firstBelowPoint2MpsSeconds": 7.005
+    },
+    {
+      "case": "touchdown",
+      "samples": 1600,
+      "dtSeconds": 0.005,
+      "finalHeightM": 1.886672636261367,
+      "finalNorthM": -0.00039249418117815474,
+      "finalForwardMps": 1.391567914357598e-18,
+      "finalLateralMps": 0.0,
+      "maximumCompressionM": 0.35427290193898964,
+      "firstBelowPoint2MpsSeconds": 0.005
+    },
+    {
+      "case": "lateral",
+      "samples": 1600,
+      "dtSeconds": 0.005,
+      "finalHeightM": 1.8866726362613677,
+      "finalNorthM": -0.004627611816048466,
+      "finalForwardMps": 3.359296399201136e-14,
+      "finalLateralMps": 6.457918838324171e-12,
+      "maximumCompressionM": 0.19647989488654605,
+      "firstBelowPoint2MpsSeconds": 0.005
+    },
+    {
+      "case": "crosswind",
+      "samples": 1000,
+      "dtSeconds": 0.005,
+      "finalHeightM": 1.886667208922326,
+      "finalNorthM": 0.008127192639191339,
+      "finalForwardMps": 0.004121832317772098,
+      "finalLateralMps": 0.08128192954331309,
+      "maximumCompressionM": 0.12565787805959205,
+      "firstBelowPoint2MpsSeconds": 0.005
+    },
+    {
+      "case": "airborne_before",
+      "samples": 400,
+      "dtSeconds": 0.005,
+      "finalHeightM": 991.3732954977716,
+      "finalNorthM": 117.79859036502211,
+      "finalForwardMps": 58.03880082511931,
+      "finalLateralMps": 0.0,
+      "maximumCompressionM": 0.0,
+      "firstBelowPoint2MpsSeconds": null
+    },
+    {
+      "case": "airborne_after",
+      "samples": 400,
+      "dtSeconds": 0.005,
+      "finalHeightM": 991.3732954977716,
+      "finalNorthM": 117.79859036502211,
+      "finalForwardMps": 58.03880082511931,
+      "finalLateralMps": 0.0,
+      "maximumCompressionM": 0.0,
+      "firstBelowPoint2MpsSeconds": null
+    },
+    {
+      "case": "analytic_static",
+      "samples": 400,
+      "dtSeconds": 0.005,
+      "finalHeightM": 1.8910372222222223,
+      "finalNorthM": 0.0,
+      "finalForwardMps": 0.0,
+      "finalLateralMps": 0.0,
+      "maximumCompressionM": 0.10896277777777774,
+      "firstBelowPoint2MpsSeconds": 0.005
+    }
+  ],
+  "timing": [
+    {
+      "warmups": 100,
+      "calls": 1000,
+      "p50Ms": 0.0071,
+      "p95Ms": 0.007200000000000001,
+      "p99Ms": 0.0076,
+      "maxMs": 0.061000000000000006,
+      "maximumRetainedCall": 1
+    },
+    {
+      "warmups": 100,
+      "calls": 1000,
+      "p50Ms": 0.0071,
+      "p95Ms": 0.0073,
+      "p99Ms": 0.0074,
+      "maxMs": 0.0989,
+      "maximumRetainedCall": 322
+    }
+  ]
+}

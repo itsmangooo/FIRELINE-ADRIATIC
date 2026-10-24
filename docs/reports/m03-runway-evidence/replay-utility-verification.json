@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "purpose": "Verify fresh output paths without overwriting published measurements",
+  "evidenceRoot": "Builds/M03RunwayReplay/evidence",
+  "plotRoot": "Builds/M03RunwayReplay/plots",
+  "rawLogs": "Builds\\M03Runway\\20261024-113156",
+  "runs": [
+    {
+      "exitCode": 0,
+      "resultSha256": "BDD24EE99CDAFFD853F48F508AA6479A22B2F36C3695D4C31B4EDAD45A9E9D1A",
+      "pid": 12000,
+      "run": 1,
+      "csvSha256": "56B479142632E52C40543BD95033F64D57E9EA22BE1DC8B0D32D3A837AB034D8"
+    },
+    {
+      "exitCode": 0,
+      "resultSha256": "3DDD5335D805DD4CB80C8CEDBD15EA2ABDD84E024D6815BE2B239109F141C305",
+      "pid": 34576,
+      "run": 2,
+      "csvSha256": "56B479142632E52C40543BD95033F64D57E9EA22BE1DC8B0D32D3A837AB034D8"
+    }
+  ],
+  "physicalSha256MatchesPublished": true,
+  "selfContainedSvgFiles": 4,
+  "limits": "Utility-check data remain ignored and are excluded from published timing statistics."
+}

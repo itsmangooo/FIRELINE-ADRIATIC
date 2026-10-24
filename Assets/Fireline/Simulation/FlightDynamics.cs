@@ -122,6 +122,12 @@ namespace Fireline.Simulation
         public static FlightState Step(FlightState current, FlightInput input, FlightVector windMps, double densityKgM3, double seconds)
         {
             SimMath.Range(seconds, 1e-6, 0.02, nameof(seconds)); var force = Evaluate(current, input, windMps, densityKgM3);
+            return Integrate(current, force, seconds);
+        }
+
+        /// <summary>Integrate already evaluated forces; the contact adapter adds reactions before this shared, unchanged free-body update.</summary>
+        internal static FlightState Integrate(FlightState current, FlightForces force, double seconds)
+        {
             var w = current.AngularVelocityRadps; var inertia = force.Mass.InertiaKgM2;
             var gyroscopic = FlightVector.Cross(w, new FlightVector(inertia.X * w.X, inertia.Y * w.Y, inertia.Z * w.Z));
             var torque = force.BodyMomentNm - gyroscopic;

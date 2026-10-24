@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="201.6pt" viewBox="0 0 864 201.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 201.6
+L 864 201.6
+L 864 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <g id="patch_2">
+     <path d="M 63.195469 128.875261
+L 169.004531 128.875261
+Q 175.304531 128.875261 175.304531 122.575261
+L 175.304531 100.970339
+Q 175.304531 94.670339 169.004531 94.670339
+L 63.195469 94.670339
+Q 56.895469 94.670339 56.895469 100.970339
+L 56.895469 122.575261
+Q 56.895469 128.875261 63.195469 128.875261
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(68.013984 108.709812)">State + gear + brake</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(63.195469 119.512273)">Finite runway rectangle</text>
+   </g>
+   <g id="patch_3">
+    <path d="M 198.830511 111.7728
+Q 221.400441 111.7728 241.957908 111.7728
+" style="fill: none; stroke: #38526b; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 237.957908 109.7728
+L 241.957908 111.7728
+L 237.957908 113.7728
+" style="fill: none; stroke: #38526b; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_2">
+    <g id="patch_4">
+     <path d="M 270.173672 128.875261
+L 383.226328 128.875261
+Q 389.526328 128.875261 389.526328 122.575261
+L 389.526328 100.970339
+Q 389.526328 94.670339 383.226328 94.670339
+L 270.173672 94.670339
+Q 263.873672 94.670339 263.873672 100.970339
+L 263.873672 122.575261
+Q 263.873672 128.875261 270.173672 128.875261
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(278.758828 108.709812)">Three point reactions</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(270.173672 119.512273)">Spring / damper / friction</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 409.430511 111.7728
+Q 432.000441 111.7728 452.557908 111.7728
+" style="fill: none; stroke: #38526b; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 448.557908 109.7728
+L 452.557908 111.7728
+L 448.557908 113.7728
+" style="fill: none; stroke: #38526b; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_3">
+    <g id="patch_6">
+     <path d="M 484.221797 128.875261
+L 590.378203 128.875261
+Q 596.678203 128.875261 596.678203 122.575261
+L 596.678203 100.970339
+Q 596.678203 94.670339 590.378203 94.670339
+L 484.221797 94.670339
+Q 477.921797 94.670339 477.921797 100.970339
+L 477.921797 122.575261
+Q 477.921797 128.875261 484.221797 128.875261
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(484.221797 108.709812)">Sum forces + moments</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(486.747422 119.512273)">Same 6DOF integrator</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 620.030511 111.7728
+Q 642.600441 111.7728 663.157908 111.7728
+" style="fill: none; stroke: #38526b; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 659.157908 109.7728
+L 663.157908 111.7728
+L 659.157908 113.7728
+" style="fill: none; stroke: #38526b; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <g id="patch_8">
+     <path d="M 699.368203 128.875261
+L 796.431797 128.875261
+Q 802.731797 128.875261 802.731797 122.575261
+L 802.731797 100.970339
+Q 802.731797 94.670339 796.431797 94.670339
+L 699.368203 94.670339
+Q 693.068203 94.670339 693.068203 100.970339
+L 693.068203 122.575261
+Q 693.068203 128.875261 699.368203 128.875261
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(705.997266 108.709812)">Validate candidate</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(699.368203 119.512273)">Reject invalid contact</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="432" y="20.16" transform="rotate(-0 432 20.16)">AFTER — isolated bounded contact prerequisite; no live pilot/network binding</text>
+   </g>
+  </g>
+ </g>
+</svg>

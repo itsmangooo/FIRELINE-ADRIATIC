@@ -35,6 +35,8 @@ namespace Fireline.Shared
 
         /// <summary>Server-only M03 isolated debug-flight verification output; never enables playable aircraft or client authority.</summary>
         public string FlightProofPath { get; private set; }
+        /// <summary>Server-only isolated runway-contact numerical proof; it does not enable live piloting or replication.</summary>
+        public string RunwayProofPath { get; private set; }
 
         /// <summary>Optional role-specific M02 proof result JSON; enables the bounded scripted acceptance scenario.</summary>
         public string ReplicationProofPath { get; private set; }
@@ -62,6 +64,9 @@ namespace Fireline.Shared
                 string value = args[i];
                 switch (key)
                 {
+                    case "--fireline-runway-proof":
+                        if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Runway proof path is empty.");
+                        options.RunwayProofPath = value; break;
                     case "--fireline-flight-proof":
                         if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Flight proof path is empty.");
                         options.FlightProofPath = value; break;
@@ -126,8 +131,11 @@ namespace Fireline.Shared
             if (options.BenchmarkSeconds > 0 && (options.SmokeSeconds > 0 || options.BenchmarkOutput == null))
                 throw new ArgumentException("Benchmark requires output and cannot share the smoke exit timer.");
             if (options.FlightProofPath != null && (options.SimulationProofPath != null || options.ReplicationProofPath != null
-                || options.WorldLoadPath != null || options.WorldSavePath != null || options.SmokeSeconds > 0 || options.BenchmarkSeconds > 0))
+                || options.RunwayProofPath != null || options.WorldLoadPath != null || options.WorldSavePath != null || options.SmokeSeconds > 0 || options.BenchmarkSeconds > 0))
                 throw new ArgumentException("Flight proof requires an isolated server run.");
+            if (options.RunwayProofPath != null && (options.SimulationProofPath != null || options.ReplicationProofPath != null
+                || options.FlightProofPath != null || options.WorldLoadPath != null || options.WorldSavePath != null || options.SmokeSeconds > 0 || options.BenchmarkSeconds > 0))
+                throw new ArgumentException("Runway proof requires an isolated server run.");
             if (options.SimulationProofPath != null && (options.ReplicationProofPath != null || options.WorldLoadPath != null || options.WorldSavePath != null))
                 throw new ArgumentException("Accelerated M01 proof cannot share live checkpoint/replication modes.");
             return options;

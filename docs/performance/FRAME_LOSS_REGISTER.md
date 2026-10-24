@@ -1,5 +1,11 @@
 # Frame-loss investigation register
 
+## M03 contact-call observations — 2026-10-24
+
+The contact prerequisite is nonvisual and records **no new frame-loss measurement**. Its isolated contact Step maxima are **61.0 µs at retained call #1** and **98.9 µs at #322**, after 100 explicit warm-ups in each of two dedicated processes. [Raw data, SVG, hardware and complete graph guide](../physics/runway-contact/COMPARISON.md#measured-call-timing-and-graph-guide). These elapsed call gaps are not renderer callbacks, whole server ticks or confirmed dropped presentations. No CPU/GC/OS timeline attributes them.
+
+Future host profiling sites: the two `RunwayContact.Evaluate` calls (current/candidate gate), `FlightDynamics.Evaluate`, `FlightDynamics.Integrate`, validation and the fixed-substep scheduler still to be installed. These are source inspection locations, not demonstrated bottlenecks. Existing FL-06/FL-07 and NET-01 remain unchanged; optimization stays deferred until representative synchronized profiling.
+
 ## M03 static aircraft callback overrun — 2026-10-24
 
 **FL-07: measured location; attribution and optimization deferred.** One static aircraft/pad client at 1920×1080 Balanced/VSync=1 D3D11, one local headless server; Editor closed, i5-9400F / GTX 1660 SUPER / driver 32.0.16.2101. [Actual run, raw samples, SVG and graph guide](../previews/m03-cl415-prototype/COMPARISON.md#performance-diagnostic-and-graph-guide).

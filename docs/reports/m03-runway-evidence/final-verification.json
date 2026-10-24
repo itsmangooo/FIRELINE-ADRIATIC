@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "localMarkdownLinksChecked": 260,
+  "configurationFilesPreserved": 5,
+  "newSelfContainedSvgFiles": 4,
+  "unityTests": 71,
+  "headlessPhysicalSamplesPerRun": 19800,
+  "exactReplay": true,
+  "legacyFreeFlightAndFireRegressionsVerified": true,
+  "serverPresentationAssetGuardPassed": true,
+  "csharpFiles": 35,
+  "documentedMembers": 288,
+  "limits": "Numerical contact prerequisite; no live aircraft/pilot/network/graphical flight or capacity qualification.",
+  "stagedFilesChecked": 53,
+  "freshOutputReplayUtilityVerified": true
+}

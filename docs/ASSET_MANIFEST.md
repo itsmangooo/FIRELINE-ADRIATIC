@@ -1,5 +1,9 @@
 # Asset Manifest — Imported content, source links and pipeline
 
+## M03 runway-contact prerequisite — 2026-10-24
+
+No new external asset, texture, scene, material or UI is introduced. The test runway is a synthetic finite mathematical rectangle, not a mesh/geographic import. Gear points and coefficients are project-authored debug estimates; the static CL-415 prefab remains unbound to physics. No new screenshot applies to this nonvisual increment. [Actual numerical implementation/evidence](physics/runway-contact/COMPARISON.md).
+
 ## M03 CL-415 temporary prototype import — 2026-10-24
 
 The user explicitly authorized temporary use of the already downloaded official model and intends replacement before launch. The separate `CL415Prototype` prefab/inspection scene now imports **144 named meshes, 35,799 triangles and 26,002 Unity vertices**, eleven HDRP/Lit materials and nine original color textures. Original source bytes/notices are retained; a derived OBJ expresses the same object partitions as groups because Unity otherwise merged them. Prototype bounds: **28.785 × 8.816 × 19.795 m** after orientation, with source units assumed meters; not independently validated engineering dimensions. No animation rig, working pivots, LODs, collider or flight binding is claimed. The numerical flight profile remains separate and uncalibrated. [Technical/source audit](../AssetSources/Aircraft/CL415/AUDIT.md), [actual running-build screenshot, tests and counters](previews/m03-cl415-prototype/COMPARISON.md). The earlier gate statements below are historical and superseded for this prototype only; production replacement remains open.

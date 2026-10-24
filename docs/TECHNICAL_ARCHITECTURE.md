@@ -1,5 +1,9 @@
 # Technical architecture — Unity 6 HDRP, C#, headless server
 
+## M03 contact prerequisite — actual boundary, 2026-10-24
+
+The Simulation assembly now contains an optional bounded runway-contact adapter around the unchanged 6DOF integrator. Server-only RunwayVerification drives it only for an explicit isolated numerical proof; normal fire runtime and network protocol are unchanged. No live aircraft entity, pilot permission service or client binding is installed. [Actual BEFORE/AFTER force/state diagrams, SI equations and evidence](physics/runway-contact/COMPARISON.md). Live fixed-substep scheduling, input authorization and pose replication are the next dependencies, not completed architecture.
+
 ## M03 isolated flight boundary — 2026-10-24
 
 `Fireline.Simulation` now adds pure `FlightVector`, `FlightRotation`, `FlightDynamics`, bounded state/input DTOs and the explicitly estimated `DebugFlightProfile`. It retains `noEngineReferences`; no package or assembly dependency is added. `Fireline.Server.FlightVerification` runs an opt-in dedicated numerical proof; ordinary live fire/replication remains unchanged without its flag. No client flight state, live aircraft entity, pilot ownership, contact solver or prediction/correction exists yet. [Actual flow/math/evidence and remaining integration tasks](reports/2026-10-24-m03-debug-flight.md).

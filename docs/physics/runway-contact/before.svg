@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="201.6pt" viewBox="0 0 864 201.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 201.6
+L 864 201.6
+L 864 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <g id="patch_2">
+     <path d="M 58.379766 128.875261
+L 173.820234 128.875261
+Q 180.120234 128.875261 180.120234 122.575261
+L 180.120234 100.970339
+Q 180.120234 94.670339 173.820234 94.670339
+L 58.379766 94.670339
+Q 52.079766 94.670339 52.079766 100.970339
+L 52.079766 122.575261
+Q 52.079766 128.875261 58.379766 128.875261
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(63.626484 108.709812)">State + validated input</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(58.379766 119.512273)">Mass / wind / atmosphere</text>
+   </g>
+   <g id="patch_3">
+    <path d="M 198.830511 111.7728
+Q 221.400441 111.7728 241.957908 111.7728
+" style="fill: none; stroke: #38526b; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 237.957908 109.7728
+L 241.957908 111.7728
+L 237.957908 113.7728
+" style="fill: none; stroke: #38526b; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_2">
+    <g id="patch_4">
+     <path d="M 272.408906 128.875261
+L 380.991094 128.875261
+Q 387.291094 128.875261 387.291094 122.575261
+L 387.291094 100.970339
+Q 387.291094 94.670339 380.991094 94.670339
+L 272.408906 94.670339
+Q 266.108906 94.670339 266.108906 100.970339
+L 266.108906 122.575261
+Q 266.108906 128.875261 272.408906 128.875261
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(272.408906 108.709812)">Aerodynamics + gravity</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(283.684219 119.512273)">No wheel reactions</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 409.430511 111.7728
+Q 432.000441 111.7728 452.557908 111.7728
+" style="fill: none; stroke: #38526b; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 448.557908 109.7728
+L 452.557908 111.7728
+L 448.557908 113.7728
+" style="fill: none; stroke: #38526b; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_3">
+    <g id="patch_6">
+     <path d="M 481.689844 128.875261
+L 592.910156 128.875261
+Q 599.210156 128.875261 599.210156 122.575261
+L 599.210156 100.970339
+Q 599.210156 94.670339 592.910156 94.670339
+L 481.689844 94.670339
+Q 475.389844 94.670339 475.389844 100.970339
+L 475.389844 122.575261
+Q 475.389844 128.875261 481.689844 128.875261
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(481.689844 108.709812)">Existing 6DOF integrator</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(488.7 119.512273)">No collision boundary</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 620.030511 111.7728
+Q 642.600441 111.7728 663.157908 111.7728
+" style="fill: none; stroke: #38526b; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 659.157908 109.7728
+L 663.157908 111.7728
+L 659.157908 113.7728
+" style="fill: none; stroke: #38526b; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <g id="patch_8">
+     <path d="M 697.576641 128.875261
+L 798.223359 128.875261
+Q 804.523359 128.875261 804.523359 122.575261
+L 804.523359 100.970339
+Q 804.523359 94.670339 798.223359 94.670339
+L 697.576641 94.670339
+Q 691.276641 94.670339 691.276641 100.970339
+L 691.276641 122.575261
+Q 691.276641 128.875261 697.576641 128.875261
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(712.064531 108.709812)">Candidate state</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(697.576641 119.512273)">Can pass through y=0</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="432" y="20.16" transform="rotate(-0 432 20.16)">BEFORE — 1abf438: free body has no physical ground contact</text>
+   </g>
+  </g>
+ </g>
+</svg>

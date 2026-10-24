@@ -1,5 +1,9 @@
 # Simulation specification — Fire, wind, water and environmental destruction
 
+## M03 debug runway-contact boundary — 2026-10-24
+
+The optional pure contact adapter now adds finite-plane three-point support, combined friction/braking/steering and current/candidate envelope validation to the unchanged flight core. All gear values are uncalibrated estimates independent of the static imported mesh. [Actual equations, SI constants, comparisons, raw evidence and limitations](physics/runway-contact/COMPARISON.md). It is verified in an isolated dedicated-player harness, not installed live flight/contact, general airframe/terrain collision or pilot/network gameplay. Historical paragraphs below describe their original increments.
+
 ## M03 numerical flight increment — 2026-10-24
 
 An isolated pure C# free-body flight solver now exists; [actual equations, SI units, estimated constants, diagrams and numerical checks](physics/debug-flight/COMPARISON.md). It evaluates explicit wind samples and is exercised with the existing seeded `WindField` in a dedicated debug proof. No live shared aircraft/fire clock, water trajectory/coverage, scoop, fuel burn or collision integration is implemented. M02 already verifies live fire replication/local restart; the historical M01 scope paragraph below describes that earlier checkpoint.

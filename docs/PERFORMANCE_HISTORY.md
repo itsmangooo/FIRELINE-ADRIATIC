@@ -1,5 +1,11 @@
 # Performance history
 
+## 2026-10-24 — M03 isolated runway-contact Step diagnostic
+
+Two separate Windows Mono dedicated players on i5-9400F / Windows 11 Pro build 26300 / 16,324 MiB visible RAM (CIM), Editor closed. Each times 1000 independent three-wheel-contact Step calls after 100 explicit warm-ups, state reset per call, physical step 5 ms. Actual p50/p95/p99: **7.1/7.2/7.6 µs** (run 1) and **7.1/7.3/7.4 µs** (run 2). Maxima **61.0 µs at #1** and **98.9 µs at #322**. These are entire function elapsed observations, not complete host ticks, render intervals or dropped presentations.
+
+No equivalent prior contact-cost baseline; no optimization, 60 FPS or capacity claim. CPU substage attribution, allocations/GC, full host timing and network traffic unavailable. FPS/GPU/draw calls/VRAM are not applicable to Null graphics. [Actual cases/raw timing arrays, SVG and plain-language axis/tick/warm-up/call guide](physics/runway-contact/COMPARISON.md#measured-call-timing-and-graph-guide). FL-06/FL-07 observations and deferred optimization remain unchanged.
+
 ## 2026-10-24 — M03 static aircraft preview callback diagnostic
 
 One 1920×1080 Balanced/VSync=1 D3D11 release client and one local headless server; Editor closed, i5-9400F / GTX 1660 SUPER / Windows 11 26300 / driver 32.0.16.2101 / 16,323 MB visible RAM. Five rendered seconds warm-up; **1489 intervals / 25.000917 s**, 59.558 average FPS, 32.506 1% low (mean slowest 15 intervals), p95/p99 **16.9248/17.3213 ms**. Maximum **206.632495 ms**, sample **#2**, recording **0.017872–0.224504 s**. 744 intervals exceed 16.667 ms; one exceeds 33.333 ms. These are callback spacings, not execution times or dropped-presentation counts.
