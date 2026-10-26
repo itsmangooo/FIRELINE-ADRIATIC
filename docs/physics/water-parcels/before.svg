@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1008pt" height="216pt" viewBox="0 0 1008 216" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 216
+L 1008 216
+L 1008 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <g id="patch_2">
+     <path d="M 53.9625 129.580586
+L 164.9175 129.580586
+Q 169.7175 129.580586 169.7175 124.780586
+L 169.7175 105.576836
+Q 169.7175 100.776836 164.9175 100.776836
+L 53.9625 100.776836
+Q 49.1625 100.776836 49.1625 105.576836
+L 49.1625 124.780586
+Q 49.1625 129.580586 53.9625 129.580586
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(54.12125 112.455742)">Frozen per-step water mass</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(53.9625 122.05793)">No tank-release transaction</text>
+   </g>
+   <g id="patch_3">
+    <path d="M 199.513247 115.178711
+Q 209.842468 115.178711 218.494638 115.178711
+" style="fill: none; stroke: #000000; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 214.494638 113.178711
+L 218.494638 115.178711
+L 214.494638 117.178711
+" style="fill: none; stroke: #000000; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_2">
+    <g id="patch_4">
+     <path d="M 256.061875 129.580898
+L 357.378125 129.580898
+Q 362.178125 129.580898 362.178125 124.780898
+L 362.178125 105.576523
+Q 362.178125 100.776523 357.378125 100.776523
+L 256.061875 100.776523
+Q 251.261875 100.776523 251.261875 105.576523
+L 251.261875 124.780898
+Q 251.261875 129.580898 256.061875 129.580898
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(257.311875 112.456055)">Aircraft force model only</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(256.061875 122.058242)">No emitted water parcels</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 396.793247 115.178711
+Q 407.122468 115.178711 415.774638 115.178711
+" style="fill: none; stroke: #000000; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 411.774638 113.178711
+L 415.774638 115.178711
+L 411.774638 117.178711
+" style="fill: none; stroke: #000000; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_3">
+    <g id="patch_6">
+     <path d="M 450.045 129.580898
+L 557.955 129.580898
+Q 562.755 129.580898 562.755 124.780898
+L 562.755 105.576523
+Q 562.755 100.776523 557.955 100.776523
+L 450.045 100.776523
+Q 445.245 100.776523 445.245 105.576523
+L 445.245 124.780898
+Q 445.245 129.580898 450.045 129.580898
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(450.045 112.456055)">No water trajectory/impact</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(466.215 122.058242)">No aerial coverage</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 594.073247 115.178711
+Q 604.402468 115.178711 613.054638 115.178711
+" style="fill: none; stroke: #000000; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 609.054638 113.178711
+L 613.054638 115.178711
+L 609.054638 117.178711
+" style="fill: none; stroke: #000000; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <g id="patch_8">
+     <path d="M 640.833125 129.580898
+L 761.726875 129.580898
+Q 766.526875 129.580898 766.526875 124.780898
+L 766.526875 105.576523
+Q 766.526875 100.776523 761.726875 100.776523
+L 640.833125 100.776523
+Q 636.033125 100.776523 636.033125 105.576523
+L 636.033125 124.780898
+Q 636.033125 129.580898 640.833125 129.580898
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(640.833125 112.456055)">Trusted manual water weights</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(661.965625 122.058242)">Existing fire cooling</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 791.353247 115.178711
+Q 801.682468 115.178711 810.334638 115.178711
+" style="fill: none; stroke: #000000; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 806.334638 113.178711
+L 810.334638 115.178711
+L 806.334638 117.178711
+" style="fill: none; stroke: #000000; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <g id="patch_10">
+     <path d="M 847.10125 129.580898
+L 950.01875 129.580898
+Q 954.81875 129.580898 954.81875 124.780898
+L 954.81875 105.576523
+Q 954.81875 100.776523 950.01875 100.776523
+L 847.10125 100.776523
+Q 842.30125 100.776523 842.30125 105.576523
+L 842.30125 124.780898
+Q 842.30125 129.580898 847.10125 129.580898
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(853.650625 112.456055)">No aircraft-to-fire path</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(847.10125 122.058242)">Runtime controls pending</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="504" y="19.157422" transform="rotate(-0 504 19.157422)">BEFORE 4dc96fe: loaded aircraft mass and manual server water; no aerial release implementation</text>
+   </g>
+  </g>
+ </g>
+</svg>

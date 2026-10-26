@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "baseline": "4dc96fec9074ab600963ef615cd595866a0c789d",
+  "configurationHashes": [
+    {
+      "path": "Assets/Settings/SkyandFogSettingsProfile.asset",
+      "sha256": "8324E681D5FFA8B9475A8073DB17275732B9691C9EE27CC40936445C15BC2D4E"
+    },
+    {
+      "path": "ProjectSettings/ProjectSettings.asset",
+      "sha256": "DF7C96B14CD0AF4B6332D656088371B08BDF0901A24719332B51764B27C8F49F"
+    },
+    {
+      "path": "ProjectSettings/UnityConnectSettings.asset",
+      "sha256": "D4280F9D0397FC6738786DB164976AD7456E0B2A77823C4C61684628E84A2373"
+    },
+    {
+      "path": "Packages/manifest.json",
+      "sha256": "C7879726D0F4A76046D945462340987D33FD23BA3EE06132EF0C1E5C501E121E"
+    },
+    {
+      "path": "Packages/packages-lock.json",
+      "sha256": "819DDB5DB90FCF02148D15C736464D39AE5A9773A60AE0752065807DFECB4FBB"
+    }
+  ],
+  "originalConfigurationFilesPreserved": 5,
+  "editModePassed": 128,
+  "playModePassed": 3,
+  "serverBuildErrors": 0,
+  "serverBuildWarnings": 506,
+  "actualProcessExits": [
+    0,
+    0
+  ],
+  "sameSevenWaterCasesReplayed": true,
+  "allParcelTrajectoriesAndCoverageReconstructed": true,
+  "maximumMassBalanceErrorKg": 4.547473508864641e-13,
+  "negativeChecksRejected": [
+    "tank",
+    "launch",
+    "wind",
+    "impact",
+    "coverage"
+  ],
+  "vacuumAnalyticAndTimeStepConvergencePassed": true,
+  "originalFlightFuelAuthorityResultsUnchanged": true,
+  "immutableArchiveReplayPassed": true,
+  "sourceCommentsFiles": 62,
+  "sourceCommentsMembers": 479,
+  "csharpFrozenAcrossAcceptedTestsAndBuild": true,
+  "roleDllHashesVerified": true,
+  "existingCodeAndAssetsOutsideOptInHarnessHookUnchanged": true,
+  "selfContainedInspectedSvgFiles": 5,
+  "uniqueNewMetaGuids": 3,
+  "markdownLinksChecked": 405,
+  "credentialPatternScanPassed": true,
+  "noRenderScreenshotApplicable": true,
+  "limits": "Numerical water prerequisite only; no live release/tank installation, scoop, flow, terrain, VFX, multiplayer suppression, calibrated aircraft, capacity or FPS pass. Propeller animation deferred; M03 open."
+}

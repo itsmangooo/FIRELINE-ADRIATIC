@@ -1,0 +1,143 @@
+{
+  "passed": true,
+  "exactTwoProcessWaterReplay": true,
+  "originalFlightFuelAuthorityUnchanged": true,
+  "caseSummaries": [
+    {
+      "case": "low_calm",
+      "parcels": 64,
+      "checkedFirstParcelSteps": 299,
+      "impactCentroidXM": 80.0,
+      "impactCentroidZM": 106.84752694910406,
+      "minimumImpactSeconds": 2.9827315574827016,
+      "maximumImpactSeconds": 2.9827315574827016,
+      "impactedKg": 2000.0,
+      "tankAfterKg": 2000.0,
+      "affectedCells": 4,
+      "retainedFireKg": 2000.0,
+      "maximumImpactDifferenceM": 2.842170943040401e-14,
+      "massBalanceErrorKg": 0.0
+    },
+    {
+      "case": "high_calm",
+      "parcels": 64,
+      "checkedFirstParcelSteps": 676,
+      "impactCentroidXM": 80.0,
+      "impactCentroidZM": 123.1542407990678,
+      "minimumImpactSeconds": 6.755273913782449,
+      "maximumImpactSeconds": 6.755273913782449,
+      "impactedKg": 2000.0,
+      "tankAfterKg": 2000.0,
+      "affectedCells": 4,
+      "retainedFireKg": 2000.0,
+      "maximumImpactDifferenceM": 4.263256414560601e-14,
+      "massBalanceErrorKg": 0.0
+    },
+    {
+      "case": "low_crosswind",
+      "parcels": 64,
+      "checkedFirstParcelSteps": 299,
+      "impactCentroidXM": 95.4499187410454,
+      "impactCentroidZM": 106.56656250614144,
+      "minimumImpactSeconds": 2.9851356439984333,
+      "maximumImpactSeconds": 2.9851356439984333,
+      "impactedKg": 2000.0,
+      "tankAfterKg": 2000.0,
+      "affectedCells": 6,
+      "retainedFireKg": 1999.9999999999995,
+      "maximumImpactDifferenceM": 0.0,
+      "massBalanceErrorKg": 4.547473508864641e-13
+    },
+    {
+      "case": "high_crosswind",
+      "parcels": 64,
+      "checkedFirstParcelSteps": 676,
+      "impactCentroidXM": 126.29316586711307,
+      "impactCentroidZM": 122.6957692196431,
+      "minimumImpactSeconds": 6.758031583421833,
+      "maximumImpactSeconds": 6.758031583421833,
+      "impactedKg": 2000.0,
+      "tankAfterKg": 2000.0,
+      "affectedCells": 6,
+      "retainedFireKg": 2000.0,
+      "maximumImpactDifferenceM": 2.842170943040401e-14,
+      "massBalanceErrorKg": 0.0
+    },
+    {
+      "case": "fine_high_crosswind",
+      "parcels": 64,
+      "checkedFirstParcelSteps": 1353,
+      "impactCentroidXM": 126.28568384424631,
+      "impactCentroidZM": 123.06937662590958,
+      "minimumImpactSeconds": 6.763406537932949,
+      "maximumImpactSeconds": 6.763406537932949,
+      "impactedKg": 2000.0,
+      "tankAfterKg": 2000.0,
+      "affectedCells": 6,
+      "retainedFireKg": 2000.0,
+      "maximumImpactDifferenceM": 0.0,
+      "massBalanceErrorKg": 0.0
+    },
+    {
+      "case": "tilted_spinning",
+      "parcels": 64,
+      "checkedFirstParcelSteps": 469,
+      "impactCentroidXM": 109.19234999950447,
+      "impactCentroidZM": 117.12873913449688,
+      "minimumImpactSeconds": 4.667319023770486,
+      "maximumImpactSeconds": 4.716545323218322,
+      "impactedKg": 2000.0,
+      "tankAfterKg": 2000.0,
+      "affectedCells": 4,
+      "retainedFireKg": 1999.9999999999998,
+      "maximumImpactDifferenceM": 3.1776437161565096e-14,
+      "massBalanceErrorKg": 2.2737367544323206e-13
+    },
+    {
+      "case": "vacuum",
+      "parcels": 64,
+      "checkedFirstParcelSteps": 224,
+      "impactCentroidXM": 80.0,
+      "impactCentroidZM": 174.60632827695048,
+      "minimumImpactSeconds": 2.2319573231343726,
+      "maximumImpactSeconds": 2.2319573231343726,
+      "impactedKg": 2000.0,
+      "tankAfterKg": 2000.0,
+      "affectedCells": 6,
+      "retainedFireKg": 1999.9999999999995,
+      "maximumImpactDifferenceM": 0.0,
+      "massBalanceErrorKg": 4.547473508864641e-13
+    }
+  ],
+  "coarseVsFineHighCrosswindCentroidM": 0.3736823178628481,
+  "vacuumVsContinuousImpactTimeErrorSeconds": 0.00458030521994246,
+  "vacuumVsContinuousNorthErrorM": 0.2748183131973292,
+  "negativeChecksRejected": [
+    "tank",
+    "launch",
+    "wind",
+    "impact",
+    "coverage"
+  ],
+  "timings": [
+    {
+      "calls": 1000,
+      "warmupCalls": 100,
+      "parcelsPerBatch": 64,
+      "meanBatchMs": 0.0203563,
+      "p95BatchMs": 0.020300000000000002,
+      "maximumBatchMs": 0.0935,
+      "gc0Collections": 0
+    },
+    {
+      "calls": 1000,
+      "warmupCalls": 100,
+      "parcelsPerBatch": 64,
+      "meanBatchMs": 0.022809700000000002,
+      "p95BatchMs": 0.028200000000000003,
+      "maximumBatchMs": 0.41300000000000003,
+      "gc0Collections": 0
+    }
+  ],
+  "limits": "Accelerated headless numerical release prerequisite only: no live tank installation, release RPC, scooping, release duration, terrain/water geometry, VFX, multiplayer suppression, capacity or FPS acceptance."
+}

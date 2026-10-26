@@ -1,0 +1,49 @@
+{
+  "success": true,
+  "command": "command test status",
+  "data": {
+    "command": "test status",
+    "parameters": {},
+    "result": {
+      "status": "completed",
+      "duration": 0.15,
+      "summary": {
+        "total": 3,
+        "passed": 3,
+        "failed": 0,
+        "skipped": 0,
+        "inconclusive": 0
+      },
+      "results": [
+        {
+          "FullName": "Fireline.Tests.FlightDevicePlayTests.GamepadMappingAndSeatControlsUseActualInputEvents",
+          "Status": "Passed",
+          "Duration": 0.1046494,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightDevicePlayTests.KeyboardMappingAndFocusNeutralizationUseActualInputEvents",
+          "Status": "Passed",
+          "Duration": 0.0187372,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightDevicePlayTests.StalledFrameInputIsBoundedAndInvalidTimeRejected",
+          "Status": "Passed",
+          "Duration": 0.0133589,
+          "Message": null,
+          "StackTrace": null
+        }
+      ]
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7801,
+      "projectPath": "A:\\Unity Projects\\FIRELINE ADRIATIC"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

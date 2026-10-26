@@ -46,6 +46,7 @@ namespace Fireline.Server
         public FlightPolarPoint[] polar;
         public FuelProof fuel;
         public FlightRouteProof route;
+        public WaterDropProof water;
     }
 
     /// <summary>Actual debug lift-curve evaluations at two flap settings; angles are degrees for the report only.</summary>
@@ -156,7 +157,7 @@ namespace Fireline.Server
                 result.stepMs[i] = watch.Elapsed.TotalMilliseconds; result.checksumGuard += next.PositionM.Y;
             }
             result.gc0Collections = GC.CollectionCount(0) - before;
-            result.fuel = FuelVerification.Run(); result.route = FlightRouteVerification.Run(); return result;
+            result.fuel = FuelVerification.Run(); result.route = FlightRouteVerification.Run(); result.water = WaterDropVerification.Run(); return result;
         }
     }
 }

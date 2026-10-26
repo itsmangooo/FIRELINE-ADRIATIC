@@ -1,0 +1,4 @@
+FIRELINE_SERVER_START endpoint=127.0.0.1:8392
+FIRELINE_FLIGHT_PROOF passed=True headless=True profile=DEBUG_FLIGHT_ONLY_V1 cases=9
+FIRELINE_SERVER_HEADLESS valid=True graphics=Null cameras=0
+FIRELINE_SERVER_CONNECTIONS count=0

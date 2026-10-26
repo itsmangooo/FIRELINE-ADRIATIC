@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "route": {
+    "samples": 13943,
+    "acceptedCommands": 3486,
+    "maximumHeightM": 11.70212690502383,
+    "maximumSpeedMps": 51.470722713283784,
+    "firstAbove5mSeconds": 31.085,
+    "firstTouchdownSeconds": 49.17,
+    "longestAirborneSeconds": 14.620000000000886,
+    "settledSeconds": 5.0049999999999155,
+    "durationSeconds": 69.715,
+    "finalNorthM": 2363.9278370425473,
+    "finalSpeedMps": 8.931356763676264e-15,
+    "consumedFuelKg": 12.26000000026761,
+    "minimumWheelEdgeMarginM": 19.5
+  },
+  "exactTwoProcessRouteReplay": true,
+  "unchangedLegacyFlightFuel": true,
+  "negativeChecksRejected": [
+    "command",
+    "fuel",
+    "contact",
+    "early-stop",
+    "footprint"
+  ],
+  "rawArchives": [
+    {
+      "path": "numerical/run-1.json.gz",
+      "rawSha256": "B35EB6C02229CC34183017490CD8BCC1F3F9C67660860C84EA9D8CA925FD9C07"
+    },
+    {
+      "path": "numerical/run-2.json.gz",
+      "rawSha256": "280602DB437F52121E4217E3C42A44C19A84B9EBC65F3970F09534BB98B2AD77"
+    }
+  ],
+  "limits": "Accelerated headless calm-air QA authority route, not real-time transport, manual flight, rendered gameplay, CL-415 calibration, water or FPS qualification."
+}

@@ -1,5 +1,9 @@
 # Performance history
 
+## 2026-10-26 — water parcel numerical microdiagnostic
+
+Two actual headless dedicated processes record 100 warmed/1,000 timed 64-parcel batches each. [Actual per-process wall-duration table, hardware, excluded work and all graph guides](reports/2026-10-26-m03-water-parcels.md#performance-scope). This pure numerical increment has no rendered callback/FPS workload or matched previous parcel kernel. CPU/GPU frame work, draw calls, VRAM/full-server/fire execution/bandwidth remain unavailable; no optimization/capacity/60 FPS claim. Existing FL-11/HOST-01/NET-01 work remains deferred.
+
 ## 2026-10-26 — M03 real-time rendered flight diagnostic
 
 [Complete per-run counter table, timed aircraft adapter limits and peak locations](performance/2026-10-26-m03-realtime-flight.md).

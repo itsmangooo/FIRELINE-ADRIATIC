@@ -1,5 +1,9 @@
 # Frame-loss investigation register
 
+## M03 water prerequisite — 2026-10-26
+
+No new frame-loss location can be measured from this headless numerical fixture: it has no camera/presentation callbacks. [Actual warmed parcel-batch Stopwatch diagnostics and exclusions](../reports/2026-10-26-m03-water-parcels.md#performance-scope) are not render intervals, dropped frames or complete server ticks. **FL-11/HOST-01/NET-01 remain unresolved** and deferred for later optimization. Future live water controls/VFX require actual rendered profiling/captures.
+
 ## M03 actual real-time flight callbacks — 2026-10-26
 
 **FL-11: observed callback locations; attribution/optimization deferred.** Accepted and independent repeated 1080p Balanced/VSync=1 D3D11 calm-air QA hops, one rendered pilot + headless observer + dedicated server, Editor closed on i5-9400F/GTX 1660 SUPER/16 GB/Windows 11 26300/driver 32.0.16.2101. [Actual conditions/results/raw interval files and rejected attempt](../reports/2026-10-26-m03-realtime-flight.md), [all clock/ruler/zoom meanings](../previews/m03-realtime-flight/COMPARISON.md#physical-presentation-and-callback-graph-guide).

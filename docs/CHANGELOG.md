@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-26 — M03 numerical water-release prerequisite
+
+- Add validated candidate tank debit/CoG rebase, bounded representative parcels, inherited rigid-body motion, wind/quadratic-drag/gravity, segment-plane impact and bilinear conserved fire coverage.
+- Verify 128 EditMode/3 PlayMode tests, zero-error headless build, exact seven-case replay in two actual zero-exit processes, independent trajectory/mass/fire equations and five corruption checks. Existing flight/fuel/authority cases remain unchanged. [Evidence, five inspected SVGs and explicit limitations](reports/2026-10-26-m03-water-parcels.md).
+- Keep live release/scooping/flow/terrain/VFX/replication/calibration and wider M03 gates open. Record speed-dependent propellers as final polish; no visual/package/asset change or fresh FPS claim. User configuration preserved.
+
 ## 2026-10-26 — M03 real-time rendered/network runway route
 
 - Added explicit QA owner requests from received snapshots, actual queued/received command evidence and value-copy observation of every accepted server substep. Two real dedicated/rendered-owner/late-observer groups pass takeoff/landing/settling, release/vacancy ACK and disconnect; 16,669 server substeps, 1,213 exact received poses, 3,950 reconstructed display frames, 3,957 actual instrument texts in accepted run.

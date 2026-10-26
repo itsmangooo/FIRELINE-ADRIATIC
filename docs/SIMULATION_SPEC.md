@@ -1,5 +1,9 @@
 # Simulation specification — Fire, wind, water and environmental destruction
 
+## M03 water-release numerical boundary — 2026-10-26
+
+`WaterDrop` now implements a pure candidate tank/CoG debit, bounded parcel emission with inherited motion, quadratic-drag/gravity integration, segment-plane impacts and bilinear mass coverage. The opt-in dedicated numerical proof applies actual coverage to existing `FireWorld.ApplyWater`; all original force/fuel/contact/fire/wind laws remain unchanged. [Actual SI model, estimated coefficients, seven cases, independent comparisons and limitations](physics/water-parcels/COMPARISON.md). Normal live aircraft have no release/scoop action yet; continuous flow, real geometry, common live scheduling, event lifecycle, VFX and multiplayer suppression remain open. The later solver paragraphs remain the broader design.
+
 ## M03 accepted-step fuel transaction — 2026-10-24
 
 The server now calls pure `FuelFlight.Step` around the unchanged contact/force kernels. Estimated throttle-proportional fuel burn supplies partial-interval mean thrust, zero thrust when empty, and a CoG position/velocity rebase preserving fixed dry-body points before validated atomic installation. Only accepted 5 ms physical steps consume fuel; rejected candidates, discarded wall time and neutral throttle do not. Default live fuel is 400 kg; water is unchanged. [Exact SI equations, actual before/after samples, legacy replay and limits](physics/aircraft-fuel/COMPARISON.md). No idle/engine-start/refuel model, production curves, water transfer or persistence is added. Older frozen/dry scope statements below retain their historical meaning.

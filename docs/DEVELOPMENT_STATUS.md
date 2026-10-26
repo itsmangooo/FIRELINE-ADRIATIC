@@ -1,5 +1,9 @@
 # Development status — handoff
 
+## Latest increment — 2026-10-26 water-release numerical prerequisite
+
+**M03 remains In Progress.** The isolated water-release prerequisite now creates a conserved tank/CoG candidate and representative parcels, integrates wind/gravity/drag to planar impacts and supplies bilinear mass weights to the existing fire cooling/wetting method. **128 EditMode + 3 PlayMode tests**, zero-error Windows server build and two actual zero-exit numerical processes pass, with exact seven-case replay and unchanged original flight/fuel/authority results. [Actual equations/SVGs, mass/drift/cooling data and limits](physics/water-parcels/COMPARISON.md), [build/tests/raw evidence](reports/2026-10-26-m03-water-parcels.md). This does not install a live water action or scoop/VFX; normal flight/clients remain unchanged. Speed-dependent propeller animation is deferred to final polish per user request. Existing performance work remains deferred.
+
 ## Latest increment — 2026-10-26 real-time rendered flight
 
 **M03 remains In Progress.** Two actual local dedicated/rendered-owner/late-observer runway-hop executions pass takeoff/landing/settling, source/replica/display agreement and explicit release/vacancy/disconnect cleanup. **119 EditMode + 3 PlayMode tests**, zero-error Windows server/client builds (510/499 warnings), exact unchanged numerical replays. Accepted run: **16,669 server substeps, 1,213 exact received poses, 3,950 reconstructed display frames, 3,957 actual instrument texts**. [Actual results, rejected first attempt, raw evidence and limits](reports/2026-10-26-m03-realtime-flight.md), [real screenshots, equations, SVGs and graph guide](previews/m03-realtime-flight/COMPARISON.md).

@@ -1,5 +1,9 @@
 # Aircraft specifications & flight-simulation data sheet
 
+## M03 debug water prerequisite and final-polish request — 2026-10-26
+
+`DEBUG_WATER_PARCELS_V1` uses the existing generic body's water capacity/CoG and estimated 4×2 m release patch/2 m/s body-down exit/effective drag area 0.04 m²/kg. Pure tank rebase, emitted mass and actual numerical impacts/fire weights are verified; these are not CL-415 calibration or live scoop/drop controls. [Model, actual tests and missing physics/flow/geometry](physics/water-parcels/COMPARISON.md). User requested speed-dependent propeller rotation as a **final touch**: defer animation, audit mesh pivots/axes and document RPM/airspeed mapping plus the available authoritative engine signal then. Current props/gear/flaps remain static; cosmetic rotation will not decide thrust.
+
 ## M03 actual local rendered straight hop — 2026-10-26
 
 The estimated generic body now has two actual automated local owner/observer flight executions with server-only physics/contact/fuel and read-only rendering. [Actual trajectory, QA policy, real screenshots, unchanged numerical reference and limitations](previews/m03-realtime-flight/COMPARISON.md). This is not calibrated CL-415 data or a production autopilot; physical controller/manual, crosswind/payload range, aircraft/terrain/water collision, rig/cockpit/animation, refueling and water gates remain open. CoG datum height is not radar altitude; static visual parts remain.

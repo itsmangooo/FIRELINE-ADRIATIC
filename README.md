@@ -8,11 +8,13 @@ A persistent, self-hosted, cooperative Croatian/Herzegovinian aerial and ground 
 
 ## Current Development Status
 
-Current M03 verification: **119 EditMode + 3 PlayMode tests**, zero-error Windows server/client builds and two actual local **dedicated + rendered pilot + late observer** flight executions. Accepted run: **16,669 server substeps, 1,213 exact received poses, 3,950 reconstructed display frames, 3,957 actual instrument texts**, with takeoff/landing/settling, explicit seat release/vacancy ACK and disconnect. [Actual results, rejected first attempt and limits](docs/reports/2026-10-26-m03-realtime-flight.md), [real airborne/landed images, equations/SVGs and graph guide](docs/previews/m03-realtime-flight/COMPARISON.md). Simulation kernels and exact numerical references remain unchanged. M03 stays open for manual/physical input, impairment/crosswind/payload envelope, collision/calibration/animation/cockpit/refueling and water.
+Current M03 verification: **128 EditMode + 3 PlayMode tests**, zero-error headless server build and two actual numerical processes verify the water-release prerequisite: candidate tank/CoG debit, inherited-motion parcels, wind/gravity/drag, planar impact and conserved graded fire coverage. [Actual water results, equations, five SVGs and limitations](docs/physics/water-parcels/COMPARISON.md), [build/raw data](docs/reports/2026-10-26-m03-water-parcels.md). Earlier actual local dedicated/rendered-pilot/late-observer takeoff/landing/stop remains [verified at its original revision](docs/reports/2026-10-26-m03-realtime-flight.md). **M03 stays open** for live water controls/scooping/flow/terrain/replication/VFX, manual flight and broader envelope, collision/calibration/cockpit/refueling. Speed-dependent propellers are deferred to final polish.
 
-Unity **6000.6.7f1** / HDRP **17.6.0** / Netcode, Entities and Transport **6.6.0** are retained; installed Input System **1.20.1** is referenced by Client for test controls. No package was added. Latest Windows builds have **0 errors** (510 server / 499 client warnings). Earlier Linux/WSL foundation results remain historical. [M00 scope](docs/reports/2026-10-22-m00-coastal-foundation.md), [M02 bounded fire replication/restart](docs/reports/2026-10-23-m02-replication.md). NET-01 cold/jittered startup, aircraft calibration/refueling/water/full collision, production-model replacement and representative populated coast/smoke qualification remain open. M05A and later gameplay milestones remain Pending.
+Unity **6000.6.7f1** / HDRP **17.6.0** / Netcode, Entities and Transport **6.6.0** are retained; installed Input System **1.20.1** is referenced by Client for test controls. No package was added. Latest Windows server has **0 errors / 506 warnings**; the earlier rendered-flight client has **0 errors / 499 warnings** and is not rebuilt by this headless-only change. Earlier Linux/WSL foundation results remain historical. [M00 scope](docs/reports/2026-10-22-m00-coastal-foundation.md), [M02 bounded fire replication/restart](docs/reports/2026-10-23-m02-replication.md). NET-01 cold/jittered startup, aircraft calibration/refueling/water/full collision, production-model replacement and representative populated coast/smoke qualification remain open. M05A and later gameplay milestones remain Pending.
 
 ## Latest Development Updates
+
+- **2026-10-26 — M03 water-release core:** candidate tank/CoG debit, wind-driven representative parcels, planar impacts and bilinear conserved fire coverage pass 128 EditMode/3 PlayMode tests and two actual dedicated numerical runs; original flight/fuel/authority results remain exact. [Actual equations/diagrams/plots, raw evidence and limits](docs/reports/2026-10-26-m03-water-parcels.md). Live release/scooping/flow/terrain/VFX remain pending; speed-dependent propellers deferred to final polish.
 
 - **2026-10-26 — M03 actual rendered/network flight:** two automated local calm-air takeoff/landing/stop runs through actual server authority and rendered owner/late observer pass, including acknowledged release/disconnect. 119 EditMode + 3 PlayMode tests, zero-error Windows builds and unchanged numerical physics replay. [Actual screenshots/SVGs/source checks, retained failed cleanup attempt and limits](docs/reports/2026-10-26-m03-realtime-flight.md). M03 remains open; FL-11 records callback gaps for later optimization.
 
@@ -95,6 +97,8 @@ The fog boxes are a static render fixture, not production smoke or authoritative
 
 ## Physics & Simulation Improvements
 
+The new [water-release comparison](docs/physics/water-parcels/COMPARISON.md) records actual candidate tank/CoG mass transfer, inherited parcel motion, wind/gravity/drag, planar impact and bilinear fire-cell dose, with 30/100 m and calm/8 m/s base crosswind cases. This is a verified numerical prerequisite; live controls, flow/scooping, terrain and VFX remain open.
+
 [Current QA-control BEFORE/AFTER comparison, SI equations, unchanged equivalent numerical replay and live verification](docs/physics/realtime-route/COMPARISON.md). No force-law or calibration improvement is claimed from a different input policy.
 
 The unchanged physical kernel now has a bounded **headless authority route** proof with a revised QA control strategy. The older offline strategies remain recorded failures; the new evidence independently checks commands, tire geometry/support, finite runway, fuel and five-second airborne/settled gates. [Actual equations, BEFORE/AFTER SVGs, equivalent legacy replay and physical-clock plots](docs/physics/runway-route/COMPARISON.md). This is not a calibrated or rendered gameplay flight pass.
@@ -127,6 +131,8 @@ The [coastal conversion report](docs/reports/2026-10-22-m00-coastal-foundation.m
 
 ## Gameplay Systems
 
+The isolated water kernel now feeds actual numerical impact weights into existing fire cooling; [live release/scooping/event/replication work remains pending](docs/reports/2026-10-26-m03-water-parcels.md). No normal pilot water command or cosmetic water effect is installed by this increment.
+
 Actual automated local calm-air takeoff/landing now crosses normal seat/input RPCs, server physics and read-only owner/observer presentation, with acknowledged release and disconnect. [Independent proof and remaining manual/envelope/water scope](docs/reports/2026-10-26-m03-realtime-flight.md). This QA fixture is not a gameplay autopilot or complete sortie.
 
 The current debug pilot view adds validated read-only air/ground/vertical speed, pitch/bank/heading, wind and resources. [Actual UI/source proof](docs/reports/2026-10-25-m03-flight-instruments.md). No production cockpit/settings or M05A implementation is implied.
@@ -138,6 +144,10 @@ The dedicated server now advances a bounded synthetic fire/wind fixture, accepts
 Dispatch, aerial sorties, ground operations, persistent incidents and cooperative suppression are **planned**, not playable systems. See [game design](docs/GAME_DESIGN.md). Each implemented change will summarize player impact here and link a [gameplay/architecture report](docs/templates/GAMEPLAY_ARCHITECTURE_CHANGE.md) covering behavior, authority and tests.
 
 ## Architecture & Technical Diagrams
+
+![Actual numerical water prerequisite; live controls remain pending](docs/physics/water-parcels/after.svg)
+
+[Previous boundary, equations, actual results and editable source](docs/physics/water-parcels/COMPARISON.md).
 
 ![Actual live source/control/authority/replica boundary](docs/previews/m03-realtime-flight/after-flow.svg)
 

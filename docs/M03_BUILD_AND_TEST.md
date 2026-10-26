@@ -282,3 +282,33 @@ python scripts/analyze_m03_realtime.py --archive docs/reports/m03-realtime-evide
 ```
 
 This rechecks hashes and all recorded boundaries, not a new live execution. [Actual results/captures/graph guides and limitations](reports/2026-10-26-m03-realtime-flight.md), [control/physics comparison](physics/realtime-route/COMPARISON.md). Normal manual launch/control commands above remain available without route QA flags. Physical hardware/native focus, impairment/crosswind/payload, calibrated collision/rig/cockpit/refueling/water and representative FPS/capacity are not qualified by this calm automated case.
+
+
+## Water-parcel prerequisite
+
+This is an isolated numerical proof. `--fireline-flight-proof` now also runs actual `WaterDropVerification`; ordinary sessions/clients do not install water controls, parcels or VFX. Use current source and a fresh evidence destination; the server roles remain Shared/Simulation/Server without Client/HDRP assets.
+
+With Editor closed, the existing batch verification/build commands remain usable (stop on any nonzero result; inspect actual verdict/count, not only process success):
+
+```powershell
+New-Item -ItemType Directory -Force Builds/M03WaterReplay | Out-Null
+unity self-update --check --format json
+unity test "$PWD" --editor-version 6000.6.7f1 --mode EditMode --filter Fireline.Tests --output Builds/M03WaterReplay/editmode.xml --timeout 900 -- -buildTarget Win64 -standaloneBuildSubtarget Player -nographics -force-d3d11
+unity test "$PWD" --editor-version 6000.6.7f1 --mode PlayMode --filter Fireline.Tests --output Builds/M03WaterReplay/playmode.xml --timeout 900 -- -buildTarget Win64 -standaloneBuildSubtarget Player -nographics -force-d3d11
+$env:FIRELINE_BUILD_EVIDENCE='Builds/M03WaterReplay/builds'
+unity run "$PWD" --editor-version 6000.6.7f1 --timeout 1200 --log-file Builds/M03WaterReplay/server-build.log --no-tail -- -buildTarget Win64 -nographics -executeMethod Fireline.Authoring.FoundationBuild.BuildServer
+./scripts/Test-M03Water.ps1 -Port 8392 -EvidenceRoot Builds/M03WaterReplay/evidence
+$env:PYTHONPATH=(Join-Path $PWD Builds/AnalysisTools)
+python scripts/render_m03_water.py --numerical Builds/M03WaterReplay/evidence/numerical --output Builds/M03WaterReplay/plots
+```
+
+The accepted run used the already-open idle Editor instead, via Pipeline `unity command ... --project-path "$PWD" --caller plugin --skill unity-cli`: `test run --mode editor --filter Fireline.Tests`, then `test run --mode playmode --filter Fireline.Tests --async_tests true` and `test status`. Inspect nested result success and actual counts; unsupported synchronous PlayMode can return CLI exit 0 while its result explicitly fails and runs zero tests. Live build invoked existing `FoundationBuild.BuildServer()` through `script eval`, refusing dirty Assets objects and restoring the previous process evidence environment override in `finally`. The Editor was not closed; the build helper restores graphics/quality/backend settings. Known Editor-managed Standalone-symbol serialization was restored only after checking that all other original content matched; five original configuration hashes were verified. Do not reset unrelated user settings to reproduce this report.
+
+Recheck the published immutable archives without Unity:
+
+```powershell
+python scripts/analyze_m03_water.py --numerical docs/reports/m03-water-evidence/numerical --output Builds/M03WaterArchiveReplay.json
+python scripts/analyze_m03_route.py --numerical docs/reports/m03-water-evidence/numerical --output Builds/M03WaterRouteReplay.json
+```
+
+The first command binds raw process hashes/exits and independently reconstructs release, all parcel flight/impact, mass/centroid/coverage and actual fire response, with five corrupted-record rejection checks. The second preserves the old authority/flight/fuel reference. Archive replay is a recorded-data check, not another process execution. [Actual evidence, timing scope and limits](reports/2026-10-26-m03-water-parcels.md), [all mathematical/graph definitions](physics/water-parcels/COMPARISON.md). No graphical screenshot/FPS qualification applies to this numerical-only increment; actual water controls/VFX need fresh build captures and profiling later.

@@ -1,0 +1,18 @@
+{
+  "os": {
+    "Caption": "Microsoft Windows 11 Pro",
+    "Version": "10.0.26300",
+    "BuildNumber": "26300"
+  },
+  "gpu": {
+    "Name": "NVIDIA GeForce GTX 1660 SUPER",
+    "DriverVersion": "32.0.16.2101"
+  },
+  "conditions": "Headless Mono release; accelerated numerical tests; Editor open after live build, background desktop active; no rendering/FPS scenario",
+  "cpu": "Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz",
+  "memoryBytes": 17116717056,
+  "recordedAt": "2026-10-26T22:22:15.8858842+01:00",
+  "hdrp": "17.6.0",
+  "baseline": "4dc96fec9074ab600963ef615cd595866a0c789d",
+  "unity": "6000.6.7f1"
+}

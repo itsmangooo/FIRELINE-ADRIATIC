@@ -1,5 +1,9 @@
 # Multiplayer/network architecture — 100 players as a target
 
+## M03 numerical water core — no live protocol change, 2026-10-26
+
+The new water release/parcel/raster functions run only in the explicit dedicated numerical fixture, producing actual existing fire cooling locally. Aircraft RPC fields/version 2, client code and live `FlightAuthority` are unchanged. [Actual results and limits](reports/2026-10-26-m03-water-parcels.md). This does not authorize client-selected payloads/footprints or implement live water controls, release events, multiplayer suppression, idempotent event delivery or persistence. Those require a seat-authorized atomic server transaction and actual network checks next.
+
 ## M03 real-time route/cleanup acceptance — 2026-10-26
 
 Two actual local dedicated/rendered-owner/late-headless-observer groups now complete a calm-air straight hop over existing version-2 input/pose/ACK RPCs. Requests remain server seat/epoch/sequence/tick/range/rate/lease validated. Client QA role labels grant no permission; server derives identity from connection. Enqueued/received RPCs and installed per-step inputs are independently reconciled. `[System.Serializable]` adds complete nested request JSON evidence without changing wire fields. Owner waits for actual vacant-owner/new-epoch snapshot, then allows 0.15 s transport updates before quit; observer sees/ACKs vacancy and disconnects. Earlier immediate quit caused lease expiry and remains a rejected attempt. [Source, data, actual cleanup checks and limits](reports/2026-10-26-m03-realtime-flight.md). No WAN/impairment/prediction/capacity/admission or measured bandwidth qualification.

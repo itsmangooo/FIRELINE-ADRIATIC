@@ -1,5 +1,9 @@
 # Technical architecture — Unity 6 HDRP, C#, headless server
 
+## M03 isolated water prerequisite — 2026-10-26
+
+Pure Simulation `WaterDrop` returns validated release candidates, parcel values and sorted cell weights. Server `WaterDropVerification` alone consumes the new chain under explicit `--fireline-flight-proof`; ordinary `FlightAuthority` and clients are untouched. Existing trusted fire application rejects missing coverage cells atomically. [Actual BEFORE/AFTER drawings, boundaries and evidence](physics/water-parcels/COMPARISON.md). Live seat/input/event scheduling, water-surface/terrain providers, flow, replication and VFX are still pending; no completed aerial gameplay path is implied.
+
 ## M03 real-time route proof boundary — 2026-10-26
 
 Explicit route QA alone installs received-state request math and proof recording. Owner inputs use the normal metadata/validation path; actual transport identity remains server-derived. Optional trusted `FlightAuthority.Advance` observation receives validated post-install value copies; default callback is null and unit tests verify identity/isolation. It does not integrate or mutate state. Live proof selects zero wind on the existing server field, records every substep/request/publication and checks tire/airborne/settling plus release/ACK/disconnect. Client presentation remains the same 100 ms receipt interpolation. [Actual BEFORE/AFTER SVGs, formulas, raw six-process evidence and limits](previews/m03-realtime-flight/COMPARISON.md). Simulation laws, wire fields/version, assets/packages unchanged. Production autopilot/manual envelope/water remain pending.

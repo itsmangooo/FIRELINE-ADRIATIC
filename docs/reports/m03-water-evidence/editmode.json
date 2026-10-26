@@ -1,0 +1,931 @@
+{
+  "success": true,
+  "command": "command test run",
+  "data": {
+    "command": "test run",
+    "parameters": {
+      "mode": "editor",
+      "filter": "Fireline.Tests"
+    },
+    "result": {
+      "Summary": {
+        "Total": 128,
+        "Passed": 128,
+        "Failed": 0,
+        "Skipped": 0,
+        "Inconclusive": 0
+      },
+      "Results": [
+        {
+          "FullName": "Fireline.Tests.FlightRealtimeTests.QueuedCommandEvidenceRetainsTheActualWireFields",
+          "Status": "Passed",
+          "Duration": 0.0217679,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightRealtimeTests.RouteLaunchIsExplicitAndExclusive",
+          "Status": "Passed",
+          "Duration": 0.0067051,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightRealtimeTests.RouteRefusesOtherWeatherAndInvalidReplica",
+          "Status": "Passed",
+          "Duration": 0.0039347,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightRealtimeTests.RouteRequestsAreBoundedAndStopDoesNotRestart",
+          "Status": "Passed",
+          "Duration": 0.0053349,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightTelemetryTests.CombinedAttitudeUsesDocumentedAviationSigns",
+          "Status": "Passed",
+          "Duration": 0.0010289,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightTelemetryTests.CompassWrapAndVerticalLimitDoNotProduceNan",
+          "Status": "Passed",
+          "Duration": 0.0008862,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightTelemetryTests.InvalidWindIsRejected(double.NaN)",
+          "Status": "Passed",
+          "Duration": 0.0005203,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightTelemetryTests.InvalidWindIsRejected(double.PositiveInfinity)",
+          "Status": "Passed",
+          "Duration": 0.0001469,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightTelemetryTests.InvalidWindIsRejected(101)",
+          "Status": "Passed",
+          "Duration": 0.0001286,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightTelemetryTests.OldVersionAndMalformedStateFailBeforeDisplay",
+          "Status": "Passed",
+          "Duration": 0.0007915,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightTelemetryTests.TextFormattingDoesNotDependOnOsDecimalSeparator",
+          "Status": "Passed",
+          "Duration": 0.005198,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightTelemetryTests.WindAndVerticalVelocityHaveDistinctInstrumentMeanings",
+          "Status": "Passed",
+          "Duration": 0.0013268,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightViewTests.InvalidPresentationHistoryFailsWithoutReplacingLastPose",
+          "Status": "Passed",
+          "Duration": 0.0021219,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightViewTests.PoseInterpolationUsesDelayAndClampsEndpoints",
+          "Status": "Passed",
+          "Duration": 0.0004687,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightViewTests.QuaternionSignAndResetBoundariesAreSafe",
+          "Status": "Passed",
+          "Duration": 0.0004568,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightViewTests.ViewLaunchRequiresCompatibleExplicitOptions",
+          "Status": "Passed",
+          "Duration": 0.0011562,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.AircraftImportTests.GeometryIsOrientedGroundedAndExplicitlyStatic",
+          "Status": "Passed",
+          "Duration": 0.0325394,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.AircraftImportTests.MaterialsRetainTexturesAndGlassOpacity",
+          "Status": "Passed",
+          "Duration": 0.2411035,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.AircraftImportTests.OriginalContributorNoticeIsUnchanged",
+          "Status": "Passed",
+          "Duration": 0.0098088,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireReplicationTests.CompressionRejectsInvalidAndExpandingPayloads",
+          "Status": "Passed",
+          "Duration": 0.1245409,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireReplicationTests.DeltaGapAndReplayLeaveValidStateUntouched",
+          "Status": "Passed",
+          "Duration": 0.0271487,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireReplicationTests.DeltaPreservesExactAuthoritativeState",
+          "Status": "Passed",
+          "Duration": 0.0049576,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireReplicationTests.DeltaRejectsRevisionCorruptionTruncationAndTrailingBytes",
+          "Status": "Passed",
+          "Duration": 0.0051111,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireReplicationTests.FragmentAssemblyIsBoundedAndOrderIndependent",
+          "Status": "Passed",
+          "Duration": 0.0013344,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireReplicationTests.LiveCheckpointOptionsAreExplicitAndConflictWithAcceleratedProof",
+          "Status": "Passed",
+          "Duration": 0.0007612,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireReplicationTests.TopologyChangeRequiresBaseline",
+          "Status": "Passed",
+          "Duration": 0.000946,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.AdjacentNegativeCoordinateChunkReceivesHeatAcrossBoundary",
+          "Status": "Passed",
+          "Duration": 0.0013886,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.BurnConsumesFuelThroughSmolderingAndNeverRegrowsChar",
+          "Status": "Passed",
+          "Duration": 0.0153124,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.ChunkBudgetsBoundWorkAndInactiveChunksKeepProgressing",
+          "Status": "Passed",
+          "Duration": 0.0232768,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.ClientWaterRequestCannotMutateAuthority",
+          "Status": "Passed",
+          "Duration": 0.0009883,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.DryingAllowsReignitionWithoutRestoringCharredVegetation",
+          "Status": "Passed",
+          "Duration": 0.0073569,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.FuelClassChangesNeighborHeatingUnderEquivalentInputs",
+          "Status": "Passed",
+          "Duration": 0.0031843,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.InsertionOrderCannotChangeWorldResults",
+          "Status": "Passed",
+          "Duration": 0.0149097,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.InvalidWaterCoverageFailsAtomically",
+          "Status": "Passed",
+          "Duration": 0.000995,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.ScenarioMatrixIsDeterministicDirectionalAndSuppressible",
+          "Status": "Passed",
+          "Duration": 10.6042293,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.SeededGustsAndWindChangesAreFiniteRepeatableAndVersioned",
+          "Status": "Passed",
+          "Duration": 0.0010893,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.SmallDoseReducesIntensityAndStrongDoseExtinguishesWithoutDeletingFuel",
+          "Status": "Passed",
+          "Duration": 0.0008157,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.SmokeHazardMovesDownwindWithoutClientParticles",
+          "Status": "Passed",
+          "Duration": 0.000768,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.SnapshotsAreDetachedAndDeltasHaveOrderedRevisions",
+          "Status": "Passed",
+          "Duration": 0.0008725,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSimulationTests.WaterMassIsDistributedAndConservedAfterEvaporation",
+          "Status": "Passed",
+          "Duration": 0.0017326,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSnapshotTests.EmptyAndMaximumWorldsFitTheFormat",
+          "Status": "Passed",
+          "Duration": 0.2447109,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSnapshotTests.FileStoreReplacesValidCheckpointsAndPreservesPreviousOnInvalidWrite",
+          "Status": "Passed",
+          "Duration": 0.0535461,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSnapshotTests.InvalidByteEnvelopesAreRejected",
+          "Status": "Passed",
+          "Duration": 0.0186227,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSnapshotTests.InvalidSnapshotCandidatesCannotReplaceOrMutateAuthority",
+          "Status": "Passed",
+          "Duration": 0.0199708,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSnapshotTests.RestoredWorldDoesNotShareSnapshotBuffers",
+          "Status": "Passed",
+          "Duration": 0.0172672,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSnapshotTests.RoundTripContinuesIdenticallyIncludingCharWindAndInactiveCursor",
+          "Status": "Passed",
+          "Duration": 0.046008,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FireSnapshotTests.ValidHashCannotBypassSchemaCountsFlagsOrTrailingData",
+          "Status": "Passed",
+          "Duration": 0.0273168,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.AcceptedStepObserverCannotMutateTheInstalledValueState",
+          "Status": "Passed",
+          "Duration": 0.0219417,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.AdapterMatchesDirectSolverWithServerWind",
+          "Status": "Passed",
+          "Duration": 0.00424,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.ClockKeepsFractionalRemainderAndRejectsInvalidTime",
+          "Status": "Passed",
+          "Duration": 0.0006099,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.DuplicateAndReorderedSequencesAreRejected(uint.MinValue)",
+          "Status": "Passed",
+          "Duration": 0.0017103,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.DuplicateAndReorderedSequencesAreRejected(1)",
+          "Status": "Passed",
+          "Duration": 0.0001726,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.DuplicateAndReorderedSequencesAreRejected(2)",
+          "Status": "Passed",
+          "Duration": 0.000425,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.FlightLaunchModesRequireExplicitCompatibleOptions",
+          "Status": "Passed",
+          "Duration": 0.0017104,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.InputRateAndReceiptClockAreChecked",
+          "Status": "Passed",
+          "Duration": 0.0004798,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.NonfiniteAndOutOfRangeControlsFailWithoutMutation(double.NaN)",
+          "Status": "Passed",
+          "Duration": 0.0006589,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.NonfiniteAndOutOfRangeControlsFailWithoutMutation(double.PositiveInfinity)",
+          "Status": "Passed",
+          "Duration": 0.0003644,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.NonfiniteAndOutOfRangeControlsFailWithoutMutation(-0.1d)",
+          "Status": "Passed",
+          "Duration": 0.0003337,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.NonfiniteAndOutOfRangeControlsFailWithoutMutation(1.1d)",
+          "Status": "Passed",
+          "Duration": 0.0002398,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.OnlyTheActualOwnerMayCommandAndRelease",
+          "Status": "Passed",
+          "Duration": 0.0012359,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.PhysicsEnvelopeFailureFreezesAndReleasesSeat",
+          "Status": "Passed",
+          "Duration": 0.0020154,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.RejectedInputDoesNotRefreshLease",
+          "Status": "Passed",
+          "Duration": 0.001623,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.RejectedProofObservationFaultsAndReleasesThePilot",
+          "Status": "Passed",
+          "Duration": 0.0006698,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.SeatGenerationRejectsPreviousOccupantPackets",
+          "Status": "Passed",
+          "Duration": 0.0012275,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.SleepRecoveryHasBoundedWorkAndExpiresInput",
+          "Status": "Passed",
+          "Duration": 0.0009891,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.SnapshotEvidenceRetainsPhysicalAndOwnershipFields",
+          "Status": "Passed",
+          "Duration": 0.0013634,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightAuthorityTests.StaleAndFutureObservationsAreRejected",
+          "Status": "Passed",
+          "Duration": 0.0034429,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightDynamicsTests.AttitudeAndThreeAxisControlSigns",
+          "Status": "Passed",
+          "Duration": 0.0019652,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightDynamicsTests.BallisticTimeStepConvergenceAndNoInputMutation",
+          "Status": "Passed",
+          "Duration": 0.0031437,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightDynamicsTests.DegenerateFlowIsFinite",
+          "Status": "Passed",
+          "Duration": 0.0008953,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightDynamicsTests.EulerGyroscopicTermIsPresent",
+          "Status": "Passed",
+          "Duration": 0.0005231,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightDynamicsTests.FlightProofOptionIsExclusive",
+          "Status": "Passed",
+          "Duration": 0.0009428,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightDynamicsTests.ForcesMatchAnalyticLiftDragGravityAndWindFrame",
+          "Status": "Passed",
+          "Duration": 0.0007384,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightDynamicsTests.InvalidStateCommandsMassAndStepAreRejected",
+          "Status": "Passed",
+          "Duration": 0.0021491,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightDynamicsTests.PayloadHasExactMassCenterAndInertia",
+          "Status": "Passed",
+          "Duration": 0.0009538,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightDynamicsTests.StallFlapsAndGearBehaveAsDocumented",
+          "Status": "Passed",
+          "Duration": 0.0007036,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightRouteTests.AuthorityRouteActuallyTakesOffLandsAndSettlesInsideTheFiniteRunway",
+          "Status": "Passed",
+          "Duration": 0.2163632,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightRouteTests.PilotCutsThrottleOnlyAfterAirborneApproachAndDoesNotRestart",
+          "Status": "Passed",
+          "Duration": 0.0007661,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightRouteTests.PilotStartsWithFiniteGroundRollAndRejectsMalformedState",
+          "Status": "Passed",
+          "Duration": 0.0006596,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FlightSceneTests.SyntheticSceneMatchesServerRectangleAndExplicitCoGOffset",
+          "Status": "Passed",
+          "Duration": 0.1904625,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.BenchmarkUsesSeparateFiveMinuteTimerAndExistingPresets",
+          "Status": "Passed",
+          "Duration": 0.0009996,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.ClockUsesFixedStepSecondsAndMonotonicTicks",
+          "Status": "Passed",
+          "Duration": 0.0005832,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.DefaultsKeepServerLocalAndClientDisconnected",
+          "Status": "Passed",
+          "Duration": 0.0009795,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.ExplicitEndpointAndSmokeOptionsIgnoreUnityArguments",
+          "Status": "Passed",
+          "Duration": 0.0004163,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-port\",\"0\")",
+          "Status": "Passed",
+          "Duration": 0.0006136,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-port\",\"65536\")",
+          "Status": "Passed",
+          "Duration": 0.0001868,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-port\",\"-1\")",
+          "Status": "Passed",
+          "Duration": 0.0001698,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-connect\",\"0.0.0.0\")",
+          "Status": "Passed",
+          "Duration": 0.0001494,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-connect\",\"not-an-ip\")",
+          "Status": "Passed",
+          "Duration": 0.0001404,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-smoke-seconds\",\"0\")",
+          "Status": "Passed",
+          "Duration": 0.0001373,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-smoke-seconds\",\"301\")",
+          "Status": "Passed",
+          "Duration": 0.0001345,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-min-clients\",\"0\")",
+          "Status": "Passed",
+          "Duration": 0.0001342,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidArgumentsFailClosed(\"--fireline-typo\",\"1\")",
+          "Status": "Passed",
+          "Duration": 0.0001475,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected(\"--fireline-benchmark-seconds\",\"299\")",
+          "Status": "Passed",
+          "Duration": 0.00051,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected(\"--fireline-benchmark-seconds\",\"901\")",
+          "Status": "Passed",
+          "Duration": 0.0001826,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected(\"--fireline-benchmark-scenario\",\"unknown\")",
+          "Status": "Passed",
+          "Duration": 0.0001546,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.InvalidBenchmarkConfigurationIsRejected(\"--fireline-quality\",\"invented-preset\")",
+          "Status": "Passed",
+          "Duration": 0.000136,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.MissingAndDuplicateValuesAreRejected",
+          "Status": "Passed",
+          "Duration": 0.000488,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.ServerSceneHasNoVisualAssetDependencies",
+          "Status": "Passed",
+          "Duration": 0.0092761,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FoundationTests.SimulationAssemblyHasNoUnityOrPresentationDependencies",
+          "Status": "Passed",
+          "Duration": 0.0006499,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FuelFlightTests.BurnUpdatesMassOnlyForPoweredPhysicalTime(0)",
+          "Status": "Passed",
+          "Duration": 0.0008091,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FuelFlightTests.BurnUpdatesMassOnlyForPoweredPhysicalTime(0.5d)",
+          "Status": "Passed",
+          "Duration": 0.0001921,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FuelFlightTests.BurnUpdatesMassOnlyForPoweredPhysicalTime(1)",
+          "Status": "Passed",
+          "Duration": 0.0001546,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FuelFlightTests.EmptyTankCannotBeBypassedByPilotInput",
+          "Status": "Passed",
+          "Duration": 0.0005515,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FuelFlightTests.PartialLastStepCannotProduceFreeThrustOrNegativeFuel",
+          "Status": "Passed",
+          "Duration": 0.0005484,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FuelFlightTests.RebasePreservesRigidBodyGeometryAndPointVelocities",
+          "Status": "Passed",
+          "Duration": 0.0011521,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FuelFlightTests.RejectedCandidatesConsumeNothing",
+          "Status": "Passed",
+          "Duration": 0.0013213,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.FuelFlightTests.ServerDiscardedWallTimeAndExpiredControlsCannotBurnFuel",
+          "Status": "Passed",
+          "Duration": 0.000729,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.RunwayContactTests.AirbornePathMatchesExistingSolverExactly",
+          "Status": "Passed",
+          "Duration": 0.0065694,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.RunwayContactTests.BrakesReduceSpeedAndTravelWithoutChangingMass",
+          "Status": "Passed",
+          "Duration": 0.0299265,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.RunwayContactTests.ContactIsUnilateralAndUsesRotatingPointVelocity",
+          "Status": "Passed",
+          "Duration": 0.0005545,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.RunwayContactTests.FrictionIsDissipativeAndCoulombLimited",
+          "Status": "Passed",
+          "Duration": 0.0005616,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.RunwayContactTests.InvalidAndUnsupportedStatesFailWithoutMutatingInput",
+          "Status": "Passed",
+          "Duration": 0.0011971,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.RunwayContactTests.NoseSteeringProducesExpectedYawMoment",
+          "Status": "Passed",
+          "Duration": 0.0003513,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.RunwayContactTests.RestSettlesAndMassIsPreserved(0.005d,0)",
+          "Status": "Passed",
+          "Duration": 0.0143588,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.RunwayContactTests.RestSettlesAndMassIsPreserved(0.0025d,4000)",
+          "Status": "Passed",
+          "Duration": 0.0286381,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.RunwayContactTests.RunwayProofCannotShareOtherExitOrPersistenceModes",
+          "Status": "Passed",
+          "Duration": 0.0009718,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.RunwayContactTests.StaticEquilibriumMatchesWeightAndSymmetricMoments",
+          "Status": "Passed",
+          "Duration": 0.0005375,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.RunwayContactTests.SurfaceBoundsAndGearRetractionAreExplicit",
+          "Status": "Passed",
+          "Duration": 0.0004099,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.WaterDropTests.CoverageHandlesNegativeChunkSeams",
+          "Status": "Passed",
+          "Duration": 0.0099807,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.WaterDropTests.CoverageIsBilinearAndMassConserving",
+          "Status": "Passed",
+          "Duration": 0.0028318,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.WaterDropTests.CrosswindDriftsBeyondEquivalentCalmImpact",
+          "Status": "Passed",
+          "Duration": 0.0018107,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.WaterDropTests.InFlightOrUnknownCoverageCannotMutateFire",
+          "Status": "Passed",
+          "Duration": 0.0008044,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.WaterDropTests.InvalidReleaseCannotDebitTank",
+          "Status": "Passed",
+          "Duration": 0.0007942,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.WaterDropTests.InvalidStepsAreRejected",
+          "Status": "Passed",
+          "Duration": 0.0010072,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.WaterDropTests.LandedCoverageFeedsExistingGradedSuppression",
+          "Status": "Passed",
+          "Duration": 0.0005708,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.WaterDropTests.ReleaseConservesTankAndRebasesDryBody",
+          "Status": "Passed",
+          "Duration": 0.0019867,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Fireline.Tests.WaterDropTests.VacuumStepAndSegmentImpactAreAnalytic",
+          "Status": "Passed",
+          "Duration": 0.0005179,
+          "Message": null,
+          "StackTrace": null
+        }
+      ],
+      "Duration": 19.7,
+      "StatusPath": null,
+      "Mode": "EditMode",
+      "FilterApplied": "testname: Fireline.Tests",
+      "success": true,
+      "result": null
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7801,
+      "projectPath": "A:\\Unity Projects\\FIRELINE ADRIATIC"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}
