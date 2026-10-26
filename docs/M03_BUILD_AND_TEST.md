@@ -1,5 +1,7 @@
 # M03 isolated debug-flight verification
 
+Latest numerical route: [bounded authority runway route](#bounded-authority-runway-route). It adds no normal gameplay autopilot or rendered-flight acceptance.
+
 Latest instrumentation path: [sampled-wind flight instruments](#sampled-wind-flight-instruments). It changes the aircraft RPC contract to **v2**; use matching freshly built client/server players. The earlier v1 command/data results below remain historical evidence.
 
 Latest installed resource increment: [finite-fuel propulsion](#finite-fuel-propulsion). The following original numerical/view sections retain their historical scope and measured counts; current server fuel is finite by default in the explicit debug flight session.
@@ -218,3 +220,27 @@ dotnet run --project scripts/FlightRouteInvestigation/FlightRouteInvestigation.c
 ```
 
 Both retained attempts return **2** because no takeoff/route/landing/stop inside the finite runway was qualified. This expected diagnostic failure is not a successful airborne gate. CSV rows are every 400th 5 ms step, labeled with post-step physical time (first at 0.005 s); no warm-up removal. Controls are a test strategy, not a shipped autopilot or calibration data. Preserve/review the actual failure before changing coefficients or promoting the flight task. The existing manual debug flight launch/control commands still apply to matched v2 builds; the view remains an engineering test.
+
+
+## Bounded authority runway route
+
+The existing dedicated-only `--fireline-flight-proof` path now includes `route` with every 5 ms authority state/input/contact record. Ordinary gameplay/session startup and v2 RPCs are unchanged. Use the existing checkout, Editor closed, fresh evidence destination; run sequentially and stop on any nonzero check:
+
+```powershell
+New-Item -ItemType Directory -Force Builds/M03RouteReplay | Out-Null
+unity self-update --check --format json
+unity test "$PWD" --editor-version 6000.6.7f1 --mode EditMode --filter Fireline.Tests --output Builds/M03RouteReplay/editmode.xml --timeout 900 -- -buildTarget Win64 -standaloneBuildSubtarget Player -nographics -force-d3d11 *> Builds/M03RouteReplay/editmode-cli.log
+unity test "$PWD" --editor-version 6000.6.7f1 --mode PlayMode --filter Fireline.Tests --output Builds/M03RouteReplay/playmode.xml --timeout 900 -- -buildTarget Win64 -standaloneBuildSubtarget Player -nographics -force-d3d11 *> Builds/M03RouteReplay/playmode-cli.log
+$env:FIRELINE_BUILD_EVIDENCE='Builds/M03RouteReplay/builds'
+unity run "$PWD" --editor-version 6000.6.7f1 --timeout 1200 --log-file Builds/M03RouteReplay/server-build.log --no-tail -- -buildTarget Win64 -nographics -executeMethod Fireline.Authoring.FoundationBuild.BuildServer
+./scripts/Test-M03Fuel.ps1 -Port 8380 -EvidenceRoot Builds/M03RouteReplay/numerical
+python scripts/analyze_m03_route.py --numerical Builds/M03RouteReplay/numerical --output Builds/M03RouteReplay/route-verification.json
+$env:PYTHONPATH=(Join-Path $PWD Builds/AnalysisTools)
+python scripts/render_m03_route.py --evidence Builds/M03RouteReplay --output Builds/M03RouteReplay/plots
+```
+
+The reused numerical harness verifies two actual dedicated exits and all original flight/fuel cases; the added route checker requires two full raw archive hashes, exact route replay, independent held commands/tire support/fuel/gates and five deliberate corruption rejections. Do not treat the harness's `passed` flag alone as route acceptance. No actual network peers or graphical route are exercised. Runtime role binaries/packed inventory and original configuration hashes are verified separately before publication.
+
+Revalidate published immutable data without Unity: `python scripts/analyze_m03_route.py` (recomputes the summary from unchanged gzip archives). Render real diagrams/plots with `python scripts/render_m03_route.py` using the existing Matplotlib environment. Human comments can be audited on the committed code with `python scripts/verify_source_comments.py HEAD`; this checks documentation/token identity against that committed snapshot, not feature parity with older implementations.
+
+The original `scripts/FlightRouteInvestigation` commands still reproduce their retained **unqualified** offline strategies (exit 2); no old failure is rewritten. [New control equations, environment, actual gates, every plot-axis/ruler/clock definition and limits](physics/runway-route/COMPARISON.md). No screenshots apply to the nonvisual QA path; no fresh client/Linux/WAN/FPS/manual flight qualification. Next is actual real-time owner/observer flight through normal network controls.

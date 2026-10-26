@@ -1,5 +1,9 @@
 # Aircraft specifications & flight-simulation data sheet
 
+## M03 calm-air authority route — 2026-10-26
+
+The existing estimated generic body now has repeatable accelerated dedicated-player route evidence under a bounded QA controller: max CoG height **11.702127 m**, continuous above-5-m/no-wheel-support segment **14.620 s**, settled period **5.005 s**, final north **2363.927837 m**, final speed **0.000000 m/s**, fuel consumed **12.260000 kg**. [Actual policy equations, finite-runway gates, retained older failures and raw proof](physics/runway-route/COMPARISON.md). No aerodynamic/contact/fuel/aircraft coefficient changed. The QA controller is not available to ordinary gameplay; real-time network/manual/rendered flight, crosswind/payload envelope, calibrated variant/collision/cockpit/water acceptance remain open.
+
 ## M03 engineering instruments and route limit — 2026-10-25
 
 Read-only airspeed uses authoritative velocity minus actual sampled horizontal wind; ground speed is horizontal, not the old 3D magnitude. Pitch/bank/heading derive from the received unit quaternion; displayed fuel/water and point-mass CoG remain debug estimates. CoG Y is a scene datum, not radar altitude; airspeed is geometric relative speed, not calibrated IAS. No cockpit/navigation calibration or client integration. [SI equations, analytic before/after fixture and actual UI/source checks](previews/m03-flight-instruments/COMPARISON.md).

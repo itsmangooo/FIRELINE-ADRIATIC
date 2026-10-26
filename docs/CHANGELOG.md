@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-26 — M03 authority runway-route numerical proof
+
+- Added bounded QA pilot and explicit dedicated numerical route through actual `FlightAuthority` seat/input/lease/fuel/contact; no normal gameplay autopilot or force-law change. Two actual process replays exactly match: 13,943 accepted 5 ms substeps, 3,486 guarded commands, 69.715 physical seconds; max CoG height **11.702127 m**, continuous above-5-m/no-wheel-support segment **14.620 s**, settled period **5.005 s**, final north **2363.927837 m**, final speed **0.000000 m/s**, fuel consumed **12.260000 kg**.
+- **113 EditMode + 3 PlayMode tests**, server build **0 errors / 510 warnings**, independent command/tire/support/fuel/continuous-gate checks and five corruption rejections pass; unchanged original flight/fuel cases. [Raw evidence, equations, SVGs/plots, graph guide and limits](reports/2026-10-26-m03-authority-route.md).
+- M03 remains open for real-time rendered/network/manual flight, calibration/collision/cockpit/animation and water. No new screenshots apply to the nonvisual QA path; existing captures retained. Source comments 55 C# files / 434 members. User configuration preserved, no package/asset change, no new performance claim; optimization remains deferred.
+
 ## 2026-10-25 — M03 sampled-wind flight instruments verified increment
 
 - Aircraft protocol v2 carries actual server wind at published CoG/fire tick. Added validated read-only speed/attitude/heading/resource/mass instruments and corrected horizontal ground speed; no Simulation-law/package/model/scene change. Matching rebuilt players required.

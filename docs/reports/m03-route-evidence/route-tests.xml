@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="3" result="Passed" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-25 08:38:19Z" end-time="2026-10-25 08:38:20Z" duration="0.9052407">
+  <test-suite type="TestSuite" id="1000" name="FIRELINE ADRIATIC" fullname="FIRELINE ADRIATIC" runstate="Runnable" testcasecount="113" result="Passed" start-time="2026-10-25 08:38:19Z" end-time="2026-10-25 08:38:20Z" duration="0.905241" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1137" name="Fireline.Tests.dll" fullname="A:/Unity Projects/FIRELINE ADRIATIC/Library/ScriptAssemblies/Fireline.Tests.dll" runstate="Runnable" testcasecount="101" result="Passed" start-time="2026-10-25 08:38:19Z" end-time="2026-10-25 08:38:20Z" duration="0.878887" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="17340" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1138" name="Fireline" fullname="Fireline" runstate="Runnable" testcasecount="101" result="Passed" start-time="2026-10-25 08:38:19Z" end-time="2026-10-25 08:38:20Z" duration="0.839622" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1139" name="Tests" fullname="Fireline.Tests" runstate="Runnable" testcasecount="101" result="Passed" start-time="2026-10-25 08:38:19Z" end-time="2026-10-25 08:38:20Z" duration="0.836120" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1085" name="FlightRouteTests" fullname="Fireline.Tests.FlightRouteTests" classname="Fireline.Tests.FlightRouteTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-25 08:38:19Z" end-time="2026-10-25 08:38:20Z" duration="0.830364" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1088" name="AuthorityRouteActuallyTakesOffLandsAndSettlesInsideTheFiniteRunway" fullname="Fireline.Tests.FlightRouteTests.AuthorityRouteActuallyTakesOffLandsAndSettlesInsideTheFiniteRunway" methodname="AuthorityRouteActuallyTakesOffLandsAndSettlesInsideTheFiniteRunway" classname="Fireline.Tests.FlightRouteTests" runstate="Runnable" seed="327449057" result="Passed" start-time="2026-10-25 08:38:19Z" end-time="2026-10-25 08:38:20Z" duration="0.768157" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1087" name="PilotCutsThrottleOnlyAfterAirborneApproachAndDoesNotRestart" fullname="Fireline.Tests.FlightRouteTests.PilotCutsThrottleOnlyAfterAirborneApproachAndDoesNotRestart" methodname="PilotCutsThrottleOnlyAfterAirborneApproachAndDoesNotRestart" classname="Fireline.Tests.FlightRouteTests" runstate="Runnable" seed="179847482" result="Passed" start-time="2026-10-25 08:38:20Z" end-time="2026-10-25 08:38:20Z" duration="0.001288" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1086" name="PilotStartsWithFiniteGroundRollAndRejectsMalformedState" fullname="Fireline.Tests.FlightRouteTests.PilotStartsWithFiniteGroundRollAndRejectsMalformedState" methodname="PilotStartsWithFiniteGroundRollAndRejectsMalformedState" classname="Fireline.Tests.FlightRouteTests" runstate="Runnable" seed="129237582" result="Passed" start-time="2026-10-25 08:38:20Z" end-time="2026-10-25 08:38:20Z" duration="0.002641" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: C:/Users/emanu/AppData/LocalLow/DefaultCompany/FIRELINE ADRIATIC\TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

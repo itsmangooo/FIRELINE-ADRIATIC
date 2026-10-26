@@ -1,5 +1,11 @@
 # Development status — handoff
 
+## Latest increment — 2026-10-26 M03 authority runway-route proof
+
+**M03 remains In Progress.** New explicit headless numerical proof completes a calm-air takeoff/approach/landing/stop through real server seat/input/lease/fuel/contact authority: **13,943 accepted 5 ms substeps, 3,486 guarded commands, 69.715 physical seconds**, exact replay in two actual processes, five airborne and five settled seconds. **113 EditMode + 3 PlayMode tests**, fresh Windows server **0 errors / 510 warnings**. **55 C# files / 434 documented members**. All force/contact/fuel kernels and normal gameplay remain unchanged. [Actual equations, four rendered SVGs, raw data, independent tire/fuel/gate checks and limits](reports/2026-10-26-m03-authority-route.md).
+
+This is accelerated numerical QA, not a normal gameplay autopilot or real-time/rendered/network/manual flight qualification. Retained older failed routes remain historical failures. Next: actual network-controlled owner/observer takeoff/landing, then impaired/crosswind cases and collision/calibration/cockpit/animation/water gates. M03 stays open, M04/M05A Pending. No graphical/preset/asset/package change or new FPS claim; FL-10/HOST-01/NET-01 optimization remains deferred. Existing user configuration preserved.
+
 ## Latest increment — 2026-10-25 M03 sampled-wind instruments
 
 **M03 remains In Progress.** Protocol v2 now carries actual server-sampled horizontal wind; the read-only engineering panel shows air/ground/vertical speed, CoG datum altitude, attitude/heading, fuel/water and debug mass/CoG. Corrected the old 3D ground-speed label. Matching rebuilt players required; no force/integrator/asset/package change. **110 EditMode + 3 PlayMode tests**, Windows server/client builds **0 errors** (510/499 warnings), two actual 8,800-sample numerical replays with unchanged flight/fuel trajectories and three actual live process exits **0**. **404** received poses, **1,715** model frames and **1,721** actual visible instrument strings independently checked; **406** wind publications reconstruct exactly. [Full evidence and limitations](reports/2026-10-25-m03-flight-instruments.md), [actual screenshots, equations and rendered diagrams](previews/m03-flight-instruments/COMPARISON.md).

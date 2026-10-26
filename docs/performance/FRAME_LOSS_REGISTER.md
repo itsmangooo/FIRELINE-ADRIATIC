@@ -1,5 +1,9 @@
 # Frame-loss investigation register
 
+## M03 authority-route proof — 2026-10-26
+
+No new rendered-frame observation applies: the explicit accelerated headless route has no camera/presentation callbacks. [Physical clocks and evidence](../reports/2026-10-26-m03-authority-route.md) must not be read as frame/CPU execution timing or new hitch locations. New QA control/contact evidence does not optimize or resolve **FL-10, HOST-01 or NET-01**. Their recorded raw locations and profiling follow-ups below remain open for later optimization.
+
 ## M03 instrument client callbacks — 2026-10-25
 
 **FL-10: observed locations; attribution/optimization deferred.** Real matched v2 Windows release server/rendered owner/late headless observer, Editor closed; 1080p Balanced/VSync=1 D3D11 engineering runway plus instruments. i5-9400F / GTX 1660 SUPER / 16 GB / driver 32.0.16.2101 / Windows 11 26300. [Full report/raw metrics](../reports/2026-10-25-m03-flight-instruments.md), [actual SVG and clock/interval/ruler/zoom guide](../reports/2026-10-25-m03-flight-instruments.md#graph-reader-guide).

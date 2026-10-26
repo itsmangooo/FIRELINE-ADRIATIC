@@ -1,5 +1,9 @@
 # Technical architecture — Unity 6 HDRP, C#, headless server
 
+## M03 explicit numerical route boundary — 2026-10-26
+
+`FlightVerification.Run` now includes a bounded calm-air QA pilot/proof through fresh `FlightAuthority.Claim/Submit/Advance`. It is installed only by the existing `--fireline-flight-proof` flag, with synthetic identity 1, held 20 ms requests, one accepted 5 ms substep and explicit finite-tire/continuous-airborne/touchdown/settled gates. Server-only types have no Unity graphics/client/wire dependency. Normal live session, all Simulation/authority/Client/Shared code and schemas remain unchanged. [Actual BEFORE/AFTER drawings, commands and limits](physics/runway-route/COMPARISON.md). Accelerated QA is not transport/manual/rendered flight or a production autopilot.
+
 ## M03 actual instrument boundary — 2026-10-25
 
 Shared `FlightWire.Version=2` unifies aircraft headers; pose RPC adds `WindX/WindZ` doubles. Server samples its existing authoritative wind at the published post-step CoG/fire tick. Client-only `FlightTelemetry` validates the complete replica and derives air/ground/vertical speeds, angles and existing debug mass/CoG without integration. `FlightTestView` retains the exact source and actual visible text for independent verification; cosmetic pose interpolation remains a separate 100 ms receipt history. Dedicated runtime never loads UI/model/HDRP content. Matching rebuilt Netcode players required; old binary collections are not qualified. Fire schema and all Simulation laws unchanged. [Implemented BEFORE/AFTER SVGs, math and exact visible-text proof](previews/m03-flight-instruments/COMPARISON.md). Production cockpit/prediction/flight/water remain open; earlier descriptions retain historical scope.

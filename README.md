@@ -8,11 +8,13 @@ A persistent, self-hosted, cooperative Croatian/Herzegovinian aerial and ground 
 
 ## Current Development Status
 
-Current M03 verification: **110 EditMode + 3 PlayMode tests**, zero-error Windows builds and two exact **8,800-sample** flight/fuel regressions. Real server/rendered owner/late observer pass: **404 received poses**, **1,715 model frames**, **1,721 actual visible instrument strings** and **406** independently reconstructed server wind publications. Air/ground/vertical speed, attitude/heading, fuel/water and mass/CoG now have read-only instruments; matching v2 builds required. [Actual results, two retained failed offline routes and limits](docs/reports/2026-10-25-m03-flight-instruments.md), [SI equations/BEFORE-AFTER SVGs/screenshots](docs/previews/m03-flight-instruments/COMPARISON.md). M03 remains open for actual airborne/cockpit/collision/calibration/water acceptance; no fresh Linux qualification.
+Current M03 verification: **113 EditMode + 3 PlayMode tests**, fresh Windows dedicated build **0 errors / 510 warnings**, two actual accelerated headless authority-route replays and unchanged original flight/fuel cases. The calm-air QA route uses real seat/input/lease/fuel/contact authority, with five airborne/five settled seconds and every tire inside the finite runway. [Actual metrics, independent checks, retained failures and limits](docs/reports/2026-10-26-m03-authority-route.md), [control equations/SVGs/plots/clock guide](docs/physics/runway-route/COMPARISON.md). This is not real-time rendered/network/manual flight; M03 remains open. The unchanged client retains [verified v2 flight instruments and actual screenshot/network evidence](docs/reports/2026-10-25-m03-flight-instruments.md); no fresh client build is claimed.
 
-Unity **6000.6.7f1** / HDRP **17.6.0** / Netcode, Entities and Transport **6.6.0** are retained; installed Input System **1.20.1** is referenced by Client for test controls. No package was added. Current Windows builds have **0 errors** (499 client / 510 server warnings). Earlier Linux/WSL foundation results remain historical. [M00 scope](docs/reports/2026-10-22-m00-coastal-foundation.md), [M02 bounded fire replication/restart](docs/reports/2026-10-23-m02-replication.md). NET-01 cold/jittered startup, aircraft calibration/refueling/water/full collision, production-model replacement and representative populated coast/smoke qualification remain open. M05A and later gameplay milestones remain Pending.
+Unity **6000.6.7f1** / HDRP **17.6.0** / Netcode, Entities and Transport **6.6.0** are retained; installed Input System **1.20.1** is referenced by Client for test controls. No package was added. Latest Windows server build has **0 errors / 510 warnings**; the unchanged earlier client build has **0 errors / 499 warnings**. Earlier Linux/WSL foundation results remain historical. [M00 scope](docs/reports/2026-10-22-m00-coastal-foundation.md), [M02 bounded fire replication/restart](docs/reports/2026-10-23-m02-replication.md). NET-01 cold/jittered startup, aircraft calibration/refueling/water/full collision, production-model replacement and representative populated coast/smoke qualification remain open. M05A and later gameplay milestones remain Pending.
 
 ## Latest Development Updates
+
+- **2026-10-26 — M03 authority runway-route proof:** bounded QA controller completes takeoff/approach/landing/stop through actual seat/input/fuel/contact authority in two accelerated headless replays. 113 EditMode + 3 PlayMode tests and zero-error server build pass. [Actual data, independent tire/resource/gate checks, retained older failures and limits](docs/reports/2026-10-26-m03-authority-route.md). No physics coefficient changed; real-time rendered flight/water still pending, M03 open.
 
 - **2026-10-25 — M03 server-wind instruments:** read-only airdata/resource/attitude panel and corrected horizontal ground speed, protocol v2 with actual sampled wind. 110 EditMode + 3 PlayMode tests and zero-error Windows builds pass; 1,721 actual text values independently verified. [Actual screenshots, rendered diagrams, unchanged numerical regression and two failed route attempts](docs/reports/2026-10-25-m03-flight-instruments.md). M03 stays open. FL-10 records 184.623/172.498 ms callback gaps; optimization deferred.
 
@@ -85,6 +87,10 @@ The fog boxes are a static render fixture, not production smoke or authoritative
 
 ## Physics & Simulation Improvements
 
+The unchanged physical kernel now has a bounded **headless authority route** proof with a revised QA control strategy. The older offline strategies remain recorded failures; the new evidence independently checks commands, tire geometry/support, finite runway, fuel and five-second airborne/settled gates. [Actual equations, BEFORE/AFTER SVGs, equivalent legacy replay and physical-clock plots](docs/physics/runway-route/COMPARISON.md). This is not a calibrated or rendered gameplay flight pass.
+
+![Actual numerical authority route and phases](docs/physics/runway-route/route-detail.svg)
+
 The latest instrument algorithm separates horizontal ground speed from 3D air-relative speed using actual authoritative wind, with unit-quaternion attitude and existing mass/CoG math. [Equivalent-input display comparison, SI formulas and unchanged actual physical replay](docs/previews/m03-flight-instruments/COMPARISON.md). Two offline flight-route strategies failed; the airborne acceptance remains open.
 
 The dedicated debug aircraft now starts with 400 kg fuel, debits only accepted physical steps, limits final-packet thrust and stops thrust when empty. The estimated 0.25 kg/s full-throttle flow updates mass/CoG/inertia while preserving fixed body points/velocities. [Actual equations, BEFORE/AFTER diagrams, equivalent-input numerical results, exact legacy replay and limitations](docs/physics/aircraft-fuel/COMPARISON.md). No calibrated CL-415 flow/startup/refueling or water integration is claimed.
@@ -120,6 +126,10 @@ The dedicated server now advances a bounded synthetic fire/wind fixture, accepts
 Dispatch, aerial sorties, ground operations, persistent incidents and cooperative suppression are **planned**, not playable systems. See [game design](docs/GAME_DESIGN.md). Each implemented change will summarize player impact here and link a [gameplay/architecture report](docs/templates/GAMEPLAY_ARCHITECTURE_CHANGE.md) covering behavior, authority and tests.
 
 ## Architecture & Technical Diagrams
+
+![Actual explicit numerical authority-route proof](docs/physics/runway-route/after.svg)
+
+[Previous failed offline-control boundary, editable source and scope](docs/physics/runway-route/COMPARISON.md). This QA path is opt-in and does not enable a gameplay autopilot.
 
 ![Actual v2 sampled-wind instrument path](docs/previews/m03-flight-instruments/after-flow.svg)
 
@@ -176,7 +186,7 @@ The next playable gate is the M03 aerial loop plus M04 visual fire/water present
 | M00 | Unity/tooling audit, assemblies, build and benchmark foundation | Verified |
 | M01 | Authoritative fire and wind | Verified |
 | M02 | Multi-process replication and local checkpoint proof | Verified (bounded Windows scope) |
-| M03 | CL-415 flight and water physics | In Progress; debug authority/view/controls/fuel/instruments verified; actual airborne/cockpit/calibration/water loop pending |
+| M03 | CL-415 flight and water physics | In Progress; debug authority/view/controls/fuel/instruments + numerical route verified; real-time flight/cockpit/calibration/water pending |
 | M04 | HDRP coastal art and VFX | Pending |
 | M05 | Ground crews and working hose | Pending |
 | M05A | Player experience, controls, UI/UX, settings and training | Pending |

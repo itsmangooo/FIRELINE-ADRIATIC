@@ -1,0 +1,18 @@
+{
+  "baseline": "878e56505e21cb7724f279018c7900cd727b1f5a",
+  "passed": true,
+  "csharp": {
+    "baseline": "878e56505e21cb7724f279018c7900cd727b1f5a",
+    "files": 55,
+    "configurations": 5,
+    "documentedMembers": 434,
+    "missingComments": [],
+    "changedExecutableTokens": []
+  },
+  "unchangedScriptCode": {
+    "python": 30,
+    "powershell": 11,
+    "shell": 2
+  },
+  "limits": "Comments/docstrings only relative to the baseline; prose accuracy still requires review. New audit tools are outside their own baseline comparison."
+}

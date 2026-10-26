@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "baseline": "e8604e9f1022f826f5249111ba6aaf9cc264e3fa",
+  "configurationFilesPreserved": 5,
+  "configurationHashes": [
+    {
+      "path": "Assets/Settings/SkyandFogSettingsProfile.asset",
+      "sha256": "8324E681D5FFA8B9475A8073DB17275732B9691C9EE27CC40936445C15BC2D4E"
+    },
+    {
+      "path": "ProjectSettings/ProjectSettings.asset",
+      "sha256": "DF7C96B14CD0AF4B6332D656088371B08BDF0901A24719332B51764B27C8F49F"
+    },
+    {
+      "path": "ProjectSettings/UnityConnectSettings.asset",
+      "sha256": "D4280F9D0397FC6738786DB164976AD7456E0B2A77823C4C61684628E84A2373"
+    },
+    {
+      "path": "Packages/manifest.json",
+      "sha256": "C7879726D0F4A76046D945462340987D33FD23BA3EE06132EF0C1E5C501E121E"
+    },
+    {
+      "path": "Packages/packages-lock.json",
+      "sha256": "819DDB5DB90FCF02148D15C736464D39AE5A9773A60AE0752065807DFECB4FBB"
+    }
+  ],
+  "editModePassed": 113,
+  "playModePassed": 3,
+  "targetedRouteTestsPassed": 3,
+  "csharpFiles": 55,
+  "documentedMembers": 434,
+  "realDedicatedProcessExits": [
+    0,
+    0
+  ],
+  "routeSamplesPerProcess": 13943,
+  "independentRouteAndCorruptionChecksPassed": true,
+  "oldFlightAndFuelTrajectoriesUnchanged": true,
+  "allSimulationAuthorityClientSharedAuthoringAndAssetSourcesUnchanged": true,
+  "serverRoleDllHashesMatched": true,
+  "newAssetGuidsUnique": 2,
+  "selfContainedSvgFiles": 4,
+  "inspectedDrawings": 4,
+  "localMarkdownLinksChecked": 348,
+  "credentialPatternScanPassed": true,
+  "limits": "Accelerated numerical calm-air authority QA route only; real-time rendered/network/manual airborne gate, calibration/collision/animation/water and performance remain open. No new screenshot applies to the nonvisual proof."
+}

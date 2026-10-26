@@ -1,5 +1,9 @@
 # Performance history
 
+## 2026-10-26 — M03 authority route is numerical, not an FPS run
+
+Two actual headless processes validate an accelerated calm-air route and exact physical replay. [Route data and clock guide](reports/2026-10-26-m03-authority-route.md). Physical trajectory durations/substeps are not CPU time, frame intervals or throughput. No new rendering/system change: new FPS/1% lows, CPU/GPU frame time, draw calls, VRAM, bandwidth and real-time server-tick measurements are unavailable/not applicable. The retained legacy `stepMs` array still times the old force Step only, not route/fuel/authority execution. No matched speedup or representative 60 FPS claim. Existing FL-10/HOST-01/NET-01 remain deferred; graphical baseline is the instrument run below.
+
 ## 2026-10-25 — M03 instrument rendered diagnostic
 
 Actual Windows Mono release, Editor closed, **1920×1080 Balanced / VSync=1 / per-process D3D11**, i5-9400F / GTX 1660 SUPER / driver 32.0.16.2101 / Windows 11 26300 / 16,323 MB Unity RAM. Existing synthetic runway/prototype plus read-only instrument panel; one late headless observer and dedicated server. Five rendered seconds warm-up; **1,440 intervals / 24.515733 s** retained. Average/1% low **58.737791 / 17.839704 FPS**, p95/p99 callback spacing **19.093599 / 24.828499 ms**, peak allocated **495,136,036 bytes**. CPU/GPU execution, draw calls, VRAM, bandwidth and full server tick timings unavailable.
