@@ -1,5 +1,17 @@
 # Frame-loss investigation register
 
+## M03 actual real-time flight callbacks — 2026-10-26
+
+**FL-11: observed callback locations; attribution/optimization deferred.** Accepted and independent repeated 1080p Balanced/VSync=1 D3D11 calm-air QA hops, one rendered pilot + headless observer + dedicated server, Editor closed on i5-9400F/GTX 1660 SUPER/16 GB/Windows 11 26300/driver 32.0.16.2101. [Actual conditions/results/raw interval files and rejected attempt](../reports/2026-10-26-m03-realtime-flight.md), [all clock/ruler/zoom meanings](../previews/m03-realtime-flight/COMPARISON.md#physical-presentation-and-callback-graph-guide).
+
+| Accepted sample | Interval start–end (s) | Gap (ms) |
+|---|---|---:|
+| #3669 | 62.003539–62.179461 | 175.921202 |
+| #2 | 0.021646–0.192734 | 171.087906 |
+| #1625 | 27.250884–27.410294 | 159.410104 |
+
+1872 accepted intervals >16.667 ms and 14 >33.333 ms. [Every accepted interval](../reports/m03-realtime-evidence/runtime/callback-intervals.marked.csv), [every repeat interval](../reports/m03-realtime-evidence/repeat/callback-intervals.marked.csv). These are not lost-presentation counts or CPU/GPU execution. Investigate screenshot readback/PNG encode (`ClientProbe.Capture`, `FlightRealtimeProof.Capture`), HUD/trace formatting/IO, pose/camera, Netcode, per-step QA contact/serialization, HDRP/driver/GC/OS/local contention. No synchronized profiler/presentation trace attributes the gaps. Physical 5 ms step time and aggregate host adapter timing must not be substituted for full-server CPU measurements. Matched capture/recording-on/off repeats and representative scene profiling remain outstanding. Earlier FL-10/HOST-01/NET-01 remain unresolved; no optimization/60 FPS/Ultra/capacity claim.
+
 ## M03 authority-route proof — 2026-10-26
 
 No new rendered-frame observation applies: the explicit accelerated headless route has no camera/presentation callbacks. [Physical clocks and evidence](../reports/2026-10-26-m03-authority-route.md) must not be read as frame/CPU execution timing or new hitch locations. New QA control/contact evidence does not optimize or resolve **FL-10, HOST-01 or NET-01**. Their recorded raw locations and profiling follow-ups below remain open for later optimization.

@@ -1,5 +1,7 @@
 # Visual progress evidence
 
+[M03 actual real-time flight](m03-realtime-flight/COMPARISON.md): earlier real instrument taxi BEFORE, accepted/repeated actual airborne/landed captures, server-owned route/control/source checks, equations, five SVGs and physical/receipt/callback clock guides. Rejected first cleanup attempt retained. Automated local calm-air scope; full M03/water/manual envelope remains open.
+
 [M03 server-wind flight instruments](m03-flight-instruments/COMPARISON.md): actual earlier fuel BEFORE and rebuilt chase/inspection AFTER; independent actual visible-text checks, SI equations, rendered data-flow/airdata/callback SVGs and full graph reader guide. M03 airborne/water remains open; two failed offline routes retained separately. No asset/model change or representative performance pass.
 
 [M03 finite-fuel regression](m03-fuel/COMPARISON.md): actual earlier 1080p chase BEFORE and rebuilt chase/inspection AFTER, unchanged scene/model/HUD, correct fuel-derived body offset and FL-09 diagnostic. Fuel behavior is established by raw authoritative/numerical data, not screenshot appearance.

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-26 — M03 real-time rendered/network runway route
+
+- Added explicit QA owner requests from received snapshots, actual queued/received command evidence and value-copy observation of every accepted server substep. Two real dedicated/rendered-owner/late-observer groups pass takeoff/landing/settling, release/vacancy ACK and disconnect; 16,669 server substeps, 1,213 exact received poses, 3,950 reconstructed display frames, 3,957 actual instrument texts in accepted run.
+- **119 EditMode + 3 PlayMode tests**, zero-error Windows builds (510/499 warnings), exact unchanged flight/fuel/authority numerical regression and independent live archive checks. [Actual images, SI formulas, five SVGs/plot guides, raw data and limitations](reports/2026-10-26-m03-realtime-flight.md).
+- Retained rejected first run: physical flight passed, cleanup/lease and complete request serialization failed. Fixed release acknowledgement/transport shutdown and nested-payload annotation/test; no force law or wire-field change. Human comments: 59 C# files / 464 members. User settings/assets preserved.
+- FL-11 records callback gaps; no optimization or representative FPS/capacity claim. Manual/crosswind/payload/impairment, collision/calibration/animation/cockpit/refueling/water remain open; M03 not complete and M04/M05A not started.
+
 ## 2026-10-26 — M03 authority runway-route numerical proof
 
 - Added bounded QA pilot and explicit dedicated numerical route through actual `FlightAuthority` seat/input/lease/fuel/contact; no normal gameplay autopilot or force-law change. Two actual process replays exactly match: 13,943 accepted 5 ms substeps, 3,486 guarded commands, 69.715 physical seconds; max CoG height **11.702127 m**, continuous above-5-m/no-wheel-support segment **14.620 s**, settled period **5.005 s**, final north **2363.927837 m**, final speed **0.000000 m/s**, fuel consumed **12.260000 kg**.

@@ -1,0 +1,145 @@
+{
+  "passed": true,
+  "exactReceivedSnapshots": {
+    "owner": 624,
+    "observer": 597
+  },
+  "checkedQueuedControls": 1111,
+  "checkedAcceptedRequests": 1106,
+  "checkedServerSubsteps": 14794,
+  "longestAirborneSeconds": 9.915000000000001,
+  "settledSeconds": 6.815,
+  "maximumHeightM": 8.835724344358775,
+  "minimumWheelFootprintMarginM": 19.5,
+  "consumedFuelKg": 11.367500000248128,
+  "checkedDisplayFrames": 3989,
+  "maximumDisplayDifferenceM": 1.7763568394002505e-15,
+  "checkedInstrumentTexts": 3996,
+  "maximumCallbacks": [
+    {
+      "sample": 1621,
+      "startSeconds": 27.151040402706712,
+      "endSeconds": 27.3224502033554,
+      "callbackMs": 171.40980064868927
+    },
+    {
+      "sample": 2,
+      "startSeconds": 0.017426200211048126,
+      "endSeconds": 0.1865066960453987,
+      "callbackMs": 169.0804958343506
+    },
+    {
+      "sample": 3709,
+      "startSeconds": 62.118091607932,
+      "endSeconds": 62.26783601427451,
+      "callbackMs": 149.7444063425064
+    },
+    {
+      "sample": 3064,
+      "startSeconds": 51.351301522459835,
+      "endSeconds": 51.384784722235054,
+      "callbackMs": 33.483199775218964
+    },
+    {
+      "sample": 1799,
+      "startSeconds": 30.26858640415594,
+      "endSeconds": 30.29915580479428,
+      "callbackMs": 30.569400638341904
+    },
+    {
+      "sample": 2243,
+      "startSeconds": 37.667478520888835,
+      "endSeconds": 37.69738832162693,
+      "callbackMs": 29.909800738096237
+    },
+    {
+      "sample": 85,
+      "startSeconds": 1.550039797089994,
+      "endSeconds": 1.5797088975086808,
+      "callbackMs": 29.669100418686867
+    },
+    {
+      "sample": 78,
+      "startSeconds": 1.433668396435678,
+      "endSeconds": 1.4630569955334067,
+      "callbackMs": 29.38859909772873
+    },
+    {
+      "sample": 1810,
+      "startSeconds": 30.450591003522277,
+      "endSeconds": 30.476337203755975,
+      "callbackMs": 25.74620023369789
+    },
+    {
+      "sample": 272,
+      "startSeconds": 4.667251906823367,
+      "endSeconds": 4.692192807327956,
+      "callbackMs": 24.94090050458908
+    }
+  ],
+  "intervalsOver16_667Ms": 1899,
+  "intervalsOver33_333Ms": 4,
+  "archives": [
+    {
+      "path": "server.json.gz",
+      "rawBytes": 2114,
+      "rawSha256": "5f2746beb42b000b5bf7d3fd70407edf9c684145296d6f5fae1ef387751a9f8e"
+    },
+    {
+      "path": "server.csv.gz",
+      "rawBytes": 537773,
+      "rawSha256": "fa3f9a2de9a51b4f8b9e94dac76c1787dbc6bf1e31797f5a9ea2b229dc95844a"
+    },
+    {
+      "path": "server.snapshots.jsonl.gz",
+      "rawBytes": 515496,
+      "rawSha256": "3045cb3d36b35456e87561bf8b34f85d1649b0ee19c87110f5d133d52f0165d2"
+    },
+    {
+      "path": "server.route.jsonl.gz",
+      "rawBytes": 8604812,
+      "rawSha256": "47b8112d89b4264d59cdfbfdcd46340a33f0a5de0d65cb62ecbbbd7124977775"
+    },
+    {
+      "path": "server.requests.jsonl.gz",
+      "rawBytes": 228035,
+      "rawSha256": "aa45ce11738a832253c4552f639616b4a53c929dc359529c239c98e2cde7e805"
+    },
+    {
+      "path": "owner.json.gz",
+      "rawBytes": 427,
+      "rawSha256": "def41794610690061084471940b498d371f0b38731a85373182a4feab79c7503"
+    },
+    {
+      "path": "owner.csv.gz",
+      "rawBytes": 935304,
+      "rawSha256": "be71b45eff4df719501539ebb3264c89c1902e032e35a912e408745db83a7f4e"
+    },
+    {
+      "path": "owner.snapshots.jsonl.gz",
+      "rawBytes": 249109,
+      "rawSha256": "fe612c856947e6048fd873c96eca9ebe6f30e91af100284b49f0f41c4a2771d4"
+    },
+    {
+      "path": "owner.instruments.jsonl.gz",
+      "rawBytes": 2711777,
+      "rawSha256": "fffb62c3e9cd20daeac62b7a6920292412c998c6379b0f6b0e4007cdd00423bc"
+    },
+    {
+      "path": "owner.commands.jsonl.gz",
+      "rawBytes": 641165,
+      "rawSha256": "362fb6a3ac5abcea050f3bae140c1c0982072de90723075a964ad62563078efe"
+    },
+    {
+      "path": "observer.json.gz",
+      "rawBytes": 423,
+      "rawSha256": "be25137c5430968eb15be04a419b683d3eed2792575e2442ca0dfd62586bea13"
+    },
+    {
+      "path": "observer.snapshots.jsonl.gz",
+      "rawBytes": 238304,
+      "rawSha256": "c5da7e29e22a1de60a6c6c5ee091a647294895a4a99c9e06354d113f66ff726d"
+    }
+  ],
+  "limits": "Automated calm-air straight runway hop over real local transport/rendering; not manual hardware, crosswind/payload envelope, water, WAN/capacity or representative 60 FPS qualification."
+}

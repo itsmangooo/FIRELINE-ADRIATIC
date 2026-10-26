@@ -1,0 +1,107 @@
+{
+  "accepted": false,
+  "reason": "Server input lease expired during immediate client shutdown; nested request payloads omitted by JsonUtility before Serializable attribute fix.",
+  "rawPath": "Builds\\M03Realtime\\20261026-211420",
+  "confirmedServerExitCode": 12,
+  "otherProcessExitCodes": "Not retained: harness stopped at the first server failure.",
+  "ownerResult": "Reported rendered route success with airborne/landed screenshots; not an accepted three-role proof.",
+  "physicalRoute": "Server recorded passed tire/airborne/settled gates; overall server result failed and remains rejected.",
+  "fixes": "Wait for normal seat-release snapshot; allow transport updates before quit; make request DTO serializable and add nested-payload regression test.",
+  "runtimeHashes": {
+    "server": [
+      {
+        "name": "Fireline.Server.dll",
+        "sha256": "26e4bc61553f7f1c9fec3d46b1e68323d05bfc3cd9f90e6d1dd5598aaa1a18a5"
+      },
+      {
+        "name": "Fireline.Shared.dll",
+        "sha256": "37f0c461e2728f2197e908109bf4f3188ffd09407fe3504c25c098916d0d016e"
+      },
+      {
+        "name": "Fireline.Simulation.dll",
+        "sha256": "7294a58a10233de0e94a1b3dcf8536e395dc60e11b016e8dc67feab46b204bbb"
+      }
+    ],
+    "client": [
+      {
+        "name": "Fireline.Client.dll",
+        "sha256": "8b32a7ec48d455fa8928f9110acb8354f38dcb36fda3a4ef80035680e7dca706"
+      },
+      {
+        "name": "Fireline.Shared.dll",
+        "sha256": "5e3e35d357519801d4a864a6184d22690ca9ed47a9219066fb4d5a7d3ad80dcc"
+      },
+      {
+        "name": "Fireline.Simulation.dll",
+        "sha256": "d58d47c85ce10fad42c2313bf2634a969cc4f60be6fd38e84562e810f6e97510"
+      }
+    ]
+  },
+  "archives": [
+    {
+      "path": "metrics.csv.gz",
+      "rawBytes": 73763,
+      "rawSha256": "3f96fd049ac714c603d24ce9dd6c2e62eb4f207f9f67b3b3caf3785c02be1078"
+    },
+    {
+      "path": "metrics.json.gz",
+      "rawBytes": 754,
+      "rawSha256": "77ba1368b03f066cd803b181acc2a09b96c8eb851f1c3e8c14ee003f0a6da6a8"
+    },
+    {
+      "path": "observer.snapshots.jsonl.gz",
+      "rawBytes": 234167,
+      "rawSha256": "5cb4771a29f7724b136337ed5efc8a8c1a7b79f07e34b7670a56f430f380fe52"
+    },
+    {
+      "path": "owner.commands.jsonl.gz",
+      "rawBytes": 472675,
+      "rawSha256": "a163e03a2769066e314ddd8ac67a42d7a636dafcf4445cced749789c10d81f4f"
+    },
+    {
+      "path": "owner.csv.gz",
+      "rawBytes": 930810,
+      "rawSha256": "3e57727b9d9c610a0b1aa9acd131a59792b5e99e151c2ab850050e9afbe68a2c"
+    },
+    {
+      "path": "owner.instruments.jsonl.gz",
+      "rawBytes": 2710272,
+      "rawSha256": "5d19460f77fa39f367dfee5325d19386c413bfcf745e5c33be6fac9d0d437170"
+    },
+    {
+      "path": "owner.json.gz",
+      "rawBytes": 393,
+      "rawSha256": "25c543b82d3e32750c1df370d9aad583a977159e0f6117ead13cc50f15bf66bb"
+    },
+    {
+      "path": "owner.snapshots.jsonl.gz",
+      "rawBytes": 248115,
+      "rawSha256": "7dc42860fd3cebe19c62f9449d951132ca2c6f89d919e767c60ec22cb0ad7798"
+    },
+    {
+      "path": "server.csv.gz",
+      "rawBytes": 619293,
+      "rawSha256": "9ea6d95f2dfa3be7d48f7ea830c584845843155ffa43e82903371d2db66cd2a9"
+    },
+    {
+      "path": "server.json.gz",
+      "rawBytes": 2073,
+      "rawSha256": "7c6f6517d216dc50add968ba5cd725e5b63069757fb4e2863d3507e022131758"
+    },
+    {
+      "path": "server.requests.jsonl.gz",
+      "rawBytes": 54446,
+      "rawSha256": "c27ab97c715a0be473da603e768e8bbdfee1359ff420900f967c1347c789afc3"
+    },
+    {
+      "path": "server.route.jsonl.gz",
+      "rawBytes": 9616234,
+      "rawSha256": "40abd623a3718831a4a6cee7dfe56895401cceddc340a2e0042425a685d03c4e"
+    },
+    {
+      "path": "server.snapshots.jsonl.gz",
+      "rawBytes": 510471,
+      "rawSha256": "7179a7961444ef38339ad430e6554083852a6e6bff81f28a100a2c64027561d6"
+    }
+  ]
+}

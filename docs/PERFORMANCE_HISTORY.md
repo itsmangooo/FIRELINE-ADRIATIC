@@ -1,5 +1,13 @@
 # Performance history
 
+## 2026-10-26 — M03 real-time rendered flight diagnostic
+
+[Complete per-run counter table, timed aircraft adapter limits and peak locations](performance/2026-10-26-m03-realtime-flight.md).
+
+Actual two Windows Mono local dedicated/rendered-owner/headless-observer groups, Editor closed; 1920×1080 existing Balanced/VSync=1/per-process D3D11; i5-9400F/GTX 1660 SUPER/16,323 MB Unity RAM/Windows 11 26300/driver 32.0.16.2101. Synthetic runway, zero wind, actual QA flight/captures/structured recording. Accepted: **3,675 intervals / 62.268213 s**, **59.018877 average / 20.534374 1% low FPS**, p95/p99 **17.657900/19.401200 ms**, peak allocated **486,693,979 bytes**. Repeat: **3,715 intervals / 62.351185 s**, **59.581867 average / 30.457950 1% low FPS**, p95/p99 **17.466800/18.516300 ms**, peak allocated **490,900,602 bytes**. Five rendered seconds warm-up; separate per-run distributions, no mixed percentile aggregation.
+
+**FL-11** keeps accepted/repeat callback locations. [Every raw interval, exact scopes/hardware and full clock/ruler/zoom guides](reports/2026-10-26-m03-realtime-flight.md). Callback spacing includes waits/presentation and is not CPU/GPU time or lost-presentation counts. CPU/GPU execution, draw calls, VRAM, bandwidth/full-server ticks unavailable. Host adapter timings include explicit QA contact/serialization. Different camera/route/control/cache/startup conditions preclude a matched speedup/cost claim; no representative populated coast/smoke/Ultra 60 FPS or capacity pass. Rejected first attempt metrics retained separately. Optimization and earlier FL/HOST/NET entries stay deferred.
+
 ## 2026-10-26 — M03 authority route is numerical, not an FPS run
 
 Two actual headless processes validate an accelerated calm-air route and exact physical replay. [Route data and clock guide](reports/2026-10-26-m03-authority-route.md). Physical trajectory durations/substeps are not CPU time, frame intervals or throughput. No new rendering/system change: new FPS/1% lows, CPU/GPU frame time, draw calls, VRAM, bandwidth and real-time server-tick measurements are unavailable/not applicable. The retained legacy `stepMs` array still times the old force Step only, not route/fuel/authority execution. No matched speedup or representative 60 FPS claim. Existing FL-10/HOST-01/NET-01 remain deferred; graphical baseline is the instrument run below.

@@ -169,6 +169,34 @@ namespace Fireline.Tests
             Assert.That(host.Claim(10), Is.EqualTo(FlightResult.Invalid));
         }
 
+        /// <summary>Optional proof observation sees every committed tick by value and leaves normal authority results exactly unchanged.</summary>
+        [Test]
+        public void AcceptedStepObserverCannotMutateTheInstalledValueState()
+        {
+            var plain=new FlightAuthority(); var observed=new FlightAuthority(); var wind=new WindField(415); wind.Set(0,0,0);
+            int calls=0;
+            for(int i=0;i<100;i++)
+            {
+                plain.Advance(.02,i*.02,wind,0);
+                observed.Advance(.02,i*.02,wind,0,(state,input,brake,tick)=>
+                {
+                    calls++; Assert.That(tick,Is.EqualTo((ulong)calls));
+                    state.PositionM.Y=999; // This is a copy; it must never become the host's state.
+                });
+            }
+            Assert.That(calls,Is.EqualTo(400)); Assert.That(observed.State,Is.EqualTo(plain.State));
+            Assert.That(observed.DiscardedSeconds,Is.EqualTo(plain.DiscardedSeconds));
+        }
+
+        /// <summary>An explicit QA-envelope rejection freezes/relinquishes authority rather than silently continuing an invalid proof.</summary>
+        [Test]
+        public void RejectedProofObservationFaultsAndReleasesThePilot()
+        {
+            var host=new FlightAuthority(); var wind=new WindField(415); host.Claim(1);
+            host.Advance(.005,0,wind,0,(state,input,brake,tick)=>{throw new InvalidOperationException("QA envelope");});
+            Assert.That(host.Faulted,Is.True); Assert.That(host.Owner,Is.Zero); Assert.That(host.Tick,Is.EqualTo(1));
+        }
+
         /// <summary>Explicit live flight modes cannot collide with numerical proofs, persistence or other exit timers.</summary>
         [Test]
         public void FlightLaunchModesRequireExplicitCompatibleOptions()

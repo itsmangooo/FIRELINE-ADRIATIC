@@ -18,6 +18,11 @@ namespace Fireline.Client
         private GameObject canvas;
         private ulong shownTick;
         private double nextInput;
+        private readonly FlightRouteControls routeControls = new FlightRouteControls();
+        /// <summary>Actual enqueued QA control and its received source; absent subscribers impose no trace writes in normal play.</summary>
+        public event Action<FlightStateRpc, FlightRequestRpc, int> RouteInputQueued;
+        /// <summary>Latched QA phase for explicit route evidence only.</summary>
+        public int RoutePhase => routeControls.Phase;
         /// <summary>Latest cosmetic pose used for the scene transform; it is not an independently simulated aircraft.</summary>
         public FlightState Displayed { get; private set; }
         /// <summary>Exact receipt-clock sample time used for the cosmetic pose, retained for independent interpolation checks.</summary>
@@ -72,13 +77,20 @@ namespace Fireline.Client
             double now = Time.realtimeSinceStartupAsDouble;
             bool fresh = session.HasState && now - session.ReceivedAt <= .5;
             bool owns = fresh && session.Latest.Owner == session.Identity;
-            bool focus = FoundationBootstrap.Options.FlightViewProofPath != null ? ProofFocus : Application.isFocused;
+            bool route = FoundationBootstrap.Options.FlightRouteRole == "owner";
+            bool focus = route || (FoundationBootstrap.Options.FlightViewProofPath != null ? ProofFocus : Application.isFocused);
             InputFocused=focus;
-            LocalControls = controls.Sample(Time.unscaledDeltaTime, focus, owns);
-            if (controls.Claim) session.RequestSeat();
-            if (controls.Release) session.ReleaseSeat();
-            if (controls.Camera) CameraMode = 1 - CameraMode;
-            if (owns && focus && now >= nextInput) { session.SubmitControls(LocalControls); nextInput = now + .05; }
+            var inputSource = session.Latest;
+            LocalControls = route ? (owns ? routeControls.Sample(inputSource) : new FlightRequestRpc { Gear=1,Brake=1 })
+                : controls.Sample(Time.unscaledDeltaTime, focus, owns);
+            if (!route && controls.Claim) session.RequestSeat();
+            if (!route && controls.Release) session.ReleaseSeat();
+            if (!route && controls.Camera) CameraMode = 1 - CameraMode;
+            if (owns && focus && now >= nextInput)
+            {
+                if (session.SubmitControls(LocalControls) && route) RouteInputQueued?.Invoke(inputSource,session.LastSubmitted,routeControls.Phase);
+                nextInput = now + .05;
+            }
             status.text = !session.Ready ? "CONNECTING TO DEDICATED SERVER" : !fresh ? "STALE POSE / INPUT BLOCKED"
                 : owns ? "PILOT SEAT / SERVER AUTHORITY" : "OBSERVER / ENTER TO REQUEST SEAT";
             if (!focus) status.text += " / INPUT UNFOCUSED";

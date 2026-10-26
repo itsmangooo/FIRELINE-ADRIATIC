@@ -1,0 +1,32 @@
+{
+  "runtimeHashes": [
+    {
+      "name": "Fireline.Server.dll",
+      "sha256": "26E4BC61553F7F1C9FEC3D46B1E68323D05BFC3CD9F90E6D1DD5598AAA1A18A5"
+    },
+    {
+      "name": "Fireline.Shared.dll",
+      "sha256": "37F0C461E2728F2197E908109BF4F3188FFD09407FE3504C25C098916D0D016E"
+    },
+    {
+      "name": "Fireline.Simulation.dll",
+      "sha256": "7294A58A10233DE0E94A1B3DCF8536E395DC60E11B016E8DC67FEAB46B204BBB"
+    }
+  ],
+  "rawLogs": "Builds\\M03Fuel\\20261026-210250",
+  "passed": true,
+  "runs": [
+    {
+      "exitCode": 0,
+      "resultSha256": "F388E85529AA442A968CC0CAD396E963B6FD298FB4E18F1A78B874E96A129821",
+      "pid": 2568,
+      "run": 1
+    },
+    {
+      "exitCode": 0,
+      "resultSha256": "9C0BC7443A407AF01942614D836FB5AD5D54C5680186B7CDA7C8E0B48541B60A",
+      "pid": 26144,
+      "run": 2
+    }
+  ]
+}

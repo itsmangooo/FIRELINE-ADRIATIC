@@ -1,5 +1,7 @@
 # M03 isolated debug-flight verification
 
+Latest local graphical flight verification: [real-time rendered runway route](#real-time-rendered-runway-route). Automated QA is explicit; normal manual controls remain unchanged.
+
 Latest numerical route: [bounded authority runway route](#bounded-authority-runway-route). It adds no normal gameplay autopilot or rendered-flight acceptance.
 
 Latest instrumentation path: [sampled-wind flight instruments](#sampled-wind-flight-instruments). It changes the aircraft RPC contract to **v2**; use matching freshly built client/server players. The earlier v1 command/data results below remain historical evidence.
@@ -244,3 +246,39 @@ The reused numerical harness verifies two actual dedicated exits and all origina
 Revalidate published immutable data without Unity: `python scripts/analyze_m03_route.py` (recomputes the summary from unchanged gzip archives). Render real diagrams/plots with `python scripts/render_m03_route.py` using the existing Matplotlib environment. Human comments can be audited on the committed code with `python scripts/verify_source_comments.py HEAD`; this checks documentation/token identity against that committed snapshot, not feature parity with older implementations.
 
 The original `scripts/FlightRouteInvestigation` commands still reproduce their retained **unqualified** offline strategies (exit 2); no old failure is rewritten. [New control equations, environment, actual gates, every plot-axis/ruler/clock definition and limits](physics/runway-route/COMPARISON.md). No screenshots apply to the nonvisual QA path; no fresh client/Linux/WAN/FPS/manual flight qualification. Next is actual real-time owner/observer flight through normal network controls.
+
+
+## Real-time rendered runway route
+
+Current path requires matching rebuilt server/client binaries, the explicit live debug session and route-proof output. The owner additionally needs the flight-test view, PNG and metric paths; the observer needs explicit connection/role. Parser rejects other scripted input owners, numerical/persistence/timer modes and missing role/render requirements. Only the server selects calm wind on its actual existing authoritative field. No gameplay autopilot or native device input is installed by default.
+
+From the existing checkout with Editor closed, use fresh paths and run sequentially, stopping on any nonzero result:
+
+```powershell
+New-Item -ItemType Directory -Force Builds/M03RealtimeReplay | Out-Null
+unity self-update --check --format json
+unity test "$PWD" --editor-version 6000.6.7f1 --mode EditMode --filter Fireline.Tests --output Builds/M03RealtimeReplay/editmode.xml --timeout 900 -- -buildTarget Win64 -standaloneBuildSubtarget Player -nographics -force-d3d11 *> Builds/M03RealtimeReplay/editmode-cli.log
+unity test "$PWD" --editor-version 6000.6.7f1 --mode PlayMode --filter Fireline.Tests --output Builds/M03RealtimeReplay/playmode.xml --timeout 900 -- -buildTarget Win64 -standaloneBuildSubtarget Player -nographics -force-d3d11 *> Builds/M03RealtimeReplay/playmode-cli.log
+$env:FIRELINE_BUILD_EVIDENCE='Builds/M03RealtimeReplay/builds'
+unity run "$PWD" --editor-version 6000.6.7f1 --timeout 1200 --log-file Builds/M03RealtimeReplay/server-build.log --no-tail -- -buildTarget Win64 -nographics -executeMethod Fireline.Authoring.FoundationBuild.BuildServer
+./scripts/Test-M03Fuel.ps1 -Port 8391 -EvidenceRoot Builds/M03RealtimeReplay/numerical
+python scripts/analyze_m03_route.py --numerical Builds/M03RealtimeReplay/numerical --output Builds/M03RealtimeReplay/numerical-route-verification.json
+unity run "$PWD" --editor-version 6000.6.7f1 --timeout 1200 --log-file Builds/M03RealtimeReplay/client-build.log --no-tail -- -buildTarget Win64 -standaloneBuildSubtarget Player -force-d3d11 -executeMethod Fireline.Authoring.FoundationBuild.BuildFlightTestClient
+./scripts/Test-M03Realtime.ps1 -Port 8390 -EvidenceRoot Builds/M03RealtimeReplay/runtime -CapturePath Builds/M03RealtimeReplay/after.png
+./scripts/Test-M03Realtime.ps1 -Port 8390 -EvidenceRoot Builds/M03RealtimeReplay/repeat -CapturePath Builds/M03RealtimeReplay/repeat.png
+$env:PYTHONPATH=(Join-Path $PWD Builds/AnalysisTools)
+python scripts/render_m03_realtime.py --evidence Builds/M03RealtimeReplay/runtime --output Builds/M03RealtimeReplay/plots
+```
+
+The visible owner window is required for actual presentation. The late observer starts only after real server seat confirmation; it runs without graphics. Each fresh run preserves selected markers, actual OS exits, role DLL hashes and raw structured archives. Every received pose must match a real targeted server publication; commands must retain their full serialized metadata/body and reconcile with received/installed inputs. Independent math checks fuel, tires, footprint, continuous physical gates, actual instruments and 100 ms interpolation/float scene placement. No old taxi/device proof is substituted for flight acceptance. A rejected attempt is not rerun into the same published destination.
+
+Owner completion requests normal seat release, waits for actual vacant-owner/new epoch, flushes evidence, queues disconnect and allows 0.15 s real player-loop updates before quit. Observer sees/ACKs vacancy before leaving; server verifies physical gates and actual peer cleanup. The input lease is not relaxed. First-attempt immediate-quit expiry and omitted nonserializable request fields remain documented failures. Metadata-only `[System.Serializable]` preserves request wire fields while making JSON provenance complete.
+
+Revalidate both published runs from immutable bytes without Unity, with separate fresh output:
+
+```powershell
+python scripts/analyze_m03_realtime.py --archive docs/reports/m03-realtime-evidence/runtime --evidence Builds/M03RealtimeArchiveReplay --image docs/previews/m03-realtime-flight/after.png
+python scripts/analyze_m03_realtime.py --archive docs/reports/m03-realtime-evidence/repeat --evidence Builds/M03RealtimeRepeatArchiveReplay --image docs/previews/m03-realtime-flight/repeat.png
+```
+
+This rechecks hashes and all recorded boundaries, not a new live execution. [Actual results/captures/graph guides and limitations](reports/2026-10-26-m03-realtime-flight.md), [control/physics comparison](physics/realtime-route/COMPARISON.md). Normal manual launch/control commands above remain available without route QA flags. Physical hardware/native focus, impairment/crosswind/payload, calibrated collision/rig/cockpit/refueling/water and representative FPS/capacity are not qualified by this calm automated case.

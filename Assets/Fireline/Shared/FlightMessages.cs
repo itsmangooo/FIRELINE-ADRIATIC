@@ -11,6 +11,7 @@ namespace Fireline.Shared
     /// <summary>Stable request outcomes, independent of transport or localized UI text.</summary>
     public enum FlightResult : byte { Accepted = 0, NotOwner = 1, Sequence = 2, Tick = 3, Invalid = 4, Rate = 5, Protocol = 6 }
     /// <summary>Versioned single-aircraft commands. Identity is always ReceiveRpcCommandRequest.SourceConnection.</summary>
+    [System.Serializable]
     public struct FlightRequestRpc : IRpcCommand
     {
         // Subscribe=1, claim=2, input=3, release=4, exact snapshot ACK=5. No pose, wind, fuel or water mutation is exposed.

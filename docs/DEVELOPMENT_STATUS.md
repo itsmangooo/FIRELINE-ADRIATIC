@@ -1,5 +1,11 @@
 # Development status — handoff
 
+## Latest increment — 2026-10-26 real-time rendered flight
+
+**M03 remains In Progress.** Two actual local dedicated/rendered-owner/late-observer runway-hop executions pass takeoff/landing/settling, source/replica/display agreement and explicit release/vacancy/disconnect cleanup. **119 EditMode + 3 PlayMode tests**, zero-error Windows server/client builds (510/499 warnings), exact unchanged numerical replays. Accepted run: **16,669 server substeps, 1,213 exact received poses, 3,950 reconstructed display frames, 3,957 actual instrument texts**. [Actual results, rejected first attempt, raw evidence and limits](reports/2026-10-26-m03-realtime-flight.md), [real screenshots, equations, SVGs and graph guide](previews/m03-realtime-flight/COMPARISON.md).
+
+Automated calm-air straight hop only: no production autopilot, manual hardware/focus, crosswind/payload/impairment, general collision/calibration/animation/cockpit, refueling/water or representative FPS/capacity acceptance. M03 remains open; M04/M05A Pending. FL-11 and prior hitches remain for later optimization. User configuration and assets preserved. Earlier entries below retain their historical results and next steps; this latest entry supersedes their pending automated calm-air route task.
+
 ## Latest increment — 2026-10-26 M03 authority runway-route proof
 
 **M03 remains In Progress.** New explicit headless numerical proof completes a calm-air takeoff/approach/landing/stop through real server seat/input/lease/fuel/contact authority: **13,943 accepted 5 ms substeps, 3,486 guarded commands, 69.715 physical seconds**, exact replay in two actual processes, five airborne and five settled seconds. **113 EditMode + 3 PlayMode tests**, fresh Windows server **0 errors / 510 warnings**. **55 C# files / 434 documented members**. All force/contact/fuel kernels and normal gameplay remain unchanged. [Actual equations, four rendered SVGs, raw data, independent tire/fuel/gate checks and limits](reports/2026-10-26-m03-authority-route.md).

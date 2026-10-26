@@ -74,8 +74,9 @@ namespace Fireline.Server
             deadline = now + InputLeaseSeconds; leased = true; return FlightResult.Accepted;
         }
 
-        /// <summary>Consume at most 40 ms in eight 5 ms steps; discard excess wall time instead of unbounded sleep catch-up.</summary>
-        public int Advance(double elapsed, double now, WindField wind, ulong fireTick)
+        /// <summary>Consume at most 40 ms in eight 5 ms steps; discard excess wall time. An optional trusted QA observer receives value copies after installation.</summary>
+        public int Advance(double elapsed, double now, WindField wind, ulong fireTick,
+            Action<FlightState, FlightInput, double, ulong> acceptedStep = null)
         {
             Range(elapsed, 0, double.MaxValue);
             Range(now, 0, double.MaxValue);
@@ -95,6 +96,7 @@ namespace Fireline.Server
                         DebugFlightProfile.ReferenceDensity, StepSeconds, brake, RunwayPlane.Debug);
                     State = accepted.State;
                     Tick++; steps++; accumulated = Math.Max(0, accumulated - StepSeconds);
+                    acceptedStep?.Invoke(State, input, brake, Tick);
                 }
             }
             catch (ArgumentException) { Faulted = true; if (Owner != 0) Release(Owner, Epoch); }

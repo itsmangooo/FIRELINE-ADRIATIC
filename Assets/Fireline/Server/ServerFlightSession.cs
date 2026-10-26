@@ -21,10 +21,12 @@ namespace Fireline.Server
         {
             public int identity, accepted, rejected, acknowledgements, snapshots, forgedPoses;
             public bool disconnected;
+            public bool routeVacantAck;
             [NonSerialized] public ulong PendingTick;
             [NonSerialized] public bool Pending;
             [NonSerialized] public double SentAt, Next;
             [NonSerialized] public int Budget;
+            [NonSerialized] public int PendingOwner;
         }
         [Serializable]
         private sealed class Evidence
@@ -32,12 +34,13 @@ namespace Fireline.Server
             public bool passed, faulted;
             public string reason, role = "server", profile = DebugFlightProfile.Identifier, fuelProfile = DebugFuelProfile.Identifier;
             public ulong tick, fireTick;
-            public int owner, disconnectReleases, expirations, overruns, updates, steps;
+            public int owner, disconnectReleases, routeSeatReleases, expirations, overruns, updates, steps;
             public double seconds, discardedSeconds, maximumUpdateMs, consumedFuelKg;
             public FlightState finalState;
             public WindState sampledWindState;
             public int sampledWindSeed;
             public Peer[] peers;
+            public LiveRouteProgress route;
         }
         private readonly Dictionary<Entity, Peer> peers = new Dictionary<Entity, Peer>();
         private readonly List<Peer> history = new List<Peer>();
@@ -49,6 +52,11 @@ namespace Fireline.Server
         private bool ready, finished;
         private StreamWriter samples;
         private StreamWriter snapshots;
+        private ServerRouteProbe routeProbe;
+        private Action<FlightState,FlightInput,double,ulong> routeStep;
+        private bool routeWeatherSet;
+        /// <summary>Each proof owns one role-specific output; normal sessions keep both paths null.</summary>
+        private string ProofPath => FoundationBootstrap.Options.FlightRouteProofPath ?? FoundationBootstrap.Options.FlightNetworkProofPath;
 
         [Serializable]
         private sealed class Published
@@ -73,13 +81,15 @@ namespace Fireline.Server
             invalidStates = manager.CreateEntityQuery(typeof(FlightStateRpc), typeof(ReceiveRpcCommandRequest));
             invalidReplies = manager.CreateEntityQuery(typeof(FlightReplyRpc), typeof(ReceiveRpcCommandRequest));
             authority = new FlightAuthority(); started = previous = Time.realtimeSinceStartupAsDouble; ready = true;
-            string path = FoundationBootstrap.Options.FlightNetworkProofPath;
+            string path = ProofPath;
             if (path != null)
             {
                 Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(path)));
                 samples = new StreamWriter(Path.ChangeExtension(path, ".csv"));
                 snapshots = new StreamWriter(Path.ChangeExtension(path, ".snapshots.jsonl"));
                 samples.WriteLine("elapsed_s,callback_gap_s,steps,tick,fire_tick,owner,epoch,z_m,speed_mps,discarded_s,host_advance_ms");
+                if(FoundationBootstrap.Options.FlightRouteProofPath!=null)
+                { routeProbe=new ServerRouteProbe(authority,path); routeStep=routeProbe.Observe; }
             }
             Debug.Log("FIRELINE_FLIGHT_SESSION ready=True hz=200 maximumSteps=8 authority=server profile=DEBUG_FLIGHT_ONLY_V1");
         }
@@ -113,7 +123,9 @@ namespace Fireline.Server
                 if (pair.Value.Pending && now - pair.Value.SentAt > 5) Disconnect(pair.Key);
             }
             var world = FireSimulationRunner.Authority.World;
-            var timer = Stopwatch.StartNew(); int count = authority.Advance(gap, now, world.Wind, world.Tick); timer.Stop();
+            if(routeProbe!=null && !routeWeatherSet) { world.Wind.Set(0,0,0); routeWeatherSet=true; }
+            routeProbe?.BeginUpdate(world.Tick);
+            var timer = Stopwatch.StartNew(); int count = authority.Advance(gap, now, world.Wind, world.Tick,routeStep); timer.Stop();
             double ms = timer.Elapsed.TotalMilliseconds;
             evidence.updates++; evidence.steps += count; evidence.maximumUpdateMs = Math.Max(evidence.maximumUpdateMs, ms);
             if (samples != null)
@@ -131,8 +143,17 @@ namespace Fireline.Server
                 FlightRpcIO.State(manager, pair.Key, snapshot);
                 snapshots?.WriteLine(JsonUtility.ToJson(new Published { identity = peer.identity, state = snapshot }));
                 peer.Pending = true; peer.PendingTick = authority.Tick; peer.SentAt = now; peer.Next = now + .1; peer.snapshots++;
+                peer.PendingOwner=snapshot.Owner;
             }
             if (authority.Faulted) { Finish(false, "physics-envelope"); return; }
+            if(routeProbe!=null)
+            {
+                if(authority.Expirations>0) { Finish(false,"route-input-expiry"); return; }
+                if(routeProbe.Progress.passed && authority.Owner==0 && evidence.routeSeatReleases==1
+                    && history.Count>=2 && history.All(p=>p.disconnected) && history.Any(p=>p.routeVacantAck)) Finish(true,"live-route-and-observer-release");
+                else if(now-started>150) Finish(false,"live-route-timeout");
+                return;
+            }
             if (FoundationBootstrap.Options.FlightNetworkProofPath != null)
             {
                 // Completion depends on real peer ACKs, a pilot disconnect and the observer still receiving state.
@@ -164,14 +185,23 @@ namespace Fireline.Server
                         result = authority.Submit(peer.identity, message.Epoch, message.Sequence, message.Tick,
                             new FlightInput { Throttle = message.Throttle, Pitch = message.Pitch, Roll = message.Roll, Yaw = message.Yaw,
                                 Flaps = message.Flaps, Gear = message.Gear }, message.Brake, now); break;
-                    case 4: result = authority.Release(peer.identity, message.Epoch); break;
+                    case 4:
+                        result = authority.Release(peer.identity, message.Epoch);
+                        if(routeProbe!=null && result==FlightResult.Accepted) evidence.routeSeatReleases++;
+                        break;
                     case 5:
                         if (peer.Pending && message.Tick == peer.PendingTick)
-                        { peer.Pending = false; peer.acknowledgements++; return; }
+                        {
+                            if(peer.PendingOwner==0 && routeProbe!=null && routeProbe.Progress.passed) peer.routeVacantAck=true;
+                            peer.Pending = false; peer.acknowledgements++; return;
+                        }
                         result = FlightResult.Tick; break;
                 }
             }
             if (result == FlightResult.Accepted) peer.accepted++; else peer.rejected++;
+            routeProbe?.Request(peer.identity,message,result);
+            if(routeProbe!=null && message.Kind==2 && result==FlightResult.Accepted)
+                Debug.Log("FIRELINE_ROUTE_OWNER identity="+peer.identity);
             FlightRpcIO.Reply(manager, source, new FlightReplyRpc { Version = FlightWire.Version, Kind = message.Kind, Result = (byte)result,
                 Sequence = message.Sequence, Epoch = authority.Epoch, Owner = authority.Owner });
         }
@@ -223,13 +253,14 @@ namespace Fireline.Server
             evidence.fireTick = FireSimulationRunner.Authority.World.Tick;
             evidence.sampledWindState = FireSimulationRunner.Authority.World.Wind.State;
             evidence.sampledWindSeed = FireSimulationRunner.Authority.World.Wind.Seed;
-            string path = FoundationBootstrap.Options.FlightNetworkProofPath;
+            evidence.route=routeProbe?.Progress; routeProbe?.Dispose(); routeProbe=null;
+            string path = ProofPath;
             if (path != null) File.WriteAllText(path, JsonUtility.ToJson(evidence, true));
             Debug.Log($"FIRELINE_FLIGHT_NETWORK role=server passed={passed} reason={reason} tick={authority.Tick} owner={authority.Owner}");
             Application.Quit(passed ? 0 : 12);
         }
 
         /// <summary>Close the optional raw trace on controlled application shutdown.</summary>
-        private void OnDestroy() { samples?.Dispose(); snapshots?.Dispose(); }
+        private void OnDestroy() { samples?.Dispose(); snapshots?.Dispose(); routeProbe?.Dispose(); }
     }
 }

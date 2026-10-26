@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "baseline": "970d1f12e42b71285e2293e63c58633336484063",
+  "configurationFilesPreserved": 5,
+  "configurationHashes": [
+    {
+      "sha256": "8324E681D5FFA8B9475A8073DB17275732B9691C9EE27CC40936445C15BC2D4E",
+      "path": "Assets/Settings/SkyandFogSettingsProfile.asset"
+    },
+    {
+      "sha256": "DF7C96B14CD0AF4B6332D656088371B08BDF0901A24719332B51764B27C8F49F",
+      "path": "ProjectSettings/ProjectSettings.asset"
+    },
+    {
+      "sha256": "D4280F9D0397FC6738786DB164976AD7456E0B2A77823C4C61684628E84A2373",
+      "path": "ProjectSettings/UnityConnectSettings.asset"
+    },
+    {
+      "sha256": "C7879726D0F4A76046D945462340987D33FD23BA3EE06132EF0C1E5C501E121E",
+      "path": "Packages/manifest.json"
+    },
+    {
+      "sha256": "819DDB5DB90FCF02148D15C736464D39AE5A9773A60AE0752065807DFECB4FBB",
+      "path": "Packages/packages-lock.json"
+    }
+  ],
+  "editModePassed": 119,
+  "playModePassed": 3,
+  "csharpFiles": 59,
+  "documentedMembers": 464,
+  "realProcessExits": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "checkedLiveSubsteps": 16669,
+  "checkedDisplayFrames": 3950,
+  "checkedInstrumentTexts": 3957,
+  "repeatLiveSubsteps": 14794,
+  "twoActualLiveRunsPassed": true,
+  "sameBinariesUsedForBothLiveRuns": true,
+  "installedMonoFormatChecks": 840,
+  "unchangedSimulationKernelsWireFieldsAndAssets": true,
+  "unchangedExactNumericalReplays": true,
+  "immutableLiveArchiveReplayPassed": true,
+  "serverAndClientRoleDllsAndLegalCopiesVerified": true,
+  "newScriptGuidsUnique": 4,
+  "selfContainedSvgFiles": 5,
+  "inspectedDrawings": 5,
+  "inspectedGamePngs": 7,
+  "localMarkdownLinksChecked": 440,
+  "credentialPatternScanPassed": true,
+  "limits": "Automated calm-air straight runway hop over local transport; manual hardware, impairment/crosswind/payload envelope, collision/calibration/animation/water, WAN/capacity and representative 60 FPS remain open."
+}

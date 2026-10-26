@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="216pt" viewBox="0 0 864 216" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 216
+L 864 216
+L 864 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <g id="patch_2">
+     <path d="M 58.677188 130.481035
+L 173.522813 130.481035
+Q 178.622813 130.481035 178.622813 125.381035
+L 178.622813 104.976387
+Q 178.622813 99.876387 173.522813 99.876387
+L 58.677188 99.876387
+Q 53.577188 99.876387 53.577188 104.976387
+L 53.577188 125.381035
+Q 53.577188 130.481035 58.677188 130.481035
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(61.221875 112.285889)">Received server snapshot</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(58.677188 122.488213)">Read-only QA control math</text>
+   </g>
+   <g id="patch_3">
+    <path d="M 195.322011 115.178711
+Q 219.645967 115.178711 241.957463 115.178711
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 237.957463 113.178711
+L 241.957463 115.178711
+L 237.957463 117.178711
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_2">
+    <g id="patch_4">
+     <path d="M 261.208164 130.481035
+L 392.191836 130.481035
+Q 397.291836 130.481035 397.291836 125.381035
+L 397.291836 104.976387
+Q 397.291836 99.876387 392.191836 99.876387
+L 261.208164 99.876387
+Q 256.108164 99.876387 256.108164 104.976387
+L 256.108164 125.381035
+Q 256.108164 130.481035 261.208164 130.481035
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(274.723164 112.285889)">Normal owner input RPC</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(261.208164 122.488213)">Seat / sequence / lease guards</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 405.922011 115.178711
+Q 430.245967 115.178711 452.557463 115.178711
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 448.557463 113.178711
+L 452.557463 115.178711
+L 448.557463 117.178711
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_3">
+    <g id="patch_6">
+     <path d="M 478.54707 130.481035
+L 596.05293 130.481035
+Q 601.15293 130.481035 601.15293 125.381035
+L 601.15293 104.976387
+Q 601.15293 99.876387 596.05293 99.876387
+L 478.54707 99.876387
+Q 473.44707 99.876387 473.44707 104.976387
+L 473.44707 125.381035
+Q 473.44707 130.481035 478.54707 130.481035
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(478.54707 112.285889)">Actual accepted 5 ms steps</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(482.444453 122.488213)">Tire / fuel / request traces</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 616.522011 115.178711
+Q 640.845967 115.178711 663.157463 115.178711
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 659.157463 113.178711
+L 663.157463 115.178711
+L 659.157463 117.178711
+" style="fill: none; stroke: #000000; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <g id="patch_8">
+     <path d="M 681.904141 130.481035
+L 813.895859 130.481035
+Q 818.995859 130.481035 818.995859 125.381035
+L 818.995859 104.976387
+Q 818.995859 99.876387 813.895859 99.876387
+L 681.904141 99.876387
+Q 676.804141 99.876387 676.804141 104.976387
+L 676.804141 125.381035
+Q 676.804141 130.481035 681.904141 130.481035
+z
+" style="fill: #e8f1f8; stroke: #38526b; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(699.590781 112.285889)">Owner + late observer</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif" transform="translate(681.904141 122.488213)">Rendered 100 ms interpolation</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="432" y="19.157422" transform="rotate(-0 432 19.157422)">AFTER: real-time automated calm-air route; server owns every physical state</text>
+   </g>
+  </g>
+ </g>
+</svg>

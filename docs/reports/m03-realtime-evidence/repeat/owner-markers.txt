@@ -1,0 +1,9 @@
+FIRELINE_CLIENT_START
+FIRELINE_CLIENT_RENDERER graphics=Direct3D11 pipeline=HDRenderPipelineAsset quality=Balanced
+FIRELINE_FLIGHT_VIEW ready=True mode=engineering physics=server cameras=external
+FIRELINE_CLIENT_CONNECTED networkId=1
+FIRELINE_CAPTURE_SAVED repeat.png
+FIRELINE_ROUTE_CAPTURE stage=airborne
+FIRELINE_ROUTE_CAPTURE stage=landed
+FIRELINE_METRICS_SAVED metrics.json
+FIRELINE_ROUTE_CLIENT role=owner passed=True reason=rendered-network-route-and-release

@@ -46,6 +46,8 @@ namespace Fireline.Client
         public int AcceptedInputs => evidence.acceptedInputs;
         /// <summary>Number of validated snapshots received over the actual server connection.</summary>
         public int SnapshotCount => evidence.snapshots;
+        /// <summary>Exact last enqueued normal control RPC, including metadata; evidence readers cannot mutate the queued value.</summary>
+        public FlightRequestRpc LastSubmitted { get; private set; }
 
         /// <summary>Ask for the vacant debug seat; claiming is still subject to server authorization.</summary>
         public void RequestSeat() { if (Ready) Send(2); }
@@ -56,10 +58,16 @@ namespace Fireline.Client
         {
             if (!Ready || !received || latest.Owner != Identity || Time.realtimeSinceStartupAsDouble - receivedAt > .5) return false;
             controls.Version = FlightWire.Version; controls.Kind = 3; controls.Epoch = latest.Epoch; controls.Tick = latest.Tick; controls.Sequence = ++sequence;
-            FlightRpcIO.Request(manager, connection, controls); return true;
+            FlightRpcIO.Request(manager, connection, controls); LastSubmitted = controls; return true;
         }
         /// <summary>Request a real transport disconnect for the rendered proof; ownership is released by the server lifecycle.</summary>
         public void Disconnect() { if (connected && manager.Exists(connection) && !manager.HasComponent<NetworkStreamRequestDisconnect>(connection)) manager.AddComponent<NetworkStreamRequestDisconnect>(connection); }
+        /// <summary>Let the explicit route proof own its final result while flushing snapshots and disconnecting through normal transport.</summary>
+        public void EndRouteProof()
+        {
+            if(FoundationBootstrap.Options.FlightRouteProofPath==null) throw new InvalidOperationException("No route proof owns this client.");
+            finished=true; snapshots?.Dispose(); snapshots=null; Disconnect();
+        }
 
         /// <summary>Install only for explicit debug flight sessions; the existing static preview remains unchanged by default.</summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
@@ -77,8 +85,8 @@ namespace Fireline.Client
             replies = manager.CreateEntityQuery(typeof(FlightReplyRpc), typeof(ReceiveRpcCommandRequest));
             connections = manager.CreateEntityQuery(typeof(NetworkId));
             started = receivedAt = Time.realtimeSinceStartupAsDouble;
-            evidence.role = FoundationBootstrap.Options.FlightProbeRole ?? "replica";
-            string path = FoundationBootstrap.Options.FlightNetworkProofPath ?? FoundationBootstrap.Options.FlightViewProofPath;
+            evidence.role = FoundationBootstrap.Options.FlightRouteRole ?? FoundationBootstrap.Options.FlightProbeRole ?? "replica";
+            string path = FoundationBootstrap.Options.FlightRouteProofPath ?? FoundationBootstrap.Options.FlightNetworkProofPath ?? FoundationBootstrap.Options.FlightViewProofPath;
             if (path != null)
             {
                 Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(path)));

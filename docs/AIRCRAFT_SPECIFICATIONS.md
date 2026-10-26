@@ -1,5 +1,9 @@
 # Aircraft specifications & flight-simulation data sheet
 
+## M03 actual local rendered straight hop — 2026-10-26
+
+The estimated generic body now has two actual automated local owner/observer flight executions with server-only physics/contact/fuel and read-only rendering. [Actual trajectory, QA policy, real screenshots, unchanged numerical reference and limitations](previews/m03-realtime-flight/COMPARISON.md). This is not calibrated CL-415 data or a production autopilot; physical controller/manual, crosswind/payload range, aircraft/terrain/water collision, rig/cockpit/animation, refueling and water gates remain open. CoG datum height is not radar altitude; static visual parts remain.
+
 ## M03 calm-air authority route — 2026-10-26
 
 The existing estimated generic body now has repeatable accelerated dedicated-player route evidence under a bounded QA controller: max CoG height **11.702127 m**, continuous above-5-m/no-wheel-support segment **14.620 s**, settled period **5.005 s**, final north **2363.927837 m**, final speed **0.000000 m/s**, fuel consumed **12.260000 kg**. [Actual policy equations, finite-runway gates, retained older failures and raw proof](physics/runway-route/COMPARISON.md). No aerodynamic/contact/fuel/aircraft coefficient changed. The QA controller is not available to ordinary gameplay; real-time network/manual/rendered flight, crosswind/payload envelope, calibrated variant/collision/cockpit/water acceptance remain open.

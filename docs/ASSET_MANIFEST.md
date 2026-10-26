@@ -1,5 +1,9 @@
 # Asset Manifest — Imported content, source links and pipeline
 
+## M03 actual rendered flight capture — 2026-10-26
+
+No new model/texture/material/scene/font/package is imported. The same temporary exterior, existing runway and built-in runtime font now appear in actual airborne/landed captures driven by received server state. Existing source notices, rig/cockpit/replacement limitations and user's saved sky remain. [Before/after/provenance and performance scope](previews/m03-realtime-flight/COMPARISON.md#actual-game-view-captures-and-provenance). Planned large-map audit/quality milestones unchanged.
+
 ## M03 read-only instruments — 2026-10-25
 
 Adds a runtime uGUI panel using the existing built-in `LegacyRuntime.ttf`; no font/package/download, scene, material, texture or model import. Original temporary CL-415 source/notices, static parts, existing eleven materials/nine textures and runway assets are unchanged. Actual captures retain the user's uncommitted sky settings. [BEFORE/AFTER, asset provenance and remaining model/cockpit limits](previews/m03-flight-instruments/COMPARISON.md). This does not change the future supplied-map audit or production replacement gate.

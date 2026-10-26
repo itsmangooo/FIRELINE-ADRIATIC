@@ -44,6 +44,10 @@ namespace Fireline.Shared
         public bool FlightView { get; private set; }
         /// <summary>Optional rendered-view proof using synthetic Input System devices through the normal client controls.</summary>
         public string FlightViewProofPath { get; private set; }
+        /// <summary>Explicit role-specific output for real-time runway QA; no automatic pilot exists without this opt-in.</summary>
+        public string FlightRouteProofPath { get; private set; }
+        /// <summary>Client-only owner/observer QA role; the server still derives actual identity from transport.</summary>
+        public string FlightRouteRole { get; private set; }
         /// <summary>Optional role-specific output for the real two-client aircraft transport proof.</summary>
         public string FlightNetworkProofPath { get; private set; }
         /// <summary>Client-only scripted owner/observer identity for the opt-in network proof, never server admission credentials.</summary>
@@ -81,6 +85,12 @@ namespace Fireline.Shared
                     case "--fireline-flight-view-proof":
                         if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Flight view proof path is empty.");
                         options.FlightViewProofPath = value; break;
+                    case "--fireline-flight-route-proof":
+                        if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Route proof path is empty.");
+                        options.FlightRouteProofPath = value; break;
+                    case "--fireline-flight-route-role":
+                        if (value != "owner" && value != "observer") throw new ArgumentException("Expected route owner or observer.");
+                        options.FlightRouteRole = value; break;
                     case "--fireline-flight-session":
                         if (value != "debug") throw new ArgumentException("Only the estimated debug aircraft session exists.");
                         options.FlightSession = true; break;
@@ -156,6 +166,19 @@ namespace Fireline.Shared
             }
             if (options.BenchmarkSeconds > 0 && (options.SmokeSeconds > 0 || options.BenchmarkOutput == null))
                 throw new ArgumentException("Benchmark requires output and cannot share the smoke exit timer.");
+            if (options.FlightRouteRole != null && (options.FlightRouteProofPath == null || options.ConnectAddress == null))
+                throw new ArgumentException("Route client requires proof output and explicit connection.");
+            if (options.FlightRouteProofPath != null)
+            {
+                if (!options.FlightSession || options.FlightNetworkProofPath != null || options.FlightViewProofPath != null || options.FlightProbeRole != null)
+                    throw new ArgumentException("Route proof requires an isolated explicit live debug session.");
+                if (options.ConnectAddress != null && options.FlightRouteRole == null)
+                    throw new ArgumentException("Connected route client requires its QA role.");
+                if (options.FlightRouteRole == "owner" && (!options.FlightView || options.CapturePath == null || options.MetricsPath == null))
+                    throw new ArgumentException("Route owner requires rendered view, capture and metrics.");
+                if (options.ConnectAddress == null && options.FlightView)
+                    throw new ArgumentException("Route server cannot request a client view.");
+            }
             if ((options.FlightView || options.FlightNetworkProofPath != null || options.FlightProbeRole != null) && !options.FlightSession)
                 throw new ArgumentException("Flight network proof requires an explicit debug flight session.");
             if (options.FlightViewProofPath != null && !options.FlightView)

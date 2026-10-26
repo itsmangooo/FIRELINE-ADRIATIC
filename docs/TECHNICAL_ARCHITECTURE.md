@@ -1,5 +1,9 @@
 # Technical architecture — Unity 6 HDRP, C#, headless server
 
+## M03 real-time route proof boundary — 2026-10-26
+
+Explicit route QA alone installs received-state request math and proof recording. Owner inputs use the normal metadata/validation path; actual transport identity remains server-derived. Optional trusted `FlightAuthority.Advance` observation receives validated post-install value copies; default callback is null and unit tests verify identity/isolation. It does not integrate or mutate state. Live proof selects zero wind on the existing server field, records every substep/request/publication and checks tire/airborne/settling plus release/ACK/disconnect. Client presentation remains the same 100 ms receipt interpolation. [Actual BEFORE/AFTER SVGs, formulas, raw six-process evidence and limits](previews/m03-realtime-flight/COMPARISON.md). Simulation laws, wire fields/version, assets/packages unchanged. Production autopilot/manual envelope/water remain pending.
+
 ## M03 explicit numerical route boundary — 2026-10-26
 
 `FlightVerification.Run` now includes a bounded calm-air QA pilot/proof through fresh `FlightAuthority.Claim/Submit/Advance`. It is installed only by the existing `--fireline-flight-proof` flag, with synthetic identity 1, held 20 ms requests, one accepted 5 ms substep and explicit finite-tire/continuous-airborne/touchdown/settled gates. Server-only types have no Unity graphics/client/wire dependency. Normal live session, all Simulation/authority/Client/Shared code and schemas remain unchanged. [Actual BEFORE/AFTER drawings, commands and limits](physics/runway-route/COMPARISON.md). Accelerated QA is not transport/manual/rendered flight or a production autopilot.
